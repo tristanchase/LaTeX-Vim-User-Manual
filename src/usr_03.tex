@@ -143,11 +143,11 @@ If the cursor is on a "(" it will move to the matching ")".
 If it's on a ")" it will move to the matching "(".
 
 \begin{Verbatim}[samepage=true]
-                   \%
+                   %
                  <----->
         if (a == (b * c) / d) 
            <---------------->
-                \%
+                %
 \end{Verbatim}
 
 This also works for [ ] and \{\} pairs.
@@ -195,9 +195,9 @@ A quick way to go to the start of a file use "gg".
            last line of a file    V
 \end{Verbatim}
 
-Another way to move to a line is using the "\verb!\%!" command with a count. 
-For example "\verb!50\%!" moves you to halfway the file.
-"\verb!90\%!" goes to near the end.
+Another way to move to a line is using the "\verb!%!" command with a count. 
+For example "\verb!50%!" moves you to halfway the file.
+"\verb!90%!" goes to near the end.
 
 The previous assumes that you want to move to a line in the file, no matter if it's currently visible or not.
 What if you want to move to one of the lines you can see?
@@ -225,7 +225,7 @@ To see where you are in a file, there are three ways:
 				\item  Use the CTRL-G command.
 								You get a message like this (assuming the 'ruler' option is off):
 								\begin{Verbatim}[samepage=true]
-	"usr_03.txt" line 233 of 650 --35\%-- col 45-52 
+	"usr_03.txt" line 233 of 650 --35%-- col 45-52 
 								\end{Verbatim}
 
 								This shows the name of the file you are editing, the line number where the cursor is, the total number of lines, the percentage of the way through the file and the column of the cursor.
@@ -342,14 +342,14 @@ If you want to use them in a search you must put a \textbackslash in front of th
 See below.
 
 To find the next occurrence of the same string use the "\verb!n!" command.
-Use this to find the first \verb!\#include! after the cursor:%
+Use this to find the first \verb!#include! after the cursor:%
 
  \begin{Verbatim}[samepage=true]
  /#include
  \end{Verbatim}
 
 And then type "\verb!n!" several times.
-You will move to each \verb!\#include! in the text.
+You will move to each \verb!#include! in the text.
 You can also use a count if you know which match you want.
 Thus "\verb!3n!" finds the third match.
 Using a count with "\verb!/!" doesn't work.
@@ -393,7 +393,7 @@ Now let's start searching by typing a simple "\verb!/!" without pressing <Enter>
 If you press <Up> (the cursor key), Vim puts "/three" on the command line.
 Pressing <Enter> at this point searches for three.
 If you do not press <Enter>, but press <Up> instead, Vim changes the prompt to "\verb!/two!".
-Another press of <Up> moves you to \verb!"/one!".
+Another press of <Up> moves you to "\verb!/one!".
 You can also use the <Down> cursor key to move through the history of search commands in the other direction.
 
 If you know what a previously used pattern starts with, and you want to use it again, type that character before pressing <Up>.
@@ -410,7 +410,7 @@ You could type "\verb!/TheLongFunctionName!", but that's a lot of typing.
 And when you make a mistake Vim won't find it.
 There is an easier way: Position the cursor on the word and use the "\verb!*!" command.
 Vim will grab the word under the cursor and use it as the search string.
-The "\verb!\#!" command does the same in the other direction.
+The "\verb!#!" command does the same in the other direction.
 You can prepend a count: "\verb!3*!" searches for the third occurrence of the word under the cursor.
 
 \subsubsection{Searching for whole words}
@@ -431,7 +431,7 @@ Thus to search for the word "\verb!the"! only:
  \end{Verbatim}
 
 This does not match "there" or "soothe".
-Notice that the "\verb!*!" and "\verb!\#!" commands use these start-of-word and end-of-word markers to only find whole words (you can use "\verb!g*!" and "\verb!g#!" to match partial words).
+Notice that the "\verb!*!" and "\verb!#!" commands use these start-of-word and end-of-word markers to only find whole words (you can use "\verb!g*!" and "\verb!g#!" to match partial words).
 
 \subsubsection{Highlighting matches}
 
@@ -533,12 +533,12 @@ You can find the full explanation here: |\verb!:h pattern!|.
 
 \subsubsection{Beginning and end of a line}
 
-The \textasciicircum character matches the beginning of a line.
+The \verb!^! character matches the beginning of a line.
 On an English-US keyboard you find it above the 6.
-The pattern "include" matches the word include anywhere on the line.
-But the pattern "\textasciicircum include" matches the word include only if it is at the beginning of a line.
+The pattern "\verb!include!" matches the word include anywhere on the line.
+But the pattern "\verb!^include!" matches the word include only if it is at the beginning of a line.
 The \$ character matches the end of a line.
-Therefore, "was\$" matches the word was only if it is at the end of a line.
+Therefore, "\verb!was$!" matches the word was only if it is at the end of a line.
 
 Let's mark the places where "the" matches in this example line with "x"s:
 
@@ -567,7 +567,7 @@ White space does matter here, thus if a line contains a space after the word, li
 \subsubsection{Matching any single character}
 
 The . (dot) character matches any existing character.
-For example, the pattern "c.m" matches a string whose first character is a c, whose second character is anything, and whose the third character is m.
+For example, the pattern "\verb!c.m!" matches a string whose first character is a c, whose second character is anything, and whose the third character is m.
 Example:
 
 		\begin{Verbatim}[samepage=true]
@@ -579,14 +579,14 @@ Example:
 \subsubsection{Matching special characters}
 
 If you really want to match a dot, you must avoid its special meaning by putting a backslash before it.
-If you search for "ter.", you will find these matches:
+If you search for "\verb!ter.!", you will find these matches:
 
 		\begin{Verbatim}[samepage=true]
     We use a computer that became the cummin winter. 
                   xxxx                          xxxx
 		\end{Verbatim}
 
-Searching for "ter\textbackslash ." only finds the second match.
+Searching for "\verb!ter\.!" only finds the second match.
 
 \subsection{Using marks}
 
@@ -600,7 +600,7 @@ To go back where you came from, use this command:
 
 This \verb!`! is a backtick or open single-quote character.
 If you use the same command a second time you will jump back again.
-That's because the ` command is a jump itself, and the position from before this jump is remembered.
+That's because the \verb!`! command is a jump itself, and the position from before this jump is remembered.
 
 Generally, every time you do a command that can move the cursor further than within the same line, this is called a jump.
 This includes the search commands "\verb!/!" and "\verb!n!" (it doesn't matter how far away the match is).
@@ -656,8 +656,8 @@ Thus to move to the a mark:
  `a
  \end{Verbatim}
 
-The command 'mark (single quotation mark, or apostrophe) moves you to the beginning of the line containing the mark.
-This differs from the `mark command, which moves you to marked column.
+The command \verb!'mark! (single quotation mark, or apostrophe) moves you to the beginning of the line containing the mark.
+This differs from the \verb!`mark! command, which moves you to marked column.
 
 The marks can be very useful when working on two related parts in a file.
 Suppose you have some text near the start of the file you need to look at, while working on some text near the end of the file.
