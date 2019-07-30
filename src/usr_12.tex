@@ -44,12 +44,14 @@ Let's assume you have a directory with C++ files, all ending in "\verb!.cpp!".
 There is a function called "GetResp" that you want to rename to "GetAnswer".
 
 \begin{center} \begin{tabularx}{\textwidth}{r X}
+	% The next two lines go off the page TMC
 				\texttt{vim *.cpp} & Start Vim, defining the argument list to contain all the C++ files.
 				You are now in the first file. \\
 				\texttt{qq} & Start recording into the q register \\
 				\texttt{:\%s/\textbackslash <GetResp\textbackslash >/GetAnswer/g} & Do the replacements in the first file. \\
 				\texttt{:wnext} & Write this file and move to the next one. \\
 				\texttt{q} & Stop recording. \\
+	% The next two lines go off the page TMC
 				\texttt{@q} & Execute the q register.
 				This will replay the substitution and "\texttt{:wnext}".
 				You can verify that this doesn't produce an error message. \\
@@ -342,7 +344,7 @@ The word it is searching for is "\verb!frame_counter!".
 Actually, this can be any regular expression.
 (Note: What grep uses for regular expressions is not exactly the same as what Vim uses.)
 
-The entire command is enclosed in backticks (`).
+The entire command is enclosed in backticks (\verb!`!).
 This tells the UNIX shell to run this command and pretend that the results were typed on the command line.
 So what happens is that the grep command is run and produces a list of files, these files are put on the Vim command line.
 This results in Vim editing the file list that is the output of grep.
@@ -366,5 +368,5 @@ To go to the previous match, use the "\verb!:cprev!" command.
 Use "\verb!:clist!" to see all the matches and where they are.
 
 The "\verb!:grep!" command uses the external commands grep (on Unix) or findstr (on Windows).
-You can change this by setting the option 'grepprg'.
+You can change this by setting the option `grepprg'.
 \clearpage

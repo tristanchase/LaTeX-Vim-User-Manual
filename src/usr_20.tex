@@ -91,7 +91,7 @@ To get rid of what you already typed, without executing it, press CTRL-C or <Esc
 <Esc> is the universal "get out" key.
 Unfortunately, in the good old Vi pressing <Esc> in a command line executed the command!
 Since that might be considered to be a bug, Vim uses <Esc> to cancel the command.
-But with the 'cpoptions' option it can be made Vi compatible.
+But with the `cpoptions' option it can be made Vi compatible.
 And when using a mapping (which might be written for Vi) <Esc> also works Vi compatible.
 Therefore, using CTRL-C is a method that always works.
 
@@ -134,7 +134,7 @@ Therefore, always use the full name.
 In the user manual the long version of the option names is used.
 Many options also have a short name.
 Unlike "\verb!:!" commands, there is only one short name that works.
-For example, the short name of 'autoindent' is 'ai'.
+For example, the short name of `autoindent' is `ai'.
 Thus these two commands do the same thing:
 
 \begin{Verbatim}[samepage=true]
@@ -285,10 +285,10 @@ In this case "is" stands for the short name of "\verb!incsearch!".
 The CTRL-L command completes the word to the longest unambiguous string.
 If you type "\verb!:edit i!" and there are files "\verb!info.txt!" and "\verb!info_backup.txt!" you will get "\verb!:edit info!".
 
-The 'wildmode' option can be used to change the way completion works.
-The 'wildmenu' option can be used to get a menu-like list of matches.
-Use the 'suffixes' option to specify files that are less important and appear at the end of the list of files.
-The 'wildignore' option specifies files that are not listed at all.
+The `wildmode' option can be used to change the way completion works.
+The `wildmenu' option can be used to get a menu-like list of matches.
+Use the `suffixes' option to specify files that are less important and appear at the end of the list of files.
+The `wildignore' option specifies files that are not listed at all.
 
 More about all of this here: |\verb!:h cmdline-completion!|
 \subsection{Command line history}
@@ -355,7 +355,7 @@ It contains the command line history, and an empty line at the end:
     +-------------------------------------+
     |other window                         |
     |~                                    |
-    |\verb!:h file.txt=============================!|
+    |file.txt=============================|
     |:e c                                 |
     |:e config.h.in                       |
     |:set path=.,/usr/include,,           |
@@ -363,7 +363,7 @@ It contains the command line history, and an empty line at the end:
     |:set is                              |
     |:q                                   |
     |:                                    |
-    |\verb!:h command-line=========================!|
+    |command-line=========================|
     |                                     |
     +-------------------------------------+
 \end{Verbatim}

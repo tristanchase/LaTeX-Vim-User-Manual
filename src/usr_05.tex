@@ -35,7 +35,7 @@ For MS-DOS and MS-Windows you can use one of these:
 
 The vimrc file can contain all the commands that you type after a colon.
 The most simple ones are for setting options.
-For example, if you want Vim to always start with the 'incsearch' option on, add this line you your vimrc file:
+For example, if you want Vim to always start with the `incsearch' option on, add this line you your vimrc file:
 
  \begin{Verbatim}[samepage=true]
  set incsearch
@@ -67,7 +67,7 @@ Use the ":help" command to find out more.
  \end{Verbatim}
 
 As mentioned in the first chapter, these manuals explain Vim working in an improved way, thus not completely Vi compatible.
-Setting the 'compatible' option off, thus 'nocompatible' takes care of this.
+Setting the `compatible' option off, thus `nocompatible' takes care of this.
 
  \begin{Verbatim}[samepage=true]
  set backspace=indent,eol,start
@@ -155,14 +155,14 @@ You can see that mappings can be used to do quite complicated things.
 Still, it is just a sequence of commands that are executed like you typed them.
 
  \begin{Verbatim}[samepage=true]
- if &t_Co > 2 |\verb!:h !| has("gui_running")
+ if &t_Co > 2 || has("gui_running")
    syntax on
    set hlsearch
  endif
  \end{Verbatim}
 
 This switches on syntax highlighting, but only if colors are available.
-And the 'hlsearch' option tells Vim to highlight matches with the last used search pattern.
+And the `hlsearch' option tells Vim to highlight matches with the last used search pattern.
 The "if" command is very useful to set options only when some condition is met.
 More about that in |\hyperref[Write a Vim script]{\texttt{Write a Vim script}}|.
 \phantomsection
@@ -173,21 +173,23 @@ More about that in |\hyperref[Write a Vim script]{\texttt{Write a Vim script}}|.
 
 This switches on three very clever mechanisms:
 \begin{enumerate}
-				\item Filetype detection.
+				\item Filetype detection.\\
 								Whenever you start editing a file, Vim will try to figure out what kind of file this is.
 								When you edit "main.c", Vim will see the "\verb!.c!" extension and recognize this as a "c" filetype.
 								When you edit a file that starts with "\verb!#!/bin/sh!", Vim will recognize it as a "sh" filetype.
 								The filetype detection is used for syntax highlighting and the other two items below.
 								See |\verb!:h filetypes!|.
 
-				\item Using filetype plugin files Many different filetypes are edited with different options.
-								For example, when you edit a "c" file, it's very useful to set the 'cindent' option to automatically indent the lines.
+				\item Using filetype plugin files\\
+								Many different filetypes are edited with different options.
+								For example, when you edit a "c" file, it's very useful to set the `cindent' option to automatically indent the lines.
 								These commonly useful option settings are included with Vim in filetype plugins.
 								You can also add your own, see \hyperref[write-filetype-plugin]{|\texttt{write-filetype-plugin}|}.
 
-				\item Using indent files When editing programs, the indent of a line can often be computed automatically.
+				\item Using indent files\\
+								When editing programs, the indent of a line can often be computed automatically.
 								Vim comes with these indent rules for a number of filetypes.
-								See |\verb!:h :filetype-indent-on!| and 'indentexpr'.
+								See |\verb!:h :filetype-indent-on!| and `indentexpr'.
 \end{enumerate}
 
  \begin{Verbatim}[samepage=true]
@@ -213,7 +215,7 @@ This defines that when the file type is set to "text" the following command is a
 
 Another autocommand.
 This time it is used after reading any file.
-The complicated stuff after it checks if the '"' mark is defined, and jumps to it if so.
+The complicated stuff after it checks if the \verb!'"! mark is defined, and jumps to it if so.
 The backslash at the start of a line is used to continue the command from the previous line.
 That avoids a line getting very long.
 See |\verb!:h line-continuation!|.
@@ -223,7 +225,7 @@ This only works in a Vim script file, not when typing commands at the command-li
 \label{Simple mappings}
 A mapping enables you to bind a set of Vim commands to a single key.
 Suppose, for example, that you need to surround certain words with curly braces.
-In other words, you need to change a word such as "amount" into "{amount}".
+In other words, you need to change a word such as "\verb!amount!" into "{\verb!amount!}".
 With the \verb!:map! command, you can tell Vim that the F5 key does this job.
 The command is as follows:
 
@@ -268,6 +270,9 @@ You need to type the \verb!\! and the \verb!p! quickly after another, so that Vi
 The "\verb!:map!" command (with no arguments) lists your current mappings.
 At least the ones for Normal mode.
 More about mappings in section |\hyperref[Key mapping]{\texttt{Key mapping}}|.
+
+\subsection{Adding a package}
+(This is missing.  Was it intentional?)
 
 \subsection{Adding a plugin}
 \label{add-plugin}
@@ -461,7 +466,7 @@ This time we will do it from inside Vim, so that we can use \verb!$VIMRUNTIME!.
 
 The "\verb!cp!" command is for Unix, on MS-DOS you can use "\verb!copy!".
 
-Now create a "\verb!doc!" directory in one of the directories in '\verb!runtimepath!'.
+Now create a "\verb!doc!" directory in one of the directories in `\verb!runtimepath!'.
 
  \begin{Verbatim}[samepage=true]
  :!mkdir ~/.vim/doc
@@ -527,9 +532,9 @@ When you hit <Enter>, the line will change to:
 
 The option has now been switched off.
 
-Just above this line is a short description of the 'wrap' option.
+Just above this line is a short description of the `wrap' option.
 Move the cursor one line up to place it in this line.
-Now hit <Enter> and you jump to the full help on the 'wrap' option.
+Now hit <Enter> and you jump to the full help on the `wrap' option.
 
 For options that take a number or string argument you can edit the value.
 Then press <Enter> to apply the new value.
@@ -543,7 +548,7 @@ Position the cursor on the zero with "\verb!$!".
 Change it into a five with "\verb!r5!".
 Then press <Enter> to apply the new value.
 When you now move the cursor around you will notice that the text starts scrolling before you reach the border.
-This is what the 'scrolloff' option does, it specifies an offset from the window border where scrolling starts.
+This is what the `scrolloff' option does, it specifies an offset from the window border where scrolling starts.
 
 \subsection{Often used options}
 
@@ -587,7 +592,7 @@ This doesn't change the text in the file, only the way it is displayed.
 \subsubsection{Wrapping movement commands}
 
 Most commands for moving around will stop moving at the start and end of a line.
-You can change that with the 'whichwrap' option.
+You can change that with the `whichwrap' option.
 This sets it to the default value:
 
  \begin{Verbatim}[samepage=true]
@@ -610,7 +615,7 @@ To let <Left> and <Right> do this in Insert mode as well:
  :set whichwrap=b,s,<,>,[,]
  \end{Verbatim}
 
-There are a few other flags that can be added, see 'whichwrap'.
+There are a few other flags that can be added, see `whichwrap'.
 
 \subsubsection{Viewing tabs}
 When there are tabs in a file, you cannot see where they are.
@@ -624,7 +629,7 @@ Now every tab is displayed as \verb!^I!.
 And a \verb!$! is displayed at the end of each line, so that you can spot trailing spaces that would otherwise go unnoticed.
 A disadvantage is that this looks ugly when there are many Tabs in a file.
 If you have a color terminal, or are using the GUI, Vim can show the spaces and tabs as highlighted characters.
-Use the 'listchars' option:
+Use the `listchars' option:
 
  \begin{Verbatim}[samepage=true]
  :set listchars=tab:>-,trail:-
@@ -634,7 +639,7 @@ Now every tab will be displayed as "\verb!>---!" (with more or less "\verb!-!") 
 Looks a lot better, doesn't it?
 
 \subsubsection{Keywords}
-The 'iskeyword' option specifies which characters can appear in a word:
+The `iskeyword' option specifies which characters can appear in a word:
 
 \begin{Verbatim}[samepage=true]
  :set iskeyword
@@ -668,7 +673,7 @@ This time a comma is automatically deleted.
 \subsubsection{Room for messages}
 When Vim starts there is one line at the bottom that is used for messages.
 When a message is long, it is either truncated, thus you can only see part of it, or the text scrolls and you have to press <Enter> to continue.
-You can set the 'cmdheight' option to the number of lines used for messages.
+You can set the `cmdheight' option to the number of lines used for messages.
 Example:
 
  \begin{Verbatim}[samepage=true]

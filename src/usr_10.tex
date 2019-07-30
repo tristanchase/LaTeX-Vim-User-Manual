@@ -509,9 +509,9 @@ Again, short lines that do not reach into the block are excluded.
 Other commands that change the characters in the block:
 \begin{center}
 				\begin{longtable}{c l}
-								\verb:~: & swap case \& (a -> A and A -> a) \\
-								\verb:U: & make uppercase \& (a -> A and A -> A) \\
-								\verb:u: & make lowercase \& (a -> a and A -> a) \\
+								\verb:~: & swap case & (a -> A and A -> a) \\
+								\verb:U: & make uppercase & (a -> A and A -> A) \\
+								\verb:u: & make lowercase & (a -> a and A -> a) \\
 				\end{longtable}
 \end{center}
 \subsubsection{Filling with a character}
@@ -525,7 +525,7 @@ Again, starting with the same example text from above, and then typing "\verb!rx
 \end{Verbatim}
 
 \emph{Note}:
-If you want to include characters beyond the end of the line in the block, check out the 'virtualedit' feature in chapter 25.
+If you want to include characters beyond the end of the line in the block, check out the `virtualedit' feature in chapter 25.
 
 \subsubsection{Shifting}
 The command "\verb!>!" shifts the selected text to the right one shift amount, inserting whitespace.
@@ -539,7 +539,7 @@ With the same example again, "\verb!>!" gives this result:
     Any other     long line 
 \end{Verbatim}
 
-The shift amount is specified with the 'shiftwidth' option.
+The shift amount is specified with the `shiftwidth' option.
 To change it to use 4 spaces:
 
 \begin{Verbatim}[samepage=true]
@@ -554,7 +554,7 @@ This command is limited by the amount of text that is there; so if there is less
 The "\verb!J!" command joins all selected lines together into one line.
 Thus it removes the line breaks.
 Actually, the line break, leading white space and trailing white space is replaced by one space.
-Two spaces are used after a line ending (that can be changed with the 'joinspaces' option).
+Two spaces are used after a line ending (that can be changed with the `joinspaces' option).
 
 Let's use the example that we got so familiar with now.
 The result of using the "\verb!J!" command:
@@ -650,7 +650,7 @@ The "\verb!>>!" tells Vim the "collection" file is not to be written as a new fi
 You can repeat this as many times as you like.
 \subsection{Formatting text}
 When you are typing plain text, it's nice if the length of each line is automatically trimmed to fit in the window.
-To make this happen while inserting text, set the 'textwidth' option:
+To make this happen while inserting text, set the `textwidth' option:
 
 \begin{Verbatim}[samepage=true]
  :set textwidth=72
@@ -658,7 +658,7 @@ To make this happen while inserting text, set the 'textwidth' option:
 
 You might remember that in the example vimrc file this command was used for every text file.
 Thus if you are using that vimrc file, you were already using it.
-To check the current value of 'textwidth':
+To check the current value of `textwidth':
 
 \begin{Verbatim}[samepage=true]
  :set textwidth
@@ -793,17 +793,17 @@ Starting a shell, sending it text and capturing the output requires that Vim kno
 When you have problems with filtering, check the values of these options:
 
 \begin{center}\begin{longtable}{c l}
-				'shell' & specifies the program that Vim uses to execute external programs. \\
-				'shellcmdflag' & argument to pass a command to the shell \\
-				'shellquote' & quote to be used around the command \\
-				'shellxquote' & quote to be used around the command and redirection \\
-				'shelltype' & kind of shell (only for the Amiga) \\
-				'shellslash' & use forward slashes in the command (only for MS-Windows and alikes) \\
-				'shellredir' & string used to write the command output into a file \\
+				`shell' & specifies the program that Vim uses to execute external programs. \\
+				`shellcmdflag' & argument to pass a command to the shell \\
+				`shellquote' & quote to be used around the command \\
+				`shellxquote' & quote to be used around the command and redirection \\
+				`shelltype' & kind of shell (only for the Amiga) \\
+				`shellslash' & use forward slashes in the command (only for MS-Windows and alikes) \\
+				`shellredir' & string used to write the command output into a file \\
 \end{longtable}\end{center}
 
 On Unix this is hardly ever a problem, because there are two kinds of shells: "sh" like and "csh" like.
-Vim checks the 'shell' option and sets related options automatically, depending on whether it sees "csh" somewhere in 'shell'.
+Vim checks the `shell' option and sets related options automatically, depending on whether it sees "csh" somewhere in `shell'.
 
 On MS-Windows, however, there are many different shells and you might have to tune the options to make filtering work.
 Check the help for the options for more information.

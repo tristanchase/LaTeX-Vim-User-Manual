@@ -19,10 +19,10 @@ This command splits the screen into two windows and leaves the cursor in the top
     |/* file one.c */                  |
     |~                                 |
     |~                                 |
-    |\verb!:h one.c=============================!|
+    |one.c=============================|
     |/* file one.c */                  |
     |~                                 |
-    |\verb!:h one.c=============================!|
+    |one.c=============================|
     |                                  |
     +----------------------------------+
 \end{Verbatim}
@@ -75,10 +75,10 @@ If you were editing \verb!one.c!, then the result looks like this:
     |/* file two.c */                  |
     |~                                 |
     |~                                 |
-    |\verb!:h two.c=============================!|
+    |two.c=============================|
     |/* file one.c */                  |
     |~                                 |
-    |\verb!:h one.c=============================!|
+    |one.c=============================|
     |                                  |
     +----------------------------------+
 \end{Verbatim}
@@ -137,11 +137,11 @@ Now press the left mouse button and drag.
 The status line will move, thus making the window on one side higher and the other smaller.
 
 \subsubsection{Options}
-The 'winheight' option can be set to a minimal desired height of a window and 'winminheight' to a hard minimum height.
+The `winheight' option can be set to a minimal desired height of a window and `winminheight' to a hard minimum height.
 
-Likewise, there is 'winwidth' for the minimal desired width and 'winminwidth' for the hard minimum width.
+Likewise, there is `winwidth' for the minimal desired width and `winminwidth' for the hard minimum width.
 
-The 'equalalways' option, when set, makes Vim equalize the windows sizes when a window is closed or opened.
+The `equalalways' option, when set, makes Vim equalize the windows sizes when a window is closed or opened.
 
 \subsection{Vertical splits}
 The "\verb!:split!" command creates the new window above the current one.
@@ -160,11 +160,11 @@ The result looks something like this:
 
 \begin{Verbatim}[samepage=true]
     +--------------------------------------+
-    |/* file two.c */   |/* file one.c */  |||\verb!:h !|
-    |~                  |~                 |||\verb!:h !|
-    |~                  |~                 |||\verb!:h !|
-    |~                  |~                 |||\verb!:h !|
-    |\verb!:h two.c===============one.c=============!|
+    |/* file two.c */   |/* file one.c */  |
+    |~                  |~                 |
+    |~                  |~                 |
+    |~                  |~                 |
+    |two.c===============one.c=============|
     |                                      |
     +--------------------------------------+
 \end{Verbatim}
@@ -213,14 +213,14 @@ For example, you have three windows like this:
     |/* file two.c */                  |
     |~                                 |
     |~                                 |
-    |\verb!:h two.c=============================!|
+    |two.c=============================|
     |/* file three.c */                |
     |~                                 |
     |~                                 |
-    |\verb!:h three.c===========================!|
+    |three.c===========================|
     |/* file one.c */                  |
     |~                                 |
-    |\verb!:h one.c=============================!|
+    |one.c=============================|
     |                                  |
     +----------------------------------+
 \end{Verbatim}
@@ -247,7 +247,7 @@ If this is your layout:
     |~            |~              |~            |
     |~            |~              |~            |
     |~            |~              |~            |
-    |\verb!:h two.c=========three.c=========one.c========!|
+    |two.c=========three.c=========one.c========|
     |                                           |
     +-------------------------------------------+
 						\end{Verbatim}
@@ -259,10 +259,10 @@ Then using CTRL-W K in the middle window (three.c) will result in:
     |/* three.c */                              |
     |~                                          |
     |~                                          |
-    |\verb!:h three.c====================================!|
-    |/* two.c */           |/* one.c */         |||\verb!:h !|
-    |~                     |~                   |||\verb!:h !|
-    |\verb!:h two.c==================one.c===============!|
+    |three.c====================================|
+    |/* two.c */           |/* one.c */         |
+    |~                     |~                   |
+    |two.c==================one.c===============|
     |                                           |
     +-------------------------------------------+
 \end{Verbatim}
@@ -326,13 +326,13 @@ This results in:
     +-------------------------------+
     |file one.txt                   |
     |~                              |
-    |\verb!:h one.txt========================!|
+    |one.txt========================|
     |file two.txt                   |
     |~                              |
-    |\verb!:h two.txt========================!|
+    |two.txt========================|
     |file three.txt                 |
     |~                              |
-    |\verb!:h three.txt======================!|
+    |three.txt======================|
     |                               |
     +-------------------------------+
 \end{Verbatim}
@@ -346,7 +346,7 @@ When Vim is already running, the "\verb!:all!" command opens a window for each f
 
 There is a special way to start Vim, which shows the differences between two files.
 Let's take a file "main.c" and insert a few characters in one line.
-Write this file with the 'backup' option set, so that the backup file "\verb!main.c~!" will contain the previous version of the file.
+Write this file with the `backup' option set, so that the backup file "\verb!main.c~!" will contain the previous version of the file.
 
 Type this command in a shell (not in Vim):
 
@@ -360,7 +360,7 @@ You will only see the line in which you added characters, and a few lines above 
 \begin{Verbatim}[samepage=true]
      VV           VV
     +-----------------------------------------+
-    |+ +--123 lines: /* a|+ +--123 lines: /* a|  <- fold||\verb!:h !|
+    |+ +--123 lines: /* a|+ +--123 lines: /* a|  <- fold
     |  text              |  text              |
     |  text              |  text              |
     |  text              |  text              |
@@ -370,10 +370,10 @@ You will only see the line in which you added characters, and a few lines above 
     |  text              |  text              |
     |  text              |  text              |
     |  text              |  text              |
-    |+ +--432 lines: text|+ +--432 lines: text|  <- fold||\verb!:h !|
+    |+ +--432 lines: text|+ +--432 lines: text|  <- fold
     |  ~                 | ~                  |
     |  ~                 | ~                  |
-    |\verb!:h main.c~==============main.c==============!|
+    |main.c~==============main.c==============|
     |                                         |
     +-----------------------------------------+
 \end{Verbatim}
@@ -496,7 +496,7 @@ Since there are no changes left now, Vim puts all text in a closed fold.
 
 For details about diff mode, see |\verb!:h vimdiff!|.
 \subsection{Various}
-The 'laststatus' option can be used to specify when the last window has a statusline:
+The `laststatus' option can be used to specify when the last window has a statusline:
 
 \begin{center}
 				\begin{longtable}{c l}
@@ -510,20 +510,20 @@ For Command-line commands this is done by prepending an "\verb!s!".
 For example: "\verb!:tag!" jumps to a tag, "\verb!:stag!" splits the window and jumps to a tag.
 
 For Normal mode commands a CTRL-W is prepended.
-CTRL-\textasciicircum jumps to the alternate file, CTRL-W CTRL-\textasciicircum splits the window and edits the alternate file.
+\verb!CTRL-^! jumps to the alternate file, CTRL-W \verb!CTRL-^! splits the window and edits the alternate file.
 
-The 'splitbelow' option can be set to make a new window appear below the current window.
-The 'splitright' option can be set to make a vertically split window appear right of the current window.
+The `splitbelow' option can be set to make a new window appear below the current window.
+The `splitright' option can be set to make a vertically split window appear right of the current window.
 
 When splitting a window you can prepend a modifier command to tell where the window is to appear:
 \begin{center}
 				\begin{longtable}{c l}
-								:leftabove {cmd} & left or above the current window \\
-								:aboveleft {cmd} & idem \\
-								:rightbelow {cmd} & right or below the current window \\
-								:belowright {cmd} & idem \\
-								:topleft {cmd} & at the top or left of the Vim window \\
-								:botright {cmd} & at the bottom or right of the Vim window \\
+								\verb!:leftabove {cmd}! & left or above the current window \\
+								\verb!:aboveleft {cmd}! & idem \\
+								\verb!:rightbelow {cmd}! & right or below the current window \\
+								\verb!:belowright {cmd}! & idem \\
+								\verb!:topleft {cmd}! & at the top or left of the Vim window \\
+								\verb!:botright {cmd}! & at the bottom or right of the Vim window \\
 				\end{longtable}
 \end{center}
 \subsection{Tab pages}
@@ -611,11 +611,11 @@ Will show the help text for "\verb!gt!" in a new tab page.
 
 A few more things you can do with tab pages:
 \begin{itemize}
-				\item click with the mouse in the space after the last label The next tab page will be selected, like with "gt".
-				\item click with the mouse on the "X" in the top right corner The current tab page will be closed.
+	\item [click with the mouse in the space after the last label] The next tab page will be selected, like with "gt".
+	\item [click with the mouse on the "X" in the top right corner] The current tab page will be closed.
 								Unless there are unsaved changes in the current tab page.
-				\item double click with the mouse in the top line A new tab page will be created.
-				\item the "tabonly" command Closes all tab pages except the current one.
+							\item [double click with the mouse in the top line] A new tab page will be created.
+							\item [the "tabonly" command] Closes all tab pages except the current one.
 								Unless there are unsaved changes in other tab pages.
 \end{itemize}
 For more information about tab pages see |\verb!:h tab-page!|.

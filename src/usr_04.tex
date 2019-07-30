@@ -154,7 +154,7 @@ Using a count here only applies to the number of characters deleted: "\verb!4r<E
 The "\verb!.!" command is one of the most simple yet powerful commands in Vim.
 It repeats the last change.
 For instance, suppose you are editing an HTML file and want to delete all the <B> tags.
-You position the cursor on the first < and delete the <B> with the command "df>".
+You position the cursor on the first < and delete the <B> with the command "\verb!df>!".
 You then go to the < of the next </B> and kill it using the "\verb!.!" command.
 The "\verb!.!" command executes the last change command (in this case, "\verb!df>!").
 To delete another tag, position the cursor on the < and use the "\verb!.!" command.
@@ -295,7 +295,7 @@ If you delete part of a line (a word, for instance), the "\verb!p!" command puts
 
 \subsubsection{More on putting}
 
-The "P" command puts text like "\verb!p!", but before the cursor.
+The "\verb!P!" command puts text like "\verb!p!", but before the cursor.
 When you deleted a whole line with "\verb!dd!", "\verb!P!" will put it back above the cursor.
 When you deleted a word with "\verb!dw!", "\verb!P!" will put it back just before the cursor.
 
@@ -379,7 +379,7 @@ The "Copy", "Cut" and "Paste" items are also available in the popup menu (only w
 If your Vim has a toolbar, you can also find these items there.
 
 If you are not using the GUI, or if you don't like using a menu, you have to use another way.
-You use the normal "\verb!y!" (yank) and "\verb!p!" (put) commands, but prepend "* (double-quote star) before it.
+You use the normal "\verb!y!" (yank) and "\verb!p!" (put) commands, but prepend \verb!"*! (double-quote star) before it.
 To copy a line to the clipboard:
 
  \begin{Verbatim}[samepage=true]
@@ -393,7 +393,7 @@ To put text from the clipboard back into the text:
  \end{Verbatim}
 
 This only works on versions of Vim that include clipboard support.
-More about the clipboard in section |09.3| and here: |\verb!:h clipboard!|.
+More about the clipboard in section 09.3 and here: |\verb!:h clipboard!|.
 
 \subsection{Text objects}
 

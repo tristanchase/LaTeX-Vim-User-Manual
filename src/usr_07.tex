@@ -50,7 +50,7 @@ If you want to edit another file, but not write the changes in the current file 
  \end{Verbatim}
 
 The text with changes is still there, but you can't see it.
-This is further explained in section |\hyperref[The buffer list]{\texttt{The buffer list}}|: The buffer list.
+This is further explained in section |\hyperref[The buffer list]{\texttt{The buffer list}}|.
 
 \subsection{A list of files}
 You can start Vim to edit a sequence of files.  For example:
@@ -193,7 +193,7 @@ If you really want to exit, just do it again.
 Then it will work (but not when you did other commands in between).
 
 \subsection{Jumping from file to file}
-To quickly jump between two files, press CTRL-\textasciicircum (on English-US keyboards the \textasciicircum is above the 6 key).
+To quickly jump between two files, press \verb!CTRL-^!  (on English-US keyboards the \^  is above the 6 key).
 Example:
 
  \begin{Verbatim}[samepage=true]
@@ -207,9 +207,9 @@ You are now in one.c.
  \end{Verbatim}
 
 Now you are in \verb!two.c!.
-Now use CTRL-\textasciicircum to go back to \verb!one.c!.
-Another CTRL-\textasciicircum and you are back in \verb!two.c!.
-Another CTRL-\textasciicircum and you are in \verb!one.c! again.
+Now use \verb!CTRL-^! to go back to \verb!one.c!.
+Another \verb!CTRL-^! and you are back in \verb!two.c!.
+Another \verb!CTRL-^! and you are in \verb!one.c! again.
 If you now do:
 
  \begin{Verbatim}[samepage=true]
@@ -217,11 +217,11 @@ If you now do:
  \end{Verbatim}
 
 You are in \verb!three.c!.
-Notice that the CTRL-\textasciicircum command does not change the idea of where you are in the list of files.
+Notice that the \verb!CTRL-^! command does not change the idea of where you are in the list of files.
 Only commands like "\verb!:next!" and "\verb!:previous!" do that.
 
 The file you were previously editing is called the "alternate" file.
-When you just started Vim CTRL-\textasciicircum will not work, since there isn't a previous file.
+When you just started Vim \verb!CTRL-^! will not work, since there isn't a previous file.
 
 \subsubsection{Predefined marks}
 After jumping to another file, you can use two predefined marks which are very useful:
@@ -299,10 +299,10 @@ If you want to have one, all you need to do is execute the following command:
  :set backup
  \end{Verbatim}
 
-The name of the backup file is the original file with a  \textasciitilde  added to the end.
+The name of the backup file is the original file with a  \verb!~!  added to the end.
 If your file is named \verb!data.txt!, for example, the backup file name is \verb!data.txt~!.
 
-If you do not like the fact that the backup files end with \textasciitilde, you can change the extension:
+If you do not like the fact that the backup files end with \verb!~!, you can change the extension:
 
  \begin{Verbatim}[samepage=true]
  :set backupext=.bak
@@ -310,11 +310,11 @@ If you do not like the fact that the backup files end with \textasciitilde, you 
 
 This will use \verb!data.txt.bak! instead of \verb!data.txt~!.
 
-Another option that matters here is 'backupdir'.
+Another option that matters here is `backupdir'.
 It specifies where the backup file is written.
 The default, to write the backup in the same directory as the original file, will mostly be the right thing.
 
-Note: When the 'backup' option isn't set but the 'writebackup' is, Vim will still create a backup file.
+Note: When the `backup' option isn't set but the `writebackup' is, Vim will still create a backup file.
 However, it is deleted as soon as writing the file was completed successfully.
 This functions as a safety against losing your original file when writing fails in some way (disk full is the most common cause; being hit by lightning might be another, although less common).
 
@@ -323,7 +323,7 @@ If you are editing source files, you might want to keep the file before you make
 But the backup file will be overwritten each time you write the file.
 Thus it only contains the previous version, not the first one.
 
-To make Vim keep the original file, set the 'patchmode' option.
+To make Vim keep the original file, set the `patchmode' option.
 This specifies the extension used for the first backup of a changed file.
 Usually you would do this:
 
@@ -334,9 +334,9 @@ Usually you would do this:
 When you now edit the file data.txt for the first time, make changes and write the file, Vim will keep a copy of the unchanged file under the name "\verb!data.txt.orig!".
 
 If you make further changes to the file, Vim will notice that "data.txt.orig" already exists and leave it alone.
-Further backup files will then be called "data.txt~" (or whatever you specified with 'backupext').
+Further backup files will then be called "data.txt~" (or whatever you specified with `backupext').
 
-If you leave 'patchmode' empty (that is the default), the original file will not be kept.
+If you leave `patchmode' empty (that is the default), the original file will not be kept.
 
 \subsection{Copy text between files}
 This explains how to copy text from one file to another.
