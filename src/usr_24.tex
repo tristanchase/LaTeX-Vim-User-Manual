@@ -14,7 +14,7 @@ The <Del> key does the same for the character under (after) the cursor.
 When you typed a whole word wrong, use CTRL-W:
 
     The horse had fallen to the sky 
-                       CTRL-W
+                                   CTRL-W
     The horse had fallen to the 
 \end{Verbatim}
 
@@ -25,7 +25,7 @@ With the cursor on the "\verb!f!" of "\verb!fallen!" in the next line pressing C
 
 \begin{Verbatim}[samepage=true]
     The horse had fallen to the 
-              CTRL-U
+                  CTRL-U
     fallen to the 
 \end{Verbatim}
 
@@ -68,7 +68,7 @@ These special keys are most useful when writing a mapping that doesn't leave Ins
 The extra typing doesn't matter then.
 An overview of the keys you can use in Insert mode:
 
-\begin{center} \begin{tabular}{c l}
+\begin{center} \begin{tabular}{l l}
 				<C-Home> & to start of the file \\
 				<PageUp> & a whole screenful up \\
 				<Home> & to start of line \\
@@ -95,7 +95,7 @@ In case there is no matching \verb!(!, Vim will beep.
 Then you know that you might have forgotten the \verb!(! somewhere, or typed a \verb!)! too many.
 The match will also be shown for \verb![]! and \verb!{}! pairs.
 You don't have to wait with typing the next character, as soon as Vim sees it the cursor will move back and inserting continues as before.
-You can change the time Vim waits with the 'matchtime' option.
+You can change the time Vim waits with the \verb!'matchtime'! option.
 For example, to make Vim wait one and a half second:
 
 \begin{Verbatim}[samepage=true]
@@ -156,17 +156,17 @@ By default, it searches the following places:
 				\item All files \verb!#included! by the current file
 \end{enumerate}
 \subsubsection{Options}
-You can customize the search order with the 'complete' option.
+You can customize the search order with the \verb!'complete'! option.
 
-The 'ignorecase' option is used.
+The \verb!'ignorecase'! option is used.
 When it is set, case differences are ignored when searching for matches.
 
-A special option for completion is 'infercase'.
-This is useful to find matches while ignoring case ('ignorecase' must be set) but still using the case of the word typed so far.
+A special option for completion is \verb!'infercase'!.
+This is useful to find matches while ignoring case (\verb!'ignorecase'! must be set) but still using the case of the word typed so far.
 Thus if you type "\verb!For!" and Vim finds a match "fortunately", it will result in "Fortunately".
 \subsubsection{Completing specific items}
 If you know what you are looking for, you can use these commands to complete with a certain type of item:
-\begin{center} \begin{tabular}{c l}
+\begin{center} \begin{tabular}{l l}
 				CTRL-X CTRL-F & file names \\
 				CTRL-X CTRL-L & whole lines \\
 				CTRL-X CTRL-D & macro definitions (also in included files) \\
@@ -260,11 +260,11 @@ Or:
  filetype plugin indent on
 \end{Verbatim}
 
-For C code you need to create a tags file and set the 'tags' option.
+For C code you need to create a tags file and set the \verb!'tags'! option.
 That is explained |\verb!:h ft-c-omni!|.
 For other filetypes you may need to do something similar, look below |\verb!:h compl-omni-filetypes!|.
 It only works for specific filetypes.
-Check the value of the 'omnifunc' option to find out if it would work.
+Check the value of the \verb!'omnifunc'! option to find out if it would work.
 \subsection{Repeating an insert}
 If you press CTRL-A, the editor inserts the text you typed the last time you were in Insert mode.
 
@@ -584,7 +584,7 @@ Here are three lines of it:
 \begin{Verbatim}[samepage=true]
   AC ~_ 159  NS |  160  !I ¡  161  Ct ¢  162  Pd £  163  Cu ¤  164  Ye ¥  165
   BB ¦  166  SE §  167  ': ¨  168  Co ©  169  -a ª  170  << «  171  NO ¬  172
-  -- ­  173  Rg ®  174  'm ¯  175  DG °  176  +- ±  177  2S ²  178  3S ³  179 
+  --    173  Rg ®  174  'm ¯  175  DG °  176  +- ±  177  2S ²  178  3S ³  179 
 \end{Verbatim}
  
 This shows, for example, that the digraph you get by typing CTRL-K Pd is the character (£).
@@ -605,7 +605,7 @@ Always use "\verb!:digraphs!" to find out which digraphs are currently available
 You can define your own digraphs.  Example:
 
 \begin{Verbatim}[samepage=true]
- :digraph a" diiiiiii
+ :digraph a" ä
 \end{Verbatim}
 
 This defines that CTRL-K a" inserts an (ä) character.

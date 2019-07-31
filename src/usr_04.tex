@@ -496,7 +496,7 @@ You can find a list of operators here: |\verb!:h operator!|
 For example, there are many other ways to delete pieces of text.
 Here are a few often used ones:
 
-\begin{longtable}{c l}
+\begin{longtable}{l l}
 				x & delete character under the cursor (short for "\verb!dl!") \\
 				X & delete character before the cursor (short for "\verb!dh!") \\
 				D & delete from cursor to end of line (short for "\verb!d$!") \\
@@ -517,7 +517,7 @@ There are a few often used commands to make changes that didn't fit somewhere el
 \begin{tabularx}{\textwidth}{c X}
 				\textasciitilde & 
 				change case of the character under the cursor, and move the cursor to the next character.
-				This is not an operator (unless 'tildeop' is set), thus you can't use it with a motion command.
+				This is not an operator (unless \verb!'tildeop'! is set), thus you can't use it with a motion command.
 				It does work in Visual mode and changes case for all the selected text then. \\
 
 				\texttt{I} &

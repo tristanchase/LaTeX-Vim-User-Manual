@@ -85,7 +85,7 @@ If you never want a toolbar, use this command in your vimrc file:
  :set guioptions-=T
  \end{Verbatim}
 
-This removes the `T' flag from the `guioptions' option.
+This removes the \verb!'T'! flag from the \verb!'guioptions'! option.
 Other parts of the GUI can also be enabled or disabled with this option.
 See the help for it.
 
@@ -95,20 +95,20 @@ It does the obvious thing.
 When you split the window, each window will get its own scrollbar.
 
 You can make a horizontal scrollbar appear with the menu item Edit/Global Settings/Toggle Bottom Scrollbar.
-This is useful in diff mode, or when the `wrap' option has been reset (more about that later).
+This is useful in diff mode, or when the \verb!'wrap'! option has been reset (more about that later).
 
 When there are vertically split windows, only the windows on the right side will have a scrollbar.
 However, when you move the cursor to a window on the left, it will be this one the that scrollbar controls.
 This takes a bit of time to get used to.
 
 When you work with vertically split windows, consider adding a scrollbar on the left.
-This can be done with a menu item, or with the `guioptions' option:
+This can be done with a menu item, or with the \verb!'guioptions'! option:
 
  \begin{Verbatim}[samepage=true]
  :set guioptions+=l
  \end{Verbatim}
 
-This adds the `l' flag to `guioptions'.
+This adds the \verb!'l'! flag to \verb!'guioptions'!.
 \subsection{Using the mouse}
 Standards are wonderful.
 In Microsoft Windows, you can use the mouse to select text in a standard manner.
@@ -144,7 +144,7 @@ Here follows a summary.
 
 \subsubsection{Mswin mouse behavior}
 
-\begin{center}\begin{longtable}{c l}
+\begin{center}\begin{longtable}{l l}
 				Left mouse click & position the cursor \\
 				Left mouse drag & select text in Select mode (see |\hyperref[Select mode]{\texttt{Select mode}}|) \\
 				Left mouse click, with Shift & extend the selected text until the mouse pointer \\
@@ -155,12 +155,12 @@ Here follows a summary.
 The mouse can be further tuned.
 Check out these options if you want to change the way how the mouse works:
 
-\begin{center}\begin{longtable}{c l}
-				`mouse' & in which mode the mouse is used by Vim \\
-				`mousemodel' & what effect a mouse click has \\
-				`mousetime' & time between clicks for a double-click \\
-				`mousehide' & hide the mouse while typing \\
-				`selectmode' & whether the mouse starts Visual or Select mode \\
+\begin{center}\begin{longtable}{l l}
+				\verb!'mouse'! & in which mode the mouse is used by Vim \\
+				\verb!'mousemodel'! & what effect a mouse click has \\
+				\verb!'mousetime'! & time between clicks for a double-click \\
+				\verb!'mousehide'! & hide the mouse while typing \\
+				\verb!'selectmode'! & whether the mouse starts Visual or Select mode \\
 \end{longtable}\end{center}
 \subsection{The clipboard}
 In section |\hyperref[Using the clipboard]{\texttt{Using the clipboard}}| the basic use of the clipboard was explained.
@@ -273,5 +273,5 @@ The selected text is changed like in Visual mode.
 The other shifted cursor keys do what you expect.
 <S-End> and <S-Home> also work.
 
-You can tune the way Select mode works with the `selectmode' option.
+You can tune the way Select mode works with the \verb!'selectmode'! option.
 \clearpage

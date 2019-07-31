@@ -17,7 +17,7 @@ The MS-DOS (and Microsoft Windows) folks decided to keep the old <CR><LF>.
 This means that if you try to move a file from one system to another, you have line-break problems.
 The Vim editor automatically recognizes the different file formats and handles things properly behind your back.
 
-The option 'fileformats' contains the various formats that will be tried when a new file is edited.
+The option \verb!'fileformats'! contains the various formats that will be tried when a new file is edited.
 The following command, for example, tells Vim to try UNIX format first and MS-DOS format second:
 
 \begin{Verbatim}[samepage=true]
@@ -43,7 +43,7 @@ To see which format you have, execute the following command:
 \end{Verbatim}
 
 The three names that Vim uses are:
-\begin{center} \begin{tabular}{c c}
+\begin{center} \begin{tabular}{l l}
 				unix & <LF> \\
 				dos & <CR><LF> \\
 				mac & <CR>
@@ -57,7 +57,7 @@ On the Macintosh, where <CR> is the line break character, it's possible to have 
 
 The result is that it's not possible to be 100\% sure whether a file containing both <CR> and <LF> characters is a Mac or a Unix file.
 Therefore, Vim assumes that on Unix you probably won't edit a Mac file, and doesn't check for this type of file.
-To check for this format anyway, add "\verb!mac!" to 'fileformats':
+To check for this format anyway, add "\verb!mac!" to \verb!'fileformats'!:
 
 \begin{Verbatim}[samepage=true]
  :set fileformats+=mac
@@ -76,13 +76,13 @@ Suppose you do want to edit the file that way?  Then you need to overrule the fo
 \end{Verbatim}
 
 The "\verb!++!" string is an item that tells Vim that an option name follows, which overrules the default for this single command.
-"\verb!++ff!" is used for 'fileformat'.
+"\verb!++ff!" is used for \verb!'fileformat'!.
 You could also use "\verb!++ff=mac!" or "\verb!++ff=dos!".
 
 This doesn't work for any option, only "\verb!++ff!" and "\verb!++enc!" are currently implemented.
 The full names "\verb!++fileformat!" and "\verb!++encoding!" also work.
 \subsubsection{Conversion}
-You can use the 'fileformat' option to convert from one file format to another.
+You can use the \verb!'fileformat'! option to convert from one file format to another.
 Suppose, for example, that you have an MS-DOS file named README.TXT that you want to convert to UNIX format.
 Start by editing the MS-DOS format file: vim README.TXT
 
@@ -126,10 +126,10 @@ Accessing files over the internet works with the netrw plugin.
 Currently URLs with these formats are recognized:
 
 \begin{Verbatim}[samepage=true]
-    ftp:// uses ftp
+    ftp:// 	uses ftp
     rcp://      uses rcp
     scp://      uses scp
-    http:// uses wget reading only
+    http:// 	uses wget reading only
 \end{Verbatim}
 
 Vim doesn't do the communication itself, it relies on the mentioned programs to be available on your computer.
@@ -179,7 +179,7 @@ If you try to view this file using another program, all you get is garbage.
 Also, if you edit the file with Vim and enter the wrong key, you get garbage.
 Vim does not have a mechanism to check if the key is the right one (this makes it much harder to break the key).
 \subsubsection{Switching encryption on and off}
-To disable the encryption of a file, set the 'key' option to an empty string:
+To disable the encryption of a file, set the \verb!'key'! option to an empty string:
 
 \begin{Verbatim}[samepage=true]
  :set key=
@@ -187,7 +187,7 @@ To disable the encryption of a file, set the 'key' option to an empty string:
 
 The next time you write the file this will be done without encryption.
 
-Setting the 'key' option to enable encryption is not a good idea, because the password appears in the clear.
+Setting the \verb!'key'! option to enable encryption is not a good idea, because the password appears in the clear.
 Anyone shoulder-surfing can read your password.
 
 To avoid this problem, the "\verb!:X!" command was created.
@@ -238,9 +238,9 @@ To make sure that Vim does not use its clever tricks in the wrong way, add the "
  vim -b datafile
 \end{Verbatim}
 
-This sets the 'binary' option.
+This sets the \verb!'binary'! option.
 The effect of this is that unexpected side effects are turned off.
-For example, 'textwidth' is set to zero, to avoid automatic formatting of lines.
+For example, \verb!'textwidth'! is set to zero, to avoid automatic formatting of lines.
 And files are always read in Unix file format.
 
 Binary mode can be used to change a message in a program.
@@ -262,7 +262,7 @@ The output, when the cursor is on an <Esc>, looks like this:
 \end{Verbatim}
 
 There might not be many line breaks in the file.
-To get some overview switch the 'wrap' option off:
+To get some overview switch the \verb!'wrap'! option off:
 
 \begin{Verbatim}[samepage=true]
  :set nowrap
@@ -282,7 +282,7 @@ The output is verbose:
 \end{Verbatim}
 
 The last two numbers are the byte position in the file and the total number of bytes.
-This takes into account how 'fileformat' changes the number of bytes that a line break uses.
+This takes into account how \verb!'fileformat'! changes the number of bytes that a line break uses.
 To move to a specific byte in the file, use the "\verb!go!" command.
 For example, to move to byte 2345:
 
@@ -336,9 +336,9 @@ And compressing it again when you write it.
 
 These compression methods are currently supported:
 \begin{itemize}
-				\item .Z  compress
-				\item .gz gzip
-				\item .bz2 bzip2
+				\item .Z    compress
+				\item .gz   gzip
+				\item .bz2  bzip2
 \end{itemize}
 Vim uses the mentioned programs to do the actual compression and decompression.
 You might need to install the programs first.

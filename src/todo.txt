@@ -1,0 +1,4 @@
+* Restore 'options' from `options' (:%s)
+* Enclose 'options' with \verb!'options'! (@v)
+* Go through table formatting
+

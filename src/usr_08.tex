@@ -137,11 +137,11 @@ Now press the left mouse button and drag.
 The status line will move, thus making the window on one side higher and the other smaller.
 
 \subsubsection{Options}
-The `winheight' option can be set to a minimal desired height of a window and `winminheight' to a hard minimum height.
+The \verb!'winheight'! option can be set to a minimal desired height of a window and \verb!'winminheight'! to a hard minimum height.
 
-Likewise, there is `winwidth' for the minimal desired width and `winminwidth' for the hard minimum width.
+Likewise, there is \verb!'winwidth'! for the minimal desired width and \verb!'winminwidth'! for the hard minimum width.
 
-The `equalalways' option, when set, makes Vim equalize the windows sizes when a window is closed or opened.
+The \verb!'equalalways'! option, when set, makes Vim equalize the windows sizes when a window is closed or opened.
 
 \subsection{Vertical splits}
 The "\verb!:split!" command creates the new window above the current one.
@@ -346,7 +346,7 @@ When Vim is already running, the "\verb!:all!" command opens a window for each f
 
 There is a special way to start Vim, which shows the differences between two files.
 Let's take a file "main.c" and insert a few characters in one line.
-Write this file with the `backup' option set, so that the backup file "\verb!main.c~!" will contain the previous version of the file.
+Write this file with the \verb!'backup'! option set, so that the backup file "\verb!main.c~!" will contain the previous version of the file.
 
 Type this command in a shell (not in Vim):
 
@@ -496,7 +496,7 @@ Since there are no changes left now, Vim puts all text in a closed fold.
 
 For details about diff mode, see |\verb!:h vimdiff!|.
 \subsection{Various}
-The `laststatus' option can be used to specify when the last window has a statusline:
+The \verb!'laststatus'! option can be used to specify when the last window has a statusline:
 
 \begin{center}
 				\begin{longtable}{c l}
@@ -512,8 +512,8 @@ For example: "\verb!:tag!" jumps to a tag, "\verb!:stag!" splits the window and 
 For Normal mode commands a CTRL-W is prepended.
 \verb!CTRL-^! jumps to the alternate file, CTRL-W \verb!CTRL-^! splits the window and edits the alternate file.
 
-The `splitbelow' option can be set to make a new window appear below the current window.
-The `splitright' option can be set to make a vertically split window appear right of the current window.
+The \verb!'splitbelow'! option can be set to make a new window appear below the current window.
+The \verb!'splitright'! option can be set to make a vertically split window appear right of the current window.
 
 When splitting a window you can prepend a modifier command to tell where the window is to appear:
 \begin{center}

@@ -59,7 +59,7 @@ It is safe to delete the swap file now.
 
 It is normal that the last few changes can not be recovered.
 Vim flushes the changes to disk when you don't type for about four seconds, or after typing about two hundred characters.
-This is set with the `updatetime' and `updatecount' options.
+This is set with the \verb!'updatetime'! and \verb!'updatecount'! options.
 Thus when Vim didn't get a chance to save itself when the system went down, the changes after the last flush will be lost.
 
 If you were editing without a file name, give an empty string as argument:
@@ -117,10 +117,10 @@ This is also handy when the swap file is in another directory than expected.
 Vim recognizes files with the pattern \verb!*.s[uvw][a-z]! as swap files.
 
 If this still does not work, see what file names Vim reports and rename the files accordingly.
-Check the `directory' option to see where Vim may have put the swap file.
+Check the \verb!'directory'! option to see where Vim may have put the swap file.
 
-\emph{Note}: Vim tries to find the swap file by searching the directories in the `dir' option, looking for files that match "\verb!filename.sw?!".
-If wildcard expansion doesn't work (e.g., when the `shell' option is invalid), Vim does a desperate try to find the file "\verb!filename.swp!".
+\emph{Note}: Vim tries to find the swap file by searching the directories in the \verb!'dir'! option, looking for files that match "\verb!filename.sw?!".
+If wildcard expansion doesn't work (e.g., when the \verb!'shell'! option is invalid), Vim does a desperate try to find the file "\verb!filename.swp!".
 If that fails too, you will have to give the name of the swapfile itself to be able to recover the file.
 \subsection{Crashed or not?}
 \label{ATTENTION}
@@ -260,7 +260,7 @@ Vim cannot always detect that a swap file already exists for a file.
 This is the case when the other edit session puts the swap files in another directory or when the path name for the file is different when editing it on different machines.
 Therefore, don't rely on Vim always warning you.
 
-If you really don't want to see this message, you can add the `\verb!A!' flag to the `shortmess' option.
+If you really don't want to see this message, you can add the `\verb!A!' flag to the \verb!'shortmess'! option.
 But it's very unusual that you need this.
 
 For remarks about encryption and the swap file, see |\verb!:h :recover-crypt!|.
@@ -269,10 +269,10 @@ For remarks about encryption and the swap file, see |\verb!:h :recover-crypt!|.
 |\verb!:h swap-file!|    An explanation about where the swap file will be created and what its name is. \\
 |\verb!:h :preserve!|    Manually flushing the swap file to disk. \\
 |\verb!:h :swapname!|    See the name of the swap file for the current file. \\
-`updatecount'  Number of key strokes after which the swap file is flushed to disk. \\
-`updatetime'    Timeout after which the swap file is flushed to disk. \\
-`swapsync'    Whether the disk is synced when the swap file is flushed. \\
-`directory'  List of directory names where to store the swap file. \\
-`maxmem'    Limit for memory usage before writing text to the swap file. \\
-`maxmemtot'  Same, but for all files in total. \\
+\verb!'updatecount'!  Number of key strokes after which the swap file is flushed to disk. \\
+\verb!'updatetime'!    Timeout after which the swap file is flushed to disk. \\
+\verb!'swapsync'!    Whether the disk is synced when the swap file is flushed. \\
+\verb!'directory'!  List of directory names where to store the swap file. \\
+\verb!'maxmem'!    Limit for memory usage before writing text to the swap file. \\
+\verb!'maxmemtot'!  Same, but for all files in total. \\
 \clearpage

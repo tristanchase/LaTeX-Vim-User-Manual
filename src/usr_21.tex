@@ -9,8 +9,8 @@ This stops Vim and takes you back to the shell it was started in.
 You can then do any other commands until you are bored with them.
 Then bring back Vim with the "\verb!fg!" command.
 
- CTRL-Z
- {any sequence of shell commands}
+ CTRL-Z\\
+ \{any sequence of shell commands\}\\
  fg
 
 You are right back where you left Vim, nothing has changed.
@@ -44,9 +44,9 @@ The "\verb:!:" is also used in other places where a program is run.
 Let's take a look at an overview:
 
 \begin{Verbatim}[samepage=true]
-    :!{program}     execute {program}
-    :r !{program}      execute {program} and read its output
-    :w !{program}     execute {program} and send text to its input
+    :!{program}     	execute {program}
+    :r !{program}      	execute {program} and read its output
+    :w !{program}     	execute {program} and send text to its input
     :[range]!{program}  filter text through {program}
 \end{Verbatim}
 
@@ -66,7 +66,7 @@ The difference is that a new shell is started.
 
 When using the GUI the shell will be using the Vim window for its input and output.
 Since Vim is not a terminal emulator, this will not work perfectly.
-If you have trouble, try toggling the 'guipty' option.
+If you have trouble, try toggling the \verb!'guipty'! option.
 If this still doesn't work well enough, start a new terminal to run the shell in.
 For example with:
 
@@ -90,7 +90,7 @@ The viminfo file is designed to store status information:
 Each time you exit Vim it will store this information in a file, the viminfo file.
 When Vim starts again, the viminfo file is read and the information restored.
 
-The 'viminfo' option is set by default to restore a limited number of items.
+The \verb!'viminfo'! option is set by default to restore a limited number of items.
 You might want to set it to remember more information.
 This is done through the following command:
 
@@ -103,7 +103,7 @@ The syntax of this string is an option character followed by an argument.
 The option/argument pairs are separated by commas.
 
 Take a look at how you can build up your own viminfo string.
-First, the \verb!''! option is used to specify how many files for which you save marks (a-z).
+First, the \verb!'! option is used to specify how many files for which you save marks (a-z).
 Pick a nice even number for this option (1000, for instance).
 Your command now looks like this:
 
@@ -136,13 +136,13 @@ Other options you might want to use:
 				\verb!/! & number of lines to save from the search history \\
 				\verb!r! & removable media, for which no marks will be stored (can be used several times) \\
 				\verb!!! & global variables that start with an uppercase letter and don't contain lowercase letters \\
-				\verb!h! & disable 'hlsearch' highlighting when starting \\
+				\verb!h! & disable \verb!'hlsearch'! highlighting when starting \\
 				\verb!%! & the buffer list (only restored when starting Vim without file arguments) \\
-				\verb!c! & convert the text using 'encoding' \\
+				\verb!c! & convert the text using \verb!'encoding'! \\
 				\verb!n! & name used for the viminfo file (must be the last option) \\
 \end{longtable} \end{center}
 
-See the 'viminfo' option and |\verb!:h viminfo-file!| for more information.
+See the \verb!'viminfo'! option and |\verb!:h viminfo-file!| for more information.
 
 When you run Vim multiple times, the last one exiting will store its information.
 This may cause information that previously exiting Vims stored to be lost.
@@ -166,7 +166,7 @@ The position that \verb!'0! pointed to is made \verb!'1!.
 And \verb!'1! is made to \verb!'2!, and so forth.
 Mark \verb!'9! is lost.
 
-The |\verb!:h :marks!| command is useful to find out where '0 to '9 will take you.
+The |\verb!:h :marks!| command is useful to find out where \verb!'0! to \verb!'9! will take you.
 
 \subsubsection{Getting back to some file}
 If you want to go back to a file that you edited recently, but not when exiting Vim, there is a slightly more complicated way.
@@ -214,7 +214,7 @@ You will get a prompt:
 
 Type "\verb!2!" and press <Enter> to edit the second file.
 
-More info at |:oldfiles|, |v:oldfiles| and |\verb!:h c_#<!|.
+More info at |\verb!:h :oldfiles!|, |\verb!:h v:oldfiles!| and |\verb!:h c_#<!|.
 \subsubsection{Move info from one vim to another}
 You can use the "\verb!:wviminfo!" and "\verb!:rviminfo!" commands to save and restore the information while still running Vim.
 This is useful for exchanging register contents between two instances of Vim, for example.
@@ -247,7 +247,7 @@ You can do this by saving your editing session and restoring it the next day.
 
 A Vim session contains all the information about what you are editing.
 This includes things such as the file list, window layout, global variables, options and other information.
-(Exactly what is remembered is controlled by the 'sessionoptions' option, described below.)
+(Exactly what is remembered is controlled by the \verb!'sessionoptions'! option, described below.)
 
 The following command creates a session file:
 
@@ -268,16 +268,16 @@ If you want to start Vim and restore a specific session, you can use the followi
 \end{Verbatim}
 
 This tells Vim to read a specific file on startup.
-The 'S' stands for session (actually, you can source any Vim script with \verb!-S!, thus it might as well stand for "source").
+The \verb!'S'! stands for session (actually, you can source any Vim script with \verb!-S!, thus it might as well stand for "source").
 
 The windows that were open are restored, with the same position and size as before.
 Mappings and option values are like before.
 
-What exactly is restored depends on the `sessionoptions' option.
+What exactly is restored depends on the \verb!'sessionoptions'! option.
 
 The default value is `blank,buffers,curdir,folds,help,options,winsize'.
 
-\begin{center} \begin{tabular}{c l}
+\begin{center} \begin{tabular}{l l}
 				blank & keep empty windows \\
 				buffers & all buffers, not only the ones in a window \\
 				curdir & the current directory \\
@@ -309,7 +309,7 @@ This overwrites the previous session.
 The next time you load the secret session you can continue where you were at this point.
 And finally you load the new "boring" session.
 
-If you open help windows, split and close various window, and generally mess up the window layout, you can go back to the last saved session:
+If you open help windows, split and close various windows, and generally mess up the window layout, you can go back to the last saved session:
 
 \begin{Verbatim}[samepage=true]
  :source ~/.vim/boring.vim
@@ -327,15 +327,15 @@ For example, this is a nice layout to use:
     |         VIM - main help file           |
     |                                        |
     |Move around:  Use the cursor keys, or "h|
-    |\verb!:h help.txt================================!|
+    |help.txt================================|
     |explorer   |                            |
-    |dir        |~                           |||\verb!:h !|
-    |dir        |~                           |||\verb!:h !|
-    |file       |~                           |||\verb!:h !|
-    |file       |~                           |||\verb!:h !|
-    |file       |~                           |||\verb!:h !|
-    |file       |~                           |||\verb!:h !|
-    |\verb!:h ~/=========!|[No File]===================|
+    |dir        |~                           |
+    |dir        |~                           |
+    |file       |~                           |
+    |file       |~                           |
+    |file       |~                           |
+    |file       |~                           |
+    |~/=========|[No File]===================|
     |                                        |
     +----------------------------------------+
 \end{Verbatim}
@@ -372,7 +372,7 @@ Double clicking with the mouse will also do this.
 
 \subsubsection{Unix and ms-windows}
 Some people have to do work on MS-Windows systems one day and on Unix another day.
-If you are one of them, consider adding "\verb!slash!" and "\verb!unix!" to 'sessionoptions'.
+If you are one of them, consider adding "\verb!slash!" and "\verb!unix!" to \verb!'sessionoptions'!.
 The session files will then be written in a format that can be used on both systems.
 This is the command to put in your vimrc file:
 
@@ -410,7 +410,7 @@ A session stores the looks of the whole of Vim.
 When you want to store the properties for one window only, use a view.
 
 The use of a view is for when you want to edit a file in a specific way.
-For example, you have line numbers enabled with the 'number' option and defined a few folds.
+For example, you have line numbers enabled with the \verb!'number'! option and defined a few folds.
 Just like with sessions, you can remember this view on the file and restore it later.
 Actually, when you store a session, it stores the view of each window.
 
@@ -432,7 +432,7 @@ When you later edit the same file you get the view back with this command:
 
 That's easy, isn't it?
 
-Now you want to view the file without the 'number' option on, or with all folds open, you can set the options to make the window look that way.
+Now you want to view the file without the \verb!'number'! option on, or with all folds open, you can set the options to make the window look that way.
 Then store this view with:
 
 \begin{Verbatim}[samepage=true]
@@ -474,7 +474,7 @@ The solution for this situation is adding a modeline to the file.
 This is a line of text that tells Vim the values of options, to be used in this file only.
 
 A typical example is a C program where you make indents by a multiple of 4 spaces.
-This requires setting the 'shiftwidth' option to 4.
+This requires setting the \verb!'shiftwidth'! option to 4.
 This modeline will do that:
 
 \begin{Verbatim}[samepage=true]
@@ -482,20 +482,20 @@ This modeline will do that:
 \end{Verbatim}
 
 Put this line as one of the first or last five lines in the file.
-When editing the file, you will notice that 'shiftwidth' will have been set to four.
+When editing the file, you will notice that \verb!'shiftwidth'! will have been set to four.
 When editing another file, it's set back to the default value of eight.
 
 For some files the modeline fits well in the header, thus it can be put at the top of the file.
 For text files and other files where the modeline gets in the way of the normal contents, put it at the end of the file.
 
-The 'modelines' option specifies how many lines at the start and end of the file are inspected for containing a modeline.
+The \verb!'modelines'! option specifies how many lines at the start and end of the file are inspected for containing a modeline.
 To inspect ten lines:
 
 \begin{Verbatim}[samepage=true]
  :set modelines=10
 \end{Verbatim}
 
-The 'modeline' option can be used to switch this off.
+The \verb!'modeline'! option can be used to switch this off.
 Do this when you are working as root on Unix or Administrator on MS-Windows, or when you don't trust the files you are editing:
 
 \begin{Verbatim}[samepage=true]

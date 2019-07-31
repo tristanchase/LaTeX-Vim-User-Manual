@@ -4,7 +4,7 @@ ways to browse the directory tree.  There are commands to jump to a file that
 is mentioned in another.  And Vim remembers which files have been edited
 before.
 \localtableofcontentswithrelativedepth{+1}
-*22.1*    The file browser
+\subsection{The file browser}
 
 Vim has a plugin that makes it possible to edit a directory.  Try this:
 
@@ -58,58 +58,60 @@ Pressing "\verb!-!" does the same thing, without the need to move to the "\verb!
 
 You can press <F1> to get help on the things you can do in the netrw file browser.
 This is what you get:
-
+% I moved this two columns to the left for aesthetic purposes TMC
 \begin{Verbatim}[samepage=true]
-    9. Directory Browsing     netrw-browse   netrw-dir   netrw-list   netrw-help 
+  9. Directory Browsing     netrw-browse   netrw-dir   netrw-list   netrw-help 
 
-    MAPS                                                                  netrw-maps 
-          <F1>.............Help.......................................|\verb!:h netrw-help!|
-          <cr>.............Browsing...................................|\verb!:h netrw-cr!|
-          <del>............Deleting Files or Directories..............|\verb!:h netrw-delete!|
-          -................Going Up...................................|\verb!:h netrw--!|
-          a................Hiding Files or Directories................|\verb!:h netrw-a!|
-          mb...............Bookmarking a Directory....................|\verb!:h netrw-mb!|
-          gb...............Changing to a Bookmarked Directory.........|\verb!:h netrw-gb!|
-          c................Make Browsing Directory The Current Dir....|\verb!:h netrw-c!|
-          d................Make A New Directory.......................|\verb!:h netrw-d!|
-          D................Deleting Files or Directories..............|\verb!:h netrw-D!|
-          <c-h>............Edit File/Directory Hiding List............|\verb!:h netrw-ctrl-h!|
-          i................Change Listing Style.......................|\verb!:h netrw-i!|
-          <c-l>............Refreshing the Listing.....................|\verb!:h netrw-ctrl-l!|
-          o................Browsing with a Horizontal Split...........|\verb!:h netrw-o!|
-          p................Use Preview Window.........................|\verb!:h netrw-p!|
-          P................Edit in Previous Window....................|\verb!:h netrw-p!|
-          q................Listing Bookmarks and History..............|\verb!:h netrw-q!|
-          r................Reversing Sorting Order....................|\verb!:h netrw-r!|
-        (etc)
+  MAPS                                                                  netrw-maps 
+        <F1>.............Help.......................................|netrw-help|
+        <cr>.............Browsing...................................|netrw-cr|
+        <del>............Deleting Files or Directories..............|netrw-delete|
+        -................Going Up...................................|netrw--|
+        a................Hiding Files or Directories................|netrw-a|
+        mb...............Bookmarking a Directory....................|netrw-mb|
+        gb...............Changing to a Bookmarked Directory.........|netrw-gb|
+        c................Make Browsing Directory The Current Dir....|netrw-c|
+        d................Make A New Directory.......................|netrw-d|
+        D................Deleting Files or Directories..............|netrw-D|
+        <c-h>............Edit File/Directory Hiding List............|netrw-ctrl-h|
+        i................Change Listing Style.......................|netrw-i|
+        <c-l>............Refreshing the Listing.....................|netrw-ctrl-l|
+        o................Browsing with a Horizontal Split...........|netrw-o|
+        p................Use Preview Window.........................|netrw-p|
+        P................Edit in Previous Window....................|netrw-p|
+        q................Listing Bookmarks and History..............|netrw-q|
+        r................Reversing Sorting Order....................|netrw-r|
+      (etc)
 \end{Verbatim}
 
 The <F1> key thus brings you to a netrw directory browsing contents help page.
-It's a regular help page; use the usual |CTRL-]| to jump to tagged help items and |\verb!:h CTRL-O!| to jump back.
+It's a regular help page; use the usual |\verb!CTRL-]!| to jump to tagged help items and |\verb!:h CTRL-O!| to jump back.
 
 To select files for display and editing: (with the cursor is atop a filename)
 
-\begin{center} \begin{longtable}{c c c}
+\begin{center} \begin{longtable}{l l l}
 				<enter> & Open the file in the current window. & |\verb!:h netrw-cr!| \\
 				o & Horizontally split window and display file & |\verb!:h netrw-o!| \\
 				v & Vertically split window and display file & |\verb!:h netrw-v!| \\
-				p & Use the |preview-window| & |\verb!:h netrw-p!| \\
+				p & Use the |\verb!:h preview-window!| & |\verb!:h netrw-p!| \\
 				P & Edit in the previous window & |\verb!:h netrw-P!| \\
 				t & Open file in a new tab & |\verb!:h netrw-t!|
 \end{longtable} \end{center}
 
 The following normal-mode commands may be used to control the browser display:
 
-\begin{center} \begin{longtable}{c l}
+\begin{center} \begin{tabularx}{\textwidth}{c X}
 				i & Controls listing style (thin, long, wide, and tree).  The long listing includes size and date information. \\
 				s & Repeatedly pressing s will change the way the files are sorted; one may sort on name, modification time, or size. \\
 				r & Reverse the sorting order. \\
-\end{longtable} \end{center}
+
+\end{tabularx} \end{center}
 
 As a sampling of extra normal-mode commands:
 
-\begin{center} \begin{tabularx}{\textwidth}{c X}
-				c & Change Vim's notion of the current directory to be the same as the browser directory.  (see |\texttt{:h g:netrw\_keepdir!} to control this, too) \\
+\begin{center} \begin{tabularx}{\textwidth}{r X}
+				c & Change Vim's notion of the current directory to be the same as the browser directory.\\
+				  & (see |\texttt{:h g:netrw\_keepdir!} to control this, too) \\
 				R & Rename the file or directory under the cursor; a prompt will be issued for the new name.\\
 				D & Delete the file or directory under the cursor; a confirmation request will be issued.\\
 				mb gb & Make bookmark/goto bookmark\\
@@ -117,7 +119,7 @@ As a sampling of extra normal-mode commands:
 
 One may also use command mode; again, just a sampling:
 
-\begin{center} \begin{longtable}{c l}
+\begin{center} \begin{longtable}{l l}
 				\verb!:Explore [directory]! & Browse specified/current directory \\
 				\verb!:NetrwSettings! & A comprehensive list of your current netrw settings with help linkage.
 \end{longtable} \end{center}
@@ -218,11 +220,11 @@ Move the cursor on the name of the file and type:
 
 Vim will find the file and edit it.
 
-What if the file is not in the current directory?  Vim will use the 'path' option to find the file.
+What if the file is not in the current directory?  Vim will use the \verb!'path'! option to find the file.
 This option is a list of directory names where to look for your file.
 
 Suppose you have your include files located in "\verb!c:/prog/include!".
-This command will add it to the 'path' option:
+This command will add it to the \verb!'path'! option:
 
 \begin{Verbatim}[samepage=true]
  :set path+=c:/prog/include
@@ -243,10 +245,10 @@ Thus using "\verb!gf!" on "\verb!inits.h!" will make Vim look for "\verb!proto/i
 Without the "\verb!./!", thus "\verb!proto!", Vim would look in the "\verb!proto!" directory below the current directory.
 And the current directory might not be where the file that you are editing is located.
 
-The 'path' option allows specifying the directories where to search for files in many more ways.
-See the help on the 'path' option.
+The \verb!'path'! option allows specifying the directories where to search for files in many more ways.
+See the help on the \verb!'path'! option.
 
-The 'isfname' option is used to decide which characters are included in the file name, and which ones are not (e.g., the " character in the example above).
+The \verb!'isfname'! option is used to decide which characters are included in the file name, and which ones are not (e.g., the " character in the example above).
 
 When you know the file name, but it's not to be found in the file, you can type it:
 
@@ -254,18 +256,18 @@ When you know the file name, but it's not to be found in the file, you can type 
  :find inits.h
 \end{Verbatim}
 
-Vim will then use the 'path' option to try and locate the file.
-This is the same as the "\verb!:edit!" command, except for the use of 'path'.
+Vim will then use the \verb!'path'! option to try and locate the file.
+This is the same as the "\verb!:edit!" command, except for the use of \verb!'path'!.
 
 To open the found file in a new window use CTRL-W f instead of "\verb!gf!", or use "\verb!:sfind!" instead of "\verb!:find!".
 
-A nice way to directly start Vim to edit a file somewhere in the 'path':
+A nice way to directly start Vim to edit a file somewhere in the \verb!'path'!:
 
 \begin{Verbatim}[samepage=true]
  vim "+find stdio.h"
 \end{Verbatim}
 
-This finds the file "\verb!stdio.h!" in your value of 'path'.
+This finds the file "\verb!stdio.h!" in your value of \verb!'path'!.
 The quotes are necessary to have one argument |\verb!:h -+c!|.
 \subsection{The buffer list}
 \label{The buffer list}
@@ -287,7 +289,7 @@ The buffer "\verb!one.txt!" disappears from the screen, but Vim still knows that
 This is called a hidden buffer: The buffer contains text, but you can't see it.
 
 The argument of "\verb!:hide!" is another command.
-"\verb!:hide!" makes that command behave as if the 'hidden' option was set.
+"\verb!:hide!" makes that command behave as if the \verb!'hidden'! option was set.
 You could also set this option yourself.
 The effect is that when any buffer is abandoned, it becomes hidden.
 
@@ -298,7 +300,7 @@ When it is not displayed in a window and it is not hidden, it is still in the bu
 This is called an inactive buffer.
 Overview:
 
-\begin{center} \begin{tabular}{c l}
+\begin{center} \begin{tabular}{l l}
 				Active & Appears in a window, text loaded. \\
 				Hidden & Not in a window, text loaded. \\
 				Inactive & Not in a window, no text loaded. \\
@@ -343,7 +345,7 @@ The flags that can appear are these (from left to right):
 				\verb!    a! & Buffer is loaded and displayed. \\
 				\verb!    h! & Buffer is loaded but hidden. \\
 				\verb!      =! & Buffer is read-only. \\
-				\verb!      -! & Buffer is not modifiable, the 'modifiable' option is off. \\
+				\verb!      -! & Buffer is not modifiable, the \verb!'modifiable'! option is off. \\
 				\verb!        +! & Buffer has been modified. \\
 \end{tabular} \end{center}
 \subsubsection{Editing a buffer}
@@ -375,7 +377,7 @@ This works with a name as well.
 \subsubsection{Using the buffer list}
 You can move around in the buffer list with these commands:
 
-\begin{center} \begin{tabular}{c l}
+\begin{center} \begin{tabular}{l l}
 				\verb!:bnext! & go to next buffer \\
 				\verb!:bprevious! & go to previous buffer \\
 				\verb!:bfirst! & go to the first buffer \\
@@ -398,5 +400,5 @@ You can't be editing nothing!
 It's actually made "unlisted", it no longer appears in the list from "\verb!:buffers!".
 The "\verb5:buffers!5" command will list unlisted buffers (yes, Vim can do the impossible).
 To really make Vim forget about a buffer, use "\verb!:bwipe!".
-Also see the 'buflisted' option.
+Also see the \verb!'buflisted'! option.
 \clearpage

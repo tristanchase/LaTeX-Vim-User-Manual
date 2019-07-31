@@ -310,11 +310,11 @@ If you do not like the fact that the backup files end with \verb!~!, you can cha
 
 This will use \verb!data.txt.bak! instead of \verb!data.txt~!.
 
-Another option that matters here is `backupdir'.
+Another option that matters here is \verb!'backupdir'!.
 It specifies where the backup file is written.
 The default, to write the backup in the same directory as the original file, will mostly be the right thing.
 
-Note: When the `backup' option isn't set but the `writebackup' is, Vim will still create a backup file.
+Note: When the \verb!'backup'! option isn't set but the \verb!'writebackup'! is, Vim will still create a backup file.
 However, it is deleted as soon as writing the file was completed successfully.
 This functions as a safety against losing your original file when writing fails in some way (disk full is the most common cause; being hit by lightning might be another, although less common).
 
@@ -323,7 +323,7 @@ If you are editing source files, you might want to keep the file before you make
 But the backup file will be overwritten each time you write the file.
 Thus it only contains the previous version, not the first one.
 
-To make Vim keep the original file, set the `patchmode' option.
+To make Vim keep the original file, set the \verb!'patchmode'! option.
 This specifies the extension used for the first backup of a changed file.
 Usually you would do this:
 
@@ -334,9 +334,9 @@ Usually you would do this:
 When you now edit the file data.txt for the first time, make changes and write the file, Vim will keep a copy of the unchanged file under the name "\verb!data.txt.orig!".
 
 If you make further changes to the file, Vim will notice that "data.txt.orig" already exists and leave it alone.
-Further backup files will then be called "data.txt~" (or whatever you specified with `backupext').
+Further backup files will then be called "data.txt~" (or whatever you specified with \verb!'backupext'!).
 
-If you leave `patchmode' empty (that is the default), the original file will not be kept.
+If you leave \verb!'patchmode'! empty (that is the default), the original file will not be kept.
 
 \subsection{Copy text between files}
 This explains how to copy text from one file to another.

@@ -9,14 +9,14 @@ A detailed specification can be found here: |\verb!:h pattern!|
 By default, Vim's searches are case sensitive.
 Therefore, "include", "INCLUDE", and "Include" are three different words and a search will match only one of them.
 
-Now switch on the 'ignorecase' option:
+Now switch on the \verb!'ignorecase'! option:
 
 \begin{Verbatim}[samepage=true]
  :set ignorecase
 \end{Verbatim}
 
 Search for "include" again, and now it will match "Include", "INCLUDE" and "InClUDe".
-(Set the 'hlsearch' option to quickly see where a pattern matches.)
+(Set the \verb!'hlsearch'! option to quickly see where a pattern matches.)
 
 You can switch this off again with:
 
@@ -26,7 +26,7 @@ You can switch this off again with:
 
 But let's keep it set, and search for "INCLUDE".
 It will match exactly the same text as "include" did.
-Now set the 'smartcase' option:
+Now set the \verb!'smartcase'! option:
 
 \begin{Verbatim}[samepage=true]
  :set ignorecase smartcase
@@ -38,20 +38,20 @@ That's smart!
 
 With these two options set you find the following matches:
 
-\begin{center} \begin{tabular}{c c}
+\begin{center} \begin{tabular}{l l}
 				pattern & matches \\
-				word & word, Word, WORD, WoRd, etc.\\
-				Word & Word\\
-				WORD & WORD\\
-				WoRd & WoRd\\
+				\verb!word! & word, Word, WORD, WoRd, etc.\\
+				\verb!Word! & Word\\
+				\verb!WORD! & WORD\\
+				\verb!WoRd! & WoRd\\
 \end{tabular} \end{center}
 
 \subsubsection{Case in one pattern}
 If you want to ignore case for one specific pattern, you can do this by prepending the "\verb!\c!" string.
 Using "\verb!\C!" will make the pattern to match case.
-This overrules the 'ignorecase' and 'smartcase' options, when "\verb!\c!" or "\verb!\C!" is used their value doesn't matter.
+This overrules the \verb!'ignorecase'! and \verb!'smartcase'! options, when "\verb!\c!" or "\verb!\C!" is used their value doesn't matter.
 
-\begin{center} \begin{tabular}{c c}
+\begin{center} \begin{tabular}{l l}
 				pattern & matches \\
 				\verb!\Cword! & word\\
 				\verb!\CWord! & Word\\
@@ -60,11 +60,11 @@ This overrules the 'ignorecase' and 'smartcase' options, when "\verb!\c!" or "\v
 \end{tabular} \end{center}
 
 A big advantage of using "\verb!\c!" and "\verb!\C!" is that it sticks with the pattern.
-Thus if you repeat a pattern from the search history, the same will happen, no matter if 'ignorecase' or 'smartcase' was changed.
+Thus if you repeat a pattern from the search history, the same will happen, no matter if \verb!'ignorecase'! or \verb!'smartcase'! was changed.
 
-\emph{Note}: The use of "\verb!\!" items in search patterns depends on the 'magic' option.
-In this chapter we will assume 'magic' is on, because that is the standard and recommended setting.
-If you would change 'magic', many search patterns would suddenly become invalid.
+\emph{Note}: The use of "\verb!\!" items in search patterns depends on the \verb!'magic'! option.
+In this chapter we will assume \verb!'magic'! is on, because that is the standard and recommended setting.
+If you would change \verb!'magic',! many search patterns would suddenly become invalid.
 
 \emph{Note}: If your search takes much longer than you expected, you can interrupt it with CTRL-C on Unix and  CTRL-Break on MS-DOS and MS-Windows.
 \subsection{Wrapping around the file end}
@@ -86,7 +86,7 @@ If you use the "\verb!?!" command, to search in the other direction, you get thi
 \end{Verbatim}
 
 Still, you don't know when you are back at the first match.
-One way to see this is by switching on the 'ruler' option:
+One way to see this is by switching on the \verb!'ruler'! option:
 
 \begin{Verbatim}[samepage=true]
  :set ruler
@@ -291,7 +291,7 @@ When "\verb!m!" is omitted it defaults to infinity.
 When "\verb!,m!" is omitted, it matches exactly "\verb!n!" times.
 Examples:
 
-\begin{center} \begin{tabular}{c l}
+\begin{center} \begin{tabular}{l l}
 				pattern & match count \\
 				\verb!\{,4}! & 0, 1, 2, 3 or 4 \\
 				\verb!\{3,}! & 3, 4, 5, etc. \\
@@ -346,7 +346,7 @@ This matches "foo" or "bar".
 More alternatives can be concatenated:
 
 \begin{Verbatim}[samepage=true]
- /one\|\verb!:h two\!|three
+ /one\|two\|three
 \end{Verbatim}
 
 Matches "one", "two" and "three".
@@ -362,7 +362,7 @@ This matches "foo", "foobar", "foofoo", "barfoobar", etc.
 Another example:
 
 \begin{Verbatim}[samepage=true]
- /end\(if\|\verb!:h while\!|for\)
+ /end\(if\|while\|for\)
 \end{Verbatim}
 
 This matches "endif", "endwhile" and "endfor".
@@ -378,7 +378,7 @@ Example:
 
 This matches "for" in "forever".  It will not match "fortuin", for example.
 \subsection{Character ranges}
-To match "a", "b" or "c" you could use "\verb!/a\|\verb!:h b\!|c!".
+To match "a", "b" or "c" you could use "\verb!/a\|b\|c!".
 When you want to match all letters from "a" to "z" this gets very long.
 There is a shorter method:
 
@@ -407,7 +407,7 @@ Thus the same command as above can be shortened to:
 To match the "\verb!-!" character itself make it the first or last one in the range.
 These special characters are accepted to make it easier to use them inside a \verb![]! range (they can actually be used anywhere in the search pattern):
 
-\begin{center} \begin{tabular}{c l}
+\begin{center} \begin{tabular}{l l}
 				\verb!\e! & <Esc> \\
 				\verb!\t! & <Tab> \\
 				\verb!\r! & <CR>  \\
@@ -424,11 +424,11 @@ Example:
  /"[^"]*"
 \end{Verbatim}
 
-\begin{center} \begin{tabular}{c c}
-				\verb!/"      ! & a double quote \\
-				\verb!/ [^"]  ! & any character that is not a double quote \\
-				\verb!/     * ! & as many as possible \\
-				\verb!/      "! & a double quote again \\
+\begin{center} \begin{tabular}{l l}
+				\verb!"      ! & a double quote \\
+				\verb! [^"]  ! & any character that is not a double quote \\
+				\verb!     * ! & as many as possible \\
+				\verb!      "! & a double quote again \\
 \end{tabular} \end{center}
 
 This matches "foo" and "3!x", including the double quotes.
@@ -445,7 +445,7 @@ Finds alphabetic characters.
 This is equal to using "\verb!/[a-zA-Z]!".
 Here are a few more of these:
 
-\begin{center} \begin{tabular}{c c c}
+\begin{center} \begin{tabular}{l l l}
 				item & matches & equivalent \\
 				\verb!\d! & digit & \verb![0-9]!\\
 				\verb!\D! & non-digit & \verb![^0-9]!\\
@@ -465,7 +465,7 @@ These items can not be used inside \verb![]!.
 Thus "\verb![\d\l]!" does NOT work to match a digit or lowercase alpha.
 Use "\verb!\(\d\|\l\)!" instead.
 
-See |/\textbackslash s| for the whole list of these ranges.
+See |\verb!:h /\s!| for the whole list of these ranges.
 \subsection{Character classes}
 The character range matches a fixed set of characters.
 A character class is similar, but with an essential difference: The set of characters can be redefined without changing the search pattern.
@@ -481,7 +481,7 @@ Thus this matches a sequence of characters that can be a file name.
 
 Which characters can be part of a file name depends on the system you are using.
 On MS-Windows, the backslash is included, on Unix it is not.
-This is specified with the 'isfname' option.
+This is specified with the \verb!'isfname'! option.
 The default value for Unix is:
 
 \begin{Verbatim}[samepage=true]
@@ -493,21 +493,21 @@ For other systems the default value is different.
 Thus you can make a search pattern with "\verb!\f!" to match a file name, and it will automatically adjust to the system you are using it on.
 
 \emph{Note}: Actually, Unix allows using just about any character in a file name, including white space.
-Including these characters in 'isfname' would be theoretically correct.
+Including these characters in \verb!'isfname'! would be theoretically correct.
 But it would make it impossible to find the end of a file name in text.
-Thus the default value of 'isfname' is a compromise.
+Thus the default value of \verb!'isfname'! is a compromise.
 
 The character classes are:
 
-\begin{center} \begin{tabular}{c c c}
+\begin{center} \begin{tabular}{l l l}
 				item & matches & option \\
-				\verb!\i! & identifier characters & 'isident' \\
+				\verb!\i! & identifier characters & \verb!'isident'! \\
 				\verb!\I! & like \verb!\i!, excluding digits & \\
-				\verb!\k! & keyword characters & 'iskeyword' \\
+				\verb!\k! & keyword characters & \verb!'iskeyword'! \\
 				\verb!\K! & like \verb!\k!, excluding digits & \\
-				\verb!\p! & printable characters & 'isprint' \\
+				\verb!\p! & printable characters & \verb!'isprint'! \\
 				\verb!\P! & like \verb!\p!, excluding digits & \\
-				\verb!\f! & file name characters & 'isfname' \\
+				\verb!\f! & file name characters & \verb!'isfname'! \\
 				\verb!\F! & like \verb!\f!, excluding digits & \\
 \end{tabular} \end{center}
 \subsection{Matching a line break}
@@ -595,7 +595,7 @@ This can be found with:
 "\verb!\h!" stands for "\verb![A-Za-z_]!" and "\verb!\w!" for "\verb![0-9A-Za-z_]!".
 
 \emph{Note}:
-"\verb!\<!" and "\verb!\>!" depend on the 'iskeyword' option.
+"\verb!\<!" and "\verb!\>!" depend on the \verb!'iskeyword'! option.
 If it includes "\verb!-!", for example, then "ident-" is not matched.
 In this situation use:
 
@@ -604,5 +604,5 @@ In this situation use:
 \end{Verbatim}
  
 This checks if "\verb!\w!" does not match before or after the identifier.
-See |/\@<!| and |\verb!:h /\@!!|.
+See |\verb$:h /\@<!$| and |\verb!:h /\@!!|.
 \clearpage
