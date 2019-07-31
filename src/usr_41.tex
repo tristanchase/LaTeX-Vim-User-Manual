@@ -318,7 +318,7 @@ Example:
  :let &ic = save_ic
 \end{Verbatim}
 
-This makes sure the "The Start" pattern is used with the 'ignorecase' option off.
+This makes sure the "The Start" pattern is used with the \verb!'ignorecase'! option off.
 Still, it keeps the value that the user had set.
 (Another way to do this would be to add "\verb!\C!" to the pattern, see |/\textbackslash C|.)
 
@@ -421,7 +421,7 @@ Finally, there is "\verb!:elseif!":
 
 This works just like using "\verb!:else!" and then "\verb!if!", but without the need for an extra "\verb!:endif!".
 
-A useful example for your vimrc file is checking the 'term' option and doing something depending upon its value:
+A useful example for your vimrc file is checking the \verb!'term'! option and doing something depending upon its value:
 
 \begin{Verbatim}[samepage=true]
  :if &term == "xterm"
@@ -500,7 +500,7 @@ Example:
 Notice the use of a single-quote string for the pattern.
 This is useful, because backslashes would need to be doubled in a double-quote string and patterns tend to contain many backslashes.
 
-The 'ignorecase' option is used when comparing strings.
+The \verb!'ignorecase'! option is used when comparing strings.
 When you don't want that, append "\verb!#!" to match case and "\verb!?!" to ignore case.
 Thus "\verb!==?!" compares two strings to be equal while ignoring case.
 And "\verb:!~#:" checks if a pattern doesn't match, also checking the case of letters.
@@ -593,7 +593,7 @@ If you don't want to execute a string but evaluate it to get its expression valu
 \end{Verbatim}
 
 A "\verb!&!" character is prepended to "\verb!path!", thus the argument to \verb!eval()! is "\verb!&path!".
-The result will then be the value of the 'path' option.
+The result will then be the value of the \verb!'path'! option.
 
 The same thing can be done with:
 
@@ -1244,7 +1244,7 @@ To see what a function does, use its name as an argument for "\verb!:function!":
 The line number is useful for when you get an error message or when debugging.
 See |\verb!:h debug-scripts!| about debugging mode.
 
-You can also set the 'verbose' option to 12 or higher to see all function calls.
+You can also set the \verb!'verbose'! option to 12 or higher to see all function calls.
 Set it to 15 or higher to see every executed line.
 
 \subsubsection{Deleting a function}
@@ -1690,7 +1690,7 @@ See |\verb!:h :source_crnl!|.
 Blank lines are allowed and ignored.
 
 Leading whitespace characters (blanks and TABs) are always ignored.
-The whitespaces between parameters (e.g. between the 'set' and the 'cpoptions' in the example below) are reduced to one blank character and plays the role of a separator, the whitespaces after the last (visible) character may or may not be ignored depending on the situation, see below.
+The whitespaces between parameters (e.g. between the \verb!'set'! and the \verb!'cpoptions'! in the example below) are reduced to one blank character and plays the role of a separator, the whitespaces after the last (visible) character may or may not be ignored depending on the situation, see below.
 
 For a "\verb!:set!" command involving the "\verb!=!" (equal) sign, such as in:
 
@@ -1736,7 +1736,7 @@ Examples:
  :!ls *.c            " list C files
 \end{Verbatim}
 
-The abbreviation 'dev' will be expanded to '\verb!development     " shorthand!'.
+The abbreviation \verb!'dev'! will be expanded to '\verb!development     " shorthand!'.
 The mapping of <F3> will actually be the whole line after the '\verb!o# ....!' including the '\verb!" insert include!'.
 The "\verb!execute!" command will give an error.
 The "\verb:!:" command will send everything after it to the shell, causing an error for an unmatched '\verb!"!' character.
@@ -1766,7 +1766,7 @@ As a consequence of this behavior, you don't always see that trailing whitespace
  :map <F4> o#include
 \end{Verbatim}
 
-To spot these problems, you can set the 'list' option when editing vimrc files.
+To spot these problems, you can set the \verb!'list'! option when editing vimrc files.
 
 For Unix there is one special way to comment a line, that allows making a Vim script executable:
 
@@ -1927,9 +1927,9 @@ Example:
 \label{use-cpo-save}
 
 In line 18 above, the line-continuation mechanism is used |\verb!:h line-continuation!|.
-Users with 'compatible' set will run into trouble here, they will get an error message.
-We can't just reset 'compatible', because that has a lot of side effects.
-To avoid this, we will set the 'cpoptions' option to its Vim default value and restore it later.
+Users with \verb!'compatible'! set will run into trouble here, they will get an error message.
+We can't just reset \verb!'compatible'!, because that has a lot of side effects.
+To avoid this, we will set the \verb!'cpoptions'! option to its Vim default value and restore it later.
 That will allow the use of line-continuation and make the script work for most people.
 It is done like this:
 
@@ -1940,7 +1940,7 @@ It is done like this:
  42  let &cpo = s:save_cpo
 \end{Verbatim}
 
-We first store the old value of 'cpoptions' in the \verb!s:save_cpo! variable.
+We first store the old value of \verb!'cpoptions'! in the \verb!s:save_cpo! variable.
 At the end of the plugin this value is restored.
 
 Notice that a script-local variable is used |\verb!:h s:var!|.
@@ -2186,9 +2186,9 @@ It applies the new correction to the word under the cursor.
 The |\verb!:h :normal!| command is used to use the new abbreviation.
 Note that mappings and abbreviations are expanded here, even though the function was called from a mapping defined with "\verb!:noremap!".
 
-Using "\verb!unix!" for the 'fileformat' option is recommended.
+Using "\verb!unix!" for the \verb!'fileformat'! option is recommended.
 The Vim scripts will then work everywhere.
-Scripts with 'fileformat' set to "\verb!dos!" do not work on Unix.
+Scripts with \verb!'fileformat'! set to "\verb!dos!" do not work on Unix.
 Also see |\verb!:h :source_crnl!|.
 To be sure it is set right, do this before writing the file:
 
@@ -2245,7 +2245,7 @@ Example:
  au BufNewFile,BufRead *.foo         set filetype=foofoo
 \end{Verbatim}
 
-Write this single-line file as "\verb!ftdetect/foofoo.vim!" in the first directory that appears in 'runtimepath'.
+Write this single-line file as "\verb!ftdetect/foofoo.vim!" in the first directory that appears in \verb!'runtimepath'!.
 For Unix that would be "\verb!~/.vim/ftdetect/foofoo.vim!".
 The convention is to use the name of the filetype for the script name.
 
@@ -2295,7 +2295,7 @@ Now users can disable loading the default plugin completely by making a filetype
  let b:did_ftplugin = 1
 \end{Verbatim}
 
-This does require that the filetype plugin directory comes before \verb!$VIMRUNTIME! in 'runtimepath'!
+This does require that the filetype plugin directory comes before \verb!$VIMRUNTIME! in \verb!'runtimepath'!!
 
 If you do want to use the default plugin, but overrule one of the settings, you can write the different setting in a script:
 
@@ -2416,7 +2416,7 @@ Example:
 Using "\verb!:setlocal!" with "\verb!<!" after the option name resets the option to its global value.
 That is mostly the best way to reset the option value.
 
-This does require removing the "\verb!C!" flag from 'cpoptions' to allow line continuation, as mentioned above \hyperref[use-cpo-save]{|\texttt{use-cpo-save}|}.
+This does require removing the "\verb!C!" flag from \verb!'cpoptions'! to allow line continuation, as mentioned above \hyperref[use-cpo-save]{|\texttt{use-cpo-save}|}.
 
 \subsubsection{File name}
 The filetype must be included in the file name \hyperref[ftplugin-name]{|\texttt{ftplugin-name}|}.
@@ -2448,7 +2448,7 @@ Also see \hyperref[plugin-special]{|\texttt{plugin-special}|}, the special thing
 \label{write-compiler-plugin}
 A compiler plugin sets options for use with a specific compiler.
 The user can load it with the |\verb!:h :compiler!| command.
-The main use is to set the 'errorformat' and 'makeprg' options.
+The main use is to set the \verb!'errorformat'! and \verb!'makeprg'! options.
 
 Easiest is to have a look at examples.
 This command will edit all the default compiler plugins:
@@ -2490,7 +2490,7 @@ When you write a compiler plugin for the Vim distribution or for a system-wide r
 When "\verb!current_compiler!" was already set by a user plugin nothing will be done.
 
 When you write a compiler plugin to overrule settings from a default plugin, don't check "\verb!current_compiler!".
-This plugin is supposed to be loaded last, thus it should be in a directory at the end of 'runtimepath'.
+This plugin is supposed to be loaded last, thus it should be in a directory at the end of \verb!'runtimepath'!.
 For Unix that could be \verb!~/.vim/after/compiler!.
 \subsection{Writing a plugin that loads quickly}
 \label{write-plugin-quickload}
@@ -2578,7 +2578,7 @@ Example:
  call MyLibFunction(arg)
 \end{Verbatim}
 
-Here you need to know that \verb!MyLibFunction()! is defined in a script "\verb!library/mylibscript.vim!" in one of the directories in 'runtimepath'.
+Here you need to know that \verb!MyLibFunction()! is defined in a script "\verb!library/mylibscript.vim!" in one of the directories in \verb!'runtimepath'!.
 
 To make this a bit simpler Vim offers the autoload mechanism.
 Then the example looks like this:
@@ -2588,7 +2588,7 @@ Then the example looks like this:
 \end{Verbatim}
 
 That's a lot simpler, isn't it?
-Vim will recognize the function name and when it's not defined search for the script "\verb!autoload/mylib.vim!" in 'runtimepath'.
+Vim will recognize the function name and when it's not defined search for the script "\verb!autoload/mylib.vim!" in \verb!'runtimepath'!.
 That script must define the "\verb!mylib#myfunction()!" function.
 
 You can put many other functions in the mylib.vim script, you are free to organize your functions in library scripts.

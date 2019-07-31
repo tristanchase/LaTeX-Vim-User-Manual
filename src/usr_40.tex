@@ -256,7 +256,7 @@ A mapping is triggered when typing the last character.
 Another difference is that the characters you type for an abbreviation are inserted in the text while you type them.
 When the abbreviation is triggered these characters are deleted and replaced by what the abbreviation produces.
 When typing the characters for a mapping, nothing is inserted until you type the last character that triggers it.
-If the 'showcmd' option is set, the typed characters are displayed in the last line of the Vim window.
+If the \verb!'showcmd'! option is set, the typed characters are displayed in the last line of the Vim window.
 
 An exception is when a mapping is ambiguous.
 Suppose you have done two mappings:
@@ -503,7 +503,7 @@ To get the syntax file right, define this autocommand:
  :autocmd BufReadPost *.gsm  set filetype=asm
 \end{Verbatim}
 
-If Vim is able to detect the type of file, it will set the 'filetype' option for you.
+If Vim is able to detect the type of file, it will set the \verb!'filetype'! option for you.
 This triggers the Filetype event.
 Use this to do something when a certain type of file is edited.
 For example, to load a list of abbreviations for text files:
@@ -677,7 +677,7 @@ When you want the autocommand do something complicated, which involves jumping a
 See |\verb!:h restore-position!| for an example.
 \subsubsection{Ignoring events}
 At times, you will not want to trigger an autocommand.
-The 'eventignore' option contains a list of events that will be totally ignored.
+The \verb!'eventignore'! option contains a list of events that will be totally ignored.
 For example, the following causes events for entering and leaving a window to be ignored:
 
 \begin{Verbatim}[samepage=true]
@@ -690,7 +690,7 @@ To ignore all events, use the following command:
  :set eventignore=all
 \end{Verbatim}
 
-To set it back to the normal behavior, make 'eventignore' empty:
+To set it back to the normal behavior, make \verb!'eventignore'! empty:
 
 \begin{Verbatim}[samepage=true]
  :set eventignore=

@@ -1,4 +1,16 @@
-* Restore 'options' from `options' (:%s)
-* Enclose 'options' with \verb!'options'! (@v)
+TODO
+> Left off at Ch 28 Folding
 * Go through table formatting
+* Create a branch for manually numbered chapters and sections
+	* Create branch
+	* Number sections
+	* Save and push
+* Delete chapter numbers from master branch
+	* Checkout master
+	* Delete numbers from sections
+	* Save and push
 
+
+DONE
++ 2019-07-31 Enclose 'options' with \verb!'options'! (@o)
++ 2019-07-31 Restore 'options' from `options'

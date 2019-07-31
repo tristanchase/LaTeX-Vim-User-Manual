@@ -118,7 +118,7 @@ This allows you to quickly move around over folded text.
 
 You can yank, delete and put folds as if it was a single line.
 This is very useful if you want to reorder functions in a program.
-First make sure that each fold contains a whole function (or a bit less) by selecting the right 'foldmethod'.
+First make sure that each fold contains a whole function (or a bit less) by selecting the right \verb!'foldmethod'!.
 Then delete the function with "\verb!dd!", move the cursor and put it with "\verb!p!".
 If some lines of the function are above or below the fold, you can use Visual selection:
 
@@ -153,8 +153,8 @@ When in Insert mode, the fold at the cursor line is never closed.
 That allows you to see what you type!
 
 Folds are opened automatically when jumping around or moving the cursor left or right.
-For example, the "\verb!0!" command opens the fold under the cursor (if 'foldopen' contains "\verb!hor!", which is the default).
-The 'foldopen' option can be changed to open folds for specific commands.
+For example, the "\verb!0!" command opens the fold under the cursor (if \verb!'foldopen'! contains "\verb!hor!", which is the default).
+The \verb!'foldopen'! option can be changed to open folds for specific commands.
 If you want the line under the cursor always to be open, do this:
 
 \begin{Verbatim}[samepage=true]
@@ -174,7 +174,7 @@ You can make folds close automatically when you move out of it:
  :set foldclose=all
 \end{Verbatim}
 
-This will re-apply 'foldlevel' to all folds that don't contain the cursor.
+This will re-apply \verb!'foldlevel'! to all folds that don't contain the cursor.
 You have to try it out if you like how this feels.
 Use |zm| to fold more and |\verb!:h zr!| to fold less (reduce folds).
 
@@ -191,7 +191,7 @@ When folds have been created manually, all folds are gone!  To save the folds us
 \end{Verbatim}
 
 This will store the settings and other things that influence the view on the file.
-You can change what is stored with the 'viewoptions' option.
+You can change what is stored with the \verb!'viewoptions'! option.
 When you come back to the same file later, you can load the view again:
 
 \begin{Verbatim}[samepage=true]
@@ -207,7 +207,7 @@ For example, to save the current setup as the third view and load the second vie
 \end{Verbatim}
 
 Note that when you insert or delete lines the views might become invalid.
-Also check out the 'viewdir' option, which specifies where the views are stored.
+Also check out the \verb!'viewdir'! option, which specifies where the views are stored.
 You might want to delete old views now and then.
 \subsection{Folding by indent}
 Defining folds with \verb!|\verb!:h zf!|! is a lot of work.
@@ -216,7 +216,7 @@ This will create folds for every sequence of lines with the same indent.
 Lines with a larger indent will become nested folds.
 This works well with many programming languages.
 
-Try this by setting the 'foldmethod' option:
+Try this by setting the \verb!'foldmethod'! option:
 
 \begin{Verbatim}[samepage=true]
  :set foldmethod=indent
@@ -236,22 +236,22 @@ This line is not indented
     This line is indented once
 \end{Verbatim}
 
-Note that the relation between the amount of indent and the fold depth depends on the 'shiftwidth' option.
-Each 'shiftwidth' worth of indent adds one to the depth of the fold.
+Note that the relation between the amount of indent and the fold depth depends on the \verb!'shiftwidth'! option.
+Each \verb!'shiftwidth'! worth of indent adds one to the depth of the fold.
 This is called a fold level.
 
-When you use the |zr| and |\verb!:h zm!| commands you actually increase or decrease the 'foldlevel' option.
+When you use the |zr| and |\verb!:h zm!| commands you actually increase or decrease the \verb!'foldlevel'! option.
 You could also set it directly:
 
 \begin{Verbatim}[samepage=true]
  :set foldlevel=3
 \end{Verbatim}
 
-This means that all folds with three times a 'shiftwidth' indent or more will be closed.
+This means that all folds with three times a \verb!'shiftwidth'! indent or more will be closed.
 The lower the foldlevel, the more folds will be closed.
-When 'foldlevel' is zero, all folds are closed.
-|\verb!:h zM!| does set 'foldlevel' to zero.
-The opposite command |\verb!:h zR!| sets 'foldlevel' to the deepest fold level that is present in the file.
+When \verb!'foldlevel'! is zero, all folds are closed.
+|\verb!:h zM!| does set \verb!'foldlevel'! to zero.
+The opposite command |\verb!:h zR!| sets \verb!'foldlevel'! to the deepest fold level that is present in the file.
 
 Thus there are two ways to open and close the folds:
 \begin{enumerate}
@@ -265,7 +265,7 @@ This allows opening only those folds that you want to be open, while other folds
 This can be combined: You can first close most folds by using \verb!|zm|! a few times and then open a specific fold with \verb!|\verb!:h zo!|!.
 Or open all folds with \verb!|zR|! and then close specific folds with \verb!|\verb!:h zc!|!.
 
-But you cannot manually define folds when 'foldmethod' is "indent", as that would conflict with the relation between the indent and the fold level.
+But you cannot manually define folds when \verb!'foldmethod'! is "indent", as that would conflict with the relation between the indent and the fold level.
 
 More about folding by indent in the reference manual: |\verb!:h fold-indent!|
 \subsection{Folding with markers}
@@ -355,7 +355,7 @@ You can try it out on this text:
 > > double quoted text I wrote
 \end{Verbatim}
 
-Explanation for the 'foldexpr' used in the example (inside out):
+Explanation for the \verb!'foldexpr'! used in the example (inside out):
 \begin{center} \begin{tabular}{c l}
 				\verb!getline(v:lnum) ! & gets the current line \\
 				\verb!substitute(...,'\\s','','g') ! & removes all white space from the line \\
@@ -379,11 +379,11 @@ To correct a complicated expression, use the command-line completion:
 Where <Tab> is a real Tab.
 Vim will fill in the previous value, which you can then edit.
 
-When the expression gets more complicated you should put it in a function and set 'foldexpr' to call that function.
+When the expression gets more complicated you should put it in a function and set \verb!'foldexpr'! to call that function.
 
 More about folding by expression in the reference manual: |\verb!:h fold-expr!|
 \subsection{Folding unchanged lines}
-This is useful when you set the 'diff' option in the same window.
+This is useful when you set the \verb!'diff'! option in the same window.
 The |\verb!:h vimdiff!| command does this for you.
 Example:
 
@@ -418,7 +418,7 @@ And you can add a comment about what is contained in the fold.
 Folding by indent is something that works in many files, but not always very well.
 Use it when you can't use one of the other methods.
 However, it is very useful for outlining.
-Then you specifically use one 'shiftwidth' for each nesting level.
+Then you specifically use one \verb!'shiftwidth'! for each nesting level.
 
 Folding with expressions can make folds in almost any structured text.
 It is quite simple to specify, especially if the start and end of a fold can easily be recognized.

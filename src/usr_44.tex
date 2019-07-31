@@ -80,7 +80,7 @@ This example uses the group names "\verb!xType!" and "\verb!xStatement!".
 By convention, each group name is prefixed by the filetype for the language being defined.
 This example defines syntax for the x language (eXample language without an interesting name).
 In a syntax file for "\verb!csh!" scripts the name "\verb!cshType!" would be used.
-Thus the prefix is equal to the value of 'filetype'.
+Thus the prefix is equal to the value of \verb!'filetype'!.
 
 These commands cause the words "\verb!int!", "\verb!long!" and "\verb!char!" to be highlighted one way and the words "\verb!if!", "\verb!then!", "\verb!else!" and "\verb!endif!" to be highlighted another way.
 Now you need to connect the x group names to standard Vim names.
@@ -95,7 +95,7 @@ This tells Vim to highlight "\verb!xType!" like "\verb!Type!" and "\verb!xStatem
 See |\verb!:h group-name!| for the standard names.
 
 \subsubsection{Unusual keywords}
-The characters used in a keyword must be in the 'iskeyword' option.
+The characters used in a keyword must be in the \verb!'iskeyword'! option.
 If you use another character, the word will never match.
 Vim doesn't give a warning message for this.
 
@@ -107,7 +107,7 @@ This is how it's done:
  :syntax keyword xStatement when-not
 \end{Verbatim}
 
-The "\verb!:setlocal!" command is used to change 'iskeyword' only for the current buffer.
+The "\verb!:setlocal!" command is used to change \verb!'iskeyword'! only for the current buffer.
 Still it does change the behavior of commands like "\verb!w!" and "\verb!*!".
 If that is not wanted, don't define a keyword but use a match (explained in the next section).
 
@@ -504,7 +504,7 @@ Because you do not want to write two syntax files, you can have the C++ syntax f
  :runtime! syntax/c.vim
 \end{Verbatim}
 
-The "\verb!:runtime!!" command searches 'runtimepath' for all "\verb!syntax/c.vim!" files.
+The "\verb!:runtime!!" command searches \verb!'runtimepath'! for all "\verb!syntax/c.vim!" files.
 This makes the C parts of the C++ syntax be defined like for C files.
 If you have replaced the \verb!c.vim! syntax file, or added items with an extra file, these will be loaded as well.
 
@@ -633,7 +633,7 @@ For example, the following skips over anything inside {}, even if it would norma
 
 More about synchronizing in the reference manual: |\verb!:h :syn-sync!|.
 \subsection{Installing a syntax file}
-When your new syntax file is ready to be used, drop it in a "\verb!syntax!" directory in 'runtimepath'.
+When your new syntax file is ready to be used, drop it in a "\verb!syntax!" directory in \verb!'runtimepath'!.
 For Unix that would be "\verb!~/.vim/syntax!".
 The name of the syntax file must be equal to the file type, with "\verb!.vim!" added.
 Thus for the x language, the full path of the file would be:
@@ -663,7 +663,7 @@ For example, to add new variable types to the C syntax file:
 
 Write the file with the same name as the original syntax file.
 In this case "\verb!c.vim!".
-Place it in a directory near the end of 'runtimepath'.
+Place it in a directory near the end of \verb!'runtimepath'!.
 This makes it loaded after the original syntax file.
 For Unix this would be:
 
@@ -693,7 +693,7 @@ Use lowercase letters and digits.
 Don't make it too long, it is used in many places: The name of the syntax file "\verb!name.vim!", 'filetype', \verb!b:current_syntax! and the start of each syntax group (nameType, nameStatement, nameString, etc).
 
 Start with a check for "\verb!b:current_syntax!".
-If it is defined, some other syntax file, earlier in 'runtimepath' was already loaded:
+If it is defined, some other syntax file, earlier in \verb!'runtimepath'! was already loaded:
 
 \begin{Verbatim}[samepage=true]
  if exists("b:current_syntax")
@@ -718,11 +718,11 @@ If you want your syntax file to work with Vim 5.x, add a check for \verb!v:versi
 See \verb!yacc.vim! for an example.
 
 Do not include anything that is a user preference.
-Don't set 'tabstop', 'expandtab', etc.
+Don't set \verb!'tabstop'!, \verb!'expandtab'!, etc.
 These belong in a filetype plugin.
 
 Do not include mappings or abbreviations.
-Only include setting 'iskeyword' if it is really necessary for recognizing keywords.
+Only include setting \verb!'iskeyword'! if it is really necessary for recognizing keywords.
 
 To allow users select their own preferred colors, make a different group name for every kind of highlighted item.
 Then link each of them to one of the standard highlight groups.

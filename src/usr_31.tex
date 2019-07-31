@@ -35,7 +35,7 @@ If no directory is specified, Vim will decide where to start the file browser.
 By default it uses the same directory as the last time.
 Thus when you used "\verb!:browse split!" and selected a file in "\verb!/usr/local/share!", the next time you use a "\verb!:browse!" it will start in "\verb!/usr/local/share!" again.
 
-This can be changed with the 'browsedir' option.  It can have one of three values:
+This can be changed with the \verb!'browsedir'! option.  It can have one of three values:
 
 \begin{center} \begin{tabular}{c l}
 				\verb!last! & Use the last directory browsed (default) \\
@@ -143,7 +143,7 @@ After the first selection of a menu with the <Alt> key, you can use the cursor k
 <Enter> selects a menu item.
 
 There is a conflict between using the <Alt> key to select menu items, and using <Alt> key combinations for mappings.
-The 'winaltkeys' option tells Vim what it should do with the <Alt> key.
+The \verb!'winaltkeys'! option tells Vim what it should do with the <Alt> key.
 
 The default value "\verb!menu!" is the smart choice: If the key combination is a menu shortcut it can't be mapped.
 All other keys are available for mapping.
@@ -189,7 +189,7 @@ You can see the current size with this command:
  :set lines columns
 \end{Verbatim}
 
-To change the size set the 'lines' and/or 'columns' options to a new value:
+To change the size set the \verb!'lines'! and/or \verb!'columns'! options to a new value:
 
 \begin{Verbatim}[samepage=true]
  :set lines=50
@@ -246,7 +246,7 @@ You can also use "\verb!:gui -f!".
 When gvim starts, it reads the gvimrc file.
 That's similar to the vimrc file used when starting Vim.
 The gvimrc file can be used for settings and commands that are only to be used when the GUI is going to be started.
-For example, you can set the 'lines' option to set a different window size:
+For example, you can set the \verb!'lines'! option to set a different window size:
 
 \begin{Verbatim}[samepage=true]
  :set lines=55

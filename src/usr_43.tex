@@ -7,7 +7,7 @@ This chapter explains how to do it automatically.
 \label{filetype-plugin}
 How to start using filetype plugins has already been discussed here: \hyperref[add-filetype-plugin]{|\texttt{add-filetype-plugin}|}.
 But you probably are not satisfied with the default settings, because they have been kept minimal.
-Suppose that for C files you want to set the 'softtabstop' option to 4 and define a mapping to insert a three-line comment.
+Suppose that for C files you want to set the \verb!'softtabstop'! option to 4 and define a mapping to insert a three-line comment.
 You do this with only two steps:
 
 \phantomsection                            
@@ -23,7 +23,7 @@ You do this with only two steps:
 								\end{Verbatim}
 
 
-								When you are not on Unix, check the value of the 'runtimepath' option to see where Vim will look for the "\verb!ftplugin!" directory:
+								When you are not on Unix, check the value of the \verb!'runtimepath'! option to see where Vim will look for the "\verb!ftplugin!" directory:
 
 								\begin{Verbatim}[samepage=true]
  set runtimepath
@@ -31,7 +31,7 @@ You do this with only two steps:
 
 								You would normally use the first directory name (before the first comma).
 
-								You might want to prepend a directory name to the 'runtimepath' option in your |\verb!:h vimrc!| file if you don't like the default value.
+								You might want to prepend a directory name to the \verb!'runtimepath'! option in your |\verb!:h vimrc!| file if you don't like the default value.
 
 				\item Create the file "\verb!~/.vim/ftplugin/c.vim!", with the contents:
 								\begin{Verbatim}[samepage=true]
@@ -41,10 +41,10 @@ You do this with only two steps:
 \end{enumerate}
 
 Try editing a C file.
-You should notice that the 'softtabstop' option is set to 4.
+You should notice that the \verb!'softtabstop'! option is set to 4.
 But when you edit another file it's reset to the default zero.
 That is because the "\verb!:setlocal!" command was used.
-This sets the 'softtabstop' option only locally to the buffer.
+This sets the \verb!'softtabstop'! option only locally to the buffer.
 As soon as you edit another buffer, it will be set to the value set for that buffer.
 For a new buffer it will get the default value or the value from the last "\verb!:set!" command.
 
@@ -79,8 +79,8 @@ Example:
 This will recognize all files that end in "\verb!.xyz!" as the "\verb!xyz"! filetype.
 The "\verb!:augroup!" commands put this autocommand in the "\verb!filetypedetect!" group.
 This allows removing all autocommands for filetype detection when doing "\verb!:filetype off!".
-The "\verb!setf!" command will set the 'filetype' option to its argument, unless it was set already.
-This will make sure that 'filetype' isn't set twice.
+The "\verb!setf!" command will set the \verb!'filetype'! option to its argument, unless it was set already.
+This will make sure that \verb!'filetype'! isn't set twice.
 
 You can use many different patterns to match the name of your file.
 Directory names can also be included.
@@ -98,7 +98,7 @@ Adding this to the example above:
 However, if you now edit a file /usr/share/scripts/README.txt, this is not a
 ruby file.  The danger of a pattern ending in "\verb!*!" is that it quickly matches
 too many files.  To avoid trouble with this, put the filetype.vim file in
-another directory, one that is at the end of 'runtimepath'.  For Unix for
+another directory, one that is at the end of \verb!'runtimepath'!.  For Unix for
 example, you could use "\verb!~/.vim/after/filetype.vim!".
 
 You now put the detection of text files in ~/.vim/filetype.vim:
@@ -109,7 +109,7 @@ You now put the detection of text files in ~/.vim/filetype.vim:
  augroup END
 \end{Verbatim}
 
-That file is found in 'runtimepath' first.
+That file is found in \verb!'runtimepath'! first.
 Then use this in \verb!~/.vim/after/filetype.vim!, which is found last:
 
 \begin{Verbatim}[samepage=true]
@@ -118,19 +118,19 @@ Then use this in \verb!~/.vim/after/filetype.vim!, which is found last:
  augroup END
 \end{Verbatim}
 
-What will happen now is that Vim searches for "\verb!filetype.vim!" files in each directory in 'runtimepath'.
+What will happen now is that Vim searches for "\verb!filetype.vim!" files in each directory in \verb!'runtimepath'!.
 First \verb!~/.vim/filetype.vim! is found.
 The autocommand to catch \verb!*.txt! files is defined there.
-Then Vim finds the filetype.vim file in \verb!$VIMRUNTIME!, which is halfway 'runtimepath'.
+Then Vim finds the filetype.vim file in \verb!$VIMRUNTIME!, which is halfway \verb!'runtimepath'!.
 Finally \verb!/.vim/after/filetype.vim! is found and the autocommand for detecting ruby files in \verb!/usr/share/scripts! is added.
 
 When you now edit \verb!/usr/share/scripts/README.txt!, the autocommands are checked in the order in which they were defined.
 The \verb!*.txt! pattern matches, thus "\verb!setf text!" is executed to set the filetype to "\verb!text!".
 The pattern for ruby matches too, and the "\verb!setf ruby!" is executed.
-But since 'filetype' was already set to "\verb!text!", nothing happens here.
+But since \verb!'filetype'! was already set to "\verb!text!", nothing happens here.
 
 When you edit the file \verb!/usr/share/scripts/foobar! the same autocommands are checked.
-Only the one for ruby matches and "\verb!setf ruby!" sets 'filetype' to ruby.
+Only the one for ruby matches and "\verb!setf ruby!" sets \verb!'filetype'! to ruby.
 
 \subsubsection{Recognizing by contents}
 If your file cannot be recognized by its file name, you might be able to recognize it by its contents.
@@ -159,11 +159,11 @@ The scripts.vim file is sourced by an autocommand in the default \verb!filetype.
 Therefore, the order of checks is:
 
 \begin{enumerate}
-				\item \verb!filetype.vim! files before \verb!$VIMRUNTIME! in 'runtimepath'
+				\item \verb!filetype.vim! files before \verb!$VIMRUNTIME! in \verb!'runtimepath'!
 				\item first part of \verb!$VIMRUNTIME/filetype.vim!
-				\item all \verb!scripts.vim! files in 'runtimepath'
+				\item all \verb!scripts.vim! files in \verb!'runtimepath'!
 				\item remainder of \verb!$VIMRUNTIME/filetype.vim!
-				\item filetype.vim files after \verb!$VIMRUNTIME! in 'runtimepath'
+				\item filetype.vim files after \verb!$VIMRUNTIME! in \verb!'runtimepath'!
 \end{enumerate}
 
 If this is not sufficient for you, add an autocommand that matches all files and sources a script or executes a function to check the contents of the file.

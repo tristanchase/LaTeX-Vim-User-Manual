@@ -37,7 +37,7 @@ Thus in Insert mode, when {keys} is plain text, that text is inserted.
 \subsubsection{Accelerators}
 The ampersand character (\verb!&!) is used to indicate an accelerator.
 For instance, you can use Alt-F to select "\verb!File!" and S to select "\verb!Save!".
-(The 'winaltkeys' option may disable this though!).
+(The \verb!'winaltkeys'! option may disable this though!).
 Therefore, the {menu-item} looks like "\verb!&File.&Save!".
 The accelerator characters will be underlined in the menu.
 
@@ -260,7 +260,7 @@ Example:
 
 This deletes the Syntax menu and all the items in it.
 \subsection{Various}
-You can change the appearance of the menus with flags in 'guioptions'.
+You can change the appearance of the menus with flags in \verb!'guioptions'!.
 In the default value they are all included, except "\verb!M!".
 You can remove a flag with a command like:
 
@@ -301,7 +301,7 @@ There are two special menus: ToolBar and PopUp.
 Items that start with these names do not appear in the normal menu bar.
 
 \subsubsection{Toolbar}
-The toolbar appears only when the "\verb!T!" flag is included in the 'guioptions' option.
+The toolbar appears only when the "\verb!T!" flag is included in the \verb!'guioptions'! option.
 
 The toolbar uses icons rather than text to represent the command.
 For example, the {menu-item} named "\verb!ToolBar.New!" causes the "\verb!New!" icon to appear on the toolbar.
@@ -326,7 +326,7 @@ For Unix XPM format is used, the file name is "\verb!Compile.xpm!".
 The size must be 18 by 18 pixels.
 On MS-Windows other sizes can be used as well, but it will look ugly.
 
-Put the bitmap in the directory "\verb!bitmaps!" in one of the directories from 'runtimepath'.
+Put the bitmap in the directory "\verb!bitmaps!" in one of the directories from \verb!'runtimepath'!.
 E.g., for Unix "\verb!~/.vim/bitmaps/Compile.xpm!".
 
 You can define tooltips for the items in the toolbar.
@@ -345,7 +345,7 @@ Example:
 
 To remove a tooltip, use the |\verb!:h :tunmenu!| command.
 
-The 'toolbar' option can be used to display text instead of a bitmap, or both text and a bitmap.
+The \verb!'toolbar'! option can be used to display text instead of a bitmap, or both text and a bitmap.
 Most people use just the bitmap, since the text takes quite a bit of space.
 
 \subsubsection{Popup menu}
@@ -354,7 +354,7 @@ On MS-Windows you activate it by clicking the right mouse button.
 Then you can select an item with the left mouse button.
 On Unix the popup menu is used by pressing and holding the right mouse button.
 
-The popup menu only appears when the 'mousemodel' has been set to "\verb!popup!" or "\verb!popup_setpos!".
+The popup menu only appears when the \verb!'mousemodel'! has been set to "\verb!popup!" or "\verb!popup_setpos!".
 The difference between the two is that "\verb!popup_setpos!" moves the cursor to the mouse pointer position.
 When clicking inside a selection, the selection will be used unmodified.
 When there is a selection but you click outside of it, the selection is removed.

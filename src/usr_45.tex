@@ -89,9 +89,9 @@ It is also possible to specify a language:
 Like above, differences between "\verb!-!" and "\verb!_!" matter.
 However, upper/lowercase differences are ignored here.
 
-The 'langmenu' option must be set before the menus are loaded.
-Once the menus have been defined changing 'langmenu' has no direct effect.
-Therefore, put the command to set 'langmenu' in your vimrc file.
+The \verb!'langmenu'! option must be set before the menus are loaded.
+Once the menus have been defined changing \verb!'langmenu'! has no direct effect.
+Therefore, put the command to set \verb!'langmenu'! in your vimrc file.
 
 If you really want to switch menu language while running Vim, you can do it this way:
 
@@ -117,7 +117,7 @@ The simplest way to do this is by copying one of the existing language files, an
 
 First find out the name of your language with the "\verb!:language!" command.
 Use this name, but with all letters made lowercase.
-Then copy the file to your own runtime directory, as found early in 'runtimepath'.
+Then copy the file to your own runtime directory, as found early in \verb!'runtimepath'!.
 For example, for Unix you would do:
 
 \begin{Verbatim}[samepage=true]
@@ -166,9 +166,9 @@ This should work:
  :set guifont=-misc-fixed-medium-r-normal--18-120-100-100-c-90-iso10646-1
 \end{Verbatim}
 
-The 'encoding' option tells Vim the encoding of the characters that you use.
+The \verb!'encoding'! option tells Vim the encoding of the characters that you use.
 This applies to the text in buffers (files you are editing), registers, Vim script files, etc.
-You can regard 'encoding' as the setting for the internals of Vim.
+You can regard \verb!'encoding'! as the setting for the internals of Vim.
 
 This example assumes you have this font on your system.
 The name in the example is for the X Window System.
@@ -191,7 +191,7 @@ If Microsoft didn't move it, you can find it here: \url{http://www.microsoft.com
 Now you have told Vim to use Unicode internally and display text with a Unicode font.
 Typed characters still arrive in the encoding of your original language.
 This requires converting them to Unicode.
-Tell Vim the language from which to convert with the 'termencoding' option.
+Tell Vim the language from which to convert with the \verb!'termencoding'! option.
 You can do it like this:
 
 \begin{Verbatim}[samepage=true]
@@ -199,7 +199,7 @@ You can do it like this:
  :set encoding=utf-8
 \end{Verbatim}
 
-This assigns the old value of 'encoding' to 'termencoding' before setting 'encoding' to utf-8.
+This assigns the old value of \verb!'encoding'! to \verb!'termencoding'! before setting \verb!'encoding'! to utf-8.
 You will have to try out if this really works for your setup.
 It should work especially well when using an input method for an Asian language, and you want to edit Unicode text.
 
@@ -220,7 +220,7 @@ Example:
 \end{Verbatim}
 
 Now you can run Vim inside this terminal.
-Set 'encoding' to "\verb!utf-8!" as before.
+Set \verb!'encoding'! to "\verb!utf-8!" as before.
 That's all.
 
 \subsubsection{Using unicode in an ordinary terminal}
@@ -237,7 +237,7 @@ This is the same as what was used for the GUI.
 But it works differently: Vim will convert the displayed text before sending it to the terminal.
 That avoids that the display is messed up with strange characters.
 
-For this to work the conversion between 'termencoding' and 'encoding' must be possible.
+For this to work the conversion between \verb!'termencoding'! and \verb!'encoding'! must be possible.
 Vim will convert from latin1 to Unicode, thus that always works.
 For other conversions the |\verb!:h +iconv!| feature is required.
 
@@ -255,15 +255,15 @@ You can look it up in a Unicode table.
 You could actually view a file that way, if you have lots of time at hand.
 
 \emph{Note}:
-Since 'encoding' is used for all text inside Vim, changing it makes all non-ASCII text invalid.
-You will notice this when using registers and the 'viminfo' file (e.g., a remembered search pattern).
-It's recommended to set 'encoding' in your vimrc file, and leave it alone.
+Since \verb!'encoding'! is used for all text inside Vim, changing it makes all non-ASCII text invalid.
+You will notice this when using registers and the \verb!'viminfo'! file (e.g., a remembered search pattern).
+It's recommended to set \verb!'encoding'! in your vimrc file, and leave it alone.
 \subsection{Editing files with a different encoding}
 Suppose you have setup Vim to use Unicode, and you want to edit a file that is in 16-bit Unicode.
 Sounds simple, right?  Well, Vim actually uses utf-8 encoding internally, thus the 16-bit encoding must be converted, since there is a difference between the character set (Unicode) and the encoding (utf-8 or 16-bit).
 
 Vim will try to detect what kind of file you are editing.
-It uses the encoding names in the 'fileencodings' option.
+It uses the encoding names in the \verb!'fileencodings'! option.
 When using Unicode, the default value is: "\verb!ucs-bom,utf-8,latin1!".
 This means that Vim checks the file to see if it's one of these encodings:
 
@@ -273,18 +273,18 @@ This means that Vim checks the file to see if it's one of these encodings:
 				\texttt{latin1} & The good old 8-bit encoding.  Always works. \\
 \end{tabularx} \end{center}
 When you start editing that 16-bit Unicode file, and it has a BOM, Vim will detect this and convert the file to utf-8 when reading it.
-The 'fileencoding' option (without s at the end) is set to the detected value.
+The \verb!'fileencoding'! option (without s at the end) is set to the detected value.
 In this case it is "\verb!utf-16le!".
 That means it's Unicode, 16-bit and little-endian.
 This file format is common on MS-Windows (e.g., for registry files).
 
-When writing the file, Vim will compare 'fileencoding' with 'encoding'.
+When writing the file, Vim will compare \verb!'fileencoding'! with \verb!'encoding'!.
 If they are different, the text will be converted.
 
-An empty value for 'fileencoding' means that no conversion is to be done.
-Thus the text is assumed to be encoded with 'encoding'.
+An empty value for \verb!'fileencoding'! means that no conversion is to be done.
+Thus the text is assumed to be encoded with \verb!'encoding'!.
 
-If the default 'fileencodings' value is not good for you, set it to the encodings you want Vim to try.
+If the default \verb!'fileencodings'! value is not good for you, set it to the encodings you want Vim to try.
 Only when a value is found to be invalid will the next one be used.
 Putting "\verb!latin1!" first doesn't work, because it is never illegal.
 An example, to fall back to Japanese when the file doesn't have a BOM and isn't utf-8:
@@ -306,8 +306,8 @@ Example:
 \end{Verbatim}
 
 The "\verb!++enc!" part specifies the name of the encoding to be used for this file only.
-Vim will convert the file from the specified encoding, Russian in this example, to 'encoding'.
-'fileencoding' will also be set to the specified encoding, so that the reverse conversion can be done when writing the file.
+Vim will convert the file from the specified encoding, Russian in this example, to \verb!'encoding'!.
+\verb!'fileencoding'! will also be set to the specified encoding, so that the reverse conversion can be done when writing the file.
 
 The same argument can be used when writing the file.
 This way you can actually use Vim to convert a file.
@@ -348,7 +348,7 @@ You can load the keymap like this:
 \end{Verbatim}
 
 Vim will try to find a keymap file for you.
-This depends on the value of 'encoding'.
+This depends on the value of \verb!'encoding'!.
 If no matching file was found, you will get an error message.
 
 Now you can type Hebrew in Insert mode.
@@ -362,10 +362,10 @@ You can use this command to switch between Hebrew and English:
 This only works in Insert mode and Command-line mode.
 In Normal mode it does something completely different (jumps to alternate file).
 
-The usage of the keymap is indicated in the mode message, if you have the 'showmode' option set.
+The usage of the keymap is indicated in the mode message, if you have the \verb!'showmode'! option set.
 In the GUI Vim will indicate the usage of keymaps with a different cursor color.
 
-You can also change the usage of the keymap with the 'iminsert' and 'imsearch' options.
+You can also change the usage of the keymap with the \verb!'iminsert'! and \verb!'imsearch'! options.
 
 To see the list of mappings, use this command:
 

@@ -41,7 +41,7 @@ Thus you can use this to move through a paragraph, much faster than using "l".
 "\verb!b!" does the same in the other direction.
 
 A word ends at a non-word character, such as a ".", "-" or ")".
-To change what Vim considers to be a word, see the 'iskeyword' option.
+To change what Vim considers to be a word, see the \verb!'iskeyword'! option.
 It is also possible to move by white-space separated WORDs.
 This is not a word in the normal sense, that's why the uppercase is used.
 The commands for moving by WORDs are also uppercase, as this figure shows:
@@ -151,7 +151,7 @@ If it's on a ")" it will move to the matching "(".
 \end{Verbatim}
 
 This also works for [ ] and \{\} pairs.
-(This can be defined with the 'matchpairs' option.)
+(This can be defined with the \verb!'matchpairs'! option.)
 
 When the cursor is not on a useful character, "\%" will search forward to find one.
 Thus if the cursor is at the start of the line of the previous example, "\%" will search forward and find the first "(".
@@ -223,7 +223,7 @@ Hints: "H" stands for Home, "M" for Middle and "L" for Last.
 To see where you are in a file, there are three ways:
 \begin{enumerate}
 				\item  Use the CTRL-G command.
-								You get a message like this (assuming the 'ruler' option is off):
+								You get a message like this (assuming the \verb!'ruler'! option is off):
 								\begin{Verbatim}[samepage=true]
 	"usr_03.txt" line 233 of 650 --35%-- col 45-52 
 								\end{Verbatim}
@@ -233,7 +233,7 @@ To see where you are in a file, there are three ways:
 								For example, "col 2-9".
 								This indicates that the cursor is positioned on the second character, but because character one is a tab, occupying eight spaces worth of columns, the screen column is 9.
 
-				\item  Set the 'number' option.  This will display a line number in front of
+				\item  Set the \verb!'number'! option.  This will display a line number in front of
 								every line:
 
 								\begin{Verbatim}[samepage=true]
@@ -246,13 +246,13 @@ To see where you are in a file, there are three ways:
 	:set nonumber
 								\end{Verbatim}
 
-								Since 'number' is a boolean option, prepending "no" to its name has the effect of switching it off.
+								Since \verb!'number'! is a boolean option, prepending "no" to its name has the effect of switching it off.
 								A boolean option has only these two values, it is either on or off.
 								Vim has many options.
 								Besides the boolean ones there are options with a numerical value and string options.
 								You will see examples of this where they are used.
 
-				\item  Set the 'ruler' option.
+				\item  Set the \verb!'ruler'! option.
 								This will display the cursor position in the lower right corner of the Vim window:
 
 								\begin{Verbatim}[samepage=true]
@@ -261,7 +261,7 @@ To see where you are in a file, there are three ways:
 
 \end{enumerate}
 
-Using the 'ruler' option has the advantage that it doesn't take much room,
+Using the \verb!'ruler'! option has the advantage that it doesn't take much room,
 thus there is more space for your text.
 
 \subsection{Scrolling around}
@@ -319,7 +319,7 @@ That's done with the "zz" command.
 
 The "\verb!zt!" command puts the cursor line at the top, "\verb!zb!" at the bottom.
 There are a few more scrolling commands, see |\verb!:h Q_sc!|.
-To always keep a few lines of context around the cursor, use the 'scrolloff' option.
+To always keep a few lines of context around the cursor, use the \verb!'scrolloff'! option.
 
 \subsection{Simple searches}
 
@@ -366,7 +366,7 @@ Thus using "\verb!N!" after a "\verb!/!" command search backwards, using "\verb!
 \subsubsection{Ignoring case}
 
 Normally you have to type exactly what you want to find.
-If you don't care about upper or lowercase in a word, set ttexhe 'ignorecase' option:
+If you don't care about upper or lowercase in a word, set ttexhe \verb!'ignorecase'! option:
 
  \begin{Verbatim}[samepage=true]
  :set ignorecase
@@ -485,7 +485,7 @@ Or type more to change the search string.
 
 This stops the search at the end of the file.
 Or, when you are searching backwards, at the start of the file.
-The 'wrapscan' option is on by default, thus searching wraps around the end of the file.
+The \verb!'wrapscan'! option is on by default, thus searching wraps around the end of the file.
 
 \subsubsection{Intermezzo}
 
@@ -519,7 +519,7 @@ Then write the file:
  ZZ
  \end{Verbatim}
 
-If you now start Vim again, the 'hlsearch' option will already be set.
+If you now start Vim again, the \verb!'hlsearch'! option will already be set.
 
 \subsection{Simple search patterns}
 \label{Simple search patterns}

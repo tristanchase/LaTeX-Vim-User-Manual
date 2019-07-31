@@ -109,7 +109,7 @@ Other commands to move around in the error list:
 \end{tabular} \end{center}
 
 \subsubsection{Using another compiler}
-The name of the program to run when the "\verb!:make!" command is executed is defined by the 'makeprg' option.
+The name of the program to run when the "\verb!:make!" command is executed is defined by the \verb!'makeprg'! option.
 Usually this is set to "\verb!make!", but Visual C++ users should set this to "\verb!nmake!" by executing the following command:
 
 \begin{Verbatim}[samepage=true]
@@ -174,12 +174,12 @@ To go forward to the next error list:
 Vim remembers ten error lists.
 \subsubsection{Switching compilers}
 You have to tell Vim what format the error messages are that your compiler produces.
-This is done with the 'errorformat' option.
+This is done with the \verb!'errorformat'! option.
 The syntax of this option is quite complicated and it can be made to fit almost any compiler.
 You can find the explanation here: |\verb!:h errorformat!|.
 
 You might be using various different compilers.
-Setting the 'makeprg' option, and especially the 'errorformat' each time is not easy.
+Setting the \verb!'makeprg'! option, and especially the \verb!'errorformat'! each time is not easy.
 Vim offers a simple method for this.
 For example, to switch to using the Microsoft Visual C++ compiler:
 
@@ -193,9 +193,9 @@ You can write your own compiler files.  See \hyperref[write-compiler-plugin]{|\t
 
 \subsubsection{Output redirection}
 The "\verb!:make!" command redirects the output of the executed program to an error file.
-How this works depends on various things, such as the 'shell'.
-If your "\verb!:make!" command doesn't capture the output, check the 'makeef' and 'shellpipe' options.
-The 'shellquote' and 'shellxquote' options might also matter.
+How this works depends on various things, such as the \verb!'shell'!.
+If your "\verb!:make!" command doesn't capture the output, check the \verb!'makeef'! and \verb!'shellpipe'! options.
+The \verb!'shellquote'! and \verb!'shellxquote'! options might also matter.
 
 In case you can't get "\verb!:make!" to redirect the file for you, an alternative is to compile the program in another window and redirect the output into a file.
 Then have Vim read this file with:
@@ -208,9 +208,9 @@ Jumping to errors will work like with the "\verb!:make!" command.
 \subsection{Indenting C style text}
 A program is much easier to understand when the lines have been properly indented.
 Vim offers various ways to make this less work.
-For C or C style programs like Java or C++, set the 'cindent' option.
+For C or C style programs like Java or C++, set the \verb!'cindent'! option.
 Vim knows a lot about C programs and will try very hard to automatically set the indent for you.
-Set the 'shiftwidth' option to the amount of spaces you want for a deeper level.
+Set the \verb!'shiftwidth'! option to the amount of spaces you want for a deeper level.
 Four spaces will work fine.
 One "\verb!:set!" command will do it:
 
@@ -269,9 +269,9 @@ The automatic indenting does a good job, but in some situations you might want t
 \subsubsection{Setting indent style}
 Different people have different styles of indentation.
 By default Vim does a pretty good job of indenting in a way that 90% of programmers do.
-There are different styles, however; so if you want to, you can customize the indentation style with the 'cinoptions' option.
+There are different styles, however; so if you want to, you can customize the indentation style with the \verb!'cinoptions'! option.
 
-By default 'cinoptions' is empty and Vim uses the default style.
+By default \verb!'cinoptions'! is empty and Vim uses the default style.
 You can add various items where you want something different.
 For example, to make curly braces be placed like this:
 
@@ -291,14 +291,14 @@ Use this command:
 
 There are many of these items.  See |\verb!:h cinoptions-values!|.
 \subsection{Automatic indenting}
-You don't want to switch on the 'cindent' option manually every time you edit a C file.
+You don't want to switch on the \verb!'cindent'! option manually every time you edit a C file.
 This is how you make it work automatically:
 
 \begin{Verbatim}[samepage=true]
  :filetype indent on
 \end{Verbatim}
 
-Actually, this does a lot more than switching on 'cindent' for C files.
+Actually, this does a lot more than switching on \verb!'cindent'! for C files.
 First of all, it enables detecting the type of a file.
 That's the same as what is used for syntax highlighting.
 
@@ -364,20 +364,20 @@ Then the resulting file name is:
 Instead of switching the indenting off, you could write your own indent file.
 How to do that is explained here: |\verb!:h indent-expression!|.
 \subsection{Other indenting}
-The most simple form of automatic indenting is with the 'autoindent' option.
+The most simple form of automatic indenting is with the \verb!'autoindent'! option.
 It uses the indent from the previous line.
-A bit smarter is the 'smartindent' option.
+A bit smarter is the \verb!'smartindent'! option.
 This is useful for languages where no indent file is available.
-'smartindent' is not as smart as 'cindent', but smarter than 'autoindent'.
+\verb!'smartindent'! is not as smart as \verb!'cindent'!, but smarter than \verb!'autoindent'!.
 
-With 'smartindent' set, an extra level of indentation is added for each { and removed for each }.
-An extra level of indentation will also be added for any of the words in the 'cinwords' option.
+With \verb!'smartindent'! set, an extra level of indentation is added for each { and removed for each }.
+An extra level of indentation will also be added for any of the words in the \verb!'cinwords'! option.
 Lines that begin with \verb!#! are treated specially: all indentation is removed.
 This is done so that preprocessor directives will all start in column 1.
 The indentation is restored for the next line.
 
 \subsubsection{Correcting indents}
-When you are using 'autoindent' or 'smartindent' to get the indent of the previous line, there will be many times when you need to add or remove one 'shiftwidth' worth of indent.
+When you are using \verb!'autoindent'! or \verb!'smartindent'! to get the indent of the previous line, there will be many times when you need to add or remove one \verb!'shiftwidth'! worth of indent.
 A quick way to do this is using the CTRL-D and CTRL-T commands in Insert mode.
 
 For example, you are typing a shell script that is supposed to look like this:
@@ -411,7 +411,7 @@ The result:
          echo 
 \end{Verbatim}
 
-The CTRL-T command, in Insert mode, adds one 'shiftwidth' to the indent, no matter where in the line you are.
+The CTRL-T command, in Insert mode, adds one \verb!'shiftwidth'! to the indent, no matter where in the line you are.
 
 You continue typing the second line, <Enter> and the third line.
 This time the indent is OK.
@@ -426,7 +426,7 @@ Now you have this:
 \end{Verbatim}
 
 To remove the superfluous indent in the last line press CTRL-D.
-This deletes one 'shiftwidth' worth of indent, no matter where you are in the line.
+This deletes one \verb!'shiftwidth'! worth of indent, no matter where you are in the line.
 
 When you are in Normal mode, you can use the "\verb!>>!" and "\verb!<<!" commands to shift lines.
 "\verb!>!" and "\verb!<!" are operators, thus you have the usual three ways to specify the lines you want to indent.
@@ -478,12 +478,12 @@ if (flag)
 				\hline
 \end{tabular} \end{center}
 \subsection{Tabs and spaces}
-'tabstop' is set to eight by default.
+\verb!'tabstop'! is set to eight by default.
 Although you can change it, you quickly run into trouble later.
 Other programs won't know what tabstop value you used.
 They probably use the default value of eight, and your text suddenly looks very different.
 Also, most printers use a fixed tabstop value of eight.
-Thus it's best to keep 'tabstop' alone.
+Thus it's best to keep \verb!'tabstop'! alone.
 (If you edit a file which was written with a different tabstop setting, see |\hyperref[Indents and tabs]{\texttt{Indents and tabs}}| for how to fix that.)
 
 For indenting lines in a program, using a multiple of eight spaces makes you quickly run into the right border of the window.
@@ -507,8 +507,8 @@ Fortunately, Vim supports both methods quite well.
 If you are using a combination of tabs and spaces, you just edit normally.
 The Vim defaults do a fine job of handling things.
 
-You can make life a little easier by setting the 'softtabstop' option.
-This option tells Vim to make the <Tab> key look and feel as if tabs were set at the value of 'softtabstop', but actually use a combination of tabs and spaces.
+You can make life a little easier by setting the \verb!'softtabstop'! option.
+This option tells Vim to make the <Tab> key look and feel as if tabs were set at the value of \verb!'softtabstop'!, but actually use a combination of tabs and spaces.
 
 After you execute the following command, every time you press the <Tab> key the cursor moves to the next 4-column boundary:
 
@@ -521,7 +521,7 @@ The second time, Vim takes out the 4 spaces and puts in a <Tab> (thus taking you
 Thus Vim uses as many <Tab>s as possible, and then fills up with spaces.
 
 When backspacing it works the other way around.
-A <BS> will always delete the amount specified with 'softtabstop'.
+A <BS> will always delete the amount specified with \verb!'softtabstop'!.
 Then <Tab>s are used as many as possible and spaces to fill the gap.
 
 The following shows what happens pressing <Tab> a few times, and then using <BS>.
@@ -536,12 +536,12 @@ type & result \\
 \verb!<Tab><Tab><Tab><BS><BS>! & \verb!....! \\		
 \end{tabular} \end{center}
 
-An alternative is to use the 'smarttab' option.
-When it's set, Vim uses 'shiftwidth' for a <Tab> typed in the indent of a line, and a real <Tab> when typed after the first non-blank character.
-However, <BS> doesn't work like with 'softtabstop'.
+An alternative is to use the \verb!'smarttab'! option.
+When it's set, Vim uses \verb!'shiftwidth'! for a <Tab> typed in the indent of a line, and a real <Tab> when typed after the first non-blank character.
+However, <BS> doesn't work like with \verb!'softtabstop'!.
 
 \subsubsection{Just spaces}
-If you want absolutely no tabs in your file, you can set the 'expandtab' option:
+If you want absolutely no tabs in your file, you can set the \verb!'expandtab'! option:
 
 \begin{Verbatim}[samepage=true]
  :set expandtab
@@ -555,7 +555,7 @@ Thus after typing one <Tab> you have to press the <BS> key up to eight times to 
 If you are in the indent, pressing CTRL-D will be a lot quicker.
 
 \subsubsection{Changing tabs in spaces (and back)}
-Setting 'expandtab' does not affect any existing tabs.
+Setting \verb!'expandtab'! does not affect any existing tabs.
 In other words, any tabs in the document remain tabs.
 If you want to convert tabs to spaces, use the "\verb!:retab!" command.
 Use these commands:
@@ -633,7 +633,7 @@ The result looks like this:
 
 Vim has automatically inserted a star and a space for you.
 Now you can type the comment text.
-When it gets longer than 'textwidth', Vim will break the line.
+When it gets longer than \verb!'textwidth'!, Vim will break the line.
 Again, the star is inserted automatically:
 
 \begin{Verbatim}[samepage=true]
@@ -644,18 +644,18 @@ Again, the star is inserted automatically:
      */ 
 \end{Verbatim}
 
-For this to work some flags must be present in 'formatoptions':
+For this to work some flags must be present in \verb!'formatoptions'!:
 
 \begin{center} \begin{tabular}{c l}
 \verb!r! & insert the star when typing <Enter> in Insert mode \\
 \verb!o! & insert the star when using "\verb!o!" or "\verb!O!" in Normal mode \\
-\verb!c! & break comment text according to 'textwidth' \\
+\verb!c! & break comment text according to \verb!'textwidth'! \\
 \end{tabular} \end{center}
 
 See |\verb!:h fo-table!| for more flags.
 
 \subsubsection{Defining a comment}
-The 'comments' option defines what a comment looks like.
+The \verb!'comments'! option defines what a comment looks like.
 Vim distinguishes between a single-line comment and a comment that has a different start, end and middle part.
 
 Many single-line comments start with a specific character.
@@ -667,7 +667,7 @@ For example, to make Vim understand C++ comments:
 \end{Verbatim}
 
 The colon separates the flags of an item from the text by which the comment is recognized.
-The general form of an item in 'comments' is:
+The general form of an item in \verb!'comments'! is:
 
 \begin{Verbatim}[samepage=true]
     {flags}:{text}
@@ -700,7 +700,7 @@ This allows formatting a message like this:
     site? 
 \end{Verbatim}
 
-Try setting 'textwidth' to a different value, e.g., 80, and format the text by Visually selecting it and typing "\verb!gq!".
+Try setting \verb!'textwidth'! to a different value, e.g., 80, and format the text by Visually selecting it and typing "\verb!gq!".
 The result is:
 
 \begin{Verbatim}[samepage=true]
@@ -714,7 +714,7 @@ The "\verb!I!" in the second line would have fit at the end of the first line, b
 
 \subsubsection{A three part comment}
 A C comment starts with "\verb!/*!", has "\verb!*!" in the middle and "\verb!*/!" at the end.
-The entry in 'comments' for this looks like this:
+The entry in \verb!'comments'! for this looks like this:
 
 \begin{Verbatim}[samepage=true]
  :set comments=s1:/*,mb:*,ex:*/
