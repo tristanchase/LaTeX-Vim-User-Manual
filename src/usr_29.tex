@@ -352,10 +352,10 @@ C programs often contain constructs like this:
 \end{Verbatim}
 
 But then much longer, and possibly nested.
-Position the cursor on the "\verb!#ifdef!" and press %.
+Position the cursor on the "\verb!#ifdef!" and press \verb!%.!
 Vim will jump to the "\verb!#else!".
-Pressing % again takes you to the "\verb!#endif!".
-Another % takes you to the "\verb!#ifdef!" again.
+Pressing \verb!%! again takes you to the "\verb!#endif!".
+Another \verb!%! takes you to the "\verb!#ifdef!" again.
 
 When the construct is nested, Vim will find the matching items.
 This is a good way to check if you didn't forget an "\verb!#endif!".
@@ -452,7 +452,7 @@ The "\verb![(!" and "\verb!])!" commands work similar to "\verb![{!" and "\verb!
                           [(
             <--------------------------------
                       <-------
-        if (a == b && (c == d |\verb!:h !| (e > f)) && x > y) 
+        if (a == b && (c == d || (e > f)) && x > y) 
                           -------------->
                   -------------------------------->
                                ])

@@ -36,9 +36,9 @@ Try it out: Position the cursor in a paragraph and type:
 
 You will see that the paragraph is replaced by a highlighted line.
 You have created a fold.
-\verb!|zf|! is an operator and \verb!|\verb!:h ap!|! a text object selection.
-You can use the \verb!|\verb!:h zf!|! operator with any movement command to create a fold for the text that it moved over.
-\verb!|\verb!:h zf!|! also works in Visual mode.
+|\verb!:h zf!| is an operator and |\verb!:h ap!| a text object selection.
+You can use the |\verb!:h zf!| operator with any movement command to create a fold for the text that it moved over.
+|\verb!:h zf!| also works in Visual mode.
 
 To view the text again, open the fold by typing:
 
@@ -99,9 +99,9 @@ And you can close all folds with:
 
 This folds M-ore and M-ore.
 
-You can quickly disable the folding with the \verb!|\verb!:h zn!|! command.
-Then \verb!|\verb!:h zN!|! brings back the folding as it was.
-\verb!|\verb!:h zi!|! toggles between the two.
+You can quickly disable the folding with the |\verb!:h zn!| command.
+Then |\verb!:h zN!| brings back the folding as it was.
+|\verb!:h zi!| toggles between the two.
 This is a useful way of working:
 
 \begin{itemize}
@@ -144,10 +144,13 @@ A "\verb!-!" is shown at the start of each open fold and "\verb!|!" at following
 You can use the mouse to open a fold by clicking on the "\verb!+!" in the foldcolumn.
 Clicking on the "\verb!-!" or a "\verb!|!" below it will close an open fold.
 
-To open all folds at the cursor line use \verb!|\verb!:h zO!|!.
-To close all folds at the cursor line use \verb!|\verb!:h zC!|!.
-To delete a fold at the cursor line use \verb!|\verb!:h zd!|!.
-To delete all folds at the cursor line use \verb!|\verb!:h zD!|!.
+\begin{itemize}
+	\item To open all folds at the cursor line use |\verb!:h zO!|.
+	\item To close all folds at the cursor line use |\verb!:h zC!|.
+	\item To delete a fold at the cursor line use |\verb!:h zd!|.
+	\item To delete all folds at the cursor line use |\verb!:h zD!|.
+\end{itemize}
+
 
 When in Insert mode, the fold at the cursor line is never closed.
 That allows you to see what you type!
@@ -176,7 +179,7 @@ You can make folds close automatically when you move out of it:
 
 This will re-apply \verb!'foldlevel'! to all folds that don't contain the cursor.
 You have to try it out if you like how this feels.
-Use |zm| to fold more and |\verb!:h zr!| to fold less (reduce folds).
+Use |\verb!:h zm!| to fold more and |\verb!:h zr!| to fold less (reduce folds).
 
 The folding is local to the window.
 This allows you to open two windows on the same buffer, one with folds and one without folds.
@@ -210,7 +213,7 @@ Note that when you insert or delete lines the views might become invalid.
 Also check out the \verb!'viewdir'! option, which specifies where the views are stored.
 You might want to delete old views now and then.
 \subsection{Folding by indent}
-Defining folds with \verb!|\verb!:h zf!|! is a lot of work.
+Defining folds with |\verb!:h zf!| is a lot of work.
 If your text is structured by giving lower level items a larger indent, you can use the indent folding method.
 This will create folds for every sequence of lines with the same indent.
 Lines with a larger indent will become nested folds.
@@ -222,7 +225,7 @@ Try this by setting the \verb!'foldmethod'! option:
  :set foldmethod=indent
 \end{Verbatim}
 
-Then you can use the \verb!|zm|! and \verb!|\verb!:h zr!|! commands to fold more and reduce folding.
+Then you can use the |\verb!:h zm!| and |\verb!:h zr!| commands to fold more and reduce folding.
 It's easy to see on this example text:
 
 \begin{Verbatim}[samepage=true]
@@ -240,7 +243,7 @@ Note that the relation between the amount of indent and the fold depth depends o
 Each \verb!'shiftwidth'! worth of indent adds one to the depth of the fold.
 This is called a fold level.
 
-When you use the |zr| and |\verb!:h zm!| commands you actually increase or decrease the \verb!'foldlevel'! option.
+When you use the |\verb!:h zr!| and |\verb!:h zm!| commands you actually increase or decrease the \verb!'foldlevel'! option.
 You could also set it directly:
 
 \begin{Verbatim}[samepage=true]
@@ -258,12 +261,12 @@ Thus there are two ways to open and close the folds:
 \item By setting the fold level.
 This gives a very quick way of "zooming out" to view the structure of the text, move the cursor, and "zoom in" on the text again.
 
-\item By using \verb!|zo|! and \verb!|\verb!:h zc!|! commands to open or close specific folds.
+\item By using |\verb!:h zo!| and |\verb!:h zc!| commands to open or close specific folds.
 This allows opening only those folds that you want to be open, while other folds remain closed.
 \end{enumerate}
 
-This can be combined: You can first close most folds by using \verb!|zm|! a few times and then open a specific fold with \verb!|\verb!:h zo!|!.
-Or open all folds with \verb!|zR|! and then close specific folds with \verb!|\verb!:h zc!|!.
+This can be combined: You can first close most folds by using |\verb!:h zm!| a few times and then open a specific fold with b!|\verb!:h zo!|!.
+Or open all folds with |\verb!:h zR!| and then close specific folds with |\verb!:h zc!|.
 
 But you cannot manually define folds when \verb!'foldmethod'! is "indent", as that would conflict with the relation between the indent and the fold level.
 
@@ -356,11 +359,11 @@ You can try it out on this text:
 \end{Verbatim}
 
 Explanation for the \verb!'foldexpr'! used in the example (inside out):
-\begin{center} \begin{tabular}{c l}
+\begin{center} \begin{tabular}{l l}
 				\verb!getline(v:lnum) ! & gets the current line \\
 				\verb!substitute(...,'\\s','','g') ! & removes all white space from the line \\
-				\verb!substitute(...,'[^>].*','','') ! & removes everything after leading '>'s \\
-				\verb!strlen(...) ! & counts the length of the string, which is the number of '>'s found \\
+				\verb!substitute(...,'[^>].*','','') ! & removes everything after leading `>'s \\
+				\verb!strlen(...) ! & counts the length of the string, which is the number of `>'s found \\
 \end{tabular} \end{center}
 Note that a backslash must be inserted before every space, double quote and backslash for the "\verb!:set!" command.
 If this confuses you, do
