@@ -388,14 +388,14 @@ Example:
 With the cursor in the last line, "\verb![#!" moves to the first line.
 The "\verb!#ifdef!" - "\verb!#endif!" block in the middle is skipped.
 \subsubsection{Moving in code blocks}
-In C code blocks are enclosed in {}.
+In C code blocks are enclosed in \verb!{}.!
 These can get pretty long.
 To move to the start of the outer block use the "\verb![[!" command.
 Use "\verb!][!" to find the end.
 This assumes that the "\verb!{!" and "\verb!}!" are in the first column.
 
 The "\verb![{!" command moves to the start of the current block.
-It skips over pairs of {} at the same level.
+It skips over pairs of \verb!{}! at the same level.
 "\verb!]}!" jumps to the end.
 
 An overview:
@@ -417,7 +417,7 @@ An overview:
 \end{Verbatim}
 
 When writing C++ or Java, the outer \verb!{}! block is for the class.
-The next level of {} is for a method.
+The next level of \verb!{}! is for a method.
 When somewhere inside a class use "\verb![m!" to find the previous start of a method.
 "\verb!]m!" finds the next start of a method.
 
@@ -446,7 +446,7 @@ The end of a function is defined by a "\verb!}!" in the first column.
 Don't forget you can also use "\verb!%!" to move between matching \verb!()!, \verb!{}! and \verb![]!.
 That also works when they are many lines apart.
 \subsubsection{Moving in braces}
-The "\verb![(!" and "\verb!])!" commands work similar to "\verb![{!" and "\verb!]}!", except that they work on () pairs instead of {} pairs.
+The "\verb![(!" and "\verb!])!" commands work similar to "\verb![{!" and "\verb!]}!", except that they work on () pairs instead of \verb!{}! pairs.
 
 \begin{Verbatim}[samepage=true]
                           [(

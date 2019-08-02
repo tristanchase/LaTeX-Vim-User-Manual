@@ -10,7 +10,7 @@ But what if you want to do something more complex than a single change?  That's 
 There are three steps:
 
 \begin{enumerate}
-				\item The "\verb!q{register}!" command starts recording keystrokes into the register named {register}.
+				\item The "\verb!q{register}!" command starts recording keystrokes into the register named \verb!{register}.!
 								The register name must be between a and z.
 				\item Type your commands.
 				\item To finish recording, press q (without any extra character).
@@ -225,7 +225,7 @@ A plus, for example:
 The "\verb!:substitute!" command, and many other : commands, can be applied to a selection of lines.
 This is called a range.
 
-The simple form of a range is {number},{number}.
+The simple form of a range is \verb!{number}!, \verb!{number}!.
 For example:
 
 \begin{Verbatim}[samepage=true]
@@ -360,7 +360,7 @@ The general form is:
 \end{Verbatim}
 
 This is similar to the "\verb!:substitute!" command.
-But, instead of replacing the matched text with other text, the command {command} is executed.
+But, instead of replacing the matched text with other text, the command \verb!{command}! is executed.
 
 \emph{Note}:
 The command executed for "\verb!:global!" must be one that starts with a colon.
@@ -399,7 +399,7 @@ This remains effective until you use a motion command that moves the cursor hori
 Thus using "\verb!j!" keeps it, "\verb!h!" stops it.
 
 \subsubsection{Inserting text}
-The command  "\verb!I{string}<Esc>!" inserts the text {string} in each line, just left of the visual block.
+The command  "\verb!I{string}<Esc>!" inserts the text \verb!{string}! in each line, just left of the visual block.
 You start by pressing CTRL-V to enter visual block mode.
 Now you move the cursor to define your block.
 Next you type I to enter Insert mode, followed by the text to insert.
@@ -738,7 +738,7 @@ Vim has a very powerful set of commands, it can do anything.
 But there may still be something that an external command can do better or faster.
 
 The command "\verb:!{motion}{program}:" takes a block of text and filters it through an external program.
-In other words, it runs the system command represented by {program}, giving it the block of text represented by {motion} as input.
+In other words, it runs the system command represented by \verb!{program},! giving it the block of text represented by \verb!{motion}! as input.
 The output of this command then replaces the selected block.
 
 Because this summarizes badly if you are unfamiliar with UNIX filters, take a look at an example.

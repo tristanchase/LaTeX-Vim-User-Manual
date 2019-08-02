@@ -325,7 +325,7 @@ Now you need to write this in a file with a specific name:
     {directory}/indent/{filetype}.vim
 \end{Verbatim}
 
-The {filetype} is the name of the file type, such as "\verb!cpp!" or "\verb!java!".
+The \verb!{filetype}! is the name of the file type, such as "\verb!cpp!" or "\verb!java!".
 You can see the exact name that Vim detected with this command:
 
 \begin{Verbatim}[samepage=true]
@@ -340,7 +340,7 @@ In this file the output is:
 
 Thus you would use "\verb!help!" for \verb!{filetype}!.
 
-For the {directory} part you need to use your runtime directory.
+For the \verb!{directory}! part you need to use your runtime directory.
 Look at the output of this command:
 
 \begin{Verbatim}[samepage=true]
@@ -370,7 +370,7 @@ A bit smarter is the \verb!'smartindent'! option.
 This is useful for languages where no indent file is available.
 \verb!'smartindent'! is not as smart as \verb!'cindent'!, but smarter than \verb!'autoindent'!.
 
-With \verb!'smartindent'! set, an extra level of indentation is added for each { and removed for each }.
+With \verb!'smartindent'! set, an extra level of indentation is added for each \verb!{! and removed for each \verb!}!.
 An extra level of indentation will also be added for any of the words in the \verb!'cinwords'! option.
 Lines that begin with \verb!#! are treated specially: all indentation is removed.
 This is done so that preprocessor directives will all start in column 1.
@@ -436,8 +436,8 @@ A useful combination is:
  >i{
 \end{Verbatim}
 
-This adds one indent to the current block of lines, inside {}.
-The { and } lines themselves are left unmodified.
+This adds one indent to the current block of lines, inside \verb!{}!.
+The \verb!{! and \verb!}! lines themselves are left unmodified.
 "\verb!>a{!" includes them.
 In this example the cursor is on "\verb!printf!":
 

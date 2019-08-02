@@ -625,7 +625,7 @@ In particular, you are not inside an if block.
 
 You also can define matches and regions that are with no "\verb!grouphere!" or "\verb!groupthere!" arguments.
 These groups are for syntax groups skipped during synchronization.
-For example, the following skips over anything inside {}, even if it would normally match another synchronization method:
+For example, the following skips over anything inside \verb!{}!, even if it would normally match another synchronization method:
 
 \begin{Verbatim}[samepage=true]
  :syntax sync match xSpecial /{.*}/

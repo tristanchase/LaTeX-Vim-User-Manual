@@ -344,7 +344,7 @@ Now type "\verb!prev;!" to finish it off.
 
 The CTRL-E command acts like CTRL-Y except it inserts the character below the cursor.
 \subsection{Inserting a register}
-The command CTRL-R {register} inserts the contents of the register.
+The command CTRL-R \verb!{register}! inserts the contents of the register.
 This is useful to avoid having to type a long word.
 For example, you need to type this:
 
@@ -378,7 +378,7 @@ You could have done the same with completion.
 Using a register is useful when there are many words that start with the same characters.
 
 If the register contains characters such as <BS> or other special characters, they are interpreted as if they had been typed from the keyboard.
-If you do not want this to happen (you really want the <BS> to be inserted in the text), use the command CTRL-R CTRL-R {register}.
+If you do not want this to happen (you really want the <BS> to be inserted in the text), use the command CTRL-R CTRL-R \verb!{register}.!
 \subsection{Abbreviations}
 An abbreviation is a short word that takes the place of a long one.
 For example, "ad" stands for "advertisement".
@@ -527,7 +527,7 @@ Thus you don't leave Insert mode.
 Use CTRL-Q instead of CTRL-V.
 On Unix, on the other hand, CTRL-Q does not work on some terminals, because it has a special meaning.
 
-You can also use the command CTRL-V {digits} to insert a character with the decimal number {digits}.
+You can also use the command CTRL-V \verb!{digits}! to insert a character with the decimal number \verb!{digits}.!
 For example, the character number 127 is the <Del> character (but not necessarily the <Del> key!).
 To insert <Del> type:
 
@@ -626,7 +626,7 @@ In Normal mode you have many more.
 When you want to use one, you usually leave Insert mode with <Esc>, execute the Normal mode command, and re-enter Insert mode with "\verb!i!" or "\verb!a!".
 
 There is a quicker way.
-With CTRL-O {command} you can execute any Normal mode command from Insert mode.
+With CTRL-O \verb!{command}! you can execute any Normal mode command from Insert mode.
 For example, to delete from the cursor to the end of the line:
 
 \begin{Verbatim}[samepage=true]

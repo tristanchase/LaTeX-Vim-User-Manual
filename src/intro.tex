@@ -357,9 +357,9 @@ Sometimes the \verb![]!, \verb!{}! and \verb!<>! are part of what you type, the 
 				\item[\{char1-char2\}]
 								\label{{char1-char2}}
 								A single character from the range char1 to char2.
-								For example: {a-z} is a lowercase letter.
+								For example: \verb!{a-z}! is a lowercase letter.
 								Multiple ranges may be concatenated.
-								For example, {a-zA-Z0-9} is any alphanumeric character.
+								For example, \verb!{a-zA-Z0-9}! is any alphanumeric character.
 
 				\item[\{motion\}]
 								\label{{motion}}
@@ -409,8 +409,8 @@ Sometimes the \verb![]!, \verb!{}! and \verb!<>! are part of what you type, the 
 
 				\item[CTRL-\{char\}]
 								\label{CTRL-{char}}
-								\{char\} typed as a control character; that is, typing {char} while holding the CTRL key down.
-								The case of {char} does not matter; thus CTRL-A and CTRL-a are equivalent.
+								\verb!{char}! typed as a control character; that is, typing \verb!{char}! while holding the CTRL key down.
+								The case of \verb!{char}! does not matter; thus CTRL-A and CTRL-a are equivalent.
 								But on some terminals, using the SHIFT key will produce another code, don't use it then.
 
 				\item[\verb!'option'!]
@@ -603,7 +603,7 @@ There are six ADDITIONAL modes.  These are variants of the BASIC modes:
 \subsubsection{Operator-pending mode}
 \label{Operator-pending}
 \label{Operator-pending-mode}
-This is like Normal mode, but after an operator command has started, and Vim is waiting for a {motion} to specify the text that the operator will work on.
+This is like Normal mode, but after an operator command has started, and Vim is waiting for a \verb!{motion}! to specify the text that the operator will work on.
 
 \subsubsection{Replace mode}
 Replace mode is a special case of Insert mode.
@@ -806,7 +806,7 @@ The \verb!'sidescroll'! option can be set to the minimal number of columns to sc
 
 All normal ASCII characters are displayed directly on the screen.
 The <Tab> is replaced with the number of spaces that it represents.
-Other non-printing characters are replaced with "\textasciicircum {char}", where {char} is the non-printing character with 64 added.
+Other non-printing characters are replaced with "\textasciicircum \verb!{char}",! where \verb!{char}! is the non-printing character with 64 added.
 Thus character 7 (bell) will be shown as "\textasciicircum G".
 Characters between 127 and 160 are replaced with "\textasciitilde \{char\}", where \{char\} is the character with 64 subtracted.
 These characters occupy more than one position on the screen.
