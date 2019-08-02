@@ -57,7 +57,7 @@ Therefore, "\verb!int!" differs from "\verb!Int!" and "\verb!INT!".
 If the "\verb!ignore!" argument is used, the following are equivalent: "\verb!Procedure!", "\verb!PROCEDURE!" and "\verb!procedure!".
 
 The "\verb!:syntax case!" commands can appear anywhere in a syntax file and affect the syntax definitions that follow.
-In most cases, you have only one ":syntax case" command in your syntax file; if you work with an unusual language that contains both case-sensitive and non-case-sensitive elements, however, you can scatter the "\verb!:syntax case!" command throughout the file.
+In most cases, you have only one \verb!":syntax case!" command in your syntax file; if you work with an unusual language that contains both case-sensitive and non-case-sensitive elements, however, you can scatter the "\verb!:syntax case!" command throughout the file.
 \subsection{Keywords}
 The most basic syntax elements are keywords.
 To define a keyword, use the following form:
@@ -66,9 +66,9 @@ To define a keyword, use the following form:
  :syntax keyword {group} {keyword} ...
 \end{Verbatim}
 
-The {group} is the name of a syntax group.
-With the "\verb!:highlight!" command you can assign colors to a {group}.
-The {keyword} argument is an actual keyword.
+The \verb!{group}! is the name of a syntax group.
+With the "\verb!:highlight!" command you can assign colors to a \verb!{group}!.
+The \verb!{keyword}! argument is an actual keyword.
 Here are a few examples:
 
 \begin{Verbatim}[samepage=true]
@@ -504,7 +504,7 @@ Because you do not want to write two syntax files, you can have the C++ syntax f
  :runtime! syntax/c.vim
 \end{Verbatim}
 
-The "\verb!:runtime!!" command searches \verb!'runtimepath'! for all "\verb!syntax/c.vim!" files.
+The "\verb_:runtime!_" command searches \verb!'runtimepath'! for all "\verb!syntax/c.vim!" files.
 This makes the C parts of the C++ syntax be defined like for C files.
 If you have replaced the \verb!c.vim! syntax file, or added items with an extra file, these will be loaded as well.
 
@@ -597,8 +597,8 @@ Finally, you can specify a syntax group to look for by using this command:
      \ grouphere {group-name} {pattern}
 \end{Verbatim}
 
-This tells Vim that when it sees {pattern} the syntax group named {group-name} begins just after the pattern given.
-The {sync-group-name} is used to give a name to this synchronization specification.
+This tells Vim that when it sees \verb!{pattern}! the syntax group named \verb!{group-name}! begins just after the pattern given.
+The \verb!{sync-group-name}! is used to give a name to this synchronization specification.
 For example, the sh scripting language begins an if statement with "\verb!if!" and ends it with "\verb!fi!":
 
 \begin{Verbatim}[samepage=true]

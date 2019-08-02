@@ -15,8 +15,8 @@ The basic form of this command is as follows:
  :menu {menu-item} {keys}
 \end{Verbatim}
 
-The {menu-item} describes where on the menu to put the item.
-A typical {menu-item} is "\verb!File.Save!", which represents the item "\verb!Save!" under the "\verb!File!" menu.
+The \verb!{menu-item}! describes where on the menu to put the item.
+A typical \verb!{menu-item}! is "\verb!File.Save!", which represents the item "\verb!Save!" under the "\verb!File!" menu.
 A dot is used to separate the names.
 Example:
 
@@ -31,14 +31,14 @@ You could use even deeper levels.
 Don't use this too much, you need to move the mouse quite a bit to use such an item.
 
 The "\verb!:menu!" command is very similar to the "\verb!:map!" command: the left side specifies how the item is triggered and the right hand side defines the characters that are executed.
-{keys} are characters, they are used just like you would have typed them.
-Thus in Insert mode, when {keys} is plain text, that text is inserted.
+\verb!{keys}! are characters, they are used just like you would have typed them.
+Thus in Insert mode, when \verb!{keys}! is plain text, that text is inserted.
 
 \subsubsection{Accelerators}
 The ampersand character (\verb!&!) is used to indicate an accelerator.
 For instance, you can use Alt-F to select "\verb!File!" and S to select "\verb!Save!".
 (The \verb!'winaltkeys'! option may disable this though!).
-Therefore, the {menu-item} looks like "\verb!&File.&Save!".
+Therefore, the \verb!{menu-item}! looks like "\verb!&File.&Save!".
 The accelerator characters will be underlined in the menu.
 
 You must take care that each key is used only once in each menu.
@@ -63,7 +63,7 @@ These are the priorities used for the standard menus:
       10    20     40     50      60       70       9999
 
     +------------------------------------------------------------+
-    | File Edit  Tools  Syntax  Buffers  Window      Help |
+    | File Edit  Tools  Syntax  Buffers  Window      Help        |
     +------------------------------------------------------------+
 \end{Verbatim}
 
@@ -97,11 +97,11 @@ Notice that there is room in between the numbers.
 This is where you can insert your own items, if you really want to (it's often better to leave the standard menus alone and add a new menu for your own items).
 
 When you create a submenu, you can add another "\verb!.number!" to the priority.
-Thus each name in {menu-item} has its priority number.
+Thus each name in \verb!{menu-item}! has its priority number.
 
 \subsubsection{Special characters}
-The {menu-item} in this example is "\verb!&File.&Save<Tab>:w!".
-This brings up an important point: {menu-item} must be one word.
+The \verb!{menu-item}! in this example is "\verb!&File.&Save<Tab>:w!".
+This brings up an important point: \verb!{menu-item}! must be one word.
 If you want to put a dot, space or tabs in the name, you either use the <> notation (<Space> and <Tab>, for instance) or use the backslash (\verb!\!) escape.
 
 \begin{Verbatim}[samepage=true]
@@ -132,7 +132,7 @@ Example:
 
 You can define menu items that exist for only certain modes.
 This works just like the variations on the "\verb!:map!" command:
-\begin{center} \begin{tabular}{c l}
+\begin{center} \begin{tabular}{l l}
 				\verb!:menu! & Normal, Visual and Operator-pending mode \\
 				\verb!:nmenu! & Normal mode \\
 				\verb!:vmenu! & Visual mode \\
@@ -146,7 +146,7 @@ To avoid that the commands of a menu item are being mapped, use the command "\ve
 
 \subsubsection{Using :amenu}
 The "\verb!:amenu!" command is a bit different.
-It assumes that the {keys} you give are to be executed in Normal mode.
+It assumes that the \verb!{keys}! you give are to be executed in Normal mode.
 When Vim is in Visual or Insert mode when the menu is used, Vim first has to go back to Normal mode.
 "\verb!:amenu!" inserts a CTRL-C or CTRL-O for you.
 For example, if you use this command:
@@ -157,13 +157,13 @@ For example, if you use this command:
 
 Then the resulting menu commands will be:
 
-\begin{center} \begin{tabular}{c c}
+\begin{center} \begin{tabular}{l l}
 				\verb!Normal mode:! & * \\
 				\verb!Visual mode:! & CTRL-C * \\
 				\verb!Operator-pending mode:! & CTRL-C * \\
 				\verb!Insert mode:! & CTRL-O * \\
 				\verb!Command-line mode:! & CTRL-C * \\
-\end{tabular} \end{center}
+\endtabular} \end{center}
 
 When in Command-line mode the CTRL-C will abandon the command typed so far.
 In Visual and Operator-pending mode CTRL-C will stop the mode.
@@ -190,7 +190,7 @@ This avoids problems when a function with the same name is defined in another sc
 See |\verb!:h <SID>!|.
 
 \subsubsection{Silent menus}
-The menu executes the {keys} as if you typed them.
+The menu executes the \verb!{keys}! as if you typed them.
 For a "\verb!:!" command this means you will see the command being echoed on the command line.
 If it's a long command, the hit-Enter prompt will appear.
 That can be very annoying!
@@ -215,8 +215,8 @@ It is not needed for short commands.
 If you make a menu for someone else, being able the see the executed command will give him a hint about what he could have typed, instead of using the mouse.
 
 \subsubsection{Listing menus}
-When a menu command is used without a {keys} part, it lists the already defined menus.
-You can specify a {menu-item}, or part of it, to list specific menus.
+When a menu command is used without a \verb!{keys}! part, it lists the already defined menus.
+You can specify a \verb!{menu-item},! or part of it, to list specific menus.
 Example:
 
 \begin{Verbatim}[samepage=true]
@@ -268,12 +268,12 @@ You can remove a flag with a command like:
  :set guioptions-=m
 \end{Verbatim}
  
-\begin{center} \begin{tabular}{c l}
+\begin{center} \begin{tabularx}{l X}
 				\verb!m! & When removed the menubar is not displayed. \\
 				\verb!M! & When added the default menus are not loaded. \\
 				\verb!g! & When removed the inactive menu items are not made grey but are completely removed.  (Does not work on all systems.) \\
 				\verb!t! & When removed the tearoff feature is not enabled. \\
-\end{tabular} \end{center}
+\end{tabularx} \end{center}
 
 The dotted line at the top of a menu is not a separator line.
 When you select this item, the menu is "teared-off": It is displayed in a separate window.
@@ -304,7 +304,7 @@ Items that start with these names do not appear in the normal menu bar.
 The toolbar appears only when the "\verb!T!" flag is included in the \verb!'guioptions'! option.
 
 The toolbar uses icons rather than text to represent the command.
-For example, the {menu-item} named "\verb!ToolBar.New!" causes the "\verb!New!" icon to appear on the toolbar.
+For example, the \verb!{menu-item}! named "\verb!ToolBar.New!" causes the "\verb!New!" icon to appear on the toolbar.
 
 The Vim editor has 28 built-in icons.
 You can find a table here: |\verb!:h builtin-tools!|.

@@ -1,6 +1,14 @@
 TODO
-> Left off at Ch 28 Folding
+* |usr_41.tex|  Write a Vim script
+* |usr_42.tex|  Add new menus
+* |usr_43.tex|  Using filetypes
+* |usr_44.tex|  Your own syntax highlighted
+* |usr_45.tex|  Select your language
+* |usr_90.tex|  Installing Vim
 * Go through table formatting
+	* grep for \begin{center}
+	* grep for {tabular[x]}
+	* change alignment as necessary
 * Create a branch for manually numbered chapters and sections
 	* Create branch
 	* Number sections
@@ -12,5 +20,9 @@ TODO
 
 
 DONE
++ 2019-08-01 |usr_31.tex|  Exploiting the GUI
++ 2019-08-01 |usr_32.tex|  The undo tree
++ 2019-08-01 |usr_40.tex|  Make new commands
++ 2019-07-31 Go through files to look for % in text (grep -n "%" * | vim -)
 + 2019-07-31 Enclose 'options' with \verb!'options'! (@o)
 + 2019-07-31 Restore 'options' from `options'

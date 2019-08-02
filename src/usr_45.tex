@@ -267,7 +267,7 @@ It uses the encoding names in the \verb!'fileencodings'! option.
 When using Unicode, the default value is: "\verb!ucs-bom,utf-8,latin1!".
 This means that Vim checks the file to see if it's one of these encodings:
 
-\begin{center} \begin{tabularx}{\textwidth}{c X}
+\begin{center} \begin{tabularx}{\textwidth}{l X}
 				\texttt{ucs-bom} & File must start with a Byte Order Mark (BOM).  This allows detection of 16-bit, 32-bit and utf-8 Unicode encodings. \\
 				\texttt{utf-8} & utf-8 Unicode.  This is rejected when a sequence of bytes is illegal in utf-8. \\
 				\texttt{latin1} & The good old 8-bit encoding.  Always works. \\
@@ -333,7 +333,7 @@ When you use a language that uses many more characters than keys on your keyboar
 This requires learning the translation from typed keys to resulting character.
 When you need an IM you probably already have one on your system.
 It should work with Vim like with other programs.
-For details see |mbyte-XIM| for the X Window system and |\verb!:h mbyte-IME!| for MS-Windows.
+For details see |\verb!:h mbyte-XIM!| for the X Window system and |\verb!:h mbyte-IME!| for MS-Windows.
 
 \subsubsection{Keymaps}
 For some languages the character set is different from latin, but uses a similar number of characters.
@@ -397,9 +397,9 @@ or
     keymap/{name}_{encoding}.vim 
 \end{Verbatim}
 
-\{name\} is the name of the keymap.
+\verb!{name}! is the name of the keymap.
 Chose a name that is obvious, but different from existing keymaps (unless you want to replace an existing keymap file).
-\{name\} cannot contain an underscore.
+\verb!{name}! cannot contain an underscore.
 Optionally, add the encoding used after an underscore.
 Examples:
 
@@ -415,7 +415,7 @@ For the details, see |\verb!:h mbyte-keymap!|.
 \subsubsection{Last resort}
 If all other methods fail, you can enter any character with CTRL-V:
 
-\begin{center} \begin{tabular}{c l l}
+\begin{center} \begin{tabular}{l l l}
 				encoding & type & range \\
 				8-bit & CTRL-V 123 & decimal 0-255 \\
 				8-bit & CTRL-V x a1 & hexadecimal 00-ff \\

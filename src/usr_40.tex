@@ -28,7 +28,7 @@ You type these as separate characters, not by pressing the key itself.
 This makes the mappings better readable and you can copy and paste the text without problems.
 
 The "\verb!:!" character takes Vim to the command line.
-The "\verb!:read !date!" command reads the output from the "\verb!date!" command and appends it below the current line.
+The "\verb_:read !date_" command reads the output from the "\verb!date!" command and appends it below the current line.
 The <CR> is required to execute the "\verb!:read!" command.
 
 At this point of execution the text looks like this:
@@ -60,7 +60,7 @@ Notice that, although this mapping starts in Insert mode, it ends in Normal mode
 If you want it to continue in Insert mode, append an "\verb!a!" to the mapping.
 
 Here is an overview of map commands and in which mode they work:
-\begin{center} \begin{tabular}{c l}
+\begin{center} \begin{tabular}{l l}
 				\verb!:map! & Normal, Visual and Operator-pending \\
 				\verb!:vmap! & Visual \\
 				\verb!:nmap! & Normal \\
@@ -73,7 +73,7 @@ Here is an overview of map commands and in which mode they work:
 Operator-pending mode is when you typed an operator character, such as "\verb!d!" or "\verb!y!", and you are expected to type the motion command or a text object.
 Thus when you type "\verb!dw!", the "\verb!w!" is entered in operator-pending mode.
 
-Suppose that you want to define <F7> so that the command d<F7> deletes a C program block (text enclosed in curly braces, {}).
+Suppose that you want to define <F7> so that the command d<F7> deletes a C program block (text enclosed in curly braces, \verb!{}!).
 Similarly y<F7> would yank the program block into the unnamed register.
 Therefore, what you need to do is to define <F7> to select the current program block.
 You can do this with the following command:
@@ -83,18 +83,18 @@ You can do this with the following command:
 \end{Verbatim}
 
 This causes <F7> to perform a select block "\verb!a{!" in operator-pending mode, just like you typed it.
-This mapping is useful if typing a { on your keyboard is a bit difficult.
+This mapping is useful if typing a \verb!{! on your keyboard is a bit difficult.
 \subsubsection{Listing mappings}
 To see the currently defined mappings, use "\verb!:map!" without arguments.
 Or one of the variants that include the mode in which they work.
 The output could look like this:
 
-\begin{center} \begin{tabular}{c l}
-				\verb!_g! & \verb!:call MyGrep(1)<CR>! \\
-				\verb!v  <F2>! & \verb!:s/^/> /<CR>:noh<CR>``! \\
-				\verb!n  <F2>! & \verb!:.,$s/^/> /<CR>:noh<CR>``! \\
-				\verb!<xHome>! & \verb!<Home>! \\
-				\verb!<xEnd>! & \verb!<End>! \\
+\begin{center} \begin{tabular}{l l l}
+				 & \verb!_g! & \verb!:call MyGrep(1)<CR>! \\
+				\verb!v! &  \verb!<F2>! & \verb!:s/^/> /<CR>:noh<CR>``! \\
+				\verb!n! &  \verb!<F2>! & \verb!:.,$s/^/> /<CR>:noh<CR>``! \\
+				 & \verb!<xHome>! & \verb!<Home>! \\
+				 & \verb!<xEnd>! & \verb!<End>! \\
 \end{tabular} \end{center}
 
 The first column of the list shows in which mode the mapping is effective.
@@ -146,7 +146,7 @@ To avoid keys to be mapped again, use the "\verb!:noremap!" command:
 Now Vim knows that the "\verb!Q!" is not to be inspected for mappings that apply to it.
 There is a similar command for every mode:
 
-\begin{center} \begin{tabular}{c l}
+\begin{center} \begin{tabular}{l l}
 				\verb!:noremap! & Normal, Visual and Operator-pending \\
 				\verb!:vnoremap! & Visual \\
 				\verb!:nnoremap! & Normal \\
@@ -186,7 +186,7 @@ CTRL-C interrupts the mapping (CTRL-Break on MS-Windows).
 To remove a mapping use the "\verb!:unmap!" command.
 Again, the mode the unmapping applies to depends on the command used:
 
-\begin{center} \begin{tabular}{c l}
+\begin{center} \begin{tabular}{l l}
 				\verb;:unmap; & Normal, Visual and Operator-pending \\
 				\verb;:vunmap; & Visual \\
 				\verb;:nunmap; & Normal \\
@@ -240,7 +240,7 @@ When using a space inside a mapping, use <Space> (seven characters):
 This makes the spacebar move a blank-separated word forward.
 
 It is not possible to put a comment directly after a mapping, because the " character is considered to be part of the mapping.
-You can use |", this starts a new, empty command with a comment.
+You can use \verb!|"!, this starts a new, empty command with a comment.
 Example:
 
 \begin{Verbatim}[samepage=true]
@@ -389,7 +389,7 @@ Some commands take a range as their argument.
 To tell Vim that you are defining such a command, you need to specify a -range option.
 The values for this option are as follows:
 
-\begin{center} \begin{tabular}{c l}
+\begin{center} \begin{tabular}{l l}
 				\verb;-range; & Range is allowed; default is the current line. \\
 				\verb;-range=%; & Range is allowed; default is the whole file. \\
 				\verb;-range={count}; & Range is allowed; the last number in it is used as a single number whose default is {count}. \\
@@ -404,7 +404,7 @@ For example, the following command defines the SaveIt command, which writes out 
 \subsubsection{Other options}
 Some of the other options and keywords are as follows:
 
-\begin{center} \begin{tabular}{c l}
+\begin{center} \begin{tabularx}{l X} % This went off the page; changed to tabularx TMC
 				\verb;-count={number}; & The command can take a count whose default is {number}.
 				The resulting count can be used through the <count> keyword. \\
 				\verb;-bang; & You can use a \verb:!:.
@@ -415,7 +415,7 @@ Some of the other options and keywords are as follows:
 				\verb;-complete={type}; & Type of command-line completion used.  See |\verb!:h :command-completion!| for the list of possible values. \\
 				\verb;-bar; & The command can be followed by \verb!|! and another command, or \verb!"! and a comment. \\
 				\verb;-buffer; & The command is only available for the current buffer. \\
-\end{tabular} \end{center}
+\end{tabularx} \end{center}
 
 Finally, you have the <lt> keyword.
 It stands for the character \verb!<!.
@@ -485,12 +485,12 @@ The general form of the \verb!:autocmd! command is as follows:
  :autocmd [group] {events} {file_pattern} [nested] {command}
 \end{Verbatim}
 
-The [group] name is optional.
+The \verb![group]! name is optional.
 It is used in managing and calling the commands (more on this later).
 The \verb!{events}! parameter is a list of events (comma separated) that trigger the command.
 \verb!{file_pattern}! is a filename, usually with wildcards.
 For example, using "\verb!*.txt!" makes the autocommand be used for all files whose name end in "\verb!.txt!".
-The optional [nested] flag allows for nesting of autocommands (see below), and finally, {command} is the command to be executed.
+The optional \verb![nested]! flag allows for nesting of autocommands (see below), and finally, \verb!{command}! is the command to be executed.
 
 \subsubsection{Events}
 One of the most useful events is \verb!BufReadPost!.
@@ -527,7 +527,7 @@ For example: "\verb!*.c,*.h!" matches files ending in "\verb!.c!" and "\verb!.h!
 The usual file wildcards can be used.
 Here is a summary of the most often used ones:
 
-\begin{center} \begin{tabular}{c l}
+\begin{center} \begin{tabular}{l l}
 				\verb;*; & Match any character any number of times \\
 				\verb;?; & Match any character once \\
 				\verb;[abc]; & Match the character a, b or c \\

@@ -37,7 +37,7 @@ The new changes become a branch in the undo tree.
 
 Let's start with the text "one".
 The first change to make is to append " too".
-And then move to the first 'o' and change it into 'w'.
+And then move to the first `o' and change it into `w'.
 We then have two changes, numbered 1 and 2, and three states of the text:
 
 \begin{Verbatim}[samepage=true]
@@ -132,9 +132,9 @@ Use |\verb!:h g+!| to move forward in time:
 \end{Verbatim}
 
 Using |\verb!:h :undo!| is useful if you know what change you want to jump to.
-|\verb!g-!| and |\verb!:h \verb!g+!!| are useful if you don't know exactly what the change number is.
+|\verb!g-!| and |\verb!:h g+!| are useful if you don't know exactly what the change number is.
 
-You can type a count before |g-| and |\verb!:h g+!| to repeat them.
+You can type a count before |\verb!:h g-!| and |\verb!:h g+!| to repeat them.
 \subsection{Time travelling}
 When you have been working on text for a while the tree grows to become big.
 Then you may want to go to the text of some minutes ago.
@@ -156,7 +156,7 @@ Assuming we are below change 4, at "not two", you can go back ten seconds with t
 \end{Verbatim}
 
 Depending on how much time you took for the changes you end up at a certain position in the tree.
-The |\verb!:h \verb!:earlier!!| command argument can be "\verb!m!" for minutes, "\verb!h!" for hours and "\verb!d!" for days.
+The |\verb!:h :earlier!| command argument can be "\verb!m!" for minutes, "\verb!h!" for hours and "\verb!d!" for days.
 To go all the way back use a big number:
 
 \begin{Verbatim}[samepage=true]
