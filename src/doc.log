@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016/Debian) (preloaded format=xelatex 2019.8.3)  4 AUG 2019 05:39
+This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016/Debian) (preloaded format=xelatex 2019.8.3)  4 AUG 2019 11:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1073,17 +1073,27 @@ t line 316.
 LaTeX Warning: Hyper reference `Backup files' on page 25 undefined on input lin
 e 398.
 
-[25] [26] [27]) (./usr_03.tex [28
+[25]
+
+LaTeX Warning: Hyper reference `Using tags' on page 26 undefined on input line 
+452.
+
+[26] [27]) (./usr_03.tex [28
 
 ] [29]
 
 LaTeX Warning: Hyper reference `Installing Vim' on page 30 undefined on input l
 ine 181.
 
-[30] [31] [32] [33] [34] [35] [36] [37]) (./usr_04.tex [38
+[30] [31] [32] [33] [34]
 
-] [39] [40] [41]
-[42] [43] [44] [45]) (./usr_05.tex
+LaTeX Warning: Hyper reference `Search commands and patterns' on page 35 undefi
+ned on input line 531.
+
+[35] [36] [37]) (./usr_04.tex [38
+
+] [39] [40] [41] [42] [43] [44] [45])
+(./usr_05.tex
 
 LaTeX Warning: Hyper reference `Write a Vim script' on page 46 undefined on inp
 ut line 48.
@@ -1135,7 +1145,12 @@ LaTeX Warning: Hyper reference `write-local-help' on page 52 undefined on input
 LaTeX Warning: Hyper reference `Your own syntax highlighted' on page 59 undefin
 ed on input line 300.
 
-[59]) (./usr_07.tex [60
+[59]) (./usr_07.tex
+
+LaTeX Warning: Hyper reference `The buffer list' on page 60 undefined on input 
+line 53.
+
+[60
 
 ] [61] [62])
 Runaway argument?
@@ -1149,7 +1164,12 @@ l.78 \input{usr_07.tex}
 (./usr_08.tex [63] [64] [65] [66] [67] [68] [69] [70] [71] [72] [73])
 (./usr_09.tex [74
 
-] [75] [76] [77] [78]) (./usr_10.tex [79
+] [75]
+
+LaTeX Warning: Hyper reference `Select mode' on page 76 undefined on input line
+ 149.
+
+[76] [77] [78]) (./usr_10.tex [79
 
 ] [80])
 Runaway argument?
@@ -1160,7 +1180,12 @@ Runaway argument?
 l.81 \input{usr_10.tex}
                        
 ? 
-(./usr_11.tex [81] [82] [83] [84]
+(./usr_11.tex
+
+LaTeX Warning: Hyper reference `Viewing differences with vimdiff' on page 81 un
+defined on input line 34.
+
+[81] [82] [83] [84]
 Underfull \hbox (badness 10000) in paragraph at lines 269--278
 
  []
@@ -1172,21 +1197,25 @@ Overfull \hbox (19.4753pt too wide) in alignment at lines 57--57
 
 [86
 
-] [87] [88] [89] [90] [91]) (./usr_20.tex [92
+] [87] [88] [89]
 
-] [93] [94] [95] [96] [97])
-(./usr_21.tex [98
+LaTeX Warning: Hyper reference `Search commands and patterns' on page 90 undefi
+ned on input line 307.
 
-] [99] [100] [101] [102] [103] [104] [105]) (./usr_22.tex
-[106
+[90] [91]) (./usr_20.tex [92
 
-] [107] [108] [109] [110] [111] [112]) (./usr_23.tex [113
+] [93] [94] [95] [96] [97]) (./usr_21.tex [98
 
-] [114] [115]
-[116] [117] [118]) (./usr_24.tex [119
+]
+[99] [100] [101] [102] [103] [104] [105]) (./usr_22.tex [106
 
-] [120] [121] [122] [123] [124] [125]
-[126]
+] [107] [108]
+[109] [110] [111] [112]) (./usr_23.tex [113
+
+] [114] [115] [116] [117] [118])
+(./usr_24.tex [119
+
+] [120] [121] [122] [123] [124] [125] [126]
 
 LaTeX Warning: Hyper reference `Entering language text' on page 127 undefined o
 n input line 622.
@@ -1358,8 +1387,12 @@ ut line 646.
 
 [242] [243]) (./usr_45.tex [244
 
-] [245] [246] [247] [248] [249] [250])
-(./usr_90.tex [251
+] [245] [246] [247]
+
+LaTeX Warning: Hyper reference `Digraphs' on page 248 undefined on input line 3
+30.
+
+[248] [249] [250]) (./usr_90.tex [251
 
 ] [252] [253] [254]
 
@@ -1388,7 +1421,7 @@ LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 Here is how much of TeX's memory you used:
  23032 strings out of 493068
  436097 string characters out of 6137721
- 560446 words of memory out of 5000000
+ 560403 words of memory out of 5000000
  26597 multiletter control sequences out of 15000+600000
  28379 words of font info for 57 fonts, out of 8000000 for 9000
  1347 hyphenation exceptions out of 8191

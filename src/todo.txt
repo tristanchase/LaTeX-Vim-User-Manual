@@ -2,11 +2,15 @@ TODO
 * Convert \verb to texttt{}
 	* grep for \\verb
 	* @s each file
-	* /verb for strays
-		* @j and @t for backslashes
+	* /\\verb for strays
+		* @j and @t for backslashes @v for others
 		* /\$ i\<Esc>
 		* /_ i\<Esc>
-		* /& i\<Esc>
+		* @a i\<Esc> (searches for & without \s)
+		* /% i\<Esc>
+		* /\^ @h
+		* @c to escape {\{\}}
+* single and double quotes are a mess
 * Go through table formatting
 	* grep for \begin{center}
 	* grep for {tabular[x]}
@@ -22,6 +26,40 @@ TODO
 	* Delete numbers from sections
 	* Save and push
 
+REGISTERS
+@a
+[^ .]&[^ .]
+@b
+@c
+%s/\({\)\({\)\([^ .]*\)\(}\)\(}\)/{\\\2\3\\\4}/gc
+@d
+@e
+@f
+@g
+@h
+i\kr{}u
+@i
+@j
+f\@tN@v
+@l
+@k
+@m
+@n
+@o
+@p
+@q
+@r
+@s
+:%s/\(\\verb\)\(.\)\([^\2]*\)\(\2\)/\\texttt{\3}/g
+@t
+atextbackslash{}
+@u
+@v
+vf!c\texttt{;r}
+@w
+@x
+@y
+@z
 
 DONE
 + 2019-08-03 grep for \s{.*} in body text (@v)
