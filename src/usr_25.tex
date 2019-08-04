@@ -95,9 +95,9 @@ Since "\texttt{gq}" is an operator, you can use one of the three ways to select 
 
 The example above could also be done with "\texttt{gq4j}".
 That's less typing, but you have to know the line count.
-A more useful motion command is "\texttt{}}".
+A more useful motion command is "\texttt{\}}".
 This moves to the end of a paragraph.
-Thus "\texttt{gq}}" formats from the cursor to the end of the current paragraph.
+Thus "\texttt{gq\}}" formats from the cursor to the end of the current paragraph.
 
 A very useful text object to use with "\texttt{gq}" is the paragraph.
 Try this:
@@ -136,7 +136,7 @@ To center a range of lines, use the following command:
  :{range}center [width]
 \end{Verbatim}
 
-\texttt{{range}} is the usual command-line range.
+\texttt{\{range\}} is the usual command-line range.
 \texttt{[width]} is an optional line width to use for centering.
 If \texttt{[width]} is not specified, it defaults to the value of \texttt{'textwidth'}.
 (If \texttt{'textwidth'} is 0, the default is 80.)
@@ -209,11 +209,11 @@ To use this package, execute the following command:
  :runtime macros/justify.vim
 \end{Verbatim}
 
-This Vim script file defines a new visual command "\texttt{_j}".
-To justify a block of text, highlight the text in Visual mode and then execute "\texttt{_j}".
+This Vim script file defines a new visual command "\texttt{\_j}".
+To justify a block of text, highlight the text in Visual mode and then execute "\texttt{\_j}".
 
 Look in the file for more explanations.
-To go there, do "\texttt{gf}" on this name:\\ \texttt{$VIMRUNTIME/macros/justify.vim.}
+To go there, do "\texttt{gf}" on this name:\\ \texttt{\$VIMRUNTIME/macros/justify.vim.}
 
 An alternative is to filter the text through an external program.
 Example:
@@ -303,7 +303,7 @@ You can now write the file.
 Next time you edit it the indents will be right without setting an option.
 
 Warning: When using "\texttt{:retab}" on a program, it may change white space inside a string constant.
-Therefore it's a good habit to use "\verb!\t!" instead of a real tab.
+Therefore it's a good habit to use "\texttt{\textbackslash{}t}" instead of a real tab.
 \subsection{Dealing with long lines}
 Sometimes you will be editing a file that is wider than the number of columns in the window.
 When that occurs, Vim wraps the lines so that everything fits on the screen.
@@ -362,9 +362,9 @@ These never cause the text to scroll:
 
 \begin{center} \begin{tabular}{c l}
 				\texttt{g0} & to first visible character in this line \\
-				\texttt{g^} & to first non-blank visible character in this line \\
+				\texttt{g\^{}} & to first non-blank visible character in this line \\
 				\texttt{gm} & to middle of this line \\
-				\texttt{g$} & to last visible character in this line \\
+				\texttt{g\$} & to last visible character in this line \\
 \end{tabular} \end{center}
 
 \begin{Verbatim}[samepage=true]
@@ -446,7 +446,7 @@ Let's break it up in pieces:
 
 \begin{center} \begin{tabular}{c l}
 				\texttt{:g/./         } & A "\texttt{:global}" command that finds all lines that contain at least one character. \\
-				\texttt{     ,/^$/    } & A range, starting from the current line (the non-empty line) until an empty line. \\
+				\texttt{     ,/\^{}\$/    } & A range, starting from the current line (the non-empty line) until an empty line. \\
 				\texttt{          join} & The "\texttt{:join}" command joins the range of lines together into one line. \\
 \end{tabular} \end{center}
 
@@ -537,7 +537,7 @@ Do this in seven steps:
 \begin{enumerate}
 \item Move the cursor to the left upper corner of this column, e.g., with "\texttt{/test 3}".
 \item Press CTRL-V to start blockwise Visual mode.
-\item Move the cursor down two lines with "\verb!2j!".  You are now in "virtual space": the "input B" line of the "test 3" column.
+\item Move the cursor down two lines with "\texttt{2j}".  You are now in "virtual space": the "input B" line of the "test 3" column.
 \item Move the cursor right, to include the whole column in the selection, plus the space that you want between the columns.  "\texttt{9l}" should do it.
 \item Yank the selected rectangle with "\texttt{y}".
 \item Move the cursor to "test 1", where the new column must be placed.

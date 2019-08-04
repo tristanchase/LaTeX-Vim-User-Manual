@@ -1,4 +1,4 @@
-\section{26. Repeating}
+section{26. Repeating}
 An editing task is hardly ever unstructured.
 A change often needs to be made several times.
 In this chapter a number of useful ways to repeat a change will be explained.
@@ -28,7 +28,7 @@ First change "2001" to "2002".  Select the lines in Visual mode, and use:
 
 Now use "\texttt{gv}" to reselect the same text.
 It doesn't matter where the cursor is.
-Then use "\verb!:s/2000/2001/g!" to make the second change.
+Then use "\texttt{:s/2000/2001/g}" to make the second change.
 
 Obviously, you can repeat these changes several times.
 \subsection{Add and subtract}
@@ -100,7 +100,7 @@ If you do not want a number with leading zeros to be handled as octal, use this:
 
 The CTRL-X command does subtraction in a similar way.
 \subsection{Making a change in many files}
-Suppose you have a variable called "\texttt{x_cnt}" and you want to change it to "\texttt{x_counter}".
+Suppose you have a variable called "\texttt{x\_cnt}" and you want to change it to "\texttt{x\_counter}".
 This variable is used in several of your C files.
 You need to change it in all files.
 This is how you do it.
@@ -121,17 +121,17 @@ Now you can perform a substitution command on all these files:
 The "\texttt{:argdo}" command takes an argument that is another command.
 That command will be executed on all files in the argument list.
 
-The "\texttt{%s}" substitute command that follows works on all lines.
-It finds the word "\texttt{x_cnt}" with "\verb!\<x_cnt\>!".
-The "\verb!\<!" and "\verb!\>!" are used to match the whole word only, and not "\texttt{px_cnt}" or "\verb!x_cnt2!".
+The "\texttt{\%s}" substitute command that follows works on all lines.
+It finds the word "\texttt{x\_cnt}" with "\texttt{\textbackslash<x\_cnt\textbackslash>}".
+The "\texttt{\textbackslash<}" and "\texttt{\textbackslash>}" are used to match the whole word only, and not "\texttt{px\_cnt}" or "\texttt{x\_cnt2}".
 
-The flags for the substitute command include "\texttt{g}" to replace all occurrences of "\texttt{x_cnt}" in the same line.
-The "\texttt{e}" flag is used to avoid an error message when "\texttt{x_cnt}" does not appear in the file.
-Otherwise "\texttt{:argdo}" would abort on the first file where "\texttt{x_cnt}" was not found.
+The flags for the substitute command include "\texttt{g}" to replace all occurrences of "\texttt{x\_cnt}" in the same line.
+The "\texttt{e}" flag is used to avoid an error message when "\texttt{x\_cnt}" does not appear in the file.
+Otherwise "\texttt{:argdo}" would abort on the first file where "\texttt{x\_cnt}" was not found.
 
 The "\texttt{|}" separates two commands.
 The following "\texttt{update}" command writes the file only if it was changed.
-If no "\texttt{x_cnt}" was changed to "\texttt{x_counter}" nothing happens.
+If no "\texttt{x\_cnt}" was changed to "\texttt{x\_counter}" nothing happens.
 
 There is also the "\texttt{:windo}" command, which executes its argument in all windows.
 And "\texttt{:bufdo}" executes its argument on all buffers.

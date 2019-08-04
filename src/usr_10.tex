@@ -42,9 +42,9 @@ Next you execute the following commands:
 
 \begin{center}\begin{tabular}{l l}
 				\texttt{qa} & Start recording a macro in register a.\\
-				\texttt{^} & Move to the beginning of the line.\\
-				\texttt{i#include "<Esc>} & Insert the string \texttt{#include "} at the beginning of the line.\\
-				\texttt{$} & Move to the end of the line.\\
+				\texttt{\^{}} & Move to the beginning of the line.\\
+				\texttt{i\#include "<Esc>} & Insert the string \texttt{\#include "} at the beginning of the line.\\
+				\texttt{\$} & Move to the end of the line.\\
 				\texttt{a"<Esc>} & Append the character double quotation mark (") to the end of the line.\\
 				\texttt{j} & Go to the next line.\\
 				\texttt{q} & Stop recording the macro.\\
@@ -90,7 +90,7 @@ Instead, use this trick:
 				\texttt{"np} & Put the text from the n register.  You now see the commands you typed as text in the file. \\
 				\texttt{{edits}} & Change the commands that were wrong.  This is just like editing text. \\
 				\texttt{0} & Go to the start of the line. \\
-				\texttt{"ny$} & Yank the corrected commands into the n register. \\
+				\texttt{"ny\$} & Yank the corrected commands into the n register. \\
 				\texttt{dd} & Delete the scratch line. \\
 \end{tabular}\end{center}
 
@@ -254,14 +254,14 @@ To make it write only the current line into a file:
 
 The first line always has number one.
 How about the last line?
-The "\texttt{$}" character is used for this.
+The "\texttt{\$}" character is used for this.
 For example, to substitute in the lines from the cursor to the end:
 
 \begin{Verbatim}[samepage=true]
  :.,$s/yes/no/
 \end{Verbatim}
 
-The "\texttt{%}" range that we used before, is actually a short way to say "\texttt{1,$}", from the first to the last line.
+The "\texttt{\%}" range that we used before, is actually a short way to say "\texttt{1,\$}", from the first to the last line.
 \subsubsection{Using a pattern in a range}
 Suppose you are editing a chapter in a book, and want to replace all occurrences of "grey" with "gray".
 But only in this chapter, not in the next one.
@@ -273,9 +273,9 @@ This command will work then:
 \end{Verbatim}
 
 You can see a search pattern is used twice.
-The first "\texttt{?^Chapter?}" finds the line above the current position that matches this pattern.
+The first "\texttt{?\^{}Chapter?}" finds the line above the current position that matches this pattern.
 Thus the \texttt{?pattern?} range is used to search backwards.
-Similarly, "\texttt{/^Chapter/}" is used to search forward for the start of the next chapter.
+Similarly, "\texttt{/\^{}Chapter/}" is used to search forward for the start of the next chapter.
 
 To avoid confusion with the slashes, the "\texttt{=}" character was used in the substitute command here.
 A slash or another character would have worked as well.
@@ -393,8 +393,8 @@ When you learn more complicated patterns later, you can use them here.
 With CTRL-V you can start selection of a rectangular area of text.
 There are a few commands that do something special with the text block.
 
-There is something special about using the "\texttt{$}" command in Visual block mode.
-When the last motion command used was "\texttt{$}", all lines in the Visual selection will extend until the end of the line, also when the line with the cursor is shorter.
+There is something special about using the "\texttt{\$}" command in Visual block mode.
+When the last motion command used was "\texttt{\$}", all lines in the Visual selection will extend until the end of the line, also when the line with the cursor is shorter.
 This remains effective until you use a motion command that moves the cursor horizontally.
 Thus using "\texttt{j}" keeps it, "\texttt{h}" stops it.
 
@@ -441,7 +441,7 @@ For example, make a Visual block selection that includes the word "long" in the 
     short 
     Any other long line 
 
-              ^^^^ selected block
+              .... selected block
 \end{Verbatim}
 
 Now use the command "\texttt{Ivery <Esc>}".
@@ -461,10 +461,10 @@ The "\texttt{A}" command works the same way, except that it appends after the ri
 And it does insert text in a short line.
 Thus you can make a choice whether you do or don't want to append text to a short line.
 
-There is one special case for "A": Select a Visual block and then use "\texttt{$}" to make the block extend to the end of each line.
+There is one special case for "A": Select a Visual block and then use "\texttt{\$}" to make the block extend to the end of each line.
 Using "\texttt{A}" now will append the text to the end of each line.
 
-Using the same example from above, and then typing "\texttt{$A XXX<Esc>}", you get this result:
+Using the same example from above, and then typing "\texttt{\$A XXX<Esc>}", you get this result:
 
 \begin{Verbatim}[samepage=true]
     This is a long line XXX 
@@ -472,14 +472,14 @@ Using the same example from above, and then typing "\texttt{$A XXX<Esc>}", you g
     Any other long line XXX 
 \end{Verbatim}
 
-This really requires using the "\texttt{$}" command.
+This really requires using the "\texttt{\$}" command.
 Vim remembers that it was used.
 Making the same selection by moving the cursor to the end of the longest line with other movement commands will not have the same result.
 \subsubsection{Changing text}
 The Visual block "\texttt{c}" command deletes the block and then throws you into Insert mode to enable you to type in a string.
 The string will be inserted in each line in the block.
 
-Starting with the same selection of the "long" words as above, then typing "\texttt{c_LONG_<Esc>}", you get this:
+Starting with the same selection of the "long" words as above, then typing "\texttt{c\_LONG\_<Esc>}", you get this:
 
 \begin{Verbatim}[samepage=true]
     This is a _LONG_ line 
@@ -600,7 +600,7 @@ The file named "\texttt{patch}" will be inserted, with this result:
 
 The "\texttt{:read}" command accepts a range.
 The file will be put below the last line number of this range.
-Thus "\texttt{:$r patch}" appends the file "\texttt{patch}" at the end of the file.
+Thus "\texttt{:\$r patch}" appends the file "\texttt{patch}" at the end of the file.
 
 What if you want to read the file above the first line?  This can be done with the line number zero.
 This line doesn't really exist, you will get an error message when using it with most commands.

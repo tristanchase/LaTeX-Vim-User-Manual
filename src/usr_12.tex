@@ -15,13 +15,13 @@ The "\texttt{g}" flag at the end causes all words in a line to be replaced.
 
 This will not do the right thing if your file also contains "thirtyfour".
 It would be replaced with "thirty4".
-To avoid this, use the "\texttt{\textbackslash<}" item to match the start of a word:
+To avoid this, use the "\texttt{\textbackslash{}<}" item to match the start of a word:
 
 \begin{Verbatim}[samepage=true]
  :%s/\<four/4/g
 \end{Verbatim}
 
-Obviously, this still goes wrong on "fourteen".  Use "\texttt{\textbackslash>}" to match the end of
+Obviously, this still goes wrong on "fourteen".  Use "\texttt{\textbackslash{}>}" to match the end of
 a word:
 
 \begin{Verbatim}[samepage=true]
@@ -47,7 +47,7 @@ There is a function called "GetResp" that you want to rename to "GetAnswer".
 				\texttt{vim *.cpp} & Start Vim, defining the argument list to contain all the C++ files.
 				You are now in the first file. \\
 				\texttt{qq} & Start recording into the q register \\
-				\texttt{:\%s/\textbackslash <GetResp\textbackslash >/GetAnswer/g} & Do the replacements in the first file. \\
+				\texttt{:\%s/\textbackslash{} <GetResp\textbackslash{} >/GetAnswer/g} & Do the replacements in the first file. \\
 				\texttt{:wnext} & Write this file and move to the next one. \\
 				\texttt{q} & Stop recording. \\
 				\texttt{@q} & Execute the q register.
@@ -93,7 +93,7 @@ This can be done with just one command:
 
 Let's break this down in parts.
 Obviously it starts with a substitute command.
-The "\texttt{%}" is the line range, which stands for the whole file.
+The "\texttt{\%}" is the line range, which stands for the whole file.
 Thus the substitution is done in every line in the file.
 
 The arguments for the substitute command are "\texttt{/from/to/}".
@@ -106,24 +106,24 @@ This is what the "from" pattern contains:
 
 \begin{center}
 				\begin{longtable}{r l}
-								The first part between \texttt{\textbackslash( \textbackslash)} matches "Last" & \texttt{\textbackslash( \textbackslash)} \\
-								match anything but a comma & \texttt{[^,]} \\
+								The first part between \texttt{\textbackslash{}( \textbackslash{})} matches "Last" & \texttt{\textbackslash{}( \textbackslash{})} \\
+								match anything but a comma & \texttt{[\^{},]} \\
 								any number of times & \texttt{*} \\
 								matches ", " literally & \texttt{,} \\
-								The second part between \texttt{\textbackslash( \textbackslash)} matches "First" & \texttt{\textbackslash(  \textbackslash)} \\
+								The second part between \texttt{\textbackslash{}( \textbackslash{})} matches "First" & \texttt{\textbackslash{}(  \textbackslash{})} \\
 								any character & \texttt{.} \\
 								any number of times & \texttt{*} \\
 				\end{longtable}
 \end{center}
 
-In the "to" part we have "\texttt{\textbackslash2}" and "\texttt{\textbackslash1}".
+In the "to" part we have "\texttt{\textbackslash{}2}" and "\texttt{\textbackslash{}1}".
 These are called backreferences.
-They refer to the text matched by the "\texttt{\textbackslash( \textbackslash)}" parts in the pattern.
-"\texttt{\textbackslash2}" refers to the text matched by the second "\texttt{\textbackslash( \textbackslash)}", which is the "First" name.
-"\texttt{\textbackslash1}" refers to the first "\texttt{\textbackslash( \textbackslash)}", which is the "Last" name.
+They refer to the text matched by the "\texttt{\textbackslash{}( \textbackslash{})}" parts in the pattern.
+"\texttt{\textbackslash{}2}" refers to the text matched by the second "\texttt{\textbackslash{}( \textbackslash{})}", which is the "First" name.
+"\texttt{\textbackslash{}1}" refers to the first "\texttt{\textbackslash{}( \textbackslash{})}", which is the "Last" name.
 
 You can use up to nine backreferences in the "\texttt{to}" part of a substitute command.
-"\texttt{\textbackslash0}" stands for the whole matched pattern.
+"\texttt{\textbackslash{}0}" stands for the whole matched pattern.
 There are a few more special items in a substitute command, see |\texttt{:h sub-replace-special}|.
 \subsection{Sort a list}
 
@@ -174,7 +174,7 @@ After sorting, this is wrong!
 The "\texttt{backup.o}" line that was at the end didn't have a backslash.
 Now that it sorts to another place, it must have a backslash.
 
-The simplest solution is to add the backslash with "\texttt{A \textbackslash<Esc>}".
+The simplest solution is to add the backslash with "\texttt{A \textbackslash{}<Esc>}".
 You can keep the backslash in the last line, if you make sure an empty line comes after it.
 That way you don't have this problem again.
 \subsection{Reverse line order}
@@ -192,7 +192,7 @@ Abbreviated:
  :g/^/m 0
 \end{Verbatim}
 
-The "\texttt{^}" regular expression matches the beginning of the line (even if the line is blank).
+The "\texttt{\^{}}" regular expression matches the beginning of the line (even if the line is blank).
 The |\texttt{:h :move}| command moves the matching line to after the mythical zeroth line, so the current matching line becomes the first line of the file.
 As the |:global| command is not confused by the changing line numbering, |\texttt{:h :global}| proceeds to match all remaining lines of the file and puts each as the first.
 
@@ -291,7 +291,7 @@ this line:
     if ( strstr (input, "aap") == ) 
 \end{Verbatim}
 
-Move the cursor to somewhere on "\texttt{strstr}" and type "\texttt{\textbackslashK}".
+Move the cursor to somewhere on "\texttt{strstr}" and type "\texttt{\textbackslash{}K}".
 A window will open to display the man page for strstr().
 \subsection{Trim blanks}
 Some people find spaces and tabs at the end of a line useless, wasteful, and ugly.
@@ -302,8 +302,8 @@ To remove whitespace at the end of every line, execute the following command:
 \end{Verbatim}
 
 The line range "\texttt{\%}" is used, thus this works on the whole file.
-The pattern that the "\texttt{:substitute}" command matches with is "\texttt{\textbackslashs\textbackslash+\$}".
-This finds white space characters (\texttt{\textbackslashs}), 1 or more of them (\texttt{\textbackslash+}), before the end-of-line (\texttt{\$}).
+The pattern that the "\texttt{:substitute}" command matches with is "\texttt{\textbackslash{}s\textbackslash{}+\$}".
+This finds white space characters (\texttt{\textbackslash{}s}), 1 or more of them (\texttt{\textbackslash{}+}), before the end-of-line (\texttt{\$}).
 Later will be explained how you write patterns like this |\hyperref[Search commands and patterns]{\texttt{Search commands and patterns}}|.
 
 The "to" part of the substitute command is empty: "\texttt{//}".
@@ -328,7 +328,7 @@ Repeat this until no more matches can be found.
 If you are a UNIX user, you can use a combination of Vim and the grep command to edit all the files that contain a given word.
 This is extremely useful if you are working on a program and want to view or edit all the files that contain a specific variable.
 
-For example, suppose you want to edit all the C program files that contain the word "\texttt{frame_counter}".
+For example, suppose you want to edit all the C program files that contain the word "\texttt{frame\_counter}".
 To do this you use the command:
 
 \begin{Verbatim}[samepage=true]
@@ -338,7 +338,7 @@ To do this you use the command:
 Let's look at this command in detail.
 The grep command searches through a set of files for a given word.
 Because the -l argument is specified, the command will only list the files containing the word and not print the matching lines.
-The word it is searching for is "\texttt{frame_counter}".
+The word it is searching for is "\texttt{frame\_counter}".
 Actually, this can be any regular expression.
 (Note: What grep uses for regular expressions is not exactly the same as what Vim uses.)
 
@@ -353,13 +353,13 @@ The above command only finds the files in which the word is found.
 You still have to find the word within the files.
 
 Vim has a built-in command that you can use to search a set of files for a given string.
-If you want to find all occurrences of "\texttt{error_string}" in all C program files, for example, enter the following command:
+If you want to find all occurrences of "\texttt{error\_string}" in all C program files, for example, enter the following command:
 
 \begin{Verbatim}[samepage=true]
  :grep error_string *.c
 \end{Verbatim}
 
-This causes Vim to search for the string "\texttt{error_string}" in all the specified files (\texttt{*.c}).
+This causes Vim to search for the string "\texttt{error\_string}" in all the specified files (\texttt{*.c}).
 The editor will now open the first file where a match is found and position the cursor on the first matching line.
 To go to the next matching line (no matter in what file it is), use the "\texttt{:cnext}" command.
 To go to the previous match, use the "\texttt{:cprev}" command.

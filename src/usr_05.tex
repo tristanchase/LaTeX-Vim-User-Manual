@@ -115,8 +115,8 @@ Always display the current cursor position in the lower right corner of the Vim 
  \end{Verbatim}
 
 Display an incomplete command in the lower right corner of the Vim window, left of the ruler.
-For example, when you type "\verb!2f!", Vim is waiting for you to type the character to find and "\verb!2f!" is displayed.
-When you press "\texttt{w}" next, the "\verb!2fw!" command is executed and the displayed "2f" is removed.
+For example, when you type "\texttt{2f}", Vim is waiting for you to type the character to find and "\texttt{2f}" is displayed.
+When you press "\texttt{w}" next, the "\texttt{2fw}" command is executed and the displayed "2f" is removed.
 
 \begin{Verbatim}[samepage=true]
     +-------------------------------------------------+
@@ -176,7 +176,7 @@ This switches on three very clever mechanisms:
 				\item Filetype detection.\\
 								Whenever you start editing a file, Vim will try to figure out what kind of file this is.
 								When you edit "main.c", Vim will see the "\texttt{.c}" extension and recognize this as a "c" filetype.
-								When you edit a file that starts with "\texttt{#!/bin/sh}", Vim will recognize it as a "sh" filetype.
+								When you edit a file that starts with "\texttt{\#!/bin/sh}", Vim will recognize it as a "sh" filetype.
 								The filetype detection is used for syntax highlighting and the other two items below.
 								See |\texttt{:h filetypes}|.
 
@@ -242,12 +242,12 @@ Let's break this down:
 				\texttt{<F5>} & The F5 function key.
 				This is the trigger key that causes the command to be executed as the key is pressed.\\
 
-				\texttt{i{<Esc>} & Insert the \{ character.
+				\texttt{i\{<Esc>} & Insert the \{ character.
 				The <Esc> key ends Insert mode.\\
 
 				\texttt{e} & Move to the end of the word.\\
 
-				\texttt{a}<Esc>} & Append the \} to the word.\\
+				\texttt{a\}<Esc>} & Append the \} to the word.\\
 \end{longtable}
 
 After you execute the "\texttt{:map}" command, all you have to do to put \{ \} around a word is to put the cursor on the first character and press F5.
@@ -258,14 +258,14 @@ You better avoid that.
 
 One key that can be used with mappings is the backslash.
 Since you probably want to define more than one mapping, add another character.
-You could map "\verb!\p!" to add parentheses around a word, and "\verb!\c!" to add curly braces, for example:
+You could map "\texttt{\textbackslash{}p}" to add parentheses around a word, and "\texttt{\textbackslash{}c}" to add curly braces, for example:
 
  \begin{Verbatim}[samepage=true]
  :map \p i(<Esc>ea)<Esc>
  :map \c i{<Esc>ea}<Esc>
  \end{Verbatim}
 
-You need to type the \verb!\! and the \texttt{p} quickly after another, so that Vim knows they belong together.
+ You need to type the \texttt{\textbackslash{}} and the \texttt{p} quickly after another, so that Vim knows they belong together.
 
 The "\texttt{:map}" command (with no arguments) lists your current mappings.
 At least the ones for Normal mode.
@@ -451,7 +451,7 @@ Further reading:\\ %TODO à refaire
 If you are lucky, the plugin you installed also comes with a help file.
 We will explain how to install the help file, so that you can easily find help for your new plugin.
 Let us use the "matchit.vim" plugin as an example (it is included with Vim).
-This plugin makes the "\texttt{%}" command jump to matching HTML tags, if/else/endif in Vim scripts, etc.
+This plugin makes the "\texttt{\%}" command jump to matching HTML tags, if/else/endif in Vim scripts, etc.
 Very useful, although it's not backwards compatible (that's why it is not enabled by default).
 This plugin comes with documentation: "\texttt{matchit.txt}".
 Let's first copy the plugin to the right directory.
@@ -490,7 +490,7 @@ Now you can use the
  :help g%
  \end{Verbatim}
 
-command to find help for "\texttt{g%}" in the help file you just added.
+command to find help for "\texttt{g\%}" in the help file you just added.
 You can see an entry for the local help file when you do:
 
  \begin{Verbatim}[samepage=true]
@@ -562,7 +562,7 @@ For example:
  :help 'wrap'
  \end{Verbatim}
 
-In case you have messed up an option value, you can set it back to the default by putting an ampersand (\texttt{&}) after the option name.
+In case you have messed up an option value, you can set it back to the default by putting an ampersand (\texttt{\&}) after the option name.
 Example:
 
  \begin{Verbatim}[samepage=true]
@@ -625,7 +625,7 @@ To make them visible:
  :set list
  \end{Verbatim}
 
-Now every tab is displayed as \texttt{^I}.
+Now every tab is displayed as \texttt{\^{}I}.
 And a \texttt{\$} is displayed at the end of each line, so that you can spot trailing spaces that would otherwise go unnoticed.
 A disadvantage is that this looks ugly when there are many Tabs in a file.
 If you have a color terminal, or are using the GUI, Vim can show the spaces and tabs as highlighted characters.
@@ -648,7 +648,7 @@ The `iskeyword' option specifies which characters can appear in a word:
 
 The "\texttt{@}" stands for all alphabetic letters.
 "\texttt{48-57}" stands for ASCII characters 48 to 57, which are the numbers 0 to 9.
-"\verb!192-255!" are the printable latin characters.
+"\texttt{192-255}" are the printable latin characters.
 Sometimes you will want to include a dash in keywords, so that commands like "\texttt{w}" consider "upper-case" to be one word.
 You can do it like this:
 

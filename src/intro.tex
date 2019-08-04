@@ -17,7 +17,7 @@ It can be accessed from within Vim with the <Help> or <F1> key and with the |\te
 The \texttt{'helpfile'} option can be set to the name of the help file, in case it is not located in the default place.
 
 Throughout this manual the differences between Vi and Vim are mentioned in curly braces, like this: \{Vi does not have on-line help\}.
-See |\texttt{:h vi_diff.txt}| for a summary of the differences between Vim and Vi.
+See |\texttt{:h vi\_diff.txt}| for a summary of the differences between Vim and Vi.
 
 This manual refers to Vim on various machines.
 There may be small differences between different computers and terminals.
@@ -183,8 +183,8 @@ It is used for a time-stamp check of the edited file and the swap file, which is
 
 There might be a year 2038 problem, when the seconds don't fit in a 32 bit int anymore.
 This depends on the compiler, libraries and operating system.
-Specifically, \texttt{time_t} and the \texttt{ctime()} function are used.
-And the \texttt{time_t} is stored in four bytes in the swap file.
+Specifically, \texttt{time\_t} and the \texttt{ctime()} function are used.
+And the \texttt{time\_t} is stored in four bytes in the swap file.
 But that's only used for printing a file date/time for recovery, it will never affect normal editing.
 
 The Vim \texttt{strftime()} function directly uses the \texttt{strftime()} system function.
@@ -657,7 +657,7 @@ However, when pressing <Esc> after using CTRL-O in Insert mode you get a beep bu
 
 \begin{itemize}
 				\item *1 Go from Normal mode to Insert mode by giving the command "i", "I", "a", "A", "o", "O", "c", "C", "s" or "S".
-				\item *2 Go from Visual mode to Normal mode by giving a non-movement command, which causes the command to be executed, or by hitting <Esc> "v", "V" or "CTRL-V" (see |\texttt{:h v_v}|), which just stops Visual mode without side effects.
+				\item *2 Go from Visual mode to Normal mode by giving a non-movement command, which causes the command to be executed, or by hitting <Esc> "v", "V" or "CTRL-V" (see |\texttt{:h v\_v}|), which just stops Visual mode without side effects.
 				\item *3 Go from Command-line mode to Normal mode by:
 								\begin{itemize}
 												\item Hitting <CR> or <NL>, which causes the entered command to be executed.
@@ -670,13 +670,13 @@ However, when pressing <Esc> after using CTRL-O in Insert mode you get a beep bu
 								\{Vi: when hitting <Esc> the command-line is executed.
 								This is unexpected for most people; therefore it was changed in Vim.
 								But when the <Esc> is part of a mapping, the command-line is executed.
-								If you want the Vi behaviour also when typing <Esc>, use "\texttt{:cmap ^V<Esc> ^V^M}"\}
+								If you want the Vi behaviour also when typing <Esc>, use "\texttt{:cmap \^V<Esc> \^V\^M}"\}
 				\item *4 Go from Normal to Select mode by:
 								\begin{itemize}
 												\item use the mouse to select text while \texttt{'selectmode'} contains "mouse"
 												\item use a non-printable command to move the cursor while keeping the Shift key pressed, and the \texttt{'selectmode'} option contains "key"
 												\item use "v", "V" or "CTRL-V" while \texttt{'selectmode'} contains "cmd"
-												\item use "gh", "gH" or "g CTRL-H"  |\texttt{:h g_CTRL-H}|
+												\item use "gh", "gH" or "g CTRL-H"  |\texttt{:h g\_CTRL-H}|
 								\end{itemize}
 				\item *5 Go from Select mode to Normal mode by using a non-printable command to move the cursor, without keeping the Shift key pressed.
 				\item *6 Go from Select mode to Insert mode by typing a printable character.
@@ -724,7 +724,7 @@ Vim will enter this mode by default if it's invoked as "ex" on the command-line.
 Use the "\texttt{:vi}" command |\texttt{:h :visual}| to exit "Ex" mode.
 Note: In older versions of Vim "Q" formatted text, that is now done with |\texttt{:h gq}|.
 But if you use the
-|\texttt{:h vimrc_example.vim}| script "Q" works like "gq".
+|\texttt{:h vimrc\_example.vim}| script "Q" works like "gq".
 
 \subsubsection{gQ}
 \label{gQ}

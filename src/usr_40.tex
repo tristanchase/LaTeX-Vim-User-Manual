@@ -19,17 +19,17 @@ Example:
 \end{Verbatim}
 
 This shows how three modes are used.
-After going to the last line with "\verb!G!", the "\verb!o!" command opens a new line and starts Insert mode.
-The text "\verb!Date: !" is inserted and <Esc> takes you out of insert mode.
+After going to the last line with "\texttt{G}", the "\texttt{o}" command opens a new line and starts Insert mode.
+The text "\texttt{Date: }" is inserted and <Esc> takes you out of insert mode.
 
 Notice the use of special keys inside <>.
 This is called angle bracket notation.
 You type these as separate characters, not by pressing the key itself.
 This makes the mappings better readable and you can copy and paste the text without problems.
 
-The "\verb!:!" character takes Vim to the command line.
-The "\verb_:read !date_" command reads the output from the "\verb!date!" command and appends it below the current line.
-The <CR> is required to execute the "\verb!:read!" command.
+The "\texttt{:}" character takes Vim to the command line.
+The "\texttt{:read !date}" command reads the output from the "\texttt{date}" command and appends it below the current line.
+The <CR> is required to execute the "\texttt{:read}" command.
 
 At this point of execution the text looks like this:
 
@@ -38,14 +38,14 @@ At this point of execution the text looks like this:
     Fri Jun 15 12:54:34 CEST 2001 
 \end{Verbatim}
 
-Now "\verb!kJ!" moves the cursor up and joins the lines together.
+Now "\texttt{kJ}" moves the cursor up and joins the lines together.
 
-To decide which key or keys you use for mapping, see |\verb!:h map-which-keys!|.
+To decide which key or keys you use for mapping, see |\texttt{:h map-which-keys}|.
 
 \subsubsection{Mapping and modes}
-The "\verb!:map!" command defines remapping for keys in Normal mode.
+The "\texttt{:map}" command defines remapping for keys in Normal mode.
 You can also define mappings for other modes.
-For example, "\verb!:imap!" applies to Insert mode.
+For example, "\texttt{:imap}" applies to Insert mode.
 You can use it to insert a date below the cursor:
 
 \begin{Verbatim}[samepage=true]
@@ -57,23 +57,23 @@ The <F2> mapping for Normal mode is still there.
 Thus you can map the same key differently for each mode.
 
 Notice that, although this mapping starts in Insert mode, it ends in Normal mode.
-If you want it to continue in Insert mode, append an "\verb!a!" to the mapping.
+If you want it to continue in Insert mode, append an "\texttt{a}" to the mapping.
 
 Here is an overview of map commands and in which mode they work:
 \begin{center} \begin{tabular}{l l}
-				\verb!:map! & Normal, Visual and Operator-pending \\
-				\verb!:vmap! & Visual \\
-				\verb!:nmap! & Normal \\
-				\verb!:omap! & Operator-pending \\
-				\verb!:map!! & Insert and Command-line \\
-				\verb!:imap! & Insert \\
-				\verb!:cmap! & Command-line \\
+				\texttt{:map} & Normal, Visual and Operator-pending \\
+				\texttt{:vmap} & Visual \\
+				\texttt{:nmap} & Normal \\
+				\texttt{:omap} & Operator-pending \\
+				\texttt{:map!} & Insert and Command-line \\
+				\texttt{:imap} & Insert \\
+				\texttt{:cmap} & Command-line \\
 \end{tabular} \end{center}
 
-Operator-pending mode is when you typed an operator character, such as "\verb!d!" or "\verb!y!", and you are expected to type the motion command or a text object.
-Thus when you type "\verb!dw!", the "\verb!w!" is entered in operator-pending mode.
+Operator-pending mode is when you typed an operator character, such as "\texttt{d}" or "\texttt{y}", and you are expected to type the motion command or a text object.
+Thus when you type "\texttt{dw}", the "\texttt{w}" is entered in operator-pending mode.
 
-Suppose that you want to define <F7> so that the command d<F7> deletes a C program block (text enclosed in curly braces, \verb!{}!).
+Suppose that you want to define <F7> so that the command d<F7> deletes a C program block (text enclosed in curly braces, \texttt{{}}).
 Similarly y<F7> would yank the program block into the unnamed register.
 Therefore, what you need to do is to define <F7> to select the current program block.
 You can do this with the following command:
@@ -82,24 +82,24 @@ You can do this with the following command:
  :omap <F7> a{
 \end{Verbatim}
 
-This causes <F7> to perform a select block "\verb!a{!" in operator-pending mode, just like you typed it.
-This mapping is useful if typing a \verb!{! on your keyboard is a bit difficult.
+This causes <F7> to perform a select block "\texttt{a{}" in operator-pending mode, just like you typed it.
+This mapping is useful if typing a \texttt{{} on your keyboard is a bit difficult.
 \subsubsection{Listing mappings}
-To see the currently defined mappings, use "\verb!:map!" without arguments.
+To see the currently defined mappings, use "\texttt{:map}" without arguments.
 Or one of the variants that include the mode in which they work.
 The output could look like this:
 
 \begin{center} \begin{tabular}{l l l}
-				 & \verb!_g! & \verb!:call MyGrep(1)<CR>! \\
-				\verb!v! &  \verb!<F2>! & \verb!:s/^/> /<CR>:noh<CR>``! \\
-				\verb!n! &  \verb!<F2>! & \verb!:.,$s/^/> /<CR>:noh<CR>``! \\
-				 & \verb!<xHome>! & \verb!<Home>! \\
-				 & \verb!<xEnd>! & \verb!<End>! \\
+				 & \texttt{\_g} & \texttt{:call MyGrep(1)<CR>} \\
+				\texttt{v} &  \texttt{<F2>} & \texttt{:s/^/> /<CR>:noh<CR>``} \\
+				\texttt{n} &  \texttt{<F2>} & \texttt{:.,\$s/^/> /<CR>:noh<CR>``} \\
+				 & \texttt{<xHome>} & \texttt{<Home>} \\
+				 & \texttt{<xEnd>} & \texttt{<End>} \\
 \end{tabular} \end{center}
 
 The first column of the list shows in which mode the mapping is effective.
-This is "\verb!n!" for Normal mode, "\verb!i!" for Insert mode, etc.
-A blank is used for a mapping defined with "\verb!:map!", thus effective in both Normal and Visual mode.
+This is "\texttt{n}" for Normal mode, "\texttt{i}" for Insert mode, etc.
+A blank is used for a mapping defined with "\texttt{:map}", thus effective in both Normal and Visual mode.
 
 One useful purpose of listing the mapping is to check if special keys in <> form have been recognized (this only works when color is supported).
 For example, when <Esc> is displayed in color, it stands for the escape character.
@@ -119,7 +119,7 @@ For Normal mode <F2> is mapped to go to the last line, and then behave like <F3>
 In Insert mode <F2> stops Insert mode with <Esc> and then also uses <F3>.
 Then <F3> is mapped to do the actual work.
 
-Suppose you hardly ever use Ex mode, and want to use the "\verb!Q!" command to format text (this was so in old versions of Vim).
+Suppose you hardly ever use Ex mode, and want to use the "\texttt{Q}" command to format text (this was so in old versions of Vim).
 This mapping will do it:
 
 \begin{Verbatim}[samepage=true]
@@ -127,40 +127,40 @@ This mapping will do it:
 \end{Verbatim}
 
 But, in rare cases you need to use Ex mode anyway.
-Let's map "\verb!gQ!" to Q, so that you can still go to Ex mode:
+Let's map "\texttt{gQ}" to Q, so that you can still go to Ex mode:
 
 \begin{Verbatim}[samepage=true]
  :map gQ Q
 \end{Verbatim}
 
-What happens now is that when you type "\verb!gQ!" it is mapped to "\verb!Q!".
+What happens now is that when you type "\texttt{gQ}" it is mapped to "\texttt{Q}".
 So far so good.
-But then "\verb!Q!" is mapped to "\verb!gq!", thus typing "\verb!gQ!" results in "\verb!gq!", and you don't get to Ex mode at all.
+But then "\texttt{Q}" is mapped to "\texttt{gq}", thus typing "\texttt{gQ}" results in "\texttt{gq}", and you don't get to Ex mode at all.
 
-To avoid keys to be mapped again, use the "\verb!:noremap!" command:
+To avoid keys to be mapped again, use the "\texttt{:noremap}" command:
 
 \begin{Verbatim}[samepage=true]
  :noremap gQ Q
 \end{Verbatim}
 
-Now Vim knows that the "\verb!Q!" is not to be inspected for mappings that apply to it.
+Now Vim knows that the "\texttt{Q}" is not to be inspected for mappings that apply to it.
 There is a similar command for every mode:
 
 \begin{center} \begin{tabular}{l l}
-				\verb!:noremap! & Normal, Visual and Operator-pending \\
-				\verb!:vnoremap! & Visual \\
-				\verb!:nnoremap! & Normal \\
-				\verb!:onoremap! & Operator-pending \\
-				\verb;:noremap!; & Insert and Command-line \\
-				\verb!:inoremap! & Insert \\
-				\verb!:cnoremap! & Command-line \\
+				\texttt{:noremap} & Normal, Visual and Operator-pending \\
+				\texttt{:vnoremap} & Visual \\
+				\texttt{:nnoremap} & Normal \\
+				\texttt{:onoremap} & Operator-pending \\
+				\texttt{:noremap!} & Insert and Command-line \\
+				\texttt{:inoremap} & Insert \\
+				\texttt{:cnoremap} & Command-line \\
 \end{tabular} \end{center}
 \subsubsection{Recursive mapping}
 When a mapping triggers itself, it will run forever.
 This can be used to repeat an action an unlimited number of times.
 
 For example, you have a list of files that contain a version number in the first line.
-You edit these files with "\verb!vim *.txt!".
+You edit these files with "\texttt{vim *.txt}".
 You are now editing the first file.
 Define this mapping:
 
@@ -168,32 +168,32 @@ Define this mapping:
  :map ,, :s/5.1/5.2/<CR>:wnext<CR>,,
 \end{Verbatim}
 
-Now you type "\verb!,,!".
+Now you type "\texttt{,,}".
 This triggers the mapping.
-It replaces "\verb!5.1!" with "\verb!5.2!" in the first line.
-Then it does a "\verb!:wnext!" to write the file and edit the next one.
-The mapping ends in "\verb!,,!".
+It replaces "\texttt{5.1}" with "\texttt{5.2}" in the first line.
+Then it does a "\texttt{:wnext}" to write the file and edit the next one.
+The mapping ends in "\texttt{,,}".
 This triggers the same mapping again, thus doing the substitution, etc.
 
 This continues until there is an error.
-In this case it could be a file where the substitute command doesn't find a match for "\verb!5.1!".
-You can then make a change to insert "\verb!5.1!" and continue by typing "\verb!,,!" again.
-Or the "\verb!:wnext!" fails, because you are in the last file in the list.
+In this case it could be a file where the substitute command doesn't find a match for "\texttt{5.1}".
+You can then make a change to insert "\texttt{5.1}" and continue by typing "\texttt{,,}" again.
+Or the "\texttt{:wnext}" fails, because you are in the last file in the list.
 
 When a mapping runs into an error halfway, the rest of the mapping is discarded.
 CTRL-C interrupts the mapping (CTRL-Break on MS-Windows).
 \subsubsection{Delete a mapping}
-To remove a mapping use the "\verb!:unmap!" command.
+To remove a mapping use the "\texttt{:unmap}" command.
 Again, the mode the unmapping applies to depends on the command used:
 
 \begin{center} \begin{tabular}{l l}
-				\verb;:unmap; & Normal, Visual and Operator-pending \\
-				\verb;:vunmap; & Visual \\
-				\verb;:nunmap; & Normal \\
-				\verb;:ounmap; & Operator-pending \\
-				\verb;:unmap!; & Insert and Command-line \\
-				\verb;:iunmap; & Insert \\
-				\verb;:cunmap; & Command-line \\
+				\texttt{:unmap} & Normal, Visual and Operator-pending \\
+				\texttt{:vunmap} & Visual \\
+				\texttt{:nunmap} & Normal \\
+				\texttt{:ounmap} & Operator-pending \\
+				\texttt{:unmap!} & Insert and Command-line \\
+				\texttt{:iunmap} & Insert \\
+				\texttt{:cunmap} & Command-line \\
 \end{tabular} \end{center}
 
 There is a trick to define a mapping that works in Normal and Operator-pending mode, but not in Visual mode.
@@ -204,16 +204,16 @@ First define it for all three modes, then delete it for Visual mode:
  :vunmap <C-A>
 \end{Verbatim}
 
-Notice that the five characters "\verb!<C-A>!" stand for the single key CTRL-A.
+Notice that the five characters "\texttt{<C-A>}" stand for the single key CTRL-A.
 
-To remove all mappings use the |\verb!:h :mapclear!| command.
+To remove all mappings use the |\texttt{:h :mapclear}| command.
 You can guess the variations for different modes by now.
 Be careful with this command, it can't be undone.
 
 \subsubsection{Special characters}
-The "\verb!:map!" command can be followed by another command.
-A \verb!|! character separates the two commands.
-This also means that a \verb!|! character can't be used inside a map command.
+The "\texttt{:map}" command can be followed by another command.
+A \texttt{|} character separates the two commands.
+This also means that a \texttt{|} character can't be used inside a map command.
 To include one, use <Bar> (five characters).
 Example:
 
@@ -221,7 +221,7 @@ Example:
  :map <F8> :write <Bar> !checkin %<CR>
 \end{Verbatim}
 
-The same problem applies to the "\verb!:unmap!" command, with the addition that you have to watch out for trailing white space.
+The same problem applies to the "\texttt{:unmap}" command, with the addition that you have to watch out for trailing white space.
 These two commands are different:
 
 \begin{Verbatim}[samepage=true]
@@ -229,7 +229,7 @@ These two commands are different:
  :unmap a| unmap b
 \end{Verbatim}
 
-The first command tries to unmap "\verb!a !", with a trailing space.
+The first command tries to unmap "\texttt{a }", with a trailing space.
 
 When using a space inside a mapping, use <Space> (seven characters):
 
@@ -240,7 +240,7 @@ When using a space inside a mapping, use <Space> (seven characters):
 This makes the spacebar move a blank-separated word forward.
 
 It is not possible to put a comment directly after a mapping, because the " character is considered to be part of the mapping.
-You can use \verb!|"!, this starts a new, empty command with a comment.
+You can use \texttt{|"}, this starts a new, empty command with a comment.
 Example:
 
 \begin{Verbatim}[samepage=true]
@@ -256,7 +256,7 @@ A mapping is triggered when typing the last character.
 Another difference is that the characters you type for an abbreviation are inserted in the text while you type them.
 When the abbreviation is triggered these characters are deleted and replaced by what the abbreviation produces.
 When typing the characters for a mapping, nothing is inserted until you type the last character that triggers it.
-If the \verb!'showcmd'! option is set, the typed characters are displayed in the last line of the Vim window.
+If the \texttt{'showcmd'} option is set, the typed characters are displayed in the last line of the Vim window.
 
 An exception is when a mapping is ambiguous.
 Suppose you have done two mappings:
@@ -266,21 +266,21 @@ Suppose you have done two mappings:
  :imap aaa bar
 \end{Verbatim}
 
-Now, when you type "\verb!aa!", Vim doesn't know if it should apply the first or the second mapping.
+Now, when you type "\texttt{aa}", Vim doesn't know if it should apply the first or the second mapping.
 It waits for another character to be typed.
-If it is an "\verb!a!", the second mapping is applied and results in "\verb!bar!".
-If it is a space, for example, the first mapping is applied, resulting in "\verb!foo!", and then the space is inserted.
+If it is an "\texttt{a}", the second mapping is applied and results in "\texttt{bar}".
+If it is a space, for example, the first mapping is applied, resulting in "\texttt{foo}", and then the space is inserted.
 
 \subsubsection{Additionally...}
 The <script> keyword can be used to make a mapping local to a script.
-See |\verb!:h :map-<script>!|.
+See |\texttt{:h :map-<script>}|.
 
 The <buffer> keyword can be used to make a mapping local to a specific buffer.
-See |\verb!:h :map-<buffer>!|
+See |\texttt{:h :map-<buffer>}|
 
 The <unique> keyword can be used to make defining a new mapping fail when it already exists.
 Otherwise a new mapping simply overwrites the old one.
-See |\verb!:h :map-<unique>!|.
+See |\texttt{:h :map-<unique>}|.
 
 To make a key do nothing, map it to <Nop> (five characters).
 This will make the <F7> key do nothing at all:
@@ -294,16 +294,16 @@ There must be no space after <Nop>.
 The Vim editor enables you to define your own commands.
 You execute these commands just like any other Command-line mode command.
 
-To define a command, use the "\verb!:command!" command, as follows:
+To define a command, use the "\texttt{:command}" command, as follows:
 
 \begin{Verbatim}[samepage=true]
  :command DeleteFirst 1delete
 \end{Verbatim}
 
-Now when you execute the command "\verb!:DeleteFirst!" Vim executes "\verb!:1delete!", which deletes the first line.
+Now when you execute the command "\texttt{:DeleteFirst}" Vim executes "\texttt{:1delete}", which deletes the first line.
 
 \emph{Note}: User-defined commands must start with a capital letter.
-You cannot use "\verb!:X!", "\verb!:Next!" and "\verb!:Print!".
+You cannot use "\texttt{:X}", "\texttt{:Next}" and "\texttt{:Print}".
 The underscore cannot be used!  You can use digits, but this is discouraged.
 
 To list the user-defined commands, execute the following command:
@@ -318,22 +318,22 @@ Command line completion can be used to get the full name.
 
 \subsubsection{Number of arguments}
 User-defined commands can take a series of arguments.
-The number of arguments must be specified by the \verb!-nargs! option.
-For instance, the example \verb!:DeleteFirst! command takes no arguments, so you could have defined it as follows:
+The number of arguments must be specified by the \texttt{-nargs} option.
+For instance, the example \texttt{:DeleteFirst} command takes no arguments, so you could have defined it as follows:
 
 \begin{Verbatim}[samepage=true]
  :command -nargs=0 DeleteFirst 1delete
 \end{Verbatim}
 
-However, because zero arguments is the default, you do not need to add "\verb!-nargs=0!".
-The other values of \verb!-nargs! are as follows:
+However, because zero arguments is the default, you do not need to add "\texttt{-nargs=0}".
+The other values of \texttt{-nargs} are as follows:
 
 \begin{center} \begin{tabular}{c l}
-				\verb;-nargs=0; & No arguments \\
-				\verb;-nargs=1; & One argument \\
-				\verb;-nargs=*; & Any number of arguments \\
-				\verb;-nargs=?; & Zero or one argument \\
-				\verb;-nargs=+; & One or more arguments \\
+				\texttt{-nargs=0} & No arguments \\
+				\texttt{-nargs=1} & One argument \\
+				\texttt{-nargs=*} & Any number of arguments \\
+				\texttt{-nargs=?} & Zero or one argument \\
+				\texttt{-nargs=+} & One or more arguments \\
 \end{tabular} \end{center}
 
 \subsubsection{Using the arguments}
@@ -358,13 +358,13 @@ For example:
  :Say he said "hello"
 \end{Verbatim}
 
-To get special characters turned into a string, properly escaped to use as an expression, use "\verb!<q-args>!":
+To get special characters turned into a string, properly escaped to use as an expression, use "\texttt{<q-args>}":
 
 \begin{Verbatim}[samepage=true]
  :command -nargs=+ Say :echo <q-args>
 \end{Verbatim}
 
-Now the above "\verb!:Say!" command will result in this to be executed:
+Now the above "\texttt{:Say}" command will result in this to be executed:
 
 \begin{Verbatim}[samepage=true]
  :echo "he said \"hello\""
@@ -390,13 +390,13 @@ To tell Vim that you are defining such a command, you need to specify a -range o
 The values for this option are as follows:
 
 \begin{center} \begin{tabular}{l l}
-				\verb;-range; & Range is allowed; default is the current line. \\
-				\verb;-range=%; & Range is allowed; default is the whole file. \\
-				\verb;-range={count}; & Range is allowed; the last number in it is used as a single number whose default is \texttt{{count}}. \\
+				\texttt{-range; & Range is allowed} default is the current line. \\
+				\texttt{-range=%; & Range is allowed} default is the whole file. \\
+				\texttt{-range={count}; & Range is allowed} the last number in it is used as a single number whose default is \texttt{{count}}. \\
 \end{tabular} \end{center}
 
 When a range is specified, the keywords <line1> and <line2> get the values of the first and last line in the range.
-For example, the following command defines the SaveIt command, which writes out the specified range to the file "\verb!save_file!":
+For example, the following command defines the SaveIt command, which writes out the specified range to the file "\texttt{save\_file}":
 
 \begin{Verbatim}[samepage=true]
  :command -range=% SaveIt :<line1>,<line2>write! save_file
@@ -405,31 +405,31 @@ For example, the following command defines the SaveIt command, which writes out 
 Some of the other options and keywords are as follows:
 
 \begin{center} \begin{tabular} {l l} % This went off the page; changed to tabularx TMC
-				\verb;-count={number}; & The command can take a count whose default is \texttt{{number}}.
+				\texttt{-count={number}} & The command can take a count whose default is \texttt{{number}}.
 				The resulting count can be used through the <count> keyword. \\
-				\verb;-bang; & You can use a \texttt{!}.
+				\texttt{-bang} & You can use a \texttt{!}.
 				If present, using <bang> will result in a \texttt{!}. \\
-				\verb;-register; & You can specify a register.
+				\texttt{-register} & You can specify a register.
 				(The default is the unnamed register.)
 				The register specification is available as <reg> (a.k.a. <register>). \\
-				\verb;-complete={type}; & Type of command-line completion used.  See |\texttt{:h :command-completion}| for the list of possible values. \\
-				\verb;-bar; & The command can be followed by \texttt{|} and another command, or \texttt{"} and a comment. \\
-				\verb;-buffer; & The command is only available for the current buffer. \\
+				\texttt{-complete={type}} & Type of command-line completion used.  See |\texttt{:h :command-completion}| for the list of possible values. \\
+				\texttt{-bar} & The command can be followed by \texttt{|} and another command, or \texttt{"} and a comment. \\
+				\texttt{-buffer} & The command is only available for the current buffer. \\
 \end{tabular} \end{center}
 
 Finally, you have the <lt> keyword.
-It stands for the character \verb!<!.
-Use this to escape the special meaning of the \verb!<>! items mentioned.
+It stands for the character \texttt{<}.
+Use this to escape the special meaning of the \texttt{<>} items mentioned.
 
 \subsubsection{Redefining and deleting}
-To redefine the same command use the \verb:!: argument:
+To redefine the same command use the \texttt{!: argument}
 
 \begin{Verbatim}[samepage=true]
  :command -nargs=+ Say :echo "<args>"
  :command! -nargs=+ Say :echo <q-args>
 \end{Verbatim}
 
-To delete a user command use "\verb!:delcommand!".
+To delete a user command use "\texttt{:delcommand}".
 It takes a single argument, which is the name of the command.
 Example:
 
@@ -445,12 +445,12 @@ To delete all the user commands:
 
 Careful, this can't be undone!
 
-More details about all this in the reference manual: |\verb!:h user-commands!|.
+More details about all this in the reference manual: |\texttt{:h user-commands}|.
 \subsection{Autocommands}
 \label{Autocommands}
 An autocommand is a command that is executed automatically in response to some event, such as a file being read or written or a buffer change.
 Through the use of autocommands you can train Vim to edit compressed files, for example.
-That is used in the |\verb!:h gzip!| plugin.
+That is used in the |\texttt{:h gzip}| plugin.
 
 Autocommands are very powerful.
 Use them with care and they will help you avoid typing many commands.
@@ -473,37 +473,37 @@ This will make that happen:
  :autocmd FileWritePre *  call DateInsert()
 \end{Verbatim}
 
-"\verb!FileWritePre!" is the event for which this autocommand is triggered: Just before (pre) writing a file.
-The "\verb!*!" is a pattern to match with the file name.
+"\texttt{FileWritePre}" is the event for which this autocommand is triggered: Just before (pre) writing a file.
+The "\texttt{*}" is a pattern to match with the file name.
 In this case it matches all files.
 
-With this command enabled, when you do a "\verb!:write!", Vim checks for any matching FileWritePre autocommands and executes them, and then it performs the "\verb!:write!".
+With this command enabled, when you do a "\texttt{:write}", Vim checks for any matching FileWritePre autocommands and executes them, and then it performs the "\texttt{:write}".
 
-The general form of the \verb!:autocmd! command is as follows:
+The general form of the \texttt{:autocmd} command is as follows:
 
 \begin{Verbatim}[samepage=true]
  :autocmd [group] {events} {file_pattern} [nested] {command}
 \end{Verbatim}
 
-The \verb![group]! name is optional.
+The \texttt{[group]} name is optional.
 It is used in managing and calling the commands (more on this later).
-The \verb!{events}! parameter is a list of events (comma separated) that trigger the command.
-\verb!{file_pattern}! is a filename, usually with wildcards.
-For example, using "\verb!*.txt!" makes the autocommand be used for all files whose name end in "\verb!.txt!".
-The optional \verb![nested]! flag allows for nesting of autocommands (see below), and finally, \verb!{command}! is the command to be executed.
+The \texttt{{events}} parameter is a list of events (comma separated) that trigger the command.
+\texttt{{file\_pattern}} is a filename, usually with wildcards.
+For example, using "\texttt{*.txt}" makes the autocommand be used for all files whose name end in "\texttt{.txt}".
+The optional \texttt{[nested]} flag allows for nesting of autocommands (see below), and finally, \texttt{{command}} is the command to be executed.
 
 \subsubsection{Events}
-One of the most useful events is \verb!BufReadPost!.
+One of the most useful events is \texttt{BufReadPost}.
 It is triggered after a new file is being edited.
 It is commonly used to set option values.
-For example, you know that "\verb!*.gsm!" files are GNU assembly language.
+For example, you know that "\texttt{*.gsm}" files are GNU assembly language.
 To get the syntax file right, define this autocommand:
 
 \begin{Verbatim}[samepage=true]
  :autocmd BufReadPost *.gsm  set filetype=asm
 \end{Verbatim}
 
-If Vim is able to detect the type of file, it will set the \verb!'filetype'! option for you.
+If Vim is able to detect the type of file, it will set the \texttt{'filetype'} option for you.
 This triggers the Filetype event.
 Use this to do something when a certain type of file is edited.
 For example, to load a list of abbreviations for text files:
@@ -518,44 +518,44 @@ When starting to edit a new file, you could make Vim insert a skeleton:
  :autocmd BufNewFile *.[ch]  0read ~/skeletons/skel.c
 \end{Verbatim}
 
-See |\verb!:h autocmd-events!| for a complete list of events.
+See |\texttt{:h autocmd-events}| for a complete list of events.
 
 \subsubsection{Patterns}
-The \verb!{file_pattern}! argument can actually be a comma-separated list of file patterns.
-For example: "\verb!*.c,*.h!" matches files ending in "\verb!.c!" and "\verb!.h!".
+The \texttt{{file\_pattern}} argument can actually be a comma-separated list of file patterns.
+For example: "\texttt{*.c,*.h}" matches files ending in "\texttt{.c}" and "\texttt{.h}".
 
 The usual file wildcards can be used.
 Here is a summary of the most often used ones:
 
 \begin{center} \begin{tabular}{l l}
-				\verb;*; & Match any character any number of times \\
-				\verb;?; & Match any character once \\
-				\verb;[abc]; & Match the character a, b or c \\
-				\verb;.; & Matches a dot \\
-				\verb;a{b,c}; & Matches "ab" and "ac" \\
+				\texttt{*} & Match any character any number of times \\
+				\texttt{?} & Match any character once \\
+				\texttt{[abc]} & Match the character a, b or c \\
+				\texttt{.} & Matches a dot \\
+				\texttt{a{b,c}} & Matches "ab" and "ac" \\
 \end{tabular} \end{center}
 
 When the pattern includes a slash (/) Vim will compare directory names.
 Without the slash only the last part of a file name is used.
-For example, "\verb!*.txt!" matches "\verb!/home/biep/readme.txt!".
-The pattern "\verb!/home/biep/*!" would also match it.
-But "\verb!home/foo/*.txt!" wouldn't.
+For example, "\texttt{*.txt}" matches "\texttt{/home/biep/readme.txt}".
+The pattern "\texttt{/home/biep/*}" would also match it.
+But "\texttt{home/foo/*.txt}" wouldn't.
 
 When including a slash, Vim matches the pattern against both the full path of the file ("\texttt{/home/biep/readme.txt}") and the relative path (e.g., "\texttt{biep/readme.txt}").
 
-\verb!Note!: When working on a system that uses a backslash as file separator, such as MS-Windows, you still use forward slashes in autocommands.
+\texttt{Note}: When working on a system that uses a backslash as file separator, such as MS-Windows, you still use forward slashes in autocommands.
 This makes it easier to write the pattern, since a backslash has a special meaning.
 It also makes the autocommands portable.
 
 \subsubsection{Deleting}
-To delete an autocommand, use the same command as what it was defined with, but leave out the \verb!{command}! at the end and use a \verb;!;.
+To delete an autocommand, use the same command as what it was defined with, but leave out the \texttt{{command}} at the end and use a \texttt{!}.
 Example:
 
 \begin{Verbatim}[samepage=true]
  :autocmd! FileWritePre *
 \end{Verbatim}
 
-This will delete all autocommands for the "\verb!FileWritePre!" event that use the "\verb!*!" pattern.
+This will delete all autocommands for the "\texttt{FileWritePre}" event that use the "\texttt{*}" pattern.
 \subsubsection{Listing}
 To list all the currently defined autocommands, use this:
 
@@ -571,13 +571,13 @@ For example, to list all BufNewFile autocommands:
  :autocmd BufNewFile
 \end{Verbatim}
 
-To list all autocommands for the pattern "\verb!*.c!":
+To list all autocommands for the pattern "\texttt{*.c}":
 
 \begin{Verbatim}[samepage=true]
  :autocmd * *.c
 \end{Verbatim}
 
-Using "\verb!*!" for the event will list all the events.
+Using "\texttt{*}" for the event will list all the events.
 To list all autocommands for the cprograms group:
 
 \begin{Verbatim}[samepage=true]
@@ -585,10 +585,10 @@ To list all autocommands for the cprograms group:
 \end{Verbatim}
 
 \subsubsection{Groups}
-The \verb!{group}! item, used when defining an autocommand, groups related autocommands together.
+The \texttt{{group}} item, used when defining an autocommand, groups related autocommands together.
 This can be used to delete all the autocommands in a certain group, for example.
 
-When defining several autocommands for a certain group, use the "\verb!:augroup!" command.
+When defining several autocommands for a certain group, use the "\texttt{:augroup}" command.
 For example, let's define autocommands for C programs:
 
 \begin{Verbatim}[samepage=true]
@@ -605,7 +605,7 @@ This will do the same as:
  :autocmd cprograms BufReadPost *.cpp   :set sw=3 sts=3
 \end{Verbatim}
 
-To delete all autocommands in the "\verb!cprograms!" group:
+To delete all autocommands in the "\texttt{cprograms}" group:
 
 \begin{Verbatim}[samepage=true]
  :autocmd! cprograms
@@ -614,7 +614,7 @@ To delete all autocommands in the "\verb!cprograms!" group:
 \subsubsection{Nesting}
 Generally, commands executed as the result of an autocommand event will not trigger any new events.
 If you read a file in response to a FileChangedShell event, it will not trigger the autocommands that would set the syntax, for example.
-To make the events triggered, add the "\verb!nested!" argument:
+To make the events triggered, add the "\texttt{nested}" argument:
 
 \begin{Verbatim}[samepage=true]
  :autocmd FileChangedShell * nested  edit
@@ -630,22 +630,22 @@ Example:
 \end{Verbatim}
 
 This defines an autocommand that is triggered when a new file has been edited.
-The file name must end in "\verb!.new!".
-The "\verb!:execute!" command uses expression evaluation to form a new command and execute it.
-When editing the file "\verb!tryout.c.new!" the executed command will be:
+The file name must end in "\texttt{.new}".
+The "\texttt{:execute}" command uses expression evaluation to form a new command and execute it.
+When editing the file "\texttt{tryout.c.new}" the executed command will be:
 
 \begin{Verbatim}[samepage=true]
  :doautocmd BufReadPost tryout.c
 \end{Verbatim}
 
-The \verb!expand()! function takes the "\verb!<afile>!" argument, which stands for the file name the autocommand was executed for, and takes the root of the file name with "\verb!:r!".
+The \texttt{expand()} function takes the "\texttt{<afile>}" argument, which stands for the file name the autocommand was executed for, and takes the root of the file name with "\texttt{:r}".
 
-"\verb!:doautocmd!" executes on the current buffer.
-The "\verb!:doautoall!" command works like "\verb!doautocmd!" except it executes on all the buffers.
+"\texttt{:doautocmd}" executes on the current buffer.
+The "\texttt{:doautoall}" command works like "\texttt{doautocmd}" except it executes on all the buffers.
 
 \subsubsection{Using normal mode commands}
 The commands executed by an autocommand are Command-line commands.
-If you want to use a Normal mode command, the "\verb!:normal!" command can be used.
+If you want to use a Normal mode command, the "\texttt{:normal}" command can be used.
 Example:
 
 \begin{Verbatim}[samepage=true]
@@ -654,14 +654,14 @@ Example:
 
 This will make the cursor jump to the last line of *.log files when you start to edit it.
 
-Using the "\verb!:normal!" command is a bit tricky.
+Using the "\texttt{:normal}" command is a bit tricky.
 First of all, make sure its argument is a complete command, including all the arguments.
-When you use "\verb!i!" to go to Insert mode, there must also be a <Esc> to leave Insert mode again.
-If you use a "\verb!/!" to start a search pattern, there must be a <CR> to execute it.
+When you use "\texttt{i}" to go to Insert mode, there must also be a <Esc> to leave Insert mode again.
+If you use a "\texttt{/}" to start a search pattern, there must be a <CR> to execute it.
 
-The "\verb!:normal!" command uses all the text after it as commands.
-Thus there can be no \verb!|! and another command following.
-To work around this, put the "\verb!:normal!" command inside an "\verb!:execute!" command.
+The "\texttt{:normal}" command uses all the text after it as commands.
+Thus there can be no \texttt{|} and another command following.
+To work around this, put the "\texttt{:normal}" command inside an "\texttt{:execute}" command.
 This also makes it possible to pass unprintable characters in a convenient way.
 Example:
 
@@ -674,10 +674,10 @@ This also shows the use of a backslash to break a long command into more lines.
 This can be used in Vim scripts (not at the command line).
 
 When you want the autocommand do something complicated, which involves jumping around in the file and then returning to the original position, you may want to restore the view on the file.
-See |\verb!:h restore-position!| for an example.
+See |\texttt{:h restore-position}| for an example.
 \subsubsection{Ignoring events}
 At times, you will not want to trigger an autocommand.
-The \verb!'eventignore'! option contains a list of events that will be totally ignored.
+The \texttt{'eventignore'} option contains a list of events that will be totally ignored.
 For example, the following causes events for entering and leaving a window to be ignored:
 
 \begin{Verbatim}[samepage=true]
@@ -690,7 +690,7 @@ To ignore all events, use the following command:
  :set eventignore=all
 \end{Verbatim}
 
-To set it back to the normal behavior, make \verb!'eventignore'! empty:
+To set it back to the normal behavior, make \texttt{'eventignore'} empty:
 
 \begin{Verbatim}[samepage=true]
  :set eventignore=

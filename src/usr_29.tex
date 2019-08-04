@@ -18,7 +18,7 @@ To generate the tags file for all C files in the current directory, use the foll
  ctags *.c
 \end{Verbatim}
 
-"\verb!ctags!" is a separate program.
+"\texttt{ctags}" is a separate program.
 Most Unix systems already have it installed.
 If you do not have it yet, you can find Exuberant ctags here: \url{http://ctags.sf.net}.
 
@@ -28,18 +28,18 @@ Now when you are in Vim and you want to go to a function definition, you can jum
  :tag startlist
 \end{Verbatim}
 
-This command will find the function "\verb!startlist!" even if it is in another file.
+This command will find the function "\texttt{startlist}" even if it is in another file.
 
 The CTRL-] command jumps to the tag of the word that is under the cursor.
 This makes it easy to explore a tangle of C code.
-Suppose, for example, that you are in the function "\verb!write_block!".
-You can see that it calls "\verb!write_line!".
-But what does "\verb!write_line!" do?  By placing the cursor on the call to "\verb!write_line!" and pressing CTRL-], you jump to the definition of this function.
+Suppose, for example, that you are in the function "\texttt{write\_block}".
+You can see that it calls "\texttt{write\_line}".
+But what does "\texttt{write\_line}" do?  By placing the cursor on the call to "\texttt{write\_line}" and pressing CTRL-], you jump to the definition of this function.
 
-The "\verb!write_line!" function calls "\verb!write_char!".
+The "\texttt{write\_line}" function calls "\texttt{write\_char}".
 You need to figure out what it does.
-So you position the cursor over the call to "\verb!write_char!" and press CTRL-].
-Now you are at the definition of "\verb!write_char!".
+So you position the cursor over the call to "\texttt{write\_char}" and press CTRL-].
+Now you are at the definition of "\texttt{write\_char}".
 
 \begin{Verbatim}[samepage=true]
     +-------------------------------------+
@@ -69,7 +69,7 @@ Now you are at the definition of "\verb!write_char!".
                                    +------------------------------------+
 \end{Verbatim}
 
-The "\verb!:tags!" command shows the list of tags that you traversed through:
+The "\texttt{:tags}" command shows the list of tags that you traversed through:
 
 \begin{Verbatim}[samepage=true]
     :tags
@@ -81,7 +81,7 @@ The "\verb!:tags!" command shows the list of tags that you traversed through:
 
 Now to go back.
 The CTRL-T command goes to the preceding tag.
-In the example above you get back to the "\verb!write_line!" function, in the call to "\verb!write_char!".
+In the example above you get back to the "\texttt{write\_line}" function, in the call to "\texttt{write\_char}".
 
 This command takes a count argument that indicates how many tags to jump back.
 You have gone forward, and now back.
@@ -93,14 +93,14 @@ The following command goes to the tag on top of the list:
 \end{Verbatim}
 
 You can prefix it with a count and jump forward that many tags.
-For example: "\verb!:3tag!".
+For example: "\texttt{:3tag}".
 CTRL-T also can be preceded with a count.
 
 These commands thus allow you to go down a call tree with CTRL-] and back up again with CTRL-T.
-Use "\verb!:tags!" to find out where you are.
+Use "\texttt{:tags}" to find out where you are.
 \subsubsection{Split windows}
-The "\verb!:tag!" command replaces the file in the current window with the one containing the new function.
-But suppose you want to see not only the old function but also the new one?  You can split the window using the "\verb!:split!" command followed by the "\verb!:tag!" command.
+The "\texttt{:tag}" command replaces the file in the current window with the one containing the new function.
+But suppose you want to see not only the old function but also the new one?  You can split the window using the "\texttt{:split}" command followed by the "\texttt{:tag}" command.
 Vim has a shorthand command that does both:
 
 \begin{Verbatim}[samepage=true]
@@ -118,7 +118,7 @@ If a count is specified, the new window will be that many lines high.
 When you have files in many directories, you can create a tags file in each of them.
 Vim will then only be able to jump to tags within that directory.
 
-To find more tags files, set the \verb!'tags'! option to include all the relevant tags files.
+To find more tags files, set the \texttt{'tags'} option to include all the relevant tags files.
 Example:
 
 \begin{Verbatim}[samepage=true]
@@ -128,7 +128,7 @@ Example:
 This finds a tags file in the same directory as the current file, one directory level higher and in all subdirectories.
 
 This is quite a number of tags files, but it may still not be enough.
-For example, when editing a file in "\verb!~/proj/src!", you will not find the tags file "\verb!~/proj/sub/tags!".
+For example, when editing a file in "\texttt{~/proj/src}", you will not find the tags file "\texttt{~/proj/sub/tags}".
 For this situation Vim offers to search a whole directory tree for tags files.
 Example:
 
@@ -159,7 +159,7 @@ Now you only need to tell Vim where your big tags file is:
  :set tags=~/proj/tags
 \end{Verbatim}
 \subsubsection{Multiple matches}
-When a function is defined multiple times (or a method in several classes), the "\verb!:tag!" command will jump to the first one.
+When a function is defined multiple times (or a method in several classes), the "\texttt{:tag}" command will jump to the first one.
 If there is a match in the current file, that one is used first.
 
 You can now jump to other matches for the same tag with:
@@ -196,13 +196,13 @@ The information in the other columns give you a good idea of where the match is 
 To move between the matching tags, these commands can be used:
 
 \begin{center} \begin{tabular}{l l}
-				\verb!:tfirst! & go to first match \\
-				\verb!:[count]tprevious! & go to [count] previous match \\
-				\verb!:[count]tnext! & go to [count] next match \\
-				\verb!:tlast! & go to last match \\
+				\texttt{:tfirst} & go to first match \\
+				\texttt{:[count]tprevious} & go to [count] previous match \\
+				\texttt{:[count]tnext} & go to [count] next match \\
+				\texttt{:tlast} & go to last match \\
 \end{tabular} \end{center}
 
-If \verb![count]! is omitted then one is used.
+If \texttt{[count]} is omitted then one is used.
 \subsubsection{Guessing tag names}
 Command line completion is a good way to avoid typing a long tag name.
 Just type the first bit and press <Tab>:
@@ -218,7 +218,7 @@ Sometimes you only know part of the name of a function.
 Or you have many tags that start with the same string, but end differently.
 Then you can tell Vim to use a pattern to find the tag.
 
-Suppose you want to jump to a tag that contains "\verb!block!".
+Suppose you want to jump to a tag that contains "\texttt{block}".
 First type this:
 
 \begin{Verbatim}[samepage=true]
@@ -226,19 +226,19 @@ First type this:
 \end{Verbatim}
 
 Now use command line completion: press <Tab>.
-Vim will find all tags that contain "\verb!block!" and use the first match.
+Vim will find all tags that contain "\texttt{block}" and use the first match.
 
-The "\verb!/!" before a tag name tells Vim that what follows is not a literal tag name, but a pattern.
+The "\texttt{/}" before a tag name tells Vim that what follows is not a literal tag name, but a pattern.
 You can use all the items for search patterns here.
-For example, suppose you want to select a tag that starts with "\verb!write_!":
+For example, suppose you want to select a tag that starts with "\texttt{write\_}":
 
 \begin{Verbatim}[samepage=true]
  :tselect /^write_
 \end{Verbatim}
 
-The "\verb!^!" specifies that the tag starts with "\verb!write_!".
+The "\texttt{\^{}}" specifies that the tag starts with "\texttt{write\_}".
 Otherwise it would also be found halfway a tag name.
-Similarly "\verb!$!" at the end makes sure the pattern matches until the end of a tag.
+Similarly "\texttt{\$}" at the end makes sure the pattern matches until the end of a tag.
 \subsubsection{A tags browser}
 Since CTRL-] takes you to the definition of the identifier under the cursor, you can use a list of identifier names as a table of contents.
 Here is an example.
@@ -258,7 +258,7 @@ Now start Vim without a file, and edit this file in Vim, in a vertically split w
 
 The window contains a list of all the functions.
 There is some more stuff, but you can ignore that.
-Do "\verb!:setlocal ts=99!" to clean it up a bit.
+Do "\texttt{:setlocal ts=99}" to clean it up a bit.
 
 In this window, define a mapping:
 
@@ -270,19 +270,19 @@ Move the cursor to the line that contains the function you want to go to.
 Now press <Enter>.
 Vim will go to the other window and jump to the selected function.
 \subsubsection{Related items}
-You can set \verb!'ignorecase'! to make case in tag names be ignored.
+You can set \texttt{'ignorecase'} to make case in tag names be ignored.
 
-The \verb!'tagbsearch'! option tells if the tags file is sorted or not.
+The \texttt{'tagbsearch'} option tells if the tags file is sorted or not.
 The default is to assume a sorted tags file, which makes a tags search a lot faster, but doesn't work if the tags file isn't sorted.
 
-The \verb!'taglength'! option can be used to tell Vim the number of significant characters in a tag.
+The \texttt{'taglength'} option can be used to tell Vim the number of significant characters in a tag.
 
-When you use the SNiFF+ program, you can use the Vim interface to it |\verb!:h sniff!|.
+When you use the SNiFF+ program, you can use the Vim interface to it |\texttt{:h sniff}|.
 SNiFF+ is a commercial program.
 
 Cscope is a free program.
 It does not only find places where an identifier is declared, but also where it is used.
-See |\verb!:h cscope!|.
+See |\texttt{:h cscope}|.
 \subsection{The preview window}
 When you edit code that contains a function call, you need to use the correct arguments.
 To know what values to pass you can look at how the function is defined.
@@ -290,13 +290,13 @@ The tags mechanism works very well for this.
 Preferably the definition is displayed in another window.
 For this the preview window can be used.
 
-To open a preview window to display the function "\verb!write_char!":
+To open a preview window to display the function "\texttt{write\_char}":
 
 \begin{Verbatim}[samepage=true]
  :ptag write_char
 \end{Verbatim}
 
-Vim will open a window, and jumps to the tag "\verb!write_char!".
+Vim will open a window, and jumps to the tag "\texttt{write\_char}".
 Then it takes you back to the original position.
 Thus you can continue typing without the need to use a CTRL-W command.
 
@@ -307,7 +307,7 @@ If the name of a function appears in the text, you can get its definition in the
 \end{Verbatim}
 
 There is a script that automatically displays the text where the word under the cursor was defined.
-See |\verb!:h CursorHold-example!|.
+See |\texttt{:h CursorHold-example}|.
 
 To close the preview window use this command:
 
@@ -315,14 +315,14 @@ To close the preview window use this command:
  :pclose
 \end{Verbatim}
 
-To edit a specific file in the preview window, use "\verb!:pedit!".
+To edit a specific file in the preview window, use "\texttt{:pedit}".
 This can be useful to edit a header file, for example:
 
 \begin{Verbatim}[samepage=true]
  :pedit defs.h
 \end{Verbatim}
 
-Finally, "\verb!:psearch!" can be used to find a word in the current file and any included files and display the match in the preview window.
+Finally, "\texttt{:psearch}" can be used to find a word in the current file and any included files and display the match in the preview window.
 This is especially useful when using library functions, for which you do not have a tags file.
 Example:
 
@@ -330,13 +330,13 @@ Example:
  :psearch popen
 \end{Verbatim}
 
-This will show the "\verb!stdio.h!" file in the preview window, with the function prototype for popen():
+This will show the "\texttt{stdio.h}" file in the preview window, with the function prototype for popen():
 
 \begin{Verbatim}[samepage=true]
     FILE    *popen __P((const char *, const char *)); 
 \end{Verbatim}
 
-You can specify the height of the preview window, when it is opened, with the \verb!'previewheight'! option.
+You can specify the height of the preview window, when it is opened, with the \texttt{'previewheight'} option.
 \subsection{Moving through a program}
 Since a program is structured, Vim can recognize items in it.
 Specific commands can be used to move around.
@@ -352,28 +352,28 @@ C programs often contain constructs like this:
 \end{Verbatim}
 
 But then much longer, and possibly nested.
-Position the cursor on the "\verb!#ifdef!" and press \verb!%.!
-Vim will jump to the "\verb!#else!".
-Pressing \verb!%! again takes you to the "\verb!#endif!".
-Another \verb!%! takes you to the "\verb!#ifdef!" again.
+Position the cursor on the "\texttt{\#ifdef}" and press \texttt{\%}.
+Vim will jump to the "\texttt{\#else}".
+Pressing \texttt{\%} again takes you to the "\texttt{\#endif}".
+Another \texttt{\%} takes you to the "\texttt{\#ifdef}" again.
 
 When the construct is nested, Vim will find the matching items.
-This is a good way to check if you didn't forget an "\verb!#endif!".
+This is a good way to check if you didn't forget an "\texttt{\#endif}".
 
-When you are somewhere inside a "\verb!#if!" - "\verb!#endif!", you can jump to the start of it with:
+When you are somewhere inside a "\texttt{\#if}" - "\texttt{\#endif}", you can jump to the start of it with:
 
 \begin{Verbatim}[samepage=true]
  [#
 \end{Verbatim}
 
-If you are not after a "\verb!#if!" or "\verb!#ifdef!" Vim will beep.
-To jump forward to the next "\verb!#else!" or "\verb!#endif!" use:
+If you are not after a "\texttt{\#if}" or "\texttt{\#ifdef}" Vim will beep.
+To jump forward to the next "\texttt{\#else}" or "\texttt{\#endif}" use:
 
 \begin{Verbatim}[samepage=true]
  ]#
 \end{Verbatim}
 
-These two commands skip any "\verb!#if!" - "\verb!#endif!" blocks that they encounter.
+These two commands skip any "\texttt{\#if}" - "\texttt{\#endif}" blocks that they encounter.
 Example:
 
 \begin{Verbatim}[samepage=true]
@@ -385,18 +385,18 @@ Example:
         set_width(a); 
 \end{Verbatim}
 
-With the cursor in the last line, "\verb![#!" moves to the first line.
-The "\verb!#ifdef!" - "\verb!#endif!" block in the middle is skipped.
+With the cursor in the last line, "\texttt{[\#}" moves to the first line.
+The "\texttt{\#ifdef}" - "\texttt{\#endif}" block in the middle is skipped.
 \subsubsection{Moving in code blocks}
-In C code blocks are enclosed in \verb!{}.!
+In C code blocks are enclosed in \texttt{\{\}}.
 These can get pretty long.
-To move to the start of the outer block use the "\verb![[!" command.
-Use "\verb!][!" to find the end.
-This assumes that the "\verb!{!" and "\verb!}!" are in the first column.
+To move to the start of the outer block use the "\texttt{[[}" command.
+Use "\texttt{][}" to find the end.
+This assumes that the "\texttt{\{}" and "\texttt{\}}" are in the first column.
 
-The "\verb![{!" command moves to the start of the current block.
-It skips over pairs of \verb!{}! at the same level.
-"\verb!]}!" jumps to the end.
+The "\texttt{[\{}" command moves to the start of the current block.
+It skips over pairs of \texttt{\{\}} at the same level.
+"\texttt{]\}}" jumps to the end.
 
 An overview:
 
@@ -416,13 +416,13 @@ An overview:
                  }                                     <-+
 \end{Verbatim}
 
-When writing C++ or Java, the outer \verb!{}! block is for the class.
-The next level of \verb!{}! is for a method.
-When somewhere inside a class use "\verb![m!" to find the previous start of a method.
-"\verb!]m!" finds the next start of a method.
+When writing C++ or Java, the outer \texttt{\{\}} block is for the class.
+The next level of \texttt{\{\}} is for a method.
+When somewhere inside a class use "\texttt{[m}" to find the previous start of a method.
+"\texttt{]m}" finds the next start of a method.
 
-Additionally, "\verb![]!" moves backward to the end of a function and "\verb!]]!" moves forward to the start of the next function.
-The end of a function is defined by a "\verb!}!" in the first column.
+Additionally, "\texttt{[]}" moves backward to the end of a function and "\texttt{]]}" moves forward to the start of the next function.
+The end of a function is defined by a "\texttt{\}}" in the first column.
 
 \begin{Verbatim}[samepage=true]
                         int func1(void)
@@ -443,10 +443,10 @@ The end of a function is defined by a "\verb!}!" in the first column.
                          }
 \end{Verbatim}
 
-Don't forget you can also use "\verb!%!" to move between matching \verb!()!, \verb!{}! and \verb![]!.
+Don't forget you can also use "\texttt{\%}" to move between matching \texttt{()}, \texttt{\{\}} and \texttt{[]}.
 That also works when they are many lines apart.
 \subsubsection{Moving in braces}
-The "\verb![(!" and "\verb!])!" commands work similar to "\verb![{!" and "\verb!]}!", except that they work on () pairs instead of \verb!{}! pairs.
+The "\texttt{[(}" and "\texttt{])}" commands work similar to "\texttt{[{}" and "\texttt{]}}", except that they work on () pairs instead of \texttt{\{\}} pairs.
 
 \begin{Verbatim}[samepage=true]
                           [(
@@ -459,8 +459,8 @@ The "\verb![(!" and "\verb!])!" commands work similar to "\verb![{!" and "\verb!
 \end{Verbatim}
 
 \subsubsection{Moving in comments}
-To move back to the start of a comment use "\verb![/!".
-Move forward to the end of a comment with "\verb!]/!".
+To move back to the start of a comment use "\texttt{[/}".
+Move forward to the end of a comment with "\texttt{]/}".
 This only works for /* - */ comments.
 
 \begin{Verbatim}[samepage=true]
@@ -474,8 +474,8 @@ This only works for /* - */ comments.
                    /* a short comment */  <-+
 \end{Verbatim}
 \subsection{Finding global identifiers}
-You are editing a C program and wonder if a variable is declared as "\verb!int!" or "\verb!unsigned!".
-A quick way to find this is with the "\verb![I!" command.
+You are editing a C program and wonder if a variable is declared as "\texttt{int}" or "\texttt{unsigned}".
+A quick way to find this is with the "\texttt{[I}" command.
 
 Suppose the cursor is on the word "column".
 Type:
@@ -498,12 +498,12 @@ In most cases this results in the right declaration to be found.
 Also when the tags file is out of date.
 Also when you don't have tags for the included files.
 
-However, a few things must be right for "\verb![I!" to do its work.
-First of all, the \verb!'include'! option must specify how a file is included.
+However, a few things must be right for "\texttt{[I}" to do its work.
+First of all, the \texttt{'include'} option must specify how a file is included.
 The default value works for C and C++.
 For other languages you will have to change it.
 \subsubsection{Locating included files}
-Vim will find included files in the places specified with the \verb!'path'! option.
+Vim will find included files in the places specified with the \texttt{'path'} option.
 If a directory is missing, some include files will not be found.
 You can discover this with this command:
 
@@ -523,34 +523,34 @@ An example of the output:
       <clib/exec_protos.h> 
 \end{Verbatim}
 
-The "\verb!io.h!" file is included by the current file and can't be found.
-"\verb!vim.h!" can be found, thus "\verb!:checkpath!" goes into this file and checks what it includes.
-The "\verb!functions.h!" and "\verb!clib/exec_protos.h!" files, included by "\verb!vim.h!" are not found.
+The "\texttt{io.h}" file is included by the current file and can't be found.
+"\texttt{vim.h}" can be found, thus "\texttt{:checkpath}" goes into this file and checks what it includes.
+The "\texttt{functions.h}" and "\texttt{clib/exec\_protos.h}" files, included by "\texttt{vim.h}" are not found.
 
 \emph{Note}:
 Vim is not a compiler.
-It does not recognize "\verb!#ifdef!" statements.
-This means every "\verb!#include!" statement is used, also when it comes after "\verb!#if NEVER!".
+It does not recognize "\texttt{\#ifdef}" statements.
+This means every "\texttt{\#include}" statement is used, also when it comes after "\texttt{\#if NEVER}".
 
-To fix the files that could not be found, add a directory to the \verb!'path'! option.
+To fix the files that could not be found, add a directory to the \texttt{'path'} option.
 A good place to find out about this is the Makefile.
-Look out for lines that contain "\verb!-I!" items, like "\verb!-I/usr/local/X11!".
+Look out for lines that contain "\texttt{-I}" items, like "\texttt{-I/usr/local/X11}".
 To add this directory use:
 
 \begin{Verbatim}[samepage=true]
  :set path+=/usr/local/X11
 \end{Verbatim}
 
-When there are many subdirectories, you can use the "\verb!*!" wildcard.
+When there are many subdirectories, you can use the "\texttt{*}" wildcard.
 Example:
 
 \begin{Verbatim}[samepage=true]
  :set path+=/usr/*/include
 \end{Verbatim}
 
-This would find files in "\verb!/usr/local/include!" as well as "\verb!/usr/X11/include!".
+This would find files in "\texttt{/usr/local/include}" as well as "\texttt{/usr/X11/include}".
 
-When working on a project with a whole nested tree of included files, the "\verb!**!" items is useful.
+When working on a project with a whole nested tree of included files, the "\texttt{**}" items is useful.
 This will search down in all subdirectories.
 Example:
 
@@ -568,7 +568,7 @@ This will find files in the directories:
 \end{Verbatim}
 
 There are even more possibilities.
-Check out the \verb!'path'! option for info.
+Check out the \texttt{'path'} option for info.
 
 If you want to see which included files are actually found, use this command:
 
@@ -577,19 +577,19 @@ If you want to see which included files are actually found, use this command:
 \end{Verbatim}
 
 You will get a (very long) list of included files, the files they include, and so on.
-To shorten the list a bit, Vim shows "\verb!(Already listed)!" for files that were found before and doesn't list the included files in there again.
+To shorten the list a bit, Vim shows "\texttt{(Already listed)}" for files that were found before and doesn't list the included files in there again.
 
 \subsubsection{Jumping to a match}
-"\verb![I!" produces a list with only one line of text.
+"\texttt{[I}" produces a list with only one line of text.
 When you want to have a closer look at the first item, you can jump to that line with the command:
 
 \begin{Verbatim}[samepage=true]
  [<Tab>
 \end{Verbatim}
 
-You can also use "\verb![ CTRL-I!", since CTRL-I is the same as pressing <Tab>.
+You can also use "\texttt{[ CTRL-I}", since CTRL-I is the same as pressing <Tab>.
 
-The list that "\verb![I!" produces has a number at the start of each line.
+The list that "\texttt{[I}" produces has a number at the start of each line.
 When you want to jump to another item than the first one, type the number first:
 
 \begin{Verbatim}[samepage=true]
@@ -601,32 +601,32 @@ Remember that you can use CTRL-O to jump back to where you started from.
 \subsubsection{Related commands}
 
 \begin{center} \begin{tabular}{c l}
-\verb![i! & only lists the first match \\
-\verb!]I! & only lists items below the cursor \\
-\verb!]i! & only lists the first item below the cursor \\
+\texttt{[i} & only lists the first match \\
+\texttt{]I} & only lists items below the cursor \\
+\texttt{]i} & only lists the first item below the cursor \\
 \end{tabular} \end{center}
 
 \subsubsection{Finding defined identifiers}
-The "\verb![I!" command finds any identifier.
-To find only macros, defined with "\verb!#define!" use:
+The "\texttt{[I}" command finds any identifier.
+To find only macros, defined with "\texttt{\#define}" use:
 
 \begin{Verbatim}[samepage=true]
  [D
 \end{Verbatim}
 
 Again, this searches in included files.
-The \verb!'define'! option specifies what a line looks like that defines the items for "\verb![D!".
+The \texttt{'define'} option specifies what a line looks like that defines the items for "\texttt{[D}".
 You could change it to make it work with other languages than C or C++.
 
-The commands related to "\verb![D!" are:
+The commands related to "\texttt{[D}" are:
 
 \begin{center} \begin{tabular}{c l}
-\verb![d! & only lists the first match \\
-\verb!]D! & only lists items below the cursor \\
-\verb!]d! & only lists the first item below the cursor \\
+\texttt{[d} & only lists the first match \\
+\texttt{]D} & only lists items below the cursor \\
+\texttt{]d} & only lists the first item below the cursor \\
 \end{tabular} \end{center}
 \subsection{Finding local identifiers}
-The "\verb![I!" command searches included files.
+The "\texttt{[I}" command searches included files.
 To search in the current file only, and jump to the first place where the word under the cursor is used:
 
 \begin{Verbatim}[samepage=true]
@@ -634,8 +634,8 @@ To search in the current file only, and jump to the first place where the word u
 \end{Verbatim}
 
 Hint: Goto Definition.
-This command is very useful to find a variable or function that was declared locally ("\verb!static!", in C terms).
-Example (cursor on "\verb!counter!"):
+This command is very useful to find a variable or function that was declared locally ("\texttt{static}", in C terms).
+Example (cursor on "\texttt{counter}"):
 
 \begin{Verbatim}[samepage=true]
        +->   static int counter = 0;
@@ -654,9 +654,9 @@ To restrict the search even further, and look only in the current function, use 
 \end{Verbatim}
 
 This will go back to the start of the current function and find the first occurrence of the word under the cursor.
-Actually, it searches backwards to an empty line above a "\verb!{!" in the first column.
+Actually, it searches backwards to an empty line above a "\texttt{\{}" in the first column.
 From there it searches forward for the identifier.
-Example (cursor on "\verb!idx!"):
+Example (cursor on "\texttt{idx}"):
 
 \begin{Verbatim}[samepage=true]
             int find_entry(char *name)

@@ -121,7 +121,7 @@ You start by entering the following:
 
 At this point, you tell Vim to complete the word using the command CTRL-P.
 Vim searches for a word that starts with what's in front of the cursor.
-In this case, it is "\texttt{ch_}", which matches with the word \texttt{ch_array}.
+In this case, it is "\texttt{ch\_}", which matches with the word \texttt{ch\_array}.
 So typing CTRL-P gives you the following:
 
 \begin{Verbatim}[samepage=true]
@@ -135,11 +135,11 @@ After a little more typing, you get this (ending in a space):
 \end{Verbatim}
 
 If you now type CTRL-P Vim will search again for a word that completes the word before the cursor.
-Since there is nothing in front of the cursor, it finds the first word backwards, which is "\texttt{ch_array}".
+Since there is nothing in front of the cursor, it finds the first word backwards, which is "\texttt{ch\_array}".
 Typing CTRL-P again gives you the next word that matches, in this case "\texttt{total}".
 A third CTRL-P searches further back.
 If there is nothing else, it causes the editor to run out of words, so it returns to the original text, which is nothing.
-A fourth CTRL-P causes the editor to start over again with "\texttt{ch_array}".
+A fourth CTRL-P causes the editor to start over again with "\texttt{ch\_array}".
 
 To search forward, use CTRL-N.
 Since the search wraps around the end of the file, CTRL-N and CTRL-P will find the same matches, but in a different sequence.
@@ -153,7 +153,7 @@ By default, it searches the following places:
 				\item Other loaded files (hidden buffers)
 				\item Files which are not loaded (inactive buffers)
 				\item Tag files
-				\item All files \texttt{#included} by the current file
+				\item All files \texttt{\#included} by the current file
 \end{enumerate}
 \subsubsection{Options}
 You can customize the search order with the \texttt{'complete'} option.
@@ -198,17 +198,17 @@ Now enter Insert mode and start typing:
 
 At this point, you enter the command CTRL-X CTRL-F.
 Vim now completes the current word "\texttt{sub}" by looking at the files in the current directory.
-The first match is \texttt{sub_count.c}.
+The first match is \texttt{sub\_count.c}.
 This is not the one you want, so you match the next file by typing CTRL-N.
-This match is \texttt{sub_done.c}.
-Typing CTRL-N again takes you to \texttt{sub_exit.c}.
+This match is \texttt{sub\_done.c}.
+Typing CTRL-N again takes you to \texttt{sub\_exit.c}.
 The results:
 
 \begin{Verbatim}[samepage=true]
     The exit code is in the file sub_exit.c 
 \end{Verbatim}
 
-If the file name starts with \texttt{/} (Unix) or \verb!C:\! (MS-Windows) you can find all files in the file system.
+If the file name starts with \texttt{/} (Unix) or \texttt{C:\textbackslash{}} (MS-Windows) you can find all files in the file system.
 For example, type "\texttt{/u}" and CTRL-X CTRL-F.
 This will match "\texttt{/usr}" (this is on Unix):
 
@@ -275,15 +275,15 @@ Assume, for example, that you have a file that begins with the following:
     /* Main program begins */ 
 \end{Verbatim}
 
-You edit this file by inserting "\texttt{#include }" at the beginning of the first line:
+You edit this file by inserting "\texttt{\#include }" at the beginning of the first line:
 
 \begin{Verbatim}[samepage=true]
     #include "file.h" 
     /* Main program begins */ 
 \end{Verbatim}
 
-You go down to the beginning of the next line using the commands "\texttt{j^}".
-You now start to insert a new "\texttt{#include}" line.
+You go down to the beginning of the next line using the commands "\texttt{j\^{}}".
+You now start to insert a new "\texttt{\#include}" line.
 So you type:
 
 \begin{Verbatim}[samepage=true]
@@ -297,7 +297,7 @@ The result is as follows:
     #include /* Main program begins */ 
 \end{Verbatim}
 
-The "\texttt{#include }" was inserted because CTRL-A inserts the text of the previous insert.
+The "\texttt{\#include }" was inserted because CTRL-A inserts the text of the previous insert.
 Now you type  "\texttt{main.h}"<Enter>  to finish the line:
 
 
@@ -318,7 +318,7 @@ For example, you have this line of C code:
     b_array[i]->s_next = a_array[i]->s_next; 
 \end{Verbatim}
 
-Now you need to type the same line, but with "\texttt{s_prev}" instead of "\texttt{s_next}".
+Now you need to type the same line, but with "\texttt{s\_prev}" instead of "\texttt{s\_next}".
 Start the new line, and press CTRL-Y 14 times, until you are at the "\texttt{n}" of "\texttt{next}":
 
 \begin{Verbatim}[samepage=true]
@@ -418,10 +418,10 @@ As a programmer, I use two rather unusual abbreviations:
 \end{Verbatim}
 
 These are used for creating boxed comments.
-The comment starts with \texttt{#b}, which draws the top line.
-I then type the comment text and use \texttt{#e} to draw the bottom line.
+The comment starts with \texttt{\#b}, which draws the top line.
+I then type the comment text and use \texttt{\#e} to draw the bottom line.
 
-Notice that the \texttt{#e} abbreviation begins with a space.
+Notice that the \texttt{\#e} abbreviation begins with a space.
 In other words, the first two characters are space-star.
 Usually Vim ignores spaces between the abbreviation and the expansion.
 To avoid that problem, I spell space as seven characters: <, S, p, a, c, e, >.

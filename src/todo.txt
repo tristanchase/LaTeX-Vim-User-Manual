@@ -1,13 +1,17 @@
 TODO
-* |usr_41.tex|  Write a Vim script
-* |usr_42.tex|  Add new menus
-* |usr_43.tex|  Using filetypes
-* |usr_44.tex|  Your own syntax highlighted
-* |usr_45.tex|  Select your language
-* |usr_90.tex|  Installing Vim
+* Convert \verb to texttt{}
+	* grep for \\verb
+	* @s each file
+	* /verb for strays
+		* @j and @t for backslashes
+		* /\$ i\<Esc>
+		* /_ i\<Esc>
+		* /& i\<Esc>
 * Go through table formatting
 	* grep for \begin{center}
 	* grep for {tabular[x]}
+	* add {\textwidth}
+\begin{center} \begin{tabularx}{\textwidth}{l X}
 	* change alignment as necessary
 * Create a branch for manually numbered chapters and sections
 	* Create branch
@@ -20,6 +24,13 @@ TODO
 
 
 DONE
++ 2019-08-03 grep for \s{.*} in body text (@v)
++ 2019-08-02 |usr_43.tex|  Using filetypes
++ 2019-08-02 |usr_44.tex|  Your own syntax highlighted
++ 2019-08-02 |usr_45.tex|  Select your language
++ 2019-08-02 |usr_90.tex|  Installing Vim
++ 2019-08-02 |usr_42.tex|  Add new menus
++ 2019-08-02 |usr_41.tex|  Write a Vim script
 + 2019-08-01 |usr_31.tex|  Exploiting the GUI
 + 2019-08-01 |usr_32.tex|  The undo tree
 + 2019-08-01 |usr_40.tex|  Make new commands

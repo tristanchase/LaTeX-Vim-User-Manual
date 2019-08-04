@@ -11,7 +11,7 @@ You can do that with this command:
  :earlier 1f
 \end{Verbatim}
 
-The "\verb!f!" stands for "file" here.
+The "\texttt{f}" stands for "file" here.
 
 You can repeat this command to go further back in the past.
 Or use a count different from 1 to go back faster.
@@ -27,7 +27,7 @@ This matters if you made changes after undoing some changes.
 It's explained in the next section.
 
 Also note that we are talking about text writes here.
-For writing the undo information in a file see |\verb!:h undo-persistence!|.
+For writing the undo information in a file see |\texttt{:h undo-persistence}|.
 \subsection{Numbering changes}
 \label{Numbering changes}
 In section |\hyperref[Undo and Redo]{\texttt{Undo and Redo}}| we only discussed one line of undo/redo.
@@ -66,10 +66,10 @@ If we now undo one change, back to "one too", and change "one" to "me" we create
      one two    me too 
 \end{Verbatim}
 
-You can now use the |\verb!:h u!| command to undo.
+You can now use the |\texttt{:h u}| command to undo.
 If you do this twice you get to "one".
-Use |\verb!:h CTRL-R!| to redo, and you will go to "one too".
-One more |\verb!:h CTRL-R!| takes you to "me too".
+Use |\texttt{:h CTRL-R}| to redo, and you will go to "one too".
+One more |\texttt{:h CTRL-R}| takes you to "me too".
 Thus undo and redo go up and down in the tree, using the branch that was last used.
 
 What matters here is the order in which the changes are made.
@@ -87,7 +87,7 @@ So how do you get to "one two" now?  You can use this command:
 \end{Verbatim}
 
 The text is now "one two", you are below change 2.
-You can use the |\verb!:h :undo!| command to jump to below any change in the tree.
+You can use the |\texttt{:h :undo}| command to jump to below any change in the tree.
 
 Now make another change: change "one" to "not":
 
@@ -108,11 +108,11 @@ Now make another change: change "one" to "not":
 \end{Verbatim}
 
 Now you change your mind and want to go back to "me too".
-Use the |\verb!:h g-!| command.
+Use the |\texttt{:h g-}| command.
 This moves back in time.
 Thus it doesn't walk the tree upwards or downwards, but goes to the change made before.
 
-You can repeat |\verb!:h g-!| and you will see the text change:
+You can repeat |\texttt{:h g-}| and you will see the text change:
 
 \begin{Verbatim}[samepage=true]
     me too 
@@ -121,7 +121,7 @@ You can repeat |\verb!:h g-!| and you will see the text change:
     one 
 \end{Verbatim}
 
-Use |\verb!:h g+!| to move forward in time:
+Use |\texttt{:h g+}| to move forward in time:
 
 \begin{Verbatim}[samepage=true]
     one 
@@ -131,10 +131,10 @@ Use |\verb!:h g+!| to move forward in time:
     not two 
 \end{Verbatim}
 
-Using |\verb!:h :undo!| is useful if you know what change you want to jump to.
-|\verb!g-!| and |\verb!:h g+!| are useful if you don't know exactly what the change number is.
+Using |\texttt{:h :undo}| is useful if you know what change you want to jump to.
+|\texttt{g-}| and |\texttt{:h g+}| are useful if you don't know exactly what the change number is.
 
-You can type a count before |\verb!:h g-!| and |\verb!:h g+!| to repeat them.
+You can type a count before |\texttt{:h g-}| and |\texttt{:h g+}| to repeat them.
 \subsection{Time travelling}
 When you have been working on text for a while the tree grows to become big.
 Then you may want to go to the text of some minutes ago.
@@ -156,22 +156,22 @@ Assuming we are below change 4, at "not two", you can go back ten seconds with t
 \end{Verbatim}
 
 Depending on how much time you took for the changes you end up at a certain position in the tree.
-The |\verb!:h :earlier!| command argument can be "\verb!m!" for minutes, "\verb!h!" for hours and "\verb!d!" for days.
+The |\texttt{:h :earlier}| command argument can be "\texttt{m}" for minutes, "\texttt{h}" for hours and "\texttt{d}" for days.
 To go all the way back use a big number:
 
 \begin{Verbatim}[samepage=true]
  :earlier 100d
 \end{Verbatim}
 
-To travel forward in time again use the |\verb!:h \verb!:later!!| command:
+To travel forward in time again use the |\texttt{:h :later!}| command:
 
 \begin{Verbatim}[samepage=true]
  :later 1m
 \end{Verbatim}
 
-The arguments are "\verb!s!", "\verb!m!" and "\verb!h!", just like with |\verb!:h :earlier!|.
+The arguments are "\texttt{s}", "\texttt{m}" and "\texttt{h}", just like with |\texttt{:h :earlier}|.
 
-If you want even more details, or want to manipulate the information, you can use the |\verb!:h undotree()!| function.
+If you want even more details, or want to manipulate the information, you can use the |\texttt{:h undotree()}| function.
 To see what it returns:
 
 \begin{Verbatim}[samepage=true]

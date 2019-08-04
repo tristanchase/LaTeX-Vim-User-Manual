@@ -2,7 +2,7 @@
 Before you can insert or delete text the cursor has to be moved to the right
 place.  Vim has a large number of commands to position the cursor.  This
 chapter shows you how to use the most important ones.  You can find a list of
-these commands below |\texttt{:h Q_lr}|.
+these commands below |\texttt{:h Q\_lr}|.
 %\localtableofcontentswithrelativedepth{+1} 
 \subsection{Word movement}
 
@@ -58,10 +58,10 @@ With this mix of lowercase and uppercase commands, you can quickly move forward 
 
 \subsection{Moving to the start or end of a line}
 
-The \texttt{"$"} command moves the cursor to the end of a line.
+The \texttt{"\$"} command moves the cursor to the end of a line.
 If your keyboard has an <End> key it will do the same thing.
 
-The \texttt{"^"} command moves to the first non-blank character of the line.
+The \texttt{"\^{}"} command moves to the first non-blank character of the line.
 The "0" command (zero) moves to the very first character of the line.
 The <Home> key does the same thing.
 In a picture:
@@ -79,7 +79,7 @@ In a picture:
 The "\$" command takes a count, like most movement commands.
 But moving to the end of the line several times doesn't make sense.
 Therefore it causes the editor to move to the end of another line.
-For example, "\texttt{1$}" moves you to the end of the first line (the one you're on), "\verb!2$!" to the end of the next line, and so on.
+For example, "\texttt{1\$}" moves you to the end of the first line (the one you're on), "\texttt{2\$}" to the end of the next line, and so on.
 The "\texttt{0}" command doesn't take a count argument, because the "\texttt{0}" would be part of the count.
 Unexpectedly, using a count with "\textasciicircum" doesn't have any effect.
 
@@ -138,7 +138,7 @@ Note: <Esc> cancels most operations, not just searches.
 \subsection{Matching a parenthesis}
 
 When writing a program you often end up with nested () constructs.
-Then the "\texttt{%}" command is very handy: It moves to the matching paren.
+Then the "\texttt{\%}" command is very handy: It moves to the matching paren.
 If the cursor is on a "(" it will move to the matching ")".
 If it's on a ")" it will move to the matching "(".
 
@@ -195,9 +195,9 @@ A quick way to go to the start of a file use "gg".
            last line of a file    V
 \end{Verbatim}
 
-Another way to move to a line is using the "\texttt{%}" command with a count. 
-For example "\texttt{50%}" moves you to halfway the file.
-"\texttt{90%}" goes to near the end.
+Another way to move to a line is using the "\texttt{\%}" command with a count. 
+For example "\texttt{50\%}" moves you to halfway the file.
+"\texttt{90\%}" goes to near the end.
 
 The previous assumes that you want to move to a line in the file, no matter if it's currently visible or not.
 What if you want to move to one of the lines you can see?
@@ -318,7 +318,7 @@ That's done with the "zz" command.
 \end{Verbatim}
 
 The "\texttt{zt}" command puts the cursor line at the top, "\texttt{zb}" at the bottom.
-There are a few more scrolling commands, see |\texttt{:h Q_sc}|.
+There are a few more scrolling commands, see |\texttt{:h Q\_sc}|.
 To always keep a few lines of context around the cursor, use the \texttt{'scrolloff'} option.
 
 \subsection{Simple searches}
@@ -342,14 +342,14 @@ If you want to use them in a search you must put a \textbackslash in front of th
 See below.
 
 To find the next occurrence of the same string use the "\texttt{n}" command.
-Use this to find the first \texttt{#include} after the cursor:
+Use this to find the first \texttt{\#include} after the cursor:
 
  \begin{Verbatim}[samepage=true]
  /#include
  \end{Verbatim}
 
 And then type "\texttt{n}" several times.
-You will move to each \texttt{#include} in the text.
+You will move to each \texttt{\#include} in the text.
 You can also use a count if you know which match you want.
 Thus "\texttt{3n}" finds the third match.
 Using a count with "\texttt{/}" doesn't work.
@@ -410,7 +410,7 @@ You could type "\texttt{/TheLongFunctionName}", but that's a lot of typing.
 And when you make a mistake Vim won't find it.
 There is an easier way: Position the cursor on the word and use the "\texttt{*}" command.
 Vim will grab the word under the cursor and use it as the search string.
-The "\texttt{#}" command does the same in the other direction.
+The "\texttt{\#}" command does the same in the other direction.
 You can prepend a count: "\texttt{3*}" searches for the third occurrence of the word under the cursor.
 
 \subsubsection{Searching for whole words}
@@ -422,8 +422,8 @@ To only find words that end in "the" use:
  /the\>
  \end{Verbatim}
 
-The "\verb!\>"! item is a special marker that only matches at the end of a word.
-Similarly "\verb!\<"! only matches at the begin of a word.
+ The "\texttt{\textbackslash{}>"} item is a special marker that only matches at the end of a word.
+ Similarly "\texttt{\textbackslash{}<"} only matches at the begin of a word.
 Thus to search for the word "\texttt{the"} only:
 
  \begin{Verbatim}[samepage=true]
@@ -431,7 +431,7 @@ Thus to search for the word "\texttt{the"} only:
  \end{Verbatim}
 
 This does not match "there" or "soothe".
-Notice that the "\texttt{*}" and "\texttt{#}" commands use these start-of-word and end-of-word markers to only find whole words (you can use "\texttt{g*}" and "\texttt{g#}" to match partial words).
+Notice that the "\texttt{*}" and "\texttt{\#}" commands use these start-of-word and end-of-word markers to only find whole words (you can use "\texttt{g*}" and "\texttt{g\#}" to match partial words).
 
 \subsubsection{Highlighting matches}
 
@@ -533,12 +533,12 @@ You can find the full explanation here: |\texttt{:h pattern}|.
 
 \subsubsection{Beginning and end of a line}
 
-The \texttt{^} character matches the beginning of a line.
+The \texttt{\^{}} character matches the beginning of a line.
 On an English-US keyboard you find it above the 6.
 The pattern "\texttt{include}" matches the word include anywhere on the line.
-But the pattern "\texttt{^include}" matches the word include only if it is at the beginning of a line.
+But the pattern "\texttt{\^{}include}" matches the word include only if it is at the beginning of a line.
 The \$ character matches the end of a line.
-Therefore, "\texttt{was$}" matches the word was only if it is at the end of a line.
+Therefore, "\texttt{was\$}" matches the word was only if it is at the end of a line.
 
 Let's mark the places where "the" matches in this example line with "x"s:
 
@@ -547,21 +547,21 @@ Let's mark the places where "the" matches in this example line with "x"s:
     xxx                       xxx                  xxx
 		\end{Verbatim}
 
-Using "\texttt{/the$}" we find this match:
+Using "\texttt{/the\$}" we find this match:
 
 		\begin{Verbatim}[samepage=true]
     the solder holding one of the chips melted and the 
                                                    xxx
 		\end{Verbatim}
 
-And with "\texttt{/^the}" we find this one:
+And with "\texttt{/\^{}the}" we find this one:
 
 		\begin{Verbatim}[samepage=true]
     the solder holding one of the chips melted and the 
     xxx
 		\end{Verbatim}
 
-You can try searching with "\texttt{/^the$}", it will only match a single line consisting of "the".
+You can try searching with "\texttt{/\^{}the\$}", it will only match a single line consisting of "the".
 White space does matter here, thus if a line contains a space after the word, like "the ", the pattern will not match.
 
 \subsubsection{Matching any single character}
@@ -586,7 +586,7 @@ If you search for "\texttt{ter.}", you will find these matches:
                   xxxx                          xxxx
 		\end{Verbatim}
 
-Searching for "\verb!ter\.!" only finds the second match.
+		Searching for "\texttt{ter\textbackslash{}.}" only finds the second match.
 
 \subsection{Using marks}
 

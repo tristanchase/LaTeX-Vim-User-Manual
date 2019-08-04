@@ -9,12 +9,12 @@ This chapter gives a few hints and also explains how upgrading to a new version 
 First you have to decide if you are going to install Vim system-wide or for a single user.
 The installation is almost the same, but the directory where Vim is installed in differs.
 
-For a system-wide installation the base directory "\verb!/usr/local!" is often used.
+For a system-wide installation the base directory "\texttt{/usr/local}" is often used.
 But this may be different for your system.
 Try finding out where other packages are installed.
 
 When installing for a single user, you can use your home directory as the base.
-The files will be placed in subdirectories like "\verb!bin!" and "\verb!shared/vim!".
+The files will be placed in subdirectories like "\texttt{bin}" and "\texttt{shared/vim}".
 
 \subsubsection{From a package}
 You can get precompiled binaries for many different UNIX systems.
@@ -25,7 +25,7 @@ It is a good idea to compile your own UNIX version from the source.
 Also, creating the editor from the source allows you to control which features are compiled.
 This does require a compiler though.
 
-If you have a Linux distribution, the "\verb!vi!" program is probably a minimal version of Vim.
+If you have a Linux distribution, the "\texttt{vi}" program is probably a minimal version of Vim.
 It doesn't do syntax highlighting, for example.
 Try finding another Vim package in your distribution, or search on the web site.
 
@@ -43,7 +43,7 @@ To get the Vim archives, look in this file for a mirror near you, this should pr
     \url{ftp://ftp.vim.org/pub/vim/MIRRORS} 
 
 Or use the home site ftp.vim.org, if you think it's fast enough.
-Go to the "\verb!unix!" directory and you'll find a list of files there.
+Go to the "\texttt{unix}" directory and you'll find a list of files there.
 The version number is embedded in the file name.
 You will want to get the most recent version.
 
@@ -80,7 +80,7 @@ If you have the one big archive, you unpack it like this:
  bzip2 -d -c path/vim-6.1.tar.bz2 | tar xf -
 \end{Verbatim}
 
-Change "\verb!path!" to where you have downloaded the file.
+Change "\texttt{path}" to where you have downloaded the file.
 
 \begin{Verbatim}[samepage=true]
  gzip -d -c path/vim-6.1-src1.tar.gz | tar xf -
@@ -121,7 +121,7 @@ If it is alright you will finally see:
     ALL DONE 
 \end{Verbatim}
 
-If you get "\verb!TEST FAILURE!" some test failed.
+If you get "\texttt{TEST FAILURE}" some test failed.
 If there are one or two messages about failed tests, Vim might still work, but not perfectly.
 If you see a lot of error messages or Vim doesn't finish until the end, there must be something wrong.
 Either try to find out yourself, or find someone who can solve it.
@@ -136,7 +136,7 @@ If you want to install in your home directory, edit the Makefile and search for 
     #prefix = $(HOME) 
 \end{Verbatim}
 
-Remove the \verb!#! at the start of the line.
+Remove the \texttt{\#} at the start of the line.
 
 When installing for the whole system, Vim has most likely already selected a good installation directory for you.
 You can also specify one, see below.
@@ -163,7 +163,7 @@ If this doesn't work, use this command to check where Vim is looking for the run
  :echo $VIMRUNTIME
 \end{Verbatim}
 
-You can also start Vim with the "\verb!-V!" argument to see what happens during startup:
+You can also start Vim with the "\texttt{-V}" argument to see what happens during startup:
 
 \begin{Verbatim}[samepage=true]
  vim -V
@@ -178,7 +178,7 @@ One of the simple ways is to edit the Makefile.
 There are many directions and examples.
 Often you can enable or disable a feature by uncommenting a line.
 
-An alternative is to run "\verb!configure!" separately.
+An alternative is to run "\texttt{configure}" separately.
 This allows you to specify configuration options manually.
 The disadvantage is that you have to figure out what exactly to type.
 
@@ -202,9 +202,9 @@ To see the whole list use:
  ./configure --help
 \end{Verbatim}
 
-You can find a bit of explanation for each feature, and links for more information here: |\verb!:h feature-list!|.
+You can find a bit of explanation for each feature, and links for more information here: |\texttt{:h feature-list}|.
 
-For the adventurous, edit the file "\verb!feature.h!".
+For the adventurous, edit the file "\texttt{feature.h}".
 You can also change the source code yourself!
 \subsection{MS-Windows}
 There are two ways to install the Vim program for Microsoft Windows.
@@ -225,10 +225,10 @@ To get the Vim archives, look in this file for a mirror near you, this should pr
 \end{Verbatim}
 
 Or use the home site ftp.vim.org, if you think it's fast enough.
-Go to the "\verb!pc!" directory and you'll find a list of files there.
+Go to the "\texttt{pc}" directory and you'll find a list of files there.
 The version number is embedded in the file name.
 You will want to get the most recent version.
-We will use "\verb!61!" here, which is version 6.1.
+We will use "\texttt{61}" here, which is version 6.1.
 
 \begin{Verbatim}[samepage=true]
     gvim61.exe      The self-installing archive.
@@ -257,7 +257,7 @@ You always need to get the archive with runtime files.
 \end{Verbatim}
 
 Use your un-zip program to unpack the files.
-For example, using the "\verb!unzip!" program:
+For example, using the "\texttt{unzip}" program:
 
 \begin{Verbatim}[samepage=true]
  cd c:\
@@ -265,17 +265,17 @@ For example, using the "\verb!unzip!" program:
  unzip path\vim61rt.zip
 \end{Verbatim}
 
-This will unpack the files in the directory "\verb!c:\vim\vim61!".
-If you already have a "\verb!vim!" directory somewhere, you will want to move to the directory just above it.
+This will unpack the files in the directory "\texttt{c:\textbackslash{}vim\textbackslash{}vim61}".
+If you already have a "\texttt{vim}" directory somewhere, you will want to move to the directory just above it.
 
-Now change to the "\verb!vim\vim61!" directory and run the install program:
+Now change to the "\texttt{vim\textbackslash{}vim61}" directory and run the install program:
 
 \begin{Verbatim}[samepage=true]
  install
 \end{Verbatim}
 
 Carefully look through the messages and select the options you want to use.
-If you finally select "\verb!do it!" the install program will carry out the actions you selected.
+If you finally select "\texttt{do it}" the install program will carry out the actions you selected.
 
 The install program doesn't move the runtime files.
 They remain where you unpacked them.
@@ -289,12 +289,12 @@ Check the file src/INSTALLpc.txt for hints.
 \subsection{Upgrading}
 If you are running one version of Vim and want to install another, here is what to do.
 \subsubsection{Unix}
-When you type "\verb!make install!" the runtime files will be copied to a directory which is specific for this version.
+When you type "\texttt{make install}" the runtime files will be copied to a directory which is specific for this version.
 Thus they will not overwrite a previous version.
 This makes it possible to use two or more versions next to each other.
 
-The executable "\verb!vim!" will overwrite an older version.
-If you don't care about keeping the old version, running "\verb!make install!" will work fine.
+The executable "\texttt{vim}" will overwrite an older version.
+If you don't care about keeping the old version, running "\texttt{make install}" will work fine.
 You can delete the old runtime files manually.
 Just delete the directory with the version number in it and all files below it.
 Example:
@@ -304,7 +304,7 @@ Example:
 \end{Verbatim}
 
 There are normally no changed files below this directory.
-If you did change the "\verb!filetype.vim!" file, for example, you better merge the changes into the new version before deleting it.
+If you did change the "\texttt{filetype.vim}" file, for example, you better merge the changes into the new version before deleting it.
 
 If you are careful and want to try out the new version for a while before switching to it, install the new version under another name.
 You need to specify a configure argument.
@@ -314,9 +314,9 @@ For example:
  ./configure --with-vim-name=vim6
 \end{Verbatim}
 
-Before running "\verb!make install!", you could use "\verb!make -n install!" to check that no valuable existing files are overwritten.
+Before running "\texttt{make install}", you could use "\texttt{make -n install}" to check that no valuable existing files are overwritten.
 
-When you finally decide to switch to the new version, all you need to do is to rename the binary to "\verb!vim!".
+When you finally decide to switch to the new version, all you need to do is to rename the binary to "\texttt{vim}".
 For example:
 
 \begin{Verbatim}[samepage=true]
@@ -326,14 +326,14 @@ For example:
 \subsubsection{Ms-windows}
 Upgrading is mostly equal to installing a new version.
 Just unpack the files in the same place as the previous version.
-A new directory will be created, e.g., "\verb!vim61!", for the files of the new version.
+A new directory will be created, e.g., "\texttt{vim61}", for the files of the new version.
 Your runtime files, vimrc file, viminfo, etc. will be left alone.
 
 If you want to run the new version next to the old one, you will have to do some handwork.
 Don't run the install program, it will overwrite a few files of the old version.
 Execute the new binaries by specifying the full path.
 The program should be able to automatically find the runtime files for the right version.
-However, this won't work if you set the \verb!$VIMRUNTIME! variable somewhere.
+However, this won't work if you set the \texttt{\$VIMRUNTIME} variable somewhere.
 
 If you are satisfied with the upgrade, you can delete the files of the previous version.
 See |\hyperref[Uninstalling Vim]{\texttt{Uninstalling Vim}}|.
@@ -343,13 +343,13 @@ It also contains answers to many installation questions.
 
 \textit{Q: I Do Not Have Root Privileges.  How Do I Install Vim? (Unix)}
 
-Use the following configuration command to install Vim in a directory called \verb!$HOME/vim!:
+Use the following configuration command to install Vim in a directory called \texttt{\$HOME/vim}:
 
 \begin{Verbatim}[samepage=true]
  ./configure --prefix=$HOME
 \end{Verbatim}
 
-This gives you a personal copy of Vim.  You need to put \verb!$HOME/bin! in your
+This gives you a personal copy of Vim.  You need to put \texttt{\$HOME/bin} in your
 path to execute the editor.  Also see \hyperref[install-home]{|\texttt{install-home}|}.
 
 \textit{Q: The Colors Are Not Right on My Screen. (Unix)}
@@ -368,7 +368,7 @@ This avoids the need for a correct terminal setup.
 \textit{Q: My Backspace And Delete Keys Don't Work Right}
 
 The definition of what key sends what code is very unclear for backspace <BS> and Delete <Del> keys.
-First of all, check your \verb!$TERM! setting.
+First of all, check your \texttt{\$TERM} setting.
 If there is nothing wrong with it, try this:
 
 \begin{Verbatim}[samepage=true]
@@ -380,12 +380,12 @@ In the first line you need to press CTRL-V and then hit the backspace key.
 In the second line you need to press CTRL-V and then hit the Delete key.
 You can put these lines in your vimrc file, see |\hyperref[The vimrc file]{\texttt{The vimrc file}}|.
 A disadvantage is that it won't work when you use another terminal some day.
-Look here for alternate solutions: |\verb!:h :fixdel!|.
+Look here for alternate solutions: |\texttt{:h :fixdel}|.
 
 \textit{Q: I Am Using RedHat Linux.  Can I Use the Vim That Comes with the System?}
 
 By default RedHat installs a minimal version of Vim.
-Check your RPM packages for something named "\verb!Vim-enhanced-version.rpm!" and install that.
+Check your RPM packages for something named "\texttt{Vim-enhanced-version.rpm}" and install that.
 
 \textit{Q: How Do I Turn Syntax Coloring On?  How do I make plugins work?}
 
@@ -419,7 +419,7 @@ If you installed Vim from sources you can use this command:
 \end{Verbatim}
 
 However, if you have deleted the original files or you used an archive that someone supplied, you can't do this.
-Do delete the files manually, here is an example for when "\verb!/usr/local!" was used as the root:
+Do delete the files manually, here is an example for when "\texttt{/usr/local}" was used as the root:
 
 \begin{Verbatim}[samepage=true]
  rm -rf /usr/local/share/vim/vim61
@@ -458,23 +458,23 @@ Do delete the files manually, here is an example for when "\verb!/usr/local!" wa
 \end{Verbatim}
 
 \subsubsection{Ms-windows}
-If you installed Vim with the self-installing archive you can run the "\verb!uninstall-gui!" program located in the same directory as the other Vim programs, e.g. "\verb!c:\vim\vim61!".
+If you installed Vim with the self-installing archive you can run the "\texttt{uninstall-gui}" program located in the same directory as the other Vim programs, e.g. "\texttt{c:\textbackslash{}vim\textbackslash{}vim61}".
 You can also launch it from the Start menu if installed the Vim entries there.
 This will remove most of the files, menu entries and desktop shortcuts.
 Some files may remain however, as they need a Windows restart before being deleted.
 
-You will be given the option to remove the whole "\verb!vim!" directory.
+You will be given the option to remove the whole "\texttt{vim}" directory.
 It probably contains your vimrc file and other runtime files that you created, so be careful.
 
-Else, if you installed Vim with the zip archives, the preferred way is to use the "\verb!uninstal!" program (note the missing l at the end).
-You can find it in the same directory as the "\verb!install!" program, e.g., "\verb!c:\vim\vim61!".
+Else, if you installed Vim with the zip archives, the preferred way is to use the "\texttt{uninstal}" program (note the missing l at the end).
+You can find it in the same directory as the "\texttt{install}" program, e.g., "\texttt{c:\textbackslash{}vim\textbackslash{}vim61}".
 This should also work from the usual "install/remove software" page.
 
 However, this only removes the registry entries for Vim.
 You have to delete the files yourself.
-Simply select the directory "\verb!vim\vim61!" and delete it recursively.
+Simply select the directory "\texttt{vim\textbackslash{}vim61}" and delete it recursively.
 There should be no files there that you changed, but you might want to check that first.
 
-The "\verb!vim!" directory probably contains your vimrc file and other runtime files that you created.
+The "\texttt{vim}" directory probably contains your vimrc file and other runtime files that you created.
 You might want to keep that.
 \clearpage

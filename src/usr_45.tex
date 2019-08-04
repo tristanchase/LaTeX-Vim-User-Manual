@@ -12,13 +12,13 @@ To see what the current language is, use this command:
  :language
 \end{Verbatim}
 
-If it replies with "\verb!C!", this means the default is being used, which is English.
+If it replies with "\texttt{C}", this means the default is being used, which is English.
 
 \emph{Note}:
 Using different languages only works when Vim was compiled to handle it.
-To find out if it works, use the "\verb!:version!" command and check the output for "\verb!+gettext!" and "\verb!+multi_lang!".
+To find out if it works, use the "\texttt{:version}" command and check the output for "\texttt{+gettext}" and "\texttt{+multi\_lang}".
 If they are there, you are OK.
-If you see "\verb!-gettext!" or "\verb!-multi_lang!" you will have to find another Vim.
+If you see "\texttt{-gettext}" or "\texttt{-multi\_lang}" you will have to find another Vim.
 
 What if you would like your messages in a different language?  There are several ways.
 Which one you should use depends on the capabilities of your system.
@@ -45,20 +45,20 @@ You don't get an error when translated messages are not available.
 Vim will silently fall back to using English.
 
 To find out which languages are supported on your system, find the directory where they are listed.
-On my system it is "\verb!/usr/share/locale!".
-On some systems it's in "\verb!/usr/lib/locale!".
-The manual page for "\verb!setlocale!" should give you a hint where it is found on your system.
+On my system it is "\texttt{/usr/share/locale}".
+On some systems it's in "\texttt{/usr/lib/locale}".
+The manual page for "\texttt{setlocale}" should give you a hint where it is found on your system.
 
 Be careful to type the name exactly as it should be.
-Upper and lowercase matter, and the '\verb!-!' and '\verb!_!' characters are easily confused.
+Upper and lowercase matter, and the '\texttt{-}' and '\texttt{\_}' characters are easily confused.
 
 You can also set the language separately for messages, edited text and the time format.
-See |\verb!:h :language!|.
+See |\texttt{:h :language}|.
 
 \subsubsection{Do-it-yourself message translation}
 If translated messages are not available for your language, you could write them yourself.
 To do this, get the source code for Vim and the GNU gettext package.
-After unpacking the sources, instructions can be found in the directory \verb!src/po/README.txt!.
+After unpacking the sources, instructions can be found in the directory \texttt{src/po/README.txt}.
 
 It's not too difficult to do the translation.
 You don't need to be a programmer.
@@ -73,7 +73,7 @@ Normally this is automatically done for you if the environment is set for your l
 You don't need to do anything extra for this.
 But it only works if translations for the language are available.
 
-Suppose you are in Germany, with the language set to German, but prefer to use "\verb!File!" instead of "\verb!Datei!".
+Suppose you are in Germany, with the language set to German, but prefer to use "\texttt{File}" instead of "\texttt{Datei}".
 You can switch back to using the English menus this way:
 
 \begin{Verbatim}[samepage=true]
@@ -86,12 +86,12 @@ It is also possible to specify a language:
  :set langmenu=nl_NL.ISO_8859-1
 \end{Verbatim}
 
-Like above, differences between "\verb!-!" and "\verb!_!" matter.
+Like above, differences between "\texttt{-}" and "\texttt{\_}" matter.
 However, upper/lowercase differences are ignored here.
 
-The \verb!'langmenu'! option must be set before the menus are loaded.
-Once the menus have been defined changing \verb!'langmenu'! has no direct effect.
-Therefore, put the command to set \verb!'langmenu'! in your vimrc file.
+The \texttt{'langmenu'} option must be set before the menus are loaded.
+Once the menus have been defined changing \texttt{'langmenu'} has no direct effect.
+Therefore, put the command to set \texttt{'langmenu'} in your vimrc file.
 
 If you really want to switch menu language while running Vim, you can do it this way:
 
@@ -111,23 +111,23 @@ To see which menu translations are available, look in this directory:
     $VIMRUNTIME/lang 
 \end{Verbatim}
 
-The files are called \verb!menu_{language}.vim!.
+The files are called \texttt{menu\_{language}.vim}.
 If you don't see the language you want to use, you can do your own translations.
 The simplest way to do this is by copying one of the existing language files, and change it.
 
-First find out the name of your language with the "\verb!:language!" command.
+First find out the name of your language with the "\texttt{:language}" command.
 Use this name, but with all letters made lowercase.
-Then copy the file to your own runtime directory, as found early in \verb!'runtimepath'!.
+Then copy the file to your own runtime directory, as found early in \texttt{'runtimepath'}.
 For example, for Unix you would do:
 
 \begin{Verbatim}[samepage=true]
  :!cp $VIMRUNTIME/lang/menu_ko_kr.euckr.vim ~/.vim/lang/menu_nl_be.iso_8859-1.vim
 \end{Verbatim}
 
-You will find hints for the translation in "\verb!$VIMRUNTIME/lang/README.txt!".
+You will find hints for the translation in "\texttt{\$VIMRUNTIME/lang/README.txt}".
 \subsection{Using another encoding}
 Vim guesses that the files you are going to edit are encoded for your language.
-For many European languages this is "\verb!latin1!".
+For many European languages this is "\texttt{latin1}".
 Then each byte is one character.
 That means there are 256 different characters possible.
 For Asian languages this is not sufficient.
@@ -146,9 +146,9 @@ The following is only relevant when you want to edit different languages.
 
 \emph{Note}:
 Using different encodings only works when Vim was compiled to handle it.
-To find out if it works, use the "\verb!:version!" command and check the output for "\verb!+multi_byte!".
+To find out if it works, use the "\texttt{:version}" command and check the output for "\texttt{+multi\_byte}".
 If it's there, you are OK.
-If you see "\verb!-multi_byte!" you will have to find another Vim.
+If you see "\texttt{-multi\_byte}" you will have to find another Vim.
 
 \subsubsection{Using unicode in the gui}
 The nice thing about Unicode is that other encodings can be converted to it and back without losing information.
@@ -166,9 +166,9 @@ This should work:
  :set guifont=-misc-fixed-medium-r-normal--18-120-100-100-c-90-iso10646-1
 \end{Verbatim}
 
-The \verb!'encoding'! option tells Vim the encoding of the characters that you use.
+The \texttt{'encoding'} option tells Vim the encoding of the characters that you use.
 This applies to the text in buffers (files you are editing), registers, Vim script files, etc.
-You can regard \verb!'encoding'! as the setting for the internals of Vim.
+You can regard \texttt{'encoding'} as the setting for the internals of Vim.
 
 This example assumes you have this font on your system.
 The name in the example is for the X Window System.
@@ -191,7 +191,7 @@ If Microsoft didn't move it, you can find it here: \url{http://www.microsoft.com
 Now you have told Vim to use Unicode internally and display text with a Unicode font.
 Typed characters still arrive in the encoding of your original language.
 This requires converting them to Unicode.
-Tell Vim the language from which to convert with the \verb!'termencoding'! option.
+Tell Vim the language from which to convert with the \texttt{'termencoding'} option.
 You can do it like this:
 
 \begin{Verbatim}[samepage=true]
@@ -199,7 +199,7 @@ You can do it like this:
  :set encoding=utf-8
 \end{Verbatim}
 
-This assigns the old value of \verb!'encoding'! to \verb!'termencoding'! before setting \verb!'encoding'! to utf-8.
+This assigns the old value of \texttt{'encoding'} to \texttt{'termencoding'} before setting \texttt{'encoding'} to utf-8.
 You will have to try out if this really works for your setup.
 It should work especially well when using an input method for an Asian language, and you want to edit Unicode text.
 
@@ -209,9 +209,9 @@ The standard xterm that comes with XFree86 is one of them.
 Let's use that as an example.
 
 First of all, the xterm must have been compiled with Unicode support.
-See |\verb!:h UTF8-xterm!| how to check that and how to compile it when needed.
+See |\texttt{:h UTF8-xterm}| how to check that and how to compile it when needed.
 
-Start the xterm with the "\verb!-u8!" argument.
+Start the xterm with the "\texttt{-u8}" argument.
 You might also need so specify a font.
 Example:
 
@@ -220,7 +220,7 @@ Example:
 \end{Verbatim}
 
 Now you can run Vim inside this terminal.
-Set \verb!'encoding'! to "\verb!utf-8!" as before.
+Set \texttt{'encoding'} to "\texttt{utf-8}" as before.
 That's all.
 
 \subsubsection{Using unicode in an ordinary terminal}
@@ -237,9 +237,9 @@ This is the same as what was used for the GUI.
 But it works differently: Vim will convert the displayed text before sending it to the terminal.
 That avoids that the display is messed up with strange characters.
 
-For this to work the conversion between \verb!'termencoding'! and \verb!'encoding'! must be possible.
+For this to work the conversion between \texttt{'termencoding'} and \texttt{'encoding'} must be possible.
 Vim will convert from latin1 to Unicode, thus that always works.
-For other conversions the |\verb!:h +iconv!| feature is required.
+For other conversions the |\texttt{:h +iconv}| feature is required.
 
 Try editing a file with Unicode characters in it.
 You will notice that Vim will put a question mark (or underscore or some other character) in places where a character should be that the terminal can't display.
@@ -255,16 +255,16 @@ You can look it up in a Unicode table.
 You could actually view a file that way, if you have lots of time at hand.
 
 \emph{Note}:
-Since \verb!'encoding'! is used for all text inside Vim, changing it makes all non-ASCII text invalid.
-You will notice this when using registers and the \verb!'viminfo'! file (e.g., a remembered search pattern).
-It's recommended to set \verb!'encoding'! in your vimrc file, and leave it alone.
+Since \texttt{'encoding'} is used for all text inside Vim, changing it makes all non-ASCII text invalid.
+You will notice this when using registers and the \texttt{'viminfo'} file (e.g., a remembered search pattern).
+It's recommended to set \texttt{'encoding'} in your vimrc file, and leave it alone.
 \subsection{Editing files with a different encoding}
 Suppose you have setup Vim to use Unicode, and you want to edit a file that is in 16-bit Unicode.
 Sounds simple, right?  Well, Vim actually uses utf-8 encoding internally, thus the 16-bit encoding must be converted, since there is a difference between the character set (Unicode) and the encoding (utf-8 or 16-bit).
 
 Vim will try to detect what kind of file you are editing.
-It uses the encoding names in the \verb!'fileencodings'! option.
-When using Unicode, the default value is: "\verb!ucs-bom,utf-8,latin1!".
+It uses the encoding names in the \texttt{'fileencodings'} option.
+When using Unicode, the default value is: "\texttt{ucs-bom,utf-8,latin1}".
 This means that Vim checks the file to see if it's one of these encodings:
 
 \begin{center} \begin{tabularx}{\textwidth}{l X}
@@ -273,27 +273,27 @@ This means that Vim checks the file to see if it's one of these encodings:
 				\texttt{latin1} & The good old 8-bit encoding.  Always works. \\
 \end{tabularx} \end{center}
 When you start editing that 16-bit Unicode file, and it has a BOM, Vim will detect this and convert the file to utf-8 when reading it.
-The \verb!'fileencoding'! option (without s at the end) is set to the detected value.
-In this case it is "\verb!utf-16le!".
+The \texttt{'fileencoding'} option (without s at the end) is set to the detected value.
+In this case it is "\texttt{utf-16le}".
 That means it's Unicode, 16-bit and little-endian.
 This file format is common on MS-Windows (e.g., for registry files).
 
-When writing the file, Vim will compare \verb!'fileencoding'! with \verb!'encoding'!.
+When writing the file, Vim will compare \texttt{'fileencoding'} with \texttt{'encoding'}.
 If they are different, the text will be converted.
 
-An empty value for \verb!'fileencoding'! means that no conversion is to be done.
-Thus the text is assumed to be encoded with \verb!'encoding'!.
+An empty value for \texttt{'fileencoding'} means that no conversion is to be done.
+Thus the text is assumed to be encoded with \texttt{'encoding'}.
 
-If the default \verb!'fileencodings'! value is not good for you, set it to the encodings you want Vim to try.
+If the default \texttt{'fileencodings'} value is not good for you, set it to the encodings you want Vim to try.
 Only when a value is found to be invalid will the next one be used.
-Putting "\verb!latin1!" first doesn't work, because it is never illegal.
+Putting "\texttt{latin1}" first doesn't work, because it is never illegal.
 An example, to fall back to Japanese when the file doesn't have a BOM and isn't utf-8:
 
 \begin{Verbatim}[samepage=true]
  :set fileencodings=ucs-bom,utf-8,sjis
 \end{Verbatim}
 
-See |\verb!:h encoding-values!| for suggested values.
+See |\texttt{:h encoding-values}| for suggested values.
 Other values may work as well.
 This depends on the conversion available.
 
@@ -305,9 +305,9 @@ Example:
  :edit ++enc=koi8-r russian.txt
 \end{Verbatim}
 
-The "\verb!++enc!" part specifies the name of the encoding to be used for this file only.
-Vim will convert the file from the specified encoding, Russian in this example, to \verb!'encoding'!.
-\verb!'fileencoding'! will also be set to the specified encoding, so that the reverse conversion can be done when writing the file.
+The "\texttt{++enc}" part specifies the name of the encoding to be used for this file only.
+Vim will convert the file from the specified encoding, Russian in this example, to \texttt{'encoding'}.
+\texttt{'fileencoding'} will also be set to the specified encoding, so that the reverse conversion can be done when writing the file.
 
 The same argument can be used when writing the file.
 This way you can actually use Vim to convert a file.
@@ -333,7 +333,7 @@ When you use a language that uses many more characters than keys on your keyboar
 This requires learning the translation from typed keys to resulting character.
 When you need an IM you probably already have one on your system.
 It should work with Vim like with other programs.
-For details see |\verb!:h mbyte-XIM!| for the X Window system and |\verb!:h mbyte-IME!| for MS-Windows.
+For details see |\texttt{:h mbyte-XIM}| for the X Window system and |\texttt{:h mbyte-IME}| for MS-Windows.
 
 \subsubsection{Keymaps}
 For some languages the character set is different from latin, but uses a similar number of characters.
@@ -348,11 +348,11 @@ You can load the keymap like this:
 \end{Verbatim}
 
 Vim will try to find a keymap file for you.
-This depends on the value of \verb!'encoding'!.
+This depends on the value of \texttt{'encoding'}.
 If no matching file was found, you will get an error message.
 
 Now you can type Hebrew in Insert mode.
-In Normal mode, and when typing a "\verb!:!" command, Vim automatically switches to English.
+In Normal mode, and when typing a "\texttt{:}" command, Vim automatically switches to English.
 You can use this command to switch between Hebrew and English:
 
 \begin{Verbatim}[samepage=true]
@@ -362,10 +362,10 @@ You can use this command to switch between Hebrew and English:
 This only works in Insert mode and Command-line mode.
 In Normal mode it does something completely different (jumps to alternate file).
 
-The usage of the keymap is indicated in the mode message, if you have the \verb!'showmode'! option set.
+The usage of the keymap is indicated in the mode message, if you have the \texttt{'showmode'} option set.
 In the GUI Vim will indicate the usage of keymaps with a different cursor color.
 
-You can also change the usage of the keymap with the \verb!'iminsert'! and \verb!'imsearch'! options.
+You can also change the usage of the keymap with the \texttt{'iminsert'} and \texttt{'imsearch'} options.
 
 To see the list of mappings, use this command:
 
@@ -384,8 +384,8 @@ Otherwise you can use this command:
 You can create your own keymap file.
 It's not very difficult.
 Start with a keymap file that is similar to the language you want to use.
-Copy it to the "\verb!keymap!" directory in your runtime directory.
-For example, for Unix, you would use the directory "\verb!~/.vim/keymap!".
+Copy it to the "\texttt{keymap}" directory in your runtime directory.
+For example, for Unix, you would use the directory "\texttt{~/.vim/keymap}".
 
 The name of the keymap file must look like this:
 
@@ -397,9 +397,9 @@ or
     keymap/{name}_{encoding}.vim 
 \end{Verbatim}
 
-\verb!{name}! is the name of the keymap.
+\texttt{{name}} is the name of the keymap.
 Chose a name that is obvious, but different from existing keymaps (unless you want to replace an existing keymap file).
-\verb!{name}! cannot contain an underscore.
+\texttt{{name}} cannot contain an underscore.
 Optionally, add the encoding used after an underscore.
 Examples:
 
@@ -410,7 +410,7 @@ Examples:
 
 The contents of the file should be self-explanatory.
 Look at a few of the keymaps that are distributed with Vim.
-For the details, see |\verb!:h mbyte-keymap!|.
+For the details, see |\texttt{:h mbyte-keymap}|.
 
 \subsubsection{Last resort}
 If all other methods fail, you can enter any character with CTRL-V:
@@ -424,5 +424,5 @@ If all other methods fail, you can enter any character with CTRL-V:
 \end{tabular} \end{center}
 
 Don't type the spaces.
-See |\verb!:h i_CTRL-V_digit!| for the details.
+See |\texttt{:h i\_CTRL-V\_digit}| for the details.
 \clearpage

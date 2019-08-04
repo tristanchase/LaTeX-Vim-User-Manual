@@ -43,7 +43,7 @@ There can be a number of reasons why you don't see colors:
 								For Unix, I recommend the xterm from the XFree86 project: |\texttt{:h xfree-xterm}|.
 
 				\item [Your terminal does support colors, but Vim doesn't know this.]
-								Make sure your \texttt{$TERM} setting is correct.  For example, when using an
+								Make sure your \texttt{\$TERM} setting is correct.  For example, when using an
 								xterm that supports colors:
 
 								\begin{Verbatim}[samepage=true]
@@ -74,7 +74,7 @@ There can be a number of reasons why you don't see colors:
 		 :set filetype=fortran
 												\end{Verbatim}
 
-								To see which types are available, look in the directory \texttt{$VIMRUNTIME/syntax}.
+								To see which types are available, look in the directory \texttt{\$VIMRUNTIME/syntax}.
 								For the GUI you can use the Syntax menu.
 								Setting the filetype can also be done with a |\texttt{:h modeline}|, so that the file will be highlighted each time you edit it.
 								For example, this line can be used in a Makefile (put it near the start or end of the file):
@@ -140,7 +140,7 @@ You can also type the command:
 
 "evening" is the name of the color scheme.
 There are several others you might want to try out.
-Look in the directory \texttt{$VIMRUNTIME/colors}.
+Look in the directory \texttt{\$VIMRUNTIME/colors}.
 
 When you found the color scheme that you like, add the "\texttt{:colorscheme}" command to your |\texttt{:h vimrc}| file.
 
@@ -156,7 +156,7 @@ This is how you do it:
  !cp $VIMRUNTIME/colors/morning.vim ~/.vim/colors/mine.vim
  \end{Verbatim}
 
-								This is done from Vim, because it knows the value of \texttt{$VIMRUNTIME}.
+								This is done from Vim, because it knows the value of \texttt{\$VIMRUNTIME}.
 
 				\item Edit the color scheme file.
 								These entries are useful:
@@ -291,7 +291,7 @@ Now write this somewhere (doesn't matter where, you throw it away later):
 
 Open this file in your favorite browser and print it from there.
 If all goes well, the output should look exactly as it does in Vim.
-See |\verb!:h 2html.vim!| for details.
+See |\texttt{:h 2html.vim}| for details.
 Don't forget to delete the HTML file when you are done with it.
 
 Instead of printing, you could also put the HTML file on a web server, and let others look at the colored text.

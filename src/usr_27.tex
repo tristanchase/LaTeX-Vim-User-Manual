@@ -3,20 +3,20 @@
 In chapter 3 a few simple search patterns were mentioned |\hyperref[Simple search patterns]{\texttt{Simple search patterns}}|.
 Vim can do much more complex searches.
 This chapter explains the most often used ones.
-A detailed specification can be found here: |\verb!:h pattern!|
+A detailed specification can be found here: |\texttt{:h pattern}|
 %\localtableofcontentswithrelativedepth{+1}
 \subsection{Ignoring case}
 By default, Vim's searches are case sensitive.
 Therefore, "include", "INCLUDE", and "Include" are three different words and a search will match only one of them.
 
-Now switch on the \verb!'ignorecase'! option:
+Now switch on the \texttt{'ignorecase'} option:
 
 \begin{Verbatim}[samepage=true]
  :set ignorecase
 \end{Verbatim}
 
 Search for "include" again, and now it will match "Include", "INCLUDE" and "InClUDe".
-(Set the \verb!'hlsearch'! option to quickly see where a pattern matches.)
+(Set the \texttt{'hlsearch'} option to quickly see where a pattern matches.)
 
 You can switch this off again with:
 
@@ -26,7 +26,7 @@ You can switch this off again with:
 
 But let's keep it set, and search for "INCLUDE".
 It will match exactly the same text as "include" did.
-Now set the \verb!'smartcase'! option:
+Now set the \texttt{'smartcase'} option:
 
 \begin{Verbatim}[samepage=true]
  :set ignorecase smartcase
@@ -40,31 +40,31 @@ With these two options set you find the following matches:
 
 \begin{center} \begin{tabular}{l l}
 				pattern & matches \\
-				\verb!word! & word, Word, WORD, WoRd, etc.\\
-				\verb!Word! & Word\\
-				\verb!WORD! & WORD\\
-				\verb!WoRd! & WoRd\\
+				\texttt{word} & word, Word, WORD, WoRd, etc.\\
+				\texttt{Word} & Word\\
+				\texttt{WORD} & WORD\\
+				\texttt{WoRd} & WoRd\\
 \end{tabular} \end{center}
 
 \subsubsection{Case in one pattern}
-If you want to ignore case for one specific pattern, you can do this by prepending the "\verb!\c!" string.
-Using "\verb!\C!" will make the pattern to match case.
-This overrules the \verb!'ignorecase'! and \verb!'smartcase'! options, when "\verb!\c!" or "\verb!\C!" is used their value doesn't matter.
+If you want to ignore case for one specific pattern, you can do this by prepending the "\texttt{\textbackslash{}c}" string.
+Using "\texttt{\textbackslash{}C}" will make the pattern to match case.
+This overrules the \texttt{'ignorecase'} and \texttt{'smartcase'} options, when "\texttt{\textbackslash{}c}" or "\texttt{\textbackslash{}C}" is used their value doesn't matter.
 
 \begin{center} \begin{tabular}{l l}
 				pattern & matches \\
-				\verb!\Cword! & word\\
-				\verb!\CWord! & Word\\
-				\verb!\cword! & word, Word, WORD, WoRd, etc.\\
-				\verb!\cWord! & word, Word, WORD, WoRd, etc.\\
+				\texttt{\textbackslash{}Cword} & word\\
+				\texttt{\textbackslash{}CWord} & Word\\
+				\texttt{\textbackslash{}cword} & word, Word, WORD, WoRd, etc.\\
+				\texttt{\textbackslash{}cWord} & word, Word, WORD, WoRd, etc.\\
 \end{tabular} \end{center}
 
-A big advantage of using "\verb!\c!" and "\verb!\C!" is that it sticks with the pattern.
-Thus if you repeat a pattern from the search history, the same will happen, no matter if \verb!'ignorecase'! or \verb!'smartcase'! was changed.
+A big advantage of using "\texttt{\textbackslash{}c}" and "\texttt{\textbackslash{}C}" is that it sticks with the pattern.
+Thus if you repeat a pattern from the search history, the same will happen, no matter if \texttt{'ignorecase'} or \texttt{'smartcase'} was changed.
 
-\emph{Note}: The use of "\verb!\!" items in search patterns depends on the \verb!'magic'! option.
-In this chapter we will assume \verb!'magic'! is on, because that is the standard and recommended setting.
-If you would change \verb!'magic',! many search patterns would suddenly become invalid.
+\emph{Note}: The use of "\texttt{\textbackslash{}}" items in search patterns depends on the \texttt{'magic'} option.
+In this chapter we will assume \texttt{'magic'} is on, because that is the standard and recommended setting.
+If you would change \texttt{'magic',} many search patterns would suddenly become invalid.
 
 \emph{Note}: If your search takes much longer than you expected, you can interrupt it with CTRL-C on Unix and  CTRL-Break on MS-DOS and MS-Windows.
 \subsection{Wrapping around the file end}
@@ -72,21 +72,21 @@ By default, a forward search starts searching for the given string at the curren
 It then proceeds to the end of the file.
 If it has not found the string by that time, it starts from the beginning and searches from the start of the file to the cursor location.
 
-Keep in mind that when repeating the "\verb!n!" command to search for the next match, you eventually get back to the first match.
+Keep in mind that when repeating the "\texttt{n}" command to search for the next match, you eventually get back to the first match.
 If you don't notice this you keep searching forever!  To give you a hint, Vim displays this message:
 
 \begin{Verbatim}[samepage=true]
     search hit BOTTOM, continuing at TOP 
 \end{Verbatim}
 
-If you use the "\verb!?!" command, to search in the other direction, you get this message:
+If you use the "\texttt{?}" command, to search in the other direction, you get this message:
 
 \begin{Verbatim}[samepage=true]
     search hit TOP, continuing at BOTTOM 
 \end{Verbatim}
 
 Still, you don't know when you are back at the first match.
-One way to see this is by switching on the \verb!'ruler'! option:
+One way to see this is by switching on the \texttt{'ruler'} option:
 
 \begin{Verbatim}[samepage=true]
  :set ruler
@@ -114,9 +114,9 @@ Now when the search hits the end of the file, an error message displays:
     E385: search hit BOTTOM without match for: forever 
 \end{Verbatim}
 
-Thus you can find all matches by going to the start of the file with "\verb!gg!" and keep searching until you see this message.
+Thus you can find all matches by going to the start of the file with "\texttt{gg}" and keep searching until you see this message.
 
-If you search in the other direction, using "\verb!?!", you get:
+If you search in the other direction, using "\texttt{?}", you get:
 
 \begin{Verbatim}[samepage=true]
     E384: search hit TOP without match for: forever 
@@ -124,7 +124,7 @@ If you search in the other direction, using "\verb!?!", you get:
 \subsection{Offsets}
 By default, the search command leaves the cursor positioned on the beginning of the pattern.
 You can tell Vim to leave it some other place by specifying an offset.
-For the forward search command "\verb!/!", the offset is specified by appending a slash (\verb!/!) and the offset:
+For the forward search command "\texttt{/}", the offset is specified by appending a slash (\texttt{/}) and the offset:
 
 \begin{Verbatim}[samepage=true]
  /default/2
@@ -139,7 +139,7 @@ The offset number can be positive or negative.
 If it is positive, the cursor moves down that many lines; if negative, it moves up.
 
 \subsubsection{Character offsets}
-The "\verb!e!" offset indicates an offset from the end of the match.
+The "\texttt{e}" offset indicates an offset from the end of the match.
 It moves the cursor onto the last character of the match.
 The command:
 
@@ -147,7 +147,7 @@ The command:
  /const/e
 \end{Verbatim}
 
-puts the cursor on the "\verb!t!" of "\verb!const!".
+puts the cursor on the "\texttt{t}" of "\texttt{const}".
 
 From that position, adding a number moves forward that many characters.
 This command moves to the character just after the match:
@@ -163,10 +163,10 @@ For example:
  /const/e-1
 \end{Verbatim}
 
-moves the cursor to the "\verb!s!" of "\verb!const!".
+moves the cursor to the "\texttt{s}" of "\texttt{const}".
 
-If the offset begins with "\verb!b!", the cursor moves to the beginning of the pattern.
-That's not very useful, since leaving out the "\verb!b!" does the same thing.
+If the offset begins with "\texttt{b}", the cursor moves to the beginning of the pattern.
+That's not very useful, since leaving out the "\texttt{b}" does the same thing.
 It does get useful when a number is added or subtracted.
 The cursor then goes forward or backward that many characters.
 For example:
@@ -176,7 +176,7 @@ For example:
 \end{Verbatim}
 
 Moves the cursor to the beginning of the match and then two characters to the right.
-Thus it lands on the "\verb!n!".
+Thus it lands on the "\texttt{n}".
 
 \subsubsection{Repeating}
 To repeat searching for the previously used search pattern, but with a different offset, leave out the pattern:
@@ -198,7 +198,7 @@ To repeat with the same offset:
  /
 \end{Verbatim}
 
-"\verb!n!" does the same thing.
+"\texttt{n}" does the same thing.
 To repeat while removing a previously used offset:
 
 \begin{Verbatim}[samepage=true]
@@ -206,13 +206,13 @@ To repeat while removing a previously used offset:
 \end{Verbatim}
 
 \subsubsection{Searching backwards}
-The "\verb!?!" command uses offsets in the same way, but you must use "\verb!?!" to separate the offset from the pattern, instead of "\verb!/!":
+The "\texttt{?}" command uses offsets in the same way, but you must use "\texttt{?}" to separate the offset from the pattern, instead of "\texttt{/}":
 
 \begin{Verbatim}[samepage=true]
  ?const?e-2
 \end{Verbatim}
 
-The "\verb!b!" and "\verb!e!" keep their meaning, they don't change direction with the use of "\verb!?!".
+The "\texttt{b}" and "\texttt{e}" keep their meaning, they don't change direction with the use of "\texttt{?}".
 \subsubsection{Start position}
 When starting a search, it normally starts at the cursor position.
 When you specify a line offset, this can cause trouble.
@@ -222,19 +222,19 @@ For example:
  /const/-2
 \end{Verbatim}
 
-This finds the next word "\verb!const!" and then moves two lines up.
-If you use "\verb!n!" to search again, Vim could start at the current position and find the same "\verb!const!" match.
+This finds the next word "\texttt{const}" and then moves two lines up.
+If you use "\texttt{n}" to search again, Vim could start at the current position and find the same "\texttt{const}" match.
 Then using the offset again, you would be back where you started.
 You would be stuck!
 
-It could be worse: Suppose there is another match with "\verb!const!" in the next line.
+It could be worse: Suppose there is another match with "\texttt{const}" in the next line.
 Then repeating the forward search would find this match and move two lines up.
 Thus you would actually move the cursor back!
 
 When you specify a character offset, Vim will compensate for this.
 Thus the search starts a few characters forward or backward, so that the same match isn't found again.
 \subsection{Matching multiple times}
-The "\verb!*!" item specifies that the item before it can match any number of times.
+The "\texttt{*}" item specifies that the item before it can match any number of times.
 Thus:
 
 \begin{Verbatim}[samepage=true]
@@ -244,10 +244,10 @@ Thus:
 matches "a", "aa", "aaa", etc.
 But also "" (the empty string), because zero times is included.
 
-The "\verb!*!" only applies to the item directly before it.
-Thus "\verb!ab*!" matches "a", "ab", "abb", "abbb", etc.
+The "\texttt{*}" only applies to the item directly before it.
+Thus "\texttt{ab*}" matches "a", "ab", "abb", "abbb", etc.
 To match a whole string multiple times, it must be grouped into one item.
-This is done by putting "\verb!\(!" before it and "\verb!\)!" after it.
+This is done by putting "\texttt{\textbackslash{}(}" before it and "\texttt{\textbackslash{})}" after it.
 Thus this command:
 
 \begin{Verbatim}[samepage=true]
@@ -256,7 +256,7 @@ Thus this command:
 
 Matches: "ab", "abab", "ababab", etc.  And also "".
 
-To avoid matching the empty string, use "\verb!\+!".
+To avoid matching the empty string, use "\texttt{\textbackslash{}+}".
 This makes the previous item match one or more times.
 
 \begin{Verbatim}[samepage=true]
@@ -266,7 +266,7 @@ This makes the previous item match one or more times.
 Matches "ab", "abb", "abbb", etc.
 It does not match "a" when no "b" follows.
 
-To match an optional item, use "\verb!\=!".
+To match an optional item, use "\texttt{\textbackslash{}=}".
 Example:
 
 \begin{Verbatim}[samepage=true]
@@ -275,9 +275,9 @@ Example:
 
 Matches "folder" and "folders".
 \subsubsection{Specific counts}
-To match a specific number of items use the form "\verb!\{n,m}!".
-"\verb!n!" and "\verb!m!" are numbers.
-The item before it will be matched "\verb!n!" to "\verb!m!" times |\verb!:h inclusive!|.
+To match a specific number of items use the form "\texttt{\textbackslash{}{n,m}}".
+"\texttt{n}" and "\texttt{m}" are numbers.
+The item before it will be matched "\texttt{n}" to "\texttt{m}" times |\texttt{:h inclusive}|.
 Example:
 
 \begin{Verbatim}[samepage=true]
@@ -286,24 +286,24 @@ Example:
 
 matches "abbb", "abbbb" and "abbbbb".
 
-When "\verb!n!" is omitted, it defaults to zero.
-When "\verb!m!" is omitted it defaults to infinity.
-When "\verb!,m!" is omitted, it matches exactly "\verb!n!" times.
+When "\texttt{n}" is omitted, it defaults to zero.
+When "\texttt{m}" is omitted it defaults to infinity.
+When "\texttt{,m}" is omitted, it matches exactly "\texttt{n}" times.
 Examples:
 
 \begin{center} \begin{tabular}{l l}
 				pattern & match count \\
-				\verb!\{,4}! & 0, 1, 2, 3 or 4 \\
-				\verb!\{3,}! & 3, 4, 5, etc. \\
-				\verb!\{0,1}! & 0 or 1, same as \verb!\=! \\
-				\verb!\{0,}! & 0 or more, same as \verb!*! \\
-				\verb!\{1,}! & 1 or more, same as \verb!\+! \\
-				\verb!\{3}! & 3 \\
+				\texttt{\textbackslash{}{,4}} & 0, 1, 2, 3 or 4 \\
+				\texttt{\textbackslash{}{3,}} & 3, 4, 5, etc. \\
+				\texttt{\textbackslash{}{0,1}} & 0 or 1, same as \texttt{\textbackslash{}=} \\
+				\texttt{\textbackslash{}{0,}} & 0 or more, same as \texttt{*} \\
+				\texttt{\textbackslash{}{1,}} & 1 or more, same as \texttt{\textbackslash{}+} \\
+				\texttt{\textbackslash{}{3}} & 3 \\
 \end{tabular} \end{center}
 \subsubsection{Matching as little as possible}
 The items so far match as many characters as they can find.
-To match as few as possible, use "\verb!\{-n,m}!".
-It works the same as "\verb!\{n,m}!", except that the minimal amount possible is used.
+To match as few as possible, use "\texttt{\textbackslash{}{-n,m}}".
+It works the same as "\texttt{\textbackslash{}{n,m}}", except that the minimal amount possible is used.
 
 For example, use:
 
@@ -315,8 +315,8 @@ Will match "ab" in "abbb".
 Actually, it will never match more than one b, because there is no reason to match more.
 It requires something else to force it to match more than the lower limit.
 
-The same rules apply to removing "\verb!n!" and "\verb!m!".
-It's even possible to remove both of the numbers, resulting in "\verb!\{-}!".
+The same rules apply to removing "\texttt{n}" and "\texttt{m}".
+It's even possible to remove both of the numbers, resulting in "\texttt{\textbackslash{}{-}}".
 This matches the item before it zero or more times, as few as possible.
 The item by itself always matches zero times.
 It is useful when combined with something else.
@@ -333,9 +333,9 @@ If this pattern would be used:
  /a.*b
 \end{Verbatim}
 
-It would try to match as many characters as possible with "\verb!.*!", thus it matches "axbxb" as a whole.
+It would try to match as many characters as possible with "\texttt{.*}", thus it matches "axbxb" as a whole.
 \subsection{Alternatives}
-The "or" operator in a pattern is "\verb!\|!".
+The "or" operator in a pattern is "\texttt{\textbackslash{}|}".
 Example:
 
 \begin{Verbatim}[samepage=true]
@@ -351,7 +351,7 @@ More alternatives can be concatenated:
 
 Matches "one", "two" and "three".
 
-To match multiple times, the whole thing must be placed in "\verb!\(!" and "\verb!\)!":
+To match multiple times, the whole thing must be placed in "\texttt{\textbackslash{}(}" and "\texttt{\textbackslash{})}":
 
 \begin{Verbatim}[samepage=true]
  /\(foo\|bar\)\+
@@ -367,7 +367,7 @@ Another example:
 
 This matches "endif", "endwhile" and "endfor".
 
-A related item is "\verb!\&!".
+A related item is "\texttt{\textbackslash{}\&}".
 This requires that both alternatives match in the same place.
 The resulting match uses the last alternative.
 Example:
@@ -378,7 +378,7 @@ Example:
 
 This matches "for" in "forever".  It will not match "fortuin", for example.
 \subsection{Character ranges}
-To match "a", "b" or "c" you could use "\verb!/a\|b\|c!".
+To match "a", "b" or "c" you could use "\texttt{/a\textbackslash{}|b\textbackslash{}|c}".
 When you want to match all letters from "a" to "z" this gets very long.
 There is a shorter method:
 
@@ -386,7 +386,7 @@ There is a shorter method:
  /[a-z]
 \end{Verbatim}
 
-The \verb![]! construct matches a single character.
+The \texttt{[]} construct matches a single character.
 Inside you specify which characters to match.
 You can include a list of characters, like this:
 
@@ -396,27 +396,27 @@ You can include a list of characters, like this:
 
 This will match any of the characters included.
 For consecutive characters you can specify the range.
-"\verb!0-3!" stands for "\verb!0123!".
-"\verb!w-z!" stands for "\verb!wxyz!".
+"\texttt{0-3}" stands for "\texttt{0123}".
+"\texttt{w-z}" stands for "\texttt{wxyz}".
 Thus the same command as above can be shortened to:
 
 \begin{Verbatim}[samepage=true]
  /[0-9a-f]
 \end{Verbatim}
 
-To match the "\verb!-!" character itself make it the first or last one in the range.
-These special characters are accepted to make it easier to use them inside a \verb![]! range (they can actually be used anywhere in the search pattern):
+To match the "\texttt{-}" character itself make it the first or last one in the range.
+These special characters are accepted to make it easier to use them inside a \texttt{[]} range (they can actually be used anywhere in the search pattern):
 
 \begin{center} \begin{tabular}{l l}
-				\verb!\e! & <Esc> \\
-				\verb!\t! & <Tab> \\
-				\verb!\r! & <CR>  \\
-				\verb!\b! & <BS>  \\
+		\texttt{\textbackslash{}e} & <Esc> \\
+		\texttt{\textbackslash{}t} & <Tab> \\
+		\texttt{\textbackslash{}r} & <CR>  \\
+		\texttt{\textbackslash{}b} & <BS>  \\
 \end{tabular} \end{center}
 
-There are a few more special cases for \verb![]! ranges, see |\verb!:h /[]!| for the whole story.
+There are a few more special cases for \texttt{[]} ranges, see |\texttt{:h /[]}| for the whole story.
 \subsubsection{Complemented range}
-To avoid matching a specific character, use "\verb!^!" at the start of the range.
+To avoid matching a specific character, use "\texttt{\^{}}" at the start of the range.
 The [] item then matches everything but the characters included.
 Example:
 
@@ -425,10 +425,10 @@ Example:
 \end{Verbatim}
 
 \begin{center} \begin{tabular}{l l}
-				\verb!"      ! & a double quote \\
-				\verb! [^"]  ! & any character that is not a double quote \\
-				\verb!     * ! & as many as possible \\
-				\verb!      "! & a double quote again \\
+				\texttt{"      } & a double quote \\
+				\texttt{ [\^{}"]  } & any character that is not a double quote \\
+				\texttt{     * } & as many as possible \\
+				\texttt{      "} & a double quote again \\
 \end{tabular} \end{center}
 
 This matches "foo" and "3!x", including the double quotes.
@@ -442,30 +442,30 @@ For example:
 \end{Verbatim}
 
 Finds alphabetic characters.
-This is equal to using "\verb!/[a-zA-Z]!".
+This is equal to using "\texttt{/[a-zA-Z]}".
 Here are a few more of these:
 
 \begin{center} \begin{tabular}{l l l}
 				item & matches & equivalent \\
-				\verb!\d! & digit & \verb![0-9]!\\
-				\verb!\D! & non-digit & \verb![^0-9]!\\
-				\verb!\x! & hex digit & \verb![0-9a-fA-F]!\\
-				\verb!\X! & non-hex digit & \verb![^0-9a-fA-F]!\\
-				\verb!\s! & white space & \verb![   ]! (<Tab> and <Space>)\\
-				\verb!\S! & non-white characters & \verb![^  ]! (not <Tab> and <Space>)\\
-				\verb!\l! & lowercase alpha & \verb![a-z]!\\
-				\verb!\L! & non-lowercase alpha & \verb![^a-z]!\\
-				\verb!\u! & uppercase alpha & \verb![A-Z]!\\
-				\verb!\U! & non-uppercase alpha & \verb![^A-Z]!\\
+				\texttt{\textbackslash{}d} & digit & \texttt{[0-9]}\\
+				\texttt{\textbackslash{}D} & non-digit & \texttt{[\^{}0-9]}\\
+				\texttt{\textbackslash{}x} & hex digit & \texttt{[0-9a-fA-F]}\\
+				\texttt{\textbackslash{}X} & non-hex digit & \texttt{[\^{}0-9a-fA-F]}\\
+				\texttt{\textbackslash{}s} & white space & \texttt{[   ]} (<Tab> and <Space>)\\
+				\texttt{\textbackslash{}S} & non-white characters & \texttt{[\^{}  ]} (not <Tab> and <Space>)\\
+				\texttt{\textbackslash{}l} & lowercase alpha & \texttt{[a-z]}\\
+				\texttt{\textbackslash{}L} & non-lowercase alpha & \texttt{[\^{}a-z]}\\
+				\texttt{\textbackslash{}u} & uppercase alpha & \texttt{[A-Z]}\\
+				\texttt{\textbackslash{}U} & non-uppercase alpha & \texttt{[\^{}A-Z]}\\
 \end{tabular} \end{center}
 
 \emph{Note}:
 Using these predefined ranges works a lot faster than the character range it stands for.
-These items can not be used inside \verb![]!.
-Thus "\verb![\d\l]!" does NOT work to match a digit or lowercase alpha.
-Use "\verb!\(\d\|\l\)!" instead.
+These items can not be used inside \texttt{[]}.
+Thus "\texttt{[\textbackslash{}d\textbackslash{}l]}" does NOT work to match a digit or lowercase alpha.
+Use "\texttt{\textbackslash{}(\textbackslash{}d\textbackslash{}|\textbackslash{}l\textbackslash{})}" instead.
 
-See |\verb!:h /\s!| for the whole list of these ranges.
+See |\texttt{:h /\textbackslash{}s}| for the whole list of these ranges.
 \subsection{Character classes}
 The character range matches a fixed set of characters.
 A character class is similar, but with an essential difference: The set of characters can be redefined without changing the search pattern.
@@ -476,12 +476,12 @@ For example, search for this pattern:
  /\f\+
 \end{Verbatim}
 
-The "\verb!\f!" items stands for file name characters.
+The "\texttt{\textbackslash{}f}" items stands for file name characters.
 Thus this matches a sequence of characters that can be a file name.
 
 Which characters can be part of a file name depends on the system you are using.
 On MS-Windows, the backslash is included, on Unix it is not.
-This is specified with the \verb!'isfname'! option.
+This is specified with the \texttt{'isfname'} option.
 The default value for Unix is:
 
 \begin{Verbatim}[samepage=true]
@@ -490,31 +490,31 @@ The default value for Unix is:
 \end{Verbatim}
 
 For other systems the default value is different.
-Thus you can make a search pattern with "\verb!\f!" to match a file name, and it will automatically adjust to the system you are using it on.
+Thus you can make a search pattern with "\texttt{\textbackslash{}f}" to match a file name, and it will automatically adjust to the system you are using it on.
 
 \emph{Note}: Actually, Unix allows using just about any character in a file name, including white space.
-Including these characters in \verb!'isfname'! would be theoretically correct.
+Including these characters in \texttt{'isfname'} would be theoretically correct.
 But it would make it impossible to find the end of a file name in text.
-Thus the default value of \verb!'isfname'! is a compromise.
+Thus the default value of \texttt{'isfname'} is a compromise.
 
 The character classes are:
 
 \begin{center} \begin{tabular}{l l l}
 				item & matches & option \\
-				\verb!\i! & identifier characters & \verb!'isident'! \\
-				\verb!\I! & like \verb!\i!, excluding digits & \\
-				\verb!\k! & keyword characters & \verb!'iskeyword'! \\
-				\verb!\K! & like \verb!\k!, excluding digits & \\
-				\verb!\p! & printable characters & \verb!'isprint'! \\
-				\verb!\P! & like \verb!\p!, excluding digits & \\
-				\verb!\f! & file name characters & \verb!'isfname'! \\
-				\verb!\F! & like \verb!\f!, excluding digits & \\
+				\texttt{\textbackslash{}i} & identifier characters & \texttt{'isident'} \\
+				\texttt{\textbackslash{}I} & like \texttt{\textbackslash{}i}, excluding digits & \\
+				\texttt{\textbackslash{}k} & keyword characters & \texttt{'iskeyword'} \\
+				\texttt{\textbackslash{}K} & like \texttt{\textbackslash{}k}, excluding digits & \\
+				\texttt{\textbackslash{}p} & printable characters & \texttt{'isprint'} \\
+				\texttt{\textbackslash{}P} & like \texttt{\textbackslash{}p}, excluding digits & \\
+				\texttt{\textbackslash{}f} & file name characters & \texttt{'isfname'} \\
+				\texttt{\textbackslash{}F} & like \texttt{\textbackslash{}f}, excluding digits & \\
 \end{tabular} \end{center}
 \subsection{Matching a line break}
 Vim can find a pattern that includes a line break.
 You need to specify where the line break happens, because all items mentioned so far don't match a line break.
 
-To check for a line break in a specific place, use the "\verb!\n!" item:
+To check for a line break in a specific place, use the "\texttt{\textbackslash{}n}" item:
 
 \begin{Verbatim}[samepage=true]
  /the\nword
@@ -522,7 +522,7 @@ To check for a line break in a specific place, use the "\verb!\n!" item:
 
 This will match at a line that ends in "the" and the next line starts with "word".
 To match "the word" as well, you need to match a space or a line break.
-The item to use for it is "\verb!\_s!":
+The item to use for it is "\texttt{\textbackslash{}\_s}":
 
 \begin{Verbatim}[samepage=true]
  /the\_sword
@@ -534,19 +534,19 @@ To allow any amount of white space:
  /the\_s\+word
 \end{Verbatim}
 
-This also matches when "the  " is at the end of a line and "\verb!   word!" at the start of the next one.
+This also matches when "the  " is at the end of a line and "\texttt{   word}" at the start of the next one.
 
-"\verb!\s!" matches white space, "\verb!\_s!" matches white space or a line break.
-Similarly, "\verb!\a!" matches an alphabetic character, and "\verb!\_a!" matches an alphabetic character or a line break.
-The other character classes and ranges can be modified in the same way by inserting a "\verb!_!".
+"\texttt{\textbackslash{}s}" matches white space, "\texttt{\textbackslash{}\_s}" matches white space or a line break.
+Similarly, "\texttt{\textbackslash{}a}" matches an alphabetic character, and "\texttt{\textbackslash{}\_a}" matches an alphabetic character or a line break.
+The other character classes and ranges can be modified in the same way by inserting a "\texttt{\_}".
 
-Many other items can be made to match a line break by prepending "\verb!\_!".
-For example: "\verb!\_.!" matches any character or a line break.
+Many other items can be made to match a line break by prepending "\texttt{\textbackslash{}\_}".
+For example: "\texttt{\textbackslash{}\_.}" matches any character or a line break.
 
-\emph{Note}: "\verb!\_.*!" matches everything until the end of the file.
+\emph{Note}: "\texttt{\textbackslash{}\_.*}" matches everything until the end of the file.
 Be careful with this, it can make a search command very slow.
 
-Another example is "\verb!\_[]!", a character range that includes a line break:
+Another example is "\texttt{\textbackslash{}\_[]}", a character range that includes a line break:
 
 \begin{Verbatim}[samepage=true]
  /"\_[^"]*"
@@ -572,7 +572,7 @@ Another way is to specify that there are three digits and letters with a count:
  /\d\u\{3}\d\{3}
 \end{Verbatim}
 
-Using \verb![]! ranges instead:
+Using \texttt{[]} ranges instead:
 
 \begin{Verbatim}[samepage=true]
  /[0-9][A-Z]\{3}[0-9]\{3}
@@ -591,18 +591,18 @@ This can be found with:
  /\<\h\w*\>
 \end{Verbatim}
 
-"\verb!\<!" and "\verb!\>!" are used to find only whole words.
-"\verb!\h!" stands for "\verb![A-Za-z_]!" and "\verb!\w!" for "\verb![0-9A-Za-z_]!".
+"\texttt{\textbackslash{}<}" and "\texttt{\textbackslash{}>}" are used to find only whole words.
+"\texttt{\textbackslash{}h}" stands for "\texttt{[A-Za-z\_]}" and "\texttt{\textbackslash{}w}" for "\texttt{[0-9A-Za-z\_]}".
 
 \emph{Note}:
-"\verb!\<!" and "\verb!\>!" depend on the \verb!'iskeyword'! option.
-If it includes "\verb!-!", for example, then "ident-" is not matched.
+"\texttt{\textbackslash{}<}" and "\texttt{\textbackslash{}>}" depend on the \texttt{'iskeyword'} option.
+If it includes "\texttt{-}", for example, then "ident-" is not matched.
 In this situation use:
 
 \begin{Verbatim}[samepage=true]
      /\w\@<!\h\w*\w\@!
 \end{Verbatim}
  
-This checks if "\verb!\w!" does not match before or after the identifier.
-See |\verb$:h /\@<!$| and |\verb!:h /\@!!|.
+This checks if "\texttt{\textbackslash{}w}" does not match before or after the identifier.
+See |\texttt{:h /\textbackslash{}@<!}| and |\texttt{:h /\textbackslash{}@}!|.
 \clearpage

@@ -137,7 +137,7 @@ Other options you might want to use:
 				\texttt{r} & removable media, for which no marks will be stored (can be used several times) \\
 				\texttt{!} & global variables that start with an uppercase letter and don't contain lowercase letters \\
 				\texttt{h} & disable \texttt{'hlsearch'} highlighting when starting \\
-				\texttt{%} & the buffer list (only restored when starting Vim without file arguments) \\
+				\texttt{\%} & the buffer list (only restored when starting Vim without file arguments) \\
 				\texttt{c} & convert the text using \texttt{'encoding'} \\
 				\texttt{n} & name used for the viminfo file (must be the last option) \\
 \end{longtable} \end{center}
@@ -163,7 +163,7 @@ So you can get on with your work.
 Vim creates a mark each time you exit Vim.
 The last one is \texttt{'0}.
 The position that \texttt{'0} pointed to is made \texttt{'1}.
-And \texttt{'1} is made to \verb!'2!, and so forth.
+And \texttt{'1} is made to \texttt{'2}, and so forth.
 Mark \texttt{'9} is lost.
 
 The |\texttt{:h :marks}| command is useful to find out where \texttt{'0} to \texttt{'9} will take you.
@@ -179,21 +179,21 @@ You can see a list of files by typing the command:
     3: /tmp/draft 
 \end{Verbatim}
 
-Now you would like to edit the second file, which is in the list preceded by "\verb!2:!".
+Now you would like to edit the second file, which is in the list preceded by "\texttt{2:}".
 You type:
 
 \begin{Verbatim}[samepage=true]
  :e #<2
 \end{Verbatim}
 
-Instead of "\texttt{:e}" you can use any command that has a file name argument, the "\verb!#<2!" item works in the same place as "\texttt{%}" (current file name) and "\texttt{#}" (alternate file name).
+Instead of "\texttt{:e}" you can use any command that has a file name argument, the "\texttt{\#<2}" item works in the same place as "\texttt{\%}" (current file name) and "\texttt{\#}" (alternate file name).
 So you can also split the window to edit the third file:
 
 \begin{Verbatim}[samepage=true]
  :split #<3
 \end{Verbatim}
 
-That \verb!#<123! thing is a bit complicated when you just want to edit a file.
+That \texttt{\#<123} thing is a bit complicated when you just want to edit a file.
 Fortunately there is a simpler way:
 
 \begin{Verbatim}[samepage=true]
@@ -212,9 +212,9 @@ You will get a prompt:
     Type number and <Enter> (empty cancels): 
 \end{Verbatim}
 
-Type "\verb!2!" and press <Enter> to edit the second file.
+Type "\texttt{2}" and press <Enter> to edit the second file.
 
-More info at |\texttt{:h :oldfiles}|, |\texttt{:h v:oldfiles}| and |\texttt{:h c_#<}|.
+More info at |\texttt{:h :oldfiles}|, |\texttt{:h v:oldfiles}| and |\texttt{:h c\_\#<}|.
 \subsubsection{Move info from one vim to another}
 You can use the "\texttt{:wviminfo}" and "\texttt{:rviminfo}" commands to save and restore the information while still running Vim.
 This is useful for exchanging register contents between two instances of Vim, for example.
