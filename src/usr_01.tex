@@ -1,7 +1,7 @@
 \section{01. About the manuals}
 This chapter introduces the manuals available with Vim.
 Read this to know the conditions under which the commands are explained.
-\localtableofcontentswithrelativedepth{+1}
+%\localtableofcontentswithrelativedepth{+1}
 \subsection{Two manuals}
 
 The Vim documentation consists of two parts:
@@ -15,17 +15,17 @@ The Vim documentation consists of two parts:
 The notation used in these manuals is explained here: \hyperref[notation]{|\texttt{notation}|}
 
 \textit{Note for the \LaTeX edition :}
-In the original Vim manual, link are presented inbetween \verb!|! symbol.
+In the original Vim manual, link are presented inbetween \texttt{|} symbol.
 This notation is kept here.
 But, those links can lead to another part of this manual or to the Vim reference manual.
 In the first case, the links work like any hyperlink you can find in a pdf document.
-Regarding the links leading to the reference manual, they are prefixed in this "edition" with \verb`:h`.
+Regarding the links leading to the reference manual, they are prefixed in this "edition" with \texttt{:h}.
 Typing this command inside of Vim should lead to the correct part of the reference manual.
 Some links to the User Manual were represented by the number corresponding to the subsection they were linked to.
 They're represented here by the title of the subsection instead.
 There is normally here a subsubsection about Jumping Around which have been deleted from the pdf edition because most of the things it explained didn't apply to a pdf file.
 However they do apply when reading the reference manual inside of Vim, which most users do.
-You can read the subsubsection by typing \verb!:h 01.1! in Vim.
+You can read the subsubsection by typing \texttt{:h 01.1} in Vim.
 
 % JUMPING AROUND
 % 
@@ -35,17 +35,17 @@ You can read the subsubsection by typing \verb!:h 01.1! in Vim.
 % 		Press CTRL-] to jump to a subject under the cursor.
 % 		Press CTRL-O to jump back (repeat to go further back).
 % 
-% Many links are in vertical bars, like this: |\verb!:h bars!|.
+% Many links are in vertical bars, like this: |\texttt{:h bars}|.
 % The bars themselves may
 % be hidden or invisible, see below.
 % An option name, like 'number', a command in double quotes like ":write" and any other word can also be used as a link.
 % Try it out: Move the cursor to CTRL-] and press CTRL-] on it.
 % 
-% Other subjects can be found with the ":help" command, see |\verb!:h help.txt!|.
+% Other subjects can be found with the ":help" command, see |\texttt{:h help.txt}|.
 % 
-% The bars and stars are usually hidden with the |\verb!:h conceal!| feature.
+% The bars and stars are usually hidden with the |\texttt{:h conceal}| feature.
 % They also
-% use |\verb!:h hl-Ignore!|, using the same color for the text as the background.
+% use |\texttt{:h hl-Ignore}|, using the same color for the text as the background.
 % You can
 % make them visible with:
 % \begin{verbatim}
@@ -81,7 +81,7 @@ Amiga:
 
 If the file already exists you probably want to keep it.
 
-If you start Vim now, the \verb!'compatible'! option should be off.
+If you start Vim now, the \texttt{'compatible'} option should be off.
 You can check it with this command:
 
 \begin{verbatim}
@@ -99,9 +99,9 @@ Use this command to find out:
 \end{verbatim}
 
 If your file is not in the list, check its location and name.
-If it is in the list, there must be some other place where the \verb!'compatible'! option is switched back on.
+If it is in the list, there must be some other place where the \texttt{'compatible'} option is switched back on.
 
-For more info see |vimrc| and |\verb!:h compatible-default!|.
+For more info see |vimrc| and |\texttt{:h compatible-default}|.
 
 \textit{Note:}\newline
 This manual is about using Vim in the normal way.
@@ -109,7 +109,7 @@ There is an alternative called "evim" (easy Vim).
 This is still Vim, but used in a way that resembles a click-and-type editor like Notepad.
 It always stays in Insert mode, thus it feels very different.
 It is not explained in the user manual, since it should be mostly self explanatory.
-See |\verb!:h evim-keys!| for details.
+See |\texttt{:h evim-keys}| for details.
 
 \subsection{Using the Vim tutor}
 \label{tutor}
@@ -125,7 +125,7 @@ On Unix, if Vim has been properly installed, you can start it from the shell:
 \end{verbatim}
 
 On MS-Windows you can find it in the Program/Vim menu.
-Or execute \verb!vimtutor.bat! in the \$VIMRUNTIME directory.
+Or execute \texttt{vimtutor.bat} in the \$VIMRUNTIME directory.
 
 This will make a copy of the tutor file, so that you can edit it without the risk of damaging the original.
 There are a few translated versions of the tutor.
@@ -194,5 +194,5 @@ It has been a great help while writing the user manual.
 Not only by providing literal text, but also by setting the tone and style.
 
 If you make money through selling the manuals, you are strongly encouraged to donate part of the profit to help AIDS victims in Uganda.
-See |\verb!:h iccf!|.
+See |\texttt{:h iccf}|.
 \clearpage

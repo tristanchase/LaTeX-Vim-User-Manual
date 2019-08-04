@@ -2,7 +2,7 @@
 Vim works in an ordinary terminal.  GVim can do the same things and a few
 more.  The GUI offers menus, a toolbar, scrollbars and other items.  This
 chapter is about these extra things that the GUI offers.
-\localtableofcontentswithrelativedepth{+1}
+%\localtableofcontentswithrelativedepth{+1}
 \subsection{Parts of the GUI}
 
 You might have an icon on your desktop that starts gVim.
@@ -16,7 +16,7 @@ Otherwise, one of these commands should do it:
 If this doesn't work you don't have a version of Vim with GUI support.
 You will have to install one first.
 
-Vim will open a window and display "\verb!file.txt!" in it.
+Vim will open a window and display "\texttt{file.txt}" in it.
 What the window looks like depends on the version of Vim.
 It should resemble the following picture (for as far as this can be shown in ASCII!).
 
@@ -49,10 +49,10 @@ name of the file.  Then some special characters and the directory of the file
 in parens.  These special character can be present:
 
 \begin{center}\begin{longtable}{c l}
-				\verb:-: & The file cannot be modified (e.g., a help file) \\
-				\verb!+! & The file contains changes \\
-				\verb!=! & The file is read-only \\
-				\verb!=+! & The file is read-only, contains changes anyway \\
+				\texttt{-} & The file cannot be modified (e.g., a help file) \\
+				\texttt{+} & The file contains changes \\
+				\texttt{=} & The file is read-only \\
+				\texttt{=+} & The file is read-only, contains changes anyway \\
 \end{longtable}\end{center}
 If nothing is shown you have an ordinary, unchanged file.
 \subsubsection{The menubar}
@@ -85,7 +85,7 @@ If you never want a toolbar, use this command in your vimrc file:
  :set guioptions-=T
  \end{Verbatim}
 
-This removes the \verb!'T'! flag from the \verb!'guioptions'! option.
+This removes the \texttt{'T'} flag from the \texttt{'guioptions'} option.
 Other parts of the GUI can also be enabled or disabled with this option.
 See the help for it.
 
@@ -95,20 +95,20 @@ It does the obvious thing.
 When you split the window, each window will get its own scrollbar.
 
 You can make a horizontal scrollbar appear with the menu item Edit/Global Settings/Toggle Bottom Scrollbar.
-This is useful in diff mode, or when the \verb!'wrap'! option has been reset (more about that later).
+This is useful in diff mode, or when the \texttt{'wrap'} option has been reset (more about that later).
 
 When there are vertically split windows, only the windows on the right side will have a scrollbar.
 However, when you move the cursor to a window on the left, it will be this one the that scrollbar controls.
 This takes a bit of time to get used to.
 
 When you work with vertically split windows, consider adding a scrollbar on the left.
-This can be done with a menu item, or with the \verb!'guioptions'! option:
+This can be done with a menu item, or with the \texttt{'guioptions'} option:
 
  \begin{Verbatim}[samepage=true]
  :set guioptions+=l
  \end{Verbatim}
 
-This adds the \verb!'l'! flag to \verb!'guioptions'!.
+This adds the \texttt{'l'} flag to \texttt{'guioptions'}.
 \subsection{Using the mouse}
 Standards are wonderful.
 In Microsoft Windows, you can use the mouse to select text in a standard manner.
@@ -131,7 +131,7 @@ The following command makes the mouse work like a Microsoft Windows mouse:
 
 The default behavior of the mouse on UNIX systems is xterm.
 The default behavior on a Microsoft Windows system is selected during the installation process.
-For details about what the two behaviors are, see |\verb!:h :behave!|.
+For details about what the two behaviors are, see |\texttt{:h :behave}|.
 Here follows a summary.
 \subsubsection{Xterm mouse behavior}
 
@@ -156,11 +156,11 @@ The mouse can be further tuned.
 Check out these options if you want to change the way how the mouse works:
 
 \begin{center}\begin{longtable}{l l}
-				\verb!'mouse'! & in which mode the mouse is used by Vim \\
-				\verb!'mousemodel'! & what effect a mouse click has \\
-				\verb!'mousetime'! & time between clicks for a double-click \\
-				\verb!'mousehide'! & hide the mouse while typing \\
-				\verb!'selectmode'! & whether the mouse starts Visual or Select mode \\
+				\texttt{'mouse'} & in which mode the mouse is used by Vim \\
+				\texttt{'mousemodel'} & what effect a mouse click has \\
+				\texttt{'mousetime'} & time between clicks for a double-click \\
+				\texttt{'mousehide'} & hide the mouse while typing \\
+				\texttt{'selectmode'} & whether the mouse starts Visual or Select mode \\
 \end{longtable}\end{center}
 \subsection{The clipboard}
 In section |\hyperref[Using the clipboard]{\texttt{Using the clipboard}}| the basic use of the clipboard was explained.
@@ -216,10 +216,10 @@ If you use the "current selection" and the "real clipboard" with care, you can d
 \subsubsection{Using the keyboard}
 
 If you don't like using the mouse, you can access the current selection and the real clipboard with two registers.
-The \verb!"*! register is for the current selection.
+The \texttt{"*} register is for the current selection.
 
 To make text become the current selection, use Visual mode.
-For example, to select a whole line just press "\verb!V!".
+For example, to select a whole line just press "\texttt{V}".
 
 To insert the current selection before the cursor:
 
@@ -227,17 +227,17 @@ To insert the current selection before the cursor:
  "*P
  \end{Verbatim}
 
-Notice the uppercase "\verb!P!".
-The lowercase "\verb!p!" puts the text after the cursor.
+Notice the uppercase "\texttt{P}".
+The lowercase "\texttt{p}" puts the text after the cursor.
 
-The \verb!"+! register is used for the real clipboard.
+The \texttt{"+} register is used for the real clipboard.
 For example, to copy the text from the cursor position until the end of the line to the clipboard:
 
  \begin{Verbatim}[samepage=true]
  "+y$
  \end{Verbatim}
 
-Remember, "\verb!y!" is yank, which is Vim's copy command.
+Remember, "\texttt{y}" is yank, which is Vim's copy command.
 
 To insert the contents of the real clipboard before the cursor:
 
@@ -245,7 +245,7 @@ To insert the contents of the real clipboard before the cursor:
  "+P
  \end{Verbatim}
 
-It's the same as for the current selection, but uses the plus (\verb!+!) register instead of the star (\verb!*!) register.
+It's the same as for the current selection, but uses the plus (\texttt{+}) register instead of the star (\texttt{*}) register.
 \subsection{Select mode}
 \label{Select mode}
 And now something that is used more often on MS-Windows than on X-Windows.
@@ -273,5 +273,5 @@ The selected text is changed like in Visual mode.
 The other shifted cursor keys do what you expect.
 <S-End> and <S-Home> also work.
 
-You can tune the way Select mode works with the \verb!'selectmode'! option.
+You can tune the way Select mode works with the \texttt{'selectmode'} option.
 \clearpage

@@ -2,9 +2,9 @@
 Vim has a few generic features that makes it easier to enter commands.  Colon
 commands can be abbreviated, edited and repeated.  Completion is available for
 nearly everything.
-\localtableofcontentswithrelativedepth{+1}
+%\localtableofcontentswithrelativedepth{+1}
 \subsection{Command line editing}
-When you use a colon (\verb!:!) command or search for a string with \verb!/! or \verb!?!, Vim puts the cursor on the bottom of the screen.
+When you use a colon (\texttt{:}) command or search for a string with \texttt{/} or \texttt{?}, Vim puts the cursor on the bottom of the screen.
 There you type the command or search pattern.
 This is called the Command line.
 Also when it's used for entering a search command.
@@ -22,7 +22,7 @@ For example, you have typed this:
 Before you hit <Enter>, you notice that "col" should be "cow".
 To correct this, you type <Left> five times.
 The cursor is now just after "col".
-Type <BS> and "\verb!w!" to correct:
+Type <BS> and "\texttt{w}" to correct:
 
 \begin{Verbatim}[samepage=true]
  :s/cow/pig/
@@ -84,27 +84,27 @@ Instead, press <Insert> to switch from overstrike to inserting, and type the spa
 \end{Verbatim}
 
 \subsubsection{Cancelling}
-You thought of executing a \verb!:! or \verb!/! command, but changed your mind.
+You thought of executing a \texttt{:} or \texttt{/} command, but changed your mind.
 To get rid of what you already typed, without executing it, press CTRL-C or <Esc>.
 
 \emph{Note}:
 <Esc> is the universal "get out" key.
 Unfortunately, in the good old Vi pressing <Esc> in a command line executed the command!
 Since that might be considered to be a bug, Vim uses <Esc> to cancel the command.
-But with the \verb!'cpoptions'! option it can be made Vi compatible.
+But with the \texttt{'cpoptions'} option it can be made Vi compatible.
 And when using a mapping (which might be written for Vi) <Esc> also works Vi compatible.
 Therefore, using CTRL-C is a method that always works.
 
 If you are at the start of the command line, pressing <BS> will cancel the command.
-It's like deleting the "\verb!:!" or "\verb!/!" that the line starts with.
+It's like deleting the "\texttt{:}" or "\texttt{/}" that the line starts with.
 \subsection{Command line abbreviations}
-Some of the "\verb!:!" commands are really long.
-We already mentioned that "\verb!:substitute!" can be abbreviated to "\verb!:s!".
-This is a generic mechanism, all "\verb!:!" commands can be abbreviated.
+Some of the "\texttt{:}" commands are really long.
+We already mentioned that "\texttt{:substitute}" can be abbreviated to "\texttt{:s}".
+This is a generic mechanism, all "\texttt{:}" commands can be abbreviated.
 
 How short can a command get?  There are 26 letters, and many more commands.
-For example, "\verb!:set!" also starts with "\verb!:s!", but "\verb!:s!" doesn't start a "\verb!:set!" command.
-Instead "\verb!:set!" can be abbreviated to "\verb!:se!".
+For example, "\texttt{:set}" also starts with "\texttt{:s}", but "\texttt{:s}" doesn't start a "\texttt{:set}" command.
+Instead "\texttt{:set}" can be abbreviated to "\texttt{:se}".
 
 When the shorter form of a command could be used for two commands, it stands for only one of them.
 There is no logic behind which one, you have to learn them.
@@ -115,26 +115,26 @@ For example:
  :s[ubstitute]
 \end{Verbatim}
 
-This means that the shortest form of "\verb!:substitute!" is "\verb!:s!".
+This means that the shortest form of "\texttt{:substitute}" is "\texttt{:s}".
 The following characters are optional.
-Thus "\verb!:su!" and "\verb!:sub!" also work.
+Thus "\texttt{:su}" and "\texttt{:sub}" also work.
 
 In the user manual we will either use the full name of command, or a short version that is still readable.
-For example, "\verb!:function!" can be abbreviated to "\verb!:fu!".
-But since most people don't understand what that stands for, we will use "\verb!:fun!".
+For example, "\texttt{:function}" can be abbreviated to "\texttt{:fu}".
+But since most people don't understand what that stands for, we will use "\texttt{:fun}".
 (Vim doesn't have a ":funny" command, otherwise ":fun" would be confusing too.)
 
 It is recommended that in Vim scripts you write the full command name.
 That makes it easier to read back when you make later changes.
-Except for some often used commands like "\verb!:w!" ("\verb!:write!") and "\verb!:r!" ("\verb!:read!").
+Except for some often used commands like "\texttt{:w}" ("\texttt{:write}") and "\texttt{:r}" ("\texttt{:read}").
 
-A particularly confusing one is "\verb!:end!", which could stand for "\verb!:endif!", "\verb!:endwhile!" or "\verb!:endfunction!".
+A particularly confusing one is "\texttt{:end}", which could stand for "\texttt{:endif}", "\texttt{:endwhile}" or "\texttt{:endfunction}".
 Therefore, always use the full name.
 \subsubsection{Short option names}
 In the user manual the long version of the option names is used.
 Many options also have a short name.
-Unlike "\verb!:!" commands, there is only one short name that works.
-For example, the short name of \verb!'autoindent'! is \verb!'ai'!.
+Unlike "\texttt{:}" commands, there is only one short name that works.
+For example, the short name of \texttt{'autoindent'} is \texttt{'ai'}.
 Thus these two commands do the same thing:
 
 \begin{Verbatim}[samepage=true]
@@ -142,7 +142,7 @@ Thus these two commands do the same thing:
  :set ai
 \end{Verbatim}
 
-You can find the full list of long and short names here: |\verb!:h option-list!|.
+You can find the full list of long and short names here: |\texttt{:h option-list}|.
 \subsection{Command line completion}
 This is one of those Vim features that, by itself, is a reason to switch from Vi to Vim.
 Once you have used this, you can't do without.
@@ -218,16 +218,16 @@ Use CTRL-P to go through the list in the other direction:
        +---------------------- CTRL-P ------------------------>
 \end{Verbatim}
 \subsubsection{Context}
-When you type "\verb!:set i!" instead of "\verb!:edit i!" and press <Tab> you get:
+When you type "\texttt{:set i}" instead of "\texttt{:edit i}" and press <Tab> you get:
 
 \begin{Verbatim}[samepage=true]
  :set icon
 \end{Verbatim}
 
-Hey, why didn't you get "\verb!:set info.txt!"?
+Hey, why didn't you get "\texttt{:set info.txt}"?
 That's because Vim has context sensitive completion.
 The kind of words Vim will look for depends on the command before it.
-Vim knows that you cannot use a file name just after a "\verb!:set!" command, but you can use an option name.
+Vim knows that you cannot use a file name just after a "\texttt{:set}" command, but you can use an option name.
 
 Again, if you repeat typing the <Tab>, Vim will cycle through all matches.
 There are quite a few, it's better to type more characters first:
@@ -242,7 +242,7 @@ Gives:
  :set iskeyword
 \end{Verbatim}
 
-Now type "\verb!=!" and press <Tab>:
+Now type "\texttt{=}" and press <Tab>:
 
 \begin{Verbatim}[samepage=true]
  :set iskeyword=@,48-57,_,192-255
@@ -278,41 +278,41 @@ You can now check the list for the item you wanted.
 If it isn't there, you can use <BS> to correct the word.
 If there are many matches, type a few more characters before pressing <Tab> to complete the rest.
 
-If you have watched carefully, you will have noticed that "\verb!incsearch!" doesn't start with "is".
-In this case "is" stands for the short name of "\verb!incsearch!".
+If you have watched carefully, you will have noticed that "\texttt{incsearch}" doesn't start with "is".
+In this case "is" stands for the short name of "\texttt{incsearch}".
 (Many options have a short and a long name.)  Vim is clever enough to know that you might have wanted to expand the short name of the option into the long name.
 \subsubsection{There is more}
 The CTRL-L command completes the word to the longest unambiguous string.
-If you type "\verb!:edit i!" and there are files "\verb!info.txt!" and "\verb!info_backup.txt!" you will get "\verb!:edit info!".
+If you type "\texttt{:edit i}" and there are files "\texttt{info.txt}" and "\texttt{info_backup.txt}" you will get "\texttt{:edit info}".
 
-The \verb!'wildmode'! option can be used to change the way completion works.
-The \verb!'wildmenu'! option can be used to get a menu-like list of matches.
-Use the \verb!'suffixes'! option to specify files that are less important and appear at the end of the list of files.
-The \verb!'wildignore'! option specifies files that are not listed at all.
+The \texttt{'wildmode'} option can be used to change the way completion works.
+The \texttt{'wildmenu'} option can be used to get a menu-like list of matches.
+Use the \texttt{'suffixes'} option to specify files that are less important and appear at the end of the list of files.
+The \texttt{'wildignore'} option specifies files that are not listed at all.
 
-More about all of this here: |\verb!:h cmdline-completion!|
+More about all of this here: |\texttt{:h cmdline-completion}|
 \subsection{Command line history}
 In chapter 3 we briefly mentioned the history.
 The basics are that you can use the <Up> key to recall an older command line.
 <Down> then takes you back to newer commands.
 
 There are actually four histories.
-The ones we will mention here are for "\verb!:!" commands and for "\verb!/!" and "\verb!?!" search commands.
+The ones we will mention here are for "\texttt{:}" commands and for "\texttt{/}" and "\texttt{?}" search commands.
 The "/" and "?" commands share the same history, because they are both search commands.
-The two other histories are for expressions and input lines for the \verb!input()! function.
-|\verb!:h cmdline-history!|
+The two other histories are for expressions and input lines for the \texttt{input()} function.
+|\texttt{:h cmdline-history}|
 
-Suppose you have done a "\verb!:set!" command, typed ten more colon commands and then want to repeat that "\verb!:set!" command again.
-You could press "\verb!:!" and then ten times <Up>.
+Suppose you have done a "\texttt{:set}" command, typed ten more colon commands and then want to repeat that "\texttt{:set}" command again.
+You could press "\texttt{:}" and then ten times <Up>.
 There is a quicker way:
 
 \begin{Verbatim}[samepage=true]
  :se<Up>
 \end{Verbatim}
 
-Vim will now go back to the previous command that started with "\verb!se!".
-You have a good chance that this is the "\verb!:set!" command you were looking for.
-At least you should not have to press <Up> very often (unless "\verb!:set!" commands is all you have done).
+Vim will now go back to the previous command that started with "\texttt{se}".
+You have a good chance that this is the "\texttt{:set}" command you were looking for.
+At least you should not have to press <Up> very often (unless "\texttt{:set}" commands is all you have done).
 
 The <Up> key will use the text typed so far and compare it with the lines in the history.
 Only matching lines will be used.
@@ -326,7 +326,7 @@ To see all the lines in the history:
  :history
 \end{Verbatim}
 
-That's the history of "\verb!:!" commands.
+That's the history of "\texttt{:}" commands.
 The search history is displayed with this command:
 
 \begin{Verbatim}[samepage=true]
@@ -369,9 +369,9 @@ It contains the command line history, and an empty line at the end:
 \end{Verbatim}
 
 You are now in Normal mode.
-You can use the "\verb!hjkl!" keys to move around.
-For example, move up with "\verb!5k!" to the "\verb!:e config.h.in!" line.
-Type "\verb!$h!" to go to the "\verb!i!" of "\verb!in!" and type "\verb!cwout!".
+You can use the "\texttt{hjkl}" keys to move around.
+For example, move up with "\texttt{5k}" to the "\texttt{:e config.h.in}" line.
+Type "\texttt{\$h}" to go to the "\texttt{i}" of "\texttt{in}" and type "\texttt{cwout}".
 Now you have changed the line to:
 
 \begin{Verbatim}[samepage=true]
@@ -391,7 +391,7 @@ Except that the command you execute will be added to the end of the history, lik
 The command line window is very useful when you want to have overview of the history, lookup a similar command, change it a bit and execute it.
 A search command can be used to find something.
 
-In the previous example the "\verb!?config!" search command could have been used to find the previous command that contains "config".
+In the previous example the "\texttt{?config}" search command could have been used to find the previous command that contains "config".
 It's a bit strange, because you are using a command line to search in the command line window.
 While typing that search command you can't open another command line window, there can be only one.
 \clearpage

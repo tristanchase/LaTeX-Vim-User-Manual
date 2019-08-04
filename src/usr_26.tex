@@ -2,12 +2,12 @@
 An editing task is hardly ever unstructured.
 A change often needs to be made several times.
 In this chapter a number of useful ways to repeat a change will be explained.
-\localtableofcontentswithrelativedepth{+1}
+%\localtableofcontentswithrelativedepth{+1}
 \subsection{Repeating with Visual mode}
 Visual mode is very handy for making a change in any sequence of lines.
 You can see the highlighted text, thus you can check if the correct lines are changed.
 But making the selection takes some typing.
-The "\verb!gv!" command selects the same area again.
+The "\texttt{gv}" command selects the same area again.
 This allows you to do another operation on the same text.
 
 Suppose you have some lines where you want to change "2001" to "2002" and "2000" to "2001":
@@ -26,7 +26,7 @@ First change "2001" to "2002".  Select the lines in Visual mode, and use:
  :s/2001/2002/g
 \end{Verbatim}
 
-Now use "\verb!gv!" to reselect the same text.
+Now use "\texttt{gv}" to reselect the same text.
 It doesn't matter where the cursor is.
 Then use "\verb!:s/2000/2001/g!" to make the second change.
 
@@ -53,10 +53,10 @@ The year will be increased by one:
     income      45,403      66,234 
 \end{Verbatim}
 
-Use "\verb!n!" to find the next year, and press "\verb!.!" to repeat the CTRL-A ("\verb!.!" is a bit quicker to type).
-Repeat "\verb!n!" and "\verb!.!" for all years that appear.
+Use "\texttt{n}" to find the next year, and press "\texttt{.}" to repeat the CTRL-A ("\texttt{.}" is a bit quicker to type).
+Repeat "\texttt{n}" and "\texttt{.}" for all years that appear.
 
-Hint: set the \verb!'hlsearch'! option to see the matches you are going to change, then you can look ahead and do it faster.
+Hint: set the \texttt{'hlsearch'} option to see the matches you are going to change, then you can look ahead and do it faster.
 
 Adding more than one can be done by prepending the number to CTRL-A.
 Suppose you have this list:
@@ -74,7 +74,7 @@ Move the cursor to "1." and type:
 \end{Verbatim}
 
 The "1." will change to "4.".
-Again, you can use "\verb!.!" to repeat this on the other numbers.
+Again, you can use "\texttt{.}" to repeat this on the other numbers.
 
 Another example:
 
@@ -100,7 +100,7 @@ If you do not want a number with leading zeros to be handled as octal, use this:
 
 The CTRL-X command does subtraction in a similar way.
 \subsection{Making a change in many files}
-Suppose you have a variable called "\verb!x_cnt!" and you want to change it to "\verb!x_counter!".
+Suppose you have a variable called "\texttt{x_cnt}" and you want to change it to "\texttt{x_counter}".
 This variable is used in several of your C files.
 You need to change it in all files.
 This is how you do it.
@@ -118,25 +118,25 @@ Now you can perform a substitution command on all these files:
  :argdo %s/\<x_cnt\>/x_counter/ge | update
 \end{Verbatim}
 
-The "\verb!:argdo!" command takes an argument that is another command.
+The "\texttt{:argdo}" command takes an argument that is another command.
 That command will be executed on all files in the argument list.
 
-The "\verb!%s!" substitute command that follows works on all lines.
-It finds the word "\verb!x_cnt!" with "\verb!\<x_cnt\>!".
-The "\verb!\<!" and "\verb!\>!" are used to match the whole word only, and not "\verb!px_cnt!" or "\verb!x_cnt2!".
+The "\texttt{%s}" substitute command that follows works on all lines.
+It finds the word "\texttt{x_cnt}" with "\verb!\<x_cnt\>!".
+The "\verb!\<!" and "\verb!\>!" are used to match the whole word only, and not "\texttt{px_cnt}" or "\verb!x_cnt2!".
 
-The flags for the substitute command include "\verb!g!" to replace all occurrences of "\verb!x_cnt!" in the same line.
-The "\verb!e!" flag is used to avoid an error message when "\verb!x_cnt!" does not appear in the file.
-Otherwise "\verb!:argdo!" would abort on the first file where "\verb!x_cnt!" was not found.
+The flags for the substitute command include "\texttt{g}" to replace all occurrences of "\texttt{x_cnt}" in the same line.
+The "\texttt{e}" flag is used to avoid an error message when "\texttt{x_cnt}" does not appear in the file.
+Otherwise "\texttt{:argdo}" would abort on the first file where "\texttt{x_cnt}" was not found.
 
-The "\verb!|!" separates two commands.
-The following "\verb!update!" command writes the file only if it was changed.
-If no "\verb!x_cnt!" was changed to "\verb!x_counter!" nothing happens.
+The "\texttt{|}" separates two commands.
+The following "\texttt{update}" command writes the file only if it was changed.
+If no "\texttt{x_cnt}" was changed to "\texttt{x_counter}" nothing happens.
 
-There is also the "\verb!:windo!" command, which executes its argument in all windows.
-And "\verb!:bufdo!" executes its argument on all buffers.
+There is also the "\texttt{:windo}" command, which executes its argument in all windows.
+And "\texttt{:bufdo}" executes its argument on all buffers.
 Be careful with this, because you might have more files in the buffer list than you think.
-Check this with the "\verb!:buffers!" command (or "\verb!:ls!").
+Check this with the "\texttt{:buffers}" command (or "\texttt{:ls}").
 \subsection{Using Vim from a shell script}
 Suppose you have a lot of files in which you need to change the string "-person-" to "Jones" and then print it.
 How do you do that?  One way is to do a lot of typing.
@@ -155,7 +155,7 @@ The Ex mode commands you need are as follows:
  quit
 \end{Verbatim}
 
-You put these commands in the file "\verb!change.vim!".
+You put these commands in the file "\texttt{change.vim}".
 Now to run the editor in batch mode, use this shell script:
 
 \begin{Verbatim}[samepage=true]
@@ -165,26 +165,26 @@ Now to run the editor in batch mode, use this shell script:
  done
 \end{Verbatim}
 
-The for-done loop is a shell construct to repeat the two lines in between, while the \verb!$file! variable is set to a different file name each time.
+The for-done loop is a shell construct to repeat the two lines in between, while the \texttt{\$file} variable is set to a different file name each time.
 
-The second line runs the Vim editor in Ex mode (-e argument) on the file \verb!$file! and reads commands from the file "\verb!change.vim!".
+The second line runs the Vim editor in Ex mode (-e argument) on the file \texttt{\$file} and reads commands from the file "\texttt{change.vim}".
 The -s argument tells Vim to operate in silent mode.
 In other words, do not keep outputting the :prompt, or any other prompt for that matter.
 
-The "\verb!lpr -r tempfile!" command prints the resulting "\verb!tempfile!" and deletes it (that's what the -r argument does).
+The "\texttt{lpr -r tempfile}" command prints the resulting "\texttt{tempfile}" and deletes it (that's what the -r argument does).
 \subsubsection{Reading from stdin}
 Vim can read text on standard input.
 Since the normal way is to read commands there, you must tell Vim to read text instead.
-This is done by passing the "\verb!-!" argument in place of a file.
+This is done by passing the "\texttt{-}" argument in place of a file.
 Example:
 
 \begin{Verbatim}[samepage=true]
  ls | vim -
 \end{Verbatim}
 
-This allows you to edit the output of the "\verb!ls!" command, without first saving the text in a file.
+This allows you to edit the output of the "\texttt{ls}" command, without first saving the text in a file.
 
-If you use the standard input to read text from, you can use the "\verb!-S!" argument to read a script:
+If you use the standard input to read text from, you can use the "\texttt{-S}" argument to read a script:
 
 \begin{Verbatim}[samepage=true]
  producer | vim -S change.vim -
@@ -197,11 +197,11 @@ If you really want to use Normal mode commands in a script, you can use it like 
  vim -s script file.txt ...
 \end{Verbatim}
  
-\emph{Note}: "\verb!-s!" has a different meaning when it is used without "\verb!-e!".
-Here it means to source the "\verb!script!" as Normal mode commands.
-When used with "\verb!-e!" it means to be silent, and doesn't use the next argument as a file name.
+\emph{Note}: "\texttt{-s}" has a different meaning when it is used without "\texttt{-e}".
+Here it means to source the "\texttt{script}" as Normal mode commands.
+When used with "\texttt{-e}" it means to be silent, and doesn't use the next argument as a file name.
 
-The commands in "\verb!script!" are executed like you typed them.
+The commands in "\texttt{script}" are executed like you typed them.
 Don't forget that a line break is interpreted as pressing <Enter>.
 In Normal mode that moves the cursor to the next line.
 
@@ -214,11 +214,11 @@ This is how you do that:
  vim -w script file.txt ...
 \end{Verbatim}
 
-All typed keys will be written to "\verb!script!".
+All typed keys will be written to "\texttt{script}".
 If you make a small mistake you can just continue and remember to edit the script later.
 
-The "\verb!-w!" argument appends to an existing script.
+The "\texttt{-w}" argument appends to an existing script.
 That is good when you want to record the script bit by bit.
-If you want to start from scratch and start all over, use the "\verb!-W!" argument.
+If you want to start from scratch and start all over, use the "\texttt{-W}" argument.
 It overwrites any existing file.
 \clearpage

@@ -4,7 +4,7 @@ Black and white text is boring.  With colors your file comes to life.  This
 not only looks nice, it also speeds up your work.  Change the colors used for
 the different sorts of text.  Print your text, with the colors you see on the
 screen.
-\localtableofcontentswithrelativedepth{+1}
+%\localtableofcontentswithrelativedepth{+1}
 \subsection{Switching it on}
 
 It all starts with one simple command:
@@ -19,9 +19,9 @@ Suddenly comments are blue, keywords brown and strings red.
 This makes it easy to overview the file.
 After a while you will find that black\&white text slows you down!
 
-If you always want to use syntax highlighting, put the "\verb!:syntax enable!" command in your |\verb!:h vimrc!| file.
+If you always want to use syntax highlighting, put the "\texttt{:syntax enable}" command in your |\texttt{:h vimrc}| file.
 
-If you want syntax highlighting only when the terminal supports colors, you can put this in your |\verb!:h vimrc!| file:
+If you want syntax highlighting only when the terminal supports colors, you can put this in your |\texttt{:h vimrc}| file:
 
  \begin{Verbatim}[samepage=true]
  if &t_Co > 1
@@ -29,7 +29,7 @@ If you want syntax highlighting only when the terminal supports colors, you can 
  endif
  \end{Verbatim}
 
-If you want syntax highlighting only in the GUI version, put the "\verb!:syntax enable!" command in your |\verb!:h gvimrc!| file.
+If you want syntax highlighting only in the GUI version, put the "\texttt{:syntax enable}" command in your |\texttt{:h gvimrc}| file.
 
 \subsection{No or wrong colors?}
 \label{No or wrong colors?}
@@ -40,10 +40,10 @@ There can be a number of reasons why you don't see colors:
 				\item [Your terminal does not support colors.]
 								Vim will use bold, italic and underlined text, but this doesn't look very nice.
 								You probably will want to try to get a terminal with colors.
-								For Unix, I recommend the xterm from the XFree86 project: |\verb!:h xfree-xterm!|.
+								For Unix, I recommend the xterm from the XFree86 project: |\texttt{:h xfree-xterm}|.
 
 				\item [Your terminal does support colors, but Vim doesn't know this.]
-								Make sure your \verb!$TERM! setting is correct.  For example, when using an
+								Make sure your \texttt{$TERM} setting is correct.  For example, when using an
 								xterm that supports colors:
 
 								\begin{Verbatim}[samepage=true]
@@ -57,7 +57,7 @@ There can be a number of reasons why you don't see colors:
 								\end{Verbatim}
 
 								The terminal name must match the terminal you are using.
-								If it still doesn't work, have a look at |\verb!:h xterm-color!|, which shows a few ways to make Vim display colors (not only for an xterm).
+								If it still doesn't work, have a look at |\texttt{:h xterm-color}|, which shows a few ways to make Vim display colors (not only for an xterm).
 
 				\item [The file type is not recognized.]
 								Vim doesn't know all file types, and sometimes it's near to impossible
@@ -74,9 +74,9 @@ There can be a number of reasons why you don't see colors:
 		 :set filetype=fortran
 												\end{Verbatim}
 
-								To see which types are available, look in the directory \verb!$VIMRUNTIME/syntax!.
+								To see which types are available, look in the directory \texttt{$VIMRUNTIME/syntax}.
 								For the GUI you can use the Syntax menu.
-								Setting the filetype can also be done with a |\verb!:h modeline!|, so that the file will be highlighted each time you edit it.
+								Setting the filetype can also be done with a |\texttt{:h modeline}|, so that the file will be highlighted each time you edit it.
 								For example, this line can be used in a Makefile (put it near the start or end of the file):
 
 								\begin{Verbatim}[samepage=true]
@@ -86,11 +86,11 @@ There can be a number of reasons why you don't see colors:
 
 								You might know how to detect the file type yourself.
 								Often the file name extension (after the dot) can be used.
-								See |\verb!:h new-filetype!| for how to tell Vim to detect that file type.
+								See |\texttt{:h new-filetype}| for how to tell Vim to detect that file type.
 
 				\item [There is no highlighting for your file type.]
 								You could try using a similar file type by manually setting it as mentioned above.
-								If that isn't good enough, you can write your own syntax file, see |\verb!:h mysyntaxfile!|.
+								If that isn't good enough, you can write your own syntax file, see |\texttt{:h mysyntaxfile}|.
 \end{description}
 
 Or the colors could be wrong:
@@ -101,7 +101,7 @@ Or the colors could be wrong:
 								(or another dark color) it will use light colors for text.  If it is
 								white (or another light color) it will use dark colors for text.  If
 								Vim guessed wrong the text will be hard to read.  To solve this, set
-								the \verb!'background'! option.  For a dark background:
+								the \texttt{'background'} option.  For a dark background:
 
 								\begin{Verbatim}[samepage=true]
 		 :set background=dark
@@ -113,8 +113,8 @@ Or the colors could be wrong:
 		 :set background=light
 												\end{Verbatim}
 
-								Make sure you put this \emph{before} the "\verb!:syntax enable!" command, otherwise the colors will already have been set.
-								You could do "\verb!:syntax reset!" after setting \verb!'background'! to make Vim set the default colors again.
+								Make sure you put this \emph{before} the "\texttt{:syntax enable}" command, otherwise the colors will already have been set.
+								You could do "\texttt{:syntax reset}" after setting \texttt{'background'} to make Vim set the default colors again.
 
 				\item [The colors are wrong when scrolling bottom to top.]
 								Vim doesn't read the whole file to parse the text.
@@ -122,9 +122,9 @@ Or the colors could be wrong:
 								That saves a lot of time, but sometimes the colors are wrong.
 								A simple fix is hitting CTRL-L.
 								Or scroll back a bit and then forward again.
-								For a real fix, see |\verb!:h :syn-sync!|.
+								For a real fix, see |\texttt{:h :syn-sync}|.
 								Some syntax files have a way to make it look further back, see the help for the specific syntax file.
-								For example, |\verb!:h tex.vim!| for the TeX syntax.
+								For example, |\texttt{:h tex.vim}| for the TeX syntax.
 \end{description}
 
 \subsection{Different colors}
@@ -140,9 +140,9 @@ You can also type the command:
 
 "evening" is the name of the color scheme.
 There are several others you might want to try out.
-Look in the directory \verb!$VIMRUNTIME/colors!.
+Look in the directory \texttt{$VIMRUNTIME/colors}.
 
-When you found the color scheme that you like, add the "\verb!:colorscheme!" command to your |\verb!:h vimrc!| file.
+When you found the color scheme that you like, add the "\texttt{:colorscheme}" command to your |\texttt{:h vimrc}| file.
 
 You could also write your own color scheme.
 This is how you do it:
@@ -156,7 +156,7 @@ This is how you do it:
  !cp $VIMRUNTIME/colors/morning.vim ~/.vim/colors/mine.vim
  \end{Verbatim}
 
-								This is done from Vim, because it knows the value of \verb!$VIMRUNTIME!.
+								This is done from Vim, because it knows the value of \texttt{$VIMRUNTIME}.
 
 				\item Edit the color scheme file.
 								These entries are useful:
@@ -177,12 +177,12 @@ This is how you do it:
  :highlight Comment ctermfg=green guifg=green
 								\end{Verbatim}
 
-								Attributes you can use for "\verb!cterm!" and "\verb!gui!" are "\verb!bold!" and "\verb!underline!".
-								If you want both, use "\verb!bold,underline!".
-								For details see the |\verb!:h :highlight!| command.
+								Attributes you can use for "\texttt{cterm}" and "\texttt{gui}" are "\texttt{bold}" and "\texttt{underline}".
+								If you want both, use "\texttt{bold,underline}".
+								For details see the |\texttt{:h :highlight}| command.
 
 				\item Tell Vim to always use your color scheme.
-								Put this line in your |\verb!:h vimrc!|:
+								Put this line in your |\texttt{:h vimrc}|:
 
 								\begin{Verbatim}[samepage=true]
  colorscheme mine
@@ -228,7 +228,7 @@ If you want syntax highlighting only for specific files, use this:
  \end{Verbatim}
 
 This will enable the syntax highlighting, but not switch it on automatically when starting to edit a buffer.
-To switch highlighting on for the current buffer, set the \verb!'syntax'! option:
+To switch highlighting on for the current buffer, set the \texttt{'syntax'} option:
 
  \begin{Verbatim}[samepage=true]
  :set syntax=ON
@@ -248,10 +248,10 @@ But when you use a dark background the colors will be adjusted to look good on w
 
 There are several options that change the way Vim prints:
 \begin{itemize}
-				\item \verb!'printdevice'!
-				\item \verb!'printheader'!
-				\item \verb!'printfont'!
-				\item \verb!'printoptions'!
+				\item \texttt{'printdevice'}
+				\item \texttt{'printheader'}
+				\item \texttt{'printfont'}
+				\item \texttt{'printoptions'}
 \end{itemize}
 
 To print only a range of lines, use Visual mode to select the lines and then type the command:
@@ -260,9 +260,9 @@ To print only a range of lines, use Visual mode to select the lines and then typ
  v100j:hardcopy
  \end{Verbatim}
 
-"\verb!v!" starts Visual mode.
-"\verb!100j!" moves a hundred lines down, they will be highlighted.
-Then "\verb!:hardcopy!" will print those lines.
+"\texttt{v}" starts Visual mode.
+"\texttt{100j}" moves a hundred lines down, they will be highlighted.
+Then "\texttt{:hardcopy}" will print those lines.
 You can use other commands to move in Visual mode, of course.
 
 This also works on Unix, if you have a PostScript printer.
@@ -298,6 +298,6 @@ Instead of printing, you could also put the HTML file on a web server, and let o
 
 \subsection{Further reading}
 |\hyperref[Your own syntax highlighted]{\texttt{Your own syntax highlighted}}|\\
-|\verb!:h syntax!|      All the details.
+|\texttt{:h syntax}|      All the details.
 
 \clearpage

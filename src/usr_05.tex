@@ -2,7 +2,7 @@
 Vim can be tuned to work like you want it to.  This chapter shows you how to
 make Vim start with options set to different values.  Add plugins to extend
 Vim's capabilities.  Or define your own macros.
-\localtableofcontentswithrelativedepth{+1}
+%\localtableofcontentswithrelativedepth{+1}
 \subsection{The vimrc file}
 \label{The vimrc file}
 \label{vimrc-intro}
@@ -17,8 +17,8 @@ If you already have a vimrc file (e.g., when your sysadmin has one setup for you
  :edit $MYVIMRC
  \end{Verbatim}
 
-If you don't have a vimrc file yet, see |\verb!:h vimrc!| to find out where you can create a vimrc file.
-Also, the "\verb!:version!" command mentions the name of the "user vimrc file" Vim looks for.
+If you don't have a vimrc file yet, see |\texttt{:h vimrc}| to find out where you can create a vimrc file.
+Also, the "\texttt{:version}" command mentions the name of the "user vimrc file" Vim looks for.
 
 For Unix and Macintosh this file is always used and is recommended:
 
@@ -82,7 +82,7 @@ The three items, separated by commas, tell Vim to delete the white space at the 
 
 This makes Vim use the indent of the previous line for a newly created line.
 Thus there is the same amount of white space before the new line.
-For example when pressing <Enter> in Insert mode, and when using the "\verb!o!" command to open a new line.
+For example when pressing <Enter> in Insert mode, and when using the "\texttt{o}" command to open a new line.
 
  \begin{Verbatim}[samepage=true]
  if has("vms")
@@ -116,7 +116,7 @@ Always display the current cursor position in the lower right corner of the Vim 
 
 Display an incomplete command in the lower right corner of the Vim window, left of the ruler.
 For example, when you type "\verb!2f!", Vim is waiting for you to type the character to find and "\verb!2f!" is displayed.
-When you press "\verb!w!" next, the "\verb!2fw!" command is executed and the displayed "2f" is removed.
+When you press "\texttt{w}" next, the "\verb!2fw!" command is executed and the displayed "2f" is removed.
 
 \begin{Verbatim}[samepage=true]
     +-------------------------------------------------+
@@ -141,9 +141,9 @@ Display the match for a search pattern when halfway typing it.
 
 This defines a key mapping.
 More about that in the next section.
-This defines the "\verb!Q!" command to do formatting with the "\verb!gq!" operator.
+This defines the "\texttt{Q}" command to do formatting with the "\texttt{gq}" operator.
 This is how it worked before Vim 5.0.
-Otherwise the "\verb!Q!" command starts Ex mode, but you will not need it.
+Otherwise the "\texttt{Q}" command starts Ex mode, but you will not need it.
 
  \begin{Verbatim}[samepage=true]
  vnoremap _g y:exe "grep /" . escape(@", '\\/') . "/ *.c *.h"<CR>
@@ -175,10 +175,10 @@ This switches on three very clever mechanisms:
 \begin{enumerate}
 				\item Filetype detection.\\
 								Whenever you start editing a file, Vim will try to figure out what kind of file this is.
-								When you edit "main.c", Vim will see the "\verb!.c!" extension and recognize this as a "c" filetype.
-								When you edit a file that starts with "\verb!#!/bin/sh!", Vim will recognize it as a "sh" filetype.
+								When you edit "main.c", Vim will see the "\texttt{.c}" extension and recognize this as a "c" filetype.
+								When you edit a file that starts with "\texttt{#!/bin/sh}", Vim will recognize it as a "sh" filetype.
 								The filetype detection is used for syntax highlighting and the other two items below.
-								See |\verb!:h filetypes!|.
+								See |\texttt{:h filetypes}|.
 
 				\item Using filetype plugin files\\
 								Many different filetypes are edited with different options.
@@ -189,7 +189,7 @@ This switches on three very clever mechanisms:
 				\item Using indent files\\
 								When editing programs, the indent of a line can often be computed automatically.
 								Vim comes with these indent rules for a number of filetypes.
-								See |\verb!:h :filetype-indent-on!| and `indentexpr'.
+								See |\texttt{:h :filetype-indent-on}| and `indentexpr'.
 \end{enumerate}
 
  \begin{Verbatim}[samepage=true]
@@ -199,9 +199,9 @@ This switches on three very clever mechanisms:
 This makes Vim break text to avoid lines getting longer than 78 characters.
 But only for files that have been detected to be plain text.
 There are actually two parts here.
-"\verb!autocmd FileType text!" is an autocommand.
+"\texttt{autocmd FileType text}" is an autocommand.
 This defines that when the file type is set to "text" the following command is automatically executed.
-"\verb!setlocal textwidth=78!" sets the \verb!'textwidth'! option to 78, but only locally in one file.
+"\texttt{setlocal textwidth=78}" sets the \texttt{'textwidth'} option to 78, but only locally in one file.
 
 \phantomsection
 \label{restore-cursor}
@@ -215,18 +215,18 @@ This defines that when the file type is set to "text" the following command is a
 
 Another autocommand.
 This time it is used after reading any file.
-The complicated stuff after it checks if the \verb!'"! mark is defined, and jumps to it if so.
+The complicated stuff after it checks if the \texttt{'"} mark is defined, and jumps to it if so.
 The backslash at the start of a line is used to continue the command from the previous line.
 That avoids a line getting very long.
-See |\verb!:h line-continuation!|.
+See |\texttt{:h line-continuation}|.
 This only works in a Vim script file, not when typing commands at the command-line.
 
 \subsection{Simple mappings}
 \label{Simple mappings}
 A mapping enables you to bind a set of Vim commands to a single key.
 Suppose, for example, that you need to surround certain words with curly braces.
-In other words, you need to change a word such as "\verb!amount!" into "{\verb!amount!}".
-With the \verb!:map! command, you can tell Vim that the F5 key does this job.
+In other words, you need to change a word such as "\texttt{amount}" into "{\texttt{amount}}".
+With the \texttt{:map} command, you can tell Vim that the F5 key does this job.
 The command is as follows:
 
  \begin{Verbatim}[samepage=true]
@@ -239,18 +239,18 @@ Watch out for this difference when reading the manual!
 
 Let's break this down:
 \begin{longtable}{c l}
-				\verb!<F5>! & The F5 function key.
+				\texttt{<F5>} & The F5 function key.
 				This is the trigger key that causes the command to be executed as the key is pressed.\\
 
-				\verb!i{<Esc>! & Insert the \{ character.
+				\texttt{i{<Esc>} & Insert the \{ character.
 				The <Esc> key ends Insert mode.\\
 
-				\verb!e! & Move to the end of the word.\\
+				\texttt{e} & Move to the end of the word.\\
 
-				\verb!a}<Esc>! & Append the \} to the word.\\
+				\texttt{a}<Esc>} & Append the \} to the word.\\
 \end{longtable}
 
-After you execute the "\verb!:map!" command, all you have to do to put \{ \} around a word is to put the cursor on the first character and press F5.
+After you execute the "\texttt{:map}" command, all you have to do to put \{ \} around a word is to put the cursor on the first character and press F5.
 
 In this example, the trigger is a single key; it can be any string.
 But when you use an existing Vim command, that command will no longer be available.
@@ -265,9 +265,9 @@ You could map "\verb!\p!" to add parentheses around a word, and "\verb!\c!" to a
  :map \c i{<Esc>ea}<Esc>
  \end{Verbatim}
 
-You need to type the \verb!\! and the \verb!p! quickly after another, so that Vim knows they belong together.
+You need to type the \verb!\! and the \texttt{p} quickly after another, so that Vim knows they belong together.
 
-The "\verb!:map!" command (with no arguments) lists your current mappings.
+The "\texttt{:map}" command (with no arguments) lists your current mappings.
 At least the ones for Normal mode.
 More about mappings in section |\hyperref[Key mapping]{\texttt{Key mapping}}|.
 
@@ -281,7 +281,7 @@ More about mappings in section |\hyperref[Key mapping]{\texttt{Key mapping}}|.
 Vim's functionality can be extended by adding plugins.
 A plugin is nothing more than a Vim script file that is loaded automatically when Vim starts.
 You can add a plugin very easily by dropping it in your plugin directory.
-\{not available when Vim was compiled without the |\verb!:h +eval!| feature\}
+\{not available when Vim was compiled without the |\texttt{:h +eval}| feature\}
 
 There are two types of plugins:
 \begin{description}
@@ -298,8 +298,8 @@ The global plugins will be discussed first, then the filetype ones \hyperref[add
 When you start Vim, it will automatically load a number of global plugins.
 You don't have to do anything for this.
 They add functionality that most people will want to use, but which was implemented as a Vim script instead of being compiled into Vim.
-You can find them listed in the help index |\verb!:h standard-plugin-list!|.
-Also see |\verb!:h load-plugins!|.
+You can find them listed in the help index |\texttt{:h standard-plugin-list}|.
+Also see |\texttt{:h load-plugins}|.
 
 \phantomsection
 \label{add-global-plugin}
@@ -315,14 +315,14 @@ when you use Vim.  There are only two steps for adding a global plugin:
 Where can you find plugins?
 \begin{itemize}
 				\item Some come with Vim.
-								You can find them in the directory \verb!$VIMRUNTIME/macros! and its sub-directories.
+								You can find them in the directory \texttt{\$VIMRUNTIME/macros} and its sub-directories.
 				\item Download from the net. There is a large collection on \url{http://www.vim.org}.
 				\item They are sometimes posted in a Vim \hyperref[maillist]{|\texttt{maillist}|}.
 				\item You could write one yourself, see \hyperref[write-plugin]{|\texttt{write-plugin}|}.
 \end{itemize}
 
-Some plugins come as a vimball archive, see |\verb!:h vimball!|.
-Some plugins can be updated automatically, see |\verb!:h getscript!|.
+Some plugins come as a vimball archive, see |\texttt{:h vimball}|.
+Some plugins can be updated automatically, see |\texttt{:h getscript}|.
 
 \subsubsection{Using a global plugin}
 
@@ -331,12 +331,12 @@ Then copy the file to your plugin directory:
 
 \begin{longtable}{c l}
 		system & directory \\ \hline
-		Unix & \verb!vim/plugin/! \\
-		PC and OS/2 & \verb!$HOME/vimfiles/plugin! or \verb!$VIM/vimfiles/plugin! \\
-		Amiga & \verb!s:vimfiles/plugin! \\
-		Macintosh & \verb!$VIM:vimfiles:plugin! \\
-		Mac OS X & \verb!~/.vim/plugin/! \\
-		RISC-OS & \verb!Choices:vimfiles.plugin!
+		Unix & \texttt{vim/plugin/} \\
+		PC and OS/2 & \texttt{\$HOME/vimfiles/plugin} or \texttt{\$VIM/vimfiles/plugin} \\
+		Amiga & \texttt{s:vimfiles/plugin} \\
+		Macintosh & \texttt{\$VIM:vimfiles:plugin} \\
+		Mac OS X & \texttt{~/.vim/plugin/} \\
+		RISC-OS & \texttt{Choices:vimfiles.plugin}
 \end{longtable}
 
 Example for Unix (assuming you didn't have a plugin directory yet):
@@ -350,8 +350,8 @@ Example for Unix (assuming you didn't have a plugin directory yet):
 That's all!
 Now you can use the commands defined in this plugin to justify text.
 
-Instead of putting plugins directly into the \verb!plugin/! directory, you may better organize them by putting them into subdirectories under \verb!plugin/!.
-As an example, consider using "\verb!~/.vim/plugin/perl/*.vim!" for all your Perl plugins.
+Instead of putting plugins directly into the \texttt{plugin/} directory, you may better organize them by putting them into subdirectories under \texttt{plugin/}.
+As an example, consider using "\texttt{~/.vim/plugin/perl/*.vim}" for all your Perl plugins.
 
 \subsubsection{Filetype plugins}
 \phantomsection
@@ -379,7 +379,7 @@ There are two steps for adding a filetype plugin:
 
 You can find them in the same places as the global plugins.
 Watch out if the type of file is mentioned, then you know if the plugin is a global or a filetype one.
-The scripts in \verb!$VIMRUNTIME/macros! are global ones, the filetype plugins are in \verb!$VIMRUNTIME/ftplugin!.
+The scripts in \texttt{\$VIMRUNTIME/macros} are global ones, the filetype plugins are in \texttt{\$VIMRUNTIME/ftplugin}.
 
 \subsubsection{Using a filetype plugin}
 \phantomsection
@@ -403,7 +403,7 @@ If it's OK, you can give the new one another name:
  \end{Verbatim}
 
 The underscore is used to separate the name of the filetype from the rest, which can be anything.
-If you use "\verb!otherstuff.vim!" it wouldn't work, it would be loaded for the "otherstuff" filetype.
+If you use "\texttt{otherstuff.vim}" it wouldn't work, it would be loaded for the "otherstuff" filetype.
 
 On MS-DOS you cannot use long filenames.
 You would run into trouble if you add a second plugin and the filetype has more than six characters.
@@ -434,15 +434,15 @@ Examples for the "stuff" filetype on Unix:
 The <filetype> part is the name of the filetype the plugin is to be used for.
 Only files of this filetype will use the settings from the plugin.
 The <name> part of the plugin file doesn't matter, you can use it to have several plugins for the same filetype.
-Note that it must end in "\verb!.vim!".
+Note that it must end in "\texttt{.vim}".
 
 Further reading:\\ %TODO à refaire
-|\verb!:h filetype-plugins!| Documentation for the filetype plugins and information about how to avoid that mappings cause problems.\\
-|\verb!:h load-plugins!|     When the global plugins are loaded during startup.\\
-|\verb!:h ftplugin-overrule!|   Overruling the settings from a global plugin.\\
+|\texttt{:h filetype-plugins}| Documentation for the filetype plugins and information about how to avoid that mappings cause problems.\\
+|\texttt{:h load-plugins}|     When the global plugins are loaded during startup.\\
+|\texttt{:h ftplugin-overrule}|   Overruling the settings from a global plugin.\\
 \hyperref[write-plugin]{|\texttt{write-plugin}|}       How to write a plugin script.\\
-|\verb!:h plugin-details!| For more information about using plugins or when your plugin doesn't work.\\
-|\verb!:h new-filetype!|     How to detect a new file type.
+|\texttt{:h plugin-details}| For more information about using plugins or when your plugin doesn't work.\\
+|\texttt{:h new-filetype}|     How to detect a new file type.
 
 \subsection{Adding a help file}
 \label{add-local-help}
@@ -451,11 +451,11 @@ Further reading:\\ %TODO à refaire
 If you are lucky, the plugin you installed also comes with a help file.
 We will explain how to install the help file, so that you can easily find help for your new plugin.
 Let us use the "matchit.vim" plugin as an example (it is included with Vim).
-This plugin makes the "\verb!%!" command jump to matching HTML tags, if/else/endif in Vim scripts, etc.
+This plugin makes the "\texttt{%}" command jump to matching HTML tags, if/else/endif in Vim scripts, etc.
 Very useful, although it's not backwards compatible (that's why it is not enabled by default).
-This plugin comes with documentation: "\verb!matchit.txt!".
+This plugin comes with documentation: "\texttt{matchit.txt}".
 Let's first copy the plugin to the right directory.
-This time we will do it from inside Vim, so that we can use \verb!$VIMRUNTIME!.
+This time we will do it from inside Vim, so that we can use \texttt{\$VIMRUNTIME}.
 (You may skip some of the "mkdir" commands if you already have the directory.)
 
  \begin{Verbatim}[samepage=true]
@@ -464,21 +464,21 @@ This time we will do it from inside Vim, so that we can use \verb!$VIMRUNTIME!.
  :!cp $VIMRUNTIME/macros/matchit.vim ~/.vim/plugin
  \end{Verbatim}
 
-The "\verb!cp!" command is for Unix, on MS-DOS you can use "\verb!copy!".
+The "\texttt{cp}" command is for Unix, on MS-DOS you can use "\texttt{copy}".
 
-Now create a "\verb!doc!" directory in one of the directories in `\verb!runtimepath!'.
+Now create a "\texttt{doc}" directory in one of the directories in `\texttt{runtimepath}'.
 
  \begin{Verbatim}[samepage=true]
  :!mkdir ~/.vim/doc
  \end{Verbatim}
 
-Copy the help file to the "\verb!doc!" directory.
+Copy the help file to the "\texttt{doc}" directory.
 
  \begin{Verbatim}[samepage=true]
  :!cp $VIMRUNTIME/macros/matchit.txt ~/.vim/doc
  \end{Verbatim}
 
-Now comes the trick, which allows you to jump to the subjects in the new help file: Generate the local tags file with the |\verb!:h :helptags!| command.
+Now comes the trick, which allows you to jump to the subjects in the new help file: Generate the local tags file with the |\texttt{:h :helptags}| command.
 
  \begin{Verbatim}[samepage=true]
  :helptags ~/.vim/doc
@@ -490,7 +490,7 @@ Now you can use the
  :help g%
  \end{Verbatim}
 
-command to find help for "\verb!g%!" in the help file you just added.
+command to find help for "\texttt{g%}" in the help file you just added.
 You can see an entry for the local help file when you do:
 
  \begin{Verbatim}[samepage=true]
@@ -503,7 +503,7 @@ There you can see which local help files have been added and jump to them throug
 For writing a local help file, see \hyperref[write-local-help]{|\texttt{write-local-help}|}.
 
 \subsection{The option window}
-If you are looking for an option that does what you want, you can search in the help files here: |\verb!:h options!|.
+If you are looking for an option that does what you want, you can search in the help files here: |\texttt{:h options}|.
 Another way is by using this command:
 
  \begin{Verbatim}[samepage=true]
@@ -544,8 +544,8 @@ For example, move the cursor a few lines up to this line:
     set so=0 
 \end{Verbatim}
 
-Position the cursor on the zero with "\verb!$!".
-Change it into a five with "\verb!r5!".
+Position the cursor on the zero with "\texttt{\$}".
+Change it into a five with "\texttt{r5}".
 Then press <Enter> to apply the new value.
 When you now move the cursor around you will notice that the text starts scrolling before you reach the border.
 This is what the `scrolloff' option does, it specifies an offset from the window border where scrolling starts.
@@ -555,14 +555,14 @@ This is what the `scrolloff' option does, it specifies an offset from the window
 There are an awful lot of options.
 Most of them you will hardly ever use.
 Some of the more useful ones will be mentioned here.
-Don't forget you can find more help on these options with the "\verb!:help!" command, with single quotes before and after the option name.
+Don't forget you can find more help on these options with the "\texttt{:help}" command, with single quotes before and after the option name.
 For example:
 
  \begin{Verbatim}[samepage=true]
  :help 'wrap'
  \end{Verbatim}
 
-In case you have messed up an option value, you can set it back to the default by putting an ampersand (\verb!&!) after the option name.
+In case you have messed up an option value, you can set it back to the default by putting an ampersand (\texttt{&}) after the option name.
 Example:
 
  \begin{Verbatim}[samepage=true]
@@ -625,8 +625,8 @@ To make them visible:
  :set list
  \end{Verbatim}
 
-Now every tab is displayed as \verb!^I!.
-And a \verb!$! is displayed at the end of each line, so that you can spot trailing spaces that would otherwise go unnoticed.
+Now every tab is displayed as \texttt{^I}.
+And a \texttt{\$} is displayed at the end of each line, so that you can spot trailing spaces that would otherwise go unnoticed.
 A disadvantage is that this looks ugly when there are many Tabs in a file.
 If you have a color terminal, or are using the GUI, Vim can show the spaces and tabs as highlighted characters.
 Use the `listchars' option:
@@ -635,7 +635,7 @@ Use the `listchars' option:
  :set listchars=tab:>-,trail:-
  \end{Verbatim}
 
-Now every tab will be displayed as "\verb!>---!" (with more or less "\verb!-!") and trailing white space as "-".
+Now every tab will be displayed as "\texttt{>---}" (with more or less "\texttt{-}") and trailing white space as "-".
 Looks a lot better, doesn't it?
 
 \subsubsection{Keywords}
@@ -646,10 +646,10 @@ The `iskeyword' option specifies which characters can appear in a word:
       iskeyword=@,48-57,_,192-255 
 \end{Verbatim}
 
-The "\verb!@!" stands for all alphabetic letters.
-"\verb!48-57!" stands for ASCII characters 48 to 57, which are the numbers 0 to 9.
+The "\texttt{@}" stands for all alphabetic letters.
+"\texttt{48-57}" stands for ASCII characters 48 to 57, which are the numbers 0 to 9.
 "\verb!192-255!" are the printable latin characters.
-Sometimes you will want to include a dash in keywords, so that commands like "\verb!w!" consider "upper-case" to be one word.
+Sometimes you will want to include a dash in keywords, so that commands like "\texttt{w}" consider "upper-case" to be one word.
 You can do it like this:
 
 \begin{Verbatim}[samepage=true]
@@ -659,7 +659,7 @@ You can do it like this:
 \end{Verbatim}
 
 If you look at the new value, you will see that Vim has added a comma for you.
-To remove a character use "\verb!-=!".
+To remove a character use "\texttt{-=}".
 For example, to remove the underscore:
 
 \begin{Verbatim}[samepage=true]

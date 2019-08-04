@@ -3,7 +3,7 @@ Vim is an extensible editor.
 You can take a sequence of commands you use often and turn it into a new command.
 Or redefine an existing command.
 Autocommands make it possible to execute commands automatically.
-\localtableofcontentswithrelativedepth{+1}
+%\localtableofcontentswithrelativedepth{+1}
 \subsection{Key mapping}
 \label{Key mapping}
 A simple mapping was explained in section |\hyperref[Simple mappings]{\texttt{Simple mappings}}|.
@@ -392,7 +392,7 @@ The values for this option are as follows:
 \begin{center} \begin{tabular}{l l}
 				\verb;-range; & Range is allowed; default is the current line. \\
 				\verb;-range=%; & Range is allowed; default is the whole file. \\
-				\verb;-range={count}; & Range is allowed; the last number in it is used as a single number whose default is \verb!{count}!. \\
+				\verb;-range={count}; & Range is allowed; the last number in it is used as a single number whose default is \texttt{{count}}. \\
 \end{tabular} \end{center}
 
 When a range is specified, the keywords <line1> and <line2> get the values of the first and last line in the range.
@@ -404,18 +404,18 @@ For example, the following command defines the SaveIt command, which writes out 
 \subsubsection{Other options}
 Some of the other options and keywords are as follows:
 
-\begin{center} \begin{tabularx}{l X} % This went off the page; changed to tabularx TMC
-				\verb;-count={number}; & The command can take a count whose default is \verb!{number}!.
+\begin{center} \begin{tabular} {l l} % This went off the page; changed to tabularx TMC
+				\verb;-count={number}; & The command can take a count whose default is \texttt{{number}}.
 				The resulting count can be used through the <count> keyword. \\
-				\verb;-bang; & You can use a \verb:!:.
-				If present, using <bang> will result in a \verb:!:. \\
+				\verb;-bang; & You can use a \texttt{!}.
+				If present, using <bang> will result in a \texttt{!}. \\
 				\verb;-register; & You can specify a register.
 				(The default is the unnamed register.)
 				The register specification is available as <reg> (a.k.a. <register>). \\
-				\verb;-complete={type}; & Type of command-line completion used.  See |\verb!:h :command-completion!| for the list of possible values. \\
-				\verb;-bar; & The command can be followed by \verb!|! and another command, or \verb!"! and a comment. \\
+				\verb;-complete={type}; & Type of command-line completion used.  See |\texttt{:h :command-completion}| for the list of possible values. \\
+				\verb;-bar; & The command can be followed by \texttt{|} and another command, or \texttt{"} and a comment. \\
 				\verb;-buffer; & The command is only available for the current buffer. \\
-\end{tabularx} \end{center}
+\end{tabular} \end{center}
 
 Finally, you have the <lt> keyword.
 It stands for the character \verb!<!.
@@ -541,7 +541,7 @@ For example, "\verb!*.txt!" matches "\verb!/home/biep/readme.txt!".
 The pattern "\verb!/home/biep/*!" would also match it.
 But "\verb!home/foo/*.txt!" wouldn't.
 
-When including a slash, Vim matches the pattern against both the full path of the file ("\verb!/home/biep/readme.txt!") and the relative path (e.g., "\verb!biep/readme.txt!").
+When including a slash, Vim matches the pattern against both the full path of the file ("\texttt{/home/biep/readme.txt}") and the relative path (e.g., "\texttt{biep/readme.txt}").
 
 \verb!Note!: When working on a system that uses a backslash as file separator, such as MS-Windows, you still use forward slashes in autocommands.
 This makes it easier to write the pattern, since a backslash has a special meaning.

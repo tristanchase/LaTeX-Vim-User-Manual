@@ -3,7 +3,7 @@
 The Vim script language is used for the startup vimrc file, syntax files, and many other things.
 This chapter explains the items that can be used in a Vim script.
 There are a lot of them, thus this is a long chapter.
-\localtableofcontentswithrelativedepth{+1}
+%\localtableofcontentswithrelativedepth{+1}
 \subsection{Introduction}
 \label{vim-script-intro}
 \label{script}
@@ -287,7 +287,7 @@ The  "\verb!\<name>!" form can be used to include the special key "\verb!name!".
 See |\verb!:h expr-quote!| for the full list of special items in a string.
 \subsection{Expressions}
 Vim has a rich, yet simple way to handle expressions.
-You can read the definition here: |\verb!:h expression-syntax!|.
+You can read the definition here: |\texttt{:h expression-syntax}|.
 Here we will show the most common items.
 
 The numbers, strings and variables mentioned above are expressions by themselves.
@@ -1656,7 +1656,7 @@ You might be tempted to do this:
 \end{Verbatim}
 
 This means all errors are caught.
-But then you will not see errors that are useful, such as "\verb!E21: Cannot make changes, 'modifiable' is off!".
+But then you will not see errors that are useful, such as "\texttt{E21: Cannot make changes, 'modifiable' is off}".
 
 Another useful mechanism is the "\verb!:finally!" command:
 
@@ -1926,10 +1926,10 @@ Example:
 \subsubsection{Line continuation, avoiding side effects}
 \label{use-cpo-save}
 
-In line 18 above, the line-continuation mechanism is used |\verb!:h line-continuation!|.
-Users with \verb!'compatible'! set will run into trouble here, they will get an error message.
-We can't just reset \verb!'compatible'!, because that has a lot of side effects.
-To avoid this, we will set the \verb!'cpoptions'! option to its Vim default value and restore it later.
+In line 18 above, the line-continuation mechanism is used |\texttt{:h line-continuation}|.
+Users with \texttt{'compatible'} set will run into trouble here, they will get an error message.
+We can't just reset \texttt{'compatible'}, because that has a lot of side effects.
+To avoid this, we will set the \texttt{'cpoptions'} option to its Vim default value and restore it later.
 That will allow the use of line-continuation and make the script work for most people.
 It is done like this:
 
@@ -2259,7 +2259,7 @@ Summary of special things to use in a plugin:
 				\verb!s:name! & Variables local to the script. \\
 				\verb!<SID>! & Script-ID, used for mappings and functions local to the script. \\
 				\verb!hasmapto()! & Function to test if the user already defined a mapping for functionality the script offers. \\
-				\verb!<Leader>! & Value of "\verb!mapleader!", which the user defines as the keys that plugin mappings start with. \\
+				\verb!<Leader>! & Value of "\texttt{mapleader}", which the user defines as the keys that plugin mappings start with. \\
 				\verb!:map <unique>! & Give a warning if a mapping already exists. \\
 				\verb!:noremap <script>! & Use only mappings local to the script, not global mappings. \\
 				\verb!exists(":Cmd")! & Check if a user command already exists. \\
@@ -2434,14 +2434,14 @@ Use one of these three forms:
 \label{ftplugin-special}
 Summary of special things to use in a filetype plugin:
 
-\begin{center} \begin{tabularx}{l X} % Right column went off the page TMC
-				\verb!<LocalLeader>! & Value of "\verb!maplocalleader!", which the user defines as the keys that filetype plugin mappings start with. \\
+\begin{center} \begin{tabular}{l l} % Right column went off the page TMC
+				\verb!<LocalLeader>! & Value of "\texttt{maplocalleader}", which the user defines as the keys that filetype plugin mappings start with. \\
 				\verb!:map <buffer>! & Define a mapping local to the buffer. \\
 				\verb!:noremap <script>! & Only remap mappings defined in this script that start with <SID>. \\
 				\verb!:setlocal! & Set an option for the current buffer only. \\
 				\verb!:command -buffer! & Define a user command local to the buffer. \\
 				\verb!exists("*s:Func")! & Check if a function was already defined. \\
-\end{tabularx} \end{center}
+\end{tabular} \end{center}
 
 Also see \hyperref[plugin-special]{|\texttt{plugin-special}|}, the special things used for all plugins.
 \subsection{Writing a compiler plugin}
@@ -2556,7 +2556,7 @@ This is the sequence of events that happens:
 								Since the pattern "\verb!BufNet*!" matches the invoked function, the command "\verb!source fname!" will be executed.
 								"\verb!fname!" will be equal to the name of the script, no matter where it is located, because it comes from expanding "\verb!<sfile>!" (see |\verb!:h expand()!|).
 				\item The script is sourced again, the "\verb!s:did_load!" variable exists and the functions are defined.
-\end{enumerate}}
+\end{enumerate}
 
 Notice that the functions that are loaded afterwards match the pattern in the |\verb!:h FuncUndefined!| autocommand.
 You must make sure that no other plugin defines functions that match this pattern.

@@ -2,7 +2,7 @@
 This chapter provides just enough information to edit a file with Vim.  Not
 well or fast, but you can edit.  Take some time to practice with these
 commands, they form the base for what follows.
-\localtableofcontentswithrelativedepth{+1}
+%\localtableofcontentswithrelativedepth{+1}
 
 \subsection{Running Vim for the First Time}
 To start Vim, enter this command:
@@ -318,7 +318,7 @@ More about that in section |\hyperref[Numbering changes]{\texttt{Numbering chang
 \subsection{Other editing commands}
 
 Vim has a large number of commands to change the text.
-See |\verb!:h Q_in!| and below.
+See |\texttt{:h Q_in}| and below.
 Here are a few often used ones.
 
 \subsubsection{Appending}
@@ -390,11 +390,11 @@ The count always comes before the command it applies to.
 
 \subsection{Getting out}
 
-To exit, use the "\verb!ZZ!" command.  This command writes the file and exits.
+To exit, use the "\texttt{ZZ}" command.  This command writes the file and exits.
 
 Note:\newline
 Unlike many other editors, Vim does not automatically make a backup file.
-If you type "\verb!ZZ!", your changes are committed and there's no turning back.
+If you type "\texttt{ZZ}", your changes are committed and there's no turning back.
 You can configure the Vim editor to produce backup files, see |\hyperref[Backup files]{\texttt{Backup files}}|.
 
 \subsubsection{Discarding changes}
@@ -411,7 +411,7 @@ Don't forget to press <Enter> to finish the command.
 
 For those of you interested in the details, the three parts of this command are the colon (:), which enters Command-line mode; the q command, which tells the editor to quit; and the override command modifier (!).
 The override command modifier is needed because Vim is reluctant to throw away changes.
-If you were to just type "\verb!:q!", Vim would display an error message and refuse to exit: 
+If you were to just type "\texttt{:q}", Vim would display an error message and refuse to exit: 
 
 		\begin{Verbatim}[samepage=true]
     E37: No write since last change (use ! to override) 
@@ -419,7 +419,7 @@ If you were to just type "\verb!:q!", Vim would display an error message and ref
 
 By specifying the override, you are in effect telling Vim, "I know that what I'm doing looks stupid, but I'm a big boy and really want to do this."
 
-If you want to continue editing with Vim: The "\verb%:e!%" command reloads the original version of the file.
+If you want to continue editing with Vim: The "\texttt{:e!}" command reloads the original version of the file.
 
 \subsection{Finding help}
 
@@ -433,14 +433,14 @@ To get generic help use this command:
 
 You could also use the first function key <F1>.
 If your keyboard has a <Help> key it might work as well.
-If you don't supply a subject, "\verb!:help!" displays the general help window.
+If you don't supply a subject, "\texttt{:help}" displays the general help window.
 The creators of Vim did something very clever (or very lazy) with the help system: They made the help window a normal editing window.
 You can use all the normal Vim commands to move through the help information.
 Therefore h, j, k, and l move left, down, up and right.
-To get out of the help window, use the same command you use to get out of the editor: "\verb!ZZ!".
+To get out of the help window, use the same command you use to get out of the editor: "\texttt{ZZ}".
 This will only close the help window, not exit Vim.
 
-As you read the help text, you will notice some text enclosed in vertical bars (for example, |\verb!:h help!|).
+As you read the help text, you will notice some text enclosed in vertical bars (for example, |\texttt{:h help}|).
 This indicates a hyperlink.
 If you position the cursor anywhere between the bars and press CTRL-] (jump to tag), the help system takes you to the indicated subject.
 (For reasons not discussed here, the Vim terminology for a hyperlink is tag.
@@ -490,7 +490,7 @@ For example, the following command displays help for the normal-mode CTRL-H comm
  \end{Verbatim}
 
 To identify other modes, use a mode prefix.
-If you want the help for the insert-mode version of a command, use "\verb!i_!".
+If you want the help for the insert-mode version of a command, use "\texttt{i_}".
 For CTRL-H this gives you the following command: 
 
  \begin{Verbatim}[samepage=true]
@@ -507,13 +507,13 @@ To find what the -t argument does, for example, use the command:
 
 The Vim editor has a number of options that enable you to configure and customize the editor.
 If you want help for an option, you need to enclose it in single quotation marks.
-To find out what the \verb!'number'! option does, for example, use the following command: 
+To find out what the \texttt{'number'} option does, for example, use the following command: 
 
  \begin{Verbatim}[samepage=true]
  :help 'number'
  \end{Verbatim}
 
-The table with all mode prefixes can be found here: |\verb!:h help-context!|.
+The table with all mode prefixes can be found here: |\texttt{:h help-context}|.
 
 Special keys are enclosed in angle brackets.
 To find help on the up-arrow key in Insert mode, for instance, use this command: 
@@ -549,7 +549,7 @@ You can use the error ID at the start to find help about it:
 				\texttt{:help i\_abc}  \texttt{:help i\_CTRL-B} & The same in Insert mode. \\ \hline
 				\texttt{:help v\_abc}  \texttt{:help v\_CTRL-B} & The same in Visual mode. \\ \hline
 				\texttt{:help c\_abc}  \texttt{:help c\_CTRL-B} & The same in Command-line mode. \\ \hline
-				\texttt{:help 'subject'} & Option \verb!'subject'!.\\ \hline
+				\texttt{:help 'subject'} & Option \texttt{'subject'}.\\ \hline
 				\texttt{:help subject()} & Function "subject".\\ \hline
 				\texttt{:help -subject} & Command-line option "-subject".\\ \hline
 				\texttt{:help +subject} & Compile-time feature "+subject".\\ \hline
@@ -563,7 +563,7 @@ You can use the error ID at the start to find help about it:
 								\item \texttt{:cn} next match
 								\item \texttt{:cprev :cN} previous match
 								\item \texttt{:cfirst :clast} first or last match
-								\item \texttt{:copen :cclose} open/close the quickfix window; press <Enter> to jump to the item under the cursor
+								\item \texttt{:copen :cclose} open/close the quickfix window; press <Enter> to jump to the item under the cursor 
 				\end{itemize}
 				\\ \hline
 \end{tabularx}

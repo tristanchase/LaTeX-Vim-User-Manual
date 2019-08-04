@@ -3,7 +3,7 @@ Files can be found everywhere.  So how do you find them?  Vim offers various
 ways to browse the directory tree.  There are commands to jump to a file that
 is mentioned in another.  And Vim remembers which files have been edited
 before.
-\localtableofcontentswithrelativedepth{+1}
+%\localtableofcontentswithrelativedepth{+1}
 \subsection{The file browser}
 
 Vim has a plugin that makes it possible to edit a directory.  Try this:
@@ -39,22 +39,22 @@ You can see these items:
 \item The name of the browsing tool and its version number
 \item The name of the browsing directory
 \item The method of sorting (may be by name, time, or size)
-\item How names are to be sorted (directories first, then \verb!*.h! files, \verb!*.c! files, etc)
+\item How names are to be sorted (directories first, then \texttt{*.h} files, \texttt{*.c} files, etc)
 \item How to get help (use the <F1> key), and an abbreviated listing of available commands
-\item A listing of files, including "\verb!../!", which allows one to list the parent directory.
+\item A listing of files, including "\texttt{../}", which allows one to list the parent directory.
 \end{enumerate}
 
 If you have syntax highlighting enabled, the different parts are highlighted so as to make it easier to spot them.
 
 You can use Normal mode Vim commands to move around in the text.
 For example, move the cursor atop a file and press <Enter>; you will then be editing that file.
-To go back to the browser use "\verb!:edit .!" again, or use "\verb!:Explore!".
+To go back to the browser use "\texttt{:edit .}" again, or use "\texttt{:Explore}".
 CTRL-O also works.
 
 Try using <Enter> while the cursor is atop a directory name.
 The result is that the file browser moves into that directory and displays the items found there.
-Pressing <Enter> on the first directory "\verb!../!" moves you one level higher.
-Pressing "\verb!-!" does the same thing, without the need to move to the "\verb!../!" item first.
+Pressing <Enter> on the first directory "\texttt{../}" moves you one level higher.
+Pressing "\texttt{-}" does the same thing, without the need to move to the "\texttt{../}" item first.
 
 You can press <F1> to get help on the things you can do in the netrw file browser.
 This is what you get:
@@ -85,17 +85,17 @@ This is what you get:
 \end{Verbatim}
 
 The <F1> key thus brings you to a netrw directory browsing contents help page.
-It's a regular help page; use the usual |\verb!CTRL-]!| to jump to tagged help items and |\verb!:h CTRL-O!| to jump back.
+It's a regular help page; use the usual |\texttt{CTRL-]}| to jump to tagged help items and |\texttt{:h CTRL-O}| to jump back.
 
 To select files for display and editing: (with the cursor is atop a filename)
 
 \begin{center} \begin{longtable}{l l l}
-				<enter> & Open the file in the current window. & |\verb!:h netrw-cr!| \\
-				o & Horizontally split window and display file & |\verb!:h netrw-o!| \\
-				v & Vertically split window and display file & |\verb!:h netrw-v!| \\
-				p & Use the |\verb!:h preview-window!| & |\verb!:h netrw-p!| \\
-				P & Edit in the previous window & |\verb!:h netrw-P!| \\
-				t & Open file in a new tab & |\verb!:h netrw-t!|
+				<enter> & Open the file in the current window. & |\texttt{:h netrw-cr}| \\
+				o & Horizontally split window and display file & |\texttt{:h netrw-o}| \\
+				v & Vertically split window and display file & |\texttt{:h netrw-v}| \\
+				p & Use the |\texttt{:h preview-window}| & |\texttt{:h netrw-p}| \\
+				P & Edit in the previous window & |\texttt{:h netrw-P}| \\
+				t & Open file in a new tab & |\texttt{:h netrw-t}|
 \end{longtable} \end{center}
 
 The following normal-mode commands may be used to control the browser display:
@@ -120,23 +120,23 @@ As a sampling of extra normal-mode commands:
 One may also use command mode; again, just a sampling:
 
 \begin{center} \begin{longtable}{l l}
-				\verb!:Explore [directory]! & Browse specified/current directory \\
-				\verb!:NetrwSettings! & A comprehensive list of your current netrw settings with help linkage.
+				\texttt{:Explore [directory]} & Browse specified/current directory \\
+				\texttt{:NetrwSettings} & A comprehensive list of your current netrw settings with help linkage.
 \end{longtable} \end{center}
 
 The netrw browser is not limited to just your local machine; one may use urls such as:
-(that trailing \verb!/! is important)
+(that trailing \texttt{/} is important)
 
 \begin{Verbatim}[samepage=true]
  :Explore   ftp://somehost/path/to/dir/
  :e scp://somehost/path/to/dir/
 \end{Verbatim}
 
-See |\verb!:h netrw-browse!| for more.
+See |\texttt{:h netrw-browse}| for more.
 \subsection{The current directory}
 
 Just like the shell, Vim has the concept of a current directory.
-Suppose you are in your home directory and want to edit several files in a directory "\verb!VeryLongFileName!".
+Suppose you are in your home directory and want to edit several files in a directory "\texttt{VeryLongFileName}".
 You could do:
 
 \begin{Verbatim}[samepage=true]
@@ -154,8 +154,8 @@ To avoid much of the typing, do this:
  :edit file3.txt
 \end{Verbatim}
 
-The "\verb!:cd!" command changes the current directory.
-You can see what the current directory is with the "\verb!:pwd!" command:
+The "\texttt{:cd}" command changes the current directory.
+You can see what the current directory is with the "\texttt{:pwd}" command:
 
 \begin{Verbatim}[samepage=true]
  :pwd
@@ -163,7 +163,7 @@ You can see what the current directory is with the "\verb!:pwd!" command:
 \end{Verbatim}
 
 Vim remembers the last directory that you used.
-Use "\verb!cd -!" to go back to it.
+Use "\texttt{cd -}" to go back to it.
 Example:
 
 \begin{Verbatim}[samepage=true]
@@ -197,13 +197,13 @@ This is called a local directory.
  /home/Bram/VeryLongFileName
 \end{Verbatim}
 
-So long as no "\verb!:lcd!" command has been used, all windows share the same current directory.
-Doing a "\verb!:cd!" command in one window will also change the current directory of the other window.
+So long as no "\texttt{:lcd}" command has been used, all windows share the same current directory.
+Doing a "\texttt{:cd}" command in one window will also change the current directory of the other window.
 
-For a window where "\verb!:lcd!" has been used a different current directory is remembered.
-Using "\verb!:cd!" or "\verb!:lcd!" in other windows will not change it.
+For a window where "\texttt{:lcd}" has been used a different current directory is remembered.
+Using "\texttt{:cd}" or "\texttt{:lcd}" in other windows will not change it.
 
-When using a "\verb!:cd!" command in a window that uses a different current directory, it will go back to using the shared directory.
+When using a "\texttt{:cd}" command in a window that uses a different current directory, it will go back to using the shared directory.
 \subsection{Finding a file}
 You are editing a C program that contains this line:
 
@@ -211,7 +211,7 @@ You are editing a C program that contains this line:
     #include "inits.h" 
 \end{Verbatim}
 
-You want to see what is in that "\verb!inits.h!" file.
+You want to see what is in that "\texttt{inits.h}" file.
 Move the cursor on the name of the file and type:
 
 \begin{Verbatim}[samepage=true]
@@ -220,11 +220,11 @@ Move the cursor on the name of the file and type:
 
 Vim will find the file and edit it.
 
-What if the file is not in the current directory?  Vim will use the \verb!'path'! option to find the file.
+What if the file is not in the current directory?  Vim will use the \texttt{'path'} option to find the file.
 This option is a list of directory names where to look for your file.
 
-Suppose you have your include files located in "\verb!c:/prog/include!".
-This command will add it to the \verb!'path'! option:
+Suppose you have your include files located in "\texttt{c:/prog/include}".
+This command will add it to the \texttt{'path'} option:
 
 \begin{Verbatim}[samepage=true]
  :set path+=c:/prog/include
@@ -239,16 +239,16 @@ This starts with a dot:
  :set path+=./proto
 \end{Verbatim}
 
-This tells Vim to look in the directory "\verb!proto!", below the directory where the file in which you use "\verb!gf!" is.
-Thus using "\verb!gf!" on "\verb!inits.h!" will make Vim look for "\verb!proto/inits.h!", starting in the directory of the file.
+This tells Vim to look in the directory "\texttt{proto}", below the directory where the file in which you use "\texttt{gf}" is.
+Thus using "\texttt{gf}" on "\texttt{inits.h}" will make Vim look for "\texttt{proto/inits.h}", starting in the directory of the file.
 
-Without the "\verb!./!", thus "\verb!proto!", Vim would look in the "\verb!proto!" directory below the current directory.
+Without the "\texttt{./}", thus "\texttt{proto}", Vim would look in the "\texttt{proto}" directory below the current directory.
 And the current directory might not be where the file that you are editing is located.
 
-The \verb!'path'! option allows specifying the directories where to search for files in many more ways.
-See the help on the \verb!'path'! option.
+The \texttt{'path'} option allows specifying the directories where to search for files in many more ways.
+See the help on the \texttt{'path'} option.
 
-The \verb!'isfname'! option is used to decide which characters are included in the file name, and which ones are not (e.g., the " character in the example above).
+The \texttt{'isfname'} option is used to decide which characters are included in the file name, and which ones are not (e.g., the " character in the example above).
 
 When you know the file name, but it's not to be found in the file, you can type it:
 
@@ -256,19 +256,19 @@ When you know the file name, but it's not to be found in the file, you can type 
  :find inits.h
 \end{Verbatim}
 
-Vim will then use the \verb!'path'! option to try and locate the file.
-This is the same as the "\verb!:edit!" command, except for the use of \verb!'path'!.
+Vim will then use the \texttt{'path'} option to try and locate the file.
+This is the same as the "\texttt{:edit}" command, except for the use of \texttt{'path'}.
 
-To open the found file in a new window use CTRL-W f instead of "\verb!gf!", or use "\verb!:sfind!" instead of "\verb!:find!".
+To open the found file in a new window use CTRL-W f instead of "\texttt{gf}", or use "\texttt{:sfind}" instead of "\texttt{:find}".
 
-A nice way to directly start Vim to edit a file somewhere in the \verb!'path'!:
+A nice way to directly start Vim to edit a file somewhere in the \texttt{'path'}:
 
 \begin{Verbatim}[samepage=true]
  vim "+find stdio.h"
 \end{Verbatim}
 
-This finds the file "\verb!stdio.h!" in your value of \verb!'path'!.
-The quotes are necessary to have one argument |\verb!:h -+c!|.
+This finds the file "\texttt{stdio.h}" in your value of \texttt{'path'}.
+The quotes are necessary to have one argument |\texttt{:h -+c}|.
 \subsection{The buffer list}
 \label{The buffer list}
 The Vim editor uses the term buffer to describe a file being edited.
@@ -277,7 +277,7 @@ When you finish changing the buffer, you write the contents of the buffer to the
 Buffers not only contain file contents, but also all the marks, settings, and other stuff that goes with it.
 \subsubsection{Hidden buffers}
 Suppose you are editing the file one.txt and need to edit the file two.txt.
-You could simply use "\verb!:edit two.txt!", but since you made changes to one.txt that won't work.
+You could simply use "\texttt{:edit two.txt}", but since you made changes to one.txt that won't work.
 You also don't want to write one.txt yet.
 Vim has a solution for you:
 
@@ -285,11 +285,11 @@ Vim has a solution for you:
  :hide edit two.txt
 \end{Verbatim}
 
-The buffer "\verb!one.txt!" disappears from the screen, but Vim still knows that you are editing this buffer, so it keeps the modified text.
+The buffer "\texttt{one.txt}" disappears from the screen, but Vim still knows that you are editing this buffer, so it keeps the modified text.
 This is called a hidden buffer: The buffer contains text, but you can't see it.
 
-The argument of "\verb!:hide!" is another command.
-"\verb!:hide!" makes that command behave as if the \verb!'hidden'! option was set.
+The argument of "\texttt{:hide}" is another command.
+"\texttt{:hide}" makes that command behave as if the \texttt{'hidden'} option was set.
 You could also set this option yourself.
 The effect is that when any buffer is abandoned, it becomes hidden.
 
@@ -339,14 +339,14 @@ Then the name of the file and the line number where the cursor was the last time
  
 The flags that can appear are these (from left to right):
 \begin{center} \begin{tabular}{c l}
-				\verb!u! &  Buffer is unlisted |\verb!:h unlisted-buffer!|. \\
-				\verb!  %! &  Current buffer. \\
-				\verb!  #! &  Alternate buffer. \\
-				\verb!    a! & Buffer is loaded and displayed. \\
-				\verb!    h! & Buffer is loaded but hidden. \\
-				\verb!      =! & Buffer is read-only. \\
-				\verb!      -! & Buffer is not modifiable, the \verb!'modifiable'! option is off. \\
-				\verb!        +! & Buffer has been modified. \\
+				\texttt{u} &  Buffer is unlisted |\texttt{:h unlisted-buffer}|. \\
+				\texttt{  %} &  Current buffer. \\
+				\texttt{  #} &  Alternate buffer. \\
+				\texttt{    a} & Buffer is loaded and displayed. \\
+				\texttt{    h} & Buffer is loaded but hidden. \\
+				\texttt{      =} & Buffer is read-only. \\
+				\texttt{      -} & Buffer is not modifiable, the \texttt{'modifiable'} option is off. \\
+				\texttt{        +} & Buffer has been modified. \\
 \end{tabular} \end{center}
 \subsubsection{Editing a buffer}
 You can edit a buffer by its number.
@@ -365,7 +365,7 @@ You can use the name, or part of it, instead:
 
 Vim will find the best match for the name you type.
 If there is only one buffer that matches the name, it will be used.
-In this case "\verb!help.txt!".
+In this case "\texttt{help.txt}".
 
 To open a buffer in a new window:
 
@@ -378,10 +378,10 @@ This works with a name as well.
 You can move around in the buffer list with these commands:
 
 \begin{center} \begin{tabular}{l l}
-				\verb!:bnext! & go to next buffer \\
-				\verb!:bprevious! & go to previous buffer \\
-				\verb!:bfirst! & go to the first buffer \\
-				\verb!:blast! & go to the last buffer
+				\texttt{:bnext} & go to next buffer \\
+				\texttt{:bprevious} & go to previous buffer \\
+				\texttt{:bfirst} & go to the first buffer \\
+				\texttt{:blast} & go to the last buffer
 \end{tabular} \end{center}
 To remove a buffer from the list, use this command:
 
@@ -396,9 +396,9 @@ If you delete the current buffer, the current window will be closed.
 If it was the last window, Vim will find another buffer to edit.
 You can't be editing nothing!
 
-\emph{Note}: Even after removing the buffer with "\verb!:bdelete!" Vim still remembers it.
-It's actually made "unlisted", it no longer appears in the list from "\verb!:buffers!".
-The "\verb5:buffers!5" command will list unlisted buffers (yes, Vim can do the impossible).
-To really make Vim forget about a buffer, use "\verb!:bwipe!".
-Also see the \verb!'buflisted'! option.
+\emph{Note}: Even after removing the buffer with "\texttt{:bdelete}" Vim still remembers it.
+It's actually made "unlisted", it no longer appears in the list from "\texttt{:buffers}".
+The "\texttt{:buffers!}" command will list unlisted buffers (yes, Vim can do the impossible).
+To really make Vim forget about a buffer, use "\texttt{:bwipe}".
+Also see the \texttt{'buflisted'} option.
 \clearpage

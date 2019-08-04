@@ -1,7 +1,7 @@
 \section{00. Introduction to Vim}
 \label{ref}
 \label{reference}
-\localtableofcontentswithrelativedepth{+1}
+%\localtableofcontentswithrelativedepth{+1}
 \subsection{Introduction}
 \label{intro}
 Vim stands for Vi IMproved.
@@ -10,18 +10,18 @@ Vim is a text editor which includes almost all the commands from the Unix progra
 It is very useful for editing programs and other plain text.
 All commands are given with the keyboard.
 This has the advantage that you can keep your fingers on the keyboard and your eyes on the screen.
-For those who want it, there is mouse support and a GUI version with scrollbars and menus (see |\verb!:h gui.txt!|).
+For those who want it, there is mouse support and a GUI version with scrollbars and menus (see |\texttt{:h gui.txt}|).
 
-An overview of this manual can be found in the file "help.txt", |\verb!:h help.txt!|.
-It can be accessed from within Vim with the <Help> or <F1> key and with the |\verb!:help!| command (just type "\verb!:help!", without the bars or quotes).
-The \verb!'helpfile'! option can be set to the name of the help file, in case it is not located in the default place.
+An overview of this manual can be found in the file "help.txt", |\texttt{:h help.txt}|.
+It can be accessed from within Vim with the <Help> or <F1> key and with the |\texttt{:help}| command (just type "\texttt{:help}", without the bars or quotes).
+The \texttt{'helpfile'} option can be set to the name of the help file, in case it is not located in the default place.
 
 Throughout this manual the differences between Vi and Vim are mentioned in curly braces, like this: \{Vi does not have on-line help\}.
-See |\verb!:h vi_diff.txt!| for a summary of the differences between Vim and Vi.
+See |\texttt{:h vi_diff.txt}| for a summary of the differences between Vim and Vi.
 
 This manual refers to Vim on various machines.
 There may be small differences between different computers and terminals.
-Besides the remarks given in this document, there is a separate document for each supported system, see |\verb!:h sys-file-list!|.
+Besides the remarks given in this document, there is a separate document for each supported system, see |\texttt{:h sys-file-list}|.
 
 \phantomsection
 \label{pronounce}
@@ -88,7 +88,7 @@ Read this if you have problems.
 \label{new}
 \label{usenet}
 Usenet News group where Vim is discussed:\newline
-\verb!comp.editors!\newline
+\texttt{comp.editors}\newline
 This group is also for other editors.
 If you write about Vim, don't forget to mention that.
 
@@ -98,7 +98,7 @@ If you write about Vim, don't forget to mention that.
 There are several mailing lists for Vim:
 \begin{itemize}
 				\item 
-								\verb!vim@vim.org!
+								\texttt{vim@vim.org}
 								For discussions about using existing versions of Vim: Useful mappings, questions, answers, where to get a specific version, etc.
 								There are quite a few people watching this list and answering questions, also for beginners.
 								Don't hesitate to ask your question here.
@@ -106,23 +106,23 @@ There are several mailing lists for Vim:
 				\item
 								\label{vim-dev}
 								\label{vimdev}
-								\verb!vim-dev@vim.org!
+								\texttt{vim-dev@vim.org}
 								For discussions about changing Vim: New features, porting, patches, beta-test versions, etc.
 
 				\item
 								\label{vim-annouce}
-								\verb!vim-announce@vim.org!
+								\texttt{vim-announce@vim.org}
 								Announcements about new versions of Vim; also for beta-test versions and ports to different systems.
 								This is a read-only list.
 
 				\item
 								\label{vim-multibyte}
-								\verb!vim-multibyte@vim.org!
+								\texttt{vim-multibyte@vim.org}
 								For discussions about using and improving the multi-byte aspects of Vim.
 
 				\item
 								\label{vim-mac}
-								\verb!vim-mac@vim.org!
+								\texttt{vim-mac@vim.org}
 								For discussions about using and improving the Macintosh version of Vim.
 
 				\item
@@ -151,7 +151,7 @@ For more information and archives look on the Vim maillist page: \url{http://www
 \label{bugs}
 \label{bug-reports}
 \label{bugreport.vim}
-Send bug reports to: Vim bugs \verb!bugs@vim.org!.
+Send bug reports to: Vim bugs \texttt{bugs@vim.org}.
 This is not a maillist but the message is redirected to the Vim maintainer.
 Please be brief; all the time that is spent on answering mail is subtracted from the time that is spent on improving Vim!
 Always give a reproducible example and try to find out which settings or other things influence the appearance of the bug.
@@ -167,7 +167,7 @@ This will create a file "bugreport.txt" in the current directory, with a lot of 
 Before sending this out, check if it doesn't contain any confidential information!
 
 If Vim crashes, please try to find out where.
-You can find help on this here: |\verb!:h debug.txt!|.
+You can find help on this here: |\texttt{:h debug.txt}|.
 
 In case of doubt or when you wonder if the problem has already been fixed but
 you can't find a fix for it, become a member of the vim-dev maillist and ask
@@ -183,14 +183,14 @@ It is used for a time-stamp check of the edited file and the swap file, which is
 
 There might be a year 2038 problem, when the seconds don't fit in a 32 bit int anymore.
 This depends on the compiler, libraries and operating system.
-Specifically, \verb!time_t! and the \verb!ctime()! function are used.
-And the \verb!time_t! is stored in four bytes in the swap file.
+Specifically, \texttt{time_t} and the \texttt{ctime()} function are used.
+And the \texttt{time_t} is stored in four bytes in the swap file.
 But that's only used for printing a file date/time for recovery, it will never affect normal editing.
 
-The Vim \verb!strftime()! function directly uses the \verb!strftime()! system function.
-\verb!localtime()! uses the \verb!time()! system function.
-\verb!getftime()! uses the time
-returned by the \verb!stat()! system function.
+The Vim \texttt{strftime()} function directly uses the \texttt{strftime()} system function.
+\texttt{localtime()} uses the \texttt{time()} system function.
+\texttt{getftime()} uses the time
+returned by the \texttt{stat()} system function.
 If your system libraries are year 2000 compliant, Vim is too.
 
 The user may create scripts for Vim that use external commands.
@@ -231,7 +231,7 @@ Vim would never have become what it is now, without the help of these people!
 				Chris \& John Downey & xvi (ideas for multi-windows version)\\
 				Henk Elbers & first VMS port\\
 				Daniel Elstner & GTK+ 2 port\\
-				Eric Fischer & Mac port, \verb!'cindent'!, and other improvements\\
+				Eric Fischer & Mac port, \texttt{'cindent'}, and other improvements\\
 				Benji Fisher & Answering lots of user questions\\
 				Bill Foster & Athena GUI port\\
 				Google & Lets me work on Vim one day a week\\
@@ -289,7 +289,7 @@ In this documentation there are several references to other versions of Vi:
 \label{vi}
 Vi "the original".
 Without further remarks this is the version of Vi that appeared in Sun OS 4.x.
-\verb!:version! returns "Version 3.7, 6/7/85".
+\texttt{:version} returns "Version 3.7, 6/7/85".
 Sometimes other versions are referred to.
 Only runs under Unix.
 Source code only available with a license.
@@ -300,7 +300,7 @@ More information on Vi can be found through: \url{http://vi-editor.org} [doesn't
 From the IEEE standard 1003.2, Part 2: Shell and utilities.
 Generally known as "Posix".
 This is a textual description of how Vi is supposed to work.
-See |\verb!:h posix-compliance!|.
+See |\texttt{:h posix-compliance}|.
 
 \subsubsection{Nvi}
 \label{Nvi}
@@ -308,7 +308,7 @@ The "New" Vi.
 The version of Vi that comes with BSD 4.4 and FreeBSD.
 Very good compatibility with the original Vi, with a few extensions.
 The version used is 1.79.
-\verb!:version! returns "Version 1.79 (10/23/96)".
+\texttt{:version} returns "Version 1.79 (10/23/96)".
 There has been no release the last few years, although there is a development version 1.81.
 Source code is freely available.
 
@@ -323,10 +323,10 @@ Source code is freely available.
 \subsection{Notation}
 \label{notation}
 When syntax highlighting is used to read this, text that is not typed literally is often highlighted with the Special group.
-These are items in \verb![]!, \verb!{}! and \verb!<>!, and \verb!CTRL-X!.
+These are items in \texttt{[]}, \texttt{{}} and \texttt{<>}, and \texttt{CTRL-X}.
 
 Note that Vim uses all possible characters in commands.
-Sometimes the \verb![]!, \verb!{}! and \verb!<>! are part of what you type, the context should make this clear.
+Sometimes the \texttt{[]}, \texttt{{}} and \texttt{<>} are part of what you type, the context should make this clear.
 
 \begin{description}
 				\item[[]]
@@ -338,12 +338,12 @@ Sometimes the \verb![]!, \verb!{}! and \verb!<>! are part of what you type, the 
 								If no number is given, a count of one is used, unless otherwise noted.
 								Note that in this manual the [count] is not mentioned in the description of the command, but only in the explanation.
 								This was done to make the commands easier to look up.
-								If the \verb!'showcmd'! option is on, the (partially) entered count is shown at the bottom of the window.
-								You can use <Del> to erase the last digit (|\verb!:h N<Del>!|).
+								If the \texttt{'showcmd'} option is on, the (partially) entered count is shown at the bottom of the window.
+								You can use <Del> to erase the last digit (|\texttt{:h N<Del>}|).
 
 				\item[["x]]
 								\label{[quotex]}
-								See |\verb!:h registers!|.
+								See |\texttt{:h registers}|.
 								An optional register designation where text can be stored.
 								The x is a single character between 'a' and 'z' or 'A' and 'Z' or '"'', and in some cases (with the put command) between '0' and '9', '\%', '\#', or others.
 								The uppercase and lowercase letter designate the same register, but the lowercase letter is used to overwrite the previous register contents, while the uppercase letter is used to append to the previous register contents.
@@ -357,25 +357,24 @@ Sometimes the \verb![]!, \verb!{}! and \verb!<>! are part of what you type, the 
 				\item[\{char1-char2\}]
 								\label{{char1-char2}}
 								A single character from the range char1 to char2.
-								For example: \verb!{a-z}! is a lowercase letter.
+								For example: \texttt{{a-z}} is a lowercase letter.
 								Multiple ranges may be concatenated.
-								For example, \verb!{a-zA-Z0-9}! is any alphanumeric character.
+								For example, \texttt{{a-zA-Z0-9}} is any alphanumeric character.
 
 				\item[\{motion\}]
 								\label{{motion}}
 								\label{movement}
 								A command that moves the cursor.
-								These are explained in |\verb!:h motion.txt!|.
+								These are explained in |\texttt{:h motion.txt}|.
 								Examples:
-								\begin{center}
-												\begin{tabular}{c c}
-																\verb!w! & to start of next word\\
-																\verb!b! & to begin of current word\\
-																\verb!4j! & four lines down\\
-												\verb!/The<CR>! & to next occurrence of "The"\\
+								\begin{center} \begin{tabular}{l l}
+																\texttt{w} & to start of next word\\
+																\texttt{b} & to begin of current word\\
+																\texttt{4j} & four lines down\\
+												\texttt{/The<CR>} & to next occurrence of "The"\\
 												\end{tabular}
 								\end{center}
-								This is used after an |\verb!:h operator!| command to move over the text that is to be operated upon.
+								This is used after an |\texttt{:h operator}| command to move over the text that is to be operated upon.
 								\begin{itemize}
 												\item If the motion includes a count and the operator also has a count, the two counts are multiplied.
 																For example: "2d3w" deletes six words.
@@ -386,7 +385,7 @@ Sometimes the \verb![]!, \verb!{}! and \verb!<>! are part of what you type, the 
 												\item Ex commands can be used to move the cursor.
 																This can be used to call a function that does some complicated motion.
 																The motion is always characterwise exclusive, no matter what ":" command is used.
-																This means it's impossible to include the last character of a line without the line break (unless \verb!'virtualedit'! is set).
+																This means it's impossible to include the last character of a line without the line break (unless \texttt{'virtualedit'} is set).
 																If the Ex command changes the text before where the operator starts or jumps to another buffer the result is unpredictable.
 																It is possible to change the text further down.
 																Jumping to another buffer is possible if the current buffer is not unloaded.
@@ -396,8 +395,8 @@ Sometimes the \verb![]!, \verb!{}! and \verb!<>! are part of what you type, the 
 								\label{{Visual}}
 								A selected text area.
 								It is started with the "v", "V", or CTRL-V command, then any cursor movement command can be used to change the end of the selected text.
-								This is used before an |\verb!:h operator!| command to highlight the text that is to be operated upon.
-								See |\verb!:h Visual-mode!|.
+								This is used before an |\texttt{:h operator}| command to highlight the text that is to be operated upon.
+								See |\texttt{:h Visual-mode}|.
 
 				\item[<character>]
 								\label{<character>}
@@ -409,14 +408,14 @@ Sometimes the \verb![]!, \verb!{}! and \verb!<>! are part of what you type, the 
 
 				\item[CTRL-\{char\}]
 								\label{CTRL-{char}}
-								\verb!{char}! typed as a control character; that is, typing \verb!{char}! while holding the CTRL key down.
-								The case of \verb!{char}! does not matter; thus CTRL-A and CTRL-a are equivalent.
+								\texttt{{char}} typed as a control character; that is, typing \texttt{{char}} while holding the CTRL key down.
+								The case of \texttt{{char}} does not matter; thus CTRL-A and CTRL-a are equivalent.
 								But on some terminals, using the SHIFT key will produce another code, don't use it then.
 
-				\item[\verb!'option'!]
+				\item[\texttt{'option'}]
 								\label{'option'}
 								An option, or parameter, that can be set to a value, is enclosed in single quotes.
-								See |\verb!:h options!|.
+								See |\texttt{:h options}|.
 
 				\item["command"]
 								\label{quotecommandquote}
@@ -427,7 +426,7 @@ Sometimes the \verb![]!, \verb!{}! and \verb!<>! are part of what you type, the 
 								\label{key-codes}
 								\label{keycodes}
 These names for keys are used in the documentation.
-They can also be used with the "\verb!:map!" command (insert the key name by pressing CTRL-K and then the key you want the name for).
+They can also be used with the "\texttt{:map}" command (insert the key name by pressing CTRL-K and then the key you want the name for).
 
 \begin{tabularx}{\textwidth}{|c|X|c|c|c|} % the 5 cm is completely arbitrary but it seems to work in the page
 				\hline
@@ -449,7 +448,7 @@ They can also be used with the "\verb!:map!" command (insert the key name by pre
 				<CSI>    & command sequence intro    & ALT-Esc    & 155                 & \label{<CSI>}\\
 				<xCSI>   & CSI when typed in the GUI &            &                     & \label{<xCSI>}\\
 
-				<EOL> & end-of-line (can be <CR>, <LF> or <CR><LF>, depends on system and \verb!'fileformat'!) & & & \label{<EOL>}\\ %OK pour les &
+				<EOL> & end-of-line (can be <CR>, <LF> or <CR><LF>, depends on system and \texttt{'fileformat'}) & & & \label{<EOL>}\\ %OK pour les &
 
 				<Up>             & cursor-up                      &  &  & \label{cursor-up} \label{cursor_up}\\
 				<Down>           & cursor-down                    &  &  & \label{cursor-down} \label{cursor_down}\\
@@ -498,7 +497,7 @@ It will be recognized only after typing another key.
 127 is the decimal ASCII value for the delete key, which is always recognized.
 Some delete keys send another value, in which case this value is obtained from the termcap entry "kD".
 Both values have the same effect.
-Also see |\verb!:h :fixdel!|.
+Also see |\texttt{:h :fixdel}|.
 
 \textit{Note}: The keypad keys are used in the same way as the corresponding "normal" keys.
 For example, <kHome> has the same effect as <Home>.
@@ -509,7 +508,7 @@ Mapping <kHome> will not work then.
 \phantomsection
 \label{<>}
 Examples are often given in the <> notation.
-Sometimes this is just to make clear what you need to type, but often it can be typed literally, e.g., with the "\verb!:map!" command.
+Sometimes this is just to make clear what you need to type, but often it can be typed literally, e.g., with the "\texttt{:map}" command.
 The rules are:
 \begin{enumerate}
 				\item Any printable characters are typed directly, except backslash and '<'
@@ -533,19 +532,19 @@ The rules are:
 \end{enumerate}
 \end{description}
 
-If you want to use the full <> notation in Vim, you have to make sure the '<' flag is excluded from \verb!'cpoptions'! (when \verb!'compatible'! is not set, it already is by default).
+If you want to use the full <> notation in Vim, you have to make sure the '<' flag is excluded from \texttt{'cpoptions'} (when \texttt{'compatible'} is not set, it already is by default).
 \begin{Verbatim}[samepage=true]
  :set cpo-=<
 \end{Verbatim}
 The <> notation uses <lt> to escape the special meaning of key names.
-Using a backslash also works, but only when \verb!'cpoptions'! does not include the \verb!'B'! flag.
+Using a backslash also works, but only when \texttt{'cpoptions'} does not include the \texttt{'B'} flag.
 
 Examples for mapping CTRL-H to the six characters "<Home>":
 \begin{Verbatim}[samepage=true]
  :imap <C-H> \<Home>
  :imap <C-H> <lt>Home>
 \end{Verbatim}
-The first one only works when the \verb!'B'! flag is not in \verb!'cpoptions'!.
+The first one only works when the \texttt{'B'} flag is not in \texttt{'cpoptions'}.
 The second one always works.
 To get a literal "<lt>" in a mapping:
 \begin{Verbatim}[samepage=true]
@@ -554,7 +553,7 @@ To get a literal "<lt>" in a mapping:
 
 For mapping, abbreviation and menu commands you can then copy-paste the examples and use them directly.
 Or type them literally, including the '<' and '>' characters.
-This does NOT work for other commands, like "\verb!:set!" and "\verb!:autocmd!"!
+This does NOT work for other commands, like "\texttt{:set}" and "\texttt{:autocmd}"!
 
 \subsection{Modes, introduction}
 \label{vim-modes-intro}
@@ -566,31 +565,31 @@ Vim has six BASIC modes:
 \label{Normal-mode}
 \label{command-mode}
 In Normal mode you can enter all the normal editor commands.
-If you start the editor you are in this mode (unless you have set the \verb!'insertmode'! option, see below).
+If you start the editor you are in this mode (unless you have set the \texttt{'insertmode'} option, see below).
 This is also known as command mode.
 
 \subsubsection{Visual mode}
 This is like Normal mode, but the movement commands extend a highlighted area.
 When a non-movement command is used, it is executed for the highlighted area.
-See |\verb!:h Visual-mode!|.
-If the \verb!'showmode'! option is on \verb!-- VISUAL --! is shown
+See |\texttt{:h Visual-mode}|.
+If the \texttt{'showmode'} option is on \texttt{-- VISUAL --} is shown
 at the bottom of the window.
 
 \subsubsection{Select mode}
 This looks most like the MS-Windows selection mode.
 Typing a printable character deletes the selection and starts Insert mode.
-See |\verb!:h Select-mode!|.
-If the \verb!'showmode'! option is on \verb!-- SELECT --! is shown at the bottom of the window.
+See |\texttt{:h Select-mode}|.
+If the \texttt{'showmode'} option is on \texttt{-- SELECT --} is shown at the bottom of the window.
 
 \subsubsection{Insert mode}
 In Insert mode the text you type is inserted into the buffer.
-See |\verb!:h Insert-mode!|.
-If the \verb!'showmode'! option is on \verb!-- INSERT --! is shown at the bottom of the window.
+See |\texttt{:h Insert-mode}|.
+If the \texttt{'showmode'} option is on \texttt{-- INSERT --} is shown at the bottom of the window.
 
 \subsubsection{Command-line mode, Cmdlinemode}
 In Command-line mode (also called Cmdline mode) you can enter one line of text at the bottom of the window.
 This is for the Ex commands, ":", the pattern search commands, "?" and "/", and the filter command, "!".
-|\verb!:h Cmdline-mode!|
+|\texttt{:h Cmdline-mode}|
 
 \subsubsection{Ex mode}
 Like Command-line mode, but after entering a command you remain in Ex mode.
@@ -603,34 +602,34 @@ There are six ADDITIONAL modes.  These are variants of the BASIC modes:
 \subsubsection{Operator-pending mode}
 \label{Operator-pending}
 \label{Operator-pending-mode}
-This is like Normal mode, but after an operator command has started, and Vim is waiting for a \verb!{motion}! to specify the text that the operator will work on.
+This is like Normal mode, but after an operator command has started, and Vim is waiting for a \texttt{{motion}} to specify the text that the operator will work on.
 
 \subsubsection{Replace mode}
 Replace mode is a special case of Insert mode.
 You can do the same things as in Insert mode, but for each character you enter, one character of the existing text is deleted.
-See |\verb!:h Replace-mode!|.
-If the \verb!'showmode'! option is on \verb!-- REPLACE --! is shown at the bottom of the window.
+See |\texttt{:h Replace-mode}|.
+If the \texttt{'showmode'} option is on \texttt{-- REPLACE --} is shown at the bottom of the window.
 
 \subsubsection{Virtual Replace mode}
 Virtual Replace mode is similar to Replace mode, but instead of file characters you are replacing screen real estate.
-See |\verb!:h Virtual-Replace-mode!|.
-If the \verb!'showmode'! option is on \verb!-- VREPLACE --! is shown at the bottom of the window.
+See |\texttt{:h Virtual-Replace-mode}|.
+If the \texttt{'showmode'} option is on \texttt{-- VREPLACE --} is shown at the bottom of the window.
 
 \subsubsection{Insert Normal mode}
 Entered when CTRL-O given in Insert mode.
 This is like Normal mode, but after executing one command Vim returns to Insert mode.
-If the \verb!'showmode'! option is on \verb!-- (insert) --! is shown at the bottom of the window.
+If the \texttt{'showmode'} option is on \texttt{-- (insert) --} is shown at the bottom of the window.
 
 \subsubsection{Insert Visual mode}
 Entered when starting a Visual selection from Insert mode, e.g., by using CTRL-O and then "v", "V" or CTRL-V.
 When the Visual selection ends, Vim returns to Insert mode.
-If the \verb!'showmode'! option is on \verb!-- (insert) VISUAL --! is shown at the bottom of the window.
+If the \texttt{'showmode'} option is on \texttt{-- (insert) VISUAL --} is shown at the bottom of the window.
 
 \subsubsection{Insert Select mode}
 Entered when starting Select mode from Insert mode.
 E.g., by dragging the mouse or <S-Right>.
 When the Select mode ends, Vim returns to Insert mode.
-If the \verb!'showmode'! option is on \verb!-- (insert) SELECT --!
+If the \texttt{'showmode'} option is on \texttt{-- (insert) SELECT --}
 is shown at the bottom of the window.
 
 \subsection{Switching from mode to mode}
@@ -658,7 +657,7 @@ However, when pressing <Esc> after using CTRL-O in Insert mode you get a beep bu
 
 \begin{itemize}
 				\item *1 Go from Normal mode to Insert mode by giving the command "i", "I", "a", "A", "o", "O", "c", "C", "s" or "S".
-				\item *2 Go from Visual mode to Normal mode by giving a non-movement command, which causes the command to be executed, or by hitting <Esc> "v", "V" or "CTRL-V" (see |\verb!:h v_v!|), which just stops Visual mode without side effects.
+				\item *2 Go from Visual mode to Normal mode by giving a non-movement command, which causes the command to be executed, or by hitting <Esc> "v", "V" or "CTRL-V" (see |\texttt{:h v_v}|), which just stops Visual mode without side effects.
 				\item *3 Go from Command-line mode to Normal mode by:
 								\begin{itemize}
 												\item Hitting <CR> or <NL>, which causes the entered command to be executed.
@@ -666,25 +665,25 @@ However, when pressing <Esc> after using CTRL-O in Insert mode you get a beep bu
 												\item Hitting CTRL-C or <Esc>, which quits the command-line without executing
 																the command.
 								\end{itemize}
-								In the last case <Esc> may be the character defined with the \verb!'wildchar'! option, in which case it will start command-line completion.
+								In the last case <Esc> may be the character defined with the \texttt{'wildchar'} option, in which case it will start command-line completion.
 								You can ignore that and type <Esc> again.
 								\{Vi: when hitting <Esc> the command-line is executed.
 								This is unexpected for most people; therefore it was changed in Vim.
 								But when the <Esc> is part of a mapping, the command-line is executed.
-								If you want the Vi behaviour also when typing <Esc>, use "\verb!:cmap ^V<Esc> ^V^M!"\}
+								If you want the Vi behaviour also when typing <Esc>, use "\texttt{:cmap ^V<Esc> ^V^M}"\}
 				\item *4 Go from Normal to Select mode by:
 								\begin{itemize}
-												\item use the mouse to select text while \verb!'selectmode'! contains "mouse"
-												\item use a non-printable command to move the cursor while keeping the Shift key pressed, and the \verb!'selectmode'! option contains "key"
-												\item use "v", "V" or "CTRL-V" while \verb!'selectmode'! contains "cmd"
-												\item use "gh", "gH" or "g CTRL-H"  |\verb!:h g_CTRL-H!|
+												\item use the mouse to select text while \texttt{'selectmode'} contains "mouse"
+												\item use a non-printable command to move the cursor while keeping the Shift key pressed, and the \texttt{'selectmode'} option contains "key"
+												\item use "v", "V" or "CTRL-V" while \texttt{'selectmode'} contains "cmd"
+												\item use "gh", "gH" or "g CTRL-H"  |\texttt{:h g_CTRL-H}|
 								\end{itemize}
 				\item *5 Go from Select mode to Normal mode by using a non-printable command to move the cursor, without keeping the Shift key pressed.
 				\item *6 Go from Select mode to Insert mode by typing a printable character.
 								The selection is deleted and the character is inserted.
 \end{itemize}
 
-If the \verb!'insertmode'! option is on, editing a file will start in Insert mode.
+If the \texttt{'insertmode'} option is on, editing a file will start in Insert mode.
 
 \phantomsection
 \label{CTRL-backslash_CTRL-N}
@@ -694,16 +693,16 @@ If the \verb!'insertmode'! option is on, editing a file will start in Insert mod
 Additionally the command CTRL-\textbackslash CTRL-N or <C-\textbackslash><C-N> can be used to go to Normal mode from any other mode.
 This can be used to make sure Vim is in Normal mode, without causing a beep like <Esc> would.
 However, this does not work in Ex mode.
-When used after a command that takes an argument, such as |f| or |\verb!:h m!|, the timeout set with \verb!ttimeoutlen! applies.
+When used after a command that takes an argument, such as |f| or |\texttt{:h m}|, the timeout set with \texttt{ttimeoutlen} applies.
 
 \phantomsection
 \label{CTRL-backslash_CTRL-G}
 \label{i_CTRL-backslash_CTRL-G}
 \label{c_CTRL-backslash_CTRL-G}
 \label{v_CTRL-backslash_CTRL-G}
-The command CTRL-\textbackslash CTRL-G or <C-\textbackslash><C-G> can be used to go to Insert mode when \verb!'insertmode'! is set.
+The command CTRL-\textbackslash CTRL-G or <C-\textbackslash><C-G> can be used to go to Insert mode when \texttt{'insertmode'} is set.
 Otherwise it goes to Normal mode.
-This can be used to make sure Vim is in the mode indicated by \verb!'insertmode'!, without knowing in what mode Vim currently is.
+This can be used to make sure Vim is in the mode indicated by \texttt{'insertmode'}, without knowing in what mode Vim currently is.
 
 \subsubsection{Q}
 \label{Q}
@@ -722,16 +721,16 @@ This is a bit like typing ":" commands one after another, except:
 \end{itemize}
 In fact, you are editing the lines with the "standard" line-input editing commands (<Del> or <BS> to erase, CTRL-U to kill the whole line).
 Vim will enter this mode by default if it's invoked as "ex" on the command-line.
-Use the "\verb!:vi!" command |\verb!:h :visual!| to exit "Ex" mode.
-Note: In older versions of Vim "Q" formatted text, that is now done with |\verb!:h gq!|.
+Use the "\texttt{:vi}" command |\texttt{:h :visual}| to exit "Ex" mode.
+Note: In older versions of Vim "Q" formatted text, that is now done with |\texttt{:h gq}|.
 But if you use the
-|\verb!:h vimrc_example.vim!| script "Q" works like "gq".
+|\texttt{:h vimrc_example.vim}| script "Q" works like "gq".
 
 \subsubsection{gQ}
 \label{gQ}
 Switch to "Ex" mode like with "Q", but really behave like typing ":" commands after another.
 All command line editing, completion etc. is available.
-Use the "\verb!:vi!" command |\verb!:h :visual!| to exit "Ex" mode.
+Use the "\texttt{:vi}" command |\texttt{:h :visual}| to exit "Ex" mode.
 \{not in Vi\}
 
 \subsection{The window contents}
@@ -739,15 +738,15 @@ Use the "\verb!:vi!" command |\verb!:h :visual!| to exit "Ex" mode.
 In Normal mode and Insert/Replace mode the screen window will show the current contents of the buffer: What You See Is What You Get.
 There are two exceptions:
 \begin{itemize}
-				\item When the \verb!'cpoptions'! option contains \verb!$!,  and the change is within one line, the text is not directly deleted, but a \verb!$ is! put at the last deleted character.
+				\item When the \texttt{'cpoptions'} option contains \texttt{\$},  and the change is within one line, the text is not directly deleted, but a \texttt{\$ is} put at the last deleted character.
 				\item When inserting text in one window, other windows on the same text are not updated until the insert is finished.
 \end{itemize}
 \{Vi: The screen is not always updated on slow terminals\}
 
-Lines longer than the window width will wrap, unless the \verb!'wrap'! option is off (see below).
-The \verb!'linebreak'! option can be set to wrap at a blank character.
+Lines longer than the window width will wrap, unless the \texttt{'wrap'} option is off (see below).
+The \texttt{'linebreak'} option can be set to wrap at a blank character.
 
-If the window has room after the last line of the buffer, Vim will show \verb!~! in the first column of the last lines in the window, like this:
+If the window has room after the last line of the buffer, Vim will show \texttt{~} in the first column of the last lines in the window, like this:
 \begin{Verbatim}[samepage=true]
 		+-----------------------+
 		|some line              |
@@ -757,9 +756,9 @@ If the window has room after the last line of the buffer, Vim will show \verb!~!
 		+-----------------------+
 \end{Verbatim}
 
-Thus the \verb!~! lines indicate that the end of the buffer was reached.
+Thus the \texttt{~} lines indicate that the end of the buffer was reached.
 
-If the last line in a window doesn't fit, Vim will indicate this with a \verb'@' in the first column of the last lines in the window, like this:
+If the last line in a window doesn't fit, Vim will indicate this with a \texttt{@} in the first column of the last lines in the window, like this:
 
 \begin{Verbatim}[samepage=true]
 		+-----------------------+
@@ -772,7 +771,7 @@ If the last line in a window doesn't fit, Vim will indicate this with a \verb'@'
 
 Thus the '@' lines indicate that there is a line that doesn't fit in the window.
 
-When the "lastline" flag is present in the \verb!'display'! option, you will not see \verb'@' characters at the left side of window.
+When the "lastline" flag is present in the \texttt{'display'} option, you will not see \texttt{@} characters at the left side of window.
 If the last line doesn't fit completely, only the part that fits is shown, and the last three characters of the last line are replaced with "@@@", like this:
 
 \begin{Verbatim}[samepage=true]
@@ -789,38 +788,38 @@ Vim will show only part of the line, around where the cursor is.
 There are no special characters shown, so that you can edit all parts of this line.
 \{Vi: gives an "internal error" on lines that do not fit in the window\}
 
-The '@' occasion in the \verb!'highlight'! option can be used to set special highlighting for the '@' and \verb'~' characters.
+The '@' occasion in the \texttt{'highlight'} option can be used to set special highlighting for the '@' and \texttt{~} characters.
 This makes it possible to distinguish them from real characters in the buffer.
 
-The \verb!'showbreak'! option contains the string to put in front of wrapped lines.
+The \texttt{'showbreak'} option contains the string to put in front of wrapped lines.
 
 \phantomsection
 \label{wrap-off}
-If the \verb!'wrap'! option is off, long lines will not wrap.
+If the \texttt{'wrap'} option is off, long lines will not wrap.
 Only the part that fits on the screen is shown.
 If the cursor is moved to a part of the line that is not shown, the screen is scrolled horizontally.
 The advantage of this method is that columns are shown as they are and lines that cannot fit on the screen can be edited.
 The disadvantage is that you cannot see all the characters of a line at once.
-The \verb!'sidescroll'! option can be set to the minimal number of columns to scroll.
-\{Vi: has no \verb!'wrap'! option\}
+The \texttt{'sidescroll'} option can be set to the minimal number of columns to scroll.
+\{Vi: has no \texttt{'wrap'} option\}
 
 All normal ASCII characters are displayed directly on the screen.
 The <Tab> is replaced with the number of spaces that it represents.
-Other non-printing characters are replaced with "\textasciicircum \verb!{char}",! where \verb!{char}! is the non-printing character with 64 added.
+Other non-printing characters are replaced with "\textasciicircum \texttt{{char}",} where \texttt{{char}} is the non-printing character with 64 added.
 Thus character 7 (bell) will be shown as "\textasciicircum G".
 Characters between 127 and 160 are replaced with "\textasciitilde \{char\}", where \{char\} is the character with 64 subtracted.
 These characters occupy more than one position on the screen.
 The cursor can only be positioned on the first one.
 
- If you set the \verb!'number'! option, all lines will be preceded with their
+ If you set the \texttt{'number'} option, all lines will be preceded with their
  number.  Tip: If you don't like wrapping lines to mix with the line numbers,
- set the \verb!'showbreak'! option to eight spaces:
+ set the \texttt{'showbreak'} option to eight spaces:
 \begin{Verbatim}[samepage=true]
 		:set showbreak=\ \ \ \ \ \ \ \ 
 \end{Verbatim}
 
-If you set the \verb!'list'! option, <Tab> characters will not be shown as several spaces, but as "\textasciicircum I".
-A \verb!$! will be placed at the end of the line, so you can find trailing blanks.
+If you set the \texttt{'list'} option, <Tab> characters will not be shown as several spaces, but as "\textasciicircum I".
+A \texttt{\$} will be placed at the end of the line, so you can find trailing blanks.
 
 In Command-line mode only the command-line itself is shown correctly.
 The display of the buffer contents is updated as soon as you go back to Command mode.
@@ -831,13 +830,13 @@ The status messages will only be used if an option is on:
 				\begin{tabular}{|c|c|c|c|}
 								\hline
 								status message     & option     & default & Unix default\\ \hline
-								current mode       & \verb!'showmode'! & on      & on\\ \hline
-								command characters & \verb!'showcmd'!  & on      & off\\ \hline
-								cursor position    & \verb!'ruler'!    & off     & off\\ \hline
+								current mode       & \texttt{'showmode'} & on      & on\\ \hline
+								command characters & \texttt{'showcmd'}  & on      & off\\ \hline
+								cursor position    & \texttt{'ruler'}    & off     & off\\ \hline
 				\end{tabular}
 \end{center}
 
-The current mode is \verb"-- INSERT --" or \verb"-- REPLACE --", see |\verb!:h 'showmode'!|.
+The current mode is \texttt{-- INSERT --} or \texttt{-- REPLACE --}, see |\texttt{:h 'showmode'}|.
 The command characters are those that you typed but were not used yet.
 \{Vi: does not show the characters you typed or the cursor position\}
 
@@ -850,7 +849,7 @@ If there is an error, an error message will be shown for at least one second (in
 \{Vi: error messages may be overwritten with other messages before you have a chance to read them\}
 
 Some commands show how many lines were affected.
-Above which threshold this happens can be controlled with the \verb!'report'! option (default 2).
+Above which threshold this happens can be controlled with the \texttt{'report'} option (default 2).
 
 On the Amiga Vim will run in a CLI window.
 The name Vim and the full name of the current file name will be shown in the title bar.
