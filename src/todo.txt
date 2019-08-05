@@ -1,16 +1,8 @@
 TODO
-* Convert \verb to texttt{}
-	* grep for \\verb
-	* @s each file
-	* /\\verb for strays
-		* @j and @t for backslashes @v for others
-		* /\$ i\<Esc>
-		* /_ i\<Esc>
-		* @a i\<Esc> (searches for & without \s)
-		* /% i\<Esc>
-		* /\^ @h
-		* @c to escape {\{\}}
-* single and double quotes are a mess
+* \localtableofcontentswithrelativedepth {etoc}
+	- I tried updating etoc
+	- Not sure if I did it correctly
+* single and double quotes are a mess {csquotes} I think
 * Go through table formatting
 	* grep for \begin{center}
 	* grep for {tabular[x]}
@@ -62,6 +54,17 @@ vf!c\texttt{;r}
 @z
 
 DONE
++ 2019-08-05 Convert \verb to texttt{}
+	+ 2019-08-05 grep for \\verb
+	+ 2019-08-05 @s each file
+	+ 2019-08-05 /\\verb for strays
+		+ 2019-08-05 @j and @t for backslashes @v for others
+		+ 2019-08-05 /\$ i\<Esc>
+		+ 2019-08-05 /_ i\<Esc>
+		+ 2019-08-05 @a i\<Esc> (searches for & without \s)
+		+ 2019-08-05 /% i\<Esc>
+		+ 2019-08-05 /\^ @h
+		+ 2019-08-05 @c to escape {\{\}}
 + 2019-08-03 grep for \s{.*} in body text (@v)
 + 2019-08-02 |usr_43.tex|  Using filetypes
 + 2019-08-02 |usr_44.tex|  Your own syntax highlighted

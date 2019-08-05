@@ -3,7 +3,7 @@
 Vim comes with highlighting for a couple of hundred different file types.
 If the file you are editing isn't included, read this chapter to find out how to get this type of file highlighted.
 Also see |\texttt{:h :syn-define}| in the reference manual.
-%\localtableofcontentswithrelativedepth{+1}
+\localtableofcontentswithrelativedepth{+1}
 \subsection{Basic syntax commands}
 Using an existing syntax file to start with will save you a lot of time.
 Try finding a syntax file in \texttt{\$VIMRUNTIME/syntax} for a language that is similar.
@@ -66,9 +66,9 @@ To define a keyword, use the following form:
  :syntax keyword {group} {keyword} ...
 \end{Verbatim}
 
-The \texttt{{group}} is the name of a syntax group.
-With the "\texttt{:highlight}" command you can assign colors to a \texttt{{group}}.
-The \texttt{{keyword}} argument is an actual keyword.
+The \texttt{\{group\}} is the name of a syntax group.
+With the "\texttt{:highlight}" command you can assign colors to a \texttt{\{group\}}.
+The \texttt{\{keyword\}} argument is an actual keyword.
 Here are a few examples:
 
 \begin{Verbatim}[samepage=true]
@@ -225,10 +225,10 @@ First a xBlock starts at the \texttt{\{} in the first line.
 In the second line another \texttt{\{} is found.
 Since we are inside a xBlock item, and it contains itself, a nested xBlock item will start here.
 Thus the "\texttt{b = c}" line is inside the second level xBlock region.
-Then a \texttt\{\}} is found in the next line, which matches with the end pattern of the region.
+Then a \texttt{\}} is found in the next line, which matches with the end pattern of the region.
 This ends the nested xBlock.
-Because the \texttt\{\}} is included in the nested region, it is hidden from the first xBlock region.
-Then at the last \texttt\{\}} the first xBlock region ends.
+Because the \texttt{\}} is included in the nested region, it is hidden from the first xBlock region.
+Then at the last \texttt{\}} the first xBlock region ends.
 
 \subsubsection{Keeping the end}
 Consider the following two syntax items:
@@ -597,8 +597,8 @@ Finally, you can specify a syntax group to look for by using this command:
      \ grouphere {group-name} {pattern}
 \end{Verbatim}
 
-This tells Vim that when it sees \texttt{{pattern}} the syntax group named \texttt{{group-name}} begins just after the pattern given.
-The \texttt{{sync-group-name}} is used to give a name to this synchronization specification.
+This tells Vim that when it sees \texttt{\{pattern\}} the syntax group named \texttt{\{group-name\}} begins just after the pattern given.
+The \texttt{\{sync-group-name\}} is used to give a name to this synchronization specification.
 For example, the sh scripting language begins an if statement with "\texttt{if}" and ends it with "\texttt{fi}":
 
 \begin{Verbatim}[samepage=true]

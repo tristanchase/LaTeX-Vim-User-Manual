@@ -3,20 +3,20 @@ In chapter 4 several ways to make small changes were explained.  This chapter
 goes into making changes that are repeated or can affect a large amount of
 text.  The Visual mode allows doing various things with blocks of text.  Use
 an external program to do really complicated things.
-%\localtableofcontentswithrelativedepth{+1}
+\localtableofcontentswithrelativedepth{+1}
 \subsection{Record and playback commands}
 The "\texttt{.}" command repeats the preceding change.
 But what if you want to do something more complex than a single change?  That's where command recording comes in.
 There are three steps:
 
 \begin{enumerate}
-				\item The "\texttt{q{register}}" command starts recording keystrokes into the register named \texttt{{register}.}
+				\item The "\texttt{q\{register\}}" command starts recording keystrokes into the register named \texttt{\{register\}}.
 								The register name must be between a and z.
 				\item Type your commands.
 				\item To finish recording, press q (without any extra character).
 \end{enumerate}
 
-You can now execute the macro by typing the command "\texttt{@{register}}".
+You can now execute the macro by typing the command "\texttt{@\{register\}}".
 
 Take a look at how to use these commands in practice.
 You have a list of filenames that look like this:
@@ -88,7 +88,7 @@ Instead, use this trick:
 				\texttt{G} & Go to the end of the file. \\
 				\texttt{o<Esc>} & Create an empty line. \\
 				\texttt{"np} & Put the text from the n register.  You now see the commands you typed as text in the file. \\
-				\texttt{{edits}} & Change the commands that were wrong.  This is just like editing text. \\
+				\texttt{\{edits\}} & Change the commands that were wrong.  This is just like editing text. \\
 				\texttt{0} & Go to the start of the line. \\
 				\texttt{"ny\$} & Yank the corrected commands into the n register. \\
 				\texttt{dd} & Delete the scratch line. \\
@@ -148,7 +148,7 @@ For example, you can change "Professor" to "Teacher" in all lines with the follo
 Most of the time, people use the abbreviated version "\texttt{:s}".
 From here on the abbreviation will be used.
 
-The "\texttt{%}" before the command specifies the command works on all lines.
+The "\texttt{\%}" before the command specifies the command works on all lines.
 Without a range, "\texttt{:s}" only works on the current line.
 More about ranges in the next section |\hyperref[Command ranges]{\texttt{Command ranges}}|.
 
@@ -225,7 +225,7 @@ A plus, for example:
 The "\texttt{:substitute}" command, and many other : commands, can be applied to a selection of lines.
 This is called a range.
 
-The simple form of a range is \texttt{{number}}, \texttt{{number}}.
+The simple form of a range is \texttt{\{number\}}, \texttt{\{number\}}.
 For example:
 
 \begin{Verbatim}[samepage=true]
@@ -360,7 +360,7 @@ The general form is:
 \end{Verbatim}
 
 This is similar to the "\texttt{:substitute}" command.
-But, instead of replacing the matched text with other text, the command \texttt{{command}} is executed.
+But, instead of replacing the matched text with other text, the command \texttt{\{command\}} is executed.
 
 \emph{Note}:
 The command executed for "\texttt{:global}" must be one that starts with a colon.
@@ -399,7 +399,7 @@ This remains effective until you use a motion command that moves the cursor hori
 Thus using "\texttt{j}" keeps it, "\texttt{h}" stops it.
 
 \subsubsection{Inserting text}
-The command  "\texttt{I{string}<Esc>}" inserts the text \texttt{{string}} in each line, just left of the visual block.
+The command  "\texttt{I\{string\}<Esc>}" inserts the text \texttt{\{string\}} in each line, just left of the visual block.
 You start by pressing CTRL-V to enter visual block mode.
 Now you move the cursor to define your block.
 Next you type I to enter Insert mode, followed by the text to insert.
@@ -569,7 +569,7 @@ It works with "v" and "\texttt{V}" selection in exactly the same way.
 If you don't want the white space to be changed, use the "\texttt{gJ}" command.
 \subsection{Reading and writing part of a file}
 When you are writing an e-mail message, you may want to include another file.
-This can be done with the "\texttt{:read {filename}}" command.
+This can be done with the "\texttt{:read \{filename\}}" command.
 The text of the file is put below the cursor line.
 
 Starting with this text:
@@ -737,8 +737,8 @@ Example:
 Vim has a very powerful set of commands, it can do anything.
 But there may still be something that an external command can do better or faster.
 
-The command "\texttt{!{motion}{program}}" takes a block of text and filters it through an external program.
-In other words, it runs the system command represented by \texttt{{program},} giving it the block of text represented by \texttt{{motion}} as input.
+The command "\texttt{!\{motion\}\{program\}}" takes a block of text and filters it through an external program.
+In other words, it runs the system command represented by \texttt{\{program\},} giving it the block of text represented by \texttt{\{motion\}} as input.
 The output of this command then replaces the selected block.
 
 Because this summarizes badly if you are unfamiliar with UNIX filters, take a look at an example.
@@ -870,3 +870,4 @@ To tell Vim to redraw the screen:
  CTRL-L
 \end{Verbatim}
 \clearpage
+

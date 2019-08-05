@@ -2,7 +2,7 @@
 Vim has various commands that aid in writing computer programs.
 Compile a program and directly jump to reported errors.
 Automatically set the indent for many languages and format comments.
-%\localtableofcontentswithrelativedepth{+1}
+\localtableofcontentswithrelativedepth{+1}
 \subsection{Compiling}
 Vim has a set of so called "\texttt{quickfix}" commands.
 They enable you to compile a program from within Vim and then go through the errors generated and fix them (hopefully).
@@ -163,7 +163,7 @@ You can go back to the previous error list with:
  :colder
 \end{Verbatim}
 
-Then use "\texttt{:clist}" and "\texttt{:cc {nr}}" to jump to the place with the warning.
+Then use "\texttt{:clist}" and "\texttt{:cc \{nr\}}" to jump to the place with the warning.
 
 To go forward to the next error list:
 
@@ -230,11 +230,11 @@ With this option enabled, when you type something such as "\texttt{if (x)}", the
 \end{Verbatim}
 
 When you type something in curly braces (\texttt{\{\}}), the text will be indented at the start and unindented at the end.
-The unindenting will happen after typing the '\texttt{}\}', since Vim can't guess what you are going to type.
+The unindenting will happen after typing the '\texttt{\}}', since Vim can't guess what you are going to type.
 
 One side effect of automatic indentation is that it helps you catch errors in your code early.
 When you type a \texttt{\}} to finish a function, only to find that the automatic indentation gives it more indent than what you expected, there is probably a \texttt{\}} missing.
-Use the "\texttt{\%}" command to find out which \texttt{{\} matches the \texttt{\}} you typed.
+Use the "\texttt{\%}" command to find out which \texttt{\{} matches the \texttt{\}} you typed.
 
 A missing \texttt{)} and \texttt{;} also cause extra indent.
 Thus if you get more white space than you would expect, check the preceding lines.
@@ -325,7 +325,7 @@ Now you need to write this in a file with a specific name:
     {directory}/indent/{filetype}.vim
 \end{Verbatim}
 
-The \texttt{{filetype}} is the name of the file type, such as "\texttt{cpp}" or "\texttt{java}".
+The \texttt{\{filetype\}} is the name of the file type, such as "\texttt{cpp}" or "\texttt{java}".
 You can see the exact name that Vim detected with this command:
 
 \begin{Verbatim}[samepage=true]
@@ -338,9 +338,9 @@ In this file the output is:
     filetype=help 
 \end{Verbatim}
 
-Thus you would use "\texttt{help}" for \texttt{{filetype}}.
+Thus you would use "\texttt{help}" for \texttt{\{filetype\}}.
 
-For the \texttt{{directory}} part you need to use your runtime directory.
+For the \texttt{\{directory\}} part you need to use your runtime directory.
 Look at the output of this command:
 
 \begin{Verbatim}[samepage=true]
@@ -354,7 +354,7 @@ Thus if the output looks like this:
     runtimepath=~/.vim,/usr/local/share/vim/vim60/runtime,~/.vim/after 
 \end{Verbatim}
 
-You use "\texttt{~/.vim}" for \texttt{{directory}}.
+You use "\texttt{~/.vim}" for \texttt{\{directory\}}.
 Then the resulting file name is:
 
 \begin{Verbatim}[samepage=true]
@@ -370,7 +370,7 @@ A bit smarter is the \texttt{'smartindent'} option.
 This is useful for languages where no indent file is available.
 \texttt{'smartindent'} is not as smart as \texttt{'cindent'}, but smarter than \texttt{'autoindent'}.
 
-With \texttt{'smartindent'} set, an extra level of indentation is added for each \texttt{\{} and removed for each \texttt\{\}}.
+With \texttt{'smartindent'} set, an extra level of indentation is added for each \texttt{\{} and removed for each \texttt{\}}.
 An extra level of indentation will also be added for any of the words in the \texttt{'cinwords'} option.
 Lines that begin with \texttt{\#} are treated specially: all indentation is removed.
 This is done so that preprocessor directives will all start in column 1.
@@ -445,7 +445,7 @@ In this example the cursor is on "\texttt{printf}":
 % cf https://stackoverflow.com/questions/3220121/verbatim-environment-inside-latex-cell
 \begin{center} \begin{tabular}{|c|c|c|}
 				\hline
-				original text & after "\texttt{>i\{\}" & after "\texttt{>a\{\}" \\ 
+				original text & after "\texttt{>i\{}" & after "\texttt{>a\{}" \\ 
 				\begin{minipage}{4cm}
 				\begin{verbatim}
 if (flag)       
@@ -673,7 +673,7 @@ The general form of an item in \texttt{'comments'} is:
     {flags}:{text}
 \end{Verbatim}
 
-The \texttt{{flags}} part can be empty, as in this case.
+The \texttt{\{flags\}} part can be empty, as in this case.
 
 Several of these items can be concatenated, separated by commas.
 This allows recognizing different types of comments at the same time.

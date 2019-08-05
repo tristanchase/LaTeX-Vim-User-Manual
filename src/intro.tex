@@ -1,7 +1,7 @@
 \section{00. Introduction to Vim}
 \label{ref}
 \label{reference}
-%\localtableofcontentswithrelativedepth{+1}
+\localtableofcontentswithrelativedepth{+1}
 \subsection{Introduction}
 \label{intro}
 Vim stands for Vi IMproved.
@@ -428,67 +428,67 @@ Sometimes the \texttt{[]}, \texttt{\{\}} and \texttt{<>} are part of what you ty
 These names for keys are used in the documentation.
 They can also be used with the "\texttt{:map}" command (insert the key name by pressing CTRL-K and then the key you want the name for).
 
-\begin{tabularx}{\textwidth}{|c|X|c|c|c|} % the 5 cm is completely arbitrary but it seems to work in the page
+\begin{center}\begin{tabularx}{\textwidth}{|l|X|l|l|} % the 5 cm is completely arbitrary but it seems to work in the page
 	
 				\hline
-				notation & meaning                   & equivalent & decimal             & value(s)\\ \hline
-				<Nul>    & zero                      & CTRL-@     & 0 (stored as 10)    & \label{<Nul>}\\
-				<BS>     & backspace                 & CTRL-H     & 8                   & \label{backspace}\\
-				<Tab>    & tab                       & CTRL-I     & 9                   & \label{tab} \label{Tab}\\
-				<NL>     & linefeed                  & CTRL-J     & 10 (used for <Nul>) & \label{linefeed}\\
-				<FF>     & formfeed                  & CTRL-L     & 12                  & \label{formfeed}\\
-				<CR>     & carriage return           & CTRL-M     & 13                  & \label{carriage-return}\\
-				<Return> & same as <CR>              &            &                     & \label{<Return>}\\
-				<Enter>  & same as <CR>              &            &                     & \label{<Enter>}\\
-				<Esc>    & escape                    & CTRL-[     & 27                  & \label{escape} \label{<Esc>}\\
-				<Space>  & space                     &            & 32                  & \label{space}\\
-				<lt>     & less-than                 & <          & 60                  & \label{<lt>}\\
-				<Bslash> & backslash                 & \          & 92                  & \label{backslash} \label{<Bslash>}\\
-				<Bar>    & vertical bar              & |          & 124                 & \label{<Bar>}\\
-				<Del>    & delete                    &            & 127\\
-				<CSI>    & command sequence intro    & ALT-Esc    & 155                 & \label{<CSI>}\\
-				<xCSI>   & CSI when typed in the GUI &            &                     & \label{<xCSI>}\\
+				notation & meaning                   & equivalent & decimal              value(s)\\ \hline
+				<Nul>    & zero                      & CTRL-@     & 0 (stored as 10)     \label{<Nul>}\\
+				<BS>     & backspace                 & CTRL-H     & 8                    \label{backspace}\\
+				<Tab>    & tab                       & CTRL-I     & 9                    \label{tab} \label{Tab}\\
+				<NL>     & linefeed                  & CTRL-J     & 10 (used for <Nul>)  \label{linefeed}\\
+				<FF>     & formfeed                  & CTRL-L     & 12                   \label{formfeed}\\
+				<CR>     & carriage return           & CTRL-M     & 13                   \label{carriage-return}\\
+				<Return> & same as <CR>              &            &                      \label{<Return>}\\
+				<Enter>  & same as <CR>              &            &                      \label{<Enter>}\\
+				<Esc>    & escape                    & CTRL-[     & 27                   \label{escape} \label{<Esc>}\\
+				<Space>  & space                     &            & 32                   \label{space}\\
+				<lt>     & less-than                 & <          & 60                   \label{<lt>}\\
+				<Bslash> & backslash                 & \textbackslash{}          & 92                   \label{backslash} \label{<Bslash>}\\
+				<Bar>    & vertical bar              & |          & 124                  \label{<Bar>}\\
+				<Del>    & delete                    &            & 127			 \\
+				<CSI>    & command sequence intro    & ALT-Esc    & 155                  \label{<CSI>}\\
+				<xCSI>   & CSI when typed in the GUI &            &                      \label{<xCSI>}\\
 
-				<EOL> & end-of-line (can be <CR>, <LF> or <CR><LF>, depends on system and `fileformat') & & & \label{<EOL>}\\ %OK pour les &
+				<EOL> & end-of-line (can be <CR>, <LF> or <CR><LF>, depends on system and `fileformat') & &  \label{<EOL>}\\ %OK pour les &
 
-				<Up>             & cursor-up                      &  &  & \label{cursor-up} \label{cursor_up}\\
-				<Down>           & cursor-down                    &  &  & \label{cursor-down} \label{cursor_down}\\
-				<Left>           & cursor-left                    &  &  & \label{cursor-left} \label{cursor_left}\\
-				<Right>          & cursor-right                   &  &  & \label{cursor-right} \label{cursor_right}\\
-				<S-Up>           & shift-cursor-up                &  &  & \\
-				<S-Down>         & shift-cursor-down              &  &  & \\
-				<S-Left>         & shift-cursor-left              &  &  & \\
-				<S-Right>        & shift-cursor-right             &  &  & \\
-				<C-Left>         & control-cursor-left            &  &  & \\
-				<C-Right>        & control-cursor-right           &  &  & \\
-				<F1> - <F12>     & function keys 1 to 12          &  &  & \label{function_key} \label{function-key}\\
-				<S-F1> - <S-F12> & shift-function keys 1 to 12    &  &  & \label{<S-F1>}\\
-				<Help>           & help key                       &  &  & \\
-				<Undo>           & undo key                       &  &  & \\
-				<Insert>         & insert key                     &  &  & \\
-				<Home>           & home                           &  &  & \label{home}\\
-				<End>            & end                            &  &  & \label{end}\\
-				<PageUp>         & page-up                        &  &  & \label{page_up} \label{page-up}\\
-				<PageDown>       & page-down                      &  &  & \label{page_down} \label{page-down}\\
-				<kHome>          & keypad home (upper left)       &  &  & \label{keypad-home}\\
-				<kEnd>           & keypad end (lower left)        &  &  & \label{keypad-end}\\
-				<kPageUp>        & keypad page-up (upper right)   &  &  & \label{keypad-page-up}\\
-				<kPageDown>      & keypad page-down (lower right) &  &  & \label{keypad-page-down}\\
-				<kPlus>          & keypad +                       &  &  & \label{keypad-plus}\\
-				<kMinus>         & keypad -                       &  &  & \label{keypad-minus}\\
-				<kMultiply>      & keypad *                       &  &  & \label{keypad-multiply}\\
-				<kDivide>        & keypad /                       &  &  & \label{keypad-divide}\\
-				<kEnter>         & keypad Enter                   &  &  & \label{keypad-enter}\\
-				<kPoint>         & keypad Decimal point           &  &  & \label{keypad-point}\\
-				<k0> - <k9>      & keypad 0 to 9                  &  &  & \label{keypad-0} \label{keypad-9}\\
-				<S-...>          & shift-key                      &  &  & \label{shift} \label{<S-}\\
-				<C-...>          & control-key                    &  &  & \label{control} \label{ctrl} \label{<C-}\\
-				<M-...>          & alt-key or meta-key            &  &  & \label{meta} \label{alt} \label{<M-}\\
-				<A-...>          & same as <M-...>                &  &  & \label{<A-}\\
-				<D-...>          & command-key (Macintosh only)   &  &  & \label{<D-}\\
-				<t\_xx>          & key with "xx" entry in termcap &  &  & \\ \hline
+				<Up>             & cursor-up                      &  &   \label{cursor-up} \label{cursor_up}\\
+				<Down>           & cursor-down                    &  &   \label{cursor-down} \label{cursor_down}\\
+				<Left>           & cursor-left                    &  &   \label{cursor-left} \label{cursor_left}\\
+				<Right>          & cursor-right                   &  &   \label{cursor-right} \label{cursor_right}\\
+				<S-Up>           & shift-cursor-up                &  &   \\
+				<S-Down>         & shift-cursor-down              &  &   \\
+				<S-Left>         & shift-cursor-left              &  &   \\
+				<S-Right>        & shift-cursor-right             &  &   \\
+				<C-Left>         & control-cursor-left            &  &   \\
+				<C-Right>        & control-cursor-right           &  &   \\
+				<F1> - <F12>     & function keys 1 to 12          &  &   \label{function_key} \label{function-key}\\
+				<S-F1> - <S-F12> & shift-function keys 1 to 12    &  &   \label{<S-F1>}\\
+				<Help>           & help key                       &  &   \\
+				<Undo>           & undo key                       &  &   \\
+				<Insert>         & insert key                     &  &   \\
+				<Home>           & home                           &  &   \label{home}\\
+				<End>            & end                            &  &   \label{end}\\
+				<PageUp>         & page-up                        &  &   \label{page_up} \label{page-up}\\
+				<PageDown>       & page-down                      &  &   \label{page_down} \label{page-down}\\
+				<kHome>          & keypad home (upper left)       &  &   \label{keypad-home}\\
+				<kEnd>           & keypad end (lower left)        &  &   \label{keypad-end}\\
+				<kPageUp>        & keypad page-up (upper right)   &  &   \label{keypad-page-up}\\
+				<kPageDown>      & keypad page-down (lower right) &  &   \label{keypad-page-down}\\
+				<kPlus>          & keypad +                       &  &   \label{keypad-plus}\\
+				<kMinus>         & keypad -                       &  &   \label{keypad-minus}\\
+				<kMultiply>      & keypad *                       &  &   \label{keypad-multiply}\\
+				<kDivide>        & keypad /                       &  &   \label{keypad-divide}\\
+				<kEnter>         & keypad Enter                   &  &   \label{keypad-enter}\\
+				<kPoint>         & keypad Decimal point           &  &   \label{keypad-point}\\
+				<k0> - <k9>      & keypad 0 to 9                  &  &   \label{keypad-0} \label{keypad-9}\\
+				<S-...>          & shift-key                      &  &   \label{shift} \label{<S-}\\
+				<C-...>          & control-key                    &  &   \label{control} \label{ctrl} \label{<C-}\\
+				<M-...>          & alt-key or meta-key            &  &   \label{meta} \label{alt} \label{<M-}\\
+				<A-...>          & same as <M-...>                &  &   \label{<A-}\\
+				<D-...>          & command-key (Macintosh only)   &  &   \label{<D-}\\
+				<t\_xx>          & key with "xx" entry in termcap &  &   \\ \hline
 
-\end{tabularx}
+\end{tabularx} \end{center}
 
 \textit{Note}: The shifted cursor keys, the help key, and the undo key are only available on a few terminals.
 On the Amiga, shifted function key 10 produces a code (CSI) that is also used by key sequences.
@@ -806,7 +806,7 @@ The \texttt{'sidescroll'} option can be set to the minimal number of columns to 
 
 All normal ASCII characters are displayed directly on the screen.
 The <Tab> is replaced with the number of spaces that it represents.
-Other non-printing characters are replaced with "\textasciicircum \texttt{\{char\}"}, where \texttt{\{char\}} is the non-printing character with 64 added.
+Other non-printing characters are replaced with "\textasciicircum \texttt{\{char\}}", where \texttt{\{char\}} is the non-printing character with 64 added.
 Thus character 7 (bell) will be shown as "\textasciicircum G".
 Characters between 127 and 160 are replaced with "\textasciitilde \{char\}", where \{char\} is the character with 64 subtracted.
 These characters occupy more than one position on the screen.

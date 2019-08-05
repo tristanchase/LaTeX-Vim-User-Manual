@@ -3,7 +3,7 @@ Vim is an extensible editor.
 You can take a sequence of commands you use often and turn it into a new command.
 Or redefine an existing command.
 Autocommands make it possible to execute commands automatically.
-%\localtableofcontentswithrelativedepth{+1}
+\localtableofcontentswithrelativedepth{+1}
 \subsection{Key mapping}
 \label{Key mapping}
 A simple mapping was explained in section |\hyperref[Simple mappings]{\texttt{Simple mappings}}|.
@@ -73,7 +73,7 @@ Here is an overview of map commands and in which mode they work:
 Operator-pending mode is when you typed an operator character, such as "\texttt{d}" or "\texttt{y}", and you are expected to type the motion command or a text object.
 Thus when you type "\texttt{dw}", the "\texttt{w}" is entered in operator-pending mode.
 
-Suppose that you want to define <F7> so that the command d<F7> deletes a C program block (text enclosed in curly braces, \texttt{{}}).
+Suppose that you want to define <F7> so that the command d<F7> deletes a C program block (text enclosed in curly braces, \texttt{\{\}}).
 Similarly y<F7> would yank the program block into the unnamed register.
 Therefore, what you need to do is to define <F7> to select the current program block.
 You can do this with the following command:
@@ -82,19 +82,19 @@ You can do this with the following command:
  :omap <F7> a{
 \end{Verbatim}
 
-This causes <F7> to perform a select block "\texttt{a{}" in operator-pending mode, just like you typed it.
-This mapping is useful if typing a \texttt{{} on your keyboard is a bit difficult.
+This causes <F7> to perform a select block "\texttt{a\{}" in operator-pending mode, just like you typed it.
+This mapping is useful if typing a \texttt{\{} on your keyboard is a bit difficult.
 \subsubsection{Listing mappings}
 To see the currently defined mappings, use "\texttt{:map}" without arguments.
 Or one of the variants that include the mode in which they work.
 The output could look like this:
 
 \begin{center} \begin{tabular}{l l l}
-				 & \texttt{\_g} & \texttt{:call MyGrep(1)<CR>} \\
-				\texttt{v} &  \texttt{<F2>} & \texttt{:s/^/> /<CR>:noh<CR>``} \\
-				\texttt{n} &  \texttt{<F2>} & \texttt{:.,\$s/^/> /<CR>:noh<CR>``} \\
-				 & \texttt{<xHome>} & \texttt{<Home>} \\
-				 & \texttt{<xEnd>} & \texttt{<End>} \\
+				& \texttt{\_g} & \texttt{:call MyGrep(1)<CR>} \\
+				\texttt{v} &  \texttt{<F2>} & \texttt{:s/\string^/> /<CR>:noh<CR>``} \\
+				\texttt{n} &  \texttt{<F2>} & \texttt{:.,\$s/\string^/> /<CR>:noh<CR>``} \\
+				& \texttt{<xHome>} & \texttt{<Home>} \\
+				& \texttt{<xEnd>} & \texttt{<End>} \\
 \end{tabular} \end{center}
 
 The first column of the list shows in which mode the mapping is effective.
@@ -389,11 +389,11 @@ Some commands take a range as their argument.
 To tell Vim that you are defining such a command, you need to specify a -range option.
 The values for this option are as follows:
 
-\begin{center} \begin{tabular}{l l}
-				\texttt{-range; & Range is allowed} default is the current line. \\
-				\texttt{-range=%; & Range is allowed} default is the whole file. \\
-				\texttt{-range={count}; & Range is allowed} the last number in it is used as a single number whose default is \texttt{{count}}. \\
-\end{tabular} \end{center}
+\begin{center} \begin{tabularx}{0.75\textwidth}{l X}
+				\texttt{-range} & Range is allowed; default is the current line. \\
+				\texttt{-range=\%} & Range is allowed; default is the whole file. \\
+				\texttt{-range=\{count\}} & Range is allowed; the last number in it is used as a single number whose default is \texttt{\{count\}}. \\
+\end{tabularx} \end{center}
 
 When a range is specified, the keywords <line1> and <line2> get the values of the first and last line in the range.
 For example, the following command defines the SaveIt command, which writes out the specified range to the file "\texttt{save\_file}":
@@ -404,18 +404,14 @@ For example, the following command defines the SaveIt command, which writes out 
 \subsubsection{Other options}
 Some of the other options and keywords are as follows:
 
-\begin{center} \begin{tabular} {l l} % This went off the page; changed to tabularx TMC
-				\texttt{-count={number}} & The command can take a count whose default is \texttt{{number}}.
-				The resulting count can be used through the <count> keyword. \\
-				\texttt{-bang} & You can use a \texttt{!}.
-				If present, using <bang> will result in a \texttt{!}. \\
-				\texttt{-register} & You can specify a register.
-				(The default is the unnamed register.)
-				The register specification is available as <reg> (a.k.a. <register>). \\
-				\texttt{-complete={type}} & Type of command-line completion used.  See |\texttt{:h :command-completion}| for the list of possible values. \\
+\begin{center} \begin{tabularx} {\textwidth}{l X} % This went off the page; changed to tabularx TMC
+				\texttt{-count=\{number\}} & The command can take a count whose default is \texttt{\{number\}}.  The resulting count can be used through the <count> keyword. \\
+				\texttt{-bang} & You can use a \texttt{!}.  If present, using <bang> will result in a \texttt{!}. \\
+				\texttt{-register} & You can specify a register.  (The default is the unnamed register.) The register specification is available as <reg> (a.k.a. <register>). \\
+				\texttt{-complete=\{type\}} & Type of command-line completion used.  See |\texttt{:h :command-completion}| for the list of possible values. \\
 				\texttt{-bar} & The command can be followed by \texttt{|} and another command, or \texttt{"} and a comment. \\
 				\texttt{-buffer} & The command is only available for the current buffer. \\
-\end{tabular} \end{center}
+\end{tabularx} \end{center}
 
 Finally, you have the <lt> keyword.
 It stands for the character \texttt{<}.
@@ -487,10 +483,10 @@ The general form of the \texttt{:autocmd} command is as follows:
 
 The \texttt{[group]} name is optional.
 It is used in managing and calling the commands (more on this later).
-The \texttt{{events}} parameter is a list of events (comma separated) that trigger the command.
-\texttt{{file\_pattern}} is a filename, usually with wildcards.
+The \texttt{\{events\}} parameter is a list of events (comma separated) that trigger the command.
+\texttt{\{file\_pattern\}} is a filename, usually with wildcards.
 For example, using "\texttt{*.txt}" makes the autocommand be used for all files whose name end in "\texttt{.txt}".
-The optional \texttt{[nested]} flag allows for nesting of autocommands (see below), and finally, \texttt{{command}} is the command to be executed.
+The optional \texttt{[nested]} flag allows for nesting of autocommands (see below), and finally, \texttt{\{command\}} is the command to be executed.
 
 \subsubsection{Events}
 One of the most useful events is \texttt{BufReadPost}.
@@ -521,7 +517,7 @@ When starting to edit a new file, you could make Vim insert a skeleton:
 See |\texttt{:h autocmd-events}| for a complete list of events.
 
 \subsubsection{Patterns}
-The \texttt{{file\_pattern}} argument can actually be a comma-separated list of file patterns.
+The \texttt{\{file\_pattern\}} argument can actually be a comma-separated list of file patterns.
 For example: "\texttt{*.c,*.h}" matches files ending in "\texttt{.c}" and "\texttt{.h}".
 
 The usual file wildcards can be used.
@@ -532,7 +528,7 @@ Here is a summary of the most often used ones:
 				\texttt{?} & Match any character once \\
 				\texttt{[abc]} & Match the character a, b or c \\
 				\texttt{.} & Matches a dot \\
-				\texttt{a{b,c}} & Matches "ab" and "ac" \\
+				\texttt{a\{b,c\}} & Matches "ab" and "ac" \\
 \end{tabular} \end{center}
 
 When the pattern includes a slash (/) Vim will compare directory names.
@@ -548,7 +544,7 @@ This makes it easier to write the pattern, since a backslash has a special meani
 It also makes the autocommands portable.
 
 \subsubsection{Deleting}
-To delete an autocommand, use the same command as what it was defined with, but leave out the \texttt{{command}} at the end and use a \texttt{!}.
+To delete an autocommand, use the same command as what it was defined with, but leave out the \texttt{\{command\}} at the end and use a \texttt{!}.
 Example:
 
 \begin{Verbatim}[samepage=true]
@@ -585,7 +581,7 @@ To list all autocommands for the cprograms group:
 \end{Verbatim}
 
 \subsubsection{Groups}
-The \texttt{{group}} item, used when defining an autocommand, groups related autocommands together.
+The \texttt{\{group\}} item, used when defining an autocommand, groups related autocommands together.
 This can be used to delete all the autocommands in a certain group, for example.
 
 When defining several autocommands for a certain group, use the "\texttt{:augroup}" command.
@@ -695,4 +691,5 @@ To set it back to the normal behavior, make \texttt{'eventignore'} empty:
 \begin{Verbatim}[samepage=true]
  :set eventignore=
 \end{Verbatim}
+
 \clearpage

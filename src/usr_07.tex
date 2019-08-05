@@ -2,7 +2,7 @@
 No matter how many files you have, you can edit them without leaving Vim.
 Define a list of files to work on and jump from one to the other.
 Copy text from one file and put it in another one.
-%\localtableofcontentswithrelativedepth{+1}
+\localtableofcontentswithrelativedepth{+1}
 \subsection{Edit another file}
 
 So far you had to start Vim for every file you wanted to edit.
@@ -37,7 +37,7 @@ You can write the file using this command:
  :write
  \end{Verbatim}
 
-Or you can force Vim to discard your changes and edit the new file, using the force (\texttt{!:) character}
+ Or you can force Vim to discard your changes and edit the new file, using the force (\texttt{!}) character:
 
  \begin{Verbatim}[samepage=true]
  :edit! foo.txt
@@ -137,7 +137,7 @@ And to move back to the first one again:
  :first
  \end{Verbatim}
 
-There is no "\texttt{:wlast}" or "\texttt{:wfirst!" command though}
+There is no "\texttt{:wlast}" or "\texttt{:wfirst!}" command though
 
 You can use a count for "\texttt{:next}" and "\texttt{:previous}".
 To skip two files forward:
@@ -176,7 +176,7 @@ Or use a wildcard, like it's used in the shell:
  \end{Verbatim}
 
 Vim will take you to the first file in the list.
-Again, if the current file has changes, you can either write the file first, or use "\texttt{:args!!" (with }  added) to abandon the changes.
+Again, if the current file has changes, you can either write the file first, or use "\texttt{:args!}" (with ! added) to abandon the changes.
 
 DID YOU EDIT THE LAST FILE?
 \phantomsection
@@ -255,7 +255,7 @@ Thus each file has its own set of marks, they are local to the file.
 So far we were using marks with a lowercase letter.  There are also marks
 with an uppercase letter.  These are global, they can be used from any file.
 For example suppose that we are editing the file "\texttt{foo.txt}".  Go to halfway the
-file ("\texttt{50%}") and place the F mark there (F for foo):
+file ("\texttt{50\%}") and place the F mark there (F for foo):
 
  \begin{Verbatim}[samepage=true]
  50%mF
@@ -390,7 +390,7 @@ The "\texttt{yas}" command yanks a sentence like before.
 It's the \texttt{"f} that tells Vim the text should be place in the f register.
 This must come just before the yank command.
 
-Now yank three whole lines to the \texttt{l: register (l for line)}
+Now yank three whole lines to the \texttt{l} register (l for line):
 
  \begin{Verbatim}[samepage=true]
  "l3Y
