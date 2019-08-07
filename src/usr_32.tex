@@ -2,7 +2,10 @@
 Vim provides multi-level undo.
 If you undo a few changes and then make a new change you create a branch in the undo tree.
 This text is about moving through the branches.
-\localtableofcontentswithrelativedepth{+1}
+%\localtableofcontentswithrelativedepth{+1} % I couldn't get this to work TMC
+\etocsetnexttocdepth{2} % This produces the same result TMC
+\etocsettocstyle{\subsection*{Contents}}{}
+\localtableofcontents
 \subsection{Undo up to a file write}
 Sometimes you make several changes, and then discover you want to go back to when you have last written the file.
 You can do that with this command:

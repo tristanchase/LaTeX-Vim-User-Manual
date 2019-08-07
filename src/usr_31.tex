@@ -2,7 +2,10 @@
 Vim works well in a terminal, but the GUI has a few extra items.  A file
 browser can be used for commands that use a file.  A dialog to make a choice
 between alternatives.  Use keyboard shortcuts to access menu items quickly.
-\localtableofcontentswithrelativedepth{+1}
+%\localtableofcontentswithrelativedepth{+1} % I couldn't get this to work TMC
+\etocsetnexttocdepth{2} % This produces the same result TMC
+\etocsettocstyle{\subsection*{Contents}}{}
+\localtableofcontents
 \subsection{The file browser}
 When using the File/Open... menu you get a file browser.
 This makes it easier to find the file you want to edit.

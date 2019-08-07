@@ -3,7 +3,10 @@ Vim is an extensible editor.
 You can take a sequence of commands you use often and turn it into a new command.
 Or redefine an existing command.
 Autocommands make it possible to execute commands automatically.
-\localtableofcontentswithrelativedepth{+1}
+%\localtableofcontentswithrelativedepth{+1} % I couldn't get this to work TMC
+\etocsetnexttocdepth{2} % This produces the same result TMC
+\etocsettocstyle{\subsection*{Contents}}{}
+\localtableofcontents
 \subsection{Key mapping}
 \label{Key mapping}
 A simple mapping was explained in section |\hyperref[Simple mappings]{\texttt{Simple mappings}}|.

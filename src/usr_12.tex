@@ -2,7 +2,10 @@
 By combining several commands you can make Vim do nearly everything.  In this
 chapter a number of useful combinations will be presented.  This uses the
 commands introduced in the previous chapters and a few more.
-\localtableofcontentswithrelativedepth{+1}
+%\localtableofcontentswithrelativedepth{+1} % I couldn't get this to work TMC
+\etocsetnexttocdepth{2} % This produces the same result TMC
+\etocsettocstyle{\subsection*{Contents}}{}
+\localtableofcontents
 \subsection{Replace a word}
 The substitute command can be used to replace all occurrences of a word with another word:
 

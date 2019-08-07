@@ -3,7 +3,10 @@ In chapter 4 several ways to make small changes were explained.  This chapter
 goes into making changes that are repeated or can affect a large amount of
 text.  The Visual mode allows doing various things with blocks of text.  Use
 an external program to do really complicated things.
-\localtableofcontentswithrelativedepth{+1}
+%\localtableofcontentswithrelativedepth{+1} % I couldn't get this to work TMC
+\etocsetnexttocdepth{2} % This produces the same result TMC
+\etocsettocstyle{\subsection*{Contents}}{}
+\localtableofcontents
 \subsection{Record and playback commands}
 The "\texttt{.}" command repeats the preceding change.
 But what if you want to do something more complex than a single change?  That's where command recording comes in.

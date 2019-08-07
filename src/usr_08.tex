@@ -3,7 +3,10 @@ Display two different files above each other.
 Or view two locations in the file at the same time.
 See the difference between two files by putting them side by side.
 All this is possible with split windows.
-\localtableofcontentswithrelativedepth{+1}
+%\localtableofcontentswithrelativedepth{+1} % I couldn't get this to work TMC
+\etocsetnexttocdepth{2} % This produces the same result TMC
+\etocsettocstyle{\subsection*{Contents}}{}
+\localtableofcontents
 \subsection{Split a window}
 
 The easiest way to open a new window is to use the following command:

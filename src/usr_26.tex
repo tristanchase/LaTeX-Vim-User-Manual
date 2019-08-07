@@ -2,7 +2,10 @@ section{26. Repeating}
 An editing task is hardly ever unstructured.
 A change often needs to be made several times.
 In this chapter a number of useful ways to repeat a change will be explained.
-\localtableofcontentswithrelativedepth{+1}
+%\localtableofcontentswithrelativedepth{+1} % I couldn't get this to work TMC
+\etocsetnexttocdepth{2} % This produces the same result TMC
+\etocsettocstyle{\subsection*{Contents}}{}
+\localtableofcontents
 \subsection{Repeating with Visual mode}
 Visual mode is very handy for making a change in any sequence of lines.
 You can see the highlighted text, thus you can check if the correct lines are changed.

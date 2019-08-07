@@ -1,7 +1,6 @@
-This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016/Debian) (preloaded format=xelatex 2019.8.3)  5 AUG 2019 14:54
+This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016/Debian) (preloaded format=xelatex 2019.8.3)  7 AUG 2019 15:41
 entering extended mode
  restricted \write18 enabled.
- file:line:error style messages enabled.
  %&-line parsing enabled.
 **doc.tex
 (./doc.tex
@@ -1040,33 +1039,29 @@ File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 
 ] [2]
 (./intro.tex
-./intro.tex:4: Undefined control sequence.
-l.4 \localtableofcontentswithrelativedepth
-                                          {+1}
-? 
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 54.
+(Font)              <10> on input line 8.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 54.
+(Font)              <7> on input line 8.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 54.
-[3
+(Font)              <5> on input line 8.
+ [3
 
 ] [4] [5] [6] [7]
 LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <10> not available
-(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 415.
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 418.
 
-Underfull \hbox (badness 7168) in paragraph at lines 491--491
+Underfull \hbox (badness 7168) in paragraph at lines 494--494
 []|\TU/lmr/m/n/10 end-of-line (can be <CR>, <LF> or
  []
 
 
-Overfull \hbox (3.33pt too wide) in alignment at lines 491--491
+Overfull \hbox (3.33pt too wide) in alignment at lines 494--494
 [][][][] 
  []
 
 
-Overfull \hbox (25.0pt too wide) in paragraph at lines 491--491
+Overfull \hbox (25.0pt too wide) in paragraph at lines 494--494
  [] 
  []
 
@@ -1074,432 +1069,160 @@ Overfull \hbox (25.0pt too wide) in paragraph at lines 491--491
 Overfull \vbox (47.76997pt too high) has occurred while \output is active []
 
 
-[9] [10] [11] [12] [13] [14] [15] [16] [17]) (./usr_01.tex
-./usr_01.tex:4: Undefined control sequence.
-l.4 \localtableofcontentswithrelativedepth
-                                          {+1}
-? 
-[18
+[9] [10] [11] [12] [13] [14] [15] [16] [17]) (./usr_01.tex [18
 
-] [19] [20]) (./usr_02.tex
-./usr_02.tex:5: Undefined control sequence.
-l.5 \localtableofcontentswithrelativedepth
-                                          {+1}
-? 
-[21
+] [19] [20])
+(./usr_02.tex [21
 
-] [22] [23] [24] [25] [26] [27] [28]) (./usr_03.tex
-./usr_03.tex:6: Undefined control sequence.
-l.6 \localtableofcontentswithrelativedepth
-                                          {+1}
-? 
-[29
+] [22] [23] [24] [25] [26] [27] [28] [29]) (./usr_03.tex
+[30
 
-] [30] [31] [32] [33] [34] [35] [36] [37] [38]) (./usr_04.tex
-./usr_04.tex:5: Undefined control sequence.
-l.5 \localtableofcontentswithrelativedepth
-                                          {+1}
-? 
-[39
+] [31] [32] [33] [34] [35] [36] [37] [38] [39] [40]) (./usr_04.tex [41
 
-] [40] [41] [42] [43] [44] [45] [46]) (./usr_05.tex
-./usr_05.tex:5: Undefined control sequence.
-l.5 \localtableofcontentswithrelativedepth
-                                          {+1}
-? 
-[47
+]
+[42] [43] [44] [45] [46] [47] [48] [49]) (./usr_05.tex [50
 
-] [48] [49]
-Overfull \hbox (61.59505pt too wide) in alignment at lines 241--251
+] [51] [52]
+Overfull \hbox (61.59505pt too wide) in alignment at lines 244--254
  [] [] 
  []
 
-[50] [51] [52] [53] [54] [55] [56]) (./usr_06.tex
-./usr_06.tex:7: Undefined control sequence.
-l.7 \localtableofcontentswithrelativedepth
-                                          {+1}
-? r
-OK, entering \nonstopmode...
-[57
+[53] [54] [55] [56] [57] [58] [59]) (./usr_06.tex [60
 
-] [58] [59] [60]) (./usr_07.tex
-./usr_07.tex:5: Undefined control sequence.
-l.5 \localtableofcontentswithrelativedepth
-                                          {+1}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
+] [61] [62] [63])
+(./usr_07.tex [64
 
-[61
+] [65] [66] [67] [68] [69] [70]) (./usr_08.tex [71
 
-] [62] [63] [64] [65] [66] [67]) (./usr_08.tex
-./usr_08.tex:6: Undefined control sequence.
-l.6 \localtableofcontentswithrelativedepth
-                                          {+1}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
+] [72]
+[73] [74] [75] [76] [77] [78] [79] [80] [81]) (./usr_09.tex [82
 
-[68
+] [83] [84]
+[85] [86]) (./usr_10.tex [87
 
-] [69] [70] [71] [72] [73] [74] [75] [76] [77]) (./usr_09.tex
-./usr_09.tex:5: Undefined control sequence.
-l.5 \localtableofcontentswithrelativedepth
-                                          {+1}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
+] [88] [89] [90] [91] [92] [93] [94] [95] [96]
+[97] [98] [99]) (./usr_11.tex [100
 
-[78
-
-] [79] [80] [81] [82]) (./usr_10.tex
-./usr_10.tex:6: Undefined control sequence.
-l.6 \localtableofcontentswithrelativedepth
-                                          {+1}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-[83
-
-] [84] [85] [86] [87] [88] [89] [90] [91] [92] [93] [94] [95]) (./usr_11.tex
-./usr_11.tex:6: Undefined control sequence.
-l.6 \localtableofcontentswithrelativedepth
-                                          {+1}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-[96
-
-] [97] [98] [99]
-Underfull \hbox (badness 10000) in paragraph at lines 269--278
+] [101] [102] [103]
+Underfull \hbox (badness 10000) in paragraph at lines 272--281
 
  []
 
-[100]) (./usr_12.tex
-./usr_12.tex:5: Undefined control sequence.
-l.5 \localtableofcontentswithrelativedepth
-                                          {+1}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
-Overfull \hbox (19.4753pt too wide) in alignment at lines 57--57
+[104]) (./usr_12.tex
+Overfull \hbox (19.4753pt too wide) in alignment at lines 60--60
 [][] 
  []
 
-[101
+[105
 
-] [102] [103] [104] [105] [106]) (./usr_20.tex
-./usr_20.tex:5: Undefined control sequence.
-l.5 \localtableofcontentswithrelativedepth
-                                          {+1}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
+] [106] [107] [108] [109] [110]) (./usr_20.tex [111
 
-[107
+] [112] [113] [114]
+[115] [116]) (./usr_21.tex [117
 
-] [108] [109] [110] [111] [112]) (./usr_21.tex
-./usr_21.tex:5: Undefined control sequence.
-l.5 \localtableofcontentswithrelativedepth
-                                          {+1}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
+] [118] [119] [120] [121] [122] [123] [124])
+(./usr_22.tex [125
 
-[113
+] [126] [127] [128] [129] [130] [131]) (./usr_23.tex [132
 
-] [114] [115] [116] [117] [118] [119] [120]) (./usr_22.tex
-./usr_22.tex:6: Undefined control sequence.
-l.6 \localtableofcontentswithrelativedepth
-                                          {+1}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
+]
+[133] [134] [135] [136] [137]) (./usr_24.tex [138
 
-[121
+] [139] [140] [141] [142]
+[143] [144] [145] [146] [147]) (./usr_25.tex [148
 
-] [122] [123] [124] [125] [126] [127]) (./usr_23.tex
-./usr_23.tex:6: Undefined control sequence.
-l.6 \localtableofcontentswithrelativedepth
-                                          {+1}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
+] [149] [150] [151] [152]
+[153] [154] [155] [156] [157]) (./usr_26.tex [158
 
-[128
+] [159] [160] [161])
+(./usr_27.tex [162
 
-] [129] [130] [131] [132] [133]) (./usr_24.tex
-./usr_24.tex:6: Undefined control sequence.
-l.6 \localtableofcontentswithrelativedepth
-                                          {+1}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
+] [163] [164] [165] [166] [167] [168] [169] [170])
+(./usr_28.tex [171
 
-[134
-
-] [135] [136] [137] [138] [139] [140] [141] [142] [143]) (./usr_25.tex
-./usr_25.tex:5: Undefined control sequence.
-l.5 \localtableofcontentswithrelativedepth
-                                          {+1}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-[144
-
-] [145] [146] [147] [148] [149] [150] [151] [152] [153]) (./usr_26.tex
-./usr_26.tex:5: Undefined control sequence.
-l.5 \localtableofcontentswithrelativedepth
-                                          {+1}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-[154
-
-] [155] [156] [157]) (./usr_27.tex
-./usr_27.tex:7: Undefined control sequence.
-l.7 \localtableofcontentswithrelativedepth
-                                          {+1}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-[158
-
-] [159] [160] [161] [162] [163] [164] [165] [166]) (./usr_28.tex
-./usr_28.tex:5: Undefined control sequence.
-l.5 \localtableofcontentswithrelativedepth
-                                          {+1}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-[167
-
-] [168] [169] [170] [171]
-Overfull \hbox (5.06502pt too wide) in paragraph at lines 362--367
+] [172] [173] [174] [175]
+Overfull \hbox (5.06502pt too wide) in paragraph at lines 365--370
  [] 
  []
 
-[172] [173]) (./usr_29.tex
-./usr_29.tex:7: Undefined control sequence.
-l.7 \localtableofcontentswithrelativedepth
-                                          {+1}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
+[176] [177]) (./usr_29.tex [178
 
-[174
+] [179] [180] [181] [182] [183] [184] [185]
+[186] [187] [188]) (./usr_30.tex [189
 
-] [175] [176] [177] [178] [179] [180] [181] [182] [183] [184])
-(./usr_30.tex
-./usr_30.tex:5: Undefined control sequence.
-l.5 \localtableofcontentswithrelativedepth
-                                          {+1}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
+] [190] [191] [192] [193] [194] [195]
+[196] [197] [198] [199]) (./usr_31.tex [200
 
-[185
+] [201] [202] [203] [204])
+(./usr_32.tex [205
 
-] [186] [187] [188] [189] [190] [191] [192] [193] [194]) (./usr_31.tex
-./usr_31.tex:5: Undefined control sequence.
-l.5 \localtableofcontentswithrelativedepth
-                                          {+1}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
+] [206] [207]) (./usr_40.tex [208
 
-[195
-
-] [196] [197] [198]) (./usr_32.tex
-./usr_32.tex:5: Undefined control sequence.
-l.5 \localtableofcontentswithrelativedepth
-                                          {+1}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-[199
-
-] [200] [201]) (./usr_40.tex
-./usr_40.tex:6: Undefined control sequence.
-l.6 \localtableofcontentswithrelativedepth
-                                          {+1}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-[202
-
-] [203] [204] [205] [206] [207] [208]
-Overfull \hbox (20.98701pt too wide) in paragraph at lines 540--541
+] [209] [210] [211] [212]
+[213] [214]
+Overfull \hbox (20.98701pt too wide) in paragraph at lines 543--544
 []\TU/lmr/m/n/10 When including a slash, Vim matches the pattern against both t
 he full path of the file (”\TU/lmtt/m/n/10 /home/biep/readme.txt\TU/lmr/m/n/10 
 ”)
  []
 
-[209] [210] [211] [212]) (./usr_41.tex
-./usr_41.tex:6: Undefined control sequence.
-l.6 \localtableofcontentswithrelativedepth
-                                          {+1}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
+[215] [216] [217] [218]) (./usr_41.tex [219
 
-[213
-
-] [214] [215]
-Underfull \hbox (badness 1005) in paragraph at lines 289--292
+] [220] [221] [222]
+Underfull \hbox (badness 1005) in paragraph at lines 292--295
 \TU/lmr/m/n/10 Vim has a rich, yet simple way to handle expressions. You can re
 ad the definition here: |\TU/lmtt/m/n/10 :h
  []
 
-[216] [217] [218] [219] [220] [221] [222] [223] [224] [225] [226] [227]
-[228] [229] [230] [231] [232] [233] [234] [235] [236] [237] [238] [239]
-[240]
-Underfull \hbox (badness 1264) in paragraph at lines 1929--1935
+[223] [224] [225] [226] [227] [228] [229] [230] [231] [232] [233] [234]
+[235] [236] [237] [238] [239] [240] [241] [242] [243] [244] [245] [246]
+Underfull \hbox (badness 1264) in paragraph at lines 1932--1938
 \TU/lmr/m/n/10 In line 18 above, the line-continuation mechanism is used |\TU/l
 mtt/m/n/10 :h line-continuation\TU/lmr/m/n/10 |. Users with
  []
 
-[241] [242] [243] [244] [245] [246]
-Overfull \hbox (40.29503pt too wide) in paragraph at lines 2258--2266
+[247] [248] [249] [250] [251] [252]
+Overfull \hbox (40.29503pt too wide) in paragraph at lines 2261--2269
  [] 
  []
 
-[247] [248] [249]
-Overfull \hbox (101.82503pt too wide) in paragraph at lines 2437--2444
+[253] [254] [255]
+Overfull \hbox (101.82503pt too wide) in paragraph at lines 2440--2447
  [] 
  []
 
-[250] [251] [252] [253]) (./usr_42.tex
-./usr_42.tex:6: Undefined control sequence.
-l.6 \localtableofcontentswithrelativedepth
-                                          {+1}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
+[256] [257] [258] [259] [260]) (./usr_42.tex [261
 
-[254
-
-] [255] [256] [257] [258] [259]) (./usr_43.tex
-./usr_43.tex:5: Undefined control sequence.
-l.5 \localtableofcontentswithrelativedepth
-                                          {+1}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-[260
+] [262] [263] [264] [265]
+[266]) (./usr_43.tex [267
 
 ]
-Underfull \hbox (badness 1590) in paragraph at lines 121--126
+Underfull \hbox (badness 1590) in paragraph at lines 124--129
 \TU/lmr/m/n/10 First  \TU/lmtt/m/n/10 /.vim/filetype.vim \TU/lmr/m/n/10 is foun
 d. The autocommand to catch \TU/lmtt/m/n/10 *.txt \TU/lmr/m/n/10 files is defin
 ed there.
  []
 
 
-Underfull \hbox (badness 1215) in paragraph at lines 121--126
+Underfull \hbox (badness 1215) in paragraph at lines 124--129
 \TU/lmr/m/n/10 Then Vim finds the filetype.vim file in \TU/lmtt/m/n/10 $VIMRUNT
 IME\TU/lmr/m/n/10 , which is halfway \TU/lmtt/m/n/10 'runtimepath'\TU/lmr/m/n/1
 0 . Finally
  []
 
-[261] [262]) (./usr_44.tex
-./usr_44.tex:6: Undefined control sequence.
-l.6 \localtableofcontentswithrelativedepth
-                                          {+1}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
+[268] [269]) (./usr_44.tex [270
 
-[263
+] [271] [272] [273] [274] [275] [276] [277]
+[278] [279] [280] [281]) (./usr_45.tex [282
 
-] [264] [265] [266] [267] [268] [269] [270] [271] [272] [273])
-(./usr_45.tex
-./usr_45.tex:5: Undefined control sequence.
-l.5 \localtableofcontentswithrelativedepth
-                                          {+1}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
+] [283] [284] [285] [286] [287]
+[288]) (./usr_90.tex [289
 
-[274
-
-] [275] [276] [277] [278] [279] [280]) (./usr_90.tex
-./usr_90.tex:7: Undefined control sequence.
-l.7 \localtableofcontentswithrelativedepth
-                                          {+1}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-[281
-
-] [282] [283] [284] [285] [286] [287] [288])
+] [290] [291] [292] [293] [294] [295] [296] [297])
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 104.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 104.
- (./doc.aux)
+
+(./doc.aux)
 Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 104.
 Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 104.
 
@@ -1510,10 +1233,10 @@ LaTeX Warning: There were multiply-defined labels.
 Here is how much of TeX's memory you used:
  23031 strings out of 493068
  436099 string characters out of 6137721
- 643201 words of memory out of 5000000
+ 644700 words of memory out of 5000000
  26596 multiletter control sequences out of 15000+600000
  28379 words of font info for 57 fonts, out of 8000000 for 9000
  1347 hyphenation exceptions out of 8191
- 41i,14n,54p,10400b,524s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 41i,14n,54p,10400b,475s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on doc.pdf (288 pages).
+Output written on doc.pdf (297 pages).

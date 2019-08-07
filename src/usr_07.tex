@@ -2,7 +2,10 @@
 No matter how many files you have, you can edit them without leaving Vim.
 Define a list of files to work on and jump from one to the other.
 Copy text from one file and put it in another one.
-\localtableofcontentswithrelativedepth{+1}
+%\localtableofcontentswithrelativedepth{+1} % I couldn't get this to work TMC
+\etocsetnexttocdepth{2} % This produces the same result TMC
+\etocsettocstyle{\subsection*{Contents}}{}
+\localtableofcontents
 \subsection{Edit another file}
 
 So far you had to start Vim for every file you wanted to edit.

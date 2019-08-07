@@ -2,7 +2,10 @@
 Vim has a few generic features that makes it easier to enter commands.  Colon
 commands can be abbreviated, edited and repeated.  Completion is available for
 nearly everything.
-\localtableofcontentswithrelativedepth{+1}
+%\localtableofcontentswithrelativedepth{+1} % I couldn't get this to work TMC
+\etocsetnexttocdepth{2} % This produces the same result TMC
+\etocsettocstyle{\subsection*{Contents}}{}
+\localtableofcontents
 \subsection{Command line editing}
 When you use a colon (\texttt{:}) command or search for a string with \texttt{/} or \texttt{?}, Vim puts the cursor on the bottom of the screen.
 There you type the command or search pattern.

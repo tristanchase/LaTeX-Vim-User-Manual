@@ -2,8 +2,11 @@
 Text hardly ever comes in one sentence per line.
 This chapter is about breaking sentences to make them fit on a page and other formatting.
 Vim also has useful features for editing single-line paragraphs and tables.
-\localtableofcontentswithrelativedepth{+1}
 \subsection{Breaking lines}
+%\localtableofcontentswithrelativedepth{+1} % I couldn't get this to work TMC
+\etocsetnexttocdepth{2} % This produces the same result TMC
+\etocsettocstyle{\subsection*{Contents}}{}
+\localtableofcontents
 Vim has a number of functions that make dealing with text easier.
 By default, the editor does not perform automatic line breaks.
 In other words, you have to press <Enter> yourself.

@@ -3,7 +3,10 @@ By now you know that Vim is very flexible.
 This includes the menus used in the GUI.
 You can define your own menu entries to make certain commands easily accessible.
 This is for mouse-happy users only.
-\localtableofcontentswithrelativedepth{+1}
+%\localtableofcontentswithrelativedepth{+1} % I couldn't get this to work TMC
+\etocsetnexttocdepth{2} % This produces the same result TMC
+\etocsettocstyle{\subsection*{Contents}}{}
+\localtableofcontents
 \subsection{Introduction}
 The menus that Vim uses are defined in the file "\texttt{\$VIMRUNTIME/menu.vim}".
 If you want to write your own menus, you might first want to look through that file.

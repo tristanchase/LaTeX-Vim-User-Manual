@@ -4,7 +4,10 @@
 Before you can use Vim you have to install it.
 Depending on your system it's simple or easy.
 This chapter gives a few hints and also explains how upgrading to a new version is done.
-\localtableofcontentswithrelativedepth{+1}
+%\localtableofcontentswithrelativedepth{+1} % I couldn't get this to work TMC
+\etocsetnexttocdepth{2} % This produces the same result TMC
+\etocsettocstyle{\subsection*{Contents}}{}
+\localtableofcontents
 \subsection{Unix}
 First you have to decide if you are going to install Vim system-wide or for a single user.
 The installation is almost the same, but the directory where Vim is installed in differs.

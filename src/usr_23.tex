@@ -3,7 +3,10 @@ This chapter is about editing files that are not ordinary files.  With Vim you
 can edit files that are compressed or encrypted.  Some files need to be
 accessed over the internet.  With some restrictions, binary files can be
 edited as well.
-\localtableofcontentswithrelativedepth{+1}
+%\localtableofcontentswithrelativedepth{+1} % I couldn't get this to work TMC
+\etocsetnexttocdepth{2} % This produces the same result TMC
+\etocsettocstyle{\subsection*{Contents}}{}
+\localtableofcontents
 \subsection{DOS, Mac and Unix files}
 Back in the early days, the old Teletype machines used two characters to start a new line.
 One to move the carriage back to the first position (carriage return, <CR>), another to move the paper up (line feed, <LF>).

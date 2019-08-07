@@ -2,7 +2,10 @@
 Vim works in an ordinary terminal.  GVim can do the same things and a few
 more.  The GUI offers menus, a toolbar, scrollbars and other items.  This
 chapter is about these extra things that the GUI offers.
-\localtableofcontentswithrelativedepth{+1}
+%\localtableofcontentswithrelativedepth{+1} % I couldn't get this to work TMC
+\etocsetnexttocdepth{2} % This produces the same result TMC
+\etocsettocstyle{\subsection*{Contents}}{}
+\localtableofcontents
 \subsection{Parts of the GUI}
 
 You might have an icon on your desktop that starts gVim.
