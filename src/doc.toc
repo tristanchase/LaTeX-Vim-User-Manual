@@ -312,14 +312,14 @@
 \contentsline {section}{25. Editing formatted text}{148}{section*.336}
 \contentsline {subsection}{Breaking lines}{148}{section*.337}
 \etoc@startlocaltoc {20}
-\contentsline {subsubsection}{Reformatting}{149}{section*.339}
-\contentsline {subsection}{Aligning text}{150}{section*.340}
+\contentsline {subsubsection}{Reformatting}{148}{section*.339}
+\contentsline {subsection}{Aligning text}{149}{section*.340}
 \contentsline {subsubsection}{Right alignment}{150}{section*.341}
 \contentsline {subsubsection}{Left alignment}{150}{section*.342}
-\contentsline {subsubsection}{Justifying text}{151}{section*.343}
+\contentsline {subsubsection}{Justifying text}{150}{section*.343}
 \contentsline {subsection}{Indents and tabs}{151}{section*.344}
 \contentsline {subsubsection}{Increasing indent}{151}{section*.345}
-\contentsline {subsubsection}{Tabstop}{152}{section*.346}
+\contentsline {subsubsection}{Tabstop}{151}{section*.346}
 \contentsline {subsubsection}{Changing tabs}{152}{section*.347}
 \contentsline {subsection}{Dealing with long lines}{152}{section*.348}
 \contentsline {subsubsection}{Moving with wrap off}{153}{section*.349}
@@ -327,7 +327,7 @@
 \contentsline {subsubsection}{Moving by visible lines}{154}{section*.351}
 \contentsline {subsubsection}{Turning a paragraph into one line}{154}{section*.352}
 \contentsline {subsection}{Editing tables}{155}{section*.353}
-\contentsline {subsubsection}{Copying a column}{156}{section*.354}
+\contentsline {subsubsection}{Copying a column}{155}{section*.354}
 \contentsline {subsubsection}{Virtual replace mode}{156}{section*.355}
 \etoc@startlocaltoc {21}
 \contentsline {subsection}{Repeating with Visual mode}{158}{section*.357}
