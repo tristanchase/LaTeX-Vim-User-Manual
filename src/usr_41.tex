@@ -13,7 +13,7 @@ There are a lot of them, thus this is a long chapter.
 Your first experience with Vim scripts is the vimrc file.
 Vim reads it when it starts up and executes the commands.
 You can set options to values you prefer.
-And you can use any colon command in it (commands that start with a "\texttt{:}"; these are sometimes referred to as Ex commands or command-line commands).
+And you can use any colon command in it (commands that start with a ``\texttt{:}"; these are sometimes referred to as Ex commands or command-line commands).
 
 Syntax files are also Vim scripts.
 As are files that set options for a specific file type.
@@ -30,7 +30,7 @@ Let's start with a simple example:
  :endwhile
 \end{Verbatim}
 
-\emph{Note}: The "\texttt{:}" characters are not really needed here.
+\emph{Note}: The ``\texttt{:}" characters are not really needed here.
 You only need to use them when you type a command.
 In a Vim script file they can be left out.
 We will use them here anyway to make clear these are colon commands and make them stand out from Normal mode commands.
@@ -45,16 +45,16 @@ The output of the example code is:
     count is 4
 \end{Verbatim}
 
-In the first line the "\texttt{:let}" command assigns a value to a variable.
+In the first line the ``\texttt{:let}" command assigns a value to a variable.
 The generic form is:
 
 \begin{Verbatim}[samepage=true]
  :let {variable} = {expression}
 \end{Verbatim}
 
-In this case the variable name is "\texttt{i}" and the expression is a simple value, the number one.
+In this case the variable name is ``\texttt{i}" and the expression is a simple value, the number one.
 
-The "\texttt{:while}" command starts a loop.
+The ``\texttt{:while}" command starts a loop.
 The generic form is:
 
 \begin{Verbatim}[samepage=true]
@@ -63,22 +63,22 @@ The generic form is:
  :endwhile
 \end{Verbatim}
 
-The statements until the matching "\texttt{:endwhile}" are executed for as long as the condition is true.
-The condition used here is the expression "\texttt{i < 5}".
+The statements until the matching ``\texttt{:endwhile}" are executed for as long as the condition is true.
+The condition used here is the expression ``\texttt{i < 5}".
 This is true when the variable i is smaller than five.
 
 \emph{Note}: If you happen to write a while loop that keeps on running, you can interrupt it by pressing CTRL-C (CTRL-Break on MS-Windows).
 
-The "\texttt{:echo}" command prints its arguments.
-In this case the string "count is" and the value of the variable i.
+The ``\texttt{:echo}" command prints its arguments.
+In this case the string ``count is" and the value of the variable i.
 Since i is one, this will print:
 
 \begin{Verbatim}[samepage=true]
     count is 1
 \end{Verbatim}
 
-Then there is the "\texttt{:let i += 1}" command.
-This does the same thing as "\texttt{:let i = i + 1}".
+Then there is the ``\texttt{:let i += 1}" command.
+This does the same thing as ``\texttt{:let i = i + 1}".
 This adds one to the variable i and assigns the new value to the same variable.
 
 The example was given to explain the commands, but would you really want to make such a loop it can be written much more compact:
@@ -94,13 +94,13 @@ Follow the links if you are impatient.
 
 \subsubsection{Three kinds of numbers}
 Numbers can be decimal, hexadecimal or octal.
-A hexadecimal number starts with "\texttt{0x}" or "\texttt{0X}".
-For example "\texttt{0x1f}" is decimal 31.
+A hexadecimal number starts with ``\texttt{0x}" or ``\texttt{0X}".
+For example ``\texttt{0x1f}" is decimal 31.
 An octal number starts with a zero.
-"\texttt{017}" is decimal 15.
+``\texttt{017}" is decimal 15.
 Careful: don't put a zero before a decimal number, it will be interpreted as an octal number!
 
-The "\texttt{:echo}" command always prints decimal numbers.
+The ``\texttt{:echo}" command always prints decimal numbers.
 Example:
 
 \begin{Verbatim}[samepage=true]
@@ -138,7 +138,7 @@ Valid variable names are:
     LENGTH
 \end{Verbatim}
 
-Invalid names are "\texttt{foo+bar}" and "\texttt{6var}".
+Invalid names are ``\texttt{foo+bar}" and ``\texttt{6var}".
 
 These variables are global.
 To see a list of currently defined variables use this command:
@@ -148,9 +148,9 @@ To see a list of currently defined variables use this command:
 \end{Verbatim}
 
 You can use global variables everywhere.
-This also means that when the variable "\texttt{count}" is used in one script file, it might also be used in another file.
+This also means that when the variable ``\texttt{count}" is used in one script file, it might also be used in another file.
 This leads to confusion at least, and real problems at worst.
-To avoid this, you can use a variable local to a script file by prepending "\texttt{s:}".
+To avoid this, you can use a variable local to a script file by prepending ``\texttt{s:}".
 For example, one script contains this code:
 
 \begin{Verbatim}[samepage=true]
@@ -161,8 +161,8 @@ For example, one script contains this code:
  :endwhile
 \end{Verbatim}
 
-Since "\texttt{s:count}" is local to this script, you can be sure that sourcing the "\texttt{other.vim}" script will not change this variable.
-If "\texttt{other.vim}" also uses an "\texttt{s:count}" variable, it will be a different copy, local to that script.
+Since ``\texttt{s:count}" is local to this script, you can be sure that sourcing the ``\texttt{other.vim}" script will not change this variable.
+If ``\texttt{other.vim}" also uses an ``\texttt{s:count}" variable, it will be a different copy, local to that script.
 More about script-local variables here: |\texttt{:h script-variable}|.
 
 There are more kinds of variables, see |\texttt{:h internal-variables}|.
@@ -175,15 +175,15 @@ The most often used ones are:
 				\texttt{v:name} & variable predefined by Vim \\
 \end{tabular} \end{center}
 \subsubsection{Deleting variables}
-Variables take up memory and show up in the output of the "\texttt{:let}" command.
-To delete a variable use the "\texttt{:unlet}" command.
+Variables take up memory and show up in the output of the ``\texttt{:let}" command.
+To delete a variable use the ``\texttt{:unlet}" command.
 Example:
 
 \begin{Verbatim}[samepage=true]
  :unlet s:count
 \end{Verbatim}
 
-This deletes the script-local variable "\texttt{s:count}" to free up the memory it uses.
+This deletes the script-local variable ``\texttt{s:count}" to free up the memory it uses.
 If you are not sure if the variable exists, and don't want an error message when it doesn't, append !:
 
 \begin{Verbatim}[samepage=true]
@@ -202,7 +202,7 @@ Example:
  :echo "called" s:call_count "times"
 \end{Verbatim}
 
-The "\texttt{exists()}" function checks if a variable has already been defined.
+The ``\texttt{exists()}" function checks if a variable has already been defined.
 Its argument is the name of the variable you want to check.
 Not the variable itself!  If you would do this:
 
@@ -216,8 +216,8 @@ That's not what you want.
 The exclamation mark \texttt{!} negates a value.
 When the value was true, it becomes false.
 When it was false, it becomes true.
-You can read it as "not".
-Thus "\texttt{if !exists()}" can be read as "\texttt{if not exists()}".
+You can read it as ``not".
+Thus ``\texttt{if !exists()}" can be read as ``\texttt{if not exists()}".
 
 What Vim calls true is anything that is not zero.
 Zero is false.
@@ -231,12 +231,12 @@ Thus look out for this:
   :if "true"
 \end{Verbatim}
 
-The "\texttt{true!" will be interpreted as a zero, thus as false}
+The ``\texttt{true!" will be interpreted as a zero, thus as false}
 \subsubsection{String variables and constants}
 So far only numbers were used for the variable value.
 Strings can be used as well.
 Numbers and strings are the basic types of variables that Vim supports.
-The type is dynamic, it is set each time when assigning a value to the variable with "\texttt{:let}".
+The type is dynamic, it is set each time when assigning a value to the variable with ``\texttt{:let}".
 More about types in |\hyperref[Lists and Dictionaries]{\texttt{Lists and Dictionaries}}|.
 
 To assign a string value to a variable, you need to use a string constant.
@@ -278,14 +278,14 @@ Here are a few useful ones:
 		\texttt{\textbackslash{}r} & <CR>, <Enter> \\
 		\texttt{\textbackslash{}e} & <Esc> \\
 		\texttt{\textbackslash{}b} & <BS>, backspace \\
-		\texttt{\textbackslash{}"} & " \\
+		\texttt{\textbackslash{}"} & \texttt{"} \\
 		\texttt{\textbackslash{}\textbackslash{}} & \textbackslash{}, backslash \\
 		\texttt{\textbackslash{}<Esc>} & <Esc> \\
 		\texttt{\textbackslash{}<C-W>} & CTRL-W \\
 \end{tabular} \end{center}
 
 The last two are just examples.
-The  "\texttt{\textbackslash{}<name>}" form can be used to include the special key "\texttt{name}".
+The  ``\texttt{\textbackslash{}<name>}" form can be used to include the special key ``\texttt{name}".
 
 See |\texttt{:h expr-quote}| for the full list of special items in a string.
 \subsection{Expressions}
@@ -321,9 +321,9 @@ Example:
  :let &ic = save_ic
 \end{Verbatim}
 
-This makes sure the "The Start" pattern is used with the \texttt{'ignorecase'} option off.
+This makes sure the ``The Start" pattern is used with the \texttt{'ignorecase'} option off.
 Still, it keeps the value that the user had set.
-(Another way to do this would be to add "\texttt{\textbackslash{}C}" to the pattern, see |\texttt{:h /\textbackslash{}C}|.)
+(Another way to do this would be to add ``\texttt{\textbackslash{}C}" to the pattern, see |\texttt{:h /\textbackslash{}C}|.)
 
 \subsubsection{Mathematics}
 It becomes more interesting if we combine these basic items.
@@ -354,7 +354,7 @@ Example:
     30
 \end{Verbatim}
 
-Strings can be concatenated with "\texttt{.}".
+Strings can be concatenated with ``\texttt{.}".
 Example:
 
 \begin{Verbatim}[samepage=true]
@@ -362,7 +362,7 @@ Example:
     foobar
 \end{Verbatim}
 
-When the "\texttt{:echo}" command gets multiple arguments, it separates them with a space.
+When the ``\texttt{:echo}" command gets multiple arguments, it separates them with a space.
 In the example the argument is a single expression, thus no space is inserted.
 
 Borrowed from the C language is the conditional expression:
@@ -371,7 +371,7 @@ Borrowed from the C language is the conditional expression:
     a ? b : c
 \end{Verbatim}
 
-If "\texttt{a}" evaluates to true "\texttt{b}" is used, otherwise "\texttt{c}" is used.
+If ``\texttt{a}" evaluates to true ``\texttt{b}" is used, otherwise ``\texttt{c}" is used.
 Example:
 
 \begin{Verbatim}[samepage=true]
@@ -386,7 +386,7 @@ The three parts of the constructs are always evaluated first, thus you could see
     (a) ? (b) : (c)
 \end{Verbatim}
 \subsection{Conditionals}
-The "\texttt{:if}" commands executes the following statements, until the matching "\texttt{:endif}", only when a condition is met.
+The ``\texttt{:if}" commands executes the following statements, until the matching ``\texttt{:endif}", only when a condition is met.
 The generic form is:
 
 \begin{Verbatim}[samepage=true]
@@ -397,9 +397,9 @@ The generic form is:
 
 Only when the expression \texttt{{condition}} evaluates to true (non-zero) will the \texttt{{statements}} be executed.
 These must still be valid commands.
-If they contain garbage, Vim won't be able to find the "\texttt{:endif}".
+If they contain garbage, Vim won't be able to find the ``\texttt{:endif}".
 
-You can also use "\texttt{:else}".
+You can also use ``\texttt{:else}".
 The generic form for this is:
 
 \begin{Verbatim}[samepage=true]
@@ -412,7 +412,7 @@ The generic form for this is:
 
 The second \texttt{{statements}} is only executed if the first one isn't.
 
-Finally, there is "\texttt{:elseif}":
+Finally, there is ``\texttt{:elseif}":
 
 \begin{Verbatim}[samepage=true]
     :if {condition}
@@ -422,7 +422,7 @@ Finally, there is "\texttt{:elseif}":
     :endif
 \end{Verbatim}
 
-This works just like using "\texttt{:else}" and then "\texttt{if}", but without the need for an extra "\texttt{:endif}".
+This works just like using ``\texttt{:else}" and then ``\texttt{if}", but without the need for an extra ``\texttt{:endif}".
 
 A useful example for your vimrc file is checking the \texttt{'term'} option and doing something depending upon its value:
 
@@ -459,7 +459,7 @@ The result is one if the condition is met and zero otherwise.  An example:
  :endif
 \end{Verbatim}
 
-Here "\texttt{v:version}" is a variable defined by Vim, which has the value of the Vim version.
+Here ``\texttt{v:version}" is a variable defined by Vim, which has the value of the Vim version.
 600 is for version 6.0.
 Version 6.1 has the value 601.
 This is very useful to write a script that works with multiple versions of Vim.
@@ -479,7 +479,7 @@ Example:
  :endif
 \end{Verbatim}
 
-This will echo "\texttt{yes}", because "\texttt{one}" doesn't look like a number, thus it is converted to the number zero.
+This will echo ``\texttt{yes}", because ``\texttt{one}" doesn't look like a number, thus it is converted to the number zero.
 
 For strings there are two more items:
 \begin{center} \begin{tabular}{c l}
@@ -487,8 +487,8 @@ For strings there are two more items:
 				\texttt{a !~ b} & does not match with \\
 \end{tabular} \end{center}
 
-The left item "\texttt{a}" is used as a string.
-The right item "\texttt{b}" is used as a pattern, like what's used for searching.
+The left item ``\texttt{a}" is used as a string.
+The right item ``\texttt{b}" is used as a pattern, like what's used for searching.
 Example:
 
 \begin{Verbatim}[samepage=true]
@@ -504,17 +504,17 @@ Notice the use of a single-quote string for the pattern.
 This is useful, because backslashes would need to be doubled in a double-quote string and patterns tend to contain many backslashes.
 
 The \texttt{'ignorecase'} option is used when comparing strings.
-When you don't want that, append "\texttt{\#}" to match case and "\texttt{?}" to ignore case.
-Thus "\texttt{==?}" compares two strings to be equal while ignoring case.
-And "\texttt{!~\#}" checks if a pattern doesn't match, also checking the case of letters.
+When you don't want that, append ``\texttt{\#}" to match case and ``\texttt{?}" to ignore case.
+Thus ``\texttt{==?}" compares two strings to be equal while ignoring case.
+And ``\texttt{!~\#}" checks if a pattern doesn't match, also checking the case of letters.
 For the full table see |\texttt{:h expr-==}|.
 \subsubsection{More looping}
-The "\texttt{:while}" command was already mentioned.
-Two more statements can be used in between the "\texttt{:while}" and the "\texttt{:endwhile}":
+The ``\texttt{:while}" command was already mentioned.
+Two more statements can be used in between the ``\texttt{:while}" and the ``\texttt{:endwhile}":
 
 \begin{center} \begin{tabular}{l l}
 				\texttt{:continue} & Jump back to the start of the while loop; the loop continues. \\
-				\texttt{:break} & Jump forward to the "\texttt{:endwhile}"; the loop is discontinued. \\
+				\texttt{:break} & Jump forward to the ``\texttt{:endwhile}"; the loop is discontinued. \\
 \end{tabular} \end{center}
 
 Example:
@@ -532,14 +532,14 @@ Example:
  :endwhile
 \end{Verbatim}
 
-The "\texttt{:sleep}" command makes Vim take a nap.
-The "\texttt{50m}" specifies fifty milliseconds.
-Another example is "\texttt{:sleep 4}", which sleeps for four seconds.
+The ``\texttt{:sleep}" command makes Vim take a nap.
+The ``\texttt{50m}" specifies fifty milliseconds.
+Another example is ``\texttt{:sleep 4}", which sleeps for four seconds.
 
-Even more looping can be done with the "\texttt{:for}" command, see below in |\hyperref[Lists and Dictionaries]{\texttt{Lists and Dictionaries}}|.
+Even more looping can be done with the ``\texttt{:for}" command, see below in |\hyperref[Lists and Dictionaries]{\texttt{Lists and Dictionaries}}|.
 \subsection{Executing an expression}
 So far the commands in the script were executed by Vim directly.
-The "\texttt{:execute}" command allows executing the result of an expression.
+The ``\texttt{:execute}" command allows executing the result of an expression.
 This is a very powerful way to build commands and execute them.
 
 An example is to jump to a tag, which is contained in a variable:
@@ -548,15 +548,15 @@ An example is to jump to a tag, which is contained in a variable:
  :execute "tag " . tag_name
 \end{Verbatim}
 
-The "\texttt{.}" is used to concatenate the string "\texttt{tag }" with the value of variable "\texttt{tag\_name}".
-Suppose "\texttt{tag\_name}" has the value "\texttt{get\_cmd}", then the command that will be executed is:
+The ``\texttt{.}" is used to concatenate the string ``\texttt{tag }" with the value of variable ``\texttt{tag\_name}".
+Suppose ``\texttt{tag\_name}" has the value ``\texttt{get\_cmd}", then the command that will be executed is:
 
 \begin{Verbatim}[samepage=true]
  :tag get_cmd
 \end{Verbatim}
 
-The "\texttt{:execute}" command can only execute colon commands.
-The "\texttt{:normal}" command executes Normal mode commands.
+The ``\texttt{:execute}" command can only execute colon commands.
+The ``\texttt{:normal}" command executes Normal mode commands.
 However, its argument is not an expression but the literal command characters.
 Example:
 
@@ -564,18 +564,18 @@ Example:
  :normal gg=G
 \end{Verbatim}
 
-This jumps to the first line and formats all lines with the "\texttt{=}" operator.
+This jumps to the first line and formats all lines with the ``\texttt{=}" operator.
 
-To make "\texttt{:normal}" work with an expression, combine "\texttt{:execute}" with it.
+To make ``\texttt{:normal}" work with an expression, combine ``\texttt{:execute}" with it.
 Example:
 
 \begin{Verbatim}[samepage=true]
  :execute "normal " . normal_commands
 \end{Verbatim}
 
-The variable "\texttt{normal\_commands}" must contain the Normal mode commands.
+The variable ``\texttt{normal\_commands}" must contain the Normal mode commands.
 
-Make sure that the argument for "\texttt{:normal}" is a complete command.
+Make sure that the argument for ``\texttt{:normal}" is a complete command.
 Otherwise Vim will run into the end of the argument and abort the command.
 For example, if you start Insert mode, you must leave Insert mode as well.
 This works:
@@ -584,8 +584,8 @@ This works:
  :execute "normal Inew text \<Esc>"
 \end{Verbatim}
 
-This inserts "\texttt{new text }" in the current line.
-Notice the use of the special key "\texttt{\textbackslash{}<Esc>}".
+This inserts ``\texttt{new text }" in the current line.
+Notice the use of the special key ``\texttt{\textbackslash{}<Esc>}".
 This avoids having to enter a real <Esc> character in your script.
 
 If you don't want to execute a string but evaluate it to get its expression value, you can use the \texttt{eval()} function:
@@ -595,7 +595,7 @@ If you don't want to execute a string but evaluate it to get its expression valu
  :let optval = eval('&' . optname)
 \end{Verbatim}
 
-A "\texttt{\&}" character is prepended to "\texttt{path}", thus the argument to \texttt{eval()} is "\texttt{\&path}".
+A ``\texttt{\&}" character is prepended to ``\texttt{path}", thus the argument to \texttt{eval()} is ``\texttt{\&path}".
 The result will then be the value of the \texttt{'path'} option.
 
 The same thing can be done with:
@@ -609,7 +609,7 @@ Vim defines many functions and provides a large amount of functionality that way
 A few examples will be given in this section.
 You can find the whole list here: |\texttt{:h functions}|.
 
-A function is called with the "\texttt{:call}" command.
+A function is called with the ``\texttt{:call}" command.
 The parameters are passed in between parentheses separated by commas.
 Example:
 
@@ -617,9 +617,9 @@ Example:
  :call search("Date: ", "W")
 \end{Verbatim}
 
-This calls the \texttt{search()} function, with arguments "\texttt{Date: }" and "\texttt{W}".
+This calls the \texttt{search()} function, with arguments ``\texttt{Date: }" and ``\texttt{W}".
 The \texttt{search()} function uses its first argument as a search pattern and the second one as flags.
-The "\texttt{W}" flag means the search doesn't wrap around the end of the file.
+The ``\texttt{W}" flag means the search doesn't wrap around the end of the file.
 
 A function can be called in an expression.
 Example:
@@ -632,9 +632,9 @@ Example:
 
 The \texttt{getline()} function obtains a line from the current buffer.
 Its argument is a specification of the line number.
-In this case "\texttt{.}" is used, which means the line where the cursor is.
+In this case ``\texttt{.}" is used, which means the line where the cursor is.
 
-The \texttt{substitute()} function does something similar to the "\texttt{:substitute}" command.
+The \texttt{substitute()} function does something similar to the ``\texttt{:substitute}" command.
 The first argument is the string on which to perform the substitution.
 The second argument is the pattern, the third the replacement string.
 Finally, the last arguments are the flags.
@@ -664,7 +664,7 @@ String manipulation:
 				\texttt{str2nr()} & convert a string to a Number \\
 				\texttt{str2float()} & convert a string to a Float \\
 				\texttt{printf()} & format a string according to \texttt{\%} items \\
-				\texttt{escape()} & escape characters in a string with a '\texttt{\textbackslash{}}' \\
+				\texttt{escape()} & escape characters in a string with a `\texttt{\textbackslash{}}' \\
 				\texttt{shellescape()} & escape a string for use with a shell command \\
 				\texttt{fnameescape()} & escape a file name for use with a Vim command \\
 				\texttt{tr()} & translate characters from one set to another \\
@@ -679,7 +679,7 @@ String manipulation:
 				\texttt{strridx()} & last index of a short string in a long string \\
 				\texttt{strlen()} & length of a string \\
 				\texttt{substitute()} & substitute a pattern match with a string \\
-				\texttt{submatch()} & get a specific match in a "\texttt{:substitute}" \\
+				\texttt{submatch()} & get a specific match in a ``\texttt{:substitute}" \\
 				\texttt{strpart()} & get part of a string \\
 				\texttt{expand()} & expand special keywords \\
 				\texttt{iconv()} & convert text from one encoding to another \\
@@ -943,7 +943,7 @@ Syntax and highlighting:
 				\texttt{synstack()} & get list of syntax IDs at a specific position \\
 				\texttt{synconcealed()} & get info about concealing \\
 				\texttt{diff\_hlID()} & get highlight ID for diff mode at a position \\
-				\texttt{matchadd()} & define a pattern to highlight (a "match") \\
+				\texttt{matchadd()} & define a pattern to highlight (a ``match") \\
 				\texttt{matcharg()} & get info about |\texttt{:h :match}| arguments \\
 				\texttt{matchdelete()} & delete a match defined by |\texttt{:h matchadd()}| or a |\texttt{:h :match}| command \\
 				\texttt{setmatches()} & restore a list of matches saved by |\texttt{:h getmatches()}| \\
@@ -1065,7 +1065,7 @@ It starts with this line:
  :function Min(num1, num2)
 \end{Verbatim}
 
-This tells Vim that the function is named "\texttt{Min}" and it takes two arguments: "\texttt{num1}" and "\texttt{num2}".
+This tells Vim that the function is named ``\texttt{Min}" and it takes two arguments: ``\texttt{num1}" and ``\texttt{num2}".
 
 The first thing you need to do is to check to see which number is smaller:
 
@@ -1073,8 +1073,8 @@ The first thing you need to do is to check to see which number is smaller:
  :  if a:num1 < a:num2
 \end{Verbatim}
 
-The special prefix "\texttt{a:}" tells Vim that the variable is a function argument.
-Let's assign the variable "\texttt{smaller}" the value of the smallest number:
+The special prefix ``\texttt{a:}" tells Vim that the variable is a function argument.
+Let's assign the variable ``\texttt{smaller}" the value of the smallest number:
 
 \begin{Verbatim}[samepage=true]
  :  if a:num1 < a:num2
@@ -1084,14 +1084,14 @@ Let's assign the variable "\texttt{smaller}" the value of the smallest number:
  :  endif
 \end{Verbatim}
 
-The variable "\texttt{smaller}" is a local variable.
-Variables used inside a function are local unless prefixed by something like "\texttt{g:}", "\texttt{a:}", or "\texttt{s:}".
+The variable ``\texttt{smaller}" is a local variable.
+Variables used inside a function are local unless prefixed by something like ``\texttt{g:}", ``\texttt{a:}", or ``\texttt{s:}".
 
 \emph{Note}:
-To access a global variable from inside a function you must prepend "\texttt{g:}" to it.
-Thus "\texttt{g:today}" inside a function is used for the global variable "\texttt{today}", and "\texttt{today}" is another variable, local to the function.
+To access a global variable from inside a function you must prepend ``\texttt{g:}" to it.
+Thus ``\texttt{g:today}" inside a function is used for the global variable ``\texttt{today}", and ``\texttt{today}" is another variable, local to the function.
 
-You now use the "\texttt{:return}" statement to return the smallest number to the user.
+You now use the ``\texttt{:return}" statement to return the smallest number to the user.
 Finally, you end the function:
 
 \begin{Verbatim}[samepage=true]
@@ -1135,19 +1135,19 @@ Only now will the function be executed and the lines be interpreted by Vim.
 If there are mistakes, like using an undefined variable or function, you will now get an error message.
 When defining the function these errors are not detected.
 
-When a function reaches "\texttt{:endfunction}" or "\texttt{:return}" is used without an argument, the function returns zero.
+When a function reaches ``\texttt{:endfunction}" or ``\texttt{:return}" is used without an argument, the function returns zero.
 
-To redefine a function that already exists, use the ! for the "\texttt{:function}" command:
+To redefine a function that already exists, use the ! for the ``\texttt{:function}" command:
 
 \begin{Verbatim}[samepage=true]
  :function!  Min(num1, num2, num3)
 \end{Verbatim}
 
 \subsubsection{Using a range}
-The "\texttt{:call}" command can be given a line range.
+The ``\texttt{:call}" command can be given a line range.
 This can have one of two meanings.
-When a function has been defined with the "\texttt{range}" keyword, it will take care of the line range itself.
-The function will be passed the variables "\texttt{a:firstline}" and "\texttt{a:lastline}".
+When a function has been defined with the ``\texttt{range}" keyword, it will take care of the line range itself.
+The function will be passed the variables ``\texttt{a:firstline}" and ``\texttt{a:lastline}".
 These will have the line numbers from the range the function was called with.
 Example:
 
@@ -1171,7 +1171,7 @@ You can call this function with:
 
 It will be executed once and echo the number of words.
 
-The other way to use a line range is by defining a function without the "\texttt{range}" keyword.
+The other way to use a line range is by defining a function without the ``\texttt{range}" keyword.
 The function will be called once for every line in the range, with the cursor in that line.
 Example:
 
@@ -1196,8 +1196,8 @@ The following command, for instance, defines a function that must have 1 argumen
  :function Show(start, ...)
 \end{Verbatim}
 
-The variable "\texttt{a:1}" contains the first optional argument, "\texttt{a:2}" the second, and so on.
-The variable "\texttt{a:0}" contains the number of extra arguments.
+The variable ``\texttt{a:1}" contains the first optional argument, ``\texttt{a:2}" the second, and so on.
+The variable ``\texttt{a:0}" contains the number of extra arguments.
 
 For example:
 
@@ -1215,15 +1215,15 @@ For example:
  :endfunction
 \end{Verbatim}
 
-This uses the "\texttt{:echohl}" command to specify the highlighting used for the following "\texttt{:echo}" command.
-"\texttt{:echohl None}" stops it again.
-The "\texttt{:echon}" command works like "\texttt{:echo}", but doesn't output a line break.
+This uses the ``\texttt{:echohl}" command to specify the highlighting used for the following ``\texttt{:echo}" command.
+``\texttt{:echohl None}" stops it again.
+The ``\texttt{:echon}" command works like ``\texttt{:echo}", but doesn't output a line break.
 
-You can also use the a:000 variable, it is a List of all the "\texttt{...}" arguments.
+You can also use the a:000 variable, it is a List of all the ``\texttt{...}" arguments.
 See |\texttt{:h a:000}|.
 
 \subsubsection{Listing functions}
-The "\texttt{:function}" command lists the names and arguments of all user-defined
+The ``\texttt{:function}" command lists the names and arguments of all user-defined
 functions:
 
 \begin{Verbatim}[samepage=true]
@@ -1233,7 +1233,7 @@ functions:
     function SetSyn(name)
 \end{Verbatim}
 
-To see what a function does, use its name as an argument for "\texttt{:function}":
+To see what a function does, use its name as an argument for ``\texttt{:function}":
 
 \begin{Verbatim}[samepage=true]
  :function SetSyn
@@ -1358,7 +1358,7 @@ One of the nice things you can do with a List is iterate over it:
     three
 \end{Verbatim}
 
-This will loop over each element in List "\texttt{alist}", assigning the value to variable "\texttt{n}".
+This will loop over each element in List ``\texttt{alist}", assigning the value to variable ``\texttt{n}".
 The generic form of a for loop is:
 
 \begin{Verbatim}[samepage=true]
@@ -1497,9 +1497,9 @@ Let's first try it out:
     drie twee ??? een
 \end{Verbatim}
 
-The first special thing you notice is the "\texttt{dict}" at the end of the "\texttt{:function}" line.
+The first special thing you notice is the ``\texttt{dict}" at the end of the ``\texttt{:function}" line.
 This marks the function as being used from a Dictionary.
-The "\texttt{self}" local variable will then refer to that Dictionary.
+The ``\texttt{self}" local variable will then refer to that Dictionary.
 
 Now let's break up the complicated return command:
 
@@ -1516,7 +1516,7 @@ Thus in the example it returns:
 \end{Verbatim}
 
 This list is the first argument to the \texttt{map()} function.
-This will go through the list, evaluating its second argument with "\texttt{v:val}" set to the value of each item.
+This will go through the list, evaluating its second argument with ``\texttt{v:val}" set to the value of each item.
 This is a shortcut to using a for loop.
 This command:
 
@@ -1577,7 +1577,7 @@ And a German translator:
     drei ein
 \end{Verbatim}
 
-You see that the copy() function is used to make a copy of the "\texttt{transdict}" Dictionary and then the copy is changed to add the words.
+You see that the copy() function is used to make a copy of the ``\texttt{transdict}" Dictionary and then the copy is changed to add the words.
 The original remains the same, of course.
 
 Now you can go one step further, and use your preferred translator:
@@ -1592,7 +1592,7 @@ Now you can go one step further, and use your preferred translator:
     een twee drie
 \end{Verbatim}
 
-Here "\texttt{trans}" refers to one of the two objects (Dictionaries).
+Here ``\texttt{trans}" refers to one of the two objects (Dictionaries).
 No copy is made.
 More about List and Dictionary identity can be found at |\texttt{:h list-identity}| and |\texttt{:h dict-identity}|.
 
@@ -1609,7 +1609,7 @@ You can overrule the \texttt{translate()} function to do nothing:
 \end{Verbatim}
 
 Notice that a \texttt{!} was used to overwrite the existing function reference.
-Now use "\texttt{uk2uk}" when no recognized language is found:
+Now use ``\texttt{uk2uk}" when no recognized language is found:
 
 \begin{Verbatim}[samepage=true]
  :if $LANG =~ "de"
@@ -1635,17 +1635,17 @@ Let's start with an example:
  :endtry
 \end{Verbatim}
 
-The "\texttt{:read}" command will fail if the file does not exist.
+The ``\texttt{:read}" command will fail if the file does not exist.
 Instead of generating an error message, this code catches the error and gives the user a nice message.
 
-For the commands in between "\texttt{:try}" and "\texttt{:endtry}" errors are turned into exceptions.
+For the commands in between ``\texttt{:try}" and ``\texttt{:endtry}" errors are turned into exceptions.
 An exception is a string.
 In the case of an error the string contains the error message.
 And every error message has a number.
-In this case, the error we catch contains "\texttt{E484:}".
+In this case, the error we catch contains ``\texttt{E484:}".
 This number is guaranteed to stay the same (the text may change, e.g., it may be translated).
 
-When the "\texttt{:read}" command causes another error, the pattern "\texttt{E484:}" will not match in it.
+When the ``\texttt{:read}" command causes another error, the pattern ``\texttt{E484:}" will not match in it.
 Thus this exception will not be caught and result in the usual error message.
 
 You might be tempted to do this:
@@ -1659,9 +1659,9 @@ You might be tempted to do this:
 \end{Verbatim}
 
 This means all errors are caught.
-But then you will not see errors that are useful, such as "\texttt{E21: Cannot make changes, 'modifiable' is off}".
+But then you will not see errors that are useful, such as ``\texttt{E21: Cannot make changes, 'modifiable' is off}".
 
-Another useful mechanism is the "\texttt{:finally}" command:
+Another useful mechanism is the ``\texttt{:finally}" command:
 
 \begin{Verbatim}[samepage=true]
  :let tmp = tempname()
@@ -1675,8 +1675,8 @@ Another useful mechanism is the "\texttt{:finally}" command:
  :endtry
 \end{Verbatim}
 
-This filters the lines from the cursor until the end of the file through the "\texttt{filter}" command, which takes a file name argument.
-No matter if the filtering works, something goes wrong in between "\texttt{:try}" and "\texttt{:finally}" or the user cancels the filtering by pressing CTRL-C, the "\texttt{call delete(tmp)}" is always executed.
+This filters the lines from the cursor until the end of the file through the ``\texttt{filter}" command, which takes a file name argument.
+No matter if the filtering works, something goes wrong in between ``\texttt{:try}" and ``\texttt{:finally}" or the user cancels the filtering by pressing CTRL-C, the ``\texttt{call delete(tmp)}" is always executed.
 This makes sure you don't leave the temporary file behind.
 
 More information about exception handling can be found in the reference manual: |\texttt{:h exception-handling}|.
@@ -1695,16 +1695,16 @@ Blank lines are allowed and ignored.
 Leading whitespace characters (blanks and TABs) are always ignored.
 The whitespaces between parameters (e.g. between the \texttt{'set'} and the \texttt{'cpoptions'} in the example below) are reduced to one blank character and plays the role of a separator, the whitespaces after the last (visible) character may or may not be ignored depending on the situation, see below.
 
-For a "\texttt{:set}" command involving the "\texttt{=}" (equal) sign, such as in:
+For a ``\texttt{:set}" command involving the ``\texttt{=}" (equal) sign, such as in:
 
 \begin{Verbatim}[samepage=true]
  :set cpoptions    =aABceFst
 \end{Verbatim}
 
-the whitespace immediately before the "\texttt{=}" sign is ignored.
-But there can be no whitespace after the "\texttt{=!" sign}
+the whitespace immediately before the ``\texttt{=}" sign is ignored.
+But there can be no whitespace after the ``\texttt{=!" sign}
 
-To include a whitespace character in the value of an option, it must be escaped by a "\texttt{\textbackslash{}}" (backslash)  as in the following example:
+To include a whitespace character in the value of an option, it must be escaped by a ``\texttt{\textbackslash{}}" (backslash)  as in the following example:
 
 \begin{Verbatim}[samepage=true]
  :set tags=my\ nice\ file
@@ -1729,7 +1729,7 @@ The character \texttt{"} (the double quote mark) starts a comment.
 Everything after and including this character until the end-of-line is considered a comment and is ignored, except for commands that don't consider comments, as shown in examples below.
 A comment can start on any character position on the line.
 
-There is a little "catch" with comments for some commands.
+There is a little ``catch" with comments for some commands.
 Examples:
 
 \begin{Verbatim}[samepage=true]
@@ -1741,11 +1741,11 @@ Examples:
 
 The abbreviation \texttt{'dev'} will be expanded to `\texttt{development     " shorthand}'.
 The mapping of <F3> will actually be the whole line after the `\texttt{o\# ....}' including the `\texttt{" insert include}'.
-The "\texttt{execute}" command will give an error.
-The "\texttt{!}" command will send everything after it to the shell, causing an error for an unmatched `\texttt{"}' character.
+The ``\texttt{execute}" command will give an error.
+The ``\texttt{!}" command will send everything after it to the shell, causing an error for an unmatched `\texttt{"}' character.
 
-There can be no comment after "\texttt{:map}", "\texttt{:abbreviate}", "\texttt{:execute}" and "\texttt{!}" commands (there are a few more commands with this restriction).
-For the "\texttt{:map}", "\texttt{:abbreviate}" and "\texttt{:execute}" commands there is a trick:
+There can be no comment after ``\texttt{:map}", ``\texttt{:abbreviate}", ``\texttt{:execute}" and ``\texttt{!}" commands (there are a few more commands with this restriction).
+For the ``\texttt{:map}", ``\texttt{:abbreviate}" and ``\texttt{:execute}" commands there is a trick:
 
 \begin{Verbatim}[samepage=true]
  :abbrev dev development|" shorthand
@@ -1779,7 +1779,7 @@ For Unix there is one special way to comment a line, that allows making a Vim sc
  quit
 \end{Verbatim}
 
-The "\texttt{\#}" command by itself lists a line with the line number.
+The ``\texttt{\#}" command by itself lists a line with the line number.
 Adding an exclamation mark changes it into doing nothing, so that you can add the shell command to execute the rest of the file. |\texttt{:h :\#!}| |\texttt{:h -S}|
 
 \subsubsection{Pitfalls}
@@ -1790,9 +1790,9 @@ Even bigger problem arises in the following example:
  :unmap ,ab
 \end{Verbatim}
 
-Here the unmap command will not work, because it tries to unmap "\texttt{,ab }".
+Here the unmap command will not work, because it tries to unmap ``\texttt{,ab }".
 This does not exist as a mapped sequence.
-An error will be issued, which is very hard to identify, because the ending whitespace character in "\texttt{:unmap ,ab }" is not visible.
+An error will be issued, which is very hard to identify, because the ending whitespace character in ``\texttt{:unmap ,ab }" is not visible.
 
 And this is the same as what happens when one uses a comment after an `\texttt{unmap}' command:
 
@@ -1836,7 +1836,7 @@ To avoid your function names to interfere with functions that you get from other
 \begin{itemize} 
 				\item Prepend a unique string before each function name.
 								I often use an abbreviation.
-								For example, "\texttt{OW\_}" is used for the option window functions.
+								For example, ``\texttt{OW\_}" is used for the option window functions.
 				\item Put the definition of your functions together in a file.
 								Set a global variable to indicate that the functions have been loaded.
 								When sourcing the file again, first unload the functions.
@@ -1885,7 +1885,7 @@ The features provided by the plugin should be clear from its name.
 And it should be unlikely that someone else writes a plugin with the same name but which does something different.
 And please limit the name to 8 characters, to avoid problems on old Windows systems.
 
-A script that corrects typing mistakes could be called "\texttt{typecorr.vim}".
+A script that corrects typing mistakes could be called ``\texttt{typecorr.vim}".
 We will use it here as an example.
 
 For the plugin to work for everybody, it should follow a few guidelines.
@@ -1965,10 +1965,10 @@ This will make it possible:
 
 This also avoids that when the script is loaded twice it would cause error messages for redefining functions and cause trouble for autocommands that are added twice.
 
-The name is recommended to start with "\texttt{loaded\_}" and then the file name of the plugin, literally.
-The "\texttt{g:}" is prepended just to avoid mistakes when using the variable in a function (without "\texttt{g:}" it would be a variable local to the function).
+The name is recommended to start with ``\texttt{loaded\_}" and then the file name of the plugin, literally.
+The ``\texttt{g:}" is prepended just to avoid mistakes when using the variable in a function (without ``\texttt{g:}" it would be a variable local to the function).
 
-Using "\texttt{finish}" stops Vim from reading the rest of the file, it's much quicker than using if-endif around the whole file.
+Using ``\texttt{finish}" stops Vim from reading the rest of the file, it's much quicker than using if-endif around the whole file.
 
 \subsubsection{Mapping}
 Now let's make the plugin more interesting: We will add a mapping that adds a correction for the word under the cursor.
@@ -1979,18 +1979,18 @@ To allow the user to define which keys a mapping in a plugin uses, the <Leader> 
  22    map <unique> <Leader>a  <Plug>TypecorrAdd
 \end{Verbatim}
 
-The "\texttt{<Plug>TypecorrAdd}" thing will do the work, more about that further on.
+The ``\texttt{<Plug>TypecorrAdd}" thing will do the work, more about that further on.
 
-The user can set the "\texttt{mapleader}" variable to the key sequence that he wants this mapping to start with.
+The user can set the ``\texttt{mapleader}" variable to the key sequence that he wants this mapping to start with.
 Thus if the user has done:
 
 \begin{Verbatim}[samepage=true]
  let mapleader = "_"
 \end{Verbatim}
 
-The mapping will define "\texttt{\_a}".
+The mapping will define ``\texttt{\_a}".
 If the user didn't do this, the default value will be used, which is a backslash.
-Then a map for "\texttt{\textbackslash{}a}" will be defined.
+Then a map for ``\texttt{\textbackslash{}a}" will be defined.
 
 \emph{Note} that <unique> is used, this will cause an error message if the mapping already happened to exist. |\texttt{:h :map-<unique>}|
 
@@ -2003,20 +2003,20 @@ We can allow that with this mechanism:
  23  endif
 \end{Verbatim}
 
-This checks if a mapping to "\texttt{<Plug>TypecorrAdd}" already exists, and only defines the mapping from "\texttt{<Leader>a}" if it doesn't.
+This checks if a mapping to ``\texttt{<Plug>TypecorrAdd}" already exists, and only defines the mapping from ``\texttt{<Leader>a}" if it doesn't.
 The user then has a chance of putting this in his vimrc file:
 
 \begin{Verbatim}[samepage=true]
  map ,c  <Plug>TypecorrAdd
 \end{Verbatim}
 
-Then the mapped key sequence will be "\texttt{,c}" instead of "\texttt{\_a}" or "\texttt{\textbackslash{}a}".
+Then the mapped key sequence will be ``\texttt{,c}" instead of ``\texttt{\_a}" or ``\texttt{\textbackslash{}a}".
 \subsubsection{Pieces}
 If a script gets longer, you often want to break up the work in pieces.
 You can use functions or mappings for this.
 But you don't want these functions and mappings to interfere with the ones from other scripts.
 For example, you could define a function Add(), but another script could try to define the same function.
-To avoid this, we define the function local to the script by prepending it with "\texttt{s:}".
+To avoid this, we define the function local to the script by prepending it with ``\texttt{s:}".
 
 We will define a function that adds a new typing correction:
 
@@ -2030,7 +2030,7 @@ We will define a function that adds a new typing correction:
 
 Now we can call the function \texttt{s:Add()} from within this script.
 If another script also defines \texttt{s:Add()}, it will be local to that script and can only be called from the script it was defined in.
-There can also be a global \texttt{Add()}  function (without the "\texttt{s:}"), which is again another function.
+There can also be a global \texttt{Add()}  function (without the ``\texttt{s:}"), which is again another function.
 
 <SID> can be used with mappings.
 It generates a script ID, which identifies the current script.
@@ -2042,7 +2042,7 @@ In our typing correction plugin we use it like this:
  28  noremap <SID>Add  :call <SID>Add(expand("<cword>"), 1)<CR>
 \end{Verbatim}
 
-Thus when a user types "\texttt{\textbackslash{}a}", this sequence is invoked:
+Thus when a user types ``\texttt{\textbackslash{}a}", this sequence is invoked:
 
 \begin{Verbatim}[samepage=true]
  \a  ->  <Plug>TypecorrAdd  ->  <SID>Add  ->  :call <SID>Add()
@@ -2063,17 +2063,17 @@ We can also add a menu entry to do the same as the mapping:
  26  noremenu <script> Plugin.Add\ Correction      <SID>Add
 \end{Verbatim}
 
-The "\texttt{Plugin}" menu is recommended for adding menu items for plugins.
+The ``\texttt{Plugin}" menu is recommended for adding menu items for plugins.
 In this case only one item is used.
 When adding more items, creating a submenu is recommended.
-For example, "\texttt{Plugin.CVS}" could be used for a plugin that offers CVS operations "\texttt{Plugin.CVS.checkin}", "\texttt{Plugin.CVS.checkout}", etc.
+For example, ``\texttt{Plugin.CVS}" could be used for a plugin that offers CVS operations ``\texttt{Plugin.CVS.checkin}", ``\texttt{Plugin.CVS.checkout}", etc.
 
-\emph{Note} that in line 28 "\texttt{:noremap}" is used to avoid that any other mappings cause trouble.
-Someone may have remapped "\texttt{:call}", for example.
-In line 24 we also use "\texttt{:noremap}", but we do want "\texttt{<SID>Add}" to be remapped.
-This is why "\texttt{<script>}" is used here.
+\emph{Note} that in line 28 ``\texttt{:noremap}" is used to avoid that any other mappings cause trouble.
+Someone may have remapped ``\texttt{:call}", for example.
+In line 24 we also use ``\texttt{:noremap}", but we do want ``\texttt{<SID>Add}" to be remapped.
+This is why ``\texttt{<script>}" is used here.
 This only allows mappings which are local to the script. |\texttt{:h :map-<script>}|
-The same is done in line 26 for "\texttt{:noremenu}".
+The same is done in line 26 for ``\texttt{:noremenu}".
 |\texttt{:h :menu-<script>}|
 
 \subsubsection{<SID> and <Plug>}
@@ -2085,14 +2085,14 @@ Note the difference between using <SID> and <Plug>:
 				\item [<Plug>]    is visible outside of the script.
 								It is used for mappings which the user might want to map a key sequence to.
 								<Plug> is a special code that a typed key will never produce.
-								To make it very unlikely that other plugins use the same sequence of characters, use this structure: <Plug> scriptname mapname In our example the scriptname is "\texttt{Typecorr}" and the mapname is "\texttt{Add}".
-								This results in "\texttt{<Plug>TypecorrAdd}".
+								To make it very unlikely that other plugins use the same sequence of characters, use this structure: <Plug> scriptname mapname In our example the scriptname is ``\texttt{Typecorr}" and the mapname is ``\texttt{Add}".
+								This results in ``\texttt{<Plug>TypecorrAdd}".
 								Only the first character of scriptname and mapname is uppercase, so that we can see where mapname starts.
 
 				\item [<SID>]  is the script ID, a unique identifier for a script.
-								Internally Vim translates <SID> to "\texttt{<SNR>123\_}", where "\texttt{123}" can be any number.
-								Thus a function "\texttt{<SID>Add()}" will have a name "\texttt{<SNR>11\_Add()}" in one script, and "\texttt{<SNR>22\_Add()}" in another.
-								You can see this if you use the "\texttt{:function}" command to get a list of functions.
+								Internally Vim translates <SID> to ``\texttt{<SNR>123\_}", where ``\texttt{123}" can be any number.
+								Thus a function ``\texttt{<SID>Add()}" will have a name ``\texttt{<SNR>11\_Add()}" in one script, and ``\texttt{<SNR>22\_Add()}" in another.
+								You can see this if you use the ``\texttt{:function}" command to get a list of functions.
 								The translation of <SID> in mappings is exactly the same, that's how you can call a script-local function from a mapping.
 \end{description}
 
@@ -2108,11 +2108,11 @@ Now let's add a user command to add a correction:
 
 The user command is defined only if no command with the same name already exists.
 Otherwise we would get an error here.
-Overriding the existing user command with "\texttt{:command!}" is not a good idea, this would probably make the user wonder why the command he defined himself doesn't work.
+Overriding the existing user command with ``\texttt{:command!}" is not a good idea, this would probably make the user wonder why the command he defined himself doesn't work.
 |\texttt{:h :command}|
 
 \subsubsection{Script variables}
-When a variable starts with "\texttt{s:}" it is a script variable.
+When a variable starts with ``\texttt{s:}" it is a script variable.
 It can only be used inside a script.
 Outside the script it's not visible.
 This avoids trouble with using the same variable name in different scripts.
@@ -2187,11 +2187,11 @@ Here is the resulting complete example:
 Line 33 wasn't explained yet.
 It applies the new correction to the word under the cursor.
 The |\texttt{:h :normal}| command is used to use the new abbreviation.
-Note that mappings and abbreviations are expanded here, even though the function was called from a mapping defined with "\texttt{:noremap}".
+Note that mappings and abbreviations are expanded here, even though the function was called from a mapping defined with ``\texttt{:noremap}".
 
-Using "\texttt{unix}" for the \texttt{'fileformat'} option is recommended.
+Using ``\texttt{unix}" for the \texttt{'fileformat'} option is recommended.
 The Vim scripts will then work everywhere.
-Scripts with \texttt{'fileformat'} set to "\texttt{dos}" do not work on Unix.
+Scripts with \texttt{'fileformat'} set to ``\texttt{dos}" do not work on Unix.
 Also see |\texttt{:h :source\_crnl}|.
 To be sure it is set right, do this before writing the file:
 
@@ -2205,7 +2205,7 @@ It's a good idea to also write some documentation for your plugin.
 Especially when its behavior can be changed by the user.
 See \hyperref[add-local-help]{|\texttt{add-local-help}|} for how they are installed.
 
-Here is a simple example for a plugin help file, called "\texttt{typecorr.txt}":
+Here is a simple example for a plugin help file, called ``\texttt{typecorr.txt}":
 
 \begin{Verbatim}[samepage=true]
   1  *typecorr.txt*  Plugin for correcting typing mistakes
@@ -2228,13 +2228,13 @@ Here is a simple example for a plugin help file, called "\texttt{typecorr.txt}":
 \end{Verbatim}
 
 The first line is actually the only one for which the format matters.
-It will be extracted from the help file to be put in the "\texttt{LOCAL ADDITIONS:}" section of help.txt |\texttt{:h local-additions}|.
-The first "\texttt{*}" must be in the first column of the first line.
-After adding your help file do "\texttt{:help}" and check that the entries line up nicely.
+It will be extracted from the help file to be put in the ``\texttt{LOCAL ADDITIONS:}" section of help.txt |\texttt{:h local-additions}|.
+The first ``\texttt{*}" must be in the first column of the first line.
+After adding your help file do ``\texttt{:help}" and check that the entries line up nicely.
 
 You can add more tags inside \texttt{**} in your help file.
 But be careful not to use existing help tags.
-You would probably use the name of your plugin in most of them, like "\texttt{typecorr-settings}" in the example.
+You would probably use the name of your plugin in most of them, like ``\texttt{typecorr-settings}" in the example.
 
 Using references to other parts of the help in \texttt{||} is recommended.
 This makes it easy for the user to find associated help.
@@ -2248,8 +2248,8 @@ Example:
  au BufNewFile,BufRead *.foo         set filetype=foofoo
 \end{Verbatim}
 
-Write this single-line file as "\texttt{ftdetect/foofoo.vim}" in the first directory that appears in \texttt{'runtimepath'}.
-For Unix that would be "\texttt{~/.vim/ftdetect/foofoo.vim}".
+Write this single-line file as ``\texttt{ftdetect/foofoo.vim}" in the first directory that appears in \texttt{'runtimepath'}.
+For Unix that would be ``\texttt{~/.vim/ftdetect/foofoo.vim}".
 The convention is to use the name of the filetype for the script name.
 
 You can make more complicated checks if you like, for example to inspect the contents of the file to recognize the language.
@@ -2262,7 +2262,7 @@ Summary of special things to use in a plugin:
 				\texttt{s:name} & Variables local to the script. \\
 				\texttt{<SID>} & Script-ID, used for mappings and functions local to the script. \\
 				\texttt{hasmapto()} & Function to test if the user already defined a mapping for functionality the script offers. \\
-				\texttt{<Leader>} & Value of "\texttt{mapleader}", which the user defines as the keys that plugin mappings start with. \\
+				\texttt{<Leader>} & Value of ``\texttt{mapleader}", which the user defines as the keys that plugin mappings start with. \\
 				\texttt{:map <unique>} & Give a warning if a mapping already exists. \\
 				\texttt{:noremap <script>} & Use only mappings local to the script, not global mappings. \\
 				\texttt{exists(":Cmd")} & Check if a user command already exists. \\
@@ -2290,7 +2290,7 @@ Put this at the top of the plugin:
  let b:did_ftplugin = 1
 \end{Verbatim}
 
-This also needs to be used to avoid that the same plugin is executed twice for the same buffer (happens when using an "\texttt{:edit}" command without arguments).
+This also needs to be used to avoid that the same plugin is executed twice for the same buffer (happens when using an ``\texttt{:edit}" command without arguments).
 
 Now users can disable loading the default plugin completely by making a filetype plugin with only this line:
 
@@ -2306,9 +2306,9 @@ If you do want to use the default plugin, but overrule one of the settings, you 
  setlocal textwidth=70
 \end{Verbatim}
 
-Now write this in the "\texttt{after}" directory, so that it gets sourced after the distributed "\texttt{vim.vim}" ftplugin |\texttt{:h after-directory}|.
-For Unix this would be "\texttt{~/.vim/after/ftplugin/vim.vim}".
-Note that the default plugin will have set "\texttt{b:did\_ftplugin}", but it is ignored here.
+Now write this in the ``\texttt{after}" directory, so that it gets sourced after the distributed ``\texttt{vim.vim}" ftplugin |\texttt{:h after-directory}|.
+For Unix this would be ``\texttt{~/.vim/after/ftplugin/vim.vim}".
+Note that the default plugin will have set ``\texttt{b:did\_ftplugin}", but it is ignored here.
 
 \subsubsection{Options}
 To make sure the filetype plugin only affects the current buffer use the
@@ -2321,7 +2321,7 @@ command to set options.
 And only set options which are local to a buffer (see the help for the option to check that).
 When using |\texttt{:h :setlocal}| for global options or options local to a window, the value will change for many buffers, and that is not what a filetype plugin should do.
 
-When an option has a value that is a list of flags or items, consider using "\texttt{+=}" and "\texttt{-=}" to keep the existing value.
+When an option has a value that is a list of flags or items, consider using ``\texttt{+=}" and ``\texttt{-=}" to keep the existing value.
 Be aware that the user may have changed an option value already.
 First resetting to the default value and then changing it is often a good idea.
 Example:
@@ -2352,9 +2352,9 @@ An example of how to define functionality in a filetype plugin:
 If not, then the filetype plugin defines the default mapping.
 This starts with |\texttt{:h <LocalLeader>}|, which allows the user to select the key(s) he wants filetype plugin mappings to start with.
 The default is a backslash.
-"\texttt{<unique>}" is used to give an error message if the mapping already exists or overlaps with an existing mapping.
+``\texttt{<unique>}" is used to give an error message if the mapping already exists or overlaps with an existing mapping.
 |\texttt{:h :noremap}| is used to avoid that any other mappings that the user has defined interferes.
-You might want to use "\texttt{:noremap <script>}" to allow remapping mappings defined in this script that start with <SID>.
+You might want to use ``\texttt{:noremap <script>}" to allow remapping mappings defined in this script that start with <SID>.
 
 The user must have a chance to disable the mappings in a filetype plugin, without disabling everything.
 Here is an example of how this is done for a plugin for the mail filetype:
@@ -2379,7 +2379,7 @@ Two global variables are used:
 \end{tabular} \end{center}
 
 \subsubsection{User commands}
-To add a user command for a specific file type, so that it can only be used in one buffer, use the "\texttt{-buffer}" argument to |\texttt{:h :command}|.
+To add a user command for a specific file type, so that it can only be used in one buffer, use the ``\texttt{-buffer}" argument to |\texttt{:h :command}|.
 Example:
 
 \begin{Verbatim}[samepage=true]
@@ -2407,7 +2407,7 @@ This construct makes sure the function is only defined once:
 \subsubsection{Undo}
 \label{undo_ftplugin}
 
-When the user does "\texttt{:setfiletype xyz}" the effect of the previous filetype should be undone.
+When the user does ``\texttt{:setfiletype xyz}" the effect of the previous filetype should be undone.
 Set the \texttt{b:undo\_ftplugin} variable to the commands that will undo the settings in your filetype plugin.
 Example:
 
@@ -2416,10 +2416,10 @@ Example:
      \ . "| unlet b:match_ignorecase b:match_words b:match_skip"
 \end{Verbatim}
 
-Using "\texttt{:setlocal}" with "\texttt{<}" after the option name resets the option to its global value.
+Using ``\texttt{:setlocal}" with ``\texttt{<}" after the option name resets the option to its global value.
 That is mostly the best way to reset the option value.
 
-This does require removing the "\texttt{C}" flag from \texttt{'cpoptions'} to allow line continuation, as mentioned above \hyperref[use-cpo-save]{|\texttt{use-cpo-save}|}.
+This does require removing the ``\texttt{C}" flag from \texttt{'cpoptions'} to allow line continuation, as mentioned above \hyperref[use-cpo-save]{|\texttt{use-cpo-save}|}.
 
 \subsubsection{File name}
 The filetype must be included in the file name \hyperref[ftplugin-name]{|\texttt{ftplugin-name}|}.
@@ -2431,14 +2431,14 @@ Use one of these three forms:
     .../ftplugin/stuff/bar.vim
 \end{Verbatim}
 
-"\texttt{stuff}" is the filetype, "\texttt{foo}" and "\texttt{bar}" are arbitrary names.
+``\texttt{stuff}" is the filetype, ``\texttt{foo}" and ``\texttt{bar}" are arbitrary names.
 
 \subsubsection{Summary}
 \label{ftplugin-special}
 Summary of special things to use in a filetype plugin:
 
 \begin{center} \begin{tabular}{l l} % Right column went off the page TMC
-				\texttt{<LocalLeader>} & Value of "\texttt{maplocalleader}", which the user defines as the keys that filetype plugin mappings start with. \\
+				\texttt{<LocalLeader>} & Value of ``\texttt{maplocalleader}", which the user defines as the keys that filetype plugin mappings start with. \\
 				\texttt{:map <buffer>} & Define a mapping local to the buffer. \\
 				\texttt{:noremap <script>} & Only remap mappings defined in this script that start with <SID>. \\
 				\texttt{:setlocal} & Set an option for the current buffer only. \\
@@ -2473,11 +2473,11 @@ The default files start with:
  :let current_compiler = "mine"
 \end{Verbatim}
 
-When you write a compiler file and put it in your personal runtime directory (e.g., \texttt{~/.vim/compiler} for Unix), you set the "\texttt{current\_compiler}" variable to make the default file skip the settings.
+When you write a compiler file and put it in your personal runtime directory (e.g., \texttt{~/.vim/compiler} for Unix), you set the ``\texttt{current\_compiler}" variable to make the default file skip the settings.
 \phantomsection
 \label{:CompilerSet}
-The second mechanism is to use "\texttt{:set}" for "\texttt{:compiler!}" and "\texttt{:setlocal}" for "\texttt{:compiler}".
-Vim defines the "\texttt{:CompilerSet}" user command for this.
+The second mechanism is to use ``\texttt{:set}" for ``\texttt{:compiler!}" and ``\texttt{:setlocal}" for ``\texttt{:compiler}".
+Vim defines the ``\texttt{:CompilerSet}" user command for this.
 However, older Vim versions don't, thus your plugin should define it then.
 This is an example:
 
@@ -2490,9 +2490,9 @@ This is an example:
 \end{Verbatim}
 
 When you write a compiler plugin for the Vim distribution or for a system-wide runtime directory, use the mechanism mentioned above.
-When "\texttt{current\_compiler}" was already set by a user plugin nothing will be done.
+When ``\texttt{current\_compiler}" was already set by a user plugin nothing will be done.
 
-When you write a compiler plugin to overrule settings from a default plugin, don't check "\texttt{current\_compiler}".
+When you write a compiler plugin to overrule settings from a default plugin, don't check ``\texttt{current\_compiler}".
 This plugin is supposed to be loaded last, thus it should be in a directory at the end of \texttt{'runtimepath'}.
 For Unix that could be \texttt{~/.vim/after/compiler}.
 \subsection{Writing a plugin that loads quickly}
@@ -2539,26 +2539,26 @@ The following example shows how it's done:
  endfunction
 \end{Verbatim}
 
-When the script is first loaded "\texttt{s:did\_load}" is not set.
-The commands between the "\texttt{if}" and "\texttt{endif}" will be executed.
+When the script is first loaded ``\texttt{s:did\_load}" is not set.
+The commands between the ``\texttt{if}" and ``\texttt{endif}" will be executed.
 This ends in a |\texttt{:h :finish}| command, thus the rest of the script is not executed.
 
-The second time the script is loaded "\texttt{s:did\_load}" exists and the commands after the "\texttt{endif}" are executed.
+The second time the script is loaded ``\texttt{s:did\_load}" exists and the commands after the ``\texttt{endif}" are executed.
 This defines the (possible long) BufNetRead() and BufNetWrite() functions.
 
 If you drop this script in your plugin directory Vim will execute it on startup.
 This is the sequence of events that happens:
 
 \begin{enumerate}
-				\item The "\texttt{BNRead}" command is defined and the <F19> key is mapped when the script is sourced at startup.
+				\item The ``\texttt{BNRead}" command is defined and the <F19> key is mapped when the script is sourced at startup.
 								A |\texttt{:h FuncUndefined}| autocommand is defined.
-								The "\texttt{:finish}" command causes the script to terminate early.
+								The ``\texttt{:finish}" command causes the script to terminate early.
 				\item The user types the BNRead command or presses the <F19> key.
 								The \texttt{BufNetRead()} or \texttt{BufNetWrite()} function will be called.
 				\item Vim can't find the function and triggers the |\texttt{:h FuncUndefined}| autocommand event.
-								Since the pattern "\texttt{BufNet*}" matches the invoked function, the command "\texttt{source fname}" will be executed.
-								"\texttt{fname}" will be equal to the name of the script, no matter where it is located, because it comes from expanding "\texttt{<sfile>}" (see |\texttt{:h expand()}|).
-				\item The script is sourced again, the "\texttt{s:did\_load}" variable exists and the functions are defined.
+								Since the pattern ``\texttt{BufNet*}" matches the invoked function, the command ``\texttt{source fname}" will be executed.
+								"\texttt{fname}" will be equal to the name of the script, no matter where it is located, because it comes from expanding ``\texttt{<sfile>}" (see |\texttt{:h expand()}|).
+				\item The script is sourced again, the ``\texttt{s:did\_load}" variable exists and the functions are defined.
 \end{enumerate}
 
 Notice that the functions that are loaded afterwards match the pattern in the |\texttt{:h FuncUndefined}| autocommand.
@@ -2581,7 +2581,7 @@ Example:
  call MyLibFunction(arg)
 \end{Verbatim}
 
-Here you need to know that \texttt{MyLibFunction()} is defined in a script "\texttt{library/mylibscript.vim}" in one of the directories in \texttt{'runtimepath'}.
+Here you need to know that \texttt{MyLibFunction()} is defined in a script ``\texttt{library/mylibscript.vim}" in one of the directories in \texttt{'runtimepath'}.
 
 To make this a bit simpler Vim offers the autoload mechanism.
 Then the example looks like this:
@@ -2591,8 +2591,8 @@ Then the example looks like this:
 \end{Verbatim}
 
 That's a lot simpler, isn't it?
-Vim will recognize the function name and when it's not defined search for the script "\texttt{autoload/mylib.vim}" in \texttt{'runtimepath'}.
-That script must define the "\texttt{mylib\#myfunction()}" function.
+Vim will recognize the function name and when it's not defined search for the script ``\texttt{autoload/mylib.vim}" in \texttt{'runtimepath'}.
+That script must define the ``\texttt{mylib\#myfunction()}" function.
 
 You can put many other functions in the mylib.vim script, you are free to organize your functions in library scripts.
 But you must use function names where the part before the `\texttt{\#}' matches the script name.
@@ -2628,7 +2628,7 @@ You can use the same mechanism for variables:
  let weekdays = dutch#weekdays
 \end{Verbatim}
 
-This will load the script "\texttt{autoload/dutch.vim}", which should contain something like:
+This will load the script ``\texttt{autoload/dutch.vim}", which should contain something like:
 
 \begin{Verbatim}[samepage=true]
  let dutch#weekdays = ['zondag', 'maandag', 'dinsdag', 'woensdag',
@@ -2643,7 +2643,7 @@ If you made something that is useful for others, share it!
 
 Vim scripts can be used on any system.
 There might not be a tar or gzip command.
-If you want to pack files together and/or compress them the "zip" utility is recommended.
+If you want to pack files together and/or compress them the ``zip" utility is recommended.
 
 For utmost portability use Vim itself to pack scripts together.
 This can be done with the Vimball utility.

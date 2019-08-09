@@ -15,13 +15,13 @@ To see what the current language is, use this command:
  :language
 \end{Verbatim}
 
-If it replies with "\texttt{C}", this means the default is being used, which is English.
+If it replies with ``\texttt{C}", this means the default is being used, which is English.
 
 \emph{Note}:
 Using different languages only works when Vim was compiled to handle it.
-To find out if it works, use the "\texttt{:version}" command and check the output for "\texttt{+gettext}" and "\texttt{+multi\_lang}".
+To find out if it works, use the ``\texttt{:version}" command and check the output for ``\texttt{+gettext}" and ``\texttt{+multi\_lang}".
 If they are there, you are OK.
-If you see "\texttt{-gettext}" or "\texttt{-multi\_lang}" you will have to find another Vim.
+If you see ``\texttt{-gettext}" or ``\texttt{-multi\_lang}" you will have to find another Vim.
 
 What if you would like your messages in a different language?  There are several ways.
 Which one you should use depends on the capabilities of your system.
@@ -48,12 +48,12 @@ You don't get an error when translated messages are not available.
 Vim will silently fall back to using English.
 
 To find out which languages are supported on your system, find the directory where they are listed.
-On my system it is "\texttt{/usr/share/locale}".
-On some systems it's in "\texttt{/usr/lib/locale}".
-The manual page for "\texttt{setlocale}" should give you a hint where it is found on your system.
+On my system it is ``\texttt{/usr/share/locale}".
+On some systems it's in ``\texttt{/usr/lib/locale}".
+The manual page for ``\texttt{setlocale}" should give you a hint where it is found on your system.
 
 Be careful to type the name exactly as it should be.
-Upper and lowercase matter, and the '\texttt{-}' and '\texttt{\_}' characters are easily confused.
+Upper and lowercase matter, and the `\texttt{-}' and `\texttt{\_}' characters are easily confused.
 
 You can also set the language separately for messages, edited text and the time format.
 See |\texttt{:h :language}|.
@@ -76,7 +76,7 @@ Normally this is automatically done for you if the environment is set for your l
 You don't need to do anything extra for this.
 But it only works if translations for the language are available.
 
-Suppose you are in Germany, with the language set to German, but prefer to use "\texttt{File}" instead of "\texttt{Datei}".
+Suppose you are in Germany, with the language set to German, but prefer to use ``\texttt{File}" instead of ``\texttt{Datei}".
 You can switch back to using the English menus this way:
 
 \begin{Verbatim}[samepage=true]
@@ -89,7 +89,7 @@ It is also possible to specify a language:
  :set langmenu=nl_NL.ISO_8859-1
 \end{Verbatim}
 
-Like above, differences between "\texttt{-}" and "\texttt{\_}" matter.
+Like above, differences between ``\texttt{-}" and ``\texttt{\_}" matter.
 However, upper/lowercase differences are ignored here.
 
 The \texttt{'langmenu'} option must be set before the menus are loaded.
@@ -118,7 +118,7 @@ The files are called \texttt{menu\_{language}.vim}.
 If you don't see the language you want to use, you can do your own translations.
 The simplest way to do this is by copying one of the existing language files, and change it.
 
-First find out the name of your language with the "\texttt{:language}" command.
+First find out the name of your language with the ``\texttt{:language}" command.
 Use this name, but with all letters made lowercase.
 Then copy the file to your own runtime directory, as found early in \texttt{'runtimepath'}.
 For example, for Unix you would do:
@@ -127,10 +127,10 @@ For example, for Unix you would do:
  :!cp $VIMRUNTIME/lang/menu_ko_kr.euckr.vim ~/.vim/lang/menu_nl_be.iso_8859-1.vim
 \end{Verbatim}
 
-You will find hints for the translation in "\texttt{\$VIMRUNTIME/lang/README.txt}".
+You will find hints for the translation in ``\texttt{\$VIMRUNTIME/lang/README.txt}".
 \subsection{Using another encoding}
 Vim guesses that the files you are going to edit are encoded for your language.
-For many European languages this is "\texttt{latin1}".
+For many European languages this is ``\texttt{latin1}".
 Then each byte is one character.
 That means there are 256 different characters possible.
 For Asian languages this is not sufficient.
@@ -138,7 +138,7 @@ These mostly use a double-byte encoding, providing for over ten thousand possibl
 This still isn't enough when a text is to contain several different languages.
 This is where Unicode comes in.
 It was designed to include all characters used in commonly used languages.
-This is the "Super encoding that replaces all others".
+This is the ``Super encoding that replaces all others".
 But it isn't used that much yet.
 
 Fortunately, Vim supports these three kinds of encodings.
@@ -149,9 +149,9 @@ The following is only relevant when you want to edit different languages.
 
 \emph{Note}:
 Using different encodings only works when Vim was compiled to handle it.
-To find out if it works, use the "\texttt{:version}" command and check the output for "\texttt{+multi\_byte}".
+To find out if it works, use the ``\texttt{:version}" command and check the output for ``\texttt{+multi\_byte}".
 If it's there, you are OK.
-If you see "\texttt{-multi\_byte}" you will have to find another Vim.
+If you see ``\texttt{-multi\_byte}" you will have to find another Vim.
 
 \subsubsection{Using unicode in the gui}
 The nice thing about Unicode is that other encodings can be converted to it and back without losing information.
@@ -179,7 +179,7 @@ This font is in a package that is used to enhance xterm with Unicode support.
 If you don't have this font, you might find it here: \url{http://www.cl.cam.ac.uk/~mgk25/download/ucs-fonts.tar.gz}.
 
 For MS-Windows, some fonts have a limited number of Unicode characters.
-Try using the "Courier New" font.
+Try using the ``Courier New" font.
 You can use the Edit/Select Font... menu to select and try out the fonts available.
 Only fixed-width fonts can be used though.
 Example:
@@ -214,7 +214,7 @@ Let's use that as an example.
 First of all, the xterm must have been compiled with Unicode support.
 See |\texttt{:h UTF8-xterm}| how to check that and how to compile it when needed.
 
-Start the xterm with the "\texttt{-u8}" argument.
+Start the xterm with the ``\texttt{-u8}" argument.
 You might also need so specify a font.
 Example:
 
@@ -223,7 +223,7 @@ Example:
 \end{Verbatim}
 
 Now you can run Vim inside this terminal.
-Set \texttt{'encoding'} to "\texttt{utf-8}" as before.
+Set \texttt{'encoding'} to ``\texttt{utf-8}" as before.
 That's all.
 
 \subsubsection{Using unicode in an ordinary terminal}
@@ -267,7 +267,7 @@ Sounds simple, right?  Well, Vim actually uses utf-8 encoding internally, thus t
 
 Vim will try to detect what kind of file you are editing.
 It uses the encoding names in the \texttt{'fileencodings'} option.
-When using Unicode, the default value is: "\texttt{ucs-bom,utf-8,latin1}".
+When using Unicode, the default value is: ``\texttt{ucs-bom,utf-8,latin1}".
 This means that Vim checks the file to see if it's one of these encodings:
 
 \begin{center} \begin{tabularx}{\textwidth}{l X}
@@ -277,7 +277,7 @@ This means that Vim checks the file to see if it's one of these encodings:
 \end{tabularx} \end{center}
 When you start editing that 16-bit Unicode file, and it has a BOM, Vim will detect this and convert the file to utf-8 when reading it.
 The \texttt{'fileencoding'} option (without s at the end) is set to the detected value.
-In this case it is "\texttt{utf-16le}".
+In this case it is ``\texttt{utf-16le}".
 That means it's Unicode, 16-bit and little-endian.
 This file format is common on MS-Windows (e.g., for registry files).
 
@@ -289,7 +289,7 @@ Thus the text is assumed to be encoded with \texttt{'encoding'}.
 
 If the default \texttt{'fileencodings'} value is not good for you, set it to the encodings you want Vim to try.
 Only when a value is found to be invalid will the next one be used.
-Putting "\texttt{latin1}" first doesn't work, because it is never illegal.
+Putting ``\texttt{latin1}" first doesn't work, because it is never illegal.
 An example, to fall back to Japanese when the file doesn't have a BOM and isn't utf-8:
 
 \begin{Verbatim}[samepage=true]
@@ -308,7 +308,7 @@ Example:
  :edit ++enc=koi8-r russian.txt
 \end{Verbatim}
 
-The "\texttt{++enc}" part specifies the name of the encoding to be used for this file only.
+The ``\texttt{++enc}" part specifies the name of the encoding to be used for this file only.
 Vim will convert the file from the specified encoding, Russian in this example, to \texttt{'encoding'}.
 \texttt{'fileencoding'} will also be set to the specified encoding, so that the reverse conversion can be done when writing the file.
 
@@ -355,7 +355,7 @@ This depends on the value of \texttt{'encoding'}.
 If no matching file was found, you will get an error message.
 
 Now you can type Hebrew in Insert mode.
-In Normal mode, and when typing a "\texttt{:}" command, Vim automatically switches to English.
+In Normal mode, and when typing a ``\texttt{:}" command, Vim automatically switches to English.
 You can use this command to switch between Hebrew and English:
 
 \begin{Verbatim}[samepage=true]
@@ -387,8 +387,8 @@ Otherwise you can use this command:
 You can create your own keymap file.
 It's not very difficult.
 Start with a keymap file that is similar to the language you want to use.
-Copy it to the "\texttt{keymap}" directory in your runtime directory.
-For example, for Unix, you would use the directory "\texttt{~/.vim/keymap}".
+Copy it to the ``\texttt{keymap}" directory in your runtime directory.
+For example, for Unix, you would use the directory ``\texttt{~/.vim/keymap}".
 
 The name of the keymap file must look like this:
 

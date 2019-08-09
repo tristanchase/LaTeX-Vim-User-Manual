@@ -1,8 +1,9 @@
 TODO
-* \localtableofcontentswithrelativedepth {etoc}
-	- I tried updating etoc
-	- Not sure if I did it correctly
-* single and double quotes are a mess {csquotes} I think
+* Run texhash?
+* Single and double quotes are a mess
+	* do a %s/ "/ ``/gc
+	* go through with /" to get any strays
+	* repeat with '/`
 * Go through table formatting
 	* grep for \begin{center}
 	* grep for {tabular[x]}
@@ -54,6 +55,14 @@ vf!c\texttt{;r}
 @z
 
 DONE
++ 2019-08-07 \localtableofcontentswithrelativedepth {etoc}
+	+ 2019-08-07 I tried updating etoc
+	+ 2019-08-07 Not sure if I did it correctly
+		+ 2019-08-07 Added these lines:
+			+ 2019-08-07 %\localtableofcontentswithrelativedepth{+1} % I couldn't get this to work TMC
+		+ 2019-08-07 \etocsetnexttocdepth{2} % This produces the same result TMC
+		+ 2019-08-07 \etocsettocstyle{\subsection*{Contents}}{}
+		+ 2019-08-07 \localtableofcontents
 + 2019-08-05 Convert \verb to texttt{}
 	+ 2019-08-05 grep for \\verb
 	+ 2019-08-05 @s each file

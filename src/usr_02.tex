@@ -58,7 +58,7 @@ The two basic modes are called Normal mode and Insert mode.
 In Normal mode the characters you type are commands.
 In Insert mode the characters are inserted as text.
 Since you have just started Vim it will be in Normal mode.
-To start Insert mode you type the "i" command (i for Insert).
+To start Insert mode you type the ``i" command (i for Insert).
 Then you can enter the text.
 It will be inserted into the file.
 Do not worry if you make mistakes; you can correct them later.
@@ -69,7 +69,7 @@ To enter the following programmer's limerick, this is what you type:
  Found programming UNIX a hurdle
  \end{Verbatim}
 
-After typing "turtle" you press the <Enter> key to start a new line.
+After typing ``turtle" you press the <Enter> key to start a new line.
 Finally you press the <Esc> key to stop Insert mode and go back to Normal mode.
 You now have two lines of text in your Vim window: 
 
@@ -94,7 +94,7 @@ To be able to see what mode you are in, type this command:
 You will notice that when typing the colon Vim moves the cursor to the last line of the window.
 That's where you type colon commands (commands that start with a colon).
 Finish this command by pressing the <Enter> key (all commands that start with a colon are finished this way).
-Now, if you type the "i" command Vim will display --INSERT-- at the bottom of the window.
+Now, if you type the ``i" command Vim will display --INSERT-- at the bottom of the window.
 This indicates you are in Insert mode.
 
 		\begin{Verbatim}[samepage=true]
@@ -150,7 +150,7 @@ In a picture:
 \end{Verbatim}
 
 The best way to learn these commands is by using them.
-Use the "i" command to insert some more lines of text.
+Use the ``i" command to insert some more lines of text.
 Then use the hjkl keys to move around and insert a word somewhere.
 Don't forget to press <Esc> to go back to Normal mode.
 The \hyperref[vimtutor]{|\texttt{vimtutor}|} is also a nice way to learn by doing.
@@ -169,9 +169,9 @@ For Japanese users, Hiroshi Iwatani suggested using this:
 
 \subsection{Deleting characters}
 
-To delete a character, move the cursor over it and type "x".
+To delete a character, move the cursor over it and type ``x".
 (This is a throwback to the old days of the typewriter, when you deleted things by typing xxxx over them.)
-Move the cursor to the beginning of the first line, for example, and type xxxxxxx (seven x's) to delete "A very ".
+Move the cursor to the beginning of the first line, for example, and type xxxxxxx (seven x's) to delete ``A very ".
 The result should look like this: 
 
 		\begin{Verbatim}[samepage=true]
@@ -190,7 +190,7 @@ Now you can insert new text, for example by typing:
  iA young <Esc>
  \end{Verbatim}
 
-This begins an insert (the i), inserts the words "A young", and then exits insert mode (the final <Esc>).
+This begins an insert (the i), inserts the words ``A young", and then exits insert mode (the final <Esc>).
  The result: 
 		\begin{Verbatim}[samepage=true]
 		+---------------------------------------+
@@ -204,7 +204,7 @@ This begins an insert (the i), inserts the words "A young", and then exits inser
 
 \subsubsection{Deleting a line}
 
-To delete a whole line use the "dd" command.
+To delete a whole line use the ``dd" command.
 The following line will then move up to fill the gap: 
 
 		\begin{Verbatim}[samepage=true]
@@ -220,7 +220,7 @@ The following line will then move up to fill the gap:
 \subsubsection{Deleting a line break}
 
 In Vim you can join two lines together, which means that the line break between them is deleted.
-The "J" command does this.
+The ``J" command does this.
 Take these two lines: 
 
 		\begin{Verbatim}[samepage=true]
@@ -228,7 +228,7 @@ Take these two lines:
 		turtle 
 		\end{Verbatim}
 
-Move the cursor to the first line and press "J":
+Move the cursor to the first line and press ``J":
 
 		\begin{Verbatim}[samepage=true]
 		A young intelligent turtle 
@@ -239,22 +239,22 @@ Move the cursor to the first line and press "J":
 
 Suppose you delete too much.
 Well, you can type it in again, but an easier way exists.
-The "u" command undoes the last edit.
-Take a look at this in action: After using "dd" to delete the first line, "u" brings it back.
+The ``u" command undoes the last edit.
+Take a look at this in action: After using ``dd" to delete the first line, ``u" brings it back.
 Another one: Move the cursor to the A in the first line: 
 
 		\begin{Verbatim}[samepage=true]
 		A young intelligent turtle 
 						\end{Verbatim}
 
-Now type xxxxxxx to delete "A young".
+Now type xxxxxxx to delete ``A young".
 The result is as follows: 
 
 	\begin{Verbatim}[samepage=true]
 	intelligent turtle 
 	\end{Verbatim}
 
-Type "u" to undo the last delete.
+Type ``u" to undo the last delete.
 That delete removed the g, so the undo restores the character.
 
 	\begin{Verbatim}[samepage=true]
@@ -278,9 +278,9 @@ The next u command gives you the u, and so on:
 	\end{Verbatim}
 
 Note:
-If you type "u" twice, and the result is that you get the same text back, you have Vim configured to work Vi compatible.
+If you type ``u" twice, and the result is that you get the same text back, you have Vim configured to work Vi compatible.
 Look here to fix this: \hyperref[not-compatible]{|\texttt{not-compatible}|}.
-This text assumes you work "The Vim Way".
+This text assumes you work ``The Vim Way".
 You might prefer to use the good old Vi way, but you will have to watch out for small differences in the text then.
 
 \subsubsection{Redo}
@@ -294,9 +294,9 @@ The character A and the space after it disappear:
     young intelligent turtle 
 		\end{Verbatim}
 
-There's a special version of the undo command, the "U" (undo line) command.
+There's a special version of the undo command, the ``U" (undo line) command.
 The undo line command undoes all the changes made on the last line that was edited.
-Typing this command twice cancels the preceding "U".
+Typing this command twice cancels the preceding ``U".
 
 		\begin{Verbatim}[samepage=true]
     A very intelligent turtle 
@@ -312,9 +312,9 @@ Typing this command twice cancels the preceding "U".
     A intelligent 
 		\end{Verbatim}
 
-The "U" command is a change by itself, which the "u" command undoes and CTRL-R redoes.
+The ``U" command is a change by itself, which the ``u" command undoes and CTRL-R redoes.
 This might be a bit confusing.
-Don't worry, with "u" and CTRL-R you can go to any of the situations you had.
+Don't worry, with ``u" and CTRL-R you can go to any of the situations you had.
 More about that in section |\hyperref[Numbering changes]{\texttt{Numbering changes}}|.
 
 \subsection{Other editing commands}
@@ -325,9 +325,9 @@ Here are a few often used ones.
 
 \subsubsection{Appending}
 
-The "i" command inserts a character before the character under the cursor.
+The ``i" command inserts a character before the character under the cursor.
 That works fine; but what happens if you want to add stuff to the end of the line?  For that you need to insert text after the cursor.
-This is done with the "a" (append) command.
+This is done with the ``a" (append) command.
 For example, to change the line 
 
 		\begin{Verbatim}[samepage=true]
@@ -338,7 +338,7 @@ to
     and that's not saying much for the turtle!!! 
 		\end{Verbatim}
 
-move the cursor over to the dot at the end of the line. Then type "x" to delete the period.
+move the cursor over to the dot at the end of the line. Then type ``x" to delete the period.
 The cursor is now positioned at the end of the line on the e in turtle.
 Now type 
 
@@ -354,7 +354,7 @@ to append three exclamation points after the e in turtle:
 
 \subsubsection{Opening up a new line}
 
-The "o" command creates a new, empty line below the cursor and puts Vim in Insert mode.
+The ``o" command creates a new, empty line below the cursor and puts Vim in Insert mode.
 Then you can type the text for the new line.
 Suppose the cursor is somewhere in the first of these two lines: 
 
@@ -363,7 +363,7 @@ Suppose the cursor is somewhere in the first of these two lines:
     Found programming UNIX a hurdle 
 		\end{Verbatim}
 
-If you now use the "o" command and type new text:
+If you now use the ``o" command and type new text:
 
 		\begin{Verbatim}[samepage=true]
 		oThat liked using Vim<Esc>
@@ -377,26 +377,26 @@ The result is:
     Found programming UNIX a hurdle 
 		\end{Verbatim}
 
-The "O" command (uppercase) opens a line above the cursor.
+The ``O" command (uppercase) opens a line above the cursor.
 
 \subsubsection{Using a count}
 
 Suppose you want to move up nine lines.
-You can type "kkkkkkkkk" or you can enter the command "9k".
+You can type ``kkkkkkkkk" or you can enter the command ``9k".
 In fact, you can precede many commands with a number.
-Earlier in this chapter, for instance, you added three exclamation points to the end of a line by typing "a!!!<Esc>".
-Another way to do this is to use the command "3a!<Esc>".
+Earlier in this chapter, for instance, you added three exclamation points to the end of a line by typing ``a!!!<Esc>".
+Another way to do this is to use the command ``3a!<Esc>".
 The count of 3 tells the command that follows to triple its effect.
-Similarly, to delete three characters, use the command "3x".
+Similarly, to delete three characters, use the command ``3x".
 The count always comes before the command it applies to.
 
 \subsection{Getting out}
 
-To exit, use the "\texttt{ZZ}" command.  This command writes the file and exits.
+To exit, use the ``\texttt{ZZ}" command.  This command writes the file and exits.
 
 Note:\newline
 Unlike many other editors, Vim does not automatically make a backup file.
-If you type "\texttt{ZZ}", your changes are committed and there's no turning back.
+If you type ``\texttt{ZZ}", your changes are committed and there's no turning back.
 You can configure the Vim editor to produce backup files, see |\hyperref[Backup files]{\texttt{Backup files}}|.
 
 \subsubsection{Discarding changes}
@@ -413,15 +413,15 @@ Don't forget to press <Enter> to finish the command.
 
 For those of you interested in the details, the three parts of this command are the colon (:), which enters Command-line mode; the q command, which tells the editor to quit; and the override command modifier (!).
 The override command modifier is needed because Vim is reluctant to throw away changes.
-If you were to just type "\texttt{:q}", Vim would display an error message and refuse to exit: 
+If you were to just type ``\texttt{:q}", Vim would display an error message and refuse to exit: 
 
 		\begin{Verbatim}[samepage=true]
     E37: No write since last change (use ! to override) 
 		\end{Verbatim}
 
-By specifying the override, you are in effect telling Vim, "I know that what I'm doing looks stupid, but I'm a big boy and really want to do this."
+By specifying the override, you are in effect telling Vim, ``I know that what I'm doing looks stupid, but I'm a big boy and really want to do this."
 
-If you want to continue editing with Vim: The "\texttt{:e!}" command reloads the original version of the file.
+If you want to continue editing with Vim: The ``\texttt{:e!}" command reloads the original version of the file.
 
 \subsection{Finding help}
 
@@ -435,11 +435,11 @@ To get generic help use this command:
 
 You could also use the first function key <F1>.
 If your keyboard has a <Help> key it might work as well.
-If you don't supply a subject, "\texttt{:help}" displays the general help window.
+If you don't supply a subject, ``\texttt{:help}" displays the general help window.
 The creators of Vim did something very clever (or very lazy) with the help system: They made the help window a normal editing window.
 You can use all the normal Vim commands to move through the help information.
 Therefore h, j, k, and l move left, down, up and right.
-To get out of the help window, use the same command you use to get out of the editor: "\texttt{ZZ}".
+To get out of the help window, use the same command you use to get out of the editor: ``\texttt{ZZ}".
 This will only close the help window, not exit Vim.
 
 As you read the help text, you will notice some text enclosed in vertical bars (for example, |\texttt{:h help}|).
@@ -450,7 +450,7 @@ So CTRL-] jumps to the location of the tag given by the word under the cursor.) 
 CTRL-T (pop tag) takes you back to the preceding position.
 CTRL-O (jump to older position) also works nicely here.
 At the top of the help screen, there is the notation *help.txt*.
-This name between "*" characters is used by the help system to define a tag (hyperlink destination).
+This name between ``*" characters is used by the help system to define a tag (hyperlink destination).
 See |\hyperref[Using tags]{\texttt{Using tags}}| for details about using tags.
 
 To get help on a given subject, use the following command:
@@ -459,7 +459,7 @@ To get help on a given subject, use the following command:
  :help {subject}
  \end{Verbatim}
 
-To get help on the "x" command, for example, enter the following:
+To get help on the ``x" command, for example, enter the following:
 
  \begin{Verbatim}[samepage=true]
  :help x
@@ -477,7 +477,7 @@ To get a complete index of all Vim commands, use the following command:
  :help index
  \end{Verbatim}
 
-When you need to get help for a control character command (for example, CTRL-A), you need to spell it with the prefix "CTRL-".
+When you need to get help for a control character command (for example, CTRL-A), you need to spell it with the prefix ``CTRL-".
 
  \begin{Verbatim}[samepage=true]
  :help CTRL-A
@@ -492,7 +492,7 @@ For example, the following command displays help for the normal-mode CTRL-H comm
  \end{Verbatim}
 
 To identify other modes, use a mode prefix.
-If you want the help for the insert-mode version of a command, use "\texttt{i\_}".
+If you want the help for the insert-mode version of a command, use ``\texttt{i\_}".
 For CTRL-H this gives you the following command: 
 
  \begin{Verbatim}[samepage=true]
@@ -544,22 +544,22 @@ You can use the error ID at the start to find help about it:
 				Gives you very general help.
 				Scroll down to see a list of all helpfiles, including those added locally (i.e. not distributed with Vim). \\ \hline
 				\texttt{:help user-toc.txt} & Table of contents of the User Manual.\\ \hline
-				\texttt{:help :subject} & Ex-command "subject", for instance the following:\\ \hline
+				\texttt{:help :subject} & Ex-command ``subject", for instance the following:\\ \hline
 				\texttt{:help :help} & Help on getting help.\\ \hline
-				\texttt{:help abc} & normal-mode command "abc".\\ \hline
+				\texttt{:help abc} & normal-mode command ``abc".\\ \hline
 				\texttt{:help CTRL-B} & Control key <C-B> in Normal mode.\\ \hline
 				\texttt{:help i\_abc}  \texttt{:help i\_CTRL-B} & The same in Insert mode. \\ \hline
 				\texttt{:help v\_abc}  \texttt{:help v\_CTRL-B} & The same in Visual mode. \\ \hline
 				\texttt{:help c\_abc}  \texttt{:help c\_CTRL-B} & The same in Command-line mode. \\ \hline
 				\texttt{:help 'subject'} & Option \texttt{'subject'}.\\ \hline
-				\texttt{:help subject()} & Function "subject".\\ \hline
-				\texttt{:help -subject} & Command-line option "-subject".\\ \hline
-				\texttt{:help +subject} & Compile-time feature "+subject".\\ \hline
-				\texttt{:help EventName} & Autocommand event "EventName".\\ \hline
-				\texttt{:help digraphs.txt} & The top of the helpfile "digraph.txt". Similarly for any other helpfile.\\ \hline
-				\texttt{:help pattern<Tab>} & Find a help tag starting with "pattern". Repeat <Tab> for others.\\ \hline
-				\texttt{:help pattern<Ctrl-D>} & See all possible help tag matches "pattern" at once.\\ \hline
-				\texttt{:helpgrep pattern} & Search the whole text of all help files for pattern "pattern".  Jumps to the first match.
+				\texttt{:help subject()} & Function ``subject".\\ \hline
+				\texttt{:help -subject} & Command-line option ``-subject".\\ \hline
+				\texttt{:help +subject} & Compile-time feature ``+subject".\\ \hline
+				\texttt{:help EventName} & Autocommand event ``EventName".\\ \hline
+				\texttt{:help digraphs.txt} & The top of the helpfile ``digraph.txt". Similarly for any other helpfile.\\ \hline
+				\texttt{:help pattern<Tab>} & Find a help tag starting with ``pattern". Repeat <Tab> for others.\\ \hline
+				\texttt{:help pattern<Ctrl-D>} & See all possible help tag matches ``pattern" at once.\\ \hline
+				\texttt{:helpgrep pattern} & Search the whole text of all help files for pattern ``pattern".  Jumps to the first match.
 				Jump to other matches with:
 				\begin{itemize}
 								\item \texttt{:cn} next match

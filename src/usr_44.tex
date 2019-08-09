@@ -55,12 +55,12 @@ You need to tell which type you have with the following commands:
  :syntax case ignore
 \end{Verbatim}
 
-The "\texttt{match}" argument means that Vim will match the case of syntax elements.
-Therefore, "\texttt{int}" differs from "\texttt{Int}" and "\texttt{INT}".
-If the "\texttt{ignore}" argument is used, the following are equivalent: "\texttt{Procedure}", "\texttt{PROCEDURE}" and "\texttt{procedure}".
+The ``\texttt{match}" argument means that Vim will match the case of syntax elements.
+Therefore, ``\texttt{int}" differs from ``\texttt{Int}" and ``\texttt{INT}".
+If the ``\texttt{ignore}" argument is used, the following are equivalent: ``\texttt{Procedure}", ``\texttt{PROCEDURE}" and ``\texttt{procedure}".
 
-The "\texttt{:syntax case}" commands can appear anywhere in a syntax file and affect the syntax definitions that follow.
-In most cases, you have only one \texttt{":syntax case}" command in your syntax file; if you work with an unusual language that contains both case-sensitive and non-case-sensitive elements, however, you can scatter the "\texttt{:syntax case}" command throughout the file.
+The ``\texttt{:syntax case}" commands can appear anywhere in a syntax file and affect the syntax definitions that follow.
+In most cases, you have only one \texttt{":syntax case}" command in your syntax file; if you work with an unusual language that contains both case-sensitive and non-case-sensitive elements, however, you can scatter the ``\texttt{:syntax case}" command throughout the file.
 \subsection{Keywords}
 The most basic syntax elements are keywords.
 To define a keyword, use the following form:
@@ -70,7 +70,7 @@ To define a keyword, use the following form:
 \end{Verbatim}
 
 The \texttt{\{group\}} is the name of a syntax group.
-With the "\texttt{:highlight}" command you can assign colors to a \texttt{\{group\}}.
+With the ``\texttt{:highlight}" command you can assign colors to a \texttt{\{group\}}.
 The \texttt{\{keyword\}} argument is an actual keyword.
 Here are a few examples:
 
@@ -79,13 +79,13 @@ Here are a few examples:
  :syntax keyword xStatement if then else endif
 \end{Verbatim}
 
-This example uses the group names "\texttt{xType}" and "\texttt{xStatement}".
+This example uses the group names ``\texttt{xType}" and ``\texttt{xStatement}".
 By convention, each group name is prefixed by the filetype for the language being defined.
 This example defines syntax for the x language (eXample language without an interesting name).
-In a syntax file for "\texttt{csh}" scripts the name "\texttt{cshType}" would be used.
+In a syntax file for ``\texttt{csh}" scripts the name ``\texttt{cshType}" would be used.
 Thus the prefix is equal to the value of \texttt{'filetype'}.
 
-These commands cause the words "\texttt{int}", "\texttt{long}" and "\texttt{char}" to be highlighted one way and the words "\texttt{if}", "\texttt{then}", "\texttt{else}" and "\texttt{endif}" to be highlighted another way.
+These commands cause the words ``\texttt{int}", ``\texttt{long}" and ``\texttt{char}" to be highlighted one way and the words ``\texttt{if}", ``\texttt{then}", ``\texttt{else}" and ``\texttt{endif}" to be highlighted another way.
 Now you need to connect the x group names to standard Vim names.
 You do this with the following commands:
 
@@ -94,7 +94,7 @@ You do this with the following commands:
  :highlight link xStatement Statement
 \end{Verbatim}
 
-This tells Vim to highlight "\texttt{xType}" like "\texttt{Type}" and "\texttt{xStatement}" like "\texttt{Statement}".
+This tells Vim to highlight ``\texttt{xType}" like ``\texttt{Type}" and ``\texttt{xStatement}" like ``\texttt{Statement}".
 See |\texttt{:h group-name}| for the standard names.
 
 \subsubsection{Unusual keywords}
@@ -102,7 +102,7 @@ The characters used in a keyword must be in the \texttt{'iskeyword'} option.
 If you use another character, the word will never match.
 Vim doesn't give a warning message for this.
 
-The x language uses the '-' character in keywords.
+The x language uses the `-' character in keywords.
 This is how it's done:
 
 \begin{Verbatim}[samepage=true]
@@ -110,19 +110,19 @@ This is how it's done:
  :syntax keyword xStatement when-not
 \end{Verbatim}
 
-The "\texttt{:setlocal}" command is used to change \texttt{'iskeyword'} only for the current buffer.
-Still it does change the behavior of commands like "\texttt{w}" and "\texttt{*}".
+The ``\texttt{:setlocal}" command is used to change \texttt{'iskeyword'} only for the current buffer.
+Still it does change the behavior of commands like ``\texttt{w}" and ``\texttt{*}".
 If that is not wanted, don't define a keyword but use a match (explained in the next section).
 
 The x language allows for abbreviations.
-For example, "\texttt{next}" can be abbreviated to "\texttt{n}", "\texttt{ne}" or "\texttt{nex}".
+For example, ``\texttt{next}" can be abbreviated to ``\texttt{n}", ``\texttt{ne}" or ``\texttt{nex}".
 You can define them by using this command:
 
 \begin{Verbatim}[samepage=true]
  :syntax keyword xStatement n[ext]
 \end{Verbatim}
 
-This doesn't match "\texttt{nextone}", keywords always match whole words only.
+This doesn't match ``\texttt{nextone}", keywords always match whole words only.
 \subsection{Matches}
 Consider defining something a bit more complex.
 You want to match ordinary identifiers.
@@ -134,10 +134,10 @@ This one matches any word consisting of only lowercase letters:
 \end{Verbatim}
  
 \emph{Note}: Keywords overrule any other syntax item.
-Thus the keywords "\texttt{if}", "\texttt{then}", etc., will be keywords, as defined with the "\texttt{:syntax keyword}" commands above, even though they also match the pattern for xIdentifier.
+Thus the keywords ``\texttt{if}", ``\texttt{then}", etc., will be keywords, as defined with the ``\texttt{:syntax keyword}" commands above, even though they also match the pattern for xIdentifier.
 
 The part at the end is a pattern, like it's used for searching.
-The \texttt{//} is used to surround the pattern (like how it's done in a "\texttt{:substitute}" command).
+The \texttt{//} is used to surround the pattern (like how it's done in a ``\texttt{:substitute}" command).
 You can use any other character, like a plus or a quote.
 
 Now define a match for a comment.
@@ -160,7 +160,7 @@ The definition is as follows:
  :syntax region xString start=/"/ end=/"/
 \end{Verbatim}
 
-The "\texttt{start}" and "\texttt{end}" directives define the patterns used to find the start and end of the region.
+The ``\texttt{start}" and ``\texttt{end}" directives define the patterns used to find the start and end of the region.
 But what about strings that look like this?
 
 \begin{Verbatim}[samepage=true]
@@ -179,9 +179,9 @@ The double backslash matches a single backslash, since the backslash is a specia
 
 When to use a region instead of a match?
 The main difference is that a match item is a single pattern, which must match as a whole.
-A region starts as soon as the "\texttt{start}" pattern matches.
-Whether the "\texttt{end}" pattern is found or not doesn't matter.
-Thus when the item depends on the "\texttt{end}" pattern to match, you cannot use a region.
+A region starts as soon as the ``\texttt{start}" pattern matches.
+Whether the ``\texttt{end}" pattern is found or not doesn't matter.
+Thus when the item depends on the ``\texttt{end}" pattern to match, you cannot use a region.
 Otherwise, regions are often simpler to define.
 And it is easier to use nested items, as is explained in the next section.
 \subsection{Nested items}
@@ -199,10 +199,10 @@ To let Vim know about this, you define the following syntax groups:
  :syntax match xComment /%.*/ contains=xTodo
 \end{Verbatim}
 
-In the first line, the "\texttt{contained}" argument tells Vim that this keyword can exist only inside another syntax item.
-The next line has "\texttt{contains=xTodo}".
+In the first line, the ``\texttt{contained}" argument tells Vim that this keyword can exist only inside another syntax item.
+The next line has ``\texttt{contains=xTodo}".
 This indicates that the xTodo syntax element is inside it.
-The result is that the comment line as a whole is matched with "\texttt{xComment}" and made blue.
+The result is that the comment line as a whole is matched with ``\texttt{xComment}" and made blue.
 The word TODO inside it is matched by xTodo and highlighted yellow (highlighting for xTodo was setup for this).
 
 \subsubsection{Recursive nesting}
@@ -227,7 +227,7 @@ Suppose you have this text:
 First a xBlock starts at the \texttt{\{} in the first line.
 In the second line another \texttt{\{} is found.
 Since we are inside a xBlock item, and it contains itself, a nested xBlock item will start here.
-Thus the "\texttt{b = c}" line is inside the second level xBlock region.
+Thus the ``\texttt{b = c}" line is inside the second level xBlock region.
 Then a \texttt{\}} is found in the next line, which matches with the end pattern of the region.
 This ends the nested xBlock.
 Because the \texttt{\}} is included in the nested region, it is hidden from the first xBlock region.
@@ -243,7 +243,7 @@ Consider the following two syntax items:
 
 You define a comment as anything from \texttt{\%} to the end of the line.
 A preprocessor directive is anything from \texttt{\#} to the end of the line.
-Because you can have a comment on a preprocessor line, the preprocessor definition includes a "\texttt{contains=xComment}" argument.
+Because you can have a comment on a preprocessor line, the preprocessor definition includes a ``\texttt{contains=xComment}" argument.
 Now look what happens with this text:
 
 \begin{Verbatim}[samepage=true]
@@ -253,7 +253,7 @@ Now look what happens with this text:
 
 What you see is that the second line is also highlighted as xPreProc.
 The preprocessor directive should end at the end of the line.
-That is why you have used "\texttt{end=/\$/}".
+That is why you have used ``\texttt{end=/\$/}".
 So what is going wrong?
 
 The problem is the contained comment.
@@ -261,7 +261,7 @@ The comment starts with \texttt{\%} and ends at the end of the line.
 After the comment ends, the preprocessor syntax continues.
 This is after the end of the line has been seen, so the next line is included as well.
 
-To avoid this problem and to avoid a contained syntax item eating a needed end of line, use the "\texttt{keepend}" argument.
+To avoid this problem and to avoid a contained syntax item eating a needed end of line, use the ``\texttt{keepend}" argument.
 This takes care of the double end-of-line matching:
 
 \begin{Verbatim}[samepage=true]
@@ -287,8 +287,8 @@ Thus contain all groups but the ones that are listed:
  :syntax region xList start=/\[/ end=/\]/ contains=ALLBUT,xString
 \end{Verbatim}
 
-With the "\texttt{TOP}" item you can include all items that don't have a "\texttt{contained}" argument.
-"\texttt{CONTAINED}" is used to only include items with a "\texttt{contained}" argument.
+With the ``\texttt{TOP}" item you can include all items that don't have a ``\texttt{contained}" argument.
+``\texttt{CONTAINED}" is used to only include items with a ``\texttt{contained}" argument.
 See |\texttt{:h :syn-contains}| for the details.
 \subsection{Following groups}
 The x language has statements in this form:
@@ -298,7 +298,7 @@ The x language has statements in this form:
 \end{Verbatim}
 
 You want to highlight the three items differently.
-But "\texttt{(condition)}" and "\texttt{then}" might also appear in other places, where they get different highlighting.
+But ``\texttt{(condition)}" and ``\texttt{then}" might also appear in other places, where they get different highlighting.
 This is how you can do this:
 
 \begin{Verbatim}[samepage=true]
@@ -307,7 +307,7 @@ This is how you can do this:
  :syntax match xThen /then/ contained
 \end{Verbatim}
 
-The "\texttt{nextgroup}" argument specifies which item can come next.
+The ``\texttt{nextgroup}" argument specifies which item can come next.
 This is not required.
 If none of the items that are specified are found, nothing happens.
 For example, in this text:
@@ -316,12 +316,12 @@ For example, in this text:
     if not (condition) then 
 \end{Verbatim}
 
-The "\texttt{if}" is matched by xIf.
-"\texttt{not}" doesn't match the specified nextgroup xIfCondition, thus only the "\texttt{if}" is highlighted.
+The ``\texttt{if}" is matched by xIf.
+``\texttt{not}" doesn't match the specified nextgroup xIfCondition, thus only the ``\texttt{if}" is highlighted.
 
-The "\texttt{skipwhite}" argument tells Vim that white space (spaces and tabs) may appear in between the items.
-Similar arguments are "\texttt{skipnl}", which allows a line break in between the items, and "\texttt{skipempty}", which allows empty lines.
-Notice that "\texttt{skipnl}" doesn't skip an empty line, something must match after the line break.
+The ``\texttt{skipwhite}" argument tells Vim that white space (spaces and tabs) may appear in between the items.
+Similar arguments are ``\texttt{skipnl}", which allows a line break in between the items, and ``\texttt{skipempty}", which allows empty lines.
+Notice that ``\texttt{skipnl}" doesn't skip an empty line, something must match after the line break.
 \subsection{Other arguments}
 \subsubsection{Matchgroup}
 When you define a region, the entire region is highlighted according to the group name specified.
@@ -332,14 +332,14 @@ To highlight the text enclosed in parentheses \texttt{()} with the group xInside
 \end{Verbatim}
 
 Suppose, that you want to highlight the parentheses differently.
-You can do this with a lot of convoluted region statements, or you can use the "\texttt{matchgroup}" argument.
+You can do this with a lot of convoluted region statements, or you can use the ``\texttt{matchgroup}" argument.
 This tells Vim to highlight the start and end of a region with a different highlight group (in this case, the xParen group):
 
 \begin{Verbatim}[samepage=true]
  :syntax region xInside matchgroup=xParen start=/(/ end=/)/
 \end{Verbatim}
 
-The "\texttt{matchgroup}" argument applies to the start or end match that comes after it.
+The ``\texttt{matchgroup}" argument applies to the start or end match that comes after it.
 In the previous example both start and end are highlighted with xParen.
 To highlight the end with xParenEnd:
 
@@ -348,11 +348,11 @@ To highlight the end with xParenEnd:
      \ matchgroup=xParenEnd end=/)/
 \end{Verbatim}
 
-A side effect of using "\texttt{matchgroup}" is that contained items will not match in the start or end of the region.
-The example for "transparent" uses this.
+A side effect of using ``\texttt{matchgroup}" is that contained items will not match in the start or end of the region.
+The example for ``transparent" uses this.
 
 \subsubsection{Transparent}
-In a C language file you would like to highlight the \texttt{()} text after a "\texttt{while}" differently from the \texttt{()} text after a "\texttt{for}".
+In a C language file you would like to highlight the \texttt{()} text after a ``\texttt{while}" differently from the \texttt{()} text after a ``\texttt{for}".
 In both of these there can be nested \texttt{()} items, which should be highlighted in the same way.
 You must make sure the \texttt{()} highlighting stops at the matching \texttt{)}.
 This is one way to do this:
@@ -367,17 +367,17 @@ This is one way to do this:
 
 Now you can give \texttt{cWhile} and \texttt{cFor} different highlighting.
 The cCondNest item can appear in either of them, but take over the highlighting of the item it is contained in.
-The "\texttt{transparent}" argument causes this.
+The ``\texttt{transparent}" argument causes this.
 
-Notice that the "\texttt{matchgroup}" argument has the same group as the item itself.
+Notice that the ``\texttt{matchgroup}" argument has the same group as the item itself.
 Why define it then?  Well, the side effect of using a matchgroup is that contained items are not found in the match with the start item then.
-This avoids that the \texttt{cCondNest} group matches the \texttt{(} just after the "\texttt{while}" or "\texttt{for}".
+This avoids that the \texttt{cCondNest} group matches the \texttt{(} just after the ``\texttt{while}" or ``\texttt{for}".
 If this would happen, it would span the whole text until the matching \texttt{)} and the region would continue after it.
 Now \texttt{cCondNest} only matches after the match with the start pattern, thus after the first \texttt{(}.
 
 \subsubsection{Offsets}
-Suppose you want to define a region for the text between \texttt{(} and \texttt{)} after an "\texttt{if}".
-But you don't want to include the "\texttt{if}" or the \texttt{(} and \texttt{)}.
+Suppose you want to define a region for the text between \texttt{(} and \texttt{)} after an ``\texttt{if}".
+But you don't want to include the ``\texttt{if}" or the \texttt{(} and \texttt{)}.
 You can do this by specifying offsets for the patterns.
 Example:
 
@@ -385,37 +385,37 @@ Example:
  :syntax region xCond start=/if\s*(/ms=e+1 end=/)/me=s-1
 \end{Verbatim}
 
-The offset for the start pattern is "\texttt{ms=e+1}".
-"\texttt{ms}" stands for Match Start.
+The offset for the start pattern is ``\texttt{ms=e+1}".
+``\texttt{ms}" stands for Match Start.
 This defines an offset for the start of the match.
 Normally the match starts where the pattern matches.
-"\texttt{e+1}" means that the match now starts at the end of the pattern match, and then one character further.
+``\texttt{e+1}" means that the match now starts at the end of the pattern match, and then one character further.
 
-The offset for the end pattern is "\texttt{me=s-1}".
-"\texttt{me}" stands for Match End.
-"\texttt{s-1}" means the start of the pattern match and then one character back.
+The offset for the end pattern is ``\texttt{me=s-1}".
+``\texttt{me}" stands for Match End.
+``\texttt{s-1}" means the start of the pattern match and then one character back.
 The result is that in this text:
 
 \begin{Verbatim}[samepage=true]
     if (foo == bar) 
 \end{Verbatim}
 
-Only the text "\texttt{foo == bar}" will be highlighted as \texttt{xCond}.
+Only the text ``\texttt{foo == bar}" will be highlighted as \texttt{xCond}.
 
 More about offsets here: |\texttt{:h :syn-pattern-offset}|.
 \subsubsection{Oneline}
-The "\texttt{oneline}" argument indicates that the region does not cross a line boundary.
+The ``\texttt{oneline}" argument indicates that the region does not cross a line boundary.
 For example:
 
 \begin{Verbatim}[samepage=true]
  :syntax region xIfThen start=/if/ end=/then/ oneline
 \end{Verbatim}
 
-This defines a region that starts at "\texttt{if}" and ends at "\texttt{then}".
-But if there is no "\texttt{then}" after the "\texttt{if}", the region doesn't match.
+This defines a region that starts at ``\texttt{if}" and ends at ``\texttt{then}".
+But if there is no ``\texttt{then}" after the ``\texttt{if}", the region doesn't match.
 
-\emph{Note}: When using "\texttt{oneline}" the region doesn't start if the end pattern doesn't match in the same line.
-Without "\texttt{oneline}" Vim does \textbf{not} check if there is a match for the end pattern.
+\emph{Note}: When using ``\texttt{oneline}" the region doesn't start if the end pattern doesn't match in the same line.
+Without ``\texttt{oneline}" Vim does \textbf{not} check if there is a match for the end pattern.
 The region starts even when the end pattern doesn't match in the rest of the file.
 
 \subsubsection{Continuation lines and avoiding them}
@@ -439,9 +439,9 @@ For example, it would match both of these lines:
 \end{Verbatim}
 
 In this case, this is what you want.
-If it is not what you want, you can call for the region to be on a single line by adding "\texttt{excludenl}" to the contained pattern.
-For example, you want to highlight "\texttt{end}" in \texttt{xPreProc}, but only at the end of the line.
-To avoid making the \texttt{xPreProc} continue on the next line, like xLineContinue does, use "\texttt{excludenl}" like this:
+If it is not what you want, you can call for the region to be on a single line by adding ``\texttt{excludenl}" to the contained pattern.
+For example, you want to highlight ``\texttt{end}" in \texttt{xPreProc}, but only at the end of the line.
+To avoid making the \texttt{xPreProc} continue on the next line, like xLineContinue does, use ``\texttt{excludenl}" like this:
 
 \begin{Verbatim}[samepage=true]
  :syntax region xPreProc start=/^#/ end=/$/
@@ -450,8 +450,8 @@ To avoid making the \texttt{xPreProc} continue on the next line, like xLineConti
  :syntax match xLineContinue "\\$" contained
 \end{Verbatim}
 
-"\texttt{excludenl}" must be placed before the pattern.
-Since "\texttt{xLineContinue}" doesn't have "\texttt{excludenl}", a match with it will extend \texttt{xPreProc} to the next line as before.
+``\texttt{excludenl}" must be placed before the pattern.
+Since ``\texttt{xLineContinue}" doesn't have ``\texttt{excludenl}", a match with it will extend \texttt{xPreProc} to the next line as before.
 \subsection{Clusters}
 \label{Clusters}
 One of the things you will notice as you start to write a syntax file is that you wind up generating a lot of syntax groups.
@@ -467,7 +467,7 @@ You define them like this:
  :syntax match xWhile /^while.*/ contains=xNumber,xIdent
 \end{Verbatim}
 
-You have to repeat the same "\texttt{contains=}" every time.
+You have to repeat the same ``\texttt{contains=}" every time.
 If you want to add another contained item, you have to add it three times.
 Syntax clusters simplify these definitions by enabling you to have one cluster stand for several syntax groups.
 
@@ -487,7 +487,7 @@ Thus, you can define the three groups like this:
  :syntax match xWhile /^while.*/ contains=@xState
 \end{Verbatim}
 
-You can add new group names to this cluster with the "\texttt{add}" argument:
+You can add new group names to this cluster with the ``\texttt{add}" argument:
 
 \begin{Verbatim}[samepage=true]
  :syntax cluster xState add=xString
@@ -507,7 +507,7 @@ Because you do not want to write two syntax files, you can have the C++ syntax f
  :runtime! syntax/c.vim
 \end{Verbatim}
 
-The "\texttt{:runtime!}" command searches \texttt{'runtimepath'} for all "\texttt{syntax/c.vim}" files.
+The ``\texttt{:runtime!}" command searches \texttt{'runtimepath'} for all ``\texttt{syntax/c.vim}" files.
 This makes the C parts of the C++ syntax be defined like for C files.
 If you have replaced the \texttt{c.vim} syntax file, or added items with an extra file, these will be loaded as well.
 
@@ -522,10 +522,10 @@ This works just like in any other syntax file.
 
 Now consider the Perl language.
 A Perl script consists of two distinct parts: a documentation section in POD format, and a program written in Perl itself.
-The POD section starts with "\texttt{=head}" and ends with "\texttt{=cut}".
+The POD section starts with ``\texttt{=head}" and ends with ``\texttt{=cut}".
 
 You want to define the POD syntax in one file, and use it from the Perl syntax file.
-The "\texttt{:syntax include}" command reads in a syntax file and stores the elements it defined in a syntax cluster.
+The ``\texttt{:syntax include}" command reads in a syntax file and stores the elements it defined in a syntax cluster.
 For Perl, the statements are as follows:
 
 \begin{Verbatim}[samepage=true]
@@ -533,15 +533,15 @@ For Perl, the statements are as follows:
  :syntax region perlPOD start=/^=head/ end=/^=cut/ contains=@Pod
 \end{Verbatim}
 
-When "\texttt{=head}" is found in a Perl file, the perlPOD region starts.
+When ``\texttt{=head}" is found in a Perl file, the perlPOD region starts.
 In this region the @Pod cluster is contained.
 All the items defined as top-level items in the pod.vim syntax files will match here.
-When "\texttt{=cut}" is found, the region ends and we go back to the items defined in the Perl file.
+When ``\texttt{=cut}" is found, the region ends and we go back to the items defined in the Perl file.
 
-The "\texttt{:syntax include}" command is clever enough to ignore a "\texttt{:syntax clear}" command in the included file.
-And an argument such as "\texttt{contains=ALL}" will only contain items defined in the included file, not in the file that includes it.
+The ``\texttt{:syntax include}" command is clever enough to ignore a ``\texttt{:syntax clear}" command in the included file.
+And an argument such as ``\texttt{contains=ALL}" will only contain items defined in the included file, not in the file that includes it.
 
-The "\texttt{<sfile>:p:h/}" part uses the name of the current file (<sfile>), expands it to a full path (:p) and then takes the head (:h).
+The ``\texttt{<sfile>:p:h/}" part uses the name of the current file (<sfile>), expands it to a full path (:p) and then takes the head (:h).
 This results in the directory name of the file.
 This causes the pod.vim file in the same directory to be included.
 \subsection{Synchronizing}
@@ -551,7 +551,7 @@ Vim does not have it so easy.
 It must start in the middle, where the editing is being done.
 So how does it tell where it is?
 
-The secret is the "\texttt{:syntax sync}" command.
+The secret is the ``\texttt{:syntax sync}" command.
 This tells Vim how to figure out where it is.
 For example, the following command tells Vim to scan backward for the beginning or end of a C-style comment and begin syntax coloring from there:
 
@@ -560,7 +560,7 @@ For example, the following command tells Vim to scan backward for the beginning 
 \end{Verbatim}
 
 You can tune this processing with some arguments.
-The "\texttt{minlines}" argument tells Vim the minimum number of lines to look backward, and "\texttt{maxlines}" tells the editor the maximum number of lines to scan.
+The ``\texttt{minlines}" argument tells Vim the minimum number of lines to look backward, and ``\texttt{maxlines}" tells the editor the maximum number of lines to scan.
 
 For example, the following command tells Vim to look at least 10 lines before the top of the screen:
 
@@ -570,11 +570,11 @@ For example, the following command tells Vim to look at least 10 lines before th
 
 If it cannot figure out where it is in that space, it starts looking farther and farther back until it figures out what to do.
 But it looks no farther back than 500 lines.
-(A large "\texttt{maxlines}" slows down processing.
+(A large ``\texttt{maxlines}" slows down processing.
 A small one might cause synchronization to fail.)
 
 To make synchronizing go a bit faster, tell Vim which syntax items can be skipped.
-Every match and region that only needs to be used when actually displaying text can be given the "\texttt{display}" argument.
+Every match and region that only needs to be used when actually displaying text can be given the ``\texttt{display}" argument.
 
 By default, the comment to be found will be colored as part of the Comment syntax group.
 If you want to color things another way, you can specify a different syntax group:
@@ -591,7 +591,7 @@ The following command tells Vim to go back 150 lines and start parsing from ther
  :syntax sync minlines=150
 \end{Verbatim}
 
-A large "\texttt{minlines}" value can make Vim slower, especially when scrolling backwards in the file.
+A large ``\texttt{minlines}" value can make Vim slower, especially when scrolling backwards in the file.
 
 Finally, you can specify a syntax group to look for by using this command:
 
@@ -602,7 +602,7 @@ Finally, you can specify a syntax group to look for by using this command:
 
 This tells Vim that when it sees \texttt{\{pattern\}} the syntax group named \texttt{\{group-name\}} begins just after the pattern given.
 The \texttt{\{sync-group-name\}} is used to give a name to this synchronization specification.
-For example, the sh scripting language begins an if statement with "\texttt{if}" and ends it with "\texttt{fi}":
+For example, the sh scripting language begins an if statement with ``\texttt{if}" and ends it with ``\texttt{fi}":
 
 \begin{Verbatim}[samepage=true]
     if [ --f file.txt ] ; then 
@@ -610,13 +610,13 @@ For example, the sh scripting language begins an if statement with "\texttt{if}"
     fi 
 \end{Verbatim}
 
-To define a "\texttt{grouphere}" directive for this syntax, you use the following command:
+To define a ``\texttt{grouphere}" directive for this syntax, you use the following command:
 
 \begin{Verbatim}[samepage=true]
  :syntax sync match shIfSync grouphere shIf "\<if\>"
 \end{Verbatim}
 
-The "\texttt{groupthere}" argument tells Vim that the pattern ends a group.
+The ``\texttt{groupthere}" argument tells Vim that the pattern ends a group.
 For example, the end of the if/fi group is as follows:
 
 \begin{Verbatim}[samepage=true]
@@ -626,7 +626,7 @@ For example, the end of the if/fi group is as follows:
 In this example, the \texttt{NONE} tells Vim that you are not in any special syntax region.
 In particular, you are not inside an if block.
 
-You also can define matches and regions that are with no "\texttt{grouphere}" or "\texttt{groupthere}" arguments.
+You also can define matches and regions that are with no ``\texttt{grouphere}" or ``\texttt{groupthere}" arguments.
 These groups are for syntax groups skipped during synchronization.
 For example, the following skips over anything inside \texttt{\{\}}, even if it would normally match another synchronization method:
 
@@ -636,9 +636,9 @@ For example, the following skips over anything inside \texttt{\{\}}, even if it 
 
 More about synchronizing in the reference manual: |\texttt{:h :syn-sync}|.
 \subsection{Installing a syntax file}
-When your new syntax file is ready to be used, drop it in a "\texttt{syntax}" directory in \texttt{'runtimepath'}.
-For Unix that would be "\texttt{~/.vim/syntax}".
-The name of the syntax file must be equal to the file type, with "\texttt{.vim}" added.
+When your new syntax file is ready to be used, drop it in a ``\texttt{syntax}" directory in \texttt{'runtimepath'}.
+For Unix that would be ``\texttt{~/.vim/syntax}".
+The name of the syntax file must be equal to the file type, with ``\texttt{.vim}" added.
 Thus for the x language, the full path of the file would be:
 
 \begin{Verbatim}[samepage=true]
@@ -665,7 +665,7 @@ For example, to add new variable types to the C syntax file:
 \end{Verbatim}
 
 Write the file with the same name as the original syntax file.
-In this case "\texttt{c.vim}".
+In this case ``\texttt{c.vim}".
 Place it in a directory near the end of \texttt{'runtimepath'}.
 This makes it loaded after the original syntax file.
 For Unix this would be:
@@ -693,9 +693,9 @@ Using an existing syntax file as an example will save you a lot of time.
 
 Choose a good, descriptive name for your syntax file.
 Use lowercase letters and digits.
-Don't make it too long, it is used in many places: The name of the syntax file "\texttt{name.vim}", 'filetype', \texttt{b:current\_syntax} and the start of each syntax group (nameType, nameStatement, nameString, etc).
+Don't make it too long, it is used in many places: The name of the syntax file ``\texttt{name.vim}", `filetype', \texttt{b:current\_syntax} and the start of each syntax group (nameType, nameStatement, nameString, etc).
 
-Start with a check for "\texttt{b:current\_syntax}".
+Start with a check for ``\texttt{b:current\_syntax}".
 If it is defined, some other syntax file, earlier in \texttt{'runtimepath'} was already loaded:
 
 \begin{Verbatim}[samepage=true]
@@ -714,8 +714,8 @@ To be compatible with Vim 5.8 use:
  endif
 \end{Verbatim}
 
-Set "\texttt{b:current\_syntax}" to the name of the syntax at the end.
-Don't forget that included files do this too, you might have to reset "\texttt{b:current\_syntax}" if you include two files.
+Set ``\texttt{b:current\_syntax}" to the name of the syntax at the end.
+Don't forget that included files do this too, you might have to reset ``\texttt{b:current\_syntax}" if you include two files.
 
 If you want your syntax file to work with Vim 5.x, add a check for \texttt{v:version}.
 See \texttt{yacc.vim} for an example.
@@ -733,7 +733,7 @@ That will make it work with every color scheme.
 If you select specific colors it will look bad with some color schemes.
 And don't forget that some people use a different background color, or have only eight colors available.
 
-For the linking use "\texttt{hi def link}", so that the user can select different highlighting before your syntax file is loaded.
+For the linking use ``\texttt{hi def link}", so that the user can select different highlighting before your syntax file is loaded.
 Example:
 
 \begin{Verbatim}[samepage=true]
@@ -743,5 +743,5 @@ Example:
    ... etc ...
 \end{Verbatim}
 
-Add the "\texttt{display}" argument to items that are not used when syncing, to speed up scrolling backwards and CTRL-L.
+Add the ``\texttt{display}" argument to items that are not used when syncing, to speed up scrolling backwards and CTRL-L.
 \clearpage

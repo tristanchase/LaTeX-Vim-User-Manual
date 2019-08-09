@@ -225,7 +225,7 @@
 \etoc@startlocaltoc {14}
 \contentsline {subsection}{Replace a word}{105}{section*.250}
 \contentsline {subsubsection}{Replacing in several files}{105}{section*.251}
-\contentsline {subsection}{Change "Last, First" to "First Last"}{106}{section*.252}
+\contentsline {subsection}{Change ``Last, First" to ``First Last"}{106}{section*.252}
 \contentsline {subsection}{Sort a list}{107}{section*.253}
 \contentsline {subsection}{Reverse line order}{108}{section*.254}
 \contentsline {subsection}{Count words}{108}{section*.255}

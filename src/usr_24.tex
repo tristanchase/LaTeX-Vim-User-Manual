@@ -24,7 +24,7 @@ When you typed a whole word wrong, use CTRL-W:
 If you really messed up a line and want to start over, use CTRL-U to delete it.
 This keeps the text after the cursor and the indent.
 Only the text from the first non-blank to the cursor is deleted.
-With the cursor on the "\texttt{f}" of "\texttt{fallen}" in the next line pressing CTRL-U does this:
+With the cursor on the ``\texttt{f}" of ``\texttt{fallen}" in the next line pressing CTRL-U does this:
 
 \begin{Verbatim}[samepage=true]
     The horse had fallen to the 
@@ -39,7 +39,7 @@ For example, you typed this:
     The horse had follen to the ground 
 \end{Verbatim}
 
-You need to change "\texttt{follen}" to "\texttt{fallen}".
+You need to change ``\texttt{follen}" to ``\texttt{fallen}".
 With the cursor at the end, you would type this to correct it:
 
 \begin{Verbatim}[samepage=true]
@@ -93,7 +93,7 @@ To make Vim do that use this command:
  :set showmatch
 \end{Verbatim}
 
-When you now type a text like "\texttt{(example)}", as soon as you type the \texttt{)} Vim will briefly move the cursor to the matching \texttt{(}, keep it there for half a second, and move back to where you were typing.
+When you now type a text like ``\texttt{(example)}", as soon as you type the \texttt{)} Vim will briefly move the cursor to the matching \texttt{(}, keep it there for half a second, and move back to where you were typing.
 In case there is no matching \texttt{(}, Vim will beep.
 Then you know that you might have forgotten the \texttt{(} somewhere, or typed a \texttt{)} too many.
 The match will also be shown for \texttt{[]} and \texttt{{}} pairs.
@@ -124,7 +124,7 @@ You start by entering the following:
 
 At this point, you tell Vim to complete the word using the command CTRL-P.
 Vim searches for a word that starts with what's in front of the cursor.
-In this case, it is "\texttt{ch\_}", which matches with the word \texttt{ch\_array}.
+In this case, it is ``\texttt{ch\_}", which matches with the word \texttt{ch\_array}.
 So typing CTRL-P gives you the following:
 
 \begin{Verbatim}[samepage=true]
@@ -138,11 +138,11 @@ After a little more typing, you get this (ending in a space):
 \end{Verbatim}
 
 If you now type CTRL-P Vim will search again for a word that completes the word before the cursor.
-Since there is nothing in front of the cursor, it finds the first word backwards, which is "\texttt{ch\_array}".
-Typing CTRL-P again gives you the next word that matches, in this case "\texttt{total}".
+Since there is nothing in front of the cursor, it finds the first word backwards, which is ``\texttt{ch\_array}".
+Typing CTRL-P again gives you the next word that matches, in this case ``\texttt{total}".
 A third CTRL-P searches further back.
 If there is nothing else, it causes the editor to run out of words, so it returns to the original text, which is nothing.
-A fourth CTRL-P causes the editor to start over again with "\texttt{ch\_array}".
+A fourth CTRL-P causes the editor to start over again with ``\texttt{ch\_array}".
 
 To search forward, use CTRL-N.
 Since the search wraps around the end of the file, CTRL-N and CTRL-P will find the same matches, but in a different sequence.
@@ -166,7 +166,7 @@ When it is set, case differences are ignored when searching for matches.
 
 A special option for completion is \texttt{'infercase'}.
 This is useful to find matches while ignoring case (\texttt{'ignorecase'} must be set) but still using the case of the word typed so far.
-Thus if you type "\texttt{For}" and Vim finds a match "fortunately", it will result in "Fortunately".
+Thus if you type ``\texttt{For}" and Vim finds a match ``fortunately", it will result in ``Fortunately".
 \subsubsection{Completing specific items}
 If you know what you are looking for, you can use these commands to complete with a certain type of item:
 \begin{center} \begin{tabular}{l l}
@@ -200,7 +200,7 @@ Now enter Insert mode and start typing:
 \end{Verbatim}
 
 At this point, you enter the command CTRL-X CTRL-F.
-Vim now completes the current word "\texttt{sub}" by looking at the files in the current directory.
+Vim now completes the current word ``\texttt{sub}" by looking at the files in the current directory.
 The first match is \texttt{sub\_count.c}.
 This is not the one you want, so you match the next file by typing CTRL-N.
 This match is \texttt{sub\_done.c}.
@@ -212,15 +212,15 @@ The results:
 \end{Verbatim}
 
 If the file name starts with \texttt{/} (Unix) or \texttt{C:\textbackslash{}} (MS-Windows) you can find all files in the file system.
-For example, type "\texttt{/u}" and CTRL-X CTRL-F.
-This will match "\texttt{/usr}" (this is on Unix):
+For example, type ``\texttt{/u}" and CTRL-X CTRL-F.
+This will match ``\texttt{/usr}" (this is on Unix):
 
 \begin{Verbatim}[samepage=true]
     the file is found in /usr/ 
 \end{Verbatim}
 
-If you now press CTRL-N you go back to "\texttt{/u}".
-Instead, to accept the "\texttt{/usr/}" and go one directory level deeper, use CTRL-X CTRL-F again:
+If you now press CTRL-N you go back to ``\texttt{/u}".
+Instead, to accept the ``\texttt{/usr/}" and go one directory level deeper, use CTRL-X CTRL-F again:
 
 \begin{Verbatim}[samepage=true]
     the file is found in /usr/X11R6/ 
@@ -244,10 +244,10 @@ Let's use an example for editing C source:
         p-> 
 \end{Verbatim}
 
-The cursor is after "\texttt{p->}".
+The cursor is after ``\texttt{p->}".
 Now type CTRL-X CTRL-O.
-Vim will offer you a list of alternatives, which are the items that "\texttt{struct foo}" contains.
-That is quite different from using CTRL-P, which would complete any word, while only members of "\texttt{struct foo}" are valid here.
+Vim will offer you a list of alternatives, which are the items that ``\texttt{struct foo}" contains.
+That is quite different from using CTRL-P, which would complete any word, while only members of ``\texttt{struct foo}" are valid here.
 
 For Omni completion to work you may need to do some setup.
 At least make sure filetype plugins are enabled.
@@ -278,15 +278,15 @@ Assume, for example, that you have a file that begins with the following:
     /* Main program begins */ 
 \end{Verbatim}
 
-You edit this file by inserting "\texttt{\#include }" at the beginning of the first line:
+You edit this file by inserting ``\texttt{\#include }" at the beginning of the first line:
 
 \begin{Verbatim}[samepage=true]
     #include "file.h" 
     /* Main program begins */ 
 \end{Verbatim}
 
-You go down to the beginning of the next line using the commands "\texttt{j\^{}}".
-You now start to insert a new "\texttt{\#include}" line.
+You go down to the beginning of the next line using the commands ``\texttt{j\^{}}".
+You now start to insert a new ``\texttt{\#include}" line.
 So you type:
 
 \begin{Verbatim}[samepage=true]
@@ -300,8 +300,8 @@ The result is as follows:
     #include /* Main program begins */ 
 \end{Verbatim}
 
-The "\texttt{\#include }" was inserted because CTRL-A inserts the text of the previous insert.
-Now you type  "\texttt{main.h}"<Enter>  to finish the line:
+The ``\texttt{\#include }" was inserted because CTRL-A inserts the text of the previous insert.
+Now you type  ``\texttt{main.h}"<Enter>  to finish the line:
 
 
 \begin{Verbatim}[samepage=true]
@@ -321,29 +321,29 @@ For example, you have this line of C code:
     b_array[i]->s_next = a_array[i]->s_next; 
 \end{Verbatim}
 
-Now you need to type the same line, but with "\texttt{s\_prev}" instead of "\texttt{s\_next}".
-Start the new line, and press CTRL-Y 14 times, until you are at the "\texttt{n}" of "\texttt{next}":
+Now you need to type the same line, but with ``\texttt{s\_prev}" instead of ``\texttt{s\_next}".
+Start the new line, and press CTRL-Y 14 times, until you are at the ``\texttt{n}" of ``\texttt{next}":
 
 \begin{Verbatim}[samepage=true]
     b_array[i]->s_next = a_array[i]->s_next; 
     b_array[i]->s_ 
 \end{Verbatim}
 
-Now you type "\texttt{prev}":
+Now you type ``\texttt{prev}":
 
 \begin{Verbatim}[samepage=true]
     b_array[i]->s_next = a_array[i]->s_next; 
     b_array[i]->s_prev 
 \end{Verbatim}
 
-Continue pressing CTRL-Y until the following "\texttt{next}":
+Continue pressing CTRL-Y until the following ``\texttt{next}":
 
 \begin{Verbatim}[samepage=true]
     b_array[i]->s_next = a_array[i]->s_next; 
     b_array[i]->s_prev = a_array[i]->s_ 
 \end{Verbatim}
 
-Now type "\texttt{prev;}" to finish it off.
+Now type ``\texttt{prev;}" to finish it off.
 
 The CTRL-E command acts like CTRL-Y except it inserts the character below the cursor.
 \subsection{Inserting a register}
@@ -362,7 +362,7 @@ Edit that file and move the cursor on top of the function name there, and yank i
  "vyiw
 \end{Verbatim}
 
-\texttt{"v} is the register specification, "\texttt{yiw}" is yank-inner-word.
+\texttt{"v} is the register specification, ``\texttt{yiw}" is yank-inner-word.
 Now edit the file where the new line is to be inserted, and type the first letters:
 
 \begin{Verbatim}[samepage=true]
@@ -384,16 +384,16 @@ If the register contains characters such as <BS> or other special characters, th
 If you do not want this to happen (you really want the <BS> to be inserted in the text), use the command CTRL-R CTRL-R \texttt{{register}.}
 \subsection{Abbreviations}
 An abbreviation is a short word that takes the place of a long one.
-For example, "ad" stands for "advertisement".
+For example, ``ad" stands for ``advertisement".
 Vim enables you to type an abbreviation and then will automatically expand it for you.
 
-To tell Vim to expand "ad" into "advertisement" every time you insert it, use the following command:
+To tell Vim to expand ``ad" into ``advertisement" every time you insert it, use the following command:
 
 \begin{Verbatim}[samepage=true]
  :iabbrev ad advertisement
 \end{Verbatim}
 
-Now, when you type "ad", the whole word "advertisement" will be inserted into the text.
+Now, when you type ``ad", the whole word ``advertisement" will be inserted into the text.
 This is triggered by typing a character that can't be part of a word, for example a space:
 
 \begin{center} \begin{tabular}{l l}
@@ -402,12 +402,12 @@ This is triggered by typing a character that can't be part of a word, for exampl
 				I saw the ad & I saw the ad \\
 				I saw the ad<Space> & I saw the advertisement<Space> \\
 \end{tabular} \end{center}
-The expansion doesn't happen when typing just "ad".
-That allows you to type a word like "add", which will not get expanded.
+The expansion doesn't happen when typing just ``ad".
+That allows you to type a word like ``add", which will not get expanded.
 Only whole words are checked for abbreviations.
 \subsubsection{Abbreviating several words}
 It is possible to define an abbreviation that results in multiple words.
-For example, to define "JB" as "Jack Benny", use the following command:
+For example, to define ``JB" as ``Jack Benny", use the following command:
 
 \begin{Verbatim}[samepage=true]
  :iabbrev JB Jack Benny
@@ -429,12 +429,12 @@ In other words, the first two characters are space-star.
 Usually Vim ignores spaces between the abbreviation and the expansion.
 To avoid that problem, I spell space as seven characters: <, S, p, a, c, e, >.
 
-\emph{Note}: "\texttt{:iabbrev}" is a long word to type.
-"\texttt{:iab}" works just as well.
+\emph{Note}: ``\texttt{:iabbrev}" is a long word to type.
+``\texttt{:iab}" works just as well.
 That's abbreviating the abbreviate command!
 \subsubsection{Fixing typing mistakes}
 It's very common to make the same typing mistake every time.
-For example, typing "teh" instead of "the".
+For example, typing ``teh" instead of ``the".
 You can fix this with an abbreviation:
 
 \begin{Verbatim}[samepage=true]
@@ -444,7 +444,7 @@ You can fix this with an abbreviation:
 You can add a whole list of these.
 Add one each time you discover a common mistake.
 \subsubsection{Listing abbreviations}
-The "\texttt{:abbreviate}" command lists the abbreviations:
+The ``\texttt{:abbreviate}" command lists the abbreviations:
 
 \begin{Verbatim}[samepage=true]
     :abbreviate
@@ -455,7 +455,7 @@ The "\texttt{:abbreviate}" command lists the abbreviations:
     !  teh       the
 \end{Verbatim}
 
-The "\texttt{i}" in the first column indicates Insert mode.
+The ``\texttt{i}" in the first column indicates Insert mode.
 These abbreviations are only active in Insert mode.
 Other possible characters are:
 
@@ -464,14 +464,14 @@ Other possible characters are:
 				\texttt{!} & both Insert and Command-line mode & \texttt{:abbreviate}\\
 \end{tabular} \end{center}
 
-Since abbreviations are not often useful in Command-line mode, you will mostly use the "\texttt{:iabbrev}" command.
-That avoids, for example, that "\texttt{ad}" gets expanded when typing a command like:
+Since abbreviations are not often useful in Command-line mode, you will mostly use the ``\texttt{:iabbrev}" command.
+That avoids, for example, that ``\texttt{ad}" gets expanded when typing a command like:
 
 \begin{Verbatim}[samepage=true]
  :edit ad
 \end{Verbatim}
 \subsubsection{Deleting abbreviations}
-To get rid of an abbreviation, use the "\texttt{:unabbreviate}" command.
+To get rid of an abbreviation, use the ``\texttt{:unabbreviate}" command.
 Suppose you have the following abbreviation:
 
 \begin{Verbatim}[samepage=true]
@@ -484,8 +484,8 @@ You can remove it with this command:
  :unabbreviate @f
 \end{Verbatim}
 
-While you type this, you will notice that @f is expanded to "fresh".
-Don't worry about this, Vim understands it anyway (except when you have an abbreviation for "fresh", but that's very unlikely).
+While you type this, you will notice that @f is expanded to ``fresh".
+Don't worry about this, Vim understands it anyway (except when you have an abbreviation for ``fresh", but that's very unlikely).
 
 To remove all the abbreviations:
 
@@ -493,7 +493,7 @@ To remove all the abbreviations:
  :abclear
 \end{Verbatim}
 
-"\texttt{:unabbreviate}" and "\texttt{:abclear}" also come in the variants for Insert mode ("\texttt{:iunabbreviate}" and "\texttt{:iabclear}") and Command-line mode ("\texttt{:cunabbreviate}" and "\texttt{:cabclear}").
+``\texttt{:unabbreviate}" and ``\texttt{:abclear}" also come in the variants for Insert mode ("\texttt{:iunabbreviate}" and ``\texttt{:iabclear}") and Command-line mode ("\texttt{:cunabbreviate}" and ``\texttt{:cabclear}").
 \subsubsection{Remapping abbreviations}
 There is one thing to watch out for when defining an abbreviation: The resulting string should not be mapped.
 For example:
@@ -503,10 +503,10 @@ For example:
  :imap dd disk-door
 \end{Verbatim}
 
-When you now type \texttt{@a}, you will get "adisk-doorer".
+When you now type \texttt{@a}, you will get ``adisk-doorer".
 That's not what you want.
-To avoid this, use the "\texttt{:noreabbrev}" command.
-It does the same as "\texttt{:abbreviate}", but avoids that the resulting string is used for mappings:
+To avoid this, use the ``\texttt{:noreabbrev}" command.
+It does the same as ``\texttt{:abbreviate}", but avoids that the resulting string is used for mappings:
 
 \begin{Verbatim}[samepage=true]
  :noreabbrev @a adder
@@ -550,14 +550,14 @@ All the next commands insert a <Tab> and then a dot:
     CTRL-V 009.
 \end{Verbatim}
 
-To enter a character in hexadecimal, use an "\texttt{x}" after the CTRL-V:
+To enter a character in hexadecimal, use an ``\texttt{x}" after the CTRL-V:
 
 \begin{Verbatim}[samepage=true]
  CTRL-V x7f
 \end{Verbatim}
 
 This also goes up to character 255 (CTRL-V xff).
-You can use "\texttt{o}" to type a character as an octal number and two more methods allow you to type up to a 16 bit and a 32 bit number (e.g., for a Unicode character):
+You can use ``\texttt{o}" to type a character as an octal number and two more methods allow you to type up to a 16 bit and a 32 bit number (e.g., for a Unicode character):
 
 \begin{Verbatim}[samepage=true]
  CTRL-V o123
@@ -599,11 +599,11 @@ If you look through the list you will understand the logic.
 
 You can exchange the first and second character, if there is no digraph for that combination.
 Thus CTRL-K dP also works.
-Since there is no digraph for "\texttt{dP}" Vim will also search for a "\texttt{Pd}" digraph.
+Since there is no digraph for ``\texttt{dP}" Vim will also search for a ``\texttt{Pd}" digraph.
 
 \emph{Note}: The digraphs depend on the character set that Vim assumes you are using.
 On MS-DOS they are different from MS-Windows.
-Always use "\texttt{:digraphs}" to find out which digraphs are currently available.
+Always use ``\texttt{:digraphs}" to find out which digraphs are currently available.
 
 You can define your own digraphs.  Example:
 
@@ -626,7 +626,7 @@ More about that here: |\hyperref[Entering language text]{\texttt{Entering langua
 \subsection{Normal mode commands}
 Insert mode offers a limited number of commands.
 In Normal mode you have many more.
-When you want to use one, you usually leave Insert mode with <Esc>, execute the Normal mode command, and re-enter Insert mode with "\texttt{i}" or "\texttt{a}".
+When you want to use one, you usually leave Insert mode with <Esc>, execute the Normal mode command, and re-enter Insert mode with ``\texttt{i}" or ``\texttt{a}".
 
 There is a quicker way.
 With CTRL-O \texttt{{command}} you can execute any Normal mode command from Insert mode.

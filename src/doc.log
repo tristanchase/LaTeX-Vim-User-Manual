@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016/Debian) (preloaded format=xelatex 2019.8.3)  7 AUG 2019 23:28
+This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016/Debian) (preloaded format=xelatex 2019.8.3)  9 AUG 2019 17:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1047,10 +1047,10 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <5> on input line 8.
  [3
 
-] [4] [5] [6] [7]
+] [4] [5] [6]
 LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <10> not available
-(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 418.
-
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 347.
+ [7]
 Underfull \hbox (badness 7168) in paragraph at lines 494--494
 []|\TU/lmr/m/n/10 end-of-line (can be <CR>, <LF> or
  []
@@ -1233,7 +1233,7 @@ LaTeX Warning: There were multiply-defined labels.
 Here is how much of TeX's memory you used:
  23031 strings out of 493068
  436099 string characters out of 6137721
- 644712 words of memory out of 5000000
+ 644718 words of memory out of 5000000
  26596 multiletter control sequences out of 15000+600000
  28379 words of font info for 57 fonts, out of 8000000 for 9000
  1347 hyphenation exceptions out of 8191

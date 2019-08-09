@@ -9,14 +9,14 @@
 \label{intro}
 Vim stands for Vi IMproved.
 It used to be Vi IMitation, but there are so many improvements that a name change was appropriate.
-Vim is a text editor which includes almost all the commands from the Unix program "Vi" and a lot of new ones.
+Vim is a text editor which includes almost all the commands from the Unix program ``Vi" and a lot of new ones.
 It is very useful for editing programs and other plain text.
 All commands are given with the keyboard.
 This has the advantage that you can keep your fingers on the keyboard and your eyes on the screen.
 For those who want it, there is mouse support and a GUI version with scrollbars and menus (see |\texttt{:h gui.txt}|).
 
-An overview of this manual can be found in the file "help.txt", |\texttt{:h help.txt}|.
-It can be accessed from within Vim with the <Help> or <F1> key and with the |\texttt{:help}| command (just type "\texttt{:help}", without the bars or quotes).
+An overview of this manual can be found in the file ``help.txt", |\texttt{:h help.txt}|.
+It can be accessed from within Vim with the <Help> or <F1> key and with the |\texttt{:help}| command (just type ``\texttt{:help}", without the bars or quotes).
 The \texttt{'helpfile'} option can be set to the name of the help file, in case it is not located in the default place.
 
 Throughout this manual the differences between Vi and Vim are mentioned in curly braces, like this: \{Vi does not have on-line help\}.
@@ -142,7 +142,7 @@ NOTE:
 \phantomsection
 \label{subscribe-maillist}
 If you want to join, send a message to <vim-subscribe@vim.org>.
-Make sure that your "From:" address is correct.
+Make sure that your ``From:" address is correct.
 Then the list server will give you help on how to subscribe.
 
 
@@ -166,7 +166,7 @@ You can get the information with this command:
 \begin{Verbatim}[samepage=true]
 	 :so $VIMRUNTIME/bugreport.vim
 \end{Verbatim}
-This will create a file "bugreport.txt" in the current directory, with a lot of information of your environment.
+This will create a file ``bugreport.txt" in the current directory, with a lot of information of your environment.
 Before sending this out, check if it doesn't contain any confidential information!
 
 If Vim crashes, please try to find out where.
@@ -218,7 +218,7 @@ The Vim editor is based on Stevie and includes (ideas from) other software, work
 Other people helped by sending me patches, suggestions and giving feedback about what is good and bad in Vim.
 
 Vim would never have become what it is now, without the help of these people!
-\begin{longtable}{c l}
+\begin{longtable}{r l}
 				Ron Aaron & Win32 GUI changes\\
 				Mohsin Ahmed & encryption\\
 				Zoltan Arpadffy & work on VMS port\\
@@ -278,7 +278,7 @@ Vim would never have become what it is now, without the help of these people!
 				Ingo Wilken & Tcl interface\\
 				Mike Williams & PostScript printing\\
 				Juergen Weigert & Lattice version, AUX improvements, UNIX and MS-DOS ports, autoconf\\
-				Stefan 'Sec' Zehl & Maintainer of vim.org\\
+				Stefan `Sec' Zehl & Maintainer of vim.org\\
 \end{longtable}
 
 I wish to thank all the people that sent me bug reports and suggestions.
@@ -290,9 +290,9 @@ In this documentation there are several references to other versions of Vi:
 \subsubsection{Vi}
 \label{Vi}
 \label{vi}
-Vi "the original".
+Vi ``the original".
 Without further remarks this is the version of Vi that appeared in Sun OS 4.x.
-\texttt{:version} returns "Version 3.7, 6/7/85".
+\texttt{:version} returns ``Version 3.7, 6/7/85".
 Sometimes other versions are referred to.
 Only runs under Unix.
 Source code only available with a license.
@@ -301,17 +301,17 @@ More information on Vi can be found through: \url{http://vi-editor.org} [doesn't
 \subsubsection{Posix}
 \label{Posix}
 From the IEEE standard 1003.2, Part 2: Shell and utilities.
-Generally known as "Posix".
+Generally known as ``Posix".
 This is a textual description of how Vi is supposed to work.
 See |\texttt{:h posix-compliance}|.
 
 \subsubsection{Nvi}
 \label{Nvi}
-The "New" Vi.
+The ``New" Vi.
 The version of Vi that comes with BSD 4.4 and FreeBSD.
 Very good compatibility with the original Vi, with a few extensions.
 The version used is 1.79.
-\texttt{:version} returns "Version 1.79 (10/23/96)".
+\texttt{:version} returns ``Version 1.79 (10/23/96)".
 There has been no release the last few years, although there is a development version 1.81.
 Source code is freely available.
 
@@ -344,13 +344,13 @@ Sometimes the \texttt{[]}, \texttt{\{\}} and \texttt{<>} are part of what you ty
 								If the \texttt{'showcmd'} option is on, the (partially) entered count is shown at the bottom of the window.
 								You can use <Del> to erase the last digit (|\texttt{:h N<Del>}|).
 
-				\item[["x]]
+				\item[[\texttt{"x}]]
 								\label{[quotex]}
 								See |\texttt{:h registers}|.
 								An optional register designation where text can be stored.
-								The x is a single character between 'a' and 'z' or 'A' and 'Z' or '"', and in some cases (with the put command) between '0' and '9', '\%', '\#', or others.
+								The x is a single character between `a' and `z' or `A' and `Z' or `"', and in some cases (with the put command) between `0' and `9', `\%', `\#', or others.
 								The uppercase and lowercase letter designate the same register, but the lowercase letter is used to overwrite the previous register contents, while the uppercase letter is used to append to the previous register contents.
-								Without the ""x" or with """" the stored text is put into the unnamed register.
+								Without the ``\texttt{"x}" or with ``\texttt{""}" the stored text is put into the unnamed register.
 
 				\item[\{\}]
 								\label{{}}
@@ -374,20 +374,20 @@ Sometimes the \texttt{[]}, \texttt{\{\}} and \texttt{<>} are part of what you ty
 																\texttt{w} & to start of next word\\
 																\texttt{b} & to begin of current word\\
 																\texttt{4j} & four lines down\\
-												\texttt{/The<CR>} & to next occurrence of "The"\\
+												\texttt{/The<CR>} & to next occurrence of ``The"\\
 												\end{tabular}
 								\end{center}
 								This is used after an |\texttt{:h operator}| command to move over the text that is to be operated upon.
 								\begin{itemize}
 												\item If the motion includes a count and the operator also has a count, the two counts are multiplied.
-																For example: "2d3w" deletes six words.
-												\item The motion can be backwards, e.g. "db" to delete to the start of the word.
+																For example: ``2d3w" deletes six words.
+												\item The motion can be backwards, e.g. ``db" to delete to the start of the word.
 												\item The motion can also be a mouse click.
 																The mouse is not supported in every terminal though.
-												\item The ":omap" command can be used to map characters while an operator is pending.
+												\item The ``:omap" command can be used to map characters while an operator is pending.
 												\item Ex commands can be used to move the cursor.
 																This can be used to call a function that does some complicated motion.
-																The motion is always characterwise exclusive, no matter what ":" command is used.
+																The motion is always characterwise exclusive, no matter what ``:" command is used.
 																This means it's impossible to include the last character of a line without the line break (unless \texttt{'virtualedit'} is set).
 																If the Ex command changes the text before where the operator starts or jumps to another buffer the result is unpredictable.
 																It is possible to change the text further down.
@@ -397,7 +397,7 @@ Sometimes the \texttt{[]}, \texttt{\{\}} and \texttt{<>} are part of what you ty
 				\item[\{Visual\}]
 								\label{{Visual}}
 								A selected text area.
-								It is started with the "v", "V", or CTRL-V command, then any cursor movement command can be used to change the end of the selected text.
+								It is started with the ``v", ``V", or CTRL-V command, then any cursor movement command can be used to change the end of the selected text.
 								This is used before an |\texttt{:h operator}| command to highlight the text that is to be operated upon.
 								See |\texttt{:h Visual-mode}|.
 
@@ -405,7 +405,7 @@ Sometimes the \texttt{[]}, \texttt{\{\}} and \texttt{<>} are part of what you ty
 								\label{<character>}
 								A special character from the table below, optionally with modifiers, or a single ASCII character with modifiers.
 
-				\item['c']
+				\item[`c']
 								\label{'character'}
 								A single ASCII character.
 
@@ -420,7 +420,7 @@ Sometimes the \texttt{[]}, \texttt{\{\}} and \texttt{<>} are part of what you ty
 								An option, or parameter, that can be set to a value, is enclosed in single quotes.
 								See |\texttt{:h options}|.
 
-				\item["command"]
+				\item[``command"]
 								\label{quotecommandquote}
 								A reference to a command that you can type is enclosed in double quotes.
 
@@ -429,7 +429,7 @@ Sometimes the \texttt{[]}, \texttt{\{\}} and \texttt{<>} are part of what you ty
 								\label{key-codes}
 								\label{keycodes}
 These names for keys are used in the documentation.
-They can also be used with the "\texttt{:map}" command (insert the key name by pressing CTRL-K and then the key you want the name for).
+They can also be used with the ``\texttt{:map}" command (insert the key name by pressing CTRL-K and then the key you want the name for).
 
 \begin{center}\begin{tabularx}{\textwidth}{|l|X|l|l|} % the 5 cm is completely arbitrary but it seems to work in the page
 	
@@ -489,7 +489,7 @@ They can also be used with the "\texttt{:map}" command (insert the key name by p
 				<M-...>          & alt-key or meta-key            &  &   \label{meta} \label{alt} \label{<M-}\\
 				<A-...>          & same as <M-...>                &  &   \label{<A-}\\
 				<D-...>          & command-key (Macintosh only)   &  &   \label{<D-}\\
-				<t\_xx>          & key with "xx" entry in termcap &  &   \\ \hline
+				<t\_xx>          & key with ``xx" entry in termcap &  &   \\ \hline
 
 \end{tabularx} \end{center}
 
@@ -499,11 +499,11 @@ It will be recognized only after typing another key.
 
 \textit{Note}: There are two codes for the delete key.
 127 is the decimal ASCII value for the delete key, which is always recognized.
-Some delete keys send another value, in which case this value is obtained from the termcap entry "kD".
+Some delete keys send another value, in which case this value is obtained from the termcap entry ``kD".
 Both values have the same effect.
 Also see |\texttt{:h :fixdel}|.
 
-\textit{Note}: The keypad keys are used in the same way as the corresponding "normal" keys.
+\textit{Note}: The keypad keys are used in the same way as the corresponding ``normal" keys.
 For example, <kHome> has the same effect as <Home>.
 If a keypad key sends the same raw key code as its non-keypad equivalent, it will be recognized as the non-keypad code.
 For example, when <kHome> sends the same code as <Home>, when pressing <kHome> Vim will think <Home> was pressed.
@@ -512,14 +512,14 @@ Mapping <kHome> will not work then.
 \phantomsection
 \label{<>}
 Examples are often given in the <> notation.
-Sometimes this is just to make clear what you need to type, but often it can be typed literally, e.g., with the "\texttt{:map}" command.
+Sometimes this is just to make clear what you need to type, but often it can be typed literally, e.g., with the ``\texttt{:map}" command.
 The rules are:
 \begin{enumerate}
-				\item Any printable characters are typed directly, except backslash and '<'
-				\item A backslash is represented with "\textbackslash\textbackslash", double backslash, or "<Bslash>".
-				\item A real '<' is represented with "\textbackslash<" or "<lt>".  When there is no
-								confusion possible, a '<' can be used directly.
-				\item "<key>" means the special key typed.  This is the notation explained in
+				\item Any printable characters are typed directly, except backslash and `<'
+				\item A backslash is represented with ``\textbackslash\textbackslash", double backslash, or ``<Bslash>".
+				\item A real `<' is represented with ``\textbackslash<" or ``<lt>".  When there is no
+								confusion possible, a `<' can be used directly.
+				\item ``<key>" means the special key typed.  This is the notation explained in
 								the table above.  A few examples:
 								\begin{center}
 												\begin{tabular}{c c}
@@ -528,36 +528,36 @@ The rules are:
 																<Up> & cursor up key\\
 																<C-LeftMouse> & Control- left mouse click\\
 																<S-F11> & Shifted function key 11\\
-																<M-a> & Meta- a  ('a' with bit 8 set)\\
-																<M-A> & Meta- A  ('A' with bit 8 set)\\
-																<t\_kd> & "kd" termcap entry (cursor down key)\\
+																<M-a> & Meta- a  (`a' with bit 8 set)\\
+																<M-A> & Meta- A  (`A' with bit 8 set)\\
+																<t\_kd> & ``kd" termcap entry (cursor down key)\\
 												\end{tabular}
 								\end{center}
 \end{enumerate}
 \end{description}
 
-If you want to use the full <> notation in Vim, you have to make sure the '<' flag is excluded from \texttt{'cpoptions'} (when \texttt{'compatible'} is not set, it already is by default).
+If you want to use the full <> notation in Vim, you have to make sure the `<' flag is excluded from \texttt{'cpoptions'} (when \texttt{'compatible'} is not set, it already is by default).
 \begin{Verbatim}[samepage=true]
  :set cpo-=<
 \end{Verbatim}
 The <> notation uses <lt> to escape the special meaning of key names.
 Using a backslash also works, but only when \texttt{'cpoptions'} does not include the \texttt{'B'} flag.
 
-Examples for mapping CTRL-H to the six characters "<Home>":
+Examples for mapping CTRL-H to the six characters ``<Home>":
 \begin{Verbatim}[samepage=true]
  :imap <C-H> \<Home>
  :imap <C-H> <lt>Home>
 \end{Verbatim}
 The first one only works when the \texttt{'B'} flag is not in \texttt{'cpoptions'}.
 The second one always works.
-To get a literal "<lt>" in a mapping:
+To get a literal ``<lt>" in a mapping:
 \begin{Verbatim}[samepage=true]
  :map <C-L> <lt>lt>
 \end{Verbatim}
 
 For mapping, abbreviation and menu commands you can then copy-paste the examples and use them directly.
-Or type them literally, including the '<' and '>' characters.
-This does NOT work for other commands, like "\texttt{:set}" and "\texttt{:autocmd}"!
+Or type them literally, including the `<' and `>' characters.
+This does NOT work for other commands, like ``\texttt{:set}" and ``\texttt{:autocmd}"!
 
 \subsection{Modes, introduction}
 \label{vim-modes-intro}
@@ -592,7 +592,7 @@ If the \texttt{'showmode'} option is on \texttt{-- INSERT --} is shown at the bo
 
 \subsubsection{Command-line mode, Cmdlinemode}
 In Command-line mode (also called Cmdline mode) you can enter one line of text at the bottom of the window.
-This is for the Ex commands, ":", the pattern search commands, "?" and "/", and the filter command, "!".
+This is for the Ex commands, ``:", the pattern search commands, ``?" and ``/", and the filter command, ``!".
 |\texttt{:h Cmdline-mode}|
 
 \subsubsection{Ex mode}
@@ -625,7 +625,7 @@ This is like Normal mode, but after executing one command Vim returns to Insert 
 If the \texttt{'showmode'} option is on \texttt{-- (insert) --} is shown at the bottom of the window.
 
 \subsubsection{Insert Visual mode}
-Entered when starting a Visual selection from Insert mode, e.g., by using CTRL-O and then "v", "V" or CTRL-V.
+Entered when starting a Visual selection from Insert mode, e.g., by using CTRL-O and then ``v", ``V" or CTRL-V.
 When the Visual selection ends, Vim returns to Insert mode.
 If the \texttt{'showmode'} option is on \texttt{-- (insert) VISUAL --} is shown at the bottom of the window.
 
@@ -640,7 +640,7 @@ is shown at the bottom of the window.
 \label{mode-switching}
 
 If for any reason you do not know which mode you are in, you can always get back to Normal mode by typing <Esc> twice.
-This doesn't work for Ex mode though, use ":visual".
+This doesn't work for Ex mode though, use ``:visual".
 You will know you are back in Normal mode when you see the screen flash or hear the bell after you type <Esc>.
 However, when pressing <Esc> after using CTRL-O in Insert mode you get a beep but you are still in Insert mode, type <Esc> again.
 
@@ -660,8 +660,8 @@ However, when pressing <Esc> after using CTRL-O in Insert mode you get a beep bu
 -- not possible
 
 \begin{itemize}
-				\item *1 Go from Normal mode to Insert mode by giving the command "i", "I", "a", "A", "o", "O", "c", "C", "s" or "S".
-				\item *2 Go from Visual mode to Normal mode by giving a non-movement command, which causes the command to be executed, or by hitting <Esc> "v", "V" or "CTRL-V" (see |\texttt{:h v\_v}|), which just stops Visual mode without side effects.
+				\item *1 Go from Normal mode to Insert mode by giving the command ``i", ``I", ``a", ``A", ``o", ``O", ``c", ``C", ``s" or ``S".
+				\item *2 Go from Visual mode to Normal mode by giving a non-movement command, which causes the command to be executed, or by hitting <Esc> ``v", ``V" or ``CTRL-V" (see |\texttt{:h v\_v}|), which just stops Visual mode without side effects.
 				\item *3 Go from Command-line mode to Normal mode by:
 								\begin{itemize}
 												\item Hitting <CR> or <NL>, which causes the entered command to be executed.
@@ -674,13 +674,13 @@ However, when pressing <Esc> after using CTRL-O in Insert mode you get a beep bu
 								\{Vi: when hitting <Esc> the command-line is executed.
 								This is unexpected for most people; therefore it was changed in Vim.
 								But when the <Esc> is part of a mapping, the command-line is executed.
-								If you want the Vi behaviour also when typing <Esc>, use "\texttt{:cmap \^{}V<Esc> \^{}V\^{}M}"\}
+								If you want the Vi behaviour also when typing <Esc>, use ``\texttt{:cmap \^{}V<Esc> \^{}V\^{}M}"\}
 				\item *4 Go from Normal to Select mode by:
 								\begin{itemize}
-												\item use the mouse to select text while \texttt{'selectmode'} contains "mouse"
-												\item use a non-printable command to move the cursor while keeping the Shift key pressed, and the \texttt{'selectmode'} option contains "key"
-												\item use "v", "V" or "CTRL-V" while \texttt{'selectmode'} contains "cmd"
-												\item use "gh", "gH" or "g CTRL-H"  |\texttt{:h g\_CTRL-H}|
+												\item use the mouse to select text while \texttt{'selectmode'} contains ``mouse"
+												\item use a non-printable command to move the cursor while keeping the Shift key pressed, and the \texttt{'selectmode'} option contains ``key"
+												\item use ``v", ``V" or ``CTRL-V" while \texttt{'selectmode'} contains ``cmd"
+												\item use ``gh", ``gH" or ``g CTRL-H"  |\texttt{:h g\_CTRL-H}|
 								\end{itemize}
 				\item *5 Go from Select mode to Normal mode by using a non-printable command to move the cursor, without keeping the Shift key pressed.
 				\item *6 Go from Select mode to Insert mode by typing a printable character.
@@ -715,26 +715,26 @@ This can be used to make sure Vim is in the mode indicated by \texttt{'insertmod
 \label{Ex}
 \label{EX}
 \label{E501}
-Switch to "Ex" mode.
-This is a bit like typing ":" commands one after another, except:
+Switch to ``Ex" mode.
+This is a bit like typing ``:" commands one after another, except:
 \begin{itemize}
-				\item You don't have to keep pressing ":".
+				\item You don't have to keep pressing ``:".
 				\item The screen doesn't get updated after each command.
 				\item There is no normal command-line editing.
 				\item Mappings and abbreviations are not used.
 \end{itemize}
-In fact, you are editing the lines with the "standard" line-input editing commands (<Del> or <BS> to erase, CTRL-U to kill the whole line).
-Vim will enter this mode by default if it's invoked as "ex" on the command-line.
-Use the "\texttt{:vi}" command |\texttt{:h :visual}| to exit "Ex" mode.
-Note: In older versions of Vim "Q" formatted text, that is now done with |\texttt{:h gq}|.
+In fact, you are editing the lines with the ``standard" line-input editing commands (<Del> or <BS> to erase, CTRL-U to kill the whole line).
+Vim will enter this mode by default if it's invoked as ``ex" on the command-line.
+Use the ``\texttt{:vi}" command |\texttt{:h :visual}| to exit ``Ex" mode.
+Note: In older versions of Vim ``Q" formatted text, that is now done with |\texttt{:h gq}|.
 But if you use the
-|\texttt{:h vimrc\_example.vim}| script "Q" works like "gq".
+|\texttt{:h vimrc\_example.vim}| script ``Q" works like ``gq".
 
 \subsubsection{gQ}
 \label{gQ}
-Switch to "Ex" mode like with "Q", but really behave like typing ":" commands after another.
+Switch to ``Ex" mode like with ``Q", but really behave like typing ``:" commands after another.
 All command line editing, completion etc. is available.
-Use the "\texttt{:vi}" command |\texttt{:h :visual}| to exit "Ex" mode.
+Use the ``\texttt{:vi}" command |\texttt{:h :visual}| to exit ``Ex" mode.
 \{not in Vi\}
 
 \subsection{The window contents}
@@ -773,10 +773,10 @@ If the last line in a window doesn't fit, Vim will indicate this with a \texttt{
 		+-----------------------+
 \end{Verbatim}
 
-Thus the '@' lines indicate that there is a line that doesn't fit in the window.
+Thus the `@' lines indicate that there is a line that doesn't fit in the window.
 
-When the "lastline" flag is present in the \texttt{'display'} option, you will not see \texttt{@} characters at the left side of window.
-If the last line doesn't fit completely, only the part that fits is shown, and the last three characters of the last line are replaced with "@@@", like this:
+When the ``lastline" flag is present in the \texttt{'display'} option, you will not see \texttt{@} characters at the left side of window.
+If the last line doesn't fit completely, only the part that fits is shown, and the last three characters of the last line are replaced with ``@@@", like this:
 
 \begin{Verbatim}[samepage=true]
 		+-----------------------+
@@ -790,9 +790,9 @@ If the last line doesn't fit completely, only the part that fits is shown, and t
 If there is a single line that is too long to fit in the window, this is a special situation.
 Vim will show only part of the line, around where the cursor is.
 There are no special characters shown, so that you can edit all parts of this line.
-\{Vi: gives an "internal error" on lines that do not fit in the window\}
+\{Vi: gives an ``internal error" on lines that do not fit in the window\}
 
-The '@' occasion in the \texttt{'highlight'} option can be used to set special highlighting for the '@' and \texttt{~} characters.
+The `@' occasion in the \texttt{'highlight'} option can be used to set special highlighting for the `@' and \texttt{~} characters.
 This makes it possible to distinguish them from real characters in the buffer.
 
 The \texttt{'showbreak'} option contains the string to put in front of wrapped lines.
@@ -809,9 +809,9 @@ The \texttt{'sidescroll'} option can be set to the minimal number of columns to 
 
 All normal ASCII characters are displayed directly on the screen.
 The <Tab> is replaced with the number of spaces that it represents.
-Other non-printing characters are replaced with "\textasciicircum \texttt{\{char\}}", where \texttt{\{char\}} is the non-printing character with 64 added.
-Thus character 7 (bell) will be shown as "\textasciicircum G".
-Characters between 127 and 160 are replaced with "\textasciitilde \{char\}", where \{char\} is the character with 64 subtracted.
+Other non-printing characters are replaced with ``\textasciicircum \texttt{\{char\}}", where \texttt{\{char\}} is the non-printing character with 64 added.
+Thus character 7 (bell) will be shown as ``\textasciicircum G".
+Characters between 127 and 160 are replaced with ``\textasciitilde \{char\}", where \{char\} is the character with 64 subtracted.
 These characters occupy more than one position on the screen.
 The cursor can only be positioned on the first one.
 
@@ -822,7 +822,7 @@ The cursor can only be positioned on the first one.
 		:set showbreak=\ \ \ \ \ \ \ \ 
 \end{Verbatim}
 
-If you set the \texttt{'list'} option, <Tab> characters will not be shown as several spaces, but as "\textasciicircum I".
+If you set the \texttt{'list'} option, <Tab> characters will not be shown as several spaces, but as ``\textasciicircum I".
 A \texttt{\$} will be placed at the end of the line, so you can find trailing blanks.
 
 In Command-line mode only the command-line itself is shown correctly.
@@ -869,7 +869,7 @@ On most Unix systems, resizing the window is recognized and handled correctly by
 \begin{tabularx}{\textwidth}{c X}
 				screen & The whole area that Vim uses to work in.
 				This can be a terminal emulator window.
-				Also called "the Vim window". \\
+				Also called ``the Vim window". \\
 				window & A view on a buffer.
 \end{tabularx}
 
@@ -904,7 +904,7 @@ A difference is made between four types of lines:
 
 								logical lines & 
 								The buffer lines with folding applied.
-								Buffer lines in a closed fold are changed to a single logical line: "+-- 99 lines folded".
+								Buffer lines in a closed fold are changed to a single logical line: ``+-- 99 lines folded".
 								They can be thousands of characters long.\\
 
 								window lines & 

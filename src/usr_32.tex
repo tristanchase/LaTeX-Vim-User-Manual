@@ -14,7 +14,7 @@ You can do that with this command:
  :earlier 1f
 \end{Verbatim}
 
-The "\texttt{f}" stands for "file" here.
+The ``\texttt{f}" stands for ``file" here.
 
 You can repeat this command to go further back in the past.
 Or use a count different from 1 to go back faster.
@@ -38,8 +38,8 @@ But it is also possible to branch off.
 This happens when you undo a few changes and then make a new change.
 The new changes become a branch in the undo tree.
 
-Let's start with the text "one".
-The first change to make is to append " too".
+Let's start with the text ``one".
+The first change to make is to append `` too".
 And then move to the first `o' and change it into `w'.
 We then have two changes, numbered 1 and 2, and three states of the text:
 
@@ -55,7 +55,7 @@ We then have two changes, numbered 1 and 2, and three states of the text:
       one two 
 \end{Verbatim}
 
-If we now undo one change, back to "one too", and change "one" to "me" we create a branch in the undo tree:
+If we now undo one change, back to ``one too", and change ``one" to ``me" we create a branch in the undo tree:
 
 \begin{Verbatim}[samepage=true]
             one 
@@ -70,9 +70,9 @@ If we now undo one change, back to "one too", and change "one" to "me" we create
 \end{Verbatim}
 
 You can now use the |\texttt{:h u}| command to undo.
-If you do this twice you get to "one".
-Use |\texttt{:h CTRL-R}| to redo, and you will go to "one too".
-One more |\texttt{:h CTRL-R}| takes you to "me too".
+If you do this twice you get to ``one".
+Use |\texttt{:h CTRL-R}| to redo, and you will go to ``one too".
+One more |\texttt{:h CTRL-R}| takes you to ``me too".
 Thus undo and redo go up and down in the tree, using the branch that was last used.
 
 What matters here is the order in which the changes are made.
@@ -83,16 +83,16 @@ Note that only the changes are numbered, the text shown in the tree above has no
 They are mostly referred to by the number of the change above it.
 But sometimes by the number of one of the changes below it, especially when moving up in the tree, so that you know which change was just undone.
 \subsection{Jumping around the tree}
-So how do you get to "one two" now?  You can use this command:
+So how do you get to ``one two" now?  You can use this command:
 
 \begin{Verbatim}[samepage=true]
  :undo 2
 \end{Verbatim}
 
-The text is now "one two", you are below change 2.
+The text is now ``one two", you are below change 2.
 You can use the |\texttt{:h :undo}| command to jump to below any change in the tree.
 
-Now make another change: change "one" to "not":
+Now make another change: change ``one" to ``not":
 
 \begin{Verbatim}[samepage=true]
             one 
@@ -110,7 +110,7 @@ Now make another change: change "one" to "not":
      not two 
 \end{Verbatim}
 
-Now you change your mind and want to go back to "me too".
+Now you change your mind and want to go back to ``me too".
 Use the |\texttt{:h g-}| command.
 This moves back in time.
 Thus it doesn't walk the tree upwards or downwards, but goes to the change made before.
@@ -152,14 +152,14 @@ To see what branches there are in the undo tree use this command:
 \end{Verbatim}
 
 Here you can see the number of the leaves in each branch and when the change was made.
-Assuming we are below change 4, at "not two", you can go back ten seconds with this command:
+Assuming we are below change 4, at ``not two", you can go back ten seconds with this command:
 
 \begin{Verbatim}[samepage=true]
  :earlier 10s
 \end{Verbatim}
 
 Depending on how much time you took for the changes you end up at a certain position in the tree.
-The |\texttt{:h :earlier}| command argument can be "\texttt{m}" for minutes, "\texttt{h}" for hours and "\texttt{d}" for days.
+The |\texttt{:h :earlier}| command argument can be ``\texttt{m}" for minutes, ``\texttt{h}" for hours and ``\texttt{d}" for days.
 To go all the way back use a big number:
 
 \begin{Verbatim}[samepage=true]
@@ -172,7 +172,7 @@ To travel forward in time again use the |\texttt{:h :later!}| command:
  :later 1m
 \end{Verbatim}
 
-The arguments are "\texttt{s}", "\texttt{m}" and "\texttt{h}", just like with |\texttt{:h :earlier}|.
+The arguments are ``\texttt{s}", ``\texttt{m}" and ``\texttt{h}", just like with |\texttt{:h :earlier}|.
 
 If you want even more details, or want to manipulate the information, you can use the |\texttt{:h undotree()}| function.
 To see what it returns:

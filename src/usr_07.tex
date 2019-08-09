@@ -16,7 +16,7 @@ To start editing another file, use this command:
  :edit foo.txt
  \end{Verbatim}
 
-You can use any file name instead of "\texttt{foo.txt}".
+You can use any file name instead of ``\texttt{foo.txt}".
 Vim will close the current file and open the new one.
 If the current file has unsaved changes, however, Vim displays an error message and does not open the new file:
 
@@ -70,8 +70,8 @@ After you have done your thing in this file, to edit the next file you use this 
  :next
  \end{Verbatim}
 
-If you have unsaved changes in the current file, you will get an error message and the "\texttt{:next}" will not work.
-This is the same problem as with "\texttt{:edit}" mentioned in the previous section.
+If you have unsaved changes in the current file, you will get an error message and the ``\texttt{:next}" will not work.
+This is the same problem as with ``\texttt{:edit}" mentioned in the previous section.
 To abandon the changes:
 
  \begin{Verbatim}[samepage=true]
@@ -95,7 +95,7 @@ This does the same as using two separate commands:
 WHERE AM I?
 
 To see which file in the argument list you are editing, look in the window title.
-It should show something like "(2 of 3)".
+It should show something like ``(2 of 3)".
 This means you are editing the second file out of three files.
 
 If you want to see the list of files, use this command:
@@ -104,7 +104,7 @@ If you want to see the list of files, use this command:
  :args
  \end{Verbatim}
 
-This is short for "arguments".
+This is short for ``arguments".
 The output might look like this:
 
 		\begin{Verbatim}[samepage=true]
@@ -112,7 +112,7 @@ The output might look like this:
 						\end{Verbatim}
 
 These are the files you started Vim with.
-The one you are currently editing, "\texttt{two.c}", is in square brackets.
+The one you are currently editing, ``\texttt{two.c}", is in square brackets.
 
 \subsubsection{Moving to other arguments}
 To go back one file:
@@ -121,7 +121,7 @@ To go back one file:
  :previous
  \end{Verbatim}
 
-This is just like the "\texttt{:next}" command, except that it moves in the other direction.
+This is just like the ``\texttt{:next}" command, except that it moves in the other direction.
 Again, there is a shortcut command for when you want to write the file first:
 
  \begin{Verbatim}[samepage=true]
@@ -140,9 +140,9 @@ And to move back to the first one again:
  :first
  \end{Verbatim}
 
-There is no "\texttt{:wlast}" or "\texttt{:wfirst!}" command though
+There is no ``\texttt{:wlast}" or ``\texttt{:wfirst!}" command though
 
-You can use a count for "\texttt{:next}" and "\texttt{:previous}".
+You can use a count for ``\texttt{:next}" and ``\texttt{:previous}".
 To skip two files forward:
 
  \begin{Verbatim}[samepage=true]
@@ -150,7 +150,7 @@ To skip two files forward:
  \end{Verbatim}
 
 \subsubsection{Automatic writing}
-When moving around the files and making changes, you have to remember to use "\texttt{:write}".
+When moving around the files and making changes, you have to remember to use ``\texttt{:write}".
 Otherwise you will get an error message.
 If you are sure you always want to write modified files, you can tell Vim to automatically write them:
 
@@ -179,7 +179,7 @@ Or use a wildcard, like it's used in the shell:
  \end{Verbatim}
 
 Vim will take you to the first file in the list.
-Again, if the current file has changes, you can either write the file first, or use "\texttt{:args!}" (with ! added) to abandon the changes.
+Again, if the current file has changes, you can either write the file first, or use ``\texttt{:args!}" (with ! added) to abandon the changes.
 
 DID YOU EDIT THE LAST FILE?
 \phantomsection
@@ -221,9 +221,9 @@ If you now do:
 
 You are in \texttt{three.c}.
 Notice that the \texttt{CTRL-\^{}} command does not change the idea of where you are in the list of files.
-Only commands like "\texttt{:next}" and "\texttt{:previous}" do that.
+Only commands like ``\texttt{:next}" and ``\texttt{:previous}" do that.
 
-The file you were previously editing is called the "alternate" file.
+The file you were previously editing is called the ``alternate" file.
 When you just started Vim \texttt{CTRL-\^{}} will not work, since there isn't a previous file.
 
 \subsubsection{Predefined marks}
@@ -240,38 +240,38 @@ Another mark that is remembered is the position where you made the last change:
  `.
  \end{Verbatim}
 
-Suppose you are editing the file "\texttt{one.txt}".
-Somewhere halfway the file you use "\texttt{x}" to delete a character.
-Then you go to the last line with "\texttt{G}" and write the file with "\texttt{:w}".
-You edit several other files, and then use "\texttt{:edit one.txt}" to come back to "\texttt{one.txt}".
+Suppose you are editing the file ``\texttt{one.txt}".
+Somewhere halfway the file you use ``\texttt{x}" to delete a character.
+Then you go to the last line with ``\texttt{G}" and write the file with ``\texttt{:w}".
+You edit several other files, and then use ``\texttt{:edit one.txt}" to come back to ``\texttt{one.txt}".
 If you now use \texttt{`"} Vim jumps to the last line of the file.
 Using \texttt{`.} takes you to the position where you deleted the character.
 Even when you move around in the file \texttt{`"} and \texttt{`.} will take you to the remembered position.
 At least until you make another change or leave the file.
 
 \subsubsection{File marks}
-In chapter 4 was explained how you can place a mark in a file with "\texttt{mx}" and jump to that position with "\texttt{`x}".
+In chapter 4 was explained how you can place a mark in a file with ``\texttt{mx}" and jump to that position with ``\texttt{`x}".
 That works within one file.
 If you edit another file and place marks there, these are specific for that file.
 Thus each file has its own set of marks, they are local to the file.
 
 So far we were using marks with a lowercase letter.  There are also marks
 with an uppercase letter.  These are global, they can be used from any file.
-For example suppose that we are editing the file "\texttt{foo.txt}".  Go to halfway the
+For example suppose that we are editing the file ``\texttt{foo.txt}".  Go to halfway the
 file ("\texttt{50\%}") and place the F mark there (F for foo):
 
  \begin{Verbatim}[samepage=true]
  50%mF
  \end{Verbatim}
 
-Now edit the file "\texttt{bar.txt}" and place the B mark (B for bar) at its last line:
+Now edit the file ``\texttt{bar.txt}" and place the B mark (B for bar) at its last line:
 
  \begin{Verbatim}[samepage=true]
  GmB
  \end{Verbatim}
 
-Now you can use the "\texttt{'F}" command to jump back to halfway foo.txt.
-Or edit yet another file, type "\texttt{'B}" and you are at the end of \texttt{bar.txt} again.
+Now you can use the ``\texttt{'F}" command to jump back to halfway foo.txt.
+Or edit yet another file, type ``\texttt{'B}" and you are at the end of \texttt{bar.txt} again.
 
 The file marks are remembered until they are placed somewhere else.
 Thus you can place the mark, do hours of editing and still be able to jump back to that mark.
@@ -279,7 +279,7 @@ Thus you can place the mark, do hours of editing and still be able to jump back 
 It's often useful to think of a simple connection between the mark letter and where it is placed.
 For example, use the H mark in a header file, M in a Makefile and C in a C code file.
 
-To see where a specific mark is, give an argument to the "\texttt{:marks}" command:
+To see where a specific mark is, give an argument to the ``\texttt{:marks}" command:
 
  \begin{Verbatim}[samepage=true]
  :marks M
@@ -334,10 +334,10 @@ Usually you would do this:
  :set patchmode=.orig
  \end{Verbatim}
 
-When you now edit the file data.txt for the first time, make changes and write the file, Vim will keep a copy of the unchanged file under the name "\texttt{data.txt.orig}".
+When you now edit the file data.txt for the first time, make changes and write the file, Vim will keep a copy of the unchanged file under the name ``\texttt{data.txt.orig}".
 
-If you make further changes to the file, Vim will notice that "data.txt.orig" already exists and leave it alone.
-Further backup files will then be called "data.txt~" (or whatever you specified with \texttt{'backupext'}).
+If you make further changes to the file, Vim will notice that ``data.txt.orig" already exists and leave it alone.
+Further backup files will then be called ``data.txt~" (or whatever you specified with \texttt{'backupext'}).
 
 If you leave \texttt{'patchmode'} empty (that is the default), the original file will not be kept.
 
@@ -345,9 +345,9 @@ If you leave \texttt{'patchmode'} empty (that is the default), the original file
 This explains how to copy text from one file to another.
 Let's start with a simple example.
 Edit the file that contains the text you want to copy.
-Move the cursor to the start of the text and press "\texttt{v}".
+Move the cursor to the start of the text and press ``\texttt{v}".
 This starts Visual mode.
-Now move the cursor to the end of the text and press "\texttt{y}".
+Now move the cursor to the end of the text and press ``\texttt{y}".
 This yanks (copies) the selected text.
 
 To copy the above paragraph, you would do:
@@ -360,7 +360,7 @@ To copy the above paragraph, you would do:
 
 Now edit the file you want to put the text in.
 Move the cursor to the character where you want the text to appear after.
-Use "\texttt{p}" to put the text there.
+Use ``\texttt{p}" to put the text there.
 
  \begin{Verbatim}[samepage=true]
  :edit otherfile
@@ -369,12 +369,12 @@ Use "\texttt{p}" to put the text there.
  \end{Verbatim}
 
 Of course you can use many other commands to yank the text.
-For example, to select whole lines start Visual mode with "\texttt{V}".
+For example, to select whole lines start Visual mode with ``\texttt{V}".
 Or use CTRL-V to select a rectangular block.
-Or use "\texttt{Y}" to yank a single line, "\texttt{yaw}" to yank-a-word, etc.
+Or use ``\texttt{Y}" to yank a single line, ``\texttt{yaw}" to yank-a-word, etc.
 
-The "\texttt{p}" command puts the text after the cursor.
-Use "\texttt{P}" to put the text before the cursor.
+The ``\texttt{p}" command puts the text after the cursor.
+Use ``\texttt{P}" to put the text before the cursor.
 Notice that Vim remembers if you yanked a whole line or a block, and puts it back that way.
 
 \subsubsection{Using registers}
@@ -386,10 +386,10 @@ Here we will use the registers named a to z (later you will find out there are o
 Let's copy a sentence to the f register (f for First):
 
  \begin{Verbatim}[samepage=true]
- "fyas
+ ``fyas
  \end{Verbatim}
 
-The "\texttt{yas}" command yanks a sentence like before.
+The ``\texttt{yas}" command yanks a sentence like before.
 It's the \texttt{"f} that tells Vim the text should be place in the f register.
 This must come just before the yank command.
 
@@ -399,16 +399,16 @@ Now yank three whole lines to the \texttt{l} register (l for line):
  "l3Y
  \end{Verbatim}
 
-The count could be before the "l just as well.
+The count could be before the ``l just as well.
 To yank a block of text to the b (for block) register:
 
  \begin{Verbatim}[samepage=true]
  CTRL-Vjjww"by
  \end{Verbatim}
 
-Notice that the register specification \texttt{"b} is just before the "\texttt{y}" command.
+Notice that the register specification \texttt{"b} is just before the ``\texttt{y}" command.
 This is required.
-If you would have put it before the "\texttt{w}" command, it would not have worked.
+If you would have put it before the ``\texttt{w}" command, it would not have worked.
 
 Now you have three pieces of text in the f, l and b registers.
 Edit another file, move around and place the text where you want it:
@@ -417,7 +417,7 @@ Edit another file, move around and place the text where you want it:
  "fp
  \end{Verbatim}
 
-Again, the register specification \texttt{"f} comes before the "\texttt{p}" command.
+Again, the register specification \texttt{"f} comes before the ``\texttt{p}" command.
 
 You can put the registers in any order.
 And the text stays in the register until you yank something else into it.
@@ -431,7 +431,7 @@ For example, to delete-a-word and write it in the w register:
  "wdaw
  \end{Verbatim}
 
-Again, the register specification comes before the delete command "\texttt{d}".
+Again, the register specification comes before the delete command ``\texttt{d}".
 
 \subsubsection{Appending to a file}
 When collecting lines of text into one file, you can use this command:
@@ -440,18 +440,18 @@ When collecting lines of text into one file, you can use this command:
  :write >> logfile
  \end{Verbatim}
 
-This will write the text of the current file to the end of "logfile".
+This will write the text of the current file to the end of ``logfile".
 Thus it is appended.
 This avoids that you have to copy the lines, edit the log file and put them there.
 Thus you save two steps.
 But you can only append to the end of a file.
 
-To append only a few lines, select them in Visual mode before typing "\texttt{:write}".
+To append only a few lines, select them in Visual mode before typing ``\texttt{:write}".
 In chapter 10 you will learn other ways to select a range of lines.
 
 \subsection{Viewing a file}
 Sometimes you only want to see what a file contains, without the intention to ever write it back.
-There is the risk that you type "\texttt{:w}" without thinking and overwrite the original file anyway.
+There is the risk that you type ``\texttt{:w}" without thinking and overwrite the original file anyway.
 To avoid this, edit the file read-only.
 
 To start Vim in readonly mode, use this command:
@@ -466,8 +466,8 @@ On Unix this command should do the same thing:
  view file
  \end{Verbatim}
 
-You are now editing "file" in read-only mode.
-When you try using "\texttt{:w}" you will get an error message and the file won't be written.
+You are now editing ``file" in read-only mode.
+When you try using ``\texttt{:w}" you will get an error message and the file won't be written.
 
 When you try to make a change to the file Vim will give you a warning:
 
@@ -514,15 +514,15 @@ You know that you already have a program that copies a file, thus you start with
 
 You can delete the stuff you don't need.
 Now you need to save the file under a new name.
-The "\texttt{:saveas}" command can be used for this:
+The ``\texttt{:saveas}" command can be used for this:
 
  \begin{Verbatim}[samepage=true]
  :saveas move.c
  \end{Verbatim}
 
 Vim will write the file under the given name, and edit that file.
-Thus the next time you do "\texttt{:write}", it will write "\texttt{move.c}".
-"\texttt{copy.c}" remains unmodified.
+Thus the next time you do ``\texttt{:write}", it will write ``\texttt{move.c}".
+``\texttt{copy.c}" remains unmodified.
 
 When you want to change the name of the file you are editing, but don't want to write the file, you can use this command:
 
@@ -530,7 +530,7 @@ When you want to change the name of the file you are editing, but don't want to 
  :file move.c
  \end{Verbatim}
 
-Vim will mark the file as "not edited".
+Vim will mark the file as ``not edited".
 This means that Vim knows this is not the file you started editing.
 When you try to write the file, you might get this message:
 

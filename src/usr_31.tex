@@ -13,13 +13,13 @@ But what if you want to split a window to edit another file?  There is no menu e
 You could first use Window/Split and then File/Open..., but that's more work.
 
 Since you are typing most commands in Vim, opening the file browser with a typed command is possible as well.
-To make the split command use the file browser, prepend "\texttt{browse}":
+To make the split command use the file browser, prepend ``\texttt{browse}":
 
 \begin{Verbatim}[samepage=true]
  :browse split
 \end{Verbatim}
 
-Select a file and then the "\texttt{:split}" command will be executed with it.
+Select a file and then the ``\texttt{:split}" command will be executed with it.
 If you cancel the file dialog nothing happens, the window isn't split.
 
 You can also specify a file name argument.
@@ -30,13 +30,13 @@ Example:
  :browse split /etc
 \end{Verbatim}
 
-The file browser will pop up, starting in the directory "\texttt{/etc}".
+The file browser will pop up, starting in the directory ``\texttt{/etc}".
 
-The "\texttt{:browse}" command can be prepended to just about any command that opens a file.
+The ``\texttt{:browse}" command can be prepended to just about any command that opens a file.
 
 If no directory is specified, Vim will decide where to start the file browser.
 By default it uses the same directory as the last time.
-Thus when you used "\texttt{:browse split}" and selected a file in "\texttt{/usr/local/share}", the next time you use a "\texttt{:browse}" it will start in "\texttt{/usr/local/share}" again.
+Thus when you used ``\texttt{:browse split}" and selected a file in ``\texttt{/usr/local/share}", the next time you use a ``\texttt{:browse}" it will start in ``\texttt{/usr/local/share}" again.
 
 This can be changed with the \texttt{'browsedir'} option.  It can have one of three values:
 
@@ -46,14 +46,14 @@ This can be changed with the \texttt{'browsedir'} option.  It can have one of th
 				\texttt{current} & use the current directory \\
 \end{tabular} \end{center}
 
-For example, when you are in the directory "\texttt{/usr}", editing the file "\texttt{/usr/local/share/readme}", then the command:
+For example, when you are in the directory ``\texttt{/usr}", editing the file ``\texttt{/usr/local/share/readme}", then the command:
 
 \begin{Verbatim}[samepage=true]
  :set browsedir=buffer
  :browse edit
 \end{Verbatim}
 
-Will start the browser in "\texttt{/usr/local/share}".
+Will start the browser in ``\texttt{/usr/local/share}".
 Alternatively:
 
 \begin{Verbatim}[samepage=true]
@@ -61,21 +61,21 @@ Alternatively:
  :browse edit
 \end{Verbatim}
 
-Will start the browser in "\texttt{/usr}".
+Will start the browser in ``\texttt{/usr}".
 
 \emph{Note}: To avoid using the mouse, most file browsers offer using key presses to navigate.
 Since this is different for every system, it is not explained here.
 Vim uses a standard browser when possible, your system documentation should contain an explanation on the keyboard shortcuts somewhere.
 
 When you are not using the GUI version, you could use the file explorer window to select files like in a file browser.
-However, this doesn't work for the "\texttt{:browse}" command.
+However, this doesn't work for the ``\texttt{:browse}" command.
 See |\texttt{:h netrw-browse}|.
 \subsection{Confirmation}
 Vim protects you from accidentally overwriting a file and other ways to lose changes.
 If you do something that might be a bad thing to do, Vim produces an error message and suggests appending ! if you really want to do it.
 
 To avoid retyping the command with the !, you can make Vim give you a dialog.
-You can then press "OK" or "Cancel" to tell Vim what you want.
+You can then press ``OK" or ``Cancel" to tell Vim what you want.
 
 For example, you are editing a file and made changes to it.
 You start editing another file with:
@@ -96,12 +96,12 @@ Vim will pop up a dialog that looks something like this:
 \end{Verbatim}
 
 Now make your choice.
-If you do want to save the changes, select "YES".
-If you want to lose the changes for ever: "NO".
-If you forgot what you were doing and want to check what really changed use "CANCEL".
+If you do want to save the changes, select ``YES".
+If you want to lose the changes for ever: ``NO".
+If you forgot what you were doing and want to check what really changed use ``CANCEL".
 You will be back in the same file, with the changes still there.
 
-Just like "\texttt{:browse}", the "\texttt{:confirm}" command can be prepended to most commands that edit another file.
+Just like ``\texttt{:browse}", the ``\texttt{:confirm}" command can be prepended to most commands that edit another file.
 They can also be combined:
 
 \begin{Verbatim}[samepage=true]
@@ -116,7 +116,7 @@ Typically the <Tab> key and the cursor keys change the choice.
 Pressing <Enter> selects the choice.
 This depends on the system though.
 
-When you are not using the GUI, the "\texttt{:confirm}" command works as well.
+When you are not using the GUI, the ``\texttt{:confirm}" command works as well.
 Instead of popping up a dialog, Vim will print the message at the bottom of the Vim window and ask you to press a key to make a choice.
 
 \begin{Verbatim}[samepage=true]
@@ -137,7 +137,7 @@ This depends on your system, but most often it works this way.
 Use the <Alt> key in combination with the underlined letter of a menu.
 For example, <A-w> (<Alt> and w) pops up the Window menu.
 
-In the Window menu, the "\texttt{split}" item has the p underlined.
+In the Window menu, the ``\texttt{split}" item has the p underlined.
 To select it, let go of the <Alt> key and press p.
 
 After the first selection of a menu with the <Alt> key, you can use the cursor keys to move through the menus.
@@ -148,13 +148,13 @@ After the first selection of a menu with the <Alt> key, you can use the cursor k
 There is a conflict between using the <Alt> key to select menu items, and using <Alt> key combinations for mappings.
 The \texttt{'winaltkeys'} option tells Vim what it should do with the <Alt> key.
 
-The default value "\texttt{menu}" is the smart choice: If the key combination is a menu shortcut it can't be mapped.
+The default value ``\texttt{menu}" is the smart choice: If the key combination is a menu shortcut it can't be mapped.
 All other keys are available for mapping.
 
-The value "\texttt{no}" doesn't use any <Alt> keys for the menus.
+The value ``\texttt{no}" doesn't use any <Alt> keys for the menus.
 Thus you must use the mouse for the menus, and all <Alt> keys can be mapped.
 
-The value "\texttt{yes}" means that Vim will use any <Alt> keys for the menus.
+The value ``\texttt{yes}" means that Vim will use any <Alt> keys for the menus.
 Some <Alt> key combinations may also do other things than selecting a menu.
 \subsection{Vim window position and size}
 To see the current Vim window position on the screen use:
@@ -222,13 +222,13 @@ When you try that, you will see that it doesn't work: The mail program thinks th
 What happens is that gvim disconnects from the shell it was started in.
 That is fine when you start gvim in a terminal, so that you can do other work in that terminal.
 But when you really want to wait for gvim to finish, you must prevent it from disconnecting.
-The "\texttt{-f}" argument does this:
+The ``\texttt{-f}" argument does this:
 
 \begin{Verbatim}[samepage=true]
  gvim -f file.txt
 \end{Verbatim}
 
-The "\texttt{-f}" stands for foreground.
+The ``\texttt{-f}" stands for foreground.
 Now Vim will block the shell it was started in until you finish editing and exit.
 
 \subsubsection{Delayed start of the gui}
@@ -242,8 +242,8 @@ If you are editing a file and decide you want to use the GUI after all, you can 
 
 Vim will open the GUI window and no longer use the terminal.
 You can continue using the terminal for something else.
-The "\texttt{-f}" argument is used here to run the GUI in the foreground.
-You can also use "\texttt{:gui -f}".
+The ``\texttt{-f}" argument is used here to run the GUI in the foreground.
+You can also use ``\texttt{:gui -f}".
 
 \subsubsection{The gvim startup file}
 When gvim starts, it reads the gvimrc file.
@@ -258,14 +258,14 @@ For example, you can set the \texttt{'lines'} option to set a different window s
 You don't want to do this in a terminal, since its size is fixed (except for an xterm that supports resizing).
 
 The gvimrc file is searched for in the same locations as the vimrc file.
-Normally its name is "\texttt{~/.gvimrc}" for Unix and "\texttt{\$VIM/\_gvimrc}" for MS-Windows.
+Normally its name is ``\texttt{~/.gvimrc}" for Unix and ``\texttt{\$VIM/\_gvimrc}" for MS-Windows.
 The \texttt{\$MYGVIMRC} environment variable is set to it, thus you can use this command to edit the file, if you have one:
 
 \begin{Verbatim}[samepage=true]
  :edit $MYGVIMRC
 \end{Verbatim}
 
-If for some reason you don't want to use the normal gvimrc file, you can specify another one with the "\texttt{-U}" argument:
+If for some reason you don't want to use the normal gvimrc file, you can specify another one with the ``\texttt{-U}" argument:
 
 \begin{Verbatim}[samepage=true]
  gvim -U thisrc ...

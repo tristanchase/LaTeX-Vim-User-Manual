@@ -29,7 +29,7 @@ Now you start typing (ruler added):
     I taught programming for a whi 
 \end{Verbatim}
 
-If you type "\texttt{l}" next, this makes the line longer than the 30-character limit.
+If you type ``\texttt{l}" next, this makes the line longer than the 30-character limit.
 When Vim sees this, it inserts a line break and you get the following:
 
 \begin{Verbatim}[samepage=true]
@@ -57,7 +57,7 @@ You do not have to type newlines; Vim puts them in automatically.
 \subsubsection{Reformatting}
 The Vim editor is not a word processor.
 In a word processor, if you delete something at the beginning of the paragraph, the line breaks are reworked.
-In Vim they are not; so if you delete the word "programming" from the first line, all you get is a short line:
+In Vim they are not; so if you delete the word ``programming" from the first line, all you get is a short line:
 
 \begin{Verbatim}[samepage=true]
              1         2         3
@@ -70,7 +70,7 @@ In Vim they are not; so if you delete the word "programming" from the first line
 \end{Verbatim}
 
 This does not look good.
-To get the paragraph into shape you use the "\texttt{gq}" operator.
+To get the paragraph into shape you use the ``\texttt{gq}" operator.
 
 Let's first use this with a Visual selection.
 Starting from the first line, type:
@@ -79,7 +79,7 @@ Starting from the first line, type:
  v4jgq
 \end{Verbatim}
 
-"\texttt{v}" to start Visual mode, "\texttt{4j}" to move to the end of the paragraph and then the "\texttt{gq}" operator.
+``\texttt{v}" to start Visual mode, ``\texttt{4j}" to move to the end of the paragraph and then the ``\texttt{gq}" operator.
 The result is:
 
 \begin{Verbatim}[samepage=true]
@@ -94,22 +94,22 @@ The result is:
 
 \emph{Note}: there is a way to do automatic formatting for specific types of text layouts, see |\texttt{:h auto-format}|.
 
-Since "\texttt{gq}" is an operator, you can use one of the three ways to select the text it works on: With Visual mode, with a movement and with a text object.
+Since ``\texttt{gq}" is an operator, you can use one of the three ways to select the text it works on: With Visual mode, with a movement and with a text object.
 
-The example above could also be done with "\texttt{gq4j}".
+The example above could also be done with ``\texttt{gq4j}".
 That's less typing, but you have to know the line count.
-A more useful motion command is "\texttt{\}}".
+A more useful motion command is ``\texttt{\}}".
 This moves to the end of a paragraph.
-Thus "\texttt{gq\}}" formats from the cursor to the end of the current paragraph.
+Thus ``\texttt{gq\}}" formats from the cursor to the end of the current paragraph.
 
-A very useful text object to use with "\texttt{gq}" is the paragraph.
+A very useful text object to use with ``\texttt{gq}" is the paragraph.
 Try this:
 
 \begin{Verbatim}[samepage=true]
  gqap
 \end{Verbatim}
 
-"\texttt{ap}" stands for "a-paragraph".
+``\texttt{ap}" stands for ``a-paragraph".
 This formats the text of one paragraph (separated by empty lines).
 Also the part before the cursor.
 
@@ -119,7 +119,7 @@ If you have your paragraphs separated by empty lines, you can format the whole f
  gggqG
 \end{Verbatim}
 
-"\texttt{gg}" to move to the first line, "\texttt{gqG}" to format until the last line.
+``\texttt{gg}" to move to the first line, ``\texttt{gqG}" to format until the last line.
 
 Warning: If your paragraphs are not properly separated, they will be joined together.
 A common mistake is to have a line with a space or tab.
@@ -160,7 +160,7 @@ results in the following:
 				     story. 
 \end{Verbatim}
 \subsubsection{Right alignment}
-Similarly, the "\texttt{:right}" command right-justifies the text:
+Similarly, the ``\texttt{:right}" command right-justifies the text:
 
 \begin{Verbatim}[samepage=true]
  :1,5right 37
@@ -182,7 +182,7 @@ Finally there is this command:
  :{range}left [margin]
 \end{Verbatim}
 
-Unlike "\texttt{:center}" and "\texttt{:right}", however, the argument to "\texttt{:left}" is not the length of the line.
+Unlike ``\texttt{:center}" and ``\texttt{:right}", however, the argument to ``\texttt{:left}" is not the length of the line.
 Instead it is the left margin.
 If it is omitted, the text will be put against the left side of the screen (using a zero margin would do the same).
 If it is 5, the text will be indented 5 spaces.
@@ -212,11 +212,11 @@ To use this package, execute the following command:
  :runtime macros/justify.vim
 \end{Verbatim}
 
-This Vim script file defines a new visual command "\texttt{\_j}".
-To justify a block of text, highlight the text in Visual mode and then execute "\texttt{\_j}".
+This Vim script file defines a new visual command ``\texttt{\_j}".
+To justify a block of text, highlight the text in Visual mode and then execute ``\texttt{\_j}".
 
 Look in the file for more explanations.
-To go there, do "\texttt{gf}" on this name:\\ \texttt{\$VIMRUNTIME/macros/justify.vim.}
+To go there, do ``\texttt{gf}" on this name:\\ \texttt{\$VIMRUNTIME/macros/justify.vim.}
 
 An alternative is to filter the text through an external program.
 Example:
@@ -248,12 +248,12 @@ When a new line is started it gets the same indent as the previous line.
 In the above example, the tab after the <Enter> is not needed anymore.
 
 \subsubsection{Increasing indent}
-To increase the amount of indent in a line, use the "\texttt{>}" operator.
-Often this is used as "\texttt{>>}", which adds indent to the current line.
+To increase the amount of indent in a line, use the ``\texttt{>}" operator.
+Often this is used as ``\texttt{>>}", which adds indent to the current line.
 
 The amount of indent added is specified with the \texttt{'shiftwidth'} option.
 The default value is 8.
-To make "\texttt{>>}" insert four spaces worth of indent, for example, type this:
+To make ``\texttt{>>}" insert four spaces worth of indent, for example, type this:
 
 \begin{Verbatim}[samepage=true]
  :set shiftwidth=4
@@ -266,7 +266,7 @@ When used on the second line of the example text, this is what you get:
         the second line 
 \end{Verbatim}
 
-"\texttt{4>>}" will increase the indent of four lines.
+``\texttt{4>>}" will increase the indent of four lines.
 \subsubsection{Tabstop}
 If you want to make indents a multiple of 4, you set \texttt{'shiftwidth'} to 4.
 But when pressing a <Tab> you still get 8 spaces worth of indent.
@@ -293,20 +293,20 @@ You can fix this by setting \texttt{'tabstop'} to 3.
 But you have to do this every time you edit this file.
 
 Vim can change the use of tabstops in your file.
-First, set \texttt{'tabstop'} to make the indents look good, then use the "\texttt{:retab}" command:
+First, set \texttt{'tabstop'} to make the indents look good, then use the ``\texttt{:retab}" command:
 
 \begin{Verbatim}[samepage=true]
  :set tabstop=3
  :retab 8
 \end{Verbatim}
 
-The "\texttt{:retab}" command will change \texttt{'tabstop'} to 8, while changing the text such that it looks the same.
+The ``\texttt{:retab}" command will change \texttt{'tabstop'} to 8, while changing the text such that it looks the same.
 It changes spans of white space into tabs and spaces for this.
 You can now write the file.
 Next time you edit it the indents will be right without setting an option.
 
-Warning: When using "\texttt{:retab}" on a program, it may change white space inside a string constant.
-Therefore it's a good habit to use "\texttt{\textbackslash{}t}" instead of a real tab.
+Warning: When using ``\texttt{:retab}" on a program, it may change white space inside a string constant.
+Therefore it's a good habit to use ``\texttt{\textbackslash{}t}" instead of a real tab.
 \subsection{Dealing with long lines}
 Sometimes you will be editing a file that is wider than the number of columns in the window.
 When that occurs, Vim wraps the lines so that everything fits on the screen.
@@ -341,9 +341,9 @@ The cursor will stay in the same place, but it's moved back into the visible tex
 \end{tabular} \end{center}
 
 Let's attempt to show this with one line of text.
-The cursor is on the "\texttt{w}" of "which".
-The "current window" above the line indicates the text that is currently visible.
-The "window"s below the text indicate the text that is visible after the command left of it.
+The cursor is on the ``\texttt{w}" of ``which".
+The ``current window" above the line indicates the text that is currently visible.
+The ``window"s below the text indicate the text that is visible after the command left of it.
 
 \begin{Verbatim}[samepage=true]
                       |<-- current window -->|
@@ -423,11 +423,11 @@ Related options:
 \end{itemize}
 Set \texttt{'textwidth'} to zero to avoid a paragraph to be split.
 \subsubsection{Moving by visible lines}
-The "\texttt{j}" and "\texttt{k}" commands move to the next and previous lines.
+The ``\texttt{j}" and ``\texttt{k}" commands move to the next and previous lines.
 When used on a long line, this means moving a lot of screen lines at once.
 
-To move only one screen line, use the "\texttt{gj}" and "\texttt{gk}" commands.
-When a line doesn't wrap they do the same as "\texttt{j}" and "\texttt{k}".
+To move only one screen line, use the ``\texttt{gj}" and ``\texttt{gk}" commands.
+When a line doesn't wrap they do the same as ``\texttt{j}" and ``\texttt{k}".
 When the line does wrap, they move to a character displayed one line below or above.
 
 You might like to use these mappings, which bind these movement commands to the cursor keys:
@@ -448,9 +448,9 @@ That looks complicated.
 Let's break it up in pieces:
 
 \begin{center} \begin{tabular}{c l}
-				\texttt{:g/./         } & A "\texttt{:global}" command that finds all lines that contain at least one character. \\
+				\texttt{:g/./         } & A ``\texttt{:global}" command that finds all lines that contain at least one character. \\
 				\texttt{     ,/\^{}\$/    } & A range, starting from the current line (the non-empty line) until an empty line. \\
-				\texttt{          join} & The "\texttt{:join}" command joins the range of lines together into one line. \\
+				\texttt{          join} & The ``\texttt{:join}" command joins the range of lines together into one line. \\
 \end{tabular} \end{center}
 
 Starting with this text, containing eight lines broken at column 30:
@@ -498,7 +498,7 @@ Suppose you are editing a table with four columns:
 \end{Verbatim}
 
 You need to enter numbers in the third column.
-You could move to the second line, use "\texttt{A}", enter a lot of spaces and type the text.
+You could move to the second line, use ``\texttt{A}", enter a lot of spaces and type the text.
 
 For this kind of editing there is a special option:
 
@@ -507,7 +507,7 @@ For this kind of editing there is a special option:
 \end{Verbatim}
 
 Now you can move the cursor to positions where there isn't any text.
-This is called "virtual space".
+This is called ``virtual space".
 Editing a table is a lot easier this way.
 
 Move the cursor by searching for the header of the last column:
@@ -516,8 +516,8 @@ Move the cursor by searching for the header of the last column:
  /test 3
 \end{Verbatim}
 
-Now press "\texttt{j}" and you are right where you can enter the value for "\texttt{input A}".
-Typing "\texttt{0.693}" results in:
+Now press ``\texttt{j}" and you are right where you can enter the value for ``\texttt{input A}".
+Typing ``\texttt{0.693}" results in:
 
 \begin{Verbatim}[samepage=true]
     nice table    test 1     test 2  test 3 
@@ -526,25 +526,25 @@ Typing "\texttt{0.693}" results in:
 \end{Verbatim}
 
 Vim has automatically filled the gap in front of the new text for you.
-Now, to enter the next field in this column use "\texttt{Bj}".
-"\texttt{B}" moves back to the start of a white space separated word.
-Then "\texttt{j}" moves to the place where the next field can be entered.
+Now, to enter the next field in this column use ``\texttt{Bj}".
+``\texttt{B}" moves back to the start of a white space separated word.
+Then ``\texttt{j}" moves to the place where the next field can be entered.
 
 \emph{Note}: You can move the cursor anywhere in the display, also beyond the end of a line.
 But Vim will not insert spaces there, until you insert a character in that position.
 
 \subsubsection{Copying a column}
-You want to add a column, which should be a copy of the third column and placed before the "test 1" column.
+You want to add a column, which should be a copy of the third column and placed before the ``test 1" column.
 Do this in seven steps:
 
 \begin{enumerate}
-\item Move the cursor to the left upper corner of this column, e.g., with "\texttt{/test 3}".
+\item Move the cursor to the left upper corner of this column, e.g., with ``\texttt{/test 3}".
 \item Press CTRL-V to start blockwise Visual mode.
-\item Move the cursor down two lines with "\texttt{2j}".  You are now in "virtual space": the "input B" line of the "test 3" column.
-\item Move the cursor right, to include the whole column in the selection, plus the space that you want between the columns.  "\texttt{9l}" should do it.
-\item Yank the selected rectangle with "\texttt{y}".
-\item Move the cursor to "test 1", where the new column must be placed.
-\item Press "\texttt{P}".
+\item Move the cursor down two lines with ``\texttt{2j}".  You are now in ``virtual space": the ``input B" line of the ``test 3" column.
+\item Move the cursor right, to include the whole column in the selection, plus the space that you want between the columns.  ``\texttt{9l}" should do it.
+\item Yank the selected rectangle with ``\texttt{y}".
+\item Move the cursor to ``test 1", where the new column must be placed.
+\item Press ``\texttt{P}".
 \end{enumerate}
 
 The result should be:
@@ -555,7 +555,7 @@ The result should be:
     input B                 0.913 
 \end{Verbatim}
 
-Notice that the whole "test 1" column was shifted right, also the line where the "test 3" column didn't have text.
+Notice that the whole ``test 1" column was shifted right, also the line where the ``test 3" column didn't have text.
 
 Go back to non-virtual cursor movements with:
 
@@ -564,12 +564,12 @@ Go back to non-virtual cursor movements with:
 \end{Verbatim}
 
 \subsubsection{Virtual replace mode}
-The disadvantage of using \texttt{'virtualedit'} is that it "feels" different.
+The disadvantage of using \texttt{'virtualedit'} is that it ``feels" different.
 You can't recognize tabs or spaces beyond the end of line when moving the cursor around.
 Another method can be used: Virtual Replace mode.
 
 Suppose you have a line in a table that contains both tabs and other characters.
-Use "\texttt{rx}" on the first tab:
+Use ``\texttt{rx}" on the first tab:
 
 \begin{Verbatim}[samepage=true]
     inp     0.693   0.534   0.693 
@@ -582,7 +582,7 @@ Use "\texttt{rx}" on the first tab:
 \end{Verbatim}
 
 The layout is messed up.
-To avoid that, use the "\texttt{gr}" command:
+To avoid that, use the ``\texttt{gr}" command:
 
 \begin{Verbatim}[samepage=true]
     inp     0.693   0.534   0.693 
@@ -594,12 +594,12 @@ To avoid that, use the "\texttt{gr}" command:
     inpx    0.693   0.534   0.693 
 \end{Verbatim}
 
-What happens is that the "\texttt{gr}" command makes sure the new character takes the right amount of screen space.
+What happens is that the ``\texttt{gr}" command makes sure the new character takes the right amount of screen space.
 Extra spaces or tabs are inserted to fill the gap.
-Thus what actually happens is that a tab is replaced by "\texttt{x}" and then blanks added to make the text after it keep its place.
+Thus what actually happens is that a tab is replaced by ``\texttt{x}" and then blanks added to make the text after it keep its place.
 In this case a tab is inserted.
 
-When you need to replace more than one character, you use the "\texttt{R}" command to go to Replace mode (see |\hyperref[Replace mode]{\texttt{Replace mode}}|).
+When you need to replace more than one character, you use the ``\texttt{R}" command to go to Replace mode (see |\hyperref[Replace mode]{\texttt{Replace mode}}|).
 This messes up the layout and replaces the wrong characters:
 
 \begin{Verbatim}[samepage=true]
@@ -612,7 +612,7 @@ This messes up the layout and replaces the wrong characters:
     inp 0.78634 0.693 
 \end{Verbatim}
 
-The "\texttt{gR}" command uses Virtual Replace mode.
+The ``\texttt{gR}" command uses Virtual Replace mode.
 This preserves the layout:
 
 \begin{Verbatim}[samepage=true]

@@ -55,9 +55,9 @@ And you can close the fold again with:
  zc
 \end{Verbatim}
 
-All the folding commands start with "\texttt{z}".
+All the folding commands start with ``\texttt{z}".
 With some fantasy, this looks like a folded piece of paper, seen from the side.
-The letter after the "\texttt{z}" has a mnemonic meaning to make it easier to remember the commands:
+The letter after the ``\texttt{z}" has a mnemonic meaning to make it easier to remember the commands:
 \begin{center} \begin{tabular}{c l}
 				zf & F-old creation \\
 				zo & O-pen a fold \\
@@ -70,7 +70,7 @@ Try it out.
 You will notice that opening the fold for the whole chapter will restore the nested folds as they were, some may be open and some may be closed.
 
 Suppose you have created several folds, and now want to view all the text.
-You could go to each fold and type "\texttt{zo}".
+You could go to each fold and type ``\texttt{zo}".
 To do this faster, use this command:
 
 \begin{Verbatim}[samepage=true]
@@ -85,7 +85,7 @@ The opposite is:
 \end{Verbatim}
 
 This folds M-ore.
-You can repeat "\texttt{zr}" and "\texttt{zm}" to open and close nested folds of several levels.
+You can repeat ``\texttt{zr}" and ``\texttt{zm}" to open and close nested folds of several levels.
 
 If you have nested several levels deep, you can open all of them with:
 
@@ -116,21 +116,21 @@ This is a useful way of working:
 
 More about manual folding in the reference manual: |\texttt{:h fold-manual}|
 \subsection{Working with folds}
-When some folds are closed, movement commands like "\texttt{j}" and "\texttt{k}" move over a fold like it was a single, empty line.
+When some folds are closed, movement commands like ``\texttt{j}" and ``\texttt{k}" move over a fold like it was a single, empty line.
 This allows you to quickly move around over folded text.
 
 You can yank, delete and put folds as if it was a single line.
 This is very useful if you want to reorder functions in a program.
 First make sure that each fold contains a whole function (or a bit less) by selecting the right \texttt{'foldmethod'}.
-Then delete the function with "\texttt{dd}", move the cursor and put it with "\texttt{p}".
+Then delete the function with ``\texttt{dd}", move the cursor and put it with ``\texttt{p}".
 If some lines of the function are above or below the fold, you can use Visual selection:
 
 \begin{itemize}
 \item put the cursor on the first line to be moved
-\item hit "\texttt{V}" to start Visual mode
+\item hit ``\texttt{V}" to start Visual mode
 \item put the cursor on the last line to be moved
-\item hit "\texttt{d}" to delete the selected lines.
-\item move the cursor to the new position and "\texttt{p}"ut the lines there.
+\item hit ``\texttt{d}" to delete the selected lines.
+\item move the cursor to the new position and ``\texttt{p}"ut the lines there.
 \end{itemize}
 
 It is sometimes difficult to see or remember where a fold is located, thus where a |\texttt{:h zo}| command would actually work.
@@ -141,11 +141,11 @@ To see the defined folds:
 \end{Verbatim}
 
 This will show a small column on the left of the window to indicate folds.
-A "\texttt{+}" is shown for a closed fold.
-A "\texttt{-}" is shown at the start of each open fold and "\texttt{|}" at following lines of the fold.
+A ``\texttt{+}" is shown for a closed fold.
+A ``\texttt{-}" is shown at the start of each open fold and ``\texttt{|}" at following lines of the fold.
 
-You can use the mouse to open a fold by clicking on the "\texttt{+}" in the foldcolumn.
-Clicking on the "\texttt{-}" or a "\texttt{|}" below it will close an open fold.
+You can use the mouse to open a fold by clicking on the ``\texttt{+}" in the foldcolumn.
+Clicking on the ``\texttt{-}" or a ``\texttt{|}" below it will close an open fold.
 
 \begin{itemize}
 	\item To open all folds at the cursor line use |\texttt{:h zO}|.
@@ -159,7 +159,7 @@ When in Insert mode, the fold at the cursor line is never closed.
 That allows you to see what you type!
 
 Folds are opened automatically when jumping around or moving the cursor left or right.
-For example, the "\texttt{0}" command opens the fold under the cursor (if \texttt{'foldopen'} contains "\texttt{hor}", which is the default).
+For example, the ``\texttt{0}" command opens the fold under the cursor (if \texttt{'foldopen'} contains ``\texttt{hor}", which is the default).
 The \texttt{'foldopen'} option can be changed to open folds for specific commands.
 If you want the line under the cursor always to be open, do this:
 
@@ -262,7 +262,7 @@ The opposite command |\texttt{:h zR}| sets \texttt{'foldlevel'} to the deepest f
 Thus there are two ways to open and close the folds:
 \begin{enumerate}
 \item By setting the fold level.
-This gives a very quick way of "zooming out" to view the structure of the text, move the cursor, and "zoom in" on the text again.
+This gives a very quick way of ``zooming out" to view the structure of the text, move the cursor, and ``zoom in" on the text again.
 
 \item By using |\texttt{:h zo}| and |\texttt{:h zc}| commands to open or close specific folds.
 This allows opening only those folds that you want to be open, while other folds remain closed.
@@ -271,7 +271,7 @@ This allows opening only those folds that you want to be open, while other folds
 This can be combined: You can first close most folds by using |\texttt{:h zm!| a few times and then open a specific fold with b}|\texttt{:h zo!|}.
 Or open all folds with |\texttt{:h zR}| and then close specific folds with |\texttt{:h zc}|.
 
-But you cannot manually define folds when \texttt{'foldmethod'} is "indent", as that would conflict with the relation between the indent and the fold level.
+But you cannot manually define folds when \texttt{'foldmethod'} is ``indent", as that would conflict with the relation between the indent and the fold level.
 
 More about folding by indent in the reference manual: |\texttt{:h fold-indent}|
 \subsection{Folding with markers}
@@ -327,9 +327,9 @@ More about folding with markers in the reference manual: |\texttt{:h fold-marker
 \subsection{Folding by syntax}
 For each language Vim uses a different syntax file.
 This defines the colors for various items in the file.
-If you are reading this in Vim, in a terminal that supports colors, the colors you see are made with the "\texttt{help}" syntax file.
+If you are reading this in Vim, in a terminal that supports colors, the colors you see are made with the ``\texttt{help}" syntax file.
 
-In the syntax files it is possible to add syntax items that have the "\texttt{fold}" argument.
+In the syntax files it is possible to add syntax items that have the ``\texttt{fold}" argument.
 These define a fold region.
 This requires writing a syntax file and adding these items in it.
 That's not so easy to do.
@@ -344,7 +344,7 @@ More about folding by syntax in the reference manual: |\texttt{:h fold-syntax}|
 \subsection{Folding by expression}
 This is similar to folding by indent, but instead of using the indent of a line a user function is called to compute the fold level of a line.
 You can use this for text where something in the text indicates which lines belong together.
-An example is an e-mail message where the quoted text is indicated by a "\texttt{>}" before the line.
+An example is an e-mail message where the quoted text is indicated by a ``\texttt{>}" before the line.
 To fold these quotes use this:
 
 \begin{Verbatim}[samepage=true]
@@ -368,7 +368,7 @@ Explanation for the \texttt{'foldexpr'} used in the example (inside out):
 				\texttt{substitute(...,'[\^{}>].*','','') } & removes everything after leading `>'s \\
 				\texttt{strlen(...) } & counts the length of the string, which is the number of `>'s found \\
 \end{tabular} \end{center}
-Note that a backslash must be inserted before every space, double quote and backslash for the "\texttt{:set}" command.
+Note that a backslash must be inserted before every space, double quote and backslash for the ``\texttt{:set}" command.
 If this confuses you, do
 
 \begin{Verbatim}[samepage=true]
@@ -429,7 +429,7 @@ Then you specifically use one \texttt{'shiftwidth'} for each nesting level.
 Folding with expressions can make folds in almost any structured text.
 It is quite simple to specify, especially if the start and end of a fold can easily be recognized.
 
-If you use the "\texttt{expr}" method to define folds, but they are not exactly how you want them, you could switch to the "\texttt{manual}" method.
+If you use the ``\texttt{expr}" method to define folds, but they are not exactly how you want them, you could switch to the ``\texttt{manual}" method.
 This will not remove the defined folds.
 Then you can delete or add folds manually.
 \clearpage

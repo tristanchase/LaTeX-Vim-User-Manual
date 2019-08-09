@@ -22,10 +22,10 @@ For example, you have typed this:
  :s/col/pig/
 \end{Verbatim}
 
-Before you hit <Enter>, you notice that "col" should be "cow".
+Before you hit <Enter>, you notice that ``col" should be ``cow".
 To correct this, you type <Left> five times.
-The cursor is now just after "col".
-Type <BS> and "\texttt{w}" to correct:
+The cursor is now just after ``col".
+Type <BS> and ``\texttt{w}" to correct:
 
 \begin{Verbatim}[samepage=true]
  :s/cow/pig/
@@ -71,15 +71,15 @@ Start with this text:
     /the fine pig 
 \end{Verbatim}
 
-Move the cursor to the start of "fine" with <S-Left> twice (or <Left> eight times, if <S-Left> doesn't work).
-Now press <Insert> to switch to overstrike and type "great":
+Move the cursor to the start of ``fine" with <S-Left> twice (or <Left> eight times, if <S-Left> doesn't work).
+Now press <Insert> to switch to overstrike and type ``great":
 
 \begin{Verbatim}[samepage=true]
     /the greatpig 
 \end{Verbatim}
 
 Oops, we lost the space.
-Now, don't use <BS>, because it would delete the "t" (this is different from Replace mode).
+Now, don't use <BS>, because it would delete the ``t" (this is different from Replace mode).
 Instead, press <Insert> to switch from overstrike to inserting, and type the space:
 
 \begin{Verbatim}[samepage=true]
@@ -91,7 +91,7 @@ You thought of executing a \texttt{:} or \texttt{/} command, but changed your mi
 To get rid of what you already typed, without executing it, press CTRL-C or <Esc>.
 
 \emph{Note}:
-<Esc> is the universal "get out" key.
+<Esc> is the universal ``get out" key.
 Unfortunately, in the good old Vi pressing <Esc> in a command line executed the command!
 Since that might be considered to be a bug, Vim uses <Esc> to cancel the command.
 But with the \texttt{'cpoptions'} option it can be made Vi compatible.
@@ -99,15 +99,15 @@ And when using a mapping (which might be written for Vi) <Esc> also works Vi com
 Therefore, using CTRL-C is a method that always works.
 
 If you are at the start of the command line, pressing <BS> will cancel the command.
-It's like deleting the "\texttt{:}" or "\texttt{/}" that the line starts with.
+It's like deleting the ``\texttt{:}" or ``\texttt{/}" that the line starts with.
 \subsection{Command line abbreviations}
-Some of the "\texttt{:}" commands are really long.
-We already mentioned that "\texttt{:substitute}" can be abbreviated to "\texttt{:s}".
-This is a generic mechanism, all "\texttt{:}" commands can be abbreviated.
+Some of the ``\texttt{:}" commands are really long.
+We already mentioned that ``\texttt{:substitute}" can be abbreviated to ``\texttt{:s}".
+This is a generic mechanism, all ``\texttt{:}" commands can be abbreviated.
 
 How short can a command get?  There are 26 letters, and many more commands.
-For example, "\texttt{:set}" also starts with "\texttt{:s}", but "\texttt{:s}" doesn't start a "\texttt{:set}" command.
-Instead "\texttt{:set}" can be abbreviated to "\texttt{:se}".
+For example, ``\texttt{:set}" also starts with ``\texttt{:s}", but ``\texttt{:s}" doesn't start a ``\texttt{:set}" command.
+Instead ``\texttt{:set}" can be abbreviated to ``\texttt{:se}".
 
 When the shorter form of a command could be used for two commands, it stands for only one of them.
 There is no logic behind which one, you have to learn them.
@@ -118,25 +118,25 @@ For example:
  :s[ubstitute]
 \end{Verbatim}
 
-This means that the shortest form of "\texttt{:substitute}" is "\texttt{:s}".
+This means that the shortest form of ``\texttt{:substitute}" is ``\texttt{:s}".
 The following characters are optional.
-Thus "\texttt{:su}" and "\texttt{:sub}" also work.
+Thus ``\texttt{:su}" and ``\texttt{:sub}" also work.
 
 In the user manual we will either use the full name of command, or a short version that is still readable.
-For example, "\texttt{:function}" can be abbreviated to "\texttt{:fu}".
-But since most people don't understand what that stands for, we will use "\texttt{:fun}".
-(Vim doesn't have a ":funny" command, otherwise ":fun" would be confusing too.)
+For example, ``\texttt{:function}" can be abbreviated to ``\texttt{:fu}".
+But since most people don't understand what that stands for, we will use ``\texttt{:fun}".
+(Vim doesn't have a ``:funny" command, otherwise ``:fun" would be confusing too.)
 
 It is recommended that in Vim scripts you write the full command name.
 That makes it easier to read back when you make later changes.
-Except for some often used commands like "\texttt{:w}" ("\texttt{:write}") and "\texttt{:r}" ("\texttt{:read}").
+Except for some often used commands like ``\texttt{:w}" ("\texttt{:write}") and ``\texttt{:r}" ("\texttt{:read}").
 
-A particularly confusing one is "\texttt{:end}", which could stand for "\texttt{:endif}", "\texttt{:endwhile}" or "\texttt{:endfunction}".
+A particularly confusing one is ``\texttt{:end}", which could stand for ``\texttt{:endif}", ``\texttt{:endwhile}" or ``\texttt{:endfunction}".
 Therefore, always use the full name.
 \subsubsection{Short option names}
 In the user manual the long version of the option names is used.
 Many options also have a short name.
-Unlike "\texttt{:}" commands, there is only one short name that works.
+Unlike ``\texttt{:}" commands, there is only one short name that works.
 For example, the short name of \texttt{'autoindent'} is \texttt{'ai'}.
 Thus these two commands do the same thing:
 
@@ -174,8 +174,8 @@ A much quicker way is:
 Which will result in the same command.
 What happened?
 The <Tab> key does completion of the word before the cursor.
-In this case "b".
-Vim looks in the directory and finds only one file that starts with a "b".
+In this case ``b".
+Vim looks in the directory and finds only one file that starts with a ``b".
 That must be the one you are looking for, thus Vim completes the file name for you.
 
 Now type:
@@ -221,16 +221,16 @@ Use CTRL-P to go through the list in the other direction:
        +---------------------- CTRL-P ------------------------>
 \end{Verbatim}
 \subsubsection{Context}
-When you type "\texttt{:set i}" instead of "\texttt{:edit i}" and press <Tab> you get:
+When you type ``\texttt{:set i}" instead of ``\texttt{:edit i}" and press <Tab> you get:
 
 \begin{Verbatim}[samepage=true]
  :set icon
 \end{Verbatim}
 
-Hey, why didn't you get "\texttt{:set info.txt}"?
+Hey, why didn't you get ``\texttt{:set info.txt}"?
 That's because Vim has context sensitive completion.
 The kind of words Vim will look for depends on the command before it.
-Vim knows that you cannot use a file name just after a "\texttt{:set}" command, but you can use an option name.
+Vim knows that you cannot use a file name just after a ``\texttt{:set}" command, but you can use an option name.
 
 Again, if you repeat typing the <Tab>, Vim will cycle through all matches.
 There are quite a few, it's better to type more characters first:
@@ -245,7 +245,7 @@ Gives:
  :set iskeyword
 \end{Verbatim}
 
-Now type "\texttt{=}" and press <Tab>:
+Now type ``\texttt{=}" and press <Tab>:
 
 \begin{Verbatim}[samepage=true]
  :set iskeyword=@,48-57,_,192-255
@@ -281,12 +281,12 @@ You can now check the list for the item you wanted.
 If it isn't there, you can use <BS> to correct the word.
 If there are many matches, type a few more characters before pressing <Tab> to complete the rest.
 
-If you have watched carefully, you will have noticed that "\texttt{incsearch}" doesn't start with "is".
-In this case "is" stands for the short name of "\texttt{incsearch}".
+If you have watched carefully, you will have noticed that ``\texttt{incsearch}" doesn't start with ``is".
+In this case ``is" stands for the short name of ``\texttt{incsearch}".
 (Many options have a short and a long name.)  Vim is clever enough to know that you might have wanted to expand the short name of the option into the long name.
 \subsubsection{There is more}
 The CTRL-L command completes the word to the longest unambiguous string.
-If you type "\texttt{:edit i}" and there are files "\texttt{info.txt}" and "\texttt{info\_backup.txt}" you will get "\texttt{:edit info}".
+If you type ``\texttt{:edit i}" and there are files ``\texttt{info.txt}" and ``\texttt{info\_backup.txt}" you will get ``\texttt{:edit info}".
 
 The \texttt{'wildmode'} option can be used to change the way completion works.
 The \texttt{'wildmenu'} option can be used to get a menu-like list of matches.
@@ -300,22 +300,22 @@ The basics are that you can use the <Up> key to recall an older command line.
 <Down> then takes you back to newer commands.
 
 There are actually four histories.
-The ones we will mention here are for "\texttt{:}" commands and for "\texttt{/}" and "\texttt{?}" search commands.
-The "/" and "?" commands share the same history, because they are both search commands.
+The ones we will mention here are for ``\texttt{:}" commands and for ``\texttt{/}" and ``\texttt{?}" search commands.
+The ``/" and ``?" commands share the same history, because they are both search commands.
 The two other histories are for expressions and input lines for the \texttt{input()} function.
 |\texttt{:h cmdline-history}|
 
-Suppose you have done a "\texttt{:set}" command, typed ten more colon commands and then want to repeat that "\texttt{:set}" command again.
-You could press "\texttt{:}" and then ten times <Up>.
+Suppose you have done a ``\texttt{:set}" command, typed ten more colon commands and then want to repeat that ``\texttt{:set}" command again.
+You could press ``\texttt{:}" and then ten times <Up>.
 There is a quicker way:
 
 \begin{Verbatim}[samepage=true]
  :se<Up>
 \end{Verbatim}
 
-Vim will now go back to the previous command that started with "\texttt{se}".
-You have a good chance that this is the "\texttt{:set}" command you were looking for.
-At least you should not have to press <Up> very often (unless "\texttt{:set}" commands is all you have done).
+Vim will now go back to the previous command that started with ``\texttt{se}".
+You have a good chance that this is the ``\texttt{:set}" command you were looking for.
+At least you should not have to press <Up> very often (unless ``\texttt{:set}" commands is all you have done).
 
 The <Up> key will use the text typed so far and compare it with the lines in the history.
 Only matching lines will be used.
@@ -329,7 +329,7 @@ To see all the lines in the history:
  :history
 \end{Verbatim}
 
-That's the history of "\texttt{:}" commands.
+That's the history of ``\texttt{:}" commands.
 The search history is displayed with this command:
 
 \begin{Verbatim}[samepage=true]
@@ -372,9 +372,9 @@ It contains the command line history, and an empty line at the end:
 \end{Verbatim}
 
 You are now in Normal mode.
-You can use the "\texttt{hjkl}" keys to move around.
-For example, move up with "\texttt{5k}" to the "\texttt{:e config.h.in}" line.
-Type "\texttt{\$h}" to go to the "\texttt{i}" of "\texttt{in}" and type "\texttt{cwout}".
+You can use the ``\texttt{hjkl}" keys to move around.
+For example, move up with ``\texttt{5k}" to the ``\texttt{:e config.h.in}" line.
+Type ``\texttt{\$h}" to go to the ``\texttt{i}" of ``\texttt{in}" and type ``\texttt{cwout}".
 Now you have changed the line to:
 
 \begin{Verbatim}[samepage=true]
@@ -394,7 +394,7 @@ Except that the command you execute will be added to the end of the history, lik
 The command line window is very useful when you want to have overview of the history, lookup a similar command, change it a bit and execute it.
 A search command can be used to find something.
 
-In the previous example the "\texttt{?config}" search command could have been used to find the previous command that contains "config".
+In the previous example the ``\texttt{?config}" search command could have been used to find the previous command that contains ``config".
 It's a bit strange, because you are using a command line to search in the command line window.
 While typing that search command you can't open another command line window, there can be only one.
 \clearpage

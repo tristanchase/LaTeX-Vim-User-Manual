@@ -31,7 +31,7 @@ This command splits the screen into two windows and leaves the cursor in the top
 \end{Verbatim}
 
 What you see here is two windows on the same file.
-The line with "\texttt{====}" is that status line.
+The line with ``\texttt{====}" is that status line.
 It displays information about the window above it.
 (In practice the status line will be in reverse video.)
 
@@ -50,8 +50,8 @@ To close a window, use the command:
  :close
  \end{Verbatim}
 
-Actually, any command that quits editing a file works, like ":quit" and "ZZ".
-But "\texttt{:close}" prevents you from accidentally exiting Vim when you close the last window.
+Actually, any command that quits editing a file works, like ``:quit" and ``ZZ".
+But ``\texttt{:close}" prevents you from accidentally exiting Vim when you close the last window.
 
 \subsubsection{Closing all other windows}
 
@@ -92,10 +92,10 @@ To open a window on a new, empty file, use this:
  :new
  \end{Verbatim}
 
-You can repeat the "\texttt{:split}" and "\texttt{:new}" commands to create as many windows as you like.
+You can repeat the ``\texttt{:split}" and ``\texttt{:new}" commands to create as many windows as you like.
 
 \subsection{Window size}
-The "\texttt{:split}" command can take a number argument.
+The ``\texttt{:split}" command can take a number argument.
 If specified, this will be the height of the new window.
 For example, the following opens a new window three lines high and starts editing the file alpha.c:
 
@@ -119,7 +119,7 @@ To decrease it:
  \end{Verbatim}
 
 Both of these commands take a count and increase or decrease the window size by that many lines.
-Thus "\texttt{4 CTRL-W +}" make the window four lines higher.
+Thus ``\texttt{4 CTRL-W +}" make the window four lines higher.
 
 To set the window height to a specified number of lines:
 
@@ -147,7 +147,7 @@ Likewise, there is \texttt{'winwidth'} for the minimal desired width and \texttt
 The \texttt{'equalalways'} option, when set, makes Vim equalize the windows sizes when a window is closed or opened.
 
 \subsection{Vertical splits}
-The "\texttt{:split}" command creates the new window above the current one.
+The ``\texttt{:split}" command creates the new window above the current one.
 To make the window appear at the left side, use:
 
  \begin{Verbatim}[samepage=true]
@@ -176,14 +176,14 @@ Actually, the \texttt{|} lines in the middle will be in reverse video.
 This is called the vertical separator.
 It separates the two windows left and right of it.
 
-There is also the "\texttt{:vnew}" command, to open a vertically split window on a new, empty file.
+There is also the ``\texttt{:vnew}" command, to open a vertically split window on a new, empty file.
 Another way to do this:
 
  \begin{Verbatim}[samepage=true]
  :vertical new
  \end{Verbatim}
 
-The "\texttt{:vertical}" command can be inserted before another command that splits a window.
+The ``\texttt{:vertical}" command can be inserted before another command that splits a window.
 This will cause that command to split the window vertically instead of horizontally.
 (If the command doesn't split a window, it works unmodified.)
 
@@ -286,10 +286,10 @@ A quicker way is using this command:
  :qall
  \end{Verbatim}
 
-This stands for "quit all".
+This stands for ``quit all".
 If any of the windows contain changes, Vim will not exit.
 The cursor will automatically be positioned in a window with changes.
-You can then either use "\texttt{:write}" to save the changes, or "\texttt{:quit!}" to throw them away.
+You can then either use ``\texttt{:write}" to save the changes, or ``\texttt{:quit!}" to throw them away.
 
 If you know there are windows with changes, and you want to save all these changes, use this command:
 
@@ -297,11 +297,11 @@ If you know there are windows with changes, and you want to save all these chang
  :wall
  \end{Verbatim}
 
-This stands for "write all".
+This stands for ``write all".
 But actually, it only writes files with changes.
 Vim knows it doesn't make sense to write files that were not changed.
 
-And then there is the combination of "\texttt{:qall}" and "\texttt{:wall}": the "write and quit all" command:
+And then there is the combination of ``\texttt{:qall}" and ``\texttt{:wall}": the ``write and quit all" command:
 
  \begin{Verbatim}[samepage=true]
  :wqall
@@ -317,7 +317,7 @@ Finally, there is a command that quits Vim and throws away all changes:
 
 Be careful, there is no way to undo this command!
 \subsubsection{Opening a window for all arguments}
-To make Vim open a window for each file, start it with the "-o" argument:
+To make Vim open a window for each file, start it with the ``-o" argument:
 
  \begin{Verbatim}[samepage=true]
  vim -o one.txt two.txt three.txt
@@ -340,16 +340,16 @@ This results in:
     +-------------------------------+
 \end{Verbatim}
 
-The "-O" argument is used to get vertically split windows.
+The ``-O" argument is used to get vertically split windows.
 
-When Vim is already running, the "\texttt{:all}" command opens a window for each file in the argument list.  "\texttt{:vertical all}" does it with vertical splits.
+When Vim is already running, the ``\texttt{:all}" command opens a window for each file in the argument list.  ``\texttt{:vertical all}" does it with vertical splits.
 
 \subsection{Viewing differences with vimdiff}
 \label{Viewing differences with vimdiff}
 
 There is a special way to start Vim, which shows the differences between two files.
-Let's take a file "main.c" and insert a few characters in one line.
-Write this file with the \texttt{'backup'} option set, so that the backup file "\texttt{main.c~}" will contain the previous version of the file.
+Let's take a file ``main.c" and insert a few characters in one line.
+Write this file with the \texttt{'backup'} option set, so that the backup file ``\texttt{main.c~}" will contain the previous version of the file.
 
 Type this command in a shell (not in Vim):
 
@@ -385,21 +385,21 @@ You will only see the line in which you added characters, and a few lines above 
 
 The lines that were not modified have been collapsed into one line.
 This is called a closed fold.
-They are indicated in the picture with "\texttt{<- fold}".
+They are indicated in the picture with ``\texttt{<- fold}".
 Thus the single fold line at the top stands for 123 text lines.
 These lines are equal in both files.
 
-The line marked with "\texttt{<- changed line}" is highlighted, and the inserted text is displayed with another color.
+The line marked with ``\texttt{<- changed line}" is highlighted, and the inserted text is displayed with another color.
 This clearly shows what the difference is between the two files.
 
-The line that was deleted is displayed with "\texttt{---}" in the main.c window.
-See the "\texttt{<- deleted line}" marker in the picture.
+The line that was deleted is displayed with ``\texttt{---}" in the main.c window.
+See the ``\texttt{<- deleted line}" marker in the picture.
 These characters are not really there.
 They just fill up \texttt{main.c}, so that it displays the same number of lines as the other window.
 
 \subsubsection{The fold column}
 Each window has a column on the left with a slightly different background.
-In the picture above these are indicated with "\texttt{VV}".
+In the picture above these are indicated with ``\texttt{VV}".
 You notice there is a plus character there, in front of each closed fold.
 Move the mouse pointer to that plus and click the left button.
 The fold will open, and you can see the text that it contains.
@@ -408,18 +408,18 @@ The fold column contains a minus sign for an open fold.
 If you click on this \texttt{-}, the fold will close.
 
 Obviously, this only works when you have a working mouse.
-You can also use "\texttt{zo}" to open a fold and "\texttt{zc}" to close it.
+You can also use ``\texttt{zo}" to open a fold and ``\texttt{zc}" to close it.
 
 \subsubsection{Diffing in vim}
 Another way to start in diff mode can be done from inside Vim.
-Edit the "\texttt{main.c}" file, then make a split and show the differences:
+Edit the ``\texttt{main.c}" file, then make a split and show the differences:
 
  \begin{Verbatim}[samepage=true]
  :edit main.c
  :vertical diffsplit main.c~ 
  \end{Verbatim}
 
-The "\texttt{:vertical}" command is used to make the window split vertically.
+The ``\texttt{:vertical}" command is used to make the window split vertically.
 If you omit this, you will get a horizontal split.
 
 If you have a patch or diff file, you can use the third way to start diff mode.
@@ -473,7 +473,7 @@ To update it use this command:
  \end{Verbatim}
 
 To remove a difference, you can move the text in a highlighted block from one window to another.
-Take the "\texttt{main.c}" and "\texttt{main.c~}" example above.
+Take the ``\texttt{main.c}" and ``\texttt{main.c~}" example above.
 Move the cursor to the left window, on the line that was deleted in the other window.
 Now type this command:
 
@@ -482,10 +482,10 @@ Now type this command:
  \end{Verbatim}
 
 The change will be removed by putting the text of the current window in the other window.
-"dp" stands for "diff put".
+``dp" stands for ``diff put".
 
 You can also do it the other way around.
-Move the cursor to the right window, to the line where "changed" was inserted.
+Move the cursor to the right window, to the line where ``changed" was inserted.
 Now type this command:
 
  \begin{Verbatim}[samepage=true]
@@ -494,8 +494,8 @@ Now type this command:
 
 The change will now be removed by getting the text from the other window.
 Since there are no changes left now, Vim puts all text in a closed fold.
-"\texttt{do}" stands for "diff obtain".
-"\texttt{dg}" would have been better, but that already has a different meaning ("\texttt{dgg}" deletes from the cursor until the first line).
+``\texttt{do}" stands for ``diff obtain".
+``\texttt{dg}" would have been better, but that already has a different meaning ("\texttt{dgg}" deletes from the cursor until the first line).
 
 For details about diff mode, see |\texttt{:h vimdiff}|.
 \subsection{Various}
@@ -509,8 +509,8 @@ The \texttt{'laststatus'} option can be used to specify when the last window has
 				\end{longtable}
 \end{center}
 
-For Command-line commands this is done by prepending an "\texttt{s}".
-For example: "\texttt{:tag}" jumps to a tag, "\texttt{:stag}" splits the window and jumps to a tag.
+For Command-line commands this is done by prepending an ``\texttt{s}".
+For example: ``\texttt{:tag}" jumps to a tag, ``\texttt{:stag}" splits the window and jumps to a tag.
 
 For Normal mode commands a CTRL-W is prepended.
 \texttt{CTRL-\^{}} jumps to the alternate file, CTRL-W \texttt{CTRL-\^{}} splits the window and edits the alternate file.
@@ -534,14 +534,14 @@ You will have noticed that windows never overlap.
 That means you quickly run out of screen space.
 The solution for this is called Tab pages.
 
-Assume you are editing "thisfile".
+Assume you are editing ``thisfile".
 To create a new tab page use this command:
 
  \begin{Verbatim}[samepage=true]
  :tabedit thatfile
  \end{Verbatim}
 
-This will edit the file "thatfile" in a window that occupies the whole Vim window.
+This will edit the file ``thatfile" in a window that occupies the whole Vim window.
 And you will notice a bar at the top with the two file names:
 
 		\begin{Verbatim}[samepage=true]
@@ -558,10 +558,10 @@ And you will notice a bar at the top with the two file names:
 						\end{Verbatim}
 
 You now have two tab pages.
-The first one has a window for "thisfile" and the second one a window for "thatfile".
+The first one has a window for ``thisfile" and the second one a window for ``thatfile".
 It's like two pages that are on top of eachother, with a tab sticking out of each page showing the file name.
 
-Now use the mouse to click on "thisfile" in the top line.
+Now use the mouse to click on ``thisfile" in the top line.
 The result is
 
 		\begin{Verbatim}[samepage=true]
@@ -578,7 +578,7 @@ The result is
 						\end{Verbatim}
 
 Thus you can switch between tab pages by clicking on the label in the top line.
-If you don't have a mouse or don't want to use it, you can use the "\texttt{gt}" command.
+If you don't have a mouse or don't want to use it, you can use the ``\texttt{gt}" command.
 Mnemonic: Goto Tab.
 
 Now let's create another tab page with the command:
@@ -602,7 +602,7 @@ This makes a new tab page with one window that is editing the same buffer as the
     +-------------------------------------+
 \end{Verbatim}
 
-You can put "\texttt{:tab}" before any Ex command that opens a window.
+You can put ``\texttt{:tab}" before any Ex command that opens a window.
 The window will be opened in a new tab page.
 Another example:
 
@@ -610,15 +610,15 @@ Another example:
  :tab help gt
  \end{Verbatim}
 
-Will show the help text for "\texttt{gt}" in a new tab page.
+Will show the help text for ``\texttt{gt}" in a new tab page.
 
 A few more things you can do with tab pages:
 \begin{itemize}
-	\item [click with the mouse in the space after the last label] The next tab page will be selected, like with "gt".
-	\item [click with the mouse on the "X" in the top right corner] The current tab page will be closed.
+	\item [click with the mouse in the space after the last label] The next tab page will be selected, like with ``gt".
+	\item [click with the mouse on the ``X" in the top right corner] The current tab page will be closed.
 								Unless there are unsaved changes in the current tab page.
 							\item [double click with the mouse in the top line] A new tab page will be created.
-							\item [the "tabonly" command] Closes all tab pages except the current one.
+							\item [the ``tabonly" command] Closes all tab pages except the current one.
 								Unless there are unsaved changes in other tab pages.
 \end{itemize}
 For more information about tab pages see |\texttt{:h tab-page}|.

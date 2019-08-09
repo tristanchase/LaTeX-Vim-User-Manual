@@ -9,7 +9,7 @@ used.
 \localtableofcontents
 \subsection{Basic recovery}
 In most cases recovering a file is quite simple, assuming you know which file you were editing (and the harddisk is still working).
-Start Vim on the file, with the "\texttt{-r}" argument added:
+Start Vim on the file, with the ``\texttt{-r}" argument added:
 
 \begin{Verbatim}[samepage=true]
  vim -r help.txt
@@ -122,8 +122,8 @@ Vim recognizes files with the pattern \texttt{*.s[uvw][a-z]} as swap files.
 If this still does not work, see what file names Vim reports and rename the files accordingly.
 Check the \texttt{'directory'} option to see where Vim may have put the swap file.
 
-\emph{Note}: Vim tries to find the swap file by searching the directories in the \texttt{'dir'} option, looking for files that match "\texttt{filename.sw?}".
-If wildcard expansion doesn't work (e.g., when the \texttt{'shell'} option is invalid), Vim does a desperate try to find the file "\texttt{filename.swp}".
+\emph{Note}: Vim tries to find the swap file by searching the directories in the \texttt{'dir'} option, looking for files that match ``\texttt{filename.sw?}".
+If wildcard expansion doesn't work (e.g., when the \texttt{'shell'} option is invalid), Vim does a desperate try to find the file ``\texttt{filename.swp}".
 If that fails too, you will have to give the name of the swapfile itself to be able to recover the file.
 \subsection{Crashed or not?}
 \label{ATTENTION}
@@ -160,13 +160,13 @@ If there is one, there must be something wrong.
 It may be one of these two situations.
 
 \begin{enumerate}
-				\item Another edit session is active on this file.  Look in the message for the line with "process ID".  It might look like this:
+				\item Another edit session is active on this file.  Look in the message for the line with ``process ID".  It might look like this:
 
 								\begin{Verbatim}[samepage=true]
 				process ID: 12559 (still running) 
 								\end{Verbatim}
 
-								The text "(still running)" indicates that the process editing this file runs on the same computer.
+								The text ``(still running)" indicates that the process editing this file runs on the same computer.
 								When working on a non-Unix system you will not get this extra hint.
 								When editing a file over a network, you may not see the hint, because the process might be running on another computer.
 								In those two cases you must find out what the situation is yourself.
@@ -207,12 +207,12 @@ You may delete it and proceed.
 
 It is slightly bad if you don't have read permission for the swap file.
 You may want to view the file read-only, or quit.
-On multi-user systems, if you yourself did the last changes under a different login name, a logout followed by a login under that other name might cure the "read error".
+On multi-user systems, if you yourself did the last changes under a different login name, a logout followed by a login under that other name might cure the ``read error".
 Or else you might want to find out who last edited (or is editing) the file and have a talk with them.
 
 It is very bad if it means there is a physical read error on the disk containing the swap file.
 Fortunately, this almost never happens.
-You may want to view the file read-only at first (if you can), to see the extent of the changes that were "forgotten".
+You may want to view the file read-only at first (if you can), to see the extent of the changes that were ``forgotten".
 If you are the one in charge of that file, be prepared to redo your last changes.
 \subsubsection{What to do?}
 \label{swap-exists-choices}

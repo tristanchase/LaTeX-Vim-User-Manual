@@ -9,9 +9,9 @@ these commands below |\texttt{:h Q\_lr}|.
 \localtableofcontents
 \subsection{Word movement}
 
-To move the cursor forward one word, use the "w" command.
+To move the cursor forward one word, use the ``w" command.
 Like most Vim commands, you can use a numeric prefix to move past multiple words.
-For example, "\texttt{3w}" moves three words.
+For example, ``\texttt{3w}" moves three words.
 
 This figure shows how it works:
 
@@ -21,9 +21,9 @@ This figure shows how it works:
        w  w  w    3w
 		\end{Verbatim}
 
-Notice that "\texttt{w}" moves to the start of the next word if it already is at the start of a word.
+Notice that ``\texttt{w}" moves to the start of the next word if it already is at the start of a word.
 
-The "\texttt{b}" command moves backward to the start of the previous word:
+The ``\texttt{b}" command moves backward to the start of the previous word:
 
 		\begin{Verbatim}[samepage=true]
     This is a line with example text 
@@ -31,7 +31,7 @@ The "\texttt{b}" command moves backward to the start of the previous word:
        b   b b    2b      b
 		\end{Verbatim}
 
-There is also the "\texttt{e}" command that moves to the next end of a word and "\texttt{ge}", which moves to the previous end of a word:
+There is also the ``\texttt{e}" command that moves to the next end of a word and ``\texttt{ge}", which moves to the previous end of a word:
 
 		\begin{Verbatim}[samepage=true]
     This is a line with example text 
@@ -39,11 +39,11 @@ There is also the "\texttt{e}" command that moves to the next end of a word and 
        ge    ge     e       e
 		\end{Verbatim}
 
-If you are at the last word of a line, the "\texttt{w}" command will take you to the first word in the next line.
-Thus you can use this to move through a paragraph, much faster than using "l".
-"\texttt{b}" does the same in the other direction.
+If you are at the last word of a line, the ``\texttt{w}" command will take you to the first word in the next line.
+Thus you can use this to move through a paragraph, much faster than using ``l".
+``\texttt{b}" does the same in the other direction.
 
-A word ends at a non-word character, such as a ".", "-" or ")".
+A word ends at a non-word character, such as a ``.", ``-" or ``)".
 To change what Vim considers to be a word, see the \texttt{'iskeyword'} option.
 It is also possible to move by white-space separated WORDs.
 This is not a word in the normal sense, that's why the uppercase is used.
@@ -61,11 +61,11 @@ With this mix of lowercase and uppercase commands, you can quickly move forward 
 
 \subsection{Moving to the start or end of a line}
 
-The \texttt{"\$"} command moves the cursor to the end of a line.
+The ``\texttt{\$}" command moves the cursor to the end of a line.
 If your keyboard has an <End> key it will do the same thing.
 
-The \texttt{"\^{}"} command moves to the first non-blank character of the line.
-The "0" command (zero) moves to the very first character of the line.
+The ``\texttt{\^{}}" command moves to the first non-blank character of the line.
+The ``0" command (zero) moves to the very first character of the line.
 The <Home> key does the same thing.
 In a picture:
 
@@ -77,22 +77,22 @@ In a picture:
         0                      $
 \end{Verbatim}
 
-(the "....." indicates blanks here)
+(the ``....." indicates blanks here)
 
-The "\$" command takes a count, like most movement commands.
+The ``\$" command takes a count, like most movement commands.
 But moving to the end of the line several times doesn't make sense.
 Therefore it causes the editor to move to the end of another line.
-For example, "\texttt{1\$}" moves you to the end of the first line (the one you're on), "\texttt{2\$}" to the end of the next line, and so on.
-The "\texttt{0}" command doesn't take a count argument, because the "\texttt{0}" would be part of the count.
-Unexpectedly, using a count with "\textasciicircum" doesn't have any effect.
+For example, ``\texttt{1\$}" moves you to the end of the first line (the one you're on), ``\texttt{2\$}" to the end of the next line, and so on.
+The ``\texttt{0}" command doesn't take a count argument, because the ``\texttt{0}" would be part of the count.
+Unexpectedly, using a count with ``\textasciicircum" doesn't have any effect.
 
 \subsection{Moving to a character}
 One of the most useful movement commands is the single-character search command.
-The command "\texttt{fx}" searches forward in the line for the single character x.
-Hint: "\texttt{f}" stands for "Find".
+The command ``\texttt{fx}" searches forward in the line for the single character x.
+Hint: ``\texttt{f}" stands for ``Find".
 For example, you are at the beginning of the following line.
 Suppose you want to go to the h of human.
-Just execute the command "\texttt{fh}" and the cursor will be positioned over the h:
+Just execute the command ``\texttt{fh}" and the cursor will be positioned over the h:
 
 		\begin{Verbatim}[samepage=true]
     To err is human.  To really foul up you need a computer. 
@@ -100,8 +100,8 @@ Just execute the command "\texttt{fh}" and the cursor will be positioned over th
         fh       fy
 		\end{Verbatim}
 
-This also shows that the command "\texttt{fy}" moves to the end of the word really.
-You can specify a count; therefore, you can go to the "\texttt{l}" of "foul" with "\texttt{3fl}":
+This also shows that the command ``\texttt{fy}" moves to the end of the word really.
+You can specify a count; therefore, you can go to the ``\texttt{l}" of ``foul" with ``\texttt{3fl}":
 
 		\begin{Verbatim}[samepage=true]
     To err is human.  To really foul up you need a computer. 
@@ -109,7 +109,7 @@ You can specify a count; therefore, you can go to the "\texttt{l}" of "foul" wit
                3fl
 		\end{Verbatim}
 
-The "\texttt{F}" command searches to the left:
+The ``\texttt{F}" command searches to the left:
 
 		\begin{Verbatim}[samepage=true]
     To err is human.  To really foul up you need a computer. 
@@ -117,9 +117,9 @@ The "\texttt{F}" command searches to the left:
                     Fh
 		\end{Verbatim}
 
-The "\texttt{tx}" command works like the "\texttt{fx}" command, except it stops one character before the searched character.
-Hint: "\texttt{t}" stands for "To".
-The backward version of this command is "\texttt{Tx}".
+The ``\texttt{tx}" command works like the ``\texttt{fx}" command, except it stops one character before the searched character.
+Hint: ``\texttt{t}" stands for ``To".
+The backward version of this command is ``\texttt{Tx}".
 
 		\begin{Verbatim}[samepage=true]
     To err is human.  To really foul up you need a computer. 
@@ -127,23 +127,23 @@ The backward version of this command is "\texttt{Tx}".
                 Th              tn
 		\end{Verbatim}
 
-These four commands can be repeated with ";".
-"," repeats in the other direction.
+These four commands can be repeated with ``;".
+``," repeats in the other direction.
 The cursor is never moved to another line.
 Not even when the sentence continues.
 
 Sometimes you will start a search, only to realize that you have typed the wrong command.
-You type "\texttt{f}" to search backward, for example, only to realize that you really meant "\texttt{F}".
+You type ``\texttt{f}" to search backward, for example, only to realize that you really meant ``\texttt{F}".
 To abort a search, press <Esc>.
-So "\texttt{f<Esc>}" is an aborted forward search and doesn't do anything.
+So ``\texttt{f<Esc>}" is an aborted forward search and doesn't do anything.
 Note: <Esc> cancels most operations, not just searches.
 
 \subsection{Matching a parenthesis}
 
 When writing a program you often end up with nested () constructs.
-Then the "\texttt{\%}" command is very handy: It moves to the matching paren.
-If the cursor is on a "(" it will move to the matching ")".
-If it's on a ")" it will move to the matching "(".
+Then the ``\texttt{\%}" command is very handy: It moves to the matching paren.
+If the cursor is on a ``(" it will move to the matching ``)".
+If it's on a ``)" it will move to the matching ``(".
 
 \begin{Verbatim}[samepage=true]
                    %
@@ -156,8 +156,8 @@ If it's on a ")" it will move to the matching "(".
 This also works for [ ] and \{\} pairs.
 (This can be defined with the \texttt{'matchpairs'} option.)
 
-When the cursor is not on a useful character, "\%" will search forward to find one.
-Thus if the cursor is at the start of the line of the previous example, "\%" will search forward and find the first "(".
+When the cursor is not on a useful character, ``\%" will search forward to find one.
+Thus if the cursor is at the start of the line of the previous example, ``\%" will search forward and find the first ``(".
 Then it moves to its match:
 
 \begin{Verbatim}[samepage=true]
@@ -176,14 +176,14 @@ If you are a C or C++ programmer, you are familiar with error messages such as t
 		\end{Verbatim}
 
 This tells you that you might want to fix something on line 33.
-So how do you find line 33?  One way is to do "9999k" to go to the top of the file and "32j" to go down thirty two lines.
+So how do you find line 33?  One way is to do ``9999k" to go to the top of the file and ``32j" to go down thirty two lines.
 It is not a good way, but it works.
-A much better way of doing things is to use the "G" command.
+A much better way of doing things is to use the ``G" command.
 With a count, this command positions you at the given line number.
-For example, "33G" puts you on line 33.
-(For a better way of going through a compiler's error list, see |\hyperref[Installing Vim]{\texttt{Installing Vim}}|, for information on the :make command.) With no argument, "G" positions you at the end of the file.
-A quick way to go to the start of a file use "gg".
-"1G" will do the same, but is a tiny bit more typing.
+For example, ``33G" puts you on line 33.
+(For a better way of going through a compiler's error list, see |\hyperref[Installing Vim]{\texttt{Installing Vim}}|, for information on the :make command.) With no argument, ``G" positions you at the end of the file.
+A quick way to go to the start of a file use ``gg".
+``1G" will do the same, but is a tiny bit more typing.
  
 \begin{Verbatim}[samepage=true]
         |  first line of a file   ^
@@ -198,9 +198,9 @@ A quick way to go to the start of a file use "gg".
            last line of a file    V
 \end{Verbatim}
 
-Another way to move to a line is using the "\texttt{\%}" command with a count. 
-For example "\texttt{50\%}" moves you to halfway the file.
-"\texttt{90\%}" goes to near the end.
+Another way to move to a line is using the ``\texttt{\%}" command with a count. 
+For example ``\texttt{50\%}" moves you to halfway the file.
+``\texttt{90\%}" goes to near the end.
 
 The previous assumes that you want to move to a line in the file, no matter if it's currently visible or not.
 What if you want to move to one of the lines you can see?
@@ -220,7 +220,7 @@ This figure shows the three commands you can use:
             +---------------------------+
 \end{Verbatim}
 
-Hints: "H" stands for Home, "M" for Middle and "L" for Last.
+Hints: ``H" stands for Home, ``M" for Middle and ``L" for Last.
 
 \subsection{Telling where you are}
 To see where you are in a file, there are three ways:
@@ -233,7 +233,7 @@ To see where you are in a file, there are three ways:
 
 								This shows the name of the file you are editing, the line number where the cursor is, the total number of lines, the percentage of the way through the file and the column of the cursor.
 								Sometimes you will see a split column number.
-								For example, "col 2-9".
+								For example, ``col 2-9".
 								This indicates that the cursor is positioned on the second character, but because character one is a tab, occupying eight spaces worth of columns, the screen column is 9.
 
 				\item  Set the \texttt{'number'} option.  This will display a line number in front of
@@ -249,7 +249,7 @@ To see where you are in a file, there are three ways:
 	:set nonumber
 								\end{Verbatim}
 
-								Since \texttt{'number'} is a boolean option, prepending "no" to its name has the effect of switching it off.
+								Since \texttt{'number'} is a boolean option, prepending ``no" to its name has the effect of switching it off.
 								A boolean option has only these two values, it is either on or off.
 								Vim has many options.
 								Besides the boolean ones there are options with a numerical value and string options.
@@ -304,9 +304,9 @@ To scroll forward by a whole screen (except for two lines) use CTRL-F.
 The other way is backward, CTRL-B is the command to use.
 Fortunately CTRL-F is Forward and CTRL-B is Backward, that's easy to remember.
 
-A common issue is that after moving down many lines with "j" your cursor is at the bottom of the screen.
+A common issue is that after moving down many lines with ``j" your cursor is at the bottom of the screen.
 You would like to see the context of the line with the cursor.
-That's done with the "zz" command.
+That's done with the ``zz" command.
 
 \begin{Verbatim}[samepage=true]
     +------------------+            +------------------+
@@ -320,20 +320,20 @@ That's done with the "zz" command.
     +------------------+            +------------------+
 \end{Verbatim}
 
-The "\texttt{zt}" command puts the cursor line at the top, "\texttt{zb}" at the bottom.
+The ``\texttt{zt}" command puts the cursor line at the top, ``\texttt{zb}" at the bottom.
 There are a few more scrolling commands, see |\texttt{:h Q\_sc}|.
 To always keep a few lines of context around the cursor, use the \texttt{'scrolloff'} option.
 
 \subsection{Simple searches}
 
-To search for a string, use the "\texttt{/string}" command.
+To search for a string, use the ``\texttt{/string}" command.
 To find the word include, for example, use the command:
 
  \begin{Verbatim}[samepage=true]
  /include
  \end{Verbatim}
 
-You will notice that when you type the "\texttt{/}" the cursor jumps to the last line of the Vim window, like with colon commands.
+You will notice that when you type the ``\texttt{/}" the cursor jumps to the last line of the Vim window, like with colon commands.
 That is where you type the word.
 You can press the backspace key (backarrow or <BS>) to make corrections.
 Use the <Left> and <Right> cursor keys when necessary.
@@ -344,27 +344,27 @@ The characters .*[ ]\textasciicircum\%/\textbackslash?\textasciitilde\$ have spe
 If you want to use them in a search you must put a \textbackslash in front of them.
 See below.
 
-To find the next occurrence of the same string use the "\texttt{n}" command.
+To find the next occurrence of the same string use the ``\texttt{n}" command.
 Use this to find the first \texttt{\#include} after the cursor:
 
  \begin{Verbatim}[samepage=true]
  /#include
  \end{Verbatim}
 
-And then type "\texttt{n}" several times.
+And then type ``\texttt{n}" several times.
 You will move to each \texttt{\#include} in the text.
 You can also use a count if you know which match you want.
-Thus "\texttt{3n}" finds the third match.
-Using a count with "\texttt{/}" doesn't work.
+Thus ``\texttt{3n}" finds the third match.
+Using a count with ``\texttt{/}" doesn't work.
 
-The "\texttt{?}" command works like "\texttt{/}" but searches backwards:
+The ``\texttt{?}" command works like ``\texttt{/}" but searches backwards:
 
  \begin{Verbatim}[samepage=true]
  ?word
  \end{Verbatim}
 
-The "\texttt{N}" command repeats the last search the opposite direction.
-Thus using "\texttt{N}" after a "\texttt{/}" command search backwards, using "\texttt{N}" after "\texttt{?}" searches forward.
+The ``\texttt{N}" command repeats the last search the opposite direction.
+Thus using ``\texttt{N}" after a ``\texttt{/}" command search backwards, using ``\texttt{N}" after ``\texttt{?}" searches forward.
 
 \subsubsection{Ignoring case}
 
@@ -375,7 +375,7 @@ If you don't care about upper or lowercase in a word, set ttexhe \texttt{'ignore
  :set ignorecase
  \end{Verbatim}
 
-If you now search for"word", it will also match "Word" and "WORD".
+If you now search for ``word", it will also match ``Word" and ``WORD".
 To match case again:
 
  \begin{Verbatim}[samepage=true]
@@ -392,55 +392,55 @@ Suppose you do three searches:
  /three
  \end{Verbatim}
 
-Now let's start searching by typing a simple "\texttt{/}" without pressing <Enter>.
-If you press <Up> (the cursor key), Vim puts "/three" on the command line.
+Now let's start searching by typing a simple ``\texttt{/}" without pressing <Enter>.
+If you press <Up> (the cursor key), Vim puts ``/three" on the command line.
 Pressing <Enter> at this point searches for three.
-If you do not press <Enter>, but press <Up> instead, Vim changes the prompt to "\texttt{/two}".
-Another press of <Up> moves you to "\texttt{/one}".
+If you do not press <Enter>, but press <Up> instead, Vim changes the prompt to ``\texttt{/two}".
+Another press of <Up> moves you to ``\texttt{/one}".
 You can also use the <Down> cursor key to move through the history of search commands in the other direction.
 
 If you know what a previously used pattern starts with, and you want to use it again, type that character before pressing <Up>.
-With the previous example, you can type "\texttt{/o<Up>}" and Vim will put "\texttt{/one}" on the command line.
+With the previous example, you can type ``\texttt{/o<Up>}" and Vim will put ``\texttt{/one}" on the command line.
 
-The commands starting with "\texttt{:}" also have a history.
+The commands starting with ``\texttt{:}" also have a history.
 That allows you to recall a previous command and execute it again.
 These two histories are separate.
 
 \subsubsection{Searching for a word in the text}
 
-Suppose you see the word "TheLongFunctionName" in the text and you want to find the next occurrence of it.
-You could type "\texttt{/TheLongFunctionName}", but that's a lot of typing.
+Suppose you see the word ``TheLongFunctionName" in the text and you want to find the next occurrence of it.
+You could type ``\texttt{/TheLongFunctionName}", but that's a lot of typing.
 And when you make a mistake Vim won't find it.
-There is an easier way: Position the cursor on the word and use the "\texttt{*}" command.
+There is an easier way: Position the cursor on the word and use the ``\texttt{*}" command.
 Vim will grab the word under the cursor and use it as the search string.
-The "\texttt{\#}" command does the same in the other direction.
-You can prepend a count: "\texttt{3*}" searches for the third occurrence of the word under the cursor.
+The ``\texttt{\#}" command does the same in the other direction.
+You can prepend a count: ``\texttt{3*}" searches for the third occurrence of the word under the cursor.
 
 \subsubsection{Searching for whole words}
 
-If you type "\texttt{/the}" it will also match "there".
-To only find words that end in "the" use:
+If you type ``\texttt{/the}" it will also match ``there".
+To only find words that end in ``the" use:
 
  \begin{Verbatim}[samepage=true]
  /the\>
  \end{Verbatim}
 
- The "\texttt{\textbackslash{}>"} item is a special marker that only matches at the end of a word.
- Similarly "\texttt{\textbackslash{}<"} only matches at the begin of a word.
-Thus to search for the word "\texttt{the"} only:
+ The ``\texttt{\textbackslash{}>}" item is a special marker that only matches at the end of a word.
+ Similarly ``\texttt{\textbackslash{}<}" only matches at the begin of a word.
+Thus to search for the word ``\texttt{the}" only:
 
  \begin{Verbatim}[samepage=true]
  /\<the\>
  \end{Verbatim}
 
-This does not match "there" or "soothe".
-Notice that the "\texttt{*}" and "\texttt{\#}" commands use these start-of-word and end-of-word markers to only find whole words (you can use "\texttt{g*}" and "\texttt{g\#}" to match partial words).
+This does not match ``there" or ``soothe".
+Notice that the ``\texttt{*}" and ``\texttt{\#}" commands use these start-of-word and end-of-word markers to only find whole words (you can use ``\texttt{g*}" and ``\texttt{g\#}" to match partial words).
 
 \subsubsection{Highlighting matches}
 
-While editing a program you see a variable called "\texttt{nr}".
+While editing a program you see a variable called ``\texttt{nr}".
 You want to check where it's used.
-You could move the cursor to "\texttt{nr}" and use the "\texttt{*}" command and press "\texttt{n}" to go along all the matches.
+You could move the cursor to ``\texttt{nr}" and use the ``\texttt{*}" command and press ``\texttt{n}" to go along all the matches.
 There is another way.
 Type this command:
 
@@ -448,7 +448,7 @@ Type this command:
  :set hlsearch
  \end{Verbatim}
 
-If you now search for "\texttt{nr}", Vim will highlight all matches.
+If you now search for ``\texttt{nr}", Vim will highlight all matches.
 That is a very good way to see where the variable is used, without the need to type commands.
 To switch this off:
 
@@ -466,7 +466,7 @@ command.  If you only want to remove the highlighting, use this command:
 This doesn't reset the option.
 Instead, it disables the highlighting.
 As soon as you execute a search command, the highlighting will be used again.
-Also for the "\texttt{n}" and "\texttt{N}" commands.
+Also for the ``\texttt{n}" and ``\texttt{N}" commands.
 
 \subsubsection{Tuning searches}
 
@@ -513,8 +513,8 @@ Example:
  Go:set hlsearch<Esc>
  \end{Verbatim}
 
-"\texttt{G}" moves to the end of the file.
-"\texttt{o}" starts a new line, where you type the "\texttt{:set}" command.
+``\texttt{G}" moves to the end of the file.
+``\texttt{o}" starts a new line, where you type the ``\texttt{:set}" command.
 You end insert mode with <Esc>.
 Then write the file:
 
@@ -538,39 +538,39 @@ You can find the full explanation here: |\texttt{:h pattern}|.
 
 The \texttt{\^{}} character matches the beginning of a line.
 On an English-US keyboard you find it above the 6.
-The pattern "\texttt{include}" matches the word include anywhere on the line.
-But the pattern "\texttt{\^{}include}" matches the word include only if it is at the beginning of a line.
+The pattern ``\texttt{include}" matches the word include anywhere on the line.
+But the pattern ``\texttt{\^{}include}" matches the word include only if it is at the beginning of a line.
 The \$ character matches the end of a line.
-Therefore, "\texttt{was\$}" matches the word was only if it is at the end of a line.
+Therefore, ``\texttt{was\$}" matches the word was only if it is at the end of a line.
 
-Let's mark the places where "the" matches in this example line with "x"s:
+Let's mark the places where ``the" matches in this example line with ``x"s:
 
 		\begin{Verbatim}[samepage=true]
     the solder holding one of the chips melted and the 
     xxx                       xxx                  xxx
 		\end{Verbatim}
 
-Using "\texttt{/the\$}" we find this match:
+Using ``\texttt{/the\$}" we find this match:
 
 		\begin{Verbatim}[samepage=true]
     the solder holding one of the chips melted and the 
                                                    xxx
 		\end{Verbatim}
 
-And with "\texttt{/\^{}the}" we find this one:
+And with ``\texttt{/\^{}the}" we find this one:
 
 		\begin{Verbatim}[samepage=true]
     the solder holding one of the chips melted and the 
     xxx
 		\end{Verbatim}
 
-You can try searching with "\texttt{/\^{}the\$}", it will only match a single line consisting of "the".
-White space does matter here, thus if a line contains a space after the word, like "the ", the pattern will not match.
+You can try searching with ``\texttt{/\^{}the\$}", it will only match a single line consisting of ``the".
+White space does matter here, thus if a line contains a space after the word, like ``the ", the pattern will not match.
 
 \subsubsection{Matching any single character}
 
 The . (dot) character matches any existing character.
-For example, the pattern "\texttt{c.m}" matches a string whose first character is a c, whose second character is anything, and whose the third character is m.
+For example, the pattern ``\texttt{c.m}" matches a string whose first character is a c, whose second character is anything, and whose the third character is m.
 Example:
 
 		\begin{Verbatim}[samepage=true]
@@ -582,18 +582,18 @@ Example:
 \subsubsection{Matching special characters}
 
 If you really want to match a dot, you must avoid its special meaning by putting a backslash before it.
-If you search for "\texttt{ter.}", you will find these matches:
+If you search for ``\texttt{ter.}", you will find these matches:
 
 		\begin{Verbatim}[samepage=true]
     We use a computer that became the cummin winter. 
                   xxxx                          xxxx
 		\end{Verbatim}
 
-		Searching for "\texttt{ter\textbackslash{}.}" only finds the second match.
+		Searching for ``\texttt{ter\textbackslash{}.}" only finds the second match.
 
 \subsection{Using marks}
 
-When you make a jump to a position with the "\texttt{G}" command, Vim remembers the position from before this jump.
+When you make a jump to a position with the ``\texttt{G}" command, Vim remembers the position from before this jump.
 This position is called a mark.
 To go back where you came from, use this command:
 
@@ -606,9 +606,9 @@ If you use the same command a second time you will jump back again.
 That's because the \texttt{`} command is a jump itself, and the position from before this jump is remembered.
 
 Generally, every time you do a command that can move the cursor further than within the same line, this is called a jump.
-This includes the search commands "\texttt{/}" and "\texttt{n}" (it doesn't matter how far away the match is).
-But not the character searches with "fx" and "tx" or the word movements "w" and "e".
-Also, "j" and "k" are not considered to be a jump.
+This includes the search commands ``\texttt{/}" and ``\texttt{n}" (it doesn't matter how far away the match is).
+But not the character searches with ``fx" and ``tx" or the word movements ``w" and ``e".
+Also, ``j" and ``k" are not considered to be a jump.
 Even when you use a count to make them move the cursor quite a long way away.
  
 The \texttt{``} command jumps back and forth, between two points.
@@ -622,11 +622,11 @@ Consider this sequence of commands:
  CTRL-O
  \end{Verbatim}
 
-You first jump to line 33, then search for a line that starts with "The".
+You first jump to line 33, then search for a line that starts with ``The".
 Then with CTRL-O you jump back to line 33.
 Another CTRL-O takes you back to where you started.
 If you now use CTRL-I you jump to line 33 again.
-And to the match for "The" with another CTRL-I.
+And to the match for ``The" with another CTRL-I.
 
 \begin{Verbatim}[samepage=true]
          | example text   ^             |
@@ -642,14 +642,14 @@ And to the match for "The" with another CTRL-I.
 Note:
 CTRL-I is the same as <Tab>.
 
-The "\texttt{:jumps}" command gives a list of positions you jumped to.
-The entry which you used last is marked with a ">".
+The ``\texttt{:jumps}" command gives a list of positions you jumped to.
+The entry which you used last is marked with a ``>".
 
 \subsubsection{Named marks}
 \label{bookmark}
 
 Vim enables you to place your own marks in the text.
-The command "\texttt{ma}" marks the place under the cursor as mark a.
+The command ``\texttt{ma}" marks the place under the cursor as mark a.
 You can place 26 marks (a through z) in your text.
 You can't see them, it's just a position that Vim remembers.
 To go to a mark, use the command \texttt{`{mark}}, where \texttt{{mark}} is the mark letter.

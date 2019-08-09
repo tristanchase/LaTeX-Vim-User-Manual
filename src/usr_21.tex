@@ -10,7 +10,7 @@ Furthermore, this is about the ways to remember the state of Vim and restore it 
 Like most Unix programs Vim can be suspended by pressing CTRL-Z.
 This stops Vim and takes you back to the shell it was started in.
 You can then do any other commands until you are bored with them.
-Then bring back Vim with the "\texttt{fg}" command.
+Then bring back Vim with the ``\texttt{fg}" command.
 
  CTRL-Z\\
  \{any sequence of shell commands\}\\
@@ -18,7 +18,7 @@ Then bring back Vim with the "\texttt{fg}" command.
 
 You are right back where you left Vim, nothing has changed.
 
-In case pressing CTRL-Z doesn't work, you can also use "\texttt{:suspend}".
+In case pressing CTRL-Z doesn't work, you can also use ``\texttt{:suspend}".
 Don't forget to bring Vim back to the foreground, you would lose any changes that you made!
 
 Only Unix has support for this.
@@ -29,7 +29,7 @@ But it's a new shell, not the one that you started Vim from.
 When you are running the GUI you can't go back to the shell where Vim was started.
 CTRL-Z will minimize the Vim window instead.
 \subsection{Executing shell commands}
-To execute a single shell command from Vim use "\texttt{:!{command}}".
+To execute a single shell command from Vim use ``\texttt{:!{command}}".
 For example, to see a directory listing:
 
 \begin{Verbatim}[samepage=true]
@@ -43,7 +43,7 @@ Vim will execute the program.
 When it ends you will get a prompt to hit <Enter>.
 This allows you to have a look at the output from the command before returning to the text you were editing.
 
-The "\texttt{!}" is also used in other places where a program is run.
+The ``\texttt{!}" is also used in other places where a program is run.
 Let's take a look at an overview:
 
 \begin{Verbatim}[samepage=true]
@@ -53,7 +53,7 @@ Let's take a look at an overview:
     :[range]!{program}  filter text through {program}
 \end{Verbatim}
 
-Notice that the presence of a range before "\texttt{!{program}}" makes a big difference.
+Notice that the presence of a range before ``\texttt{!{program}}" makes a big difference.
 Without it executes the program normally, with the range a number of text lines is filtered through the program.
 
 Executing a whole row of programs this way is possible.
@@ -182,14 +182,14 @@ You can see a list of files by typing the command:
     3: /tmp/draft 
 \end{Verbatim}
 
-Now you would like to edit the second file, which is in the list preceded by "\texttt{2:}".
+Now you would like to edit the second file, which is in the list preceded by ``\texttt{2:}".
 You type:
 
 \begin{Verbatim}[samepage=true]
  :e #<2
 \end{Verbatim}
 
-Instead of "\texttt{:e}" you can use any command that has a file name argument, the "\texttt{\#<2}" item works in the same place as "\texttt{\%}" (current file name) and "\texttt{\#}" (alternate file name).
+Instead of ``\texttt{:e}" you can use any command that has a file name argument, the ``\texttt{\#<2}" item works in the same place as ``\texttt{\%}" (current file name) and ``\texttt{\#}" (alternate file name).
 So you can also split the window to edit the third file:
 
 \begin{Verbatim}[samepage=true]
@@ -208,18 +208,18 @@ Fortunately there is a simpler way:
 \end{Verbatim}
 
 You get the same list of files as with |\texttt{:h :oldfiles}|.
-If you want to edit "\texttt{resume.txt}" first press "\texttt{q}" to stop the listing.
+If you want to edit ``\texttt{resume.txt}" first press ``\texttt{q}" to stop the listing.
 You will get a prompt:
 
 \begin{Verbatim}[samepage=true]
     Type number and <Enter> (empty cancels): 
 \end{Verbatim}
 
-Type "\texttt{2}" and press <Enter> to edit the second file.
+Type ``\texttt{2}" and press <Enter> to edit the second file.
 
 More info at |\texttt{:h :oldfiles}|, |\texttt{:h v:oldfiles}| and |\texttt{:h c\_\#<}|.
 \subsubsection{Move info from one vim to another}
-You can use the "\texttt{:wviminfo}" and "\texttt{:rviminfo}" commands to save and restore the information while still running Vim.
+You can use the ``\texttt{:wviminfo}" and ``\texttt{:rviminfo}" commands to save and restore the information while still running Vim.
 This is useful for exchanging register contents between two instances of Vim, for example.
 In the first Vim do:
 
@@ -233,12 +233,12 @@ And in the second Vim do:
  :rviminfo! ~/tmp/viminfo
 \end{Verbatim}
 
-Obviously, the "w" stands for "write" and the "r" for "read".
+Obviously, the ``w" stands for ``write" and the ``r" for ``read".
 
-The \texttt{!} character is used by "\texttt{:wviminfo}" to forcefully overwrite an existing file.
+The \texttt{!} character is used by ``\texttt{:wviminfo}" to forcefully overwrite an existing file.
 When it is omitted, and the file exists, the information is merged into the file.
 
-The \texttt{!} character used for "\texttt{:rviminfo}" means that all the information is used, this may overwrite existing information.
+The \texttt{!} character used for ``\texttt{:rviminfo}" means that all the information is used, this may overwrite existing information.
 Without the \texttt{!} only information that wasn't set is used.
 
 These commands can also be used to store info and use it again later.
@@ -271,7 +271,7 @@ If you want to start Vim and restore a specific session, you can use the followi
 \end{Verbatim}
 
 This tells Vim to read a specific file on startup.
-The \texttt{'S'} stands for session (actually, you can source any Vim script with \texttt{-S}, thus it might as well stand for "source").
+The \texttt{'S'} stands for session (actually, you can source any Vim script with \texttt{-S}, thus it might as well stand for ``source").
 
 The windows that were open are restored, with the same position and size as before.
 Mappings and option values are like before.
@@ -297,8 +297,8 @@ To also restore the size of the Vim window, for example, use:
 \end{Verbatim}
 \subsubsection{Session here, session there}
 The obvious way to use sessions is when working on different projects.
-Suppose you store you session files in the directory "\texttt{~/.vim}".
-You are currently working on the "secret" project and have to switch to the "boring" project:
+Suppose you store you session files in the directory ``\texttt{~/.vim}".
+You are currently working on the ``secret" project and have to switch to the ``boring" project:
 
 \begin{Verbatim}[samepage=true]
  :wall
@@ -306,11 +306,11 @@ You are currently working on the "secret" project and have to switch to the "bor
  :source ~/.vim/boring.vim
 \end{Verbatim}
 
-This first uses "\texttt{:wall}" to write all modified files.
-Then the current session is saved, using "\texttt{:mksession!}".
+This first uses ``\texttt{:wall}" to write all modified files.
+Then the current session is saved, using ``\texttt{:mksession!}".
 This overwrites the previous session.
 The next time you load the secret session you can continue where you were at this point.
-And finally you load the new "boring" session.
+And finally you load the new ``boring" session.
 
 If you open help windows, split and close various windows, and generally mess up the window layout, you can go back to the last saved session:
 
@@ -370,12 +370,12 @@ Now you can start Vim with this layout:
  vim -S ~/.vim/mine.vim
 \end{Verbatim}
 
-Hint: To open a file you see listed in the explorer window in the empty window, move the cursor to the filename and press "\texttt{O}".
+Hint: To open a file you see listed in the explorer window in the empty window, move the cursor to the filename and press ``\texttt{O}".
 Double clicking with the mouse will also do this.
 
 \subsubsection{Unix and ms-windows}
 Some people have to do work on MS-Windows systems one day and on Unix another day.
-If you are one of them, consider adding "\texttt{slash}" and "\texttt{unix}" to \texttt{'sessionoptions'}.
+If you are one of them, consider adding ``\texttt{slash}" and ``\texttt{unix}" to \texttt{'sessionoptions'}.
 The session files will then be written in a format that can be used on both systems.
 This is the command to put in your vimrc file:
 
@@ -448,7 +448,7 @@ Obviously, you can get this back with:
  :loadview 1
 \end{Verbatim}
 
-Now you can switch between the two views on the file by using "\texttt{:loadview}" with and without the "\texttt{1}" argument.
+Now you can switch between the two views on the file by using ``\texttt{:loadview}" with and without the ``\texttt{1}" argument.
 
 You can store up to ten views for the same file this way, one unnumbered and nine numbered 1 to 9.
 \subsubsection{A view with a name}
@@ -511,15 +511,15 @@ Use this format for the modeline:
     any-text vim:set {option}={value} ... : any-text 
 \end{Verbatim}
 
-The "\texttt{any-text}" indicates that you can put any text before and after the part that Vim will use.
+The ``\texttt{any-text}" indicates that you can put any text before and after the part that Vim will use.
 This allows making it look like a comment, like what was done above with /* and */.
 
-The "\texttt{ vim:}" part is what makes Vim recognize this line.
-There must be white space before "\texttt{vim}", or "\texttt{vim}" must be at the start of the line.
-Thus using something like "\texttt{gvim:}" will not work.
+The ``\texttt{ vim:}" part is what makes Vim recognize this line.
+There must be white space before ``\texttt{vim}", or ``\texttt{vim}" must be at the start of the line.
+Thus using something like ``\texttt{gvim:}" will not work.
 
-The part between the colons is a "\texttt{:set}" command.
-It works the same way as typing the "\texttt{:set}" command, except that you need to insert a backslash before a colon (otherwise it would be seen as the end of the modeline).
+The part between the colons is a ``\texttt{:set}" command.
+It works the same way as typing the ``\texttt{:set}" command, except that you need to insert a backslash before a colon (otherwise it would be seen as the end of the modeline).
 
 Another example:
 
@@ -527,7 +527,7 @@ Another example:
     // vim:set textwidth=72 dir=c\:\tmp:  use c:\tmp here 
 \end{Verbatim}
 
-There is an extra backslash before the first colon, so that it's included in the "\texttt{:set}" command.
+There is an extra backslash before the first colon, so that it's included in the ``\texttt{:set}" command.
 The text after the second colon is ignored, thus a remark can be placed there.
 
 For more details see |\texttt{:h modeline}|.

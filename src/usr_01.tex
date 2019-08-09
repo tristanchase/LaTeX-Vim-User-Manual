@@ -22,7 +22,7 @@ In the original Vim manual, link are presented inbetween \texttt{|} symbol.
 This notation is kept here.
 But, those links can lead to another part of this manual or to the Vim reference manual.
 In the first case, the links work like any hyperlink you can find in a pdf document.
-Regarding the links leading to the reference manual, they are prefixed in this "edition" with \texttt{:h}.
+Regarding the links leading to the reference manual, they are prefixed in this ``edition" with \texttt{:h}.
 Typing this command inside of Vim should lead to the correct part of the reference manual.
 Some links to the User Manual were represented by the number corresponding to the subsection they were linked to.
 They're represented here by the title of the subsection instead.
@@ -41,10 +41,10 @@ You can read the subsubsection by typing \texttt{:h 01.1} in Vim.
 % Many links are in vertical bars, like this: |\texttt{:h bars}|.
 % The bars themselves may
 % be hidden or invisible, see below.
-% An option name, like 'number', a command in double quotes like ":write" and any other word can also be used as a link.
+% An option name, like `number', a command in double quotes like ``:write" and any other word can also be used as a link.
 % Try it out: Move the cursor to CTRL-] and press CTRL-] on it.
 % 
-% Other subjects can be found with the ":help" command, see |\texttt{:h help.txt}|.
+% Other subjects can be found with the ``:help" command, see |\texttt{:h help.txt}|.
 % 
 % The bars and stars are usually hidden with the |\texttt{:h conceal}| feature.
 % They also
@@ -91,8 +91,8 @@ You can check it with this command:
  :set compatible?
 \end{verbatim}
 
-If it responds with "nocompatible" you are doing well.
-If the response is "compatible" you are in trouble.
+If it responds with ``nocompatible" you are doing well.
+If the response is ``compatible" you are in trouble.
 You will have to find out why the option is still set.
 Perhaps the file you wrote above is not found.
 Use this command to find out:
@@ -108,7 +108,7 @@ For more info see |vimrc| and |\texttt{:h compatible-default}|.
 
 \textit{Note:}\newline
 This manual is about using Vim in the normal way.
-There is an alternative called "evim" (easy Vim).
+There is an alternative called ``evim" (easy Vim).
 This is still Vim, but used in a way that resembles a click-and-type editor like Notepad.
 It always stays in Insert mode, thus it feels very different.
 It is not explained in the user manual, since it should be mostly self explanatory.
@@ -139,8 +139,8 @@ For French:
  vimtutor fr
 \end{verbatim}
 
-On Unix, if you prefer using the GUI version of Vim, use "gvimtutor" or
-"vimtutor -g" instead of "vimtutor".
+On Unix, if you prefer using the GUI version of Vim, use ``gvimtutor" or
+``vimtutor -g" instead of ``vimtutor".
 
 For OpenVMS, if Vim has been properly installed, you can start vimtutor from a
 VMS prompt with:
@@ -157,7 +157,7 @@ On other systems, you have to do a little work:
 								\begin{verbatim}
  vim -u NONE -c 'e $VIMRUNTIME/tutor/tutor' -c 'w! TUTORCOPY' -c 'q'
 								\end{verbatim}
-								This will write the file "TUTORCOPY" in the current directory.
+								This will write the file ``TUTORCOPY" in the current directory.
 								To use a
 								translated version of the tutor, append the two-letter language code to the
 								filename. For French:

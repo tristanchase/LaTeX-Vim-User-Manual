@@ -44,20 +44,20 @@ You can see these items:
 \item The method of sorting (may be by name, time, or size)
 \item How names are to be sorted (directories first, then \texttt{*.h} files, \texttt{*.c} files, etc)
 \item How to get help (use the <F1> key), and an abbreviated listing of available commands
-\item A listing of files, including "\texttt{../}", which allows one to list the parent directory.
+\item A listing of files, including ``\texttt{../}", which allows one to list the parent directory.
 \end{enumerate}
 
 If you have syntax highlighting enabled, the different parts are highlighted so as to make it easier to spot them.
 
 You can use Normal mode Vim commands to move around in the text.
 For example, move the cursor atop a file and press <Enter>; you will then be editing that file.
-To go back to the browser use "\texttt{:edit .}" again, or use "\texttt{:Explore}".
+To go back to the browser use ``\texttt{:edit .}" again, or use ``\texttt{:Explore}".
 CTRL-O also works.
 
 Try using <Enter> while the cursor is atop a directory name.
 The result is that the file browser moves into that directory and displays the items found there.
-Pressing <Enter> on the first directory "\texttt{../}" moves you one level higher.
-Pressing "\texttt{-}" does the same thing, without the need to move to the "\texttt{../}" item first.
+Pressing <Enter> on the first directory ``\texttt{../}" moves you one level higher.
+Pressing ``\texttt{-}" does the same thing, without the need to move to the ``\texttt{../}" item first.
 
 You can press <F1> to get help on the things you can do in the netrw file browser.
 This is what you get:
@@ -139,7 +139,7 @@ See |\texttt{:h netrw-browse}| for more.
 \subsection{The current directory}
 
 Just like the shell, Vim has the concept of a current directory.
-Suppose you are in your home directory and want to edit several files in a directory "\texttt{VeryLongFileName}".
+Suppose you are in your home directory and want to edit several files in a directory ``\texttt{VeryLongFileName}".
 You could do:
 
 \begin{Verbatim}[samepage=true]
@@ -157,8 +157,8 @@ To avoid much of the typing, do this:
  :edit file3.txt
 \end{Verbatim}
 
-The "\texttt{:cd}" command changes the current directory.
-You can see what the current directory is with the "\texttt{:pwd}" command:
+The ``\texttt{:cd}" command changes the current directory.
+You can see what the current directory is with the ``\texttt{:pwd}" command:
 
 \begin{Verbatim}[samepage=true]
  :pwd
@@ -166,7 +166,7 @@ You can see what the current directory is with the "\texttt{:pwd}" command:
 \end{Verbatim}
 
 Vim remembers the last directory that you used.
-Use "\texttt{cd -}" to go back to it.
+Use ``\texttt{cd -}" to go back to it.
 Example:
 
 \begin{Verbatim}[samepage=true]
@@ -200,13 +200,13 @@ This is called a local directory.
  /home/Bram/VeryLongFileName
 \end{Verbatim}
 
-So long as no "\texttt{:lcd}" command has been used, all windows share the same current directory.
-Doing a "\texttt{:cd}" command in one window will also change the current directory of the other window.
+So long as no ``\texttt{:lcd}" command has been used, all windows share the same current directory.
+Doing a ``\texttt{:cd}" command in one window will also change the current directory of the other window.
 
-For a window where "\texttt{:lcd}" has been used a different current directory is remembered.
-Using "\texttt{:cd}" or "\texttt{:lcd}" in other windows will not change it.
+For a window where ``\texttt{:lcd}" has been used a different current directory is remembered.
+Using ``\texttt{:cd}" or ``\texttt{:lcd}" in other windows will not change it.
 
-When using a "\texttt{:cd}" command in a window that uses a different current directory, it will go back to using the shared directory.
+When using a ``\texttt{:cd}" command in a window that uses a different current directory, it will go back to using the shared directory.
 \subsection{Finding a file}
 You are editing a C program that contains this line:
 
@@ -214,7 +214,7 @@ You are editing a C program that contains this line:
     #include "inits.h" 
 \end{Verbatim}
 
-You want to see what is in that "\texttt{inits.h}" file.
+You want to see what is in that ``\texttt{inits.h}" file.
 Move the cursor on the name of the file and type:
 
 \begin{Verbatim}[samepage=true]
@@ -226,7 +226,7 @@ Vim will find the file and edit it.
 What if the file is not in the current directory?  Vim will use the \texttt{'path'} option to find the file.
 This option is a list of directory names where to look for your file.
 
-Suppose you have your include files located in "\texttt{c:/prog/include}".
+Suppose you have your include files located in ``\texttt{c:/prog/include}".
 This command will add it to the \texttt{'path'} option:
 
 \begin{Verbatim}[samepage=true]
@@ -242,16 +242,16 @@ This starts with a dot:
  :set path+=./proto
 \end{Verbatim}
 
-This tells Vim to look in the directory "\texttt{proto}", below the directory where the file in which you use "\texttt{gf}" is.
-Thus using "\texttt{gf}" on "\texttt{inits.h}" will make Vim look for "\texttt{proto/inits.h}", starting in the directory of the file.
+This tells Vim to look in the directory ``\texttt{proto}", below the directory where the file in which you use ``\texttt{gf}" is.
+Thus using ``\texttt{gf}" on ``\texttt{inits.h}" will make Vim look for ``\texttt{proto/inits.h}", starting in the directory of the file.
 
-Without the "\texttt{./}", thus "\texttt{proto}", Vim would look in the "\texttt{proto}" directory below the current directory.
+Without the ``\texttt{./}", thus ``\texttt{proto}", Vim would look in the ``\texttt{proto}" directory below the current directory.
 And the current directory might not be where the file that you are editing is located.
 
 The \texttt{'path'} option allows specifying the directories where to search for files in many more ways.
 See the help on the \texttt{'path'} option.
 
-The \texttt{'isfname'} option is used to decide which characters are included in the file name, and which ones are not (e.g., the " character in the example above).
+The \texttt{'isfname'} option is used to decide which characters are included in the file name, and which ones are not (e.g., the \texttt{"} character in the example above).
 
 When you know the file name, but it's not to be found in the file, you can type it:
 
@@ -260,9 +260,9 @@ When you know the file name, but it's not to be found in the file, you can type 
 \end{Verbatim}
 
 Vim will then use the \texttt{'path'} option to try and locate the file.
-This is the same as the "\texttt{:edit}" command, except for the use of \texttt{'path'}.
+This is the same as the ``\texttt{:edit}" command, except for the use of \texttt{'path'}.
 
-To open the found file in a new window use CTRL-W f instead of "\texttt{gf}", or use "\texttt{:sfind}" instead of "\texttt{:find}".
+To open the found file in a new window use CTRL-W f instead of ``\texttt{gf}", or use ``\texttt{:sfind}" instead of ``\texttt{:find}".
 
 A nice way to directly start Vim to edit a file somewhere in the \texttt{'path'}:
 
@@ -270,7 +270,7 @@ A nice way to directly start Vim to edit a file somewhere in the \texttt{'path'}
  vim "+find stdio.h"
 \end{Verbatim}
 
-This finds the file "\texttt{stdio.h}" in your value of \texttt{'path'}.
+This finds the file ``\texttt{stdio.h}" in your value of \texttt{'path'}.
 The quotes are necessary to have one argument |\texttt{:h -+c}|.
 \subsection{The buffer list}
 \label{The buffer list}
@@ -280,7 +280,7 @@ When you finish changing the buffer, you write the contents of the buffer to the
 Buffers not only contain file contents, but also all the marks, settings, and other stuff that goes with it.
 \subsubsection{Hidden buffers}
 Suppose you are editing the file one.txt and need to edit the file two.txt.
-You could simply use "\texttt{:edit two.txt}", but since you made changes to one.txt that won't work.
+You could simply use ``\texttt{:edit two.txt}", but since you made changes to one.txt that won't work.
 You also don't want to write one.txt yet.
 Vim has a solution for you:
 
@@ -288,11 +288,11 @@ Vim has a solution for you:
  :hide edit two.txt
 \end{Verbatim}
 
-The buffer "\texttt{one.txt}" disappears from the screen, but Vim still knows that you are editing this buffer, so it keeps the modified text.
+The buffer ``\texttt{one.txt}" disappears from the screen, but Vim still knows that you are editing this buffer, so it keeps the modified text.
 This is called a hidden buffer: The buffer contains text, but you can't see it.
 
-The argument of "\texttt{:hide}" is another command.
-"\texttt{:hide}" makes that command behave as if the \texttt{'hidden'} option was set.
+The argument of ``\texttt{:hide}" is another command.
+``\texttt{:hide}" makes that command behave as if the \texttt{'hidden'} option was set.
 You could also set this option yourself.
 The effect is that when any buffer is abandoned, it becomes hidden.
 
@@ -368,7 +368,7 @@ You can use the name, or part of it, instead:
 
 Vim will find the best match for the name you type.
 If there is only one buffer that matches the name, it will be used.
-In this case "\texttt{help.txt}".
+In this case ``\texttt{help.txt}".
 
 To open a buffer in a new window:
 
@@ -399,9 +399,9 @@ If you delete the current buffer, the current window will be closed.
 If it was the last window, Vim will find another buffer to edit.
 You can't be editing nothing!
 
-\emph{Note}: Even after removing the buffer with "\texttt{:bdelete}" Vim still remembers it.
-It's actually made "unlisted", it no longer appears in the list from "\texttt{:buffers}".
-The "\texttt{:buffers!}" command will list unlisted buffers (yes, Vim can do the impossible).
-To really make Vim forget about a buffer, use "\texttt{:bwipe}".
+\emph{Note}: Even after removing the buffer with ``\texttt{:bdelete}" Vim still remembers it.
+It's actually made ``unlisted", it no longer appears in the list from ``\texttt{:buffers}".
+The ``\texttt{:buffers!}" command will list unlisted buffers (yes, Vim can do the impossible).
+To really make Vim forget about a buffer, use ``\texttt{:bwipe}".
 Also see the \texttt{'buflisted'} option.
 \clearpage

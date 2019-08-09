@@ -7,11 +7,11 @@ Automatically set the indent for many languages and format comments.
 \etocsettocstyle{\subsection*{Contents}}{}
 \localtableofcontents
 \subsection{Compiling}
-Vim has a set of so called "\texttt{quickfix}" commands.
+Vim has a set of so called ``\texttt{quickfix}" commands.
 They enable you to compile a program from within Vim and then go through the errors generated and fix them (hopefully).
 You can then recompile and fix any new errors that are found until finally your program compiles without any error.
 
-The following command runs the program "\texttt{make}" (supplying it with any argument you give) and captures the results:
+The following command runs the program ``\texttt{make}" (supplying it with any argument you give) and captures the results:
 
 \begin{Verbatim}[samepage=true]
  :make {arguments}
@@ -19,8 +19,8 @@ The following command runs the program "\texttt{make}" (supplying it with any ar
 
 If errors were generated, they are captured and the editor positions you where the first error occurred.
 
-Take a look at an example "\texttt{:make}" session.
-(Typical :make sessions generate far more errors and fewer stupid ones.)  After typing "\texttt{:make}" the screen looks like this:
+Take a look at an example ``\texttt{:make}" session.
+(Typical :make sessions generate far more errors and fewer stupid ones.)  After typing ``\texttt{:make}" the screen looks like this:
 
 \begin{Verbatim}[samepage=true]
     :!make | &tee /tmp/vim215953.err 
@@ -37,8 +37,8 @@ Take a look at an example "\texttt{:make}" session.
     Press ENTER or type command to continue 
 \end{Verbatim}
 
-From this you can see that you have errors in the file "\texttt{main.c}".
-When you press <Enter>, Vim displays the file "\texttt{main.c}", with the cursor positioned on line 6, the first line with an error.
+From this you can see that you have errors in the file ``\texttt{main.c}".
+When you press <Enter>, Vim displays the file ``\texttt{main.c}", with the cursor positioned on line 6, the first line with an error.
 You did not need to specify the file or the line number, Vim knew where to go by looking in the error messages.
 
 \begin{Verbatim}[samepage=true]
@@ -62,7 +62,7 @@ The following command goes to where the next error occurs:
  :cnext
 \end{Verbatim}
 
-Vim jumps to line 10, the last line in the file, where there is an extra '\texttt{\}}'.
+Vim jumps to line 10, the last line in the file, where there is an extra `\texttt{\}}'.
 
 When there is not enough room, Vim will shorten the error message.
 To see the whole message use:
@@ -71,7 +71,7 @@ To see the whole message use:
  :cc
 \end{Verbatim}
 
-You can get an overview of all the error messages with the "\texttt{:clist}" command.
+You can get an overview of all the error messages with the ``\texttt{:clist}" command.
 The output looks like this:
 
 \begin{Verbatim}[samepage=true]
@@ -84,7 +84,7 @@ Only the lines where Vim recognized a file name and line number are listed here.
 It assumes those are the interesting lines and the rest is just boring messages.
 However, sometimes unrecognized lines do contain something you want to see.
 Output from the linker, for example, about an undefined function.
-To see all the messages add a "\texttt{!}" to the command:
+To see all the messages add a ``\texttt{!}" to the command:
 
 \begin{Verbatim}[samepage=true]
  :clist!
@@ -112,8 +112,8 @@ Other commands to move around in the error list:
 \end{tabular} \end{center}
 
 \subsubsection{Using another compiler}
-The name of the program to run when the "\texttt{:make}" command is executed is defined by the \texttt{'makeprg'} option.
-Usually this is set to "\texttt{make}", but Visual C++ users should set this to "\texttt{nmake}" by executing the following command:
+The name of the program to run when the ``\texttt{:make}" command is executed is defined by the \texttt{'makeprg'} option.
+Usually this is set to ``\texttt{make}", but Visual C++ users should set this to ``\texttt{nmake}" by executing the following command:
 
 \begin{Verbatim}[samepage=true]
  :set makeprg=nmake
@@ -135,7 +135,7 @@ So if you execute the command:
  :set makeprg=make\ %
 \end{Verbatim}
 
-When you are editing main.c, then "\texttt{:make}" executes the following command:
+When you are editing main.c, then ``\texttt{:make}" executes the following command:
 
 \begin{Verbatim}[samepage=true]
  make main.c
@@ -155,9 +155,9 @@ Now the command executed is as follows:
 
 More about these modifiers here: |\texttt{:h filename-modifiers}|.
 \subsubsection{Old error lists}
-Suppose you "\texttt{:make}" a program.
+Suppose you ``\texttt{:make}" a program.
 There is a warning message in one file and an error message in another.
-You fix the error and use "\texttt{:make}" again to check if it was really fixed.
+You fix the error and use ``\texttt{:make}" again to check if it was really fixed.
 Now you want to look at the warning message.
 It doesn't show up in the last error list, since the file with the warning wasn't compiled again.
 You can go back to the previous error list with:
@@ -166,7 +166,7 @@ You can go back to the previous error list with:
  :colder
 \end{Verbatim}
 
-Then use "\texttt{:clist}" and "\texttt{:cc \{nr\}}" to jump to the place with the warning.
+Then use ``\texttt{:clist}" and ``\texttt{:cc \{nr\}}" to jump to the place with the warning.
 
 To go forward to the next error list:
 
@@ -190,24 +190,24 @@ For example, to switch to using the Microsoft Visual C++ compiler:
  :compiler msvc
 \end{Verbatim}
 
-This will find the Vim script for the "\texttt{msvc}" compiler and set the appropriate options.
+This will find the Vim script for the ``\texttt{msvc}" compiler and set the appropriate options.
 
 You can write your own compiler files.  See \hyperref[write-compiler-plugin]{|\texttt{write-compiler-plugin}|}.
 
 \subsubsection{Output redirection}
-The "\texttt{:make}" command redirects the output of the executed program to an error file.
+The ``\texttt{:make}" command redirects the output of the executed program to an error file.
 How this works depends on various things, such as the \texttt{'shell'}.
-If your "\texttt{:make}" command doesn't capture the output, check the \texttt{'makeef'} and \texttt{'shellpipe'} options.
+If your ``\texttt{:make}" command doesn't capture the output, check the \texttt{'makeef'} and \texttt{'shellpipe'} options.
 The \texttt{'shellquote'} and \texttt{'shellxquote'} options might also matter.
 
-In case you can't get "\texttt{:make}" to redirect the file for you, an alternative is to compile the program in another window and redirect the output into a file.
+In case you can't get ``\texttt{:make}" to redirect the file for you, an alternative is to compile the program in another window and redirect the output into a file.
 Then have Vim read this file with:
 
 \begin{Verbatim}[samepage=true]
  :cfile {filename}
 \end{Verbatim}
 
-Jumping to errors will work like with the "\texttt{:make}" command.
+Jumping to errors will work like with the ``\texttt{:make}" command.
 \subsection{Indenting C style text}
 A program is much easier to understand when the lines have been properly indented.
 Vim offers various ways to make this less work.
@@ -215,13 +215,13 @@ For C or C style programs like Java or C++, set the \texttt{'cindent'} option.
 Vim knows a lot about C programs and will try very hard to automatically set the indent for you.
 Set the \texttt{'shiftwidth'} option to the amount of spaces you want for a deeper level.
 Four spaces will work fine.
-One "\texttt{:set}" command will do it:
+One ``\texttt{:set}" command will do it:
 
 \begin{Verbatim}[samepage=true]
  :set cindent shiftwidth=4
 \end{Verbatim}
 
-With this option enabled, when you type something such as "\texttt{if (x)}", the next line will automatically be indented an additional level.
+With this option enabled, when you type something such as ``\texttt{if (x)}", the next line will automatically be indented an additional level.
 
 \begin{Verbatim}[samepage=true]
                              if (flag)
@@ -233,17 +233,17 @@ With this option enabled, when you type something such as "\texttt{if (x)}", the
 \end{Verbatim}
 
 When you type something in curly braces (\texttt{\{\}}), the text will be indented at the start and unindented at the end.
-The unindenting will happen after typing the '\texttt{\}}', since Vim can't guess what you are going to type.
+The unindenting will happen after typing the `\texttt{\}}', since Vim can't guess what you are going to type.
 
 One side effect of automatic indentation is that it helps you catch errors in your code early.
 When you type a \texttt{\}} to finish a function, only to find that the automatic indentation gives it more indent than what you expected, there is probably a \texttt{\}} missing.
-Use the "\texttt{\%}" command to find out which \texttt{\{} matches the \texttt{\}} you typed.
+Use the ``\texttt{\%}" command to find out which \texttt{\{} matches the \texttt{\}} you typed.
 
 A missing \texttt{)} and \texttt{;} also cause extra indent.
 Thus if you get more white space than you would expect, check the preceding lines.
 
 When you have code that is badly formatted, or you inserted and deleted lines, you need to re-indent the lines.
-The "\texttt{=}" operator does this.
+The ``\texttt{=}" operator does this.
 The simplest form is:
 
 \begin{Verbatim}[samepage=true]
@@ -252,8 +252,8 @@ The simplest form is:
 
 This indents the current line.
 Like with all operators, there are three ways to use it.
-In Visual mode "\texttt{=}" indents the selected lines.
-A useful text object is "\texttt{a\{}".
+In Visual mode ``\texttt{=}" indents the selected lines.
+A useful text object is ``\texttt{a\{}".
 This selects the current \texttt{\{\}} block.
 Thus, to re-indent the code block the cursor is in:
 
@@ -328,7 +328,7 @@ Now you need to write this in a file with a specific name:
     {directory}/indent/{filetype}.vim
 \end{Verbatim}
 
-The \texttt{\{filetype\}} is the name of the file type, such as "\texttt{cpp}" or "\texttt{java}".
+The \texttt{\{filetype\}} is the name of the file type, such as ``\texttt{cpp}" or ``\texttt{java}".
 You can see the exact name that Vim detected with this command:
 
 \begin{Verbatim}[samepage=true]
@@ -341,7 +341,7 @@ In this file the output is:
     filetype=help 
 \end{Verbatim}
 
-Thus you would use "\texttt{help}" for \texttt{\{filetype\}}.
+Thus you would use ``\texttt{help}" for \texttt{\{filetype\}}.
 
 For the \texttt{\{directory\}} part you need to use your runtime directory.
 Look at the output of this command:
@@ -357,7 +357,7 @@ Thus if the output looks like this:
     runtimepath=~/.vim,/usr/local/share/vim/vim60/runtime,~/.vim/after 
 \end{Verbatim}
 
-You use "\texttt{~/.vim}" for \texttt{\{directory\}}.
+You use ``\texttt{~/.vim}" for \texttt{\{directory\}}.
 Then the resulting file name is:
 
 \begin{Verbatim}[samepage=true]
@@ -431,8 +431,8 @@ Now you have this:
 To remove the superfluous indent in the last line press CTRL-D.
 This deletes one \texttt{'shiftwidth'} worth of indent, no matter where you are in the line.
 
-When you are in Normal mode, you can use the "\texttt{>>}" and "\texttt{<<}" commands to shift lines.
-"\texttt{>}" and "\texttt{<}" are operators, thus you have the usual three ways to specify the lines you want to indent.
+When you are in Normal mode, you can use the ``\texttt{>>}" and ``\texttt{<<}" commands to shift lines.
+``\texttt{>}" and ``\texttt{<}" are operators, thus you have the usual three ways to specify the lines you want to indent.
 A useful combination is:
 
 \begin{Verbatim}[samepage=true]
@@ -441,14 +441,14 @@ A useful combination is:
 
 This adds one indent to the current block of lines, inside \texttt{\{\}}.
 The \texttt{\{} and \texttt{\}} lines themselves are left unmodified.
-"\texttt{>a\{}" includes them.
-In this example the cursor is on "\texttt{printf}":
+``\texttt{>a\{}" includes them.
+In this example the cursor is on ``\texttt{printf}":
 
 % The minipage solution isn't the most elegant but works well to integrate the verbatim inside the cells
 % cf https://stackoverflow.com/questions/3220121/verbatim-environment-inside-latex-cell
 \begin{center} \begin{tabular}{|c|c|c|}
 				\hline
-				original text & after "\texttt{>i\{}" & after "\texttt{>a\{}" \\ 
+				original text & after ``\texttt{>i\{}" & after ``\texttt{>a\{}" \\ 
 				\begin{minipage}{4cm}
 				\begin{verbatim}
 if (flag)       
@@ -528,7 +528,7 @@ A <BS> will always delete the amount specified with \texttt{'softtabstop'}.
 Then <Tab>s are used as many as possible and spaces to fill the gap.
 
 The following shows what happens pressing <Tab> a few times, and then using <BS>.
-A "\texttt{.}" stands for a space and "\texttt{------->}" for a <Tab>.
+A ``\texttt{.}" stands for a space and ``\texttt{------->}" for a <Tab>.
 
 \begin{center} \begin{tabular}{l l}
 type & result \\ 
@@ -560,7 +560,7 @@ If you are in the indent, pressing CTRL-D will be a lot quicker.
 \subsubsection{Changing tabs in spaces (and back)}
 Setting \texttt{'expandtab'} does not affect any existing tabs.
 In other words, any tabs in the document remain tabs.
-If you want to convert tabs to spaces, use the "\texttt{:retab}" command.
+If you want to convert tabs to spaces, use the ``\texttt{:retab}" command.
 Use these commands:
 
 \begin{Verbatim}[samepage=true]
@@ -584,7 +584,7 @@ To check if these exist, you could use this:
 \end{Verbatim}
 
 It's recommended not to use hard tabs inside a string.
-Replace them with "\texttt{\textbackslash{}t}" to avoid trouble.
+Replace them with ``\texttt{\textbackslash{}t}" to avoid trouble.
 
 The other way around works just as well:
 
@@ -611,8 +611,8 @@ You then ask Vim to format it by positioning the cursor at the start of the comm
  gq]/
 \end{Verbatim}
 
-"\texttt{gq}" is the operator to format text.
-"\texttt{]/}" is the motion that takes you to the end of a comment.
+``\texttt{gq}" is the operator to format text.
+``\texttt{]/}" is the motion that takes you to the end of a comment.
 The result is:
 
 \begin{Verbatim}[samepage=true]
@@ -622,9 +622,9 @@ The result is:
 \end{Verbatim}
 
 Notice that Vim properly handled the beginning of each line.
-An alternative is to select the text that is to be formatted in Visual mode and type "\texttt{gq}".
+An alternative is to select the text that is to be formatted in Visual mode and type ``\texttt{gq}".
 
-To add a new line to the comment, position the cursor on the middle line and press "\texttt{o}".
+To add a new line to the comment, position the cursor on the middle line and press ``\texttt{o}".
 The result looks like this:
 
 \begin{Verbatim}[samepage=true]
@@ -651,7 +651,7 @@ For this to work some flags must be present in \texttt{'formatoptions'}:
 
 \begin{center} \begin{tabular}{c l}
 \texttt{r} & insert the star when typing <Enter> in Insert mode \\
-\texttt{o} & insert the star when using "\texttt{o}" or "\texttt{O}" in Normal mode \\
+\texttt{o} & insert the star when using ``\texttt{o}" or ``\texttt{O}" in Normal mode \\
 \texttt{c} & break comment text according to \texttt{'textwidth'} \\
 \end{tabular} \end{center}
 
@@ -681,17 +681,17 @@ The \texttt{\{flags\}} part can be empty, as in this case.
 Several of these items can be concatenated, separated by commas.
 This allows recognizing different types of comments at the same time.
 For example, let's edit an e-mail message.
-When replying, the text that others wrote is preceded with "\texttt{>}" and "\texttt{!}" characters.
+When replying, the text that others wrote is preceded with ``\texttt{>}" and ``\texttt{!}" characters.
 This command would work:
 
 \begin{Verbatim}[samepage=true]
  :set comments=n:>,n:!
 \end{Verbatim}
 
-There are two items, one for comments starting with "\texttt{>}" and one for comments that start with "\texttt{!}".
-Both use the flag "\texttt{n}".
+There are two items, one for comments starting with ``\texttt{>}" and one for comments that start with ``\texttt{!}".
+Both use the flag ``\texttt{n}".
 This means that these comments nest.
-Thus a line starting with "\texttt{>}" may have another comment after the "\texttt{>}".
+Thus a line starting with ``\texttt{>}" may have another comment after the ``\texttt{>}".
 This allows formatting a message like this:
 
 \begin{Verbatim}[samepage=true]
@@ -703,7 +703,7 @@ This allows formatting a message like this:
     site? 
 \end{Verbatim}
 
-Try setting \texttt{'textwidth'} to a different value, e.g., 80, and format the text by Visually selecting it and typing "\texttt{gq}".
+Try setting \texttt{'textwidth'} to a different value, e.g., 80, and format the text by Visually selecting it and typing ``\texttt{gq}".
 The result is:
 
 \begin{Verbatim}[samepage=true]
@@ -713,28 +713,28 @@ The result is:
 \end{Verbatim}
 
 You will notice that Vim did not move text from one type of comment to another.
-The "\texttt{I}" in the second line would have fit at the end of the first line, but since that line starts with "\texttt{> !}" and the second line with "\texttt{>}", Vim knows that this is a different kind of comment.
+The ``\texttt{I}" in the second line would have fit at the end of the first line, but since that line starts with ``\texttt{> !}" and the second line with ``\texttt{>}", Vim knows that this is a different kind of comment.
 
 \subsubsection{A three part comment}
-A C comment starts with "\texttt{/*}", has "\texttt{*}" in the middle and "\texttt{*/}" at the end.
+A C comment starts with ``\texttt{/*}", has ``\texttt{*}" in the middle and ``\texttt{*/}" at the end.
 The entry in \texttt{'comments'} for this looks like this:
 
 \begin{Verbatim}[samepage=true]
  :set comments=s1:/*,mb:*,ex:*/
 \end{Verbatim}
 
-The start is defined with "\texttt{s1:/*}".
-The "\texttt{s}" indicates the start of a three-piece comment.
-The colon separates the flags from the text by which the comment is recognized: "\texttt{/*}".
-There is one flag: "\texttt{1}".
+The start is defined with ``\texttt{s1:/*}".
+The ``\texttt{s}" indicates the start of a three-piece comment.
+The colon separates the flags from the text by which the comment is recognized: ``\texttt{/*}".
+There is one flag: ``\texttt{1}".
 This tells Vim that the middle part has an offset of one space.
 
-The middle part "\texttt{mb:*}" starts with "\texttt{m}", which indicates it is a middle part.
-The "\texttt{b}" flag means that a blank must follow the text.
-Otherwise Vim would consider text like "\texttt{*pointer}" also to be the middle of a comment.
+The middle part ``\texttt{mb:*}" starts with ``\texttt{m}", which indicates it is a middle part.
+The ``\texttt{b}" flag means that a blank must follow the text.
+Otherwise Vim would consider text like ``\texttt{*pointer}" also to be the middle of a comment.
 
-The end part "\texttt{ex:*/}" has the "\texttt{e}" for identification.
-The "\texttt{x}" flag has a special meaning.
+The end part ``\texttt{ex:*/}" has the ``\texttt{e}" for identification.
+The ``\texttt{x}" flag has a special meaning.
 It means that after Vim automatically inserted a star, typing / will remove the extra space.
 
 For more details see |\texttt{:h format-comments}|.

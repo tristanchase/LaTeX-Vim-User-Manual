@@ -19,7 +19,7 @@ Otherwise, one of these commands should do it:
 If this doesn't work you don't have a version of Vim with GUI support.
 You will have to install one first.
 
-Vim will open a window and display "\texttt{file.txt}" in it.
+Vim will open a window and display ``\texttt{file.txt}" in it.
 What the window looks like depends on the version of Vim.
 It should resemble the following picture (for as far as this can be shown in ASCII!).
 
@@ -81,7 +81,7 @@ This contains icons for the most often used actions.
 Hopefully the icons are self-explanatory.
 There are tooltips to get an extra hint (move the mouse pointer to the icon without clicking and don't move it for a second).
 
-The "Edit/Global Settings/Toggle Toolbar" menu item can be used to make the toolbar disappear.
+The ``Edit/Global Settings/Toggle Toolbar" menu item can be used to make the toolbar disappear.
 If you never want a toolbar, use this command in your vimrc file:
 
  \begin{Verbatim}[samepage=true]
@@ -170,7 +170,7 @@ In section |\hyperref[Using the clipboard]{\texttt{Using the clipboard}}| the ba
 There is one essential thing to explain about X-windows: There are actually two places to exchange text between programs.
 MS-Windows doesn't have this.
 
-In X-Windows there is the "current selection".
+In X-Windows there is the ``current selection".
 This is the text that is currently highlighted.
 In Vim this is the Visual area (this assumes you are using the default option settings).
 You can paste this selection in another application without any further action.
@@ -181,7 +181,7 @@ Now start another gVim, without a file name argument, so that it displays an emp
 Click the middle mouse button.
 The selected text will be inserted.
 
-The "current selection" will only remain valid until some other text is selected.
+The ``current selection" will only remain valid until some other text is selected.
 After doing the paste in the other gVim, now select some characters in that window.
 You will notice that the words that were previously selected in the other gVim window are displayed differently.
 This means that it no longer is the current selection.
@@ -189,8 +189,8 @@ This means that it no longer is the current selection.
 You don't need to select text with the mouse, using the keyboard commands for Visual mode works just as well.
 \subsubsection{The real clipboard}
 Now for the other place with which text can be exchanged.
-We call this the "real clipboard", to avoid confusion.
-Often both the "current selection" and the "real clipboard" are called clipboard, you'll have to get used to that.
+We call this the ``real clipboard", to avoid confusion.
+Often both the ``current selection" and the ``real clipboard" are called clipboard, you'll have to get used to that.
 
 To put text on the real clipboard, select a few different words in one of the gVims you have running.
 Then use the Edit/Copy menu entry.
@@ -200,7 +200,7 @@ You can't see this, unless you have some application that shows the clipboard co
 Now select the other gVim, position the cursor somewhere and use the Edit/Paste menu.
 You will see the text from the real clipboard is inserted.
 \subsubsection{Using both}
-This use of both the "current selection" and the "real clipboard" might sound a bit confusing.
+This use of both the ``current selection" and the ``real clipboard" might sound a bit confusing.
 But it is very useful.
 Let's show this with an example.
 Use one gVim with a text file and perform these actions:
@@ -215,14 +215,14 @@ Use one gVim with a text file and perform these actions:
 								You will see that the word you just overwrote with the clipboard is inserted here.
 \end{itemize}
 
-If you use the "current selection" and the "real clipboard" with care, you can do a lot of useful editing with them.
+If you use the ``current selection" and the ``real clipboard" with care, you can do a lot of useful editing with them.
 \subsubsection{Using the keyboard}
 
 If you don't like using the mouse, you can access the current selection and the real clipboard with two registers.
 The \texttt{"*} register is for the current selection.
 
 To make text become the current selection, use Visual mode.
-For example, to select a whole line just press "\texttt{V}".
+For example, to select a whole line just press ``\texttt{V}".
 
 To insert the current selection before the cursor:
 
@@ -230,8 +230,8 @@ To insert the current selection before the cursor:
  "*P
  \end{Verbatim}
 
-Notice the uppercase "\texttt{P}".
-The lowercase "\texttt{p}" puts the text after the cursor.
+Notice the uppercase ``\texttt{P}".
+The lowercase ``\texttt{p}" puts the text after the cursor.
 
 The \texttt{"+} register is used for the real clipboard.
 For example, to copy the text from the cursor position until the end of the line to the clipboard:
@@ -240,7 +240,7 @@ For example, to copy the text from the cursor position until the end of the line
  "+y$
  \end{Verbatim}
 
-Remember, "\texttt{y}" is yank, which is Vim's copy command.
+Remember, ``\texttt{y}" is yank, which is Vim's copy command.
 
 To insert the contents of the real clipboard before the cursor:
 
@@ -269,7 +269,7 @@ Now press a letter.
 The selected text is deleted, and the single letter replaces it.
 You are in Insert mode now, thus you can continue typing.
 
-Since typing normal text causes the selected text to be deleted, you can not use the normal movement commands "hjkl", "w", etc.
+Since typing normal text causes the selected text to be deleted, you can not use the normal movement commands ``hjkl", ``w", etc.
 Instead, use the shifted function keys.
 <S-Left> (shifted cursor left key) moves the cursor left.
 The selected text is changed like in Visual mode.
