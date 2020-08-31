@@ -77,15 +77,15 @@ The ``\texttt{e}" flag tells ``\texttt{:substitute}" that not finding a match is
 You have a list of names in this form:
 
 \begin{Verbatim}[samepage=true]
-    Doe, John 
-    Smith, Peter 
+    Doe, John
+    Smith, Peter
 \end{Verbatim}
 
 You want to change that to:
 
 \begin{Verbatim}[samepage=true]
-    John Doe 
-    Peter Smith 
+    John Doe
+    Peter Smith
 \end{Verbatim}
 
 This can be done with just one command:
@@ -104,7 +104,7 @@ The slashes separate the ``from" pattern and the ``to" string.
 This is what the ``from" pattern contains:
 
 \begin{Verbatim}[samepage=true]
-	\([^,]*\), \(.*\) 
+	\([^,]*\), \(.*\)
 \end{Verbatim}
 
 \begin{center}
@@ -134,15 +134,15 @@ In a Makefile you often have a list of files.
 For example:
 
 \begin{Verbatim}[samepage=true]
-    OBJS = \ 
-        version.o \ 
-        pch.o \ 
-        getopt.o \ 
-        util.o \ 
-        getopt1.o \ 
-        inp.o \ 
-        patch.o \ 
-        backup.o 
+    OBJS = \
+        version.o \
+        pch.o \
+        getopt.o \
+        util.o \
+        getopt1.o \
+        inp.o \
+        patch.o \
+        backup.o
 \end{Verbatim}
 
 To sort this list, filter the text through the external sort command:
@@ -161,15 +161,15 @@ That's easier to type, but more work when there are many lines.
 The result is this:
 
 \begin{Verbatim}[samepage=true]
-    OBJS = \ 
-        backup.o 
-        getopt.o \ 
-        getopt1.o \ 
-        inp.o \ 
-        patch.o \ 
-        pch.o \ 
-        util.o \ 
-        version.o \ 
+    OBJS = \
+        backup.o
+        getopt.o \
+        getopt1.o \
+        inp.o \
+        patch.o \
+        pch.o \
+        util.o \
+        version.o \
 \end{Verbatim}
 
 Notice that a backslash at the end of each line is used to indicate the line continues.
@@ -221,7 +221,7 @@ Do not type a space after the g, this is just used here to make the command easy
 The output looks like this:
 
 \begin{Verbatim}[samepage=true]
-    Col 1 of 0; Line 141 of 157; Word 748 of 774; Byte 4489 of 4976 
+    Col 1 of 0; Line 141 of 157; Word 748 of 774; Byte 4489 of 4976
 \end{Verbatim}
 
 You can see on which word you are (748), and the total number of words in the file (774).
@@ -233,7 +233,7 @@ Then type \texttt{g CTRL-G}.
 The result:
 
 \begin{Verbatim}[samepage=true]
-    Selected 5 of 293 Lines; 70 of 1884 Words; 359 of 10928 Bytes 
+    Selected 5 of 293 Lines; 70 of 1884 Words; 359 of 10928 Bytes
 \end{Verbatim}
 
 For other ways to count words, lines and other items, see |\texttt{:h count-items}|.
@@ -291,7 +291,7 @@ For example, you want to know the return value of ``\texttt{strstr()}" while edi
 this line:
 
 \begin{Verbatim}[samepage=true]
-    if ( strstr (input, "aap") == ) 
+    if ( strstr (input, "aap") == )
 \end{Verbatim}
 
 Move the cursor to somewhere on ``\texttt{strstr}" and type ``\texttt{\textbackslash{}K}".
@@ -318,7 +318,7 @@ But not always!  Therefore, you can best do this manually.
 Use this search command:
 
 \begin{Verbatim}[samepage=true]
- /   
+ /
 \end{Verbatim}
 
 You cannot see it, but there is a space before a tab in this command.

@@ -16,9 +16,9 @@ The <Del> key does the same for the character under (after) the cursor.
 
 When you typed a whole word wrong, use CTRL-W:
 
-    The horse had fallen to the sky 
+    The horse had fallen to the sky
                                    CTRL-W
-    The horse had fallen to the 
+    The horse had fallen to the
 \end{Verbatim}
 
 If you really messed up a line and want to start over, use CTRL-U to delete it.
@@ -27,16 +27,16 @@ Only the text from the first non-blank to the cursor is deleted.
 With the cursor on the ``\texttt{f}" of ``\texttt{fallen}" in the next line pressing CTRL-U does this:
 
 \begin{Verbatim}[samepage=true]
-    The horse had fallen to the 
+    The horse had fallen to the
                   CTRL-U
-    fallen to the 
+    fallen to the
 \end{Verbatim}
 
 When you spot a mistake a few words back, you need to move the cursor there to correct it.
 For example, you typed this:
 
 \begin{Verbatim}[samepage=true]
-    The horse had follen to the ground 
+    The horse had follen to the ground
 \end{Verbatim}
 
 You need to change ``\texttt{follen}" to ``\texttt{fallen}".
@@ -113,13 +113,13 @@ You type the first part of a word, press CTRL-P, and Vim guesses the rest.
 Suppose, for example, that you are creating a C program and want to type in the following:
 
 \begin{Verbatim}[samepage=true]
-    total = ch_array[0] + ch_array[1] + ch_array[2]; 
+    total = ch_array[0] + ch_array[1] + ch_array[2];
 \end{Verbatim}
 
 You start by entering the following:
 
 \begin{Verbatim}[samepage=true]
-    total = ch_array[0] + ch_ 
+    total = ch_array[0] + ch_
 \end{Verbatim}
 
 At this point, you tell Vim to complete the word using the command CTRL-P.
@@ -128,13 +128,13 @@ In this case, it is ``\texttt{ch\_}", which matches with the word \texttt{ch\_ar
 So typing CTRL-P gives you the following:
 
 \begin{Verbatim}[samepage=true]
-    total = ch_array[0] + ch_array 
+    total = ch_array[0] + ch_array
 \end{Verbatim}
 
 After a little more typing, you get this (ending in a space):
 
 \begin{Verbatim}[samepage=true]
-    total = ch_array[0] + ch_array[1] +  
+    total = ch_array[0] + ch_array[1] +
 \end{Verbatim}
 
 If you now type CTRL-P Vim will search again for a word that completes the word before the cursor.
@@ -196,7 +196,7 @@ Suppose, for example, that you have the following files in the current directory
 Now enter Insert mode and start typing:
 
 \begin{Verbatim}[samepage=true]
-    The exit code is in the file sub 
+    The exit code is in the file sub
 \end{Verbatim}
 
 At this point, you enter the command CTRL-X CTRL-F.
@@ -208,7 +208,7 @@ Typing CTRL-N again takes you to \texttt{sub\_exit.c}.
 The results:
 
 \begin{Verbatim}[samepage=true]
-    The exit code is in the file sub_exit.c 
+    The exit code is in the file sub_exit.c
 \end{Verbatim}
 
 If the file name starts with \texttt{/} (Unix) or \texttt{C:\textbackslash{}} (MS-Windows) you can find all files in the file system.
@@ -216,14 +216,14 @@ For example, type ``\texttt{/u}" and CTRL-X CTRL-F.
 This will match ``\texttt{/usr}" (this is on Unix):
 
 \begin{Verbatim}[samepage=true]
-    the file is found in /usr/ 
+    the file is found in /usr/
 \end{Verbatim}
 
 If you now press CTRL-N you go back to ``\texttt{/u}".
 Instead, to accept the ``\texttt{/usr/}" and go one directory level deeper, use CTRL-X CTRL-F again:
 
 \begin{Verbatim}[samepage=true]
-    the file is found in /usr/X11R6/ 
+    the file is found in /usr/X11R6/
 \end{Verbatim}
 
 The results depend on what is found in your file system, of course.
@@ -239,9 +239,9 @@ Obviously the O stands for Omni here, so that you can remember it easier.
 Let's use an example for editing C source:
 
 \begin{Verbatim}[samepage=true]
-    { 
-        struct foo *p; 
-        p-> 
+    {
+        struct foo *p;
+        p->
 \end{Verbatim}
 
 The cursor is after ``\texttt{p->}".
@@ -256,7 +256,7 @@ Your vimrc file should contain a line like this:
 \begin{Verbatim}[samepage=true]
  filetype plugin on
 \end{Verbatim}
- 
+
 Or:
 
 \begin{Verbatim}[samepage=true]
@@ -274,15 +274,15 @@ If you press CTRL-A, the editor inserts the text you typed the last time you wer
 Assume, for example, that you have a file that begins with the following:
 
 \begin{Verbatim}[samepage=true]
-    "file.h" 
-    /* Main program begins */ 
+    "file.h"
+    /* Main program begins */
 \end{Verbatim}
 
 You edit this file by inserting ``\texttt{\#include }" at the beginning of the first line:
 
 \begin{Verbatim}[samepage=true]
-    #include "file.h" 
-    /* Main program begins */ 
+    #include "file.h"
+    /* Main program begins */
 \end{Verbatim}
 
 You go down to the beginning of the next line using the commands ``\texttt{j\^{}}".
@@ -296,8 +296,8 @@ So you type:
 The result is as follows:
 
 \begin{Verbatim}[samepage=true]
-    #include "file.h" 
-    #include /* Main program begins */ 
+    #include "file.h"
+    #include /* Main program begins */
 \end{Verbatim}
 
 The ``\texttt{\#include }" was inserted because CTRL-A inserts the text of the previous insert.
@@ -305,9 +305,9 @@ Now you type  ``\texttt{main.h}"<Enter>  to finish the line:
 
 
 \begin{Verbatim}[samepage=true]
-    #include "file.h" 
-    #include "main.h" 
-    /* Main program begins */ 
+    #include "file.h"
+    #include "main.h"
+    /* Main program begins */
 \end{Verbatim}
 
 The CTRL-@ command does a CTRL-A and then exits Insert mode.
@@ -318,29 +318,29 @@ This is useful when you are duplicating a previous line.
 For example, you have this line of C code:
 
 \begin{Verbatim}[samepage=true]
-    b_array[i]->s_next = a_array[i]->s_next; 
+    b_array[i]->s_next = a_array[i]->s_next;
 \end{Verbatim}
 
 Now you need to type the same line, but with ``\texttt{s\_prev}" instead of ``\texttt{s\_next}".
 Start the new line, and press CTRL-Y 14 times, until you are at the ``\texttt{n}" of ``\texttt{next}":
 
 \begin{Verbatim}[samepage=true]
-    b_array[i]->s_next = a_array[i]->s_next; 
-    b_array[i]->s_ 
+    b_array[i]->s_next = a_array[i]->s_next;
+    b_array[i]->s_
 \end{Verbatim}
 
 Now you type ``\texttt{prev}":
 
 \begin{Verbatim}[samepage=true]
-    b_array[i]->s_next = a_array[i]->s_next; 
-    b_array[i]->s_prev 
+    b_array[i]->s_next = a_array[i]->s_next;
+    b_array[i]->s_prev
 \end{Verbatim}
 
 Continue pressing CTRL-Y until the following ``\texttt{next}":
 
 \begin{Verbatim}[samepage=true]
-    b_array[i]->s_next = a_array[i]->s_next; 
-    b_array[i]->s_prev = a_array[i]->s_ 
+    b_array[i]->s_next = a_array[i]->s_next;
+    b_array[i]->s_prev = a_array[i]->s_
 \end{Verbatim}
 
 Now type ``\texttt{prev;}" to finish it off.
@@ -352,7 +352,7 @@ This is useful to avoid having to type a long word.
 For example, you need to type this:
 
 \begin{Verbatim}[samepage=true]
-    r = VeryLongFunction(a) + VeryLongFunction(b) + VeryLongFunction(c) 
+    r = VeryLongFunction(a) + VeryLongFunction(b) + VeryLongFunction(c)
 \end{Verbatim}
 
 The function name is defined in a different file.
@@ -366,13 +366,13 @@ Edit that file and move the cursor on top of the function name there, and yank i
 Now edit the file where the new line is to be inserted, and type the first letters:
 
 \begin{Verbatim}[samepage=true]
-    r = 
+    r =
 \end{Verbatim}
 
 Now use CTRL-R v to insert the function name:
 
 \begin{Verbatim}[samepage=true]
-    r = VeryLongFunction 
+    r = VeryLongFunction
 \end{Verbatim}
 
 You continue to type the characters in between the function name, and use CTRL-R v two times more.
@@ -587,9 +587,9 @@ Here are three lines of it:
 \begin{Verbatim}[samepage=true]
   AC ~_ 159  NS |  160  !I ¡  161  Ct ¢  162  Pd £  163  Cu ¤  164  Ye ¥  165
   BB ¦  166  SE §  167  ': ¨  168  Co ©  169  -a ª  170  << «  171  NO ¬  172
-  --    173  Rg ®  174  'm ¯  175  DG °  176  +- ±  177  2S ²  178  3S ³  179 
+  --    173  Rg ®  174  'm ¯  175  DG °  176  +- ±  177  2S ²  178  3S ³  179
 \end{Verbatim}
- 
+
 This shows, for example, that the digraph you get by typing CTRL-K Pd is the character (£).
 This is character number 163 (decimal).
 

@@ -33,7 +33,7 @@ Thus editing a Unix file on Unix won't result in a remark.
 But when you edit a dos file, Vim will notify you of this:
 
 \begin{Verbatim}[samepage=true]
-    "/tmp/test" [dos] 3L, 71C 
+    "/tmp/test" [dos] 3L, 71C
 \end{Verbatim}
 
 For a Mac file you would see ``\texttt{[mac]}".
@@ -103,8 +103,8 @@ Someone sends you an e-mail message, which refers to a file by its URL.
 For example:
 
 \begin{Verbatim}[samepage=true]
-    You can find the information here: 
-        ftp://ftp.vim.org/pub/vim/README 
+    You can find the information here:
+        ftp://ftp.vim.org/pub/vim/README
 \end{Verbatim}
 
 You could start a program to download the file, save it on your local disk and then start Vim to edit it.
@@ -159,7 +159,7 @@ Example:
 Vim prompts you for a key used for encrypting and decrypting the file:
 
 \begin{Verbatim}[samepage=true]
-    Enter encryption key: 
+    Enter encryption key:
 \end{Verbatim}
 
 Carefully type the secret key now.
@@ -167,7 +167,7 @@ You cannot see the characters you type, they will be replaced by stars.
 To avoid the situation that a typing mistake will cause trouble, Vim asks you to enter the key again:
 
 \begin{Verbatim}[samepage=true]
-    Enter same key again: 
+    Enter same key again:
 \end{Verbatim}
 
 You can now edit this file normally and put in all your secrets.
@@ -261,7 +261,7 @@ Otherwise, the ``\texttt{ga}" command can be used to see the value of the charac
 The output, when the cursor is on an <Esc>, looks like this:
 
 \begin{Verbatim}[samepage=true]
-    <^[>  27,  Hex 1b,  Octal 033 
+    <^[>  27,  Hex 1b,  Octal 033
 \end{Verbatim}
 
 There might not be many line breaks in the file.
@@ -281,7 +281,7 @@ To see on which byte you are in the file use this command:
 The output is verbose:
 
 \begin{Verbatim}[samepage=true]
-    Col 9-16 of 9-16; Line 277 of 330; Word 1806 of 2058; Byte 10580 of 12206 
+    Col 9-16 of 9-16; Line 277 of 330; Word 1806 of 2058; Byte 10580 of 12206
 \end{Verbatim}
 
 The last two numbers are the byte position in the file and the total number of bytes.
@@ -313,9 +313,9 @@ Now convert the file to a hex dump with xxd:
 The text will look like this:
 
 \begin{Verbatim}[samepage=true]
-    0000000: 1f8b 0808 39d7 173b 0203 7474 002b 4e49  ....9..;..tt.+NI 
-    0000010: 4b2c 8660 eb9c ecac c462 eb94 345e 2e30  K,.`.....b..4^.0 
-    0000020: 373b 2731 0b22 0ca6 c1a2 d669 1035 39d9  7;'1.".....i.59. 
+    0000000: 1f8b 0808 39d7 173b 0203 7474 002b 4e49  ....9..;..tt.+NI
+    0000010: 4b2c 8660 eb9c ecac c462 eb94 345e 2e30  K,.`.....b..4^.0
+    0000020: 373b 2731 0b22 0ca6 c1a2 d669 1035 39d9  7;'1.".....i.59.
 \end{Verbatim}
 
 You can now view and edit the text as you like.

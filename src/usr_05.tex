@@ -26,14 +26,14 @@ Also, the "\texttt{:version}" command mentions the name of the "user vimrc file"
 For Unix and Macintosh this file is always used and is recommended:
 
 \begin{Verbatim}[samepage=true]
-    ~/.vimrc 
+    ~/.vimrc
 \end{Verbatim}
 
 For MS-DOS and MS-Windows you can use one of these:
 
 \begin{Verbatim}[samepage=true]
-    $HOME/_vimrc 
-    $VIM/_vimrc 
+    $HOME/_vimrc
+    $VIM/_vimrc
 \end{Verbatim}
 
 The vimrc file can contain all the commands that you type after a colon.
@@ -57,7 +57,7 @@ In the first chapter was explained how the example vimrc (included in the Vim di
 The file can be found here:
 
 \begin{Verbatim}[samepage=true]
-    $VIMRUNTIME/vimrc_example.vim 
+    $VIMRUNTIME/vimrc_example.vim
 \end{Verbatim}
 
 In this section we will explain the various commands used in this file.
@@ -235,7 +235,7 @@ The command is as follows:
  \begin{Verbatim}[samepage=true]
  :map <F5> i{<Esc>ea}<Esc>
  \end{Verbatim}
- 
+
 Note: When entering this command, you must enter <F5> by typing four characters.
 Similarly, <Esc> is not entered by pressing the <Esc> key, but by typing five characters.
 Watch out for this difference when reading the manual!
@@ -502,7 +502,7 @@ You can see an entry for the local help file when you do:
 
 The title lines from the local help files are automagically added to this section.
 There you can see which local help files have been added and jump to them through the tag.
- 
+
 For writing a local help file, see \hyperref[write-local-help]{|\texttt{write-local-help}|}.
 
 \subsection{The option window}
@@ -524,13 +524,13 @@ For example, move to the "displaying text" subject.
 Then move the cursor down to this line:
 
 \begin{Verbatim}[samepage=true]
-    set wrap    nowrap 
+    set wrap    nowrap
 \end{Verbatim}
 
 When you hit <Enter>, the line will change to:
 
 \begin{Verbatim}[samepage=true]
-    set nowrap  wrap 
+    set nowrap  wrap
 \end{Verbatim}
 
 The option has now been switched off.
@@ -542,9 +542,9 @@ Now hit <Enter> and you jump to the full help on the `wrap' option.
 For options that take a number or string argument you can edit the value.
 Then press <Enter> to apply the new value.
 For example, move the cursor a few lines up to this line:
- 
+
 \begin{Verbatim}[samepage=true]
-    set so=0 
+    set so=0
 \end{Verbatim}
 
 Position the cursor on the zero with "\texttt{\$}".
@@ -646,7 +646,7 @@ The `iskeyword' option specifies which characters can appear in a word:
 
 \begin{Verbatim}[samepage=true]
  :set iskeyword
-      iskeyword=@,48-57,_,192-255 
+      iskeyword=@,48-57,_,192-255
 \end{Verbatim}
 
 The "\texttt{@}" stands for all alphabetic letters.
@@ -658,7 +658,7 @@ You can do it like this:
 \begin{Verbatim}[samepage=true]
  :set iskeyword+=-
  :set iskeyword
-      iskeyword=@,48-57,_,192-255,- 
+      iskeyword=@,48-57,_,192-255,-
 \end{Verbatim}
 
 If you look at the new value, you will see that Vim has added a comma for you.
@@ -668,7 +668,7 @@ For example, to remove the underscore:
 \begin{Verbatim}[samepage=true]
  :set iskeyword-=_
  :set iskeyword
-      iskeyword=@,48-57,192-255,- 
+      iskeyword=@,48-57,192-255,-
 \end{Verbatim}
 
 This time a comma is automatically deleted.

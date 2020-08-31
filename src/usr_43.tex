@@ -6,14 +6,14 @@ This chapter explains how to do it automatically.
 \etocsetnexttocdepth{2} % This produces the same result TMC
 \etocsettocstyle{\subsection*{Contents}}{}
 \localtableofcontents
-\subsection{Plugins for a filetype}            
+\subsection{Plugins for a filetype}
 \label{filetype-plugin}
 How to start using filetype plugins has already been discussed here: \hyperref[add-filetype-plugin]{|\texttt{add-filetype-plugin}|}.
 But you probably are not satisfied with the default settings, because they have been kept minimal.
 Suppose that for C files you want to set the \texttt{'softtabstop'} option to 4 and define a mapping to insert a three-line comment.
 You do this with only two steps:
 
-\phantomsection                            
+\phantomsection
 \label{your-runtime-dir}
 \begin{enumerate}
 				\item Create your own runtime directory.
@@ -140,7 +140,7 @@ If your file cannot be recognized by its file name, you might be able to recogni
 For example, many script files start with a line like:
 
 \begin{Verbatim}[samepage=true]
-    #!/bin/xyz 
+    #!/bin/xyz
 \end{Verbatim}
 
 To recognize this script create a file ``\texttt{scripts.vim}" in your runtime directory (same place where filetype.vim goes).

@@ -68,7 +68,7 @@ You don't need to be a programmer.
 You must know both English and the language you are translating to, of course.
 
 When you are satisfied with the translation, consider making it available to others.
-Upload it at vim-online \url{http://vim.sf.net} or e-mail it to the Vim maintainer <maintainer@vim.org>. Or both. 
+Upload it at vim-online \url{http://vim.sf.net} or e-mail it to the Vim maintainer <maintainer@vim.org>. Or both.
 \subsection{Language for Menus}
 The default menus are in English.
 To be able to use your local language, they must be translated.
@@ -111,7 +111,7 @@ You will need to redefine them as well.
 To see which menu translations are available, look in this directory:
 
 \begin{Verbatim}[samepage=true]
-    $VIMRUNTIME/lang 
+    $VIMRUNTIME/lang
 \end{Verbatim}
 
 The files are called \texttt{menu\_{language}.vim}.
@@ -229,7 +229,7 @@ That's all.
 \subsubsection{Using unicode in an ordinary terminal}
 Suppose you want to work with Unicode files, but don't have a terminal with Unicode support.
 You can do this with Vim, although characters that are not supported by the terminal will not be displayed.
-The layout of the text will be preserved. 
+The layout of the text will be preserved.
 
 \begin{Verbatim}[samepage=true]
  :let &termencoding = &encoding
@@ -319,7 +319,7 @@ Example:
 \begin{Verbatim}[samepage=true]
  :write ++enc=utf-8 russian.txt
 \end{Verbatim}
- 
+
 \emph{Note}: Conversion may result in lost characters.
 Conversion from an encoding to Unicode and back is mostly free of this problem, unless there are illegal characters.
 Conversion from Unicode to other encodings often loses information when there was more than one language in the file.
@@ -393,11 +393,11 @@ For example, for Unix, you would use the directory ``\texttt{~/.vim/keymap}".
 The name of the keymap file must look like this:
 
 \begin{Verbatim}[samepage=true]
-    keymap/{name}.vim 
+    keymap/{name}.vim
 \end{Verbatim}
 or
 \begin{Verbatim}[samepage=true]
-    keymap/{name}_{encoding}.vim 
+    keymap/{name}_{encoding}.vim
 \end{Verbatim}
 
 \texttt{{name}} is the name of the keymap.
@@ -407,8 +407,8 @@ Optionally, add the encoding used after an underscore.
 Examples:
 
 \begin{Verbatim}[samepage=true]
-    keymap/hebrew.vim 
-    keymap/hebrew_utf-8.vim 
+    keymap/hebrew.vim
+    keymap/hebrew_utf-8.vim
 \end{Verbatim}
 
 The contents of the file should be self-explanatory.

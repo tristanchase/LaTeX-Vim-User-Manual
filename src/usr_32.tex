@@ -44,29 +44,29 @@ And then move to the first `o' and change it into `w'.
 We then have two changes, numbered 1 and 2, and three states of the text:
 
 \begin{Verbatim}[samepage=true]
-        one 
+        one
          |
       change 1
          |
-      one too 
+      one too
          |
       change 2
          |
-      one two 
+      one two
 \end{Verbatim}
 
 If we now undo one change, back to ``one too", and change ``one" to ``me" we create a branch in the undo tree:
 
 \begin{Verbatim}[samepage=true]
-            one 
+            one
              |
           change 1
              |
-          one too 
+          one too
           /     \
      change 2  change 3
         |        |
-     one two    me too 
+     one two    me too
 \end{Verbatim}
 
 You can now use the |\texttt{:h u}| command to undo.
@@ -95,19 +95,19 @@ You can use the |\texttt{:h :undo}| command to jump to below any change in the t
 Now make another change: change ``one" to ``not":
 
 \begin{Verbatim}[samepage=true]
-            one 
+            one
              |
           change 1
              |
-          one too 
+          one too
           /     \
      change 2  change 3
         |        |
-     one two    me too 
+     one two    me too
         |
      change 4
         |
-     not two 
+     not two
 \end{Verbatim}
 
 Now you change your mind and want to go back to ``me too".
@@ -118,20 +118,20 @@ Thus it doesn't walk the tree upwards or downwards, but goes to the change made 
 You can repeat |\texttt{:h g-}| and you will see the text change:
 
 \begin{Verbatim}[samepage=true]
-    me too 
-    one two 
-    one too 
-    one 
+    me too
+    one two
+    one too
+    one
 \end{Verbatim}
 
 Use |\texttt{:h g+}| to move forward in time:
 
 \begin{Verbatim}[samepage=true]
-    one 
-    one too 
-    one two 
-    me too 
-    not two 
+    one
+    one too
+    one two
+    me too
+    not two
 \end{Verbatim}
 
 Using |\texttt{:h :undo}| is useful if you know what change you want to jump to.
@@ -146,7 +146,7 @@ To see what branches there are in the undo tree use this command:
 
 \begin{Verbatim}[samepage=true]
  :undolist
-    number changes  time 
+    number changes  time
          3       2  16 seconds ago
          4       3  5 seconds ago
 \end{Verbatim}

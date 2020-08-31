@@ -23,18 +23,18 @@ Take a look at an example ``\texttt{:make}" session.
 (Typical :make sessions generate far more errors and fewer stupid ones.)  After typing ``\texttt{:make}" the screen looks like this:
 
 \begin{Verbatim}[samepage=true]
-    :!make | &tee /tmp/vim215953.err 
-    gcc -g -Wall -o prog main.c sub.c 
-    main.c: In function 'main': 
-    main.c:6: too many arguments to function 'do_sub' 
-    main.c: At top level: 
-    main.c:10: parse error before '}' 
-    make: *** [prog] Error 1 
+    :!make | &tee /tmp/vim215953.err
+    gcc -g -Wall -o prog main.c sub.c
+    main.c: In function 'main':
+    main.c:6: too many arguments to function 'do_sub'
+    main.c: At top level:
+    main.c:10: parse error before '}'
+    make: *** [prog] Error 1
 
-    2 returned 
-    "main.c" 11L, 111C 
-    (3 of 6): too many arguments to function 'do_sub' 
-    Press ENTER or type command to continue 
+    2 returned
+    "main.c" 11L, 111C
+    (3 of 6): too many arguments to function 'do_sub'
+    Press ENTER or type command to continue
 \end{Verbatim}
 
 From this you can see that you have errors in the file ``\texttt{main.c}".
@@ -76,8 +76,8 @@ The output looks like this:
 
 \begin{Verbatim}[samepage=true]
  :clist
-    3 main.c: 6:too many arguments to function 'do_sub' 
-    5 main.c: 10:parse error before '}' 
+    3 main.c: 6:too many arguments to function 'do_sub'
+    5 main.c: 10:parse error before '}'
 \end{Verbatim}
 
 Only the lines where Vim recognized a file name and line number are listed here.
@@ -88,12 +88,12 @@ To see all the messages add a ``\texttt{!}" to the command:
 
 \begin{Verbatim}[samepage=true]
  :clist!
-    1 gcc -g -Wall -o prog main.c sub.c 
-    2 main.c: In function 'main': 
-    3 main.c:6: too many arguments to function 'do_sub' 
-    4 main.c: At top level: 
-    5 main.c:10: parse error before '}' 
-    6 make: *** [prog] Error 1 
+    1 gcc -g -Wall -o prog main.c sub.c
+    2 main.c: In function 'main':
+    3 main.c:6: too many arguments to function 'do_sub'
+    4 main.c: At top level:
+    5 main.c:10: parse error before '}'
+    6 make: *** [prog] Error 1
 \end{Verbatim}
 
 Vim will highlight the current error.
@@ -279,11 +279,11 @@ You can add various items where you want something different.
 For example, to make curly braces be placed like this:
 
 \begin{Verbatim}[samepage=true]
-    if (flag) 
-      { 
-        i = 8; 
-        j = 0; 
-      } 
+    if (flag)
+      {
+        i = 8;
+        j = 0;
+      }
 \end{Verbatim}
 
 Use this command:
@@ -338,7 +338,7 @@ You can see the exact name that Vim detected with this command:
 In this file the output is:
 
 \begin{Verbatim}[samepage=true]
-    filetype=help 
+    filetype=help
 \end{Verbatim}
 
 Thus you would use ``\texttt{help}" for \texttt{\{filetype\}}.
@@ -354,14 +354,14 @@ Now use the first item, the name before the first comma.
 Thus if the output looks like this:
 
 \begin{Verbatim}[samepage=true]
-    runtimepath=~/.vim,/usr/local/share/vim/vim60/runtime,~/.vim/after 
+    runtimepath=~/.vim,/usr/local/share/vim/vim60/runtime,~/.vim/after
 \end{Verbatim}
 
 You use ``\texttt{~/.vim}" for \texttt{\{directory\}}.
 Then the resulting file name is:
 
 \begin{Verbatim}[samepage=true]
-    ~/.vim/indent/help.vim 
+    ~/.vim/indent/help.vim
 \end{Verbatim}
 
 Instead of switching the indenting off, you could write your own indent file.
@@ -386,10 +386,10 @@ A quick way to do this is using the CTRL-D and CTRL-T commands in Insert mode.
 For example, you are typing a shell script that is supposed to look like this:
 
 \begin{Verbatim}[samepage=true]
-    if test -n a; then 
-       echo a 
-       echo "-------" 
-    fi 
+    if test -n a; then
+       echo a
+       echo "-------"
+    fi
 \end{Verbatim}
 
 Start off by setting these options:
@@ -401,8 +401,8 @@ Start off by setting these options:
 You start by typing the first line, <Enter> and the start of the second line:
 
 \begin{Verbatim}[samepage=true]
-    if test -n a; then 
-    echo 
+    if test -n a; then
+    echo
 \end{Verbatim}
 
 Now you see that you need an extra indent.
@@ -410,8 +410,8 @@ Type CTRL-T.
 The result:
 
 \begin{Verbatim}[samepage=true]
-    if test -n a; then 
-         echo 
+    if test -n a; then
+         echo
 \end{Verbatim}
 
 The CTRL-T command, in Insert mode, adds one \texttt{'shiftwidth'} to the indent, no matter where in the line you are.
@@ -422,10 +422,10 @@ Then <Enter> and the last line.
 Now you have this:
 
 \begin{Verbatim}[samepage=true]
-    if test -n a; then 
-         echo a 
-         echo "-------" 
-       fi 
+    if test -n a; then
+         echo a
+         echo "-------"
+       fi
 \end{Verbatim}
 
 To remove the superfluous indent in the last line press CTRL-D.
@@ -448,34 +448,34 @@ In this example the cursor is on ``\texttt{printf}":
 % cf https://stackoverflow.com/questions/3220121/verbatim-environment-inside-latex-cell
 \begin{center} \begin{tabular}{|c|c|c|}
 				\hline
-				original text & after ``\texttt{>i\{}" & after ``\texttt{>a\{}" \\ 
+				original text & after ``\texttt{>i\{}" & after ``\texttt{>a\{}" \\
 				\begin{minipage}{4cm}
 				\begin{verbatim}
-if (flag)       
-{               
-printf("yes");  
-flag = 0;       
+if (flag)
+{
+printf("yes");
+flag = 0;
 }
-				\end{verbatim}
-				\end{minipage}
-& 
-				\begin{minipage}{4cm}
-				\begin{verbatim}
-if (flag)         
-{                 
-  printf("yes");
-  flag = 0; 
-}                 
 				\end{verbatim}
 				\end{minipage}
 &
 				\begin{minipage}{4cm}
 				\begin{verbatim}
-if (flag) 
-  { 
-  printf("yes"); 
-  flag = 0;  
-  } 
+if (flag)
+{
+  printf("yes");
+  flag = 0;
+}
+				\end{verbatim}
+				\end{minipage}
+&
+				\begin{minipage}{4cm}
+				\begin{verbatim}
+if (flag)
+  {
+  printf("yes");
+  flag = 0;
+  }
 				\end{verbatim}
 				\end{minipage} \\
 				\hline
@@ -531,12 +531,12 @@ The following shows what happens pressing <Tab> a few times, and then using <BS>
 A ``\texttt{.}" stands for a space and ``\texttt{------->}" for a <Tab>.
 
 \begin{center} \begin{tabular}{l l}
-type & result \\ 
+type & result \\
 \texttt{<Tab>} & \texttt{....} \\
 \texttt{<Tab><Tab>} & \texttt{------->} \\
 \texttt{<Tab><Tab><Tab>} & \texttt{------->....} \\
 \texttt{<Tab><Tab><Tab><BS>} & \texttt{------->} \\
-\texttt{<Tab><Tab><Tab><BS><BS>} & \texttt{....} \\		
+\texttt{<Tab><Tab><Tab><BS><BS>} & \texttt{....} \\
 \end{tabular} \end{center}
 
 An alternative is to use the \texttt{'smarttab'} option.
@@ -599,10 +599,10 @@ You can ask Vim to format a comment and it will do the right thing.
 Suppose, for example, that you have the following comment:
 
 \begin{Verbatim}[samepage=true]
-    /* 
-     * This is a test 
-     * of the text formatting. 
-     */ 
+    /*
+     * This is a test
+     * of the text formatting.
+     */
 \end{Verbatim}
 
 You then ask Vim to format it by positioning the cursor at the start of the comment and type:
@@ -616,9 +616,9 @@ You then ask Vim to format it by positioning the cursor at the start of the comm
 The result is:
 
 \begin{Verbatim}[samepage=true]
-    /* 
-     * This is a test of the text formatting. 
-     */ 
+    /*
+     * This is a test of the text formatting.
+     */
 \end{Verbatim}
 
 Notice that Vim properly handled the beginning of each line.
@@ -628,10 +628,10 @@ To add a new line to the comment, position the cursor on the middle line and pre
 The result looks like this:
 
 \begin{Verbatim}[samepage=true]
-    /* 
-     * This is a test of the text formatting. 
-     * 
-     */ 
+    /*
+     * This is a test of the text formatting.
+     *
+     */
 \end{Verbatim}
 
 Vim has automatically inserted a star and a space for you.
@@ -640,11 +640,11 @@ When it gets longer than \texttt{'textwidth'}, Vim will break the line.
 Again, the star is inserted automatically:
 
 \begin{Verbatim}[samepage=true]
-    /* 
-     * This is a test of the text formatting. 
-     * Typing a lot of text here will make Vim 
-     * break 
-     */ 
+    /*
+     * This is a test of the text formatting.
+     * Typing a lot of text here will make Vim
+     * break
+     */
 \end{Verbatim}
 
 For this to work some flags must be present in \texttt{'formatoptions'}:
@@ -695,21 +695,21 @@ Thus a line starting with ``\texttt{>}" may have another comment after the ``\te
 This allows formatting a message like this:
 
 \begin{Verbatim}[samepage=true]
-    > ! Did you see that site? 
-    > ! It looks really great. 
-    > I don't like it.  The 
-    > colors are terrible. 
-    What is the URL of that 
-    site? 
+    > ! Did you see that site?
+    > ! It looks really great.
+    > I don't like it.  The
+    > colors are terrible.
+    What is the URL of that
+    site?
 \end{Verbatim}
 
 Try setting \texttt{'textwidth'} to a different value, e.g., 80, and format the text by Visually selecting it and typing ``\texttt{gq}".
 The result is:
 
 \begin{Verbatim}[samepage=true]
-    > ! Did you see that site?  It looks really great. 
-    > I don't like it.  The colors are terrible. 
-    What is the URL of that site? 
+    > ! Did you see that site?  It looks really great.
+    > I don't like it.  The colors are terrible.
+    What is the URL of that site?
 \end{Verbatim}
 
 You will notice that Vim did not move text from one type of comment to another.

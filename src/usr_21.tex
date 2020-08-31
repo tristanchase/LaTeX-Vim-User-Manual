@@ -131,7 +131,7 @@ To avoid adding thousands of lines to your viminfo file (which might never get u
 \begin{Verbatim}[samepage=true]
  :set viminfo='1000,f1,<500
 \end{Verbatim}
- 
+
 Other options you might want to use:
 \begin{center} \begin{longtable}{c l}
 				\texttt{@} & number of lines to save from the input line history \\
@@ -177,9 +177,9 @@ You can see a list of files by typing the command:
 
 \begin{Verbatim}[samepage=true]
  :oldfiles
-    1: ~/.viminfo 
-    2: ~/text/resume.txt 
-    3: /tmp/draft 
+    1: ~/.viminfo
+    2: ~/text/resume.txt
+    3: /tmp/draft
 \end{Verbatim}
 
 Now you would like to edit the second file, which is in the list preceded by ``\texttt{2:}".
@@ -201,9 +201,9 @@ Fortunately there is a simpler way:
 
 \begin{Verbatim}[samepage=true]
  :browse oldfiles
-    1: ~/.viminfo 
-    2: ~/text/resume.txt 
-    3: /tmp/draft 
+    1: ~/.viminfo
+    2: ~/text/resume.txt
+    3: /tmp/draft
     -- More --
 \end{Verbatim}
 
@@ -212,7 +212,7 @@ If you want to edit ``\texttt{resume.txt}" first press ``\texttt{q}" to stop the
 You will get a prompt:
 
 \begin{Verbatim}[samepage=true]
-    Type number and <Enter> (empty cancels): 
+    Type number and <Enter> (empty cancels):
 \end{Verbatim}
 
 Type ``\texttt{2}" and press <Enter> to edit the second file.
@@ -481,7 +481,7 @@ This requires setting the \texttt{'shiftwidth'} option to 4.
 This modeline will do that:
 
 \begin{Verbatim}[samepage=true]
-    /* vim:set shiftwidth=4: */ 
+    /* vim:set shiftwidth=4: */
 \end{Verbatim}
 
 Put this line as one of the first or last five lines in the file.
@@ -508,7 +508,7 @@ Do this when you are working as root on Unix or Administrator on MS-Windows, or 
 Use this format for the modeline:
 
 \begin{Verbatim}[samepage=true]
-    any-text vim:set {option}={value} ... : any-text 
+    any-text vim:set {option}={value} ... : any-text
 \end{Verbatim}
 
 The ``\texttt{any-text}" indicates that you can put any text before and after the part that Vim will use.
@@ -524,7 +524,7 @@ It works the same way as typing the ``\texttt{:set}" command, except that you ne
 Another example:
 
 \begin{Verbatim}[samepage=true]
-    // vim:set textwidth=72 dir=c\:\tmp:  use c:\tmp here 
+    // vim:set textwidth=72 dir=c\:\tmp:  use c:\tmp here
 \end{Verbatim}
 
 There is an extra backslash before the first colon, so that it's included in the ``\texttt{:set}" command.

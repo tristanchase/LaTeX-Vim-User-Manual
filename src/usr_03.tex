@@ -16,7 +16,7 @@ For example, ``\texttt{3w}" moves three words.
 This figure shows how it works:
 
 		\begin{Verbatim}[samepage=true]
-    This is a line with example text 
+    This is a line with example text
       --->-->->----------------->
        w  w  w    3w
 		\end{Verbatim}
@@ -26,7 +26,7 @@ Notice that ``\texttt{w}" moves to the start of the next word if it already is a
 The ``\texttt{b}" command moves backward to the start of the previous word:
 
 		\begin{Verbatim}[samepage=true]
-    This is a line with example text 
+    This is a line with example text
     <----<--<-<---------<---
        b   b b    2b      b
 		\end{Verbatim}
@@ -34,7 +34,7 @@ The ``\texttt{b}" command moves backward to the start of the previous word:
 There is also the ``\texttt{e}" command that moves to the next end of a word and ``\texttt{ge}", which moves to the previous end of a word:
 
 		\begin{Verbatim}[samepage=true]
-    This is a line with example text 
+    This is a line with example text
        <-   <--- ----->   ---->
        ge    ge     e       e
 		\end{Verbatim}
@@ -52,7 +52,7 @@ The commands for moving by WORDs are also uppercase, as this figure shows:
 \begin{Verbatim}[samepage=true]
            ge      b          w                             e
            <-     <-         --->                          --->
-    This is-a line, with special/separated/words (and some more). 
+    This is-a line, with special/separated/words (and some more).
        <----- <-----         -------------------->         ----->
          gE      B                     W                     E
 \end{Verbatim}
@@ -72,7 +72,7 @@ In a picture:
 \begin{Verbatim}[samepage=true]
                ^
          <------------
-    .....This is a line with example text 
+    .....This is a line with example text
     <-----------------   --------------->
         0                      $
 \end{Verbatim}
@@ -95,7 +95,7 @@ Suppose you want to go to the h of human.
 Just execute the command ``\texttt{fh}" and the cursor will be positioned over the h:
 
 		\begin{Verbatim}[samepage=true]
-    To err is human.  To really foul up you need a computer. 
+    To err is human.  To really foul up you need a computer.
     ---------->--------------->
         fh       fy
 		\end{Verbatim}
@@ -104,7 +104,7 @@ This also shows that the command ``\texttt{fy}" moves to the end of the word rea
 You can specify a count; therefore, you can go to the ``\texttt{l}" of ``foul" with ``\texttt{3fl}":
 
 		\begin{Verbatim}[samepage=true]
-    To err is human.  To really foul up you need a computer. 
+    To err is human.  To really foul up you need a computer.
           --------------------->
                3fl
 		\end{Verbatim}
@@ -112,7 +112,7 @@ You can specify a count; therefore, you can go to the ``\texttt{l}" of ``foul" w
 The ``\texttt{F}" command searches to the left:
 
 		\begin{Verbatim}[samepage=true]
-    To err is human.  To really foul up you need a computer. 
+    To err is human.  To really foul up you need a computer.
               <---------------------
                     Fh
 		\end{Verbatim}
@@ -122,7 +122,7 @@ Hint: ``\texttt{t}" stands for ``To".
 The backward version of this command is ``\texttt{Tx}".
 
 		\begin{Verbatim}[samepage=true]
-    To err is human.  To really foul up you need a computer. 
+    To err is human.  To really foul up you need a computer.
                <------------  ------------->
                 Th              tn
 		\end{Verbatim}
@@ -148,7 +148,7 @@ If it's on a ``)" it will move to the matching ``(".
 \begin{Verbatim}[samepage=true]
                    %
                  <----->
-        if (a == (b * c) / d) 
+        if (a == (b * c) / d)
            <---------------->
                 %
 \end{Verbatim}
@@ -161,7 +161,7 @@ Thus if the cursor is at the start of the line of the previous example, ``\%" wi
 Then it moves to its match:
 
 \begin{Verbatim}[samepage=true]
-        if (a == (b * c) / d) 
+        if (a == (b * c) / d)
         ---+---------------->
                %
 \end{Verbatim}
@@ -172,7 +172,7 @@ Then it moves to its match:
 If you are a C or C++ programmer, you are familiar with error messages such as the following:
 
 		\begin{Verbatim}[samepage=true]
-    prog.c:33: j   undeclared (first use in this function) 
+    prog.c:33: j   undeclared (first use in this function)
 		\end{Verbatim}
 
 This tells you that you might want to fix something on line 33.
@@ -184,7 +184,7 @@ For example, ``33G" puts you on line 33.
 (For a better way of going through a compiler's error list, see |\hyperref[Installing Vim]{\texttt{Installing Vim}}|, for information on the :make command.) With no argument, ``G" positions you at the end of the file.
 A quick way to go to the start of a file use ``gg".
 ``1G" will do the same, but is a tiny bit more typing.
- 
+
 \begin{Verbatim}[samepage=true]
         |  first line of a file   ^
         |  text text text text    |
@@ -198,7 +198,7 @@ A quick way to go to the start of a file use ``gg".
            last line of a file    V
 \end{Verbatim}
 
-Another way to move to a line is using the ``\texttt{\%}" command with a count. 
+Another way to move to a line is using the ``\texttt{\%}" command with a count.
 For example ``\texttt{50\%}" moves you to halfway the file.
 ``\texttt{90\%}" goes to near the end.
 
@@ -228,7 +228,7 @@ To see where you are in a file, there are three ways:
 				\item  Use the CTRL-G command.
 								You get a message like this (assuming the \texttt{'ruler'} option is off):
 								\begin{Verbatim}[samepage=true]
-	"usr_03.txt" line 233 of 650 --35%-- col 45-52 
+	"usr_03.txt" line 233 of 650 --35%-- col 45-52
 								\end{Verbatim}
 
 								This shows the name of the file you are editing, the line number where the cursor is, the total number of lines, the percentage of the way through the file and the column of the cursor.
@@ -295,7 +295,7 @@ The CTRL-D command moves the viewing window down half a screen in the file, thus
                                     | example        |
                                     +----------------+
 \end{Verbatim}
- 
+
 To scroll one line at a time use CTRL-E (scroll up) and CTRL-Y (scroll down).
 Think of CTRL-E to give you one line Extra.
 (If you use MS-Windows compatible key mappings CTRL-Y will redo a change instead of scroll.)
@@ -546,21 +546,21 @@ Therefore, ``\texttt{was\$}" matches the word was only if it is at the end of a 
 Let's mark the places where ``the" matches in this example line with ``x"s:
 
 		\begin{Verbatim}[samepage=true]
-    the solder holding one of the chips melted and the 
+    the solder holding one of the chips melted and the
     xxx                       xxx                  xxx
 		\end{Verbatim}
 
 Using ``\texttt{/the\$}" we find this match:
 
 		\begin{Verbatim}[samepage=true]
-    the solder holding one of the chips melted and the 
+    the solder holding one of the chips melted and the
                                                    xxx
 		\end{Verbatim}
 
 And with ``\texttt{/\^{}the}" we find this one:
 
 		\begin{Verbatim}[samepage=true]
-    the solder holding one of the chips melted and the 
+    the solder holding one of the chips melted and the
     xxx
 		\end{Verbatim}
 
@@ -574,7 +574,7 @@ For example, the pattern ``\texttt{c.m}" matches a string whose first character 
 Example:
 
 		\begin{Verbatim}[samepage=true]
-    We use a computer that became the cummin winter. 
+    We use a computer that became the cummin winter.
              xxx             xxx      xxx
 		\end{Verbatim}
 
@@ -585,7 +585,7 @@ If you really want to match a dot, you must avoid its special meaning by putting
 If you search for ``\texttt{ter.}", you will find these matches:
 
 		\begin{Verbatim}[samepage=true]
-    We use a computer that became the cummin winter. 
+    We use a computer that became the cummin winter.
                   xxxx                          xxxx
 		\end{Verbatim}
 
@@ -610,7 +610,7 @@ This includes the search commands ``\texttt{/}" and ``\texttt{n}" (it doesn't ma
 But not the character searches with ``fx" and ``tx" or the word movements ``w" and ``e".
 Also, ``j" and ``k" are not considered to be a jump.
 Even when you use a count to make them move the cursor quite a long way away.
- 
+
 The \texttt{``} command jumps back and forth, between two points.
 The CTRL-O command jumps to older positions (Hint: O for older).
 CTRL-I then jumps back to newer positions (Hint: I is just next to O on the keyboard).

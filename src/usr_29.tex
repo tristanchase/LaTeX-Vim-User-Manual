@@ -76,10 +76,10 @@ The ``\texttt{:tags}" command shows the list of tags that you traversed through:
 
 \begin{Verbatim}[samepage=true]
     :tags
-      # TO tag     FROM line  in file/text 
-      1  1 write_line      8  write_block.c 
-      2  1 write_char      7  write_line.c 
-    > 
+      # TO tag     FROM line  in file/text
+      1  1 write_line      8  write_block.c
+      2  1 write_char      7  write_line.c
+    >
 \end{Verbatim}
 
 Now to go back.
@@ -181,16 +181,16 @@ If there are many, you can select which one to jump to:
 Vim will present you with a list of choices:
 
 \begin{Verbatim}[samepage=true]
-      # pri kind tag               file 
-      1 F   f    mch_init          os_amiga.c 
-                   mch_init() 
-      2 F   f    mch_init          os_mac.c 
-                   mch_init() 
-      3 F   f    mch_init          os_msdos.c 
-                   mch_init(void) 
-      4 F   f    mch_init          os_riscos.c 
-                   mch_init() 
-    Enter nr of choice (<CR> to abort):  
+      # pri kind tag               file
+      1 F   f    mch_init          os_amiga.c
+                   mch_init()
+      2 F   f    mch_init          os_mac.c
+                   mch_init()
+      3 F   f    mch_init          os_msdos.c
+                   mch_init(void)
+      4 F   f    mch_init          os_riscos.c
+                   mch_init()
+    Enter nr of choice (<CR> to abort):
 \end{Verbatim}
 
 You can now enter the number (in the first column) of the match that you would like to jump to.
@@ -336,7 +336,7 @@ Example:
 This will show the ``\texttt{stdio.h}" file in the preview window, with the function prototype for popen():
 
 \begin{Verbatim}[samepage=true]
-    FILE    *popen __P((const char *, const char *)); 
+    FILE    *popen __P((const char *, const char *));
 \end{Verbatim}
 
 You can specify the height of the preview window, when it is opened, with the \texttt{'previewheight'} option.
@@ -347,11 +347,11 @@ Specific commands can be used to move around.
 C programs often contain constructs like this:
 
 \begin{Verbatim}[samepage=true]
-    #ifdef USE_POPEN 
-        fd = popen("ls", "r") 
-    #else 
-        fd = fopen("tmp", "w") 
-    #endif 
+    #ifdef USE_POPEN
+        fd = popen("ls", "r")
+    #else
+        fd = fopen("tmp", "w")
+    #endif
 \end{Verbatim}
 
 But then much longer, and possibly nested.
@@ -380,12 +380,12 @@ These two commands skip any ``\texttt{\#if}" - ``\texttt{\#endif}" blocks that t
 Example:
 
 \begin{Verbatim}[samepage=true]
-    #if defined(HAS_INC_H) 
-        a = a + inc(); 
-    # ifdef USE_THEME 
-        a += 3; 
-    # endif 
-        set_width(a); 
+    #if defined(HAS_INC_H)
+        a = a + inc();
+    # ifdef USE_THEME
+        a += 3;
+    # endif
+        set_width(a);
 \end{Verbatim}
 
 With the cursor in the last line, ``\texttt{[\#}" moves to the first line.
@@ -455,7 +455,7 @@ The ``\texttt{[(}" and ``\texttt{])}" commands work similar to ``\texttt{[{}" an
                           [(
             <--------------------------------
                       <-------
-        if (a == b && (c == d || (e > f)) && x > y) 
+        if (a == b && (c == d || (e > f)) && x > y)
                           -------------->
                   -------------------------------->
                                ])
@@ -492,8 +492,8 @@ Not only in the current file, but also in all included files (and files included
 The result looks like this:
 
 \begin{Verbatim}[samepage=true]
-    structs.h 
-     1:   29     unsigned     column;    /* column number */ 
+    structs.h
+     1:   29     unsigned     column;    /* column number */
 \end{Verbatim}
 
 The advantage over using tags or the preview window is that included files are searched.
@@ -519,11 +519,11 @@ Also files included by the files that could be found.
 An example of the output:
 
 \begin{Verbatim}[samepage=true]
-    --- Included files not found in path --- 
-    <io.h> 
-    vim.h --> 
-      <functions.h> 
-      <clib/exec_protos.h> 
+    --- Included files not found in path ---
+    <io.h>
+    vim.h -->
+      <functions.h>
+      <clib/exec_protos.h>
 \end{Verbatim}
 
 The ``\texttt{io.h}" file is included by the current file and can't be found.
@@ -564,9 +564,9 @@ Example:
 This will find files in the directories:
 
 \begin{Verbatim}[samepage=true]
-    /projects/invent/include 
-    /projects/invent/main/include 
-    /projects/invent/main/os/include 
+    /projects/invent/include
+    /projects/invent/main/include
+    /projects/invent/main/os/include
     etc.
 \end{Verbatim}
 

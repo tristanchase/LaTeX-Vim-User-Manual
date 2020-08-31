@@ -71,7 +71,7 @@ To enter the following programmer's limerick, this is what you type:
 
 After typing ``turtle" you press the <Enter> key to start a new line.
 Finally you press the <Esc> key to stop Insert mode and go back to Normal mode.
-You now have two lines of text in your Vim window: 
+You now have two lines of text in your Vim window:
 
 		\begin{Verbatim}[samepage=true]
 		+---------------------------------------+
@@ -122,7 +122,7 @@ After you return to Normal mode, you can move around by using these keys:
 \phantomsection
 \label{hjlk}
 \begin{center}
-				\begin{tabular}{c|c} 
+				\begin{tabular}{c|c}
 								h & left\\
 								j & down\\
 								k & up\\
@@ -141,7 +141,7 @@ Considering that you might be doing it hundreds of times an hour, this can take 
 Also, there are keyboards which do not have arrow keys, or which locate them in unusual places; therefore, knowing the use of the hjkl keys helps in those situations.
 
 One way to remember these commands is that h is on the left, l is on the right and j points down.
-In a picture: 
+In a picture:
 
 \begin{Verbatim}[samepage=true]
 				  k
@@ -172,7 +172,7 @@ For Japanese users, Hiroshi Iwatani suggested using this:
 To delete a character, move the cursor over it and type ``x".
 (This is a throwback to the old days of the typewriter, when you deleted things by typing xxxx over them.)
 Move the cursor to the beginning of the first line, for example, and type xxxxxxx (seven x's) to delete ``A very ".
-The result should look like this: 
+The result should look like this:
 
 		\begin{Verbatim}[samepage=true]
 		+---------------------------------------+
@@ -191,7 +191,7 @@ Now you can insert new text, for example by typing:
  \end{Verbatim}
 
 This begins an insert (the i), inserts the words ``A young", and then exits insert mode (the final <Esc>).
- The result: 
+ The result:
 		\begin{Verbatim}[samepage=true]
 		+---------------------------------------+
 		|A young intelligent turtle             |
@@ -205,7 +205,7 @@ This begins an insert (the i), inserts the words ``A young", and then exits inse
 \subsubsection{Deleting a line}
 
 To delete a whole line use the ``dd" command.
-The following line will then move up to fill the gap: 
+The following line will then move up to fill the gap:
 
 		\begin{Verbatim}[samepage=true]
 		+---------------------------------------+
@@ -221,17 +221,17 @@ The following line will then move up to fill the gap:
 
 In Vim you can join two lines together, which means that the line break between them is deleted.
 The ``J" command does this.
-Take these two lines: 
+Take these two lines:
 
 		\begin{Verbatim}[samepage=true]
-		A young intelligent 
-		turtle 
+		A young intelligent
+		turtle
 		\end{Verbatim}
 
 Move the cursor to the first line and press ``J":
 
 		\begin{Verbatim}[samepage=true]
-		A young intelligent turtle 
+		A young intelligent turtle
 		\end{Verbatim}
 
 \subsection{Undo and Redo}
@@ -241,40 +241,40 @@ Suppose you delete too much.
 Well, you can type it in again, but an easier way exists.
 The ``u" command undoes the last edit.
 Take a look at this in action: After using ``dd" to delete the first line, ``u" brings it back.
-Another one: Move the cursor to the A in the first line: 
+Another one: Move the cursor to the A in the first line:
 
 		\begin{Verbatim}[samepage=true]
-		A young intelligent turtle 
+		A young intelligent turtle
 						\end{Verbatim}
 
 Now type xxxxxxx to delete ``A young".
-The result is as follows: 
+The result is as follows:
 
 	\begin{Verbatim}[samepage=true]
-	intelligent turtle 
+	intelligent turtle
 	\end{Verbatim}
 
 Type ``u" to undo the last delete.
 That delete removed the g, so the undo restores the character.
 
 	\begin{Verbatim}[samepage=true]
-	g intelligent turtle 
+	g intelligent turtle
 	\end{Verbatim}
 
 The next u command restores the next-to-last character deleted:
 
 	\begin{Verbatim}[samepage=true]
-	ng intelligent turtle 
+	ng intelligent turtle
 	\end{Verbatim}
 
 The next u command gives you the u, and so on:
 
 	\begin{Verbatim}[samepage=true]
-	ung intelligent turtle 
-	oung intelligent turtle 
-	young intelligent turtle 
-	young intelligent turtle 
-	A young intelligent turtle 
+	ung intelligent turtle
+	oung intelligent turtle
+	young intelligent turtle
+	young intelligent turtle
+	A young intelligent turtle
 	\end{Verbatim}
 
 Note:
@@ -288,10 +288,10 @@ You might prefer to use the good old Vi way, but you will have to watch out for 
 If you undo too many times, you can press CTRL-R (redo) to reverse the preceding command.
 In other words, it undoes the undo.
 To see this in action, press CTRL-R twice.
-The character A and the space after it disappear: 
+The character A and the space after it disappear:
 
 		\begin{Verbatim}[samepage=true]
-    young intelligent turtle 
+    young intelligent turtle
 		\end{Verbatim}
 
 There's a special version of the undo command, the ``U" (undo line) command.
@@ -299,17 +299,17 @@ The undo line command undoes all the changes made on the last line that was edit
 Typing this command twice cancels the preceding ``U".
 
 		\begin{Verbatim}[samepage=true]
-    A very intelligent turtle 
+    A very intelligent turtle
       xxxx                      Delete very
 
-    A intelligent turtle 
+    A intelligent turtle
                   xxxxxx        Delete turtle
 
-    A intelligent 
+    A intelligent
                                 Restore line with "U"
-    A very intelligent turtle 
+    A very intelligent turtle
                                 Undo "U" with "u"
-    A intelligent 
+    A intelligent
 		\end{Verbatim}
 
 The ``U" command is a change by itself, which the ``u" command undoes and CTRL-R redoes.
@@ -328,19 +328,19 @@ Here are a few often used ones.
 The ``i" command inserts a character before the character under the cursor.
 That works fine; but what happens if you want to add stuff to the end of the line?  For that you need to insert text after the cursor.
 This is done with the ``a" (append) command.
-For example, to change the line 
+For example, to change the line
 
 		\begin{Verbatim}[samepage=true]
-    and that's not saying much for the turtle. 
+    and that's not saying much for the turtle.
 		\end{Verbatim}
 to
 		\begin{Verbatim}[samepage=true]
-    and that's not saying much for the turtle!!! 
+    and that's not saying much for the turtle!!!
 		\end{Verbatim}
 
 move the cursor over to the dot at the end of the line. Then type ``x" to delete the period.
 The cursor is now positioned at the end of the line on the e in turtle.
-Now type 
+Now type
 
 	\begin{Verbatim}[samepage=true]
 	a!!!<Esc>
@@ -349,18 +349,18 @@ Now type
 to append three exclamation points after the e in turtle:
 
 	\begin{Verbatim}[samepage=true]
-	and that's not saying much for the turtle!!! 
+	and that's not saying much for the turtle!!!
 	\end{Verbatim}
 
 \subsubsection{Opening up a new line}
 
 The ``o" command creates a new, empty line below the cursor and puts Vim in Insert mode.
 Then you can type the text for the new line.
-Suppose the cursor is somewhere in the first of these two lines: 
+Suppose the cursor is somewhere in the first of these two lines:
 
 		\begin{Verbatim}[samepage=true]
-    A very intelligent turtle 
-    Found programming UNIX a hurdle 
+    A very intelligent turtle
+    Found programming UNIX a hurdle
 		\end{Verbatim}
 
 If you now use the ``o" command and type new text:
@@ -372,9 +372,9 @@ If you now use the ``o" command and type new text:
 The result is:
 
 		\begin{Verbatim}[samepage=true]
-    A very intelligent turtle 
-    That liked using Vim 
-    Found programming UNIX a hurdle 
+    A very intelligent turtle
+    That liked using Vim
+    Found programming UNIX a hurdle
 		\end{Verbatim}
 
 The ``O" command (uppercase) opens a line above the cursor.
@@ -403,7 +403,7 @@ You can configure the Vim editor to produce backup files, see |\hyperref[Backup 
 
 Sometimes you will make a sequence of changes and suddenly realize you were better off before you started.
 Not to worry; Vim has a quit-and-throw-things-away command.
-It is: 
+It is:
 
 	\begin{Verbatim}[samepage=true]
 	:q!
@@ -413,10 +413,10 @@ Don't forget to press <Enter> to finish the command.
 
 For those of you interested in the details, the three parts of this command are the colon (:), which enters Command-line mode; the q command, which tells the editor to quit; and the override command modifier (!).
 The override command modifier is needed because Vim is reluctant to throw away changes.
-If you were to just type ``\texttt{:q}", Vim would display an error message and refuse to exit: 
+If you were to just type ``\texttt{:q}", Vim would display an error message and refuse to exit:
 
 		\begin{Verbatim}[samepage=true]
-    E37: No write since last change (use ! to override) 
+    E37: No write since last change (use ! to override)
 		\end{Verbatim}
 
 By specifying the override, you are in effect telling Vim, ``I know that what I'm doing looks stupid, but I'm a big boy and really want to do this."
@@ -485,7 +485,7 @@ When you need to get help for a control character command (for example, CTRL-A),
 
 The Vim editor has many different modes.
 By default, the help system displays the normal-mode commands.
-For example, the following command displays help for the normal-mode CTRL-H command: 
+For example, the following command displays help for the normal-mode CTRL-H command:
 
  \begin{Verbatim}[samepage=true]
  :help CTRL-H
@@ -493,7 +493,7 @@ For example, the following command displays help for the normal-mode CTRL-H comm
 
 To identify other modes, use a mode prefix.
 If you want the help for the insert-mode version of a command, use ``\texttt{i\_}".
-For CTRL-H this gives you the following command: 
+For CTRL-H this gives you the following command:
 
  \begin{Verbatim}[samepage=true]
  :help i_CTRL-H
@@ -501,7 +501,7 @@ For CTRL-H this gives you the following command:
 
 When you start the Vim editor, you can use several command-line arguments.
 These all begin with a dash (-).
-To find what the -t argument does, for example, use the command: 
+To find what the -t argument does, for example, use the command:
 
  \begin{Verbatim}[samepage=true]
  :help -t
@@ -509,7 +509,7 @@ To find what the -t argument does, for example, use the command:
 
 The Vim editor has a number of options that enable you to configure and customize the editor.
 If you want help for an option, you need to enclose it in single quotation marks.
-To find out what the \texttt{'number'} option does, for example, use the following command: 
+To find out what the \texttt{'number'} option does, for example, use the following command:
 
  \begin{Verbatim}[samepage=true]
  :help 'number'
@@ -518,7 +518,7 @@ To find out what the \texttt{'number'} option does, for example, use the followi
 The table with all mode prefixes can be found here: |\texttt{:h help-context}|.
 
 Special keys are enclosed in angle brackets.
-To find help on the up-arrow key in Insert mode, for instance, use this command: 
+To find help on the up-arrow key in Insert mode, for instance, use this command:
 
  \begin{Verbatim}[samepage=true]
  :help i_<Up>
@@ -527,7 +527,7 @@ To find help on the up-arrow key in Insert mode, for instance, use this command:
 If you see an error message that you don't understand, for example:
 
 	\begin{Verbatim}[samepage=true]
-  E37: No write since last change (use ! to override) 
+  E37: No write since last change (use ! to override)
 	\end{Verbatim}
 
 You can use the error ID at the start to find help about it:
@@ -540,7 +540,7 @@ You can use the error ID at the start to find help about it:
 \label{help-summary}
 \begin{tabularx}{\textwidth}{|c | X|}
 				\hline
-				\texttt{:help} & 
+				\texttt{:help} &
 				Gives you very general help.
 				Scroll down to see a list of all helpfiles, including those added locally (i.e. not distributed with Vim). \\ \hline
 				\texttt{:help user-toc.txt} & Table of contents of the User Manual.\\ \hline
@@ -565,7 +565,7 @@ You can use the error ID at the start to find help about it:
 								\item \texttt{:cn} next match
 								\item \texttt{:cprev :cN} previous match
 								\item \texttt{:cfirst :clast} first or last match
-								\item \texttt{:copen :cclose} open/close the quickfix window; press <Enter> to jump to the item under the cursor 
+								\item \texttt{:copen :cclose} open/close the quickfix window; press <Enter> to jump to the item under the cursor
 				\end{itemize}
 				\\ \hline
 \end{tabularx}

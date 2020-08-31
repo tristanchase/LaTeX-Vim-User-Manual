@@ -100,7 +100,7 @@ If you write about Vim, don't forget to mention that.
 \label{maillist}
 There are several mailing lists for Vim:
 \begin{itemize}
-				\item 
+				\item
 								\texttt{vim@vim.org}
 								For discussions about using existing versions of Vim: Useful mappings, questions, answers, where to get a specific version, etc.
 								There are quite a few people watching this list and answering questions, also for beginners.
@@ -205,7 +205,7 @@ These might introduce Y2K problems, but those are not really part of Vim itself.
 \label{Bram}
 \label{Moolenaar}
 
-Most of Vim was written by Bram Moolenaar <Bram@vim.org>. 
+Most of Vim was written by Bram Moolenaar <Bram@vim.org>.
 
 Parts of the documentation come from several Vi manuals, written by:
 \begin{itemize}
@@ -432,7 +432,7 @@ These names for keys are used in the documentation.
 They can also be used with the ``\texttt{:map}" command (insert the key name by pressing CTRL-K and then the key you want the name for).
 
 \begin{center}\begin{tabularx}{\textwidth}{|l|X|l|l|} % the 5 cm is completely arbitrary but it seems to work in the page
-	
+
 				\hline
 				notation & meaning                   & equivalent & decimal              value(s)\\ \hline
 				<Nul>    & zero                      & CTRL-@     & 0 (stored as 10)     \label{<Nul>}\\
@@ -819,7 +819,7 @@ The cursor can only be positioned on the first one.
  number.  Tip: If you don't like wrapping lines to mix with the line numbers,
  set the \texttt{'showbreak'} option to eight spaces:
 \begin{Verbatim}[samepage=true]
-		:set showbreak=\ \ \ \ \ \ \ \ 
+		:set showbreak=\ \ \ \ \ \ \ \
 \end{Verbatim}
 
 If you set the \texttt{'list'} option, <Tab> characters will not be shown as several spaces, but as ``\textasciicircum I".
@@ -876,7 +876,7 @@ On most Unix systems, resizing the window is recognized and handled correctly by
 A screen contains one or more windows, separated by status lines and with the command line at the bottom.
 
 % This ASCII art doesn't look right in the editor but looks OK in the pdf.
-\begin{Verbatim}[samepage=true] 
+\begin{Verbatim}[samepage=true]
 				+-------------------------------+
 			screen  | window 1   | window 2         |
 				|            |                  |
@@ -897,21 +897,21 @@ A difference is made between four types of lines:
 
 \begin{center}
 				\begin{tabularx}{\textwidth}{c X}
-								buffer lines & 
+								buffer lines &
 								The lines in the buffer.
 								This is the same as the lines as they are read from/written to a file.
 								They can be thousands of characters long. \\
 
-								logical lines & 
+								logical lines &
 								The buffer lines with folding applied.
 								Buffer lines in a closed fold are changed to a single logical line: ``+-- 99 lines folded".
 								They can be thousands of characters long.\\
 
-								window lines & 
+								window lines &
 								The lines displayed in a window: A range of logical lines with wrapping, line breaks, etc.  applied.
 								They can only be as long as the width of the window allows, longer lines are wrapped or truncated.\\
 
-								screen lines & 
+								screen lines &
 								The lines of the screen that Vim uses.
 								Consists of the window lines of all windows, with status lines and the command line added.
 								They can only be as long as the width of the screen allows.

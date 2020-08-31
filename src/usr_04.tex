@@ -19,11 +19,11 @@ The ``\texttt{4w}" command, for example, moves the cursor over four words.
 The ``\texttt{d4w}" command deletes four words.
 
 \begin{Verbatim}[samepage=true]
-    To err is human. To really foul up you need a computer. 
+    To err is human. To really foul up you need a computer.
                      ------------------>
                            d4w
 
-    To err is human. you need a computer. 
+    To err is human. you need a computer.
 \end{Verbatim}
 
 Vim only deletes up to the position where the motion takes the cursor.
@@ -31,11 +31,11 @@ That's because Vim knows that you probably don't want to delete the first charac
 If you use the ``e" command to move to the end of a word, Vim guesses that you do want to include that last character:
 
 \begin{Verbatim}[samepage=true]
-    To err is human. you need a computer. 
+    To err is human. you need a computer.
                     -------->
                        d2e
 
-    To err is human. a computer. 
+    To err is human. a computer.
 \end{Verbatim}
 
 Whether the character under the cursor is included depends on the command you used to move to that character.
@@ -46,11 +46,11 @@ The ``\texttt{d\$}" command deletes from the cursor to the end of the line.
 This is an inclusive motion, thus the last character of the line is included in the delete operation:
 
 \begin{Verbatim}[samepage=true]
-    To err is human. a computer. 
+    To err is human. a computer.
                    ------------>
                        d$
 
-    To err is human 
+    To err is human
 \end{Verbatim}
 
 There is a pattern here: operator-motion.
@@ -67,11 +67,11 @@ For example, ``\texttt{cw}" changes a word.
 Or more specifically, it deletes a word and then puts you in Insert mode.
 
 \begin{Verbatim}[samepage=true]
-    To err is human 
+    To err is human
        ------->
          c2wbe<Esc>
 
-    To be human 
+    To be human
 \end{Verbatim}
 
 This ``\texttt{c2wbe<Esc>}" contains these bits:
@@ -132,20 +132,20 @@ It waits for you to type a character, and will replace the character under the c
 You could do the same with ``\texttt{cl}" or with the ``\texttt{s}" command, but with ``\texttt{r}" you don't have to press <Esc>
 
 \begin{Verbatim}[samepage=true]
-    there is somerhing grong here 
+    there is somerhing grong here
     rT           rt    rw
 
-    There is something wrong here 
+    There is something wrong here
 \end{Verbatim}
 
 Using a count with ``\texttt{r}" causes that many characters to be replaced with the same character.
 Example:
 
 \begin{Verbatim}[samepage=true]
-    There is something wrong here 
+    There is something wrong here
                        5rx
 
-    There is something xxxxx here 
+    There is something xxxxx here
 \end{Verbatim}
 
 To replace a character with a line break use ``\texttt{r<Enter>}".
@@ -163,7 +163,7 @@ The ``\texttt{.}" command executes the last change command (in this case, ``\tex
 To delete another tag, position the cursor on the < and use the ``\texttt{.}" command.
 
 \begin{Verbatim}[samepage=true]
-                        To <B>generate</B> a table of <B>contents 
+                        To <B>generate</B> a table of <B>contents
     f<   find first <   --->
     df>  delete to >       -->
     f<   find next <         --------->
@@ -204,18 +204,18 @@ Finally type the operator command.
 For example, to delete from halfway one word to halfway another word:
 
 \begin{Verbatim}[samepage=true]
-        This is an examination sample of visual mode 
+        This is an examination sample of visual mode
                         ---------->
                           velllld
 
-        This is an example of visual mode 
+        This is an example of visual mode
 \end{Verbatim}
 
 When doing this you don't really have to count how many times you have to press ``l" to end up in the right position.
 You can immediately see what text will be deleted when you press ``d".
 
 If at any time you decide you don't want to do anything with the highlighted text, just press <Esc> and Visual mode will stop without doing anything.
- 
+
 \subsubsection{Selecting lines}
 
 If you want to work on whole lines, use ``\texttt{V}" to start Visual mode.
@@ -285,15 +285,15 @@ Because you deleted an entire line, the ``\texttt{p}" command placed the text li
 If you delete part of a line (a word, for instance), the ``\texttt{p}" command puts it just after the cursor.
 
 \begin{Verbatim}[samepage=true]
-    Some more boring try text to out commands. 
+    Some more boring try text to out commands.
                      ---->
                       dw
 
-    Some more boring text to out commands. 
+    Some more boring text to out commands.
                      ------->
                        welp
 
-    Some more boring text to try out commands. 
+    Some more boring text to try out commands.
 \end{Verbatim}
 
 \subsubsection{More on putting}
@@ -319,7 +319,7 @@ This works as follows: ``\texttt{x}" deletes the character e and places it in a 
 ``\texttt{p}" puts the text after the cursor, which is after the h.
 
 \begin{Verbatim}[samepage=true]
-    teh     th     the 
+    teh     th     the
      x       p
 \end{Verbatim}
 
@@ -340,14 +340,14 @@ To yank two words use ``y2w".
 Example:
 
 \begin{Verbatim}[samepage=true]
-    let sqr = LongVariable * 
+    let sqr = LongVariable *
              -------------->
                    y2w
 
-    let sqr = LongVariable * 
+    let sqr = LongVariable *
                            p
 
-    let sqr = LongVariable * LongVariable 
+    let sqr = LongVariable * LongVariable
 \end{Verbatim}
 
 Notice that ``\texttt{yw}" includes the white space after a word.
@@ -404,10 +404,10 @@ If the cursor is in the middle of a word and you want to delete that word, you n
 There is a simpler way to do this: ``\texttt{daw}".
 
 \begin{Verbatim}[samepage=true]
-    this is some example text. 
+    this is some example text.
                daw
 
-    this is some text. 
+    this is some text.
 \end{Verbatim}
 
 The ``\texttt{d}" of ``\texttt{daw}" is the delete operator.
@@ -427,25 +427,25 @@ To change a whole sentence use ``\texttt{cis}".
 Take this text:
 
 \begin{Verbatim}[samepage=true]
-    Hello there.  This 
-    is an example.  Just 
-    some text. 
+    Hello there.  This
+    is an example.  Just
+    some text.
 \end{Verbatim}
 
 Move to the start of the second line, on ``is an".
 Now use ``\texttt{cis}":
 
 \begin{Verbatim}[samepage=true]
-    Hello there.    Just 
-    some text. 
+    Hello there.    Just
+    some text.
 \end{Verbatim}
 
 The cursor is in between the blanks in the first line.
 Now you type the new sentence ``Another line.":
 
 \begin{Verbatim}[samepage=true]
-    Hello there.  Another line.  Just 
-    some text. 
+    Hello there.  Another line.  Just
+    some text.
 \end{Verbatim}
 
 ``\texttt{cis}" consists of the ``c" (change) operator and the ``is" text object.
@@ -474,10 +474,10 @@ This continues until you type <Esc>.
 In this example you start Replace mode on the first ``t" of ``text":
 
 \begin{Verbatim}[samepage=true]
-    This is text. 
+    This is text.
             Rinteresting.<Esc>
 
-    This is interesting. 
+    This is interesting.
 \end{Verbatim}
 
 You may have noticed that this command replaced 5 characters in the line with twelve others.
@@ -518,7 +518,7 @@ And so forth.
 There are a few often used commands to make changes that didn't fit somewhere else:
 
 \begin{tabularx}{\textwidth}{l X}
-				\textasciitilde & 
+				\textasciitilde &
 				change case of the character under the cursor, and move the cursor to the next character.
 				This is not an operator (unless \texttt{'tildeop'} is set), thus you can't use it with a motion command.
 				It does work in Visual mode and changes case for all the selected text then. \\
@@ -526,7 +526,7 @@ There are a few often used commands to make changes that didn't fit somewhere el
 				\texttt{I} &
 				Start Insert mode after moving the cursor to the first non-blank in the line.\\
 
-				\texttt{A} & 
+				\texttt{A} &
 				Start Insert mode after moving the cursor to the end of the line.
 \end{tabularx}
 \clearpage

@@ -132,7 +132,7 @@ This one matches any word consisting of only lowercase letters:
 \begin{Verbatim}[samepage=true]
  :syntax match xIdentifier /\<\l\+\>/
 \end{Verbatim}
- 
+
 \emph{Note}: Keywords overrule any other syntax item.
 Thus the keywords ``\texttt{if}", ``\texttt{then}", etc., will be keywords, as defined with the ``\texttt{:syntax keyword}" commands above, even though they also match the pattern for xIdentifier.
 
@@ -164,7 +164,7 @@ The ``\texttt{start}" and ``\texttt{end}" directives define the patterns used to
 But what about strings that look like this?
 
 \begin{Verbatim}[samepage=true]
-    "A string with a double quote (\") in it" 
+    "A string with a double quote (\") in it"
 \end{Verbatim}
 
 This creates a problem: The double quotation marks in the middle of the string will end the region.
@@ -188,7 +188,7 @@ And it is easier to use nested items, as is explained in the next section.
 Take a look at this comment:
 
 \begin{Verbatim}[samepage=true]
-    %Get input  TODO: Skip white space 
+    %Get input  TODO: Skip white space
 \end{Verbatim}
 
 You want to highlight TODO in big yellow letters, even though it is in a comment that is highlighted blue.
@@ -217,11 +217,11 @@ This can be defined this way:
 Suppose you have this text:
 
 \begin{Verbatim}[samepage=true]
-    while i < b { 
-        if a { 
-            b = c; 
-        } 
-    } 
+    while i < b {
+        if a {
+            b = c;
+        }
+    }
 \end{Verbatim}
 
 First a xBlock starts at the \texttt{\{} in the first line.
@@ -247,8 +247,8 @@ Because you can have a comment on a preprocessor line, the preprocessor definiti
 Now look what happens with this text:
 
 \begin{Verbatim}[samepage=true]
-    #define X = Y  % Comment text 
-    int foo = 1; 
+    #define X = Y  % Comment text
+    int foo = 1;
 \end{Verbatim}
 
 What you see is that the second line is also highlighted as xPreProc.
@@ -294,7 +294,7 @@ See |\texttt{:h :syn-contains}| for the details.
 The x language has statements in this form:
 
 \begin{Verbatim}[samepage=true]
-    if (condition) then 
+    if (condition) then
 \end{Verbatim}
 
 You want to highlight the three items differently.
@@ -313,7 +313,7 @@ If none of the items that are specified are found, nothing happens.
 For example, in this text:
 
 \begin{Verbatim}[samepage=true]
-    if not (condition) then 
+    if not (condition) then
 \end{Verbatim}
 
 The ``\texttt{if}" is matched by xIf.
@@ -397,7 +397,7 @@ The offset for the end pattern is ``\texttt{me=s-1}".
 The result is that in this text:
 
 \begin{Verbatim}[samepage=true]
-    if (foo == bar) 
+    if (foo == bar)
 \end{Verbatim}
 
 Only the text ``\texttt{foo == bar}" will be highlighted as \texttt{xCond}.
@@ -434,8 +434,8 @@ In this case, although \texttt{xPreProc} normally matches a single line, the gro
 For example, it would match both of these lines:
 
 \begin{Verbatim}[samepage=true]
-    #define SPAM  spam spam spam \ 
-            bacon and spam 
+    #define SPAM  spam spam spam \
+            bacon and spam
 \end{Verbatim}
 
 In this case, this is what you want.
@@ -605,9 +605,9 @@ The \texttt{\{sync-group-name\}} is used to give a name to this synchronization 
 For example, the sh scripting language begins an if statement with ``\texttt{if}" and ends it with ``\texttt{fi}":
 
 \begin{Verbatim}[samepage=true]
-    if [ --f file.txt ] ; then 
-        echo "File exists" 
-    fi 
+    if [ --f file.txt ] ; then
+        echo "File exists"
+    fi
 \end{Verbatim}
 
 To define a ``\texttt{grouphere}" directive for this syntax, you use the following command:
@@ -642,7 +642,7 @@ The name of the syntax file must be equal to the file type, with ``\texttt{.vim}
 Thus for the x language, the full path of the file would be:
 
 \begin{Verbatim}[samepage=true]
-    ~/.vim/syntax/x.vim 
+    ~/.vim/syntax/x.vim
 \end{Verbatim}
 
 You must also make the file type be recognized.
@@ -671,7 +671,7 @@ This makes it loaded after the original syntax file.
 For Unix this would be:
 
 \begin{Verbatim}[samepage=true]
-    ~/.vim/after/syntax/c.vim 
+    ~/.vim/after/syntax/c.vim
 \end{Verbatim}
 \subsection{Portable syntax file layout}
 Wouldn't it be nice if all Vim users exchange syntax files?  To make this possible, the syntax file must follow a few guidelines.

@@ -154,7 +154,7 @@ Package: etoolbox 2017/01/02 v2.4 e-TeX tools for LaTeX (JAW)
 )
 (/usr/share/texlive/texmf-dist/tex/latex/fontspec/fontspec.sty
 (/usr/share/texlive/texmf-dist/tex/latex/l3kernel/expl3.sty
-Package: expl3 2016/11/21 v6760 L3 programming layer (loader) 
+Package: expl3 2016/11/21 v6760 L3 programming layer (loader)
 
 (/usr/share/texlive/texmf-dist/tex/latex/l3kernel/expl3-code.tex
 Package: expl3 2016/11/21 v6760 L3 programming layer (code)
@@ -301,147 +301,147 @@ LaTeX Font Info:    Redeclaring font encoding TU on input line 82.
 ))
 .................................................
 . LaTeX info: "xparse/define-command"
-. 
+.
 . Defining command \fontspec with sig. 'O{}mO{}' on line 475.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
-. 
+.
 . Defining command \setmainfont with sig. 'O{}mO{}' on line 491.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
-. 
+.
 . Defining command \setsansfont with sig. 'O{}mO{}' on line 507.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
-. 
+.
 . Defining command \setmonofont with sig. 'O{}mO{}' on line 523.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
-. 
+.
 . Defining command \setmathrm with sig. 'O{}mO{}' on line 528.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
-. 
+.
 . Defining command \setboldmathrm with sig. 'O{}mO{}' on line 533.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
-. 
+.
 . Defining command \setmathsf with sig. 'O{}mO{}' on line 538.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
-. 
+.
 . Defining command \setmathtt with sig. 'O{}mO{}' on line 543.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
-. 
+.
 . Defining command \newfontfamily with sig. 'mO{}mO{}' on line 563.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
-. 
+.
 . Defining command \newfontface with sig. 'mO{}mO{}' on line 567.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
-. 
+.
 . Defining command \defaultfontfeatures with sig. 't+om' on line 574.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
-. 
+.
 . Defining command \addfontfeatures with sig. 'm' on line 623.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
-. 
+.
 . Defining command \newfontfeature with sig. 'mm' on line 634.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
-. 
+.
 . Defining command \newAATfeature with sig. 'mmmm' on line 642.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
-. 
+.
 . Defining command \newopentypefeature with sig. 'mmm' on line 652.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
-. 
+.
 . Defining command \aliasfontfeature with sig. 'mm' on line 675.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
-. 
+.
 . Defining command \aliasfontfeatureoption with sig. 'mmm' on line 692.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
-. 
+.
 . Defining command \newfontscript with sig. 'mm' on line 696.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
-. 
+.
 . Defining command \newfontlanguage with sig. 'mm' on line 700.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
-. 
+.
 . Defining command \DeclareFontsExtensions with sig. 'm' on line 705.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
-. 
+.
 . Defining command \IfFontFeatureActiveTF with sig. 'mmm' on line 711.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
-. 
+.
 . Defining command \EncodingCommand with sig. 'mO{}m' on line 3338.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
-. 
+.
 . Defining command \EncodingAccent with sig. 'mm' on line 3344.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
-. 
+.
 . Defining command \EncodingSymbol with sig. 'mm' on line 3350.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
-. 
+.
 . Defining command \EncodingComposite with sig. 'mmm' on line 3356.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
-. 
+.
 . Defining command \EncodingCompositeCommand with sig. 'mmm' on line 3362.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
-. 
+.
 . Defining command \DeclareUnicodeEncoding with sig. 'mm' on line 3387.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
-. 
+.
 . Defining command \UndeclareSymbol with sig. 'm' on line 3393.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
-. 
+.
 . Defining command \UndeclareComposite with sig. 'mm' on line 3401.
 .................................................
 
@@ -455,12 +455,12 @@ LaTeX Info: Redefining \emph on input line 3656.
 LaTeX Info: Redefining \- on input line 3707.
 .................................................
 . LaTeX info: "xparse/redefine-command"
-. 
+.
 . Redefining command \oldstylenums with sig. 'm' on line 3802.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
-. 
+.
 . Defining command \liningnums with sig. 'm' on line 3806.
 .................................................
 ))
@@ -906,7 +906,7 @@ Package: array 2016/10/06 v2.4d Tabular extension package (FMi)
 (/usr/share/texlive/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
 Package: fancyvrb 2008/02/07
 
-Style option: `fancyvrb' v2.7a, with DG/SPQR fixes, and firstline=lastline fix 
+Style option: `fancyvrb' v2.7a, with DG/SPQR fixes, and firstline=lastline fix
 <2008/02/07> (tvz)
 \FV@CodeLineNo=\count182
 \FV@InFile=\read2
@@ -1057,12 +1057,12 @@ Underfull \hbox (badness 7168) in paragraph at lines 494--494
 
 
 Overfull \hbox (3.33pt too wide) in alignment at lines 494--494
-[][][][] 
+[][][][]
  []
 
 
 Overfull \hbox (25.0pt too wide) in paragraph at lines 494--494
- [] 
+ []
  []
 
 [8]
@@ -1084,7 +1084,7 @@ Overfull \vbox (47.76997pt too high) has occurred while \output is active []
 
 ] [51] [52]
 Overfull \hbox (61.59505pt too wide) in alignment at lines 244--254
- [] [] 
+ [] []
  []
 
 [53] [54] [55] [56] [57] [58] [59]) (./usr_06.tex [60
@@ -1110,7 +1110,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 272--281
 
 [104]) (./usr_12.tex
 Overfull \hbox (19.4753pt too wide) in alignment at lines 60--60
-[][] 
+[][]
  []
 
 [105
@@ -1142,7 +1142,7 @@ Overfull \hbox (19.4753pt too wide) in alignment at lines 60--60
 
 ] [172] [173] [174] [175]
 Overfull \hbox (5.06502pt too wide) in paragraph at lines 365--370
- [] 
+ []
  []
 
 [176] [177]) (./usr_29.tex [178
@@ -1162,7 +1162,7 @@ Overfull \hbox (5.06502pt too wide) in paragraph at lines 365--370
 [213] [214]
 Overfull \hbox (20.98701pt too wide) in paragraph at lines 543--544
 []\TU/lmr/m/n/10 When including a slash, Vim matches the pattern against both t
-he full path of the file (”\TU/lmtt/m/n/10 /home/biep/readme.txt\TU/lmr/m/n/10 
+he full path of the file (”\TU/lmtt/m/n/10 /home/biep/readme.txt\TU/lmr/m/n/10
 ”)
  []
 
@@ -1183,12 +1183,12 @@ mtt/m/n/10 :h line-continuation\TU/lmr/m/n/10 |. Users with
 
 [247] [248] [249] [250] [251] [252]
 Overfull \hbox (40.29503pt too wide) in paragraph at lines 2261--2269
- [] 
+ []
  []
 
 [253] [254] [255]
 Overfull \hbox (101.82503pt too wide) in paragraph at lines 2440--2447
- [] 
+ []
  []
 
 [256] [257] [258] [259] [260]) (./usr_42.tex [261
@@ -1229,7 +1229,7 @@ Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 104.
 
 LaTeX Warning: There were multiply-defined labels.
 
- ) 
+ )
 Here is how much of TeX's memory you used:
  23031 strings out of 493068
  436099 string characters out of 6137721

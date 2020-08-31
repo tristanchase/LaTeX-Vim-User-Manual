@@ -21,7 +21,7 @@ Vim will close the current file and open the new one.
 If the current file has unsaved changes, however, Vim displays an error message and does not open the new file:
 
 \begin{Verbatim}[samepage=true]
-  E37: No write since last change (use ! to override) 
+  E37: No write since last change (use ! to override)
 \end{Verbatim}
 
 Note:
@@ -108,7 +108,7 @@ This is short for ``arguments".
 The output might look like this:
 
 		\begin{Verbatim}[samepage=true]
-    one.c [two.c] three.c 
+    one.c [two.c] three.c
 						\end{Verbatim}
 
 These are the files you started Vim with.
@@ -189,7 +189,7 @@ When you use a list of files, Vim assumes you want to edit them all.
 To protect you from exiting too early, you will get this error when you didn't edit the last file in the list yet:
 
 		\begin{Verbatim}[samepage=true]
-    E173: 46 more files to edit 
+    E173: 46 more files to edit
 						\end{Verbatim}
 
 If you really want to exit, just do it again.
@@ -472,7 +472,7 @@ When you try using ``\texttt{:w}" you will get an error message and the file won
 When you try to make a change to the file Vim will give you a warning:
 
 \begin{Verbatim}[samepage=true]
-    W10: Warning: Changing a readonly file 
+    W10: Warning: Changing a readonly file
 \end{Verbatim}
 
 The change will be done though.
@@ -492,7 +492,7 @@ The help files are like this, for example.
 If you try to make a change you get this error message:
 
 \begin{Verbatim}[samepage=true]
-    E21: Cannot make changes, 'modifiable' is off 
+    E21: Cannot make changes, 'modifiable' is off
 \end{Verbatim}
 
 You could use the -M argument to setup Vim to work in a viewer mode.
@@ -535,7 +535,7 @@ This means that Vim knows this is not the file you started editing.
 When you try to write the file, you might get this message:
 
 \begin{Verbatim}[samepage=true]
-    E13: File exists (use ! to override) 
+    E13: File exists (use ! to override)
 \end{Verbatim}
 
 This protects you from accidentally overwriting another file.

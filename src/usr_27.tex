@@ -79,13 +79,13 @@ Keep in mind that when repeating the ``\texttt{n}" command to search for the nex
 If you don't notice this you keep searching forever!  To give you a hint, Vim displays this message:
 
 \begin{Verbatim}[samepage=true]
-    search hit BOTTOM, continuing at TOP 
+    search hit BOTTOM, continuing at TOP
 \end{Verbatim}
 
 If you use the ``\texttt{?}" command, to search in the other direction, you get this message:
 
 \begin{Verbatim}[samepage=true]
-    search hit TOP, continuing at BOTTOM 
+    search hit TOP, continuing at BOTTOM
 \end{Verbatim}
 
 Still, you don't know when you are back at the first match.
@@ -99,7 +99,7 @@ Vim will display the cursor position in the lower righthand corner of the window
 It looks like this:
 
 \begin{Verbatim}[samepage=true]
-    101,29       84% 
+    101,29       84%
 \end{Verbatim}
 
 The first number is the line number of the cursor.
@@ -114,7 +114,7 @@ To turn off search wrapping, use the following command:
 Now when the search hits the end of the file, an error message displays:
 
 \begin{Verbatim}[samepage=true]
-    E385: search hit BOTTOM without match for: forever 
+    E385: search hit BOTTOM without match for: forever
 \end{Verbatim}
 
 Thus you can find all matches by going to the start of the file with ``\texttt{gg}" and keep searching until you see this message.
@@ -122,7 +122,7 @@ Thus you can find all matches by going to the start of the file with ``\texttt{g
 If you search in the other direction, using ``\texttt{?}", you get:
 
 \begin{Verbatim}[samepage=true]
-    E384: search hit TOP without match for: forever 
+    E384: search hit TOP without match for: forever
 \end{Verbatim}
 \subsection{Offsets}
 By default, the search command leaves the cursor positioned on the beginning of the pattern.
@@ -605,7 +605,7 @@ In this situation use:
 \begin{Verbatim}[samepage=true]
      /\w\@<!\h\w*\w\@!
 \end{Verbatim}
- 
+
 This checks if ``\texttt{\textbackslash{}w}" does not match before or after the identifier.
 See |\texttt{:h /\textbackslash{}@<!}| and |\texttt{:h /\textbackslash{}@}!|.
 \clearpage

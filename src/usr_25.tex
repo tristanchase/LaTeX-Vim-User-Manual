@@ -26,7 +26,7 @@ Now you start typing (ruler added):
 \begin{Verbatim}[samepage=true]
              1         2         3
     12345678901234567890123456789012345
-    I taught programming for a whi 
+    I taught programming for a whi
 \end{Verbatim}
 
 If you type ``\texttt{l}" next, this makes the line longer than the 30-character limit.
@@ -35,8 +35,8 @@ When Vim sees this, it inserts a line break and you get the following:
 \begin{Verbatim}[samepage=true]
              1         2         3
     12345678901234567890123456789012345
-    I taught programming for a 
-    whil 
+    I taught programming for a
+    whil
 \end{Verbatim}
 
 Continuing on, you can type in the rest of the paragraph:
@@ -44,11 +44,11 @@ Continuing on, you can type in the rest of the paragraph:
 \begin{Verbatim}[samepage=true]
              1         2         3
     12345678901234567890123456789012345
-    I taught programming for a 
-    while. One time, I was stopped 
-    by the Fort Worth police, 
-    because my homework was too 
-    hard. True story. 
+    I taught programming for a
+    while. One time, I was stopped
+    by the Fort Worth police,
+    because my homework was too
+    hard. True story.
 \end{Verbatim}
 
 You do not have to type newlines; Vim puts them in automatically.
@@ -62,11 +62,11 @@ In Vim they are not; so if you delete the word ``programming" from the first lin
 \begin{Verbatim}[samepage=true]
              1         2         3
     12345678901234567890123456789012345
-    I taught for a 
-    while. One time, I was stopped 
-    by the Fort Worth police, 
-    because my homework was too 
-    hard. True story. 
+    I taught for a
+    while. One time, I was stopped
+    by the Fort Worth police,
+    because my homework was too
+    hard. True story.
 \end{Verbatim}
 
 This does not look good.
@@ -85,11 +85,11 @@ The result is:
 \begin{Verbatim}[samepage=true]
              1         2         3
     12345678901234567890123456789012345
-    I taught for a while. One 
-    time, I was stopped by the 
-    Fort Worth police, because my 
-    homework was too hard. True 
-    story. 
+    I taught for a while. One
+    time, I was stopped by the
+    Fort Worth police, because my
+    homework was too hard. True
+    story.
 \end{Verbatim}
 
 \emph{Note}: there is a way to do automatic formatting for specific types of text layouts, see |\texttt{:h auto-format}|.
@@ -153,11 +153,11 @@ For example:
 results in the following:
 
 \begin{Verbatim}[samepage=true]
-			   I taught for a while. One 
-			   time, I was stopped by the 
-			 Fort Worth police, because my 
-			  homework was too hard. True 
-				     story. 
+			   I taught for a while. One
+			   time, I was stopped by the
+			 Fort Worth police, because my
+			  homework was too hard. True
+				     story.
 \end{Verbatim}
 \subsubsection{Right alignment}
 Similarly, the ``\texttt{:right}" command right-justifies the text:
@@ -169,11 +169,11 @@ Similarly, the ``\texttt{:right}" command right-justifies the text:
 gives this result:
 
 \begin{Verbatim}[samepage=true]
-						       I taught for a while. One 
-						      time, I was stopped by the 
-						   Fort Worth police, because my 
-						     homework was too hard. True 
-									  story. 
+						       I taught for a while. One
+						      time, I was stopped by the
+						   Fort Worth police, because my
+						     homework was too hard. True
+									  story.
 \end{Verbatim}
 \subsubsection{Left alignment}
 Finally there is this command:
@@ -196,11 +196,11 @@ For example, use these commands:
 This results in the following:
 
 \begin{Verbatim}[samepage=true]
-         I taught for a while. One 
-    time, I was stopped by the 
-    Fort Worth police, because my 
-    homework was too hard. True 
-    story. 
+         I taught for a while. One
+    time, I was stopped by the
+    Fort Worth police, because my
+    homework was too hard. True
+    story.
 \end{Verbatim}
 
 \subsubsection{Justifying text}
@@ -232,8 +232,8 @@ normally enter this by typing a tab at the start of each line.  Take this
 text:
 
 \begin{Verbatim}[samepage=true]
-    the first line 
-    the second line 
+    the first line
+    the second line
 \end{Verbatim}
 
 This is entered by typing a tab, some text, <Enter>, tab and more text.
@@ -262,8 +262,8 @@ To make ``\texttt{>>}" insert four spaces worth of indent, for example, type thi
 When used on the second line of the example text, this is what you get:
 
 \begin{Verbatim}[samepage=true]
-    the first line 
-        the second line 
+    the first line
+        the second line
 \end{Verbatim}
 
 ``\texttt{4>>}" will increase the indent of four lines.
@@ -347,7 +347,7 @@ The ``window"s below the text indicate the text that is visible after the comman
 
 \begin{Verbatim}[samepage=true]
                       |<-- current window -->|
-        some long text, part of which is visible in the window 
+        some long text, part of which is visible in the window
     ze    |<--      window    -->|
     zH     |<--      window    -->|
     4zh           |<--      window    -->|
@@ -372,7 +372,7 @@ These never cause the text to scroll:
 
 \begin{Verbatim}[samepage=true]
             |<--     window    -->|
-    some long    text, part of which is visible 
+    some long    text, part of which is visible
              g0  g^    gm         g$
 \end{Verbatim}
 
@@ -492,9 +492,9 @@ This still requires a blank or empty line at the end of the file for the last pa
 Suppose you are editing a table with four columns:
 
 \begin{Verbatim}[samepage=true]
-    nice table    test 1    test 2      test 3 
-    input A       0.534 
-    input B       0.913 
+    nice table    test 1    test 2      test 3
+    input A       0.534
+    input B       0.913
 \end{Verbatim}
 
 You need to enter numbers in the third column.
@@ -520,9 +520,9 @@ Now press ``\texttt{j}" and you are right where you can enter the value for ``\t
 Typing ``\texttt{0.693}" results in:
 
 \begin{Verbatim}[samepage=true]
-    nice table    test 1     test 2  test 3 
-    input A       0.534              0.693 
-    input B       0.913 
+    nice table    test 1     test 2  test 3
+    input A       0.534              0.693
+    input B       0.913
 \end{Verbatim}
 
 Vim has automatically filled the gap in front of the new text for you.
@@ -550,9 +550,9 @@ Do this in seven steps:
 The result should be:
 
 \begin{Verbatim}[samepage=true]
-    nice table    test 3    test 1     test 2      test 3 
-    input A       0.693     0.534                  0.693 
-    input B                 0.913 
+    nice table    test 3    test 1     test 2      test 3
+    input A       0.693     0.534                  0.693
+    input B                 0.913
 \end{Verbatim}
 
 Notice that the whole ``test 1" column was shifted right, also the line where the ``test 3" column didn't have text.
@@ -572,26 +572,26 @@ Suppose you have a line in a table that contains both tabs and other characters.
 Use ``\texttt{rx}" on the first tab:
 
 \begin{Verbatim}[samepage=true]
-    inp     0.693   0.534   0.693 
+    inp     0.693   0.534   0.693
 
            |
        rx  |
            V
 
-    inpx0.693   0.534       0.693 
+    inpx0.693   0.534       0.693
 \end{Verbatim}
 
 The layout is messed up.
 To avoid that, use the ``\texttt{gr}" command:
 
 \begin{Verbatim}[samepage=true]
-    inp     0.693   0.534   0.693 
+    inp     0.693   0.534   0.693
 
            |
       grx  |
            V
 
-    inpx    0.693   0.534   0.693 
+    inpx    0.693   0.534   0.693
 \end{Verbatim}
 
 What happens is that the ``\texttt{gr}" command makes sure the new character takes the right amount of screen space.
@@ -603,26 +603,26 @@ When you need to replace more than one character, you use the ``\texttt{R}" comm
 This messes up the layout and replaces the wrong characters:
 
 \begin{Verbatim}[samepage=true]
-    inp 0       0.534   0.693 
+    inp 0       0.534   0.693
 
         |
  R0.786 |
         V
 
-    inp 0.78634 0.693 
+    inp 0.78634 0.693
 \end{Verbatim}
 
 The ``\texttt{gR}" command uses Virtual Replace mode.
 This preserves the layout:
 
 \begin{Verbatim}[samepage=true]
-    inp     0       0.534   0.693 
+    inp     0       0.534   0.693
 
             |
     gR0.786 |
             V
 
-    inp     0.786   0.534   0.693 
+    inp     0.786   0.534   0.693
 \end{Verbatim}
 
 \clearpage
